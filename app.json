@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Working Mom Command Center",
+    "slug": "working-mom-command-center",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "workingmom",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
