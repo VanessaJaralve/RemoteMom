@@ -10,7 +10,10 @@ jest.mock('react-native', () => {
     );
 
   return {
+    Pressable: createHostComponent('Pressable'),
+    ScrollView: createHostComponent('ScrollView'),
     Text: createHostComponent('Text'),
+    TextInput: createHostComponent('TextInput'),
     View: createHostComponent('View'),
     StyleSheet: {
       create: (styles) => styles,
