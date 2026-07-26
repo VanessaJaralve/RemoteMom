@@ -28,6 +28,7 @@ export function HealthScreen() {
   const [timesText, setTimesText] = useState('');
   const [refillReminderThreshold, setRefillReminderThreshold] = useState('');
   const [editingMedicineId, setEditingMedicineId] = useState<string | null>(null);
+  const [confirmingDeleteMedicineId, setConfirmingDeleteMedicineId] = useState<string | null>(null);
 
   const trackedPeople = useMemo(
     () => Array.from(new Set(medicines.map((medicine) => medicine.personName))),
@@ -41,6 +42,7 @@ export function HealthScreen() {
     setTimesText('');
     setRefillReminderThreshold('');
     setEditingMedicineId(null);
+    setConfirmingDeleteMedicineId(null);
   };
 
   const handleSubmitMedicine = () => {
@@ -78,6 +80,7 @@ export function HealthScreen() {
     setDosage(medicine.dosage);
     setTimesText(medicine.times.join(', '));
     setRefillReminderThreshold(String(medicine.refillReminderThreshold));
+    setConfirmingDeleteMedicineId(null);
   };
 
   return (
@@ -182,22 +185,48 @@ export function HealthScreen() {
               <Text style={styles.takenButtonText}>Mark Taken</Text>
             </Pressable>
             <View style={styles.itemActions}>
-              <Pressable
-                accessibilityLabel={`Edit ${medicine.medicineName}`}
-                accessibilityRole="button"
-                onPress={() => startEditingMedicine(medicine)}
-                style={styles.secondaryButton}
-              >
-                <Text style={styles.secondaryButtonText}>Edit</Text>
-              </Pressable>
-              <Pressable
-                accessibilityLabel={`Delete ${medicine.medicineName}`}
-                accessibilityRole="button"
-                onPress={() => deleteMedicine(medicine.id)}
-                style={styles.deleteButton}
-              >
-                <Text style={styles.deleteButtonText}>Delete</Text>
-              </Pressable>
+              {confirmingDeleteMedicineId === medicine.id ? (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Cancel delete ${medicine.medicineName}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteMedicineId(null)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Cancel</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Confirm delete ${medicine.medicineName}`}
+                    accessibilityRole="button"
+                    onPress={() => {
+                      deleteMedicine(medicine.id);
+                      setConfirmingDeleteMedicineId(null);
+                    }}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Confirm Delete</Text>
+                  </Pressable>
+                </>
+              ) : (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Edit ${medicine.medicineName}`}
+                    accessibilityRole="button"
+                    onPress={() => startEditingMedicine(medicine)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Edit</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Delete ${medicine.medicineName}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteMedicineId(medicine.id)}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Delete</Text>
+                  </Pressable>
+                </>
+              )}
             </View>
           </View>
         ))}

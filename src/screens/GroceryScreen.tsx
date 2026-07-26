@@ -52,6 +52,7 @@ export function GroceryScreen() {
   const [category, setCategory] = useState('');
   const [isRecurring, setIsRecurring] = useState(false);
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
+  const [confirmingDeleteItemId, setConfirmingDeleteItemId] = useState<string | null>(null);
 
   const grocerySections = useMemo(() => groupItemsByCategory(groceryItems), [groceryItems]);
   const remainingCount = useMemo(
@@ -64,6 +65,7 @@ export function GroceryScreen() {
     setCategory('');
     setIsRecurring(false);
     setEditingItemId(null);
+    setConfirmingDeleteItemId(null);
   };
 
   const handleSubmitItem = () => {
@@ -94,6 +96,7 @@ export function GroceryScreen() {
     setItemName(item.itemName);
     setCategory(item.category);
     setIsRecurring(item.isRecurring);
+    setConfirmingDeleteItemId(null);
   };
 
   return (
@@ -194,22 +197,48 @@ export function GroceryScreen() {
                     </View>
                   </View>
                   <View style={styles.itemActions}>
-                    <Pressable
-                      accessibilityLabel={`Edit ${item.itemName}`}
-                      accessibilityRole="button"
-                      onPress={() => startEditingItem(item)}
-                      style={styles.secondaryButton}
-                    >
-                      <Text style={styles.secondaryButtonText}>Edit</Text>
-                    </Pressable>
-                    <Pressable
-                      accessibilityLabel={`Delete ${item.itemName}`}
-                      accessibilityRole="button"
-                      onPress={() => deleteGroceryItem(item.id)}
-                      style={styles.deleteButton}
-                    >
-                      <Text style={styles.deleteButtonText}>Delete</Text>
-                    </Pressable>
+                    {confirmingDeleteItemId === item.id ? (
+                      <>
+                        <Pressable
+                          accessibilityLabel={`Cancel delete ${item.itemName}`}
+                          accessibilityRole="button"
+                          onPress={() => setConfirmingDeleteItemId(null)}
+                          style={styles.secondaryButton}
+                        >
+                          <Text style={styles.secondaryButtonText}>Cancel</Text>
+                        </Pressable>
+                        <Pressable
+                          accessibilityLabel={`Confirm delete ${item.itemName}`}
+                          accessibilityRole="button"
+                          onPress={() => {
+                            deleteGroceryItem(item.id);
+                            setConfirmingDeleteItemId(null);
+                          }}
+                          style={styles.deleteButton}
+                        >
+                          <Text style={styles.deleteButtonText}>Confirm Delete</Text>
+                        </Pressable>
+                      </>
+                    ) : (
+                      <>
+                        <Pressable
+                          accessibilityLabel={`Edit ${item.itemName}`}
+                          accessibilityRole="button"
+                          onPress={() => startEditingItem(item)}
+                          style={styles.secondaryButton}
+                        >
+                          <Text style={styles.secondaryButtonText}>Edit</Text>
+                        </Pressable>
+                        <Pressable
+                          accessibilityLabel={`Delete ${item.itemName}`}
+                          accessibilityRole="button"
+                          onPress={() => setConfirmingDeleteItemId(item.id)}
+                          style={styles.deleteButton}
+                        >
+                          <Text style={styles.deleteButtonText}>Delete</Text>
+                        </Pressable>
+                      </>
+                    )}
                   </View>
                 </View>
               ))}

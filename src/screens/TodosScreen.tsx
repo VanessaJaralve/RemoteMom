@@ -34,6 +34,7 @@ export function TodosScreen() {
   const [dueDate, setDueDate] = useState('');
   const [selectedLifeArea, setSelectedLifeArea] = useState<TaskLifeArea>('work');
   const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
+  const [confirmingDeleteTaskId, setConfirmingDeleteTaskId] = useState<string | null>(null);
 
   const incompleteCount = useMemo(() => tasks.filter((task) => !task.isDone).length, [tasks]);
 
@@ -42,6 +43,7 @@ export function TodosScreen() {
     setDueDate('');
     setSelectedLifeArea('work');
     setEditingTaskId(null);
+    setConfirmingDeleteTaskId(null);
   };
 
   const handleSubmitTask = () => {
@@ -72,6 +74,7 @@ export function TodosScreen() {
     setTitle(task.title);
     setDueDate(task.dueDate ?? '');
     setSelectedLifeArea(task.lifeArea);
+    setConfirmingDeleteTaskId(null);
   };
 
   return (
@@ -193,22 +196,48 @@ export function TodosScreen() {
             </View>
 
             <View style={styles.itemActions}>
-              <Pressable
-                accessibilityLabel={`Edit ${task.title}`}
-                accessibilityRole="button"
-                onPress={() => startEditingTask(task)}
-                style={styles.secondaryButton}
-              >
-                <Text style={styles.secondaryButtonText}>Edit</Text>
-              </Pressable>
-              <Pressable
-                accessibilityLabel={`Delete ${task.title}`}
-                accessibilityRole="button"
-                onPress={() => deleteTask(task.id)}
-                style={styles.deleteButton}
-              >
-                <Text style={styles.deleteButtonText}>Delete</Text>
-              </Pressable>
+              {confirmingDeleteTaskId === task.id ? (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Cancel delete ${task.title}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteTaskId(null)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Cancel</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Confirm delete ${task.title}`}
+                    accessibilityRole="button"
+                    onPress={() => {
+                      deleteTask(task.id);
+                      setConfirmingDeleteTaskId(null);
+                    }}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Confirm Delete</Text>
+                  </Pressable>
+                </>
+              ) : (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Edit ${task.title}`}
+                    accessibilityRole="button"
+                    onPress={() => startEditingTask(task)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Edit</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Delete ${task.title}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteTaskId(task.id)}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Delete</Text>
+                  </Pressable>
+                </>
+              )}
             </View>
           </View>
         ))}

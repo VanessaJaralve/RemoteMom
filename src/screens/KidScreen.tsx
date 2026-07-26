@@ -27,6 +27,7 @@ export function KidScreen() {
   const [recurring, setRecurring] = useState(false);
   const [recurrenceRule, setRecurrenceRule] = useState('');
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
+  const [confirmingDeleteItemId, setConfirmingDeleteItemId] = useState<string | null>(null);
 
   const sortedScheduleItems = useMemo(() => sortByStartTime(scheduleItems), [scheduleItems]);
 
@@ -38,6 +39,7 @@ export function KidScreen() {
     setRecurring(false);
     setRecurrenceRule('');
     setEditingItemId(null);
+    setConfirmingDeleteItemId(null);
   };
 
   const handleSubmitScheduleItem = () => {
@@ -77,6 +79,7 @@ export function KidScreen() {
     setNotes(item.notes ?? '');
     setRecurring(item.recurring);
     setRecurrenceRule(item.recurrenceRule ?? '');
+    setConfirmingDeleteItemId(null);
   };
 
   return (
@@ -181,22 +184,48 @@ export function KidScreen() {
             ) : null}
             {item.notes ? <Text style={styles.notesText}>{item.notes}</Text> : null}
             <View style={styles.itemActions}>
-              <Pressable
-                accessibilityLabel={`Edit ${item.title}`}
-                accessibilityRole="button"
-                onPress={() => startEditingScheduleItem(item)}
-                style={styles.secondaryButton}
-              >
-                <Text style={styles.secondaryButtonText}>Edit</Text>
-              </Pressable>
-              <Pressable
-                accessibilityLabel={`Delete ${item.title}`}
-                accessibilityRole="button"
-                onPress={() => deleteScheduleItem(item.id)}
-                style={styles.deleteButton}
-              >
-                <Text style={styles.deleteButtonText}>Delete</Text>
-              </Pressable>
+              {confirmingDeleteItemId === item.id ? (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Cancel delete ${item.title}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteItemId(null)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Cancel</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Confirm delete ${item.title}`}
+                    accessibilityRole="button"
+                    onPress={() => {
+                      deleteScheduleItem(item.id);
+                      setConfirmingDeleteItemId(null);
+                    }}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Confirm Delete</Text>
+                  </Pressable>
+                </>
+              ) : (
+                <>
+                  <Pressable
+                    accessibilityLabel={`Edit ${item.title}`}
+                    accessibilityRole="button"
+                    onPress={() => startEditingScheduleItem(item)}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Edit</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel={`Delete ${item.title}`}
+                    accessibilityRole="button"
+                    onPress={() => setConfirmingDeleteItemId(item.id)}
+                    style={styles.deleteButton}
+                  >
+                    <Text style={styles.deleteButtonText}>Delete</Text>
+                  </Pressable>
+                </>
+              )}
             </View>
           </View>
         ))}

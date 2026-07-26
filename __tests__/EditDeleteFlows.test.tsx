@@ -25,6 +25,7 @@ describe('edit and delete flows', () => {
       expect(getByLabelText('Delete Review tomorrow morning priorities')).toBeOnTheScreen()
     );
     await fireEvent.press(getByLabelText('Delete Review tomorrow morning priorities'));
+    await fireEvent.press(getByLabelText('Confirm delete Review tomorrow morning priorities'));
 
     expect(queryByText('Review tomorrow morning priorities')).toBeNull();
   });
@@ -60,6 +61,7 @@ describe('edit and delete flows', () => {
 
     await waitFor(() => expect(getByLabelText('Delete Bread')).toBeOnTheScreen());
     await fireEvent.press(getByLabelText('Delete Bread'));
+    await fireEvent.press(getByLabelText('Confirm delete Bread'));
     expect(queryByText('Bread, Milk')).toBeNull();
 
     await fireEvent.press(getByLabelText('Edit Milk'));
@@ -81,6 +83,7 @@ describe('edit and delete flows', () => {
 
     await waitFor(() => expect(getByLabelText('Delete School drop-off')).toBeOnTheScreen());
     await fireEvent.press(getByLabelText('Delete School drop-off'));
+    await fireEvent.press(getByLabelText('Confirm delete School drop-off'));
     expect(queryByText('School drop-off')).toBeNull();
 
     await fireEvent.press(getByLabelText('Edit Soccer practice'));
@@ -102,6 +105,7 @@ describe('edit and delete flows', () => {
 
     await waitFor(() => expect(getByLabelText('Delete Vitamin D')).toBeOnTheScreen());
     await fireEvent.press(getByLabelText('Delete Vitamin D'));
+    await fireEvent.press(getByLabelText('Confirm delete Vitamin D'));
     expect(queryByText('Vitamin D')).toBeNull();
 
     await fireEvent.press(getByLabelText('Edit Child Allergy Syrup'));
