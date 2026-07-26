@@ -41,10 +41,17 @@ function groupItemsByCategory(items: GroceryItem[]): GrocerySection[] {
 }
 
 export function GroceryScreen() {
-  const { addGroceryItem, groceryItems, toggleGroceryItemChecked } = useAppState();
+  const {
+    addGroceryItem,
+    deleteGroceryItem,
+    groceryItems,
+    toggleGroceryItemChecked,
+    updateGroceryItem
+  } = useAppState();
   const [itemName, setItemName] = useState('');
   const [category, setCategory] = useState('');
   const [isRecurring, setIsRecurring] = useState(false);
+  const [editingItemId, setEditingItemId] = useState<string | null>(null);
 
   const grocerySections = useMemo(() => groupItemsByCategory(groceryItems), [groceryItems]);
   const remainingCount = useMemo(
@@ -52,7 +59,14 @@ export function GroceryScreen() {
     [groceryItems]
   );
 
-  const handleAddItem = () => {
+  const resetForm = () => {
+    setItemName('');
+    setCategory('');
+    setIsRecurring(false);
+    setEditingItemId(null);
+  };
+
+  const handleSubmitItem = () => {
     const trimmedItemName = itemName.trim();
     const trimmedCategory = normalizeCategory(category);
 
@@ -60,15 +74,26 @@ export function GroceryScreen() {
       return;
     }
 
-    addGroceryItem({
+    const groceryInput = {
       itemName: trimmedItemName,
       category: trimmedCategory,
       isRecurring
-    });
+    };
 
-    setItemName('');
-    setCategory('');
-    setIsRecurring(false);
+    if (editingItemId) {
+      updateGroceryItem(editingItemId, groceryInput);
+    } else {
+      addGroceryItem(groceryInput);
+    }
+
+    resetForm();
+  };
+
+  const startEditingItem = (item: GroceryItem) => {
+    setEditingItemId(item.id);
+    setItemName(item.itemName);
+    setCategory(item.category);
+    setIsRecurring(item.isRecurring);
   };
 
   return (
@@ -117,11 +142,23 @@ export function GroceryScreen() {
         </Pressable>
         <Pressable
           accessibilityRole="button"
-          onPress={handleAddItem}
+          onPress={handleSubmitItem}
           style={styles.addButton}
         >
-          <Text style={styles.addButtonText}>Add Grocery Item</Text>
+          <Text style={styles.addButtonText}>
+            {editingItemId ? 'Save Grocery Item' : 'Add Grocery Item'}
+          </Text>
         </Pressable>
+        {editingItemId ? (
+          <Pressable
+            accessibilityLabel="Cancel grocery edit"
+            accessibilityRole="button"
+            onPress={resetForm}
+            style={styles.cancelButton}
+          >
+            <Text style={styles.cancelButtonText}>Cancel</Text>
+          </Pressable>
+        ) : null}
       </View>
 
       <View style={styles.sections}>
@@ -154,6 +191,24 @@ export function GroceryScreen() {
                       {item.isChecked ? <Text style={styles.checkedText}>Checked</Text> : null}
                     </View>
                   </View>
+                  <View style={styles.itemActions}>
+                    <Pressable
+                      accessibilityLabel={`Edit ${item.itemName}`}
+                      accessibilityRole="button"
+                      onPress={() => startEditingItem(item)}
+                      style={styles.secondaryButton}
+                    >
+                      <Text style={styles.secondaryButtonText}>Edit</Text>
+                    </Pressable>
+                    <Pressable
+                      accessibilityLabel={`Delete ${item.itemName}`}
+                      accessibilityRole="button"
+                      onPress={() => deleteGroceryItem(item.id)}
+                      style={styles.deleteButton}
+                    >
+                      <Text style={styles.deleteButtonText}>Delete</Text>
+                    </Pressable>
+                  </View>
                 </View>
               ))}
             </View>
@@ -174,6 +229,19 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '700'
+  },
+  cancelButton: {
+    alignItems: 'center',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 12
+  },
+  cancelButtonText: {
+    color: SURFACE_COLORS.text,
     fontSize: 16,
     fontWeight: '700'
   },
@@ -198,6 +266,18 @@ const styles = StyleSheet.create({
   },
   checkedText: {
     color: LIFE_AREA_COLORS.health,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  deleteButton: {
+    borderColor: '#B42318',
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  deleteButtonText: {
+    color: '#B42318',
     fontSize: 13,
     fontWeight: '700'
   },
@@ -236,6 +316,10 @@ const styles = StyleSheet.create({
   itemBody: {
     flex: 1,
     gap: 6
+  },
+  itemActions: {
+    alignItems: 'flex-end',
+    gap: 8
   },
   itemList: {
     gap: 8
@@ -310,6 +394,18 @@ const styles = StyleSheet.create({
   },
   sections: {
     gap: 16
+  },
+  secondaryButton: {
+    borderColor: SURFACE_COLORS.muted,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  secondaryButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
   },
   summary: {
     color: SURFACE_COLORS.muted,

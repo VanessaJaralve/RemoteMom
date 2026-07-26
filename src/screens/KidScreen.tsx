@@ -19,17 +19,28 @@ function sortByStartTime(items: ScheduleItem[]) {
 }
 
 export function KidScreen() {
-  const { addScheduleItem, scheduleItems } = useAppState();
+  const { addScheduleItem, deleteScheduleItem, scheduleItems, updateScheduleItem } = useAppState();
   const [title, setTitle] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [notes, setNotes] = useState('');
   const [recurring, setRecurring] = useState(false);
   const [recurrenceRule, setRecurrenceRule] = useState('');
+  const [editingItemId, setEditingItemId] = useState<string | null>(null);
 
   const sortedScheduleItems = useMemo(() => sortByStartTime(scheduleItems), [scheduleItems]);
 
-  const handleAddScheduleItem = () => {
+  const resetForm = () => {
+    setTitle('');
+    setStartTime('');
+    setEndTime('');
+    setNotes('');
+    setRecurring(false);
+    setRecurrenceRule('');
+    setEditingItemId(null);
+  };
+
+  const handleSubmitScheduleItem = () => {
     const trimmedTitle = title.trim();
     const trimmedStartTime = startTime.trim();
     const trimmedEndTime = endTime.trim();
@@ -40,21 +51,32 @@ export function KidScreen() {
       return;
     }
 
-    addScheduleItem({
+    const scheduleInput = {
       title: trimmedTitle,
       startTime: trimmedStartTime,
       endTime: trimmedEndTime,
       recurring,
       recurrenceRule: recurring ? trimmedRecurrenceRule || 'recurring' : null,
       notes: trimmedNotes || undefined
-    });
+    };
 
-    setTitle('');
-    setStartTime('');
-    setEndTime('');
-    setNotes('');
-    setRecurring(false);
-    setRecurrenceRule('');
+    if (editingItemId) {
+      updateScheduleItem(editingItemId, scheduleInput);
+    } else {
+      addScheduleItem(scheduleInput);
+    }
+
+    resetForm();
+  };
+
+  const startEditingScheduleItem = (item: ScheduleItem) => {
+    setEditingItemId(item.id);
+    setTitle(item.title);
+    setStartTime(item.startTime);
+    setEndTime(item.endTime);
+    setNotes(item.notes ?? '');
+    setRecurring(item.recurring);
+    setRecurrenceRule(item.recurrenceRule ?? '');
   };
 
   return (
@@ -124,11 +146,23 @@ export function KidScreen() {
         />
         <Pressable
           accessibilityRole="button"
-          onPress={handleAddScheduleItem}
+          onPress={handleSubmitScheduleItem}
           style={styles.addButton}
         >
-          <Text style={styles.addButtonText}>Add Schedule Item</Text>
+          <Text style={styles.addButtonText}>
+            {editingItemId ? 'Save Schedule Item' : 'Add Schedule Item'}
+          </Text>
         </Pressable>
+        {editingItemId ? (
+          <Pressable
+            accessibilityLabel="Cancel schedule edit"
+            accessibilityRole="button"
+            onPress={resetForm}
+            style={styles.cancelButton}
+          >
+            <Text style={styles.cancelButtonText}>Cancel</Text>
+          </Pressable>
+        ) : null}
       </View>
 
       <View style={styles.scheduleList}>
@@ -146,6 +180,24 @@ export function KidScreen() {
               <Text style={styles.recurrenceText}>{item.recurrenceRule}</Text>
             ) : null}
             {item.notes ? <Text style={styles.notesText}>{item.notes}</Text> : null}
+            <View style={styles.itemActions}>
+              <Pressable
+                accessibilityLabel={`Edit ${item.title}`}
+                accessibilityRole="button"
+                onPress={() => startEditingScheduleItem(item)}
+                style={styles.secondaryButton}
+              >
+                <Text style={styles.secondaryButtonText}>Edit</Text>
+              </Pressable>
+              <Pressable
+                accessibilityLabel={`Delete ${item.title}`}
+                accessibilityRole="button"
+                onPress={() => deleteScheduleItem(item.id)}
+                style={styles.deleteButton}
+              >
+                <Text style={styles.deleteButtonText}>Delete</Text>
+              </Pressable>
+            </View>
           </View>
         ))}
       </View>
@@ -163,6 +215,19 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '700'
+  },
+  cancelButton: {
+    alignItems: 'center',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 12
+  },
+  cancelButtonText: {
+    color: SURFACE_COLORS.text,
     fontSize: 16,
     fontWeight: '700'
   },
@@ -189,6 +254,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: SURFACE_COLORS.background,
     flex: 1
+  },
+  deleteButton: {
+    borderColor: '#B42318',
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  deleteButtonText: {
+    color: '#B42318',
+    fontSize: 13,
+    fontWeight: '700'
   },
   content: {
     gap: 18,
@@ -217,6 +294,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingHorizontal: 12,
     paddingVertical: 12
+  },
+  itemActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
   },
   itemTitle: {
     color: SURFACE_COLORS.text,
@@ -267,6 +349,18 @@ const styles = StyleSheet.create({
   },
   scheduleList: {
     gap: 10
+  },
+  secondaryButton: {
+    borderColor: SURFACE_COLORS.muted,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  secondaryButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
   },
   summary: {
     color: SURFACE_COLORS.muted,

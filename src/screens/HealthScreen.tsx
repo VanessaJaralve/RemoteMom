@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
+import type { Medicine } from '../models/Medicine';
 import { useAppState } from '../state/AppState';
 
 function parseTimes(timesText: string) {
@@ -19,19 +20,30 @@ function parseTimes(timesText: string) {
 }
 
 export function HealthScreen() {
-  const { addMedicine, markMedicineTaken, medicines } = useAppState();
+  const { addMedicine, deleteMedicine, markMedicineTaken, medicines, updateMedicine } =
+    useAppState();
   const [personName, setPersonName] = useState('');
   const [medicineName, setMedicineName] = useState('');
   const [dosage, setDosage] = useState('');
   const [timesText, setTimesText] = useState('');
   const [refillReminderThreshold, setRefillReminderThreshold] = useState('');
+  const [editingMedicineId, setEditingMedicineId] = useState<string | null>(null);
 
   const trackedPeople = useMemo(
     () => Array.from(new Set(medicines.map((medicine) => medicine.personName))),
     [medicines]
   );
 
-  const handleAddMedicine = () => {
+  const resetForm = () => {
+    setPersonName('');
+    setMedicineName('');
+    setDosage('');
+    setTimesText('');
+    setRefillReminderThreshold('');
+    setEditingMedicineId(null);
+  };
+
+  const handleSubmitMedicine = () => {
     const trimmedPersonName = personName.trim();
     const trimmedMedicineName = medicineName.trim();
     const trimmedDosage = dosage.trim();
@@ -42,19 +54,30 @@ export function HealthScreen() {
       return;
     }
 
-    addMedicine({
+    const medicineInput = {
       personName: trimmedPersonName,
       medicineName: trimmedMedicineName,
       dosage: trimmedDosage,
       times,
-      refillReminderThreshold: Number.isNaN(threshold) ? 0 : threshold,
-    });
+      refillReminderThreshold: Number.isNaN(threshold) ? 0 : threshold
+    };
 
-    setPersonName('');
-    setMedicineName('');
-    setDosage('');
-    setTimesText('');
-    setRefillReminderThreshold('');
+    if (editingMedicineId) {
+      updateMedicine(editingMedicineId, medicineInput);
+    } else {
+      addMedicine(medicineInput);
+    }
+
+    resetForm();
+  };
+
+  const startEditingMedicine = (medicine: Medicine) => {
+    setEditingMedicineId(medicine.id);
+    setPersonName(medicine.personName);
+    setMedicineName(medicine.medicineName);
+    setDosage(medicine.dosage);
+    setTimesText(medicine.times.join(', '));
+    setRefillReminderThreshold(String(medicine.refillReminderThreshold));
   };
 
   return (
@@ -114,11 +137,23 @@ export function HealthScreen() {
         />
         <Pressable
           accessibilityRole="button"
-          onPress={handleAddMedicine}
+          onPress={handleSubmitMedicine}
           style={styles.addButton}
         >
-          <Text style={styles.addButtonText}>Add Medicine</Text>
+          <Text style={styles.addButtonText}>
+            {editingMedicineId ? 'Save Medicine' : 'Add Medicine'}
+          </Text>
         </Pressable>
+        {editingMedicineId ? (
+          <Pressable
+            accessibilityLabel="Cancel medicine edit"
+            accessibilityRole="button"
+            onPress={resetForm}
+            style={styles.cancelButton}
+          >
+            <Text style={styles.cancelButtonText}>Cancel</Text>
+          </Pressable>
+        ) : null}
       </View>
 
       <View style={styles.medicineList}>
@@ -146,6 +181,24 @@ export function HealthScreen() {
             >
               <Text style={styles.takenButtonText}>Mark Taken</Text>
             </Pressable>
+            <View style={styles.itemActions}>
+              <Pressable
+                accessibilityLabel={`Edit ${medicine.medicineName}`}
+                accessibilityRole="button"
+                onPress={() => startEditingMedicine(medicine)}
+                style={styles.secondaryButton}
+              >
+                <Text style={styles.secondaryButtonText}>Edit</Text>
+              </Pressable>
+              <Pressable
+                accessibilityLabel={`Delete ${medicine.medicineName}`}
+                accessibilityRole="button"
+                onPress={() => deleteMedicine(medicine.id)}
+                style={styles.deleteButton}
+              >
+                <Text style={styles.deleteButtonText}>Delete</Text>
+              </Pressable>
+            </View>
           </View>
         ))}
       </View>
@@ -166,6 +219,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700'
   },
+  cancelButton: {
+    alignItems: 'center',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 12
+  },
+  cancelButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 16,
+    fontWeight: '700'
+  },
   cardHeader: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -176,6 +242,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: SURFACE_COLORS.background,
     flex: 1
+  },
+  deleteButton: {
+    borderColor: '#B42318',
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  deleteButtonText: {
+    color: '#B42318',
+    fontSize: 13,
+    fontWeight: '700'
   },
   content: {
     gap: 18,
@@ -210,6 +288,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 12
   },
+  itemActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
+  },
   lastTaken: {
     color: SURFACE_COLORS.muted,
     fontSize: 14
@@ -234,6 +317,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 8
+  },
+  secondaryButton: {
+    borderColor: SURFACE_COLORS.muted,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  secondaryButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
   },
   personPill: {
     backgroundColor: LIFE_AREA_COLORS.health,

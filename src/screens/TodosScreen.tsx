@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
-import type { TaskLifeArea } from '../models/Task';
+import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
 
 const TASK_LIFE_AREAS: TaskLifeArea[] = ['work', 'kid', 'household', 'self'];
@@ -29,14 +29,22 @@ const TASK_LIFE_AREA_COLORS: Record<TaskLifeArea, string> = {
 };
 
 export function TodosScreen() {
-  const { addTask, tasks, toggleTaskDone } = useAppState();
+  const { addTask, deleteTask, tasks, toggleTaskDone, updateTask } = useAppState();
   const [title, setTitle] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [selectedLifeArea, setSelectedLifeArea] = useState<TaskLifeArea>('work');
+  const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
 
   const incompleteCount = useMemo(() => tasks.filter((task) => !task.isDone).length, [tasks]);
 
-  const handleAddTask = () => {
+  const resetForm = () => {
+    setTitle('');
+    setDueDate('');
+    setSelectedLifeArea('work');
+    setEditingTaskId(null);
+  };
+
+  const handleSubmitTask = () => {
     const trimmedTitle = title.trim();
     const trimmedDueDate = dueDate.trim();
 
@@ -44,15 +52,26 @@ export function TodosScreen() {
       return;
     }
 
-    addTask({
+    const taskInput = {
       title: trimmedTitle,
       lifeArea: selectedLifeArea,
       dueDate: trimmedDueDate || undefined
-    });
+    };
 
-    setTitle('');
-    setDueDate('');
-    setSelectedLifeArea('work');
+    if (editingTaskId) {
+      updateTask(editingTaskId, taskInput);
+    } else {
+      addTask(taskInput);
+    }
+
+    resetForm();
+  };
+
+  const startEditingTask = (task: Task) => {
+    setEditingTaskId(task.id);
+    setTitle(task.title);
+    setDueDate(task.dueDate ?? '');
+    setSelectedLifeArea(task.lifeArea);
   };
 
   return (
@@ -119,11 +138,21 @@ export function TodosScreen() {
 
         <Pressable
           accessibilityRole="button"
-          onPress={handleAddTask}
+          onPress={handleSubmitTask}
           style={styles.addButton}
         >
-          <Text style={styles.addButtonText}>Add Task</Text>
+          <Text style={styles.addButtonText}>{editingTaskId ? 'Save Task' : 'Add Task'}</Text>
         </Pressable>
+        {editingTaskId ? (
+          <Pressable
+            accessibilityLabel="Cancel task edit"
+            accessibilityRole="button"
+            onPress={resetForm}
+            style={styles.cancelButton}
+          >
+            <Text style={styles.cancelButtonText}>Cancel</Text>
+          </Pressable>
+        ) : null}
       </View>
 
       <View style={styles.list}>
@@ -160,7 +189,25 @@ export function TodosScreen() {
               {task.dueDate ? <Text style={styles.taskDueDate}>Due {task.dueDate}</Text> : null}
             </View>
 
-            {task.isDone ? <Text style={styles.doneText}>Done</Text> : null}
+            <View style={styles.itemActions}>
+              {task.isDone ? <Text style={styles.doneText}>Done</Text> : null}
+              <Pressable
+                accessibilityLabel={`Edit ${task.title}`}
+                accessibilityRole="button"
+                onPress={() => startEditingTask(task)}
+                style={styles.secondaryButton}
+              >
+                <Text style={styles.secondaryButtonText}>Edit</Text>
+              </Pressable>
+              <Pressable
+                accessibilityLabel={`Delete ${task.title}`}
+                accessibilityRole="button"
+                onPress={() => deleteTask(task.id)}
+                style={styles.deleteButton}
+              >
+                <Text style={styles.deleteButtonText}>Delete</Text>
+              </Pressable>
+            </View>
           </View>
         ))}
       </View>
@@ -178,6 +225,19 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '700'
+  },
+  cancelButton: {
+    alignItems: 'center',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 12
+  },
+  cancelButtonText: {
+    color: SURFACE_COLORS.text,
     fontSize: 16,
     fontWeight: '700'
   },
@@ -210,6 +270,18 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700'
   },
+  deleteButton: {
+    borderColor: '#B42318',
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  deleteButtonText: {
+    color: '#B42318',
+    fontSize: 13,
+    fontWeight: '700'
+  },
   eyebrow: {
     color: LIFE_AREA_COLORS.work,
     fontSize: 13,
@@ -233,6 +305,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 12
   },
+  itemActions: {
+    alignItems: 'flex-end',
+    gap: 8
+  },
   lifeAreaButton: {
     borderRadius: 6,
     borderWidth: 1,
@@ -250,6 +326,18 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 10
+  },
+  secondaryButton: {
+    borderColor: SURFACE_COLORS.muted,
+    borderRadius: 6,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 7
+  },
+  secondaryButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
   },
   summary: {
     color: SURFACE_COLORS.muted,

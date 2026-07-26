@@ -18,11 +18,15 @@ type AddTaskInput = {
   dueDate?: string;
 };
 
+type UpdateTaskInput = AddTaskInput;
+
 type AddGroceryItemInput = {
   itemName: string;
   category: string;
   isRecurring: boolean;
 };
+
+type UpdateGroceryItemInput = AddGroceryItemInput;
 
 type AddScheduleItemInput = {
   title: string;
@@ -33,6 +37,8 @@ type AddScheduleItemInput = {
   notes?: string;
 };
 
+type UpdateScheduleItemInput = AddScheduleItemInput;
+
 type AddMedicineInput = {
   personName: string;
   medicineName: string;
@@ -41,17 +47,27 @@ type AddMedicineInput = {
   refillReminderThreshold: number;
 };
 
+type UpdateMedicineInput = AddMedicineInput;
+
 type AppStateContextValue = {
   tasks: Task[];
   groceryItems: GroceryItem[];
   scheduleItems: ScheduleItem[];
   medicines: Medicine[];
   addTask: (input: AddTaskInput) => void;
+  updateTask: (taskId: string, input: UpdateTaskInput) => void;
+  deleteTask: (taskId: string) => void;
   toggleTaskDone: (taskId: string) => void;
   addGroceryItem: (input: AddGroceryItemInput) => void;
+  updateGroceryItem: (itemId: string, input: UpdateGroceryItemInput) => void;
+  deleteGroceryItem: (itemId: string) => void;
   toggleGroceryItemChecked: (itemId: string) => void;
   addScheduleItem: (input: AddScheduleItemInput) => void;
+  updateScheduleItem: (itemId: string, input: UpdateScheduleItemInput) => void;
+  deleteScheduleItem: (itemId: string) => void;
   addMedicine: (input: AddMedicineInput) => void;
+  updateMedicine: (medicineId: string, input: UpdateMedicineInput) => void;
+  deleteMedicine: (medicineId: string) => void;
   markMedicineTaken: (medicineId: string) => void;
 };
 
@@ -134,6 +150,23 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
 
         setTasks((currentTasks) => [task, ...currentTasks]);
       },
+      updateTask: (taskId, input) => {
+        setTasks((currentTasks) =>
+          currentTasks.map((task) =>
+            task.id === taskId
+              ? {
+                  ...task,
+                  title: input.title,
+                  lifeArea: input.lifeArea,
+                  dueDate: input.dueDate
+                }
+              : task
+          )
+        );
+      },
+      deleteTask: (taskId) => {
+        setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId));
+      },
       toggleTaskDone: (taskId) => {
         setTasks((currentTasks) =>
           currentTasks.map((task) =>
@@ -151,6 +184,23 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         };
 
         setGroceryItems((currentItems) => [...currentItems, groceryItem]);
+      },
+      updateGroceryItem: (itemId, input) => {
+        setGroceryItems((currentItems) =>
+          currentItems.map((item) =>
+            item.id === itemId
+              ? {
+                  ...item,
+                  itemName: input.itemName,
+                  category: input.category,
+                  isRecurring: input.isRecurring
+                }
+              : item
+          )
+        );
+      },
+      deleteGroceryItem: (itemId) => {
+        setGroceryItems((currentItems) => currentItems.filter((item) => item.id !== itemId));
       },
       toggleGroceryItemChecked: (itemId) => {
         setGroceryItems((currentItems) =>
@@ -173,6 +223,26 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
 
         setScheduleItems((currentItems) => [...currentItems, scheduleItem]);
       },
+      updateScheduleItem: (itemId, input) => {
+        setScheduleItems((currentItems) =>
+          currentItems.map((item) =>
+            item.id === itemId
+              ? {
+                  ...item,
+                  title: input.title,
+                  startTime: input.startTime,
+                  endTime: input.endTime,
+                  recurring: input.recurring,
+                  recurrenceRule: input.recurrenceRule,
+                  notes: input.notes
+                }
+              : item
+          )
+        );
+      },
+      deleteScheduleItem: (itemId) => {
+        setScheduleItems((currentItems) => currentItems.filter((item) => item.id !== itemId));
+      },
       addMedicine: (input) => {
         const medicine: Medicine = {
           id: createId('medicine'),
@@ -185,6 +255,27 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         };
 
         setMedicines((currentMedicines) => [medicine, ...currentMedicines]);
+      },
+      updateMedicine: (medicineId, input) => {
+        setMedicines((currentMedicines) =>
+          currentMedicines.map((medicine) =>
+            medicine.id === medicineId
+              ? {
+                  ...medicine,
+                  personName: input.personName,
+                  medicineName: input.medicineName,
+                  dosage: input.dosage,
+                  times: input.times,
+                  refillReminderThreshold: input.refillReminderThreshold
+                }
+              : medicine
+          )
+        );
+      },
+      deleteMedicine: (medicineId) => {
+        setMedicines((currentMedicines) =>
+          currentMedicines.filter((medicine) => medicine.id !== medicineId)
+        );
       },
       markMedicineTaken: (medicineId) => {
         const lastTaken = formatLastTaken(new Date());
