@@ -6,20 +6,20 @@ import { LIFE_AREA_COLORS } from '../src/constants/colors';
 
 describe('Working Mom Command Center app shell', () => {
   it('renders the five bottom tab labels from the project brief', async () => {
-    const { getByText } = await render(<App />);
+    const { getAllByText, getByText } = await render(<App />);
 
-    expect(getByText('Today')).toBeOnTheScreen();
-    expect(getByText('Health')).toBeOnTheScreen();
-    expect(getByText('Kid')).toBeOnTheScreen();
-    expect(getByText('Grocery')).toBeOnTheScreen();
+    expect(getAllByText('Today').length).toBeGreaterThan(0);
+    expect(getAllByText('Health').length).toBeGreaterThan(0);
+    expect(getAllByText('Kid').length).toBeGreaterThan(0);
+    expect(getAllByText('Grocery').length).toBeGreaterThan(0);
     expect(getByText('To-Dos')).toBeOnTheScreen();
   });
 
-  it('starts on the Today placeholder screen', async () => {
+  it('starts on the Today Dashboard screen', async () => {
     const { getByText } = await render(<App />);
 
     expect(getByText('Today Dashboard')).toBeOnTheScreen();
-    expect(getByText('Placeholder timeline for daily priorities.')).toBeOnTheScreen();
+    expect(getByText('Daily Timeline')).toBeOnTheScreen();
   });
 
   it('exports the exact life-area color system from the project brief', () => {
