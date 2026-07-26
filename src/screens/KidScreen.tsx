@@ -210,8 +210,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: LIFE_AREA_COLORS.kid,
     borderRadius: 6,
+    minHeight: 44,
     paddingHorizontal: 14,
-    paddingVertical: 12
+    paddingVertical: 12,
+    justifyContent: 'center'
   },
   addButtonText: {
     color: '#FFFFFF',
@@ -223,8 +225,10 @@ const styles = StyleSheet.create({
     borderColor: SURFACE_COLORS.border,
     borderRadius: 6,
     borderWidth: 1,
+    minHeight: 44,
     paddingHorizontal: 14,
-    paddingVertical: 12
+    paddingVertical: 12,
+    justifyContent: 'center'
   },
   cancelButtonText: {
     color: SURFACE_COLORS.text,
@@ -256,9 +260,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   deleteButton: {
+    alignItems: 'center',
     borderColor: '#B42318',
     borderRadius: 6,
     borderWidth: 1,
+    flex: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 10,
     paddingVertical: 7
   },
@@ -280,13 +288,18 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   form: {
-    gap: 12
+    backgroundColor: SURFACE_COLORS.card,
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 8,
+    borderWidth: 1,
+    gap: 12,
+    padding: 14
   },
   header: {
     gap: 6
   },
   input: {
-    backgroundColor: SURFACE_COLORS.card,
+    backgroundColor: '#FFFFFF',
     borderColor: SURFACE_COLORS.border,
     borderRadius: 6,
     borderWidth: 1,
@@ -344,16 +357,20 @@ const styles = StyleSheet.create({
     borderColor: SURFACE_COLORS.border,
     borderRadius: 8,
     borderWidth: 1,
-    gap: 7,
-    padding: 12
+    gap: 8,
+    padding: 14
   },
   scheduleList: {
     gap: 10
   },
   secondaryButton: {
+    alignItems: 'center',
     borderColor: SURFACE_COLORS.muted,
     borderRadius: 6,
     borderWidth: 1,
+    flex: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 10,
     paddingVertical: 7
   },

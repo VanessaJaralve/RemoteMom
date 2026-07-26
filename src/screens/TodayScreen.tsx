@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
   cardHeader: {
     alignItems: 'center',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 8,
     justifyContent: 'space-between'
   },
@@ -174,12 +175,14 @@ const styles = StyleSheet.create({
   },
   itemDetail: {
     color: SURFACE_COLORS.muted,
-    fontSize: 14
+    fontSize: 14,
+    lineHeight: 20
   },
   itemTitle: {
     color: SURFACE_COLORS.text,
     fontSize: 17,
-    fontWeight: '700'
+    fontWeight: '700',
+    lineHeight: 22
   },
   lifeAreaTag: {
     alignSelf: 'flex-start',
@@ -216,8 +219,8 @@ const styles = StyleSheet.create({
     borderColor: SURFACE_COLORS.border,
     borderRadius: 8,
     borderWidth: 1,
-    gap: 8,
-    padding: 12
+    gap: 9,
+    padding: 14
   },
   title: {
     color: SURFACE_COLORS.text,

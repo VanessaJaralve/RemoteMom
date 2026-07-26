@@ -157,40 +157,42 @@ export function TodosScreen() {
 
       <View style={styles.list}>
         {tasks.map((task) => (
-          <View key={task.id} style={styles.taskRow}>
-            <Pressable
-              accessibilityLabel={`Mark ${task.title} ${task.isDone ? 'not done' : 'done'}`}
-              accessibilityRole="checkbox"
-              accessibilityState={{ checked: task.isDone }}
-              onPress={() => toggleTaskDone(task.id)}
-              style={[
-                styles.checkbox,
-                task.isDone && {
-                  backgroundColor: TASK_LIFE_AREA_COLORS[task.lifeArea],
-                  borderColor: TASK_LIFE_AREA_COLORS[task.lifeArea]
-                }
-              ]}
-            >
-              <Text style={styles.checkboxText}>{task.isDone ? '✓' : ''}</Text>
-            </Pressable>
-
-            <View style={styles.taskBody}>
-              <View
+          <View key={task.id} style={styles.taskCard}>
+            <View style={styles.taskMainRow}>
+              <Pressable
+                accessibilityLabel={`Mark ${task.title} ${task.isDone ? 'not done' : 'done'}`}
+                accessibilityRole="checkbox"
+                accessibilityState={{ checked: task.isDone }}
+                onPress={() => toggleTaskDone(task.id)}
                 style={[
-                  styles.taskTag,
-                  { backgroundColor: TASK_LIFE_AREA_COLORS[task.lifeArea] }
+                  styles.checkbox,
+                  task.isDone && {
+                    backgroundColor: TASK_LIFE_AREA_COLORS[task.lifeArea],
+                    borderColor: TASK_LIFE_AREA_COLORS[task.lifeArea]
+                  }
                 ]}
               >
-                <Text style={styles.taskTagText}>{TASK_LIFE_AREA_LABELS[task.lifeArea]}</Text>
+                <Text style={styles.checkboxText}>{task.isDone ? '✓' : ''}</Text>
+              </Pressable>
+
+              <View style={styles.taskBody}>
+                <View
+                  style={[
+                    styles.taskTag,
+                    { backgroundColor: TASK_LIFE_AREA_COLORS[task.lifeArea] }
+                  ]}
+                >
+                  <Text style={styles.taskTagText}>{TASK_LIFE_AREA_LABELS[task.lifeArea]}</Text>
+                </View>
+                <Text style={[styles.taskTitle, task.isDone && styles.taskTitleDone]}>
+                  {task.title}
+                </Text>
+                {task.dueDate ? <Text style={styles.taskDueDate}>Due {task.dueDate}</Text> : null}
+                {task.isDone ? <Text style={styles.doneText}>Done</Text> : null}
               </View>
-              <Text style={[styles.taskTitle, task.isDone && styles.taskTitleDone]}>
-                {task.title}
-              </Text>
-              {task.dueDate ? <Text style={styles.taskDueDate}>Due {task.dueDate}</Text> : null}
             </View>
 
             <View style={styles.itemActions}>
-              {task.isDone ? <Text style={styles.doneText}>Done</Text> : null}
               <Pressable
                 accessibilityLabel={`Edit ${task.title}`}
                 accessibilityRole="button"
@@ -220,8 +222,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: LIFE_AREA_COLORS.work,
     borderRadius: 6,
+    minHeight: 44,
     paddingHorizontal: 14,
-    paddingVertical: 12
+    paddingVertical: 12,
+    justifyContent: 'center'
   },
   addButtonText: {
     color: '#FFFFFF',
@@ -233,8 +237,10 @@ const styles = StyleSheet.create({
     borderColor: SURFACE_COLORS.border,
     borderRadius: 6,
     borderWidth: 1,
+    minHeight: 44,
     paddingHorizontal: 14,
-    paddingVertical: 12
+    paddingVertical: 12,
+    justifyContent: 'center'
   },
   cancelButtonText: {
     color: SURFACE_COLORS.text,
@@ -271,9 +277,13 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   deleteButton: {
+    alignItems: 'center',
     borderColor: '#B42318',
     borderRadius: 6,
     borderWidth: 1,
+    flex: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 10,
     paddingVertical: 7
   },
@@ -290,13 +300,18 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   form: {
-    gap: 12
+    backgroundColor: SURFACE_COLORS.card,
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 8,
+    borderWidth: 1,
+    gap: 12,
+    padding: 14
   },
   header: {
     gap: 6
   },
   input: {
-    backgroundColor: SURFACE_COLORS.card,
+    backgroundColor: '#FFFFFF',
     borderColor: SURFACE_COLORS.border,
     borderRadius: 6,
     borderWidth: 1,
@@ -306,7 +321,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12
   },
   itemActions: {
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 8
   },
   lifeAreaButton: {
@@ -328,9 +344,13 @@ const styles = StyleSheet.create({
     gap: 10
   },
   secondaryButton: {
+    alignItems: 'center',
     borderColor: SURFACE_COLORS.muted,
     borderRadius: 6,
     borderWidth: 1,
+    flex: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 10,
     paddingVertical: 7
   },
@@ -347,19 +367,22 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 5
   },
-  taskDueDate: {
-    color: SURFACE_COLORS.muted,
-    fontSize: 13
-  },
-  taskRow: {
-    alignItems: 'flex-start',
+  taskCard: {
     backgroundColor: SURFACE_COLORS.card,
     borderColor: SURFACE_COLORS.border,
     borderRadius: 8,
     borderWidth: 1,
-    flexDirection: 'row',
     gap: 12,
     padding: 12
+  },
+  taskDueDate: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13
+  },
+  taskMainRow: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    gap: 12
   },
   taskTag: {
     alignSelf: 'flex-start',
