@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import {
   sampleGroceryItems,
@@ -10,6 +10,7 @@ import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
+import { loadPersistedAppState, savePersistedAppState } from './persistence';
 
 type AddTaskInput = {
   title: string;
@@ -74,6 +75,47 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [groceryItems, setGroceryItems] = useState<GroceryItem[]>(sampleGroceryItems);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>(sampleScheduleItems);
   const [medicines, setMedicines] = useState<Medicine[]>(sampleMedicines);
+  const [hasLoadedPersistedState, setHasLoadedPersistedState] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function restoreAppState() {
+      const persistedState = await loadPersistedAppState();
+
+      if (!isMounted) {
+        return;
+      }
+
+      if (persistedState) {
+        setTasks(persistedState.tasks);
+        setGroceryItems(persistedState.groceryItems);
+        setScheduleItems(persistedState.scheduleItems);
+        setMedicines(persistedState.medicines);
+      }
+
+      setHasLoadedPersistedState(true);
+    }
+
+    void restoreAppState();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedPersistedState) {
+      return;
+    }
+
+    void savePersistedAppState({
+      tasks,
+      groceryItems,
+      scheduleItems,
+      medicines
+    });
+  }, [groceryItems, hasLoadedPersistedState, medicines, scheduleItems, tasks]);
 
   const value = useMemo<AppStateContextValue>(
     () => ({
