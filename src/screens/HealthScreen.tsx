@@ -9,28 +9,7 @@ import {
 } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
-import type { Medicine } from '../models/Medicine';
-
-const INITIAL_MEDICINES: Medicine[] = [
-  {
-    id: 'medicine-1',
-    personName: 'Mom',
-    medicineName: 'Vitamin D',
-    dosage: '1 tablet',
-    times: ['8:00 AM'],
-    refillReminderThreshold: 5,
-    lastTaken: null
-  },
-  {
-    id: 'medicine-2',
-    personName: 'Child',
-    medicineName: 'Child Allergy Syrup',
-    dosage: '5 ml',
-    times: ['8:00 AM', '8:00 PM'],
-    refillReminderThreshold: 3,
-    lastTaken: null
-  }
-];
+import { useAppState } from '../state/AppState';
 
 function parseTimes(timesText: string) {
   return timesText
@@ -39,17 +18,8 @@ function parseTimes(timesText: string) {
     .filter(Boolean);
 }
 
-function formatLastTaken(date: Date) {
-  return date.toLocaleString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit'
-  });
-}
-
 export function HealthScreen() {
-  const [medicines, setMedicines] = useState<Medicine[]>(INITIAL_MEDICINES);
+  const { addMedicine, markMedicineTaken, medicines } = useAppState();
   const [personName, setPersonName] = useState('');
   const [medicineName, setMedicineName] = useState('');
   const [dosage, setDosage] = useState('');
@@ -61,7 +31,7 @@ export function HealthScreen() {
     [medicines]
   );
 
-  const addMedicine = () => {
+  const handleAddMedicine = () => {
     const trimmedPersonName = personName.trim();
     const trimmedMedicineName = medicineName.trim();
     const trimmedDosage = dosage.trim();
@@ -72,32 +42,19 @@ export function HealthScreen() {
       return;
     }
 
-    const medicine: Medicine = {
-      id: `medicine-${Date.now()}`,
+    addMedicine({
       personName: trimmedPersonName,
       medicineName: trimmedMedicineName,
       dosage: trimmedDosage,
       times,
       refillReminderThreshold: Number.isNaN(threshold) ? 0 : threshold,
-      lastTaken: null
-    };
+    });
 
-    setMedicines((currentMedicines) => [medicine, ...currentMedicines]);
     setPersonName('');
     setMedicineName('');
     setDosage('');
     setTimesText('');
     setRefillReminderThreshold('');
-  };
-
-  const markTaken = (medicineId: string) => {
-    const lastTaken = formatLastTaken(new Date());
-
-    setMedicines((currentMedicines) =>
-      currentMedicines.map((medicine) =>
-        medicine.id === medicineId ? { ...medicine, lastTaken } : medicine
-      )
-    );
   };
 
   return (
@@ -157,7 +114,7 @@ export function HealthScreen() {
         />
         <Pressable
           accessibilityRole="button"
-          onPress={addMedicine}
+          onPress={handleAddMedicine}
           style={styles.addButton}
         >
           <Text style={styles.addButtonText}>Add Medicine</Text>
@@ -184,7 +141,7 @@ export function HealthScreen() {
             <Pressable
               accessibilityLabel={`Mark ${medicine.medicineName} taken`}
               accessibilityRole="button"
-              onPress={() => markTaken(medicine.id)}
+              onPress={() => markMedicineTaken(medicine.id)}
               style={styles.takenButton}
             >
               <Text style={styles.takenButtonText}>Mark Taken</Text>

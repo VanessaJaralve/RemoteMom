@@ -10,30 +10,7 @@ import {
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
-
-const INITIAL_GROCERY_ITEMS: GroceryItem[] = [
-  {
-    id: 'grocery-1',
-    itemName: 'Bread',
-    category: 'bakery',
-    isChecked: false,
-    isRecurring: true
-  },
-  {
-    id: 'grocery-2',
-    itemName: 'Milk',
-    category: 'dairy',
-    isChecked: false,
-    isRecurring: true
-  },
-  {
-    id: 'grocery-3',
-    itemName: 'Apples',
-    category: 'produce',
-    isChecked: false,
-    isRecurring: false
-  }
-];
+import { useAppState } from '../state/AppState';
 
 type GrocerySection = {
   category: string;
@@ -64,18 +41,18 @@ function groupItemsByCategory(items: GroceryItem[]): GrocerySection[] {
 }
 
 export function GroceryScreen() {
-  const [items, setItems] = useState<GroceryItem[]>(INITIAL_GROCERY_ITEMS);
+  const { addGroceryItem, groceryItems, toggleGroceryItemChecked } = useAppState();
   const [itemName, setItemName] = useState('');
   const [category, setCategory] = useState('');
   const [isRecurring, setIsRecurring] = useState(false);
 
-  const grocerySections = useMemo(() => groupItemsByCategory(items), [items]);
+  const grocerySections = useMemo(() => groupItemsByCategory(groceryItems), [groceryItems]);
   const remainingCount = useMemo(
-    () => items.filter((item) => !item.isChecked).length,
-    [items]
+    () => groceryItems.filter((item) => !item.isChecked).length,
+    [groceryItems]
   );
 
-  const addItem = () => {
+  const handleAddItem = () => {
     const trimmedItemName = itemName.trim();
     const trimmedCategory = normalizeCategory(category);
 
@@ -83,26 +60,15 @@ export function GroceryScreen() {
       return;
     }
 
-    const groceryItem: GroceryItem = {
-      id: `grocery-${Date.now()}`,
+    addGroceryItem({
       itemName: trimmedItemName,
       category: trimmedCategory,
-      isChecked: false,
       isRecurring
-    };
+    });
 
-    setItems((currentItems) => [...currentItems, groceryItem]);
     setItemName('');
     setCategory('');
     setIsRecurring(false);
-  };
-
-  const toggleChecked = (itemId: string) => {
-    setItems((currentItems) =>
-      currentItems.map((item) =>
-        item.id === itemId ? { ...item, isChecked: !item.isChecked } : item
-      )
-    );
   };
 
   return (
@@ -151,7 +117,7 @@ export function GroceryScreen() {
         </Pressable>
         <Pressable
           accessibilityRole="button"
-          onPress={addItem}
+          onPress={handleAddItem}
           style={styles.addButton}
         >
           <Text style={styles.addButtonText}>Add Grocery Item</Text>
@@ -169,7 +135,7 @@ export function GroceryScreen() {
                     accessibilityLabel={`${item.isChecked ? 'Uncheck' : 'Check'} ${item.itemName}`}
                     accessibilityRole="checkbox"
                     accessibilityState={{ checked: item.isChecked }}
-                    onPress={() => toggleChecked(item.id)}
+                    onPress={() => toggleGroceryItemChecked(item.id)}
                     style={[styles.checkbox, item.isChecked && styles.checkboxChecked]}
                   >
                     <Text style={styles.checkboxText}>{item.isChecked ? '✓' : ''}</Text>

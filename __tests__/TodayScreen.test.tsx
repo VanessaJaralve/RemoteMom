@@ -2,10 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 
 import { TodayScreen } from '../src/screens/TodayScreen';
+import { AppStateProvider } from '../src/state/AppState';
+
+function renderWithAppState(ui: React.ReactElement) {
+  return render(<AppStateProvider>{ui}</AppStateProvider>);
+}
 
 describe('TodayScreen', () => {
   it('renders a read-only Today Dashboard timeline', async () => {
-    const { getByText, queryByText } = await render(<TodayScreen />);
+    const { getByText, queryByText } = await renderWithAppState(<TodayScreen />);
 
     expect(getByText('Today Dashboard')).toBeOnTheScreen();
     expect(getByText('Daily Timeline')).toBeOnTheScreen();
@@ -13,7 +18,7 @@ describe('TodayScreen', () => {
   });
 
   it('pulls timeline items from to-dos, groceries, kid schedule, and medicine', async () => {
-    const { getAllByText, getByText } = await render(<TodayScreen />);
+    const { getAllByText, getByText } = await renderWithAppState(<TodayScreen />);
 
     expect(getByText('Review tomorrow morning priorities')).toBeOnTheScreen();
     expect(getByText('Pack school folder')).toBeOnTheScreen();
@@ -25,7 +30,7 @@ describe('TodayScreen', () => {
   });
 
   it('shows life-area color tag labels for the timeline', async () => {
-    const { getAllByText } = await render(<TodayScreen />);
+    const { getAllByText } = await renderWithAppState(<TodayScreen />);
 
     expect(getAllByText('Work').length).toBeGreaterThan(0);
     expect(getAllByText('Kid').length).toBeGreaterThan(0);
@@ -34,7 +39,7 @@ describe('TodayScreen', () => {
   });
 
   it('does not add Firebase, calendar sync, notifications, or premium multi-child features', async () => {
-    const { queryByText } = await render(<TodayScreen />);
+    const { queryByText } = await renderWithAppState(<TodayScreen />);
 
     expect(queryByText('Firebase')).toBeNull();
     expect(queryByText('Google Calendar')).toBeNull();

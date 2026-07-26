@@ -3,6 +3,11 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { HealthScreen } from '../src/screens/HealthScreen';
 import type { Medicine } from '../src/models/Medicine';
+import { AppStateProvider } from '../src/state/AppState';
+
+function renderWithAppState(ui: React.ReactElement) {
+  return render(<AppStateProvider>{ui}</AppStateProvider>);
+}
 
 describe('HealthScreen', () => {
   it('uses the exact Medicine model fields from the project brief', () => {
@@ -28,7 +33,7 @@ describe('HealthScreen', () => {
   });
 
   it('renders the medicine tracker without notifications or Today Dashboard', async () => {
-    const { getAllByText, getByText, queryByText } = await render(<HealthScreen />);
+    const { getAllByText, getByText, queryByText } = await renderWithAppState(<HealthScreen />);
 
     expect(getByText('Medicine Tracker')).toBeOnTheScreen();
     expect(getByText('Add Medicine')).toBeOnTheScreen();
@@ -39,7 +44,7 @@ describe('HealthScreen', () => {
   });
 
   it('shows dosage, daily times, and refill threshold for sample medicines', async () => {
-    const { getByText } = await render(<HealthScreen />);
+    const { getByText } = await renderWithAppState(<HealthScreen />);
 
     expect(getByText('Vitamin D')).toBeOnTheScreen();
     expect(getByText('1 tablet')).toBeOnTheScreen();
@@ -50,7 +55,8 @@ describe('HealthScreen', () => {
   });
 
   it('adds a medicine entry with parsed daily times and refill threshold', async () => {
-    const { getAllByDisplayValue, getByLabelText, getByText } = await render(<HealthScreen />);
+    const { getAllByDisplayValue, getByLabelText, getByText } =
+      await renderWithAppState(<HealthScreen />);
 
     await fireEvent.changeText(getByLabelText('Person name'), 'Child');
     await fireEvent.changeText(getByLabelText('Medicine name'), 'Probiotic');
@@ -67,7 +73,8 @@ describe('HealthScreen', () => {
   });
 
   it('marks a medicine as taken and updates lastTaken display', async () => {
-    const { getAllByText, getByLabelText, getByText } = await render(<HealthScreen />);
+    const { getAllByText, getByLabelText, getByText } =
+      await renderWithAppState(<HealthScreen />);
 
     await fireEvent.press(getByLabelText('Mark Vitamin D taken'));
 

@@ -3,6 +3,11 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { GroceryScreen } from '../src/screens/GroceryScreen';
 import type { GroceryItem } from '../src/models/GroceryItem';
+import { AppStateProvider } from '../src/state/AppState';
+
+function renderWithAppState(ui: React.ReactElement) {
+  return render(<AppStateProvider>{ui}</AppStateProvider>);
+}
 
 describe('GroceryScreen', () => {
   it('uses the exact GroceryItem model fields from the project brief', () => {
@@ -24,7 +29,7 @@ describe('GroceryScreen', () => {
   });
 
   it('renders the grocery list module without future modules', async () => {
-    const { getByText, queryByText } = await render(<GroceryScreen />);
+    const { getByText, queryByText } = await renderWithAppState(<GroceryScreen />);
 
     expect(getByText('Grocery List')).toBeOnTheScreen();
     expect(getByText('Add Grocery Item')).toBeOnTheScreen();
@@ -34,7 +39,7 @@ describe('GroceryScreen', () => {
   });
 
   it('sorts grocery items by category heading', async () => {
-    const { getAllByText } = await render(<GroceryScreen />);
+    const { getAllByText } = await renderWithAppState(<GroceryScreen />);
     const categoryHeadings = getAllByText(/^(bakery|dairy|produce)$/i).map(
       (heading) => heading.props.children
     );
@@ -44,7 +49,7 @@ describe('GroceryScreen', () => {
 
   it('adds a grocery item with category and recurring flag', async () => {
     const { getAllByDisplayValue, getAllByText, getByLabelText, getByText } =
-      await render(<GroceryScreen />);
+      await renderWithAppState(<GroceryScreen />);
 
     await fireEvent.changeText(getByLabelText('Grocery item name'), 'Dish soap');
     await fireEvent.changeText(getByLabelText('Grocery category'), 'household');
@@ -58,7 +63,7 @@ describe('GroceryScreen', () => {
   });
 
   it('toggles a grocery item checked and keeps it visible', async () => {
-    const { getByLabelText, getByText } = await render(<GroceryScreen />);
+    const { getByLabelText, getByText } = await renderWithAppState(<GroceryScreen />);
 
     await fireEvent.press(getByLabelText('Check Apples'));
 

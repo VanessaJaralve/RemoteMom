@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
-import type { Task, TaskLifeArea } from '../models/Task';
+import type { TaskLifeArea } from '../models/Task';
+import { useAppState } from '../state/AppState';
 
 const TASK_LIFE_AREAS: TaskLifeArea[] = ['work', 'kid', 'household', 'self'];
 
@@ -27,31 +28,15 @@ const TASK_LIFE_AREA_COLORS: Record<TaskLifeArea, string> = {
   self: LIFE_AREA_COLORS.health
 };
 
-const INITIAL_TASKS: Task[] = [
-  {
-    id: 'task-1',
-    title: 'Review tomorrow morning priorities',
-    lifeArea: 'work',
-    dueDate: 'Tonight',
-    isDone: false
-  },
-  {
-    id: 'task-2',
-    title: 'Pack school folder',
-    lifeArea: 'kid',
-    isDone: false
-  }
-];
-
 export function TodosScreen() {
-  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);
+  const { addTask, tasks, toggleTaskDone } = useAppState();
   const [title, setTitle] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [selectedLifeArea, setSelectedLifeArea] = useState<TaskLifeArea>('work');
 
   const incompleteCount = useMemo(() => tasks.filter((task) => !task.isDone).length, [tasks]);
 
-  const addTask = () => {
+  const handleAddTask = () => {
     const trimmedTitle = title.trim();
     const trimmedDueDate = dueDate.trim();
 
@@ -59,26 +44,15 @@ export function TodosScreen() {
       return;
     }
 
-    const task: Task = {
-      id: `task-${Date.now()}`,
+    addTask({
       title: trimmedTitle,
       lifeArea: selectedLifeArea,
-      dueDate: trimmedDueDate || undefined,
-      isDone: false
-    };
+      dueDate: trimmedDueDate || undefined
+    });
 
-    setTasks((currentTasks) => [task, ...currentTasks]);
     setTitle('');
     setDueDate('');
     setSelectedLifeArea('work');
-  };
-
-  const toggleTaskDone = (taskId: string) => {
-    setTasks((currentTasks) =>
-      currentTasks.map((task) =>
-        task.id === taskId ? { ...task, isDone: !task.isDone } : task
-      )
-    );
   };
 
   return (
@@ -145,7 +119,7 @@ export function TodosScreen() {
 
         <Pressable
           accessibilityRole="button"
-          onPress={addTask}
+          onPress={handleAddTask}
           style={styles.addButton}
         >
           <Text style={styles.addButtonText}>Add Task</Text>

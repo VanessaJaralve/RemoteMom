@@ -3,6 +3,11 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { KidScreen } from '../src/screens/KidScreen';
 import type { ScheduleItem } from '../src/models/ScheduleItem';
+import { AppStateProvider } from '../src/state/AppState';
+
+function renderWithAppState(ui: React.ReactElement) {
+  return render(<AppStateProvider>{ui}</AppStateProvider>);
+}
 
 describe('KidScreen', () => {
   it('uses the exact ScheduleItem model fields from the project brief', () => {
@@ -30,7 +35,7 @@ describe('KidScreen', () => {
   });
 
   it('renders one-child MVP kid schedule without future modules', async () => {
-    const { getByText, queryByText } = await render(<KidScreen />);
+    const { getByText, queryByText } = await renderWithAppState(<KidScreen />);
 
     expect(getByText("Kid's Schedule")).toBeOnTheScreen();
     expect(getByText('Child')).toBeOnTheScreen();
@@ -41,7 +46,7 @@ describe('KidScreen', () => {
   });
 
   it('shows recurring schedule items with time and notes', async () => {
-    const { getAllByText, getByText } = await render(<KidScreen />);
+    const { getAllByText, getByText } = await renderWithAppState(<KidScreen />);
 
     expect(getByText('Soccer practice')).toBeOnTheScreen();
     expect(getByText('3:30 PM - 4:30 PM')).toBeOnTheScreen();
@@ -52,7 +57,7 @@ describe('KidScreen', () => {
 
   it('adds a recurring child schedule item with notes', async () => {
     const { getAllByDisplayValue, getAllByText, getByLabelText, getByText } =
-      await render(<KidScreen />);
+      await renderWithAppState(<KidScreen />);
 
     await fireEvent.changeText(getByLabelText('Schedule title'), 'Art class');
     await fireEvent.changeText(getByLabelText('Start time'), '2:00 PM');

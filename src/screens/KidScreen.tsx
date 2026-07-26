@@ -10,29 +10,7 @@ import {
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { ScheduleItem } from '../models/ScheduleItem';
-
-const INITIAL_SCHEDULE_ITEMS: ScheduleItem[] = [
-  {
-    id: 'schedule-1',
-    title: 'School drop-off',
-    category: 'kid',
-    startTime: '7:45 AM',
-    endTime: '8:10 AM',
-    recurring: true,
-    recurrenceRule: 'every weekday',
-    notes: 'Backpack and lunchbox'
-  },
-  {
-    id: 'schedule-2',
-    title: 'Soccer practice',
-    category: 'kid',
-    startTime: '3:30 PM',
-    endTime: '4:30 PM',
-    recurring: true,
-    recurrenceRule: 'every Wednesday',
-    notes: 'Bring water bottle'
-  }
-];
+import { useAppState } from '../state/AppState';
 
 function sortByStartTime(items: ScheduleItem[]) {
   return [...items].sort((leftItem, rightItem) =>
@@ -41,7 +19,7 @@ function sortByStartTime(items: ScheduleItem[]) {
 }
 
 export function KidScreen() {
-  const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>(INITIAL_SCHEDULE_ITEMS);
+  const { addScheduleItem, scheduleItems } = useAppState();
   const [title, setTitle] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
@@ -51,7 +29,7 @@ export function KidScreen() {
 
   const sortedScheduleItems = useMemo(() => sortByStartTime(scheduleItems), [scheduleItems]);
 
-  const addScheduleItem = () => {
+  const handleAddScheduleItem = () => {
     const trimmedTitle = title.trim();
     const trimmedStartTime = startTime.trim();
     const trimmedEndTime = endTime.trim();
@@ -62,18 +40,15 @@ export function KidScreen() {
       return;
     }
 
-    const scheduleItem: ScheduleItem = {
-      id: `schedule-${Date.now()}`,
+    addScheduleItem({
       title: trimmedTitle,
-      category: 'kid',
       startTime: trimmedStartTime,
       endTime: trimmedEndTime,
       recurring,
       recurrenceRule: recurring ? trimmedRecurrenceRule || 'recurring' : null,
       notes: trimmedNotes || undefined
-    };
+    });
 
-    setScheduleItems((currentItems) => [...currentItems, scheduleItem]);
     setTitle('');
     setStartTime('');
     setEndTime('');
@@ -149,7 +124,7 @@ export function KidScreen() {
         />
         <Pressable
           accessibilityRole="button"
-          onPress={addScheduleItem}
+          onPress={handleAddScheduleItem}
           style={styles.addButton}
         >
           <Text style={styles.addButtonText}>Add Schedule Item</Text>

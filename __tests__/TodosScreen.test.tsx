@@ -3,6 +3,11 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { TodosScreen } from '../src/screens/TodosScreen';
 import type { Task } from '../src/models/Task';
+import { AppStateProvider } from '../src/state/AppState';
+
+function renderWithAppState(ui: React.ReactElement) {
+  return render(<AppStateProvider>{ui}</AppStateProvider>);
+}
 
 describe('TodosScreen', () => {
   it('uses the exact Task model fields from the project brief', () => {
@@ -18,7 +23,7 @@ describe('TodosScreen', () => {
   });
 
   it('renders the universal to-do list module without other modules', async () => {
-    const { getByText, queryByText } = await render(<TodosScreen />);
+    const { getByText, queryByText } = await renderWithAppState(<TodosScreen />);
 
     expect(getByText('Universal To-Do List')).toBeOnTheScreen();
     expect(getByText('Add Task')).toBeOnTheScreen();
@@ -30,7 +35,7 @@ describe('TodosScreen', () => {
 
   it('adds a task with title, life area, and optional due date', async () => {
     const { getAllByDisplayValue, getAllByText, getByLabelText, getByText } =
-      await render(<TodosScreen />);
+      await renderWithAppState(<TodosScreen />);
 
     await fireEvent.changeText(getByLabelText('Task title'), 'Buy recital shoes');
     await fireEvent.press(getByLabelText('Select Kid life area'));
@@ -44,7 +49,7 @@ describe('TodosScreen', () => {
   });
 
   it('toggles a task done and keeps it visible', async () => {
-    const { getByLabelText, getByText } = await render(<TodosScreen />);
+    const { getByLabelText, getByText } = await renderWithAppState(<TodosScreen />);
 
     await fireEvent.changeText(getByLabelText('Task title'), 'Prep Monday slides');
     await fireEvent.press(getByText('Add Task'));

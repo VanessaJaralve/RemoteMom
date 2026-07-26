@@ -2,13 +2,11 @@ import React, { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
-import {
-  sampleGroceryItems,
-  sampleMedicines,
-  sampleScheduleItems,
-  sampleTasks
-} from '../data/sampleData';
-import type { TaskLifeArea } from '../models/Task';
+import type { GroceryItem } from '../models/GroceryItem';
+import type { Medicine } from '../models/Medicine';
+import type { ScheduleItem } from '../models/ScheduleItem';
+import type { Task, TaskLifeArea } from '../models/Task';
+import { useAppState } from '../state/AppState';
 
 type TodayLifeArea = TaskLifeArea | 'health';
 
@@ -37,19 +35,33 @@ const LIFE_AREA_TAG_COLORS: Record<TodayLifeArea, string> = {
   health: LIFE_AREA_COLORS.health
 };
 
-function buildTimelineItems(): TimelineItem[] {
-  const medicineItems = sampleMedicines.flatMap((medicine) =>
+type TimelineSource = {
+  tasks: Task[];
+  groceryItems: GroceryItem[];
+  scheduleItems: ScheduleItem[];
+  medicines: Medicine[];
+};
+
+function buildTimelineItems({
+  tasks,
+  groceryItems,
+  scheduleItems,
+  medicines
+}: TimelineSource): TimelineItem[] {
+  const medicineItems = medicines.flatMap((medicine) =>
     medicine.times.map((time) => ({
       id: `${medicine.id}-${time}`,
       lifeArea: 'health' as const,
       label: LIFE_AREA_LABELS.health,
       title: medicine.medicineName,
-      detail: `${medicine.personName} • ${medicine.dosage}`,
+      detail: `${medicine.personName} • ${medicine.dosage}${
+        medicine.lastTaken ? ` • Last taken: ${medicine.lastTaken}` : ''
+      }`,
       time
     }))
   );
 
-  const scheduleItems = sampleScheduleItems.map((item) => ({
+  const childScheduleItems = scheduleItems.map((item) => ({
     id: item.id,
     lifeArea: 'kid' as const,
     label: LIFE_AREA_LABELS.kid,
@@ -58,7 +70,7 @@ function buildTimelineItems(): TimelineItem[] {
     time: item.startTime
   }));
 
-  const taskItems = sampleTasks
+  const taskItems = tasks
     .filter((task) => !task.isDone)
     .map((task) => ({
       id: task.id,
@@ -69,10 +81,10 @@ function buildTimelineItems(): TimelineItem[] {
       time: task.dueDate ?? 'Today'
     }));
 
-  const groceryNeeds = sampleGroceryItems.filter(
+  const groceryNeeds = groceryItems.filter(
     (item) => !item.isChecked && item.isRecurring
   );
-  const groceryItems =
+  const recurringGroceryItems =
     groceryNeeds.length > 0
       ? [
           {
@@ -83,14 +95,18 @@ function buildTimelineItems(): TimelineItem[] {
             detail: groceryNeeds.map((item) => item.itemName).join(', '),
             time: 'Shopping list'
           }
-        ]
+      ]
       : [];
 
-  return [...medicineItems, ...scheduleItems, ...taskItems, ...groceryItems];
+  return [...medicineItems, ...childScheduleItems, ...taskItems, ...recurringGroceryItems];
 }
 
 export function TodayScreen() {
-  const timelineItems = useMemo(() => buildTimelineItems(), []);
+  const { groceryItems, medicines, scheduleItems, tasks } = useAppState();
+  const timelineItems = useMemo(
+    () => buildTimelineItems({ tasks, groceryItems, scheduleItems, medicines }),
+    [groceryItems, medicines, scheduleItems, tasks]
+  );
 
   return (
     <ScrollView
