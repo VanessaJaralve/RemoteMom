@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="RemoteMom is a calm daily command center for remote working moms managing work, child routines, groceries, and medicine."
+    />
+    <title>RemoteMom | Waitlist</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="RemoteMom waitlist">
+      <a class="brand" href="#top" aria-label="RemoteMom home">RemoteMom</a>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#preview">Preview</a>
+        <a href="#fit">Who it helps</a>
+        <a class="nav-cta" href="#waitlist">Join waitlist</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Built for the between-meetings life</p>
+          <h1 id="hero-title">RemoteMom</h1>
+          <p class="hero-subtitle">
+            A calm daily command center for remote working moms.
+          </p>
+          <form class="waitlist-form hero-form" id="hero-waitlist-form" data-waitlist-form>
+            <div class="field">
+              <label for="hero-name">Name</label>
+              <input id="hero-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="hero-email">Email</label>
+              <input id="hero-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <button type="submit">Join the waitlist</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="hero-visual" id="preview" aria-label="RemoteMom Today Dashboard preview">
+          <img
+            src="./remotemom-dashboard-mockup.png"
+            alt="RemoteMom Today Dashboard mobile app preview with urgent, overdue, and daily timeline sections"
+          />
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="What RemoteMom organizes">
+        <div>
+          <strong>Work</strong>
+          <span>client follow-ups and deadlines</span>
+        </div>
+        <div>
+          <strong>Child</strong>
+          <span>school, practice, and routines</span>
+        </div>
+        <div>
+          <strong>Home</strong>
+          <span>groceries and recurring staples</span>
+        </div>
+        <div>
+          <strong>Health</strong>
+          <span>medicine times and refills</span>
+        </div>
+      </section>
+
+      <section class="fit-section" id="fit" aria-labelledby="fit-title">
+        <div class="section-copy">
+          <h2 id="fit-title">For moms who do not get a clean boundary between work and home.</h2>
+          <p>
+            RemoteMom brings the day into one view: meetings, school logistics, grocery needs, and
+            medicine routines without forcing you into four separate apps.
+          </p>
+        </div>
+        <div class="fit-grid">
+          <article>
+            <span>01</span>
+            <h3>Morning clarity</h3>
+            <p>See what needs attention before the first call starts.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>One-child MVP</h3>
+            <p>Start focused, then validate if premium multi-child support is worth building.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Reminder-ready</h3>
+            <p>Prepared for future alerts without asking for permissions too early.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="tier-section" aria-labelledby="tiers-title">
+        <h2 id="tiers-title">Starting simple, with a clear premium path.</h2>
+        <div class="tier-layout">
+          <article>
+            <h3>Free MVP</h3>
+            <p>One child, local data, daily dashboard, lists, schedule, and medicine tracking.</p>
+          </article>
+          <article>
+            <h3>Future premium</h3>
+            <p>Multi-child support, sharing, reminders, calendar sync, and cloud backup later.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
+        <div>
+          <h2 id="waitlist-title">Help shape RemoteMom before it launches.</h2>
+          <p>
+            Join the early waitlist and I will use your feedback to decide what belongs in the paid
+            version.
+          </p>
+        </div>
+        <form class="waitlist-form" id="footer-waitlist-form" data-waitlist-form>
+          <div class="field">
+            <label for="footer-name">Name</label>
+            <input id="footer-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="footer-email">Email</label>
+            <input id="footer-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <button type="submit">Join the waitlist</button>
+          <p class="form-note">Local mock signup for validation. No payment or account needed.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>RemoteMom</span>
+      <span>Focused MVP validation before payments.</span>
+    </footer>
+
+    <script src="./waitlist.js"></script>
+  </body>
+</html>
