@@ -145,6 +145,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           title: input.title,
           lifeArea: input.lifeArea,
           dueDate: input.dueDate,
+          reminderEnabled: false,
           isDone: false
         };
 
@@ -180,7 +181,8 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           itemName: input.itemName,
           category: input.category,
           isChecked: false,
-          isRecurring: input.isRecurring
+          isRecurring: input.isRecurring,
+          reminderEnabled: false
         };
 
         setGroceryItems((currentItems) => [...currentItems, groceryItem]);
@@ -218,6 +220,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           endTime: input.endTime,
           recurring: input.recurring,
           recurrenceRule: input.recurrenceRule,
+          reminderEnabled: false,
           notes: input.notes
         };
 
@@ -251,6 +254,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           dosage: input.dosage,
           times: input.times,
           refillReminderThreshold: input.refillReminderThreshold,
+          reminderEnabled: false,
           lastTaken: null
         };
 

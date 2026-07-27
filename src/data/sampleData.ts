@@ -9,12 +9,15 @@ export const sampleTasks: Task[] = [
     title: 'Review tomorrow morning priorities',
     lifeArea: 'work',
     dueDate: 'Tonight',
+    reminderTime: '8:00 PM',
+    reminderEnabled: true,
     isDone: false
   },
   {
     id: 'task-2',
     title: 'Pack school folder',
     lifeArea: 'kid',
+    reminderEnabled: false,
     isDone: false
   }
 ];
@@ -25,21 +28,26 @@ export const sampleGroceryItems: GroceryItem[] = [
     itemName: 'Bread',
     category: 'bakery',
     isChecked: false,
-    isRecurring: true
+    isRecurring: true,
+    reminderTime: '5:30 PM',
+    reminderEnabled: true
   },
   {
     id: 'grocery-2',
     itemName: 'Milk',
     category: 'dairy',
     isChecked: false,
-    isRecurring: true
+    isRecurring: true,
+    reminderTime: '5:30 PM',
+    reminderEnabled: true
   },
   {
     id: 'grocery-3',
     itemName: 'Apples',
     category: 'produce',
     isChecked: false,
-    isRecurring: false
+    isRecurring: false,
+    reminderEnabled: false
   }
 ];
 
@@ -52,6 +60,7 @@ export const sampleScheduleItems: ScheduleItem[] = [
     endTime: '8:10 AM',
     recurring: true,
     recurrenceRule: 'every weekday',
+    reminderEnabled: true,
     notes: 'Backpack and lunchbox'
   },
   {
@@ -62,6 +71,7 @@ export const sampleScheduleItems: ScheduleItem[] = [
     endTime: '4:30 PM',
     recurring: true,
     recurrenceRule: 'every Wednesday',
+    reminderEnabled: false,
     notes: 'Bring water bottle'
   }
 ];
@@ -74,6 +84,7 @@ export const sampleMedicines: Medicine[] = [
     dosage: '1 tablet',
     times: ['8:00 AM'],
     refillReminderThreshold: 5,
+    reminderEnabled: true,
     lastTaken: null
   },
   {
@@ -83,6 +94,7 @@ export const sampleMedicines: Medicine[] = [
     dosage: '5 ml',
     times: ['8:00 AM', '8:00 PM'],
     refillReminderThreshold: 3,
+    reminderEnabled: false,
     lastTaken: null
   }
 ];

@@ -11,6 +11,7 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
 import { useAppState } from '../state/AppState';
+import { formatReminderLabel } from '../utils/reminders';
 
 type GrocerySection = {
   category: string;
@@ -194,6 +195,7 @@ export function GroceryScreen() {
                         ) : null}
                         {item.isChecked ? <Text style={styles.checkedText}>Checked</Text> : null}
                       </View>
+                      <Text style={styles.reminderText}>{formatReminderLabel(item)}</Text>
                     </View>
                   </View>
                   <View style={styles.itemActions}>
@@ -429,6 +431,11 @@ const styles = StyleSheet.create({
   },
   recurringToggleTextActive: {
     color: '#FFFFFF'
+  },
+  reminderText: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
   },
   section: {
     gap: 8

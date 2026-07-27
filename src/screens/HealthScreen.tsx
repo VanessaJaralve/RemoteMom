@@ -11,6 +11,7 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Medicine } from '../models/Medicine';
 import { useAppState } from '../state/AppState';
+import { formatReminderLabel } from '../utils/reminders';
 
 function parseTimes(timesText: string) {
   return timesText
@@ -176,6 +177,7 @@ export function HealthScreen() {
             <Text style={styles.lastTaken}>
               {medicine.lastTaken ? `Last taken: ${medicine.lastTaken}` : 'Last taken: Not yet'}
             </Text>
+            <Text style={styles.reminderText}>{formatReminderLabel(medicine)}</Text>
             <Pressable
               accessibilityLabel={`Mark ${medicine.medicineName} taken`}
               accessibilityRole="button"
@@ -402,6 +404,11 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   refillText: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  reminderText: {
     color: SURFACE_COLORS.muted,
     fontSize: 13,
     fontWeight: '700'

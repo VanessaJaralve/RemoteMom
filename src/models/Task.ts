@@ -5,5 +5,7 @@ export type Task = {
   title: string;
   lifeArea: TaskLifeArea;
   dueDate?: string;
+  reminderTime?: string;
+  reminderEnabled?: boolean;
   isDone: boolean;
 };

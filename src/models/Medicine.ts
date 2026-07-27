@@ -5,5 +5,6 @@ export type Medicine = {
   dosage: string;
   times: string[];
   refillReminderThreshold: number;
+  reminderEnabled?: boolean;
   lastTaken: string | null;
 };

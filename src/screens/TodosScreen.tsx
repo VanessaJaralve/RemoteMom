@@ -11,6 +11,7 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
+import { formatReminderLabel } from '../utils/reminders';
 
 const TASK_LIFE_AREAS: TaskLifeArea[] = ['work', 'kid', 'household', 'self'];
 
@@ -191,6 +192,7 @@ export function TodosScreen() {
                   {task.title}
                 </Text>
                 {task.dueDate ? <Text style={styles.taskDueDate}>Due {task.dueDate}</Text> : null}
+                <Text style={styles.reminderText}>{formatReminderLabel(task)}</Text>
                 {task.isDone ? <Text style={styles.doneText}>Done</Text> : null}
               </View>
             </View>
@@ -385,6 +387,11 @@ const styles = StyleSheet.create({
   },
   secondaryButtonText: {
     color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  reminderText: {
+    color: SURFACE_COLORS.muted,
     fontSize: 13,
     fontWeight: '700'
   },

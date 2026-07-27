@@ -8,5 +8,6 @@ export type ScheduleItem = {
   endTime: string;
   recurring: boolean;
   recurrenceRule: string | null;
+  reminderEnabled?: boolean;
   notes?: string;
 };

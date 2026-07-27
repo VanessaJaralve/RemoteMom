@@ -4,4 +4,6 @@ export type GroceryItem = {
   category: string;
   isChecked: boolean;
   isRecurring: boolean;
+  reminderTime?: string;
+  reminderEnabled?: boolean;
 };

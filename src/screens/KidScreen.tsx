@@ -11,6 +11,7 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import { useAppState } from '../state/AppState';
+import { formatReminderLabel } from '../utils/reminders';
 
 function sortByStartTime(items: ScheduleItem[]) {
   return [...items].sort((leftItem, rightItem) =>
@@ -183,6 +184,7 @@ export function KidScreen() {
               <Text style={styles.recurrenceText}>{item.recurrenceRule}</Text>
             ) : null}
             {item.notes ? <Text style={styles.notesText}>{item.notes}</Text> : null}
+            <Text style={styles.reminderText}>{formatReminderLabel(item)}</Text>
             <View style={styles.itemActions}>
               {confirmingDeleteItemId === item.id ? (
                 <>
@@ -353,6 +355,11 @@ const styles = StyleSheet.create({
   },
   recurrenceText: {
     color: LIFE_AREA_COLORS.kid,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  reminderText: {
+    color: SURFACE_COLORS.muted,
     fontSize: 13,
     fontWeight: '700'
   },
