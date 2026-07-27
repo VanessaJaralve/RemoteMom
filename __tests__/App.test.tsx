@@ -18,8 +18,8 @@ describe('Working Mom Command Center app shell', () => {
   it('starts on the Today Dashboard screen', async () => {
     const { getByText } = await render(<App />);
 
-    expect(getByText('Today Dashboard')).toBeOnTheScreen();
-    expect(getByText('Daily Timeline')).toBeOnTheScreen();
+    expect(getByText('Daily command center')).toBeOnTheScreen();
+    expect(getByText('Morning')).toBeOnTheScreen();
   });
 
   it('exports the exact life-area color system from the project brief', () => {

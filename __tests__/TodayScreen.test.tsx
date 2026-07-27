@@ -12,9 +12,19 @@ describe('TodayScreen', () => {
   it('renders a read-only Today Dashboard timeline', async () => {
     const { getByText, queryByText } = await renderWithAppState(<TodayScreen />);
 
-    expect(getByText('Today Dashboard')).toBeOnTheScreen();
-    expect(getByText('Daily Timeline')).toBeOnTheScreen();
+    expect(getByText('Daily command center')).toBeOnTheScreen();
+    expect(getByText('Morning')).toBeOnTheScreen();
+    expect(getByText('Evening')).toBeOnTheScreen();
     expect(queryByText('Placeholder timeline for daily priorities.')).toBeNull();
+  });
+
+  it('shows v2 priority summary and focus framing', async () => {
+    const { getAllByText, getByText } = await renderWithAppState(<TodayScreen />);
+
+    expect(getAllByText('Urgent').length).toBeGreaterThan(0);
+    expect(getAllByText('Overdue').length).toBeGreaterThan(0);
+    expect(getByText('Next up')).toBeOnTheScreen();
+    expect(getByText('Focus for today')).toBeOnTheScreen();
   });
 
   it('pulls timeline items from to-dos, groceries, kid schedule, and medicine', async () => {
