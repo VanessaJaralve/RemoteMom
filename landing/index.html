@@ -119,7 +119,12 @@
             move toward cloud sync and family sharing.
           </p>
         </div>
-        <form class="validation-form" id="validation-survey-form" data-validation-form>
+        <form
+          class="validation-form"
+          id="validation-survey-form"
+          data-validation-form
+          data-endpoint="/api/validation"
+        >
           <div class="field">
             <label for="children-count">How many children are you organizing around?</label>
             <select id="children-count" name="childrenCount" required>
@@ -180,7 +185,9 @@
             </label>
           </fieldset>
           <button type="submit">Save validation answers</button>
-          <p class="form-note">Local mock survey for MVP validation. Connect this to a real form next.</p>
+          <p class="form-note">
+            Real collection form for MVP validation. Offline preview saves a local backup.
+          </p>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>

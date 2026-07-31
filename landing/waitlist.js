@@ -49,8 +49,13 @@
     });
   });
 
+  function saveLocalBackup(response) {
+    const responses = getSavedEntries(validationStorageKey);
+    window.localStorage.setItem(validationStorageKey, JSON.stringify([...responses, response]));
+  }
+
   if (validationForm) {
-    validationForm.addEventListener('submit', (event) => {
+    validationForm.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const formData = new FormData(validationForm);
@@ -63,13 +68,42 @@
         createdAt: new Date().toISOString()
       };
       const status = validationForm.querySelector('.form-status');
-      const responses = getSavedEntries(validationStorageKey);
+      const submitButton = validationForm.querySelector('button[type="submit"]');
+      const validationEndpoint = validationForm.dataset.endpoint || '/api/validation';
 
-      window.localStorage.setItem(validationStorageKey, JSON.stringify([...responses, response]));
-      validationForm.reset();
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
 
-      if (status) {
-        status.textContent = 'Validation answers saved locally for this preview.';
+      try {
+        const result = await fetch(validationEndpoint, {
+          body: JSON.stringify(response),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST'
+        });
+
+        if (!result.ok) {
+          throw new Error('Validation collection request failed.');
+        }
+
+        validationForm.reset();
+
+        if (status) {
+          status.textContent = 'Validation answers sent. Thank you for helping shape RemoteMom.';
+        }
+      } catch {
+        saveLocalBackup(response);
+
+        if (status) {
+          status.textContent =
+            'Could not reach the collection endpoint. Saved as a backup on this device.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
       }
     });
   }

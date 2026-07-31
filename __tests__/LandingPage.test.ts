@@ -47,12 +47,22 @@ describe('RemoteMom landing page', () => {
     expect(script).toContain('remotemom:validation-survey');
   });
 
-  it('keeps the waitlist form local-only for this validation step', () => {
+  it('submits validation answers to a real collection endpoint', () => {
+    const html = readFileSync(htmlPath, 'utf8');
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(html).toContain('Real collection form for MVP validation');
+    expect(script).toContain('/api/validation');
+    expect(script).toContain('fetch(validationEndpoint');
+    expect(script).toContain('Saved as a backup on this device');
+    expect(script).not.toContain('Local mock survey for MVP validation');
+  });
+
+  it('keeps the waitlist form local-only until the waitlist endpoint is built', () => {
     const script = readFileSync(scriptPath, 'utf8');
 
     expect(script).toContain('localStorage.setItem');
     expect(script).toContain('remotemom:waitlist');
-    expect(script).not.toContain('fetch(');
     expect(script).not.toContain('Firebase');
     expect(script).not.toContain('Stripe');
   });
