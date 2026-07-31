@@ -165,7 +165,24 @@ input {
   padding: 11px 12px;
 }
 
-input:focus {
+select {
+  appearance: none;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%) calc(100% - 18px) 50% / 7px 7px
+      no-repeat,
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%) calc(100% - 13px) 50% / 7px 7px
+      no-repeat,
+    #ffffff;
+  border: 1px solid #cfc7ba;
+  border-radius: 10px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 46px;
+  padding: 11px 38px 11px 12px;
+}
+
+input:focus,
+select:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(15, 138, 148, 0.18);
   outline: none;
@@ -241,6 +258,7 @@ button:active {
 
 .fit-section,
 .tier-section,
+.validation-section,
 .waitlist-section {
   padding: clamp(58px, 8vw, 104px) clamp(20px, 5vw, 64px);
 }
@@ -334,6 +352,51 @@ h3 {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
+.validation-section {
+  align-items: start;
+  background: #eff8f7;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 560px);
+}
+
+.validation-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.radio-option {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 9px;
+}
+
+.radio-option input {
+  min-height: auto;
+  width: auto;
+}
+
 .waitlist-section {
   align-items: start;
   display: grid;
@@ -358,6 +421,7 @@ h3 {
 
 @media (max-width: 900px) {
   .hero,
+  .validation-section,
   .waitlist-section {
     grid-template-columns: 1fr;
   }

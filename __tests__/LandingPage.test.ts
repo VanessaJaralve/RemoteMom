@@ -33,6 +33,20 @@ describe('RemoteMom landing page', () => {
     expect(html).toContain('remotemom-dashboard-mockup.png');
   });
 
+  it('includes validation survey fields for MVP demand signals', () => {
+    const html = readFileSync(htmlPath, 'utf8');
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(html).toContain('Help validate the MVP');
+    expect(html).toContain('name="childrenCount"');
+    expect(html).toContain('name="hardestArea"');
+    expect(html).toContain('name="premiumFeature"');
+    expect(html).toContain('name="priceComfort"');
+    expect(html).toContain('name="interviewPermission"');
+    expect(html).toContain('$39/year');
+    expect(script).toContain('remotemom:validation-survey');
+  });
+
   it('keeps the waitlist form local-only for this validation step', () => {
     const script = readFileSync(scriptPath, 'utf8');
 

@@ -16,6 +16,7 @@
       <nav class="nav" aria-label="Page sections">
         <a href="#preview">Preview</a>
         <a href="#fit">Who it helps</a>
+        <a href="#validation">Validate</a>
         <a class="nav-cta" href="#waitlist">Join waitlist</a>
       </nav>
     </header>
@@ -108,6 +109,80 @@
             <p>Multi-child support, sharing, reminders, calendar sync, and cloud backup later.</p>
           </article>
         </div>
+      </section>
+
+      <section class="validation-section" id="validation" aria-labelledby="validation-title">
+        <div class="section-copy">
+          <h2 id="validation-title">Help validate the MVP</h2>
+          <p>
+            These answers tell us whether RemoteMom should stay simple, add premium reminders, or
+            move toward cloud sync and family sharing.
+          </p>
+        </div>
+        <form class="validation-form" id="validation-survey-form" data-validation-form>
+          <div class="field">
+            <label for="children-count">How many children are you organizing around?</label>
+            <select id="children-count" name="childrenCount" required>
+              <option value="">Select one</option>
+              <option value="one">1 child</option>
+              <option value="two">2 children</option>
+              <option value="three-plus">3+ children</option>
+              <option value="expecting">Expecting or planning</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hardest-area">Which part of your day is hardest to keep organized?</label>
+            <select id="hardest-area" name="hardestArea" required>
+              <option value="">Select one</option>
+              <option value="work">Work priorities</option>
+              <option value="child">Child schedule</option>
+              <option value="groceries">Groceries and meals</option>
+              <option value="health">Medicine and health routines</option>
+              <option value="all">All of the above</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="premium-feature">Which premium feature would you pay for first?</label>
+            <select id="premium-feature" name="premiumFeature" required>
+              <option value="">Select one</option>
+              <option value="multiple-children">Multiple children</option>
+              <option value="sharing">Partner or caregiver sharing</option>
+              <option value="reminders">Real reminders</option>
+              <option value="calendar-sync">Calendar sync</option>
+              <option value="cloud-backup">Cloud backup</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="price-comfort">Which price feels reasonable if RemoteMom becomes useful daily?</label>
+            <select id="price-comfort" name="priceComfort" required>
+              <option value="">Select one</option>
+              <option value="free-only">I would only use a free version</option>
+              <option value="4.99-month">$4.99/month</option>
+              <option value="39-year">$39/year</option>
+              <option value="6.99-month">$6.99/month</option>
+              <option value="59-year">$59/year</option>
+              <option value="29-founder">$29/year founding member</option>
+            </select>
+          </div>
+          <fieldset class="field">
+            <legend>Would you be open to a 15-minute feedback call?</legend>
+            <label class="radio-option">
+              <input name="interviewPermission" type="radio" value="yes" required />
+              Yes
+            </label>
+            <label class="radio-option">
+              <input name="interviewPermission" type="radio" value="maybe" />
+              Maybe
+            </label>
+            <label class="radio-option">
+              <input name="interviewPermission" type="radio" value="no" />
+              No
+            </label>
+          </fieldset>
+          <button type="submit">Save validation answers</button>
+          <p class="form-note">Local mock survey for MVP validation. Connect this to a real form next.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
 
       <section class="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
