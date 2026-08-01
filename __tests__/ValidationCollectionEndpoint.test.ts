@@ -69,7 +69,10 @@ describe('validation collection endpoint', () => {
     const response = createResponse();
     const originalFetch = global.fetch;
     process.env.VALIDATION_SUBMISSIONS_WEBHOOK_URL = 'https://example.com/validation-webhook';
-    global.fetch = jest.fn().mockResolvedValue({ ok: true });
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockResolvedValue({ ok: true }),
+      ok: true
+    });
 
     await handler({ method: 'POST', body: validBody }, response);
 
@@ -82,6 +85,26 @@ describe('validation collection endpoint', () => {
         method: 'POST'
       })
     );
+
+    global.fetch = originalFetch;
+    delete process.env.VALIDATION_SUBMISSIONS_WEBHOOK_URL;
+  });
+
+  it('rejects webhook responses that did not confirm a sheet write', async () => {
+    const response = createResponse();
+    const originalFetch = global.fetch;
+    process.env.VALIDATION_SUBMISSIONS_WEBHOOK_URL = 'https://example.com/validation-webhook';
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockResolvedValue({ ok: false, error: 'Responses sheet was not found.' }),
+      ok: true
+    });
+
+    await handler({ method: 'POST', body: validBody }, response);
+
+    expect(response.statusCode).toBe(502);
+    expect(response.body).toEqual({
+      error: 'Validation collection destination did not confirm the sheet write.'
+    });
 
     global.fetch = originalFetch;
     delete process.env.VALIDATION_SUBMISSIONS_WEBHOOK_URL;

@@ -60,7 +60,15 @@ async function forwardToWebhook(submission) {
     method: 'POST'
   });
 
-  return { configured: true, ok: response.ok };
+  let body = {};
+
+  try {
+    body = await response.json();
+  } catch {
+    body = {};
+  }
+
+  return { body, configured: true, ok: response.ok };
 }
 
 module.exports = async function handler(req, res) {
@@ -91,6 +99,12 @@ module.exports = async function handler(req, res) {
 
     if (!delivery.ok) {
       return res.status(502).json({ error: 'Validation collection destination rejected the request.' });
+    }
+
+    if (!delivery.body || delivery.body.ok !== true) {
+      return res
+        .status(502)
+        .json({ error: 'Validation collection destination did not confirm the sheet write.' });
     }
 
     return res.status(200).json({ ok: true });

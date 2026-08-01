@@ -30,6 +30,9 @@ describe('Google Apps Script validation webhook', () => {
 
     expect(script).toContain('function doPost(event)');
     expect(script).toContain('appendRow');
+    expect(script).toContain('ensureResponsesSheet');
+    expect(script).toContain('insertSheet');
+    expect(script).toContain('setValues');
     expect(script).toContain('childrenCount');
     expect(script).toContain('hardestArea');
     expect(script).toContain('premiumFeature');
