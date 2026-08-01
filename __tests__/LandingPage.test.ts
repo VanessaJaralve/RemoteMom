@@ -58,11 +58,15 @@ describe('RemoteMom landing page', () => {
     expect(script).not.toContain('Local mock survey for MVP validation');
   });
 
-  it('keeps the waitlist form local-only until the waitlist endpoint is built', () => {
+  it('submits waitlist signups to a real collection endpoint', () => {
+    const html = readFileSync(htmlPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(script).toContain('localStorage.setItem');
+    expect(html).toContain('Real waitlist collection. Offline preview saves a local backup.');
+    expect(script).toContain('/api/waitlist');
+    expect(script).toContain('fetch(waitlistEndpoint');
     expect(script).toContain('remotemom:waitlist');
+    expect(script).toContain('Saved as a backup on this device');
     expect(script).not.toContain('Firebase');
     expect(script).not.toContain('Stripe');
   });

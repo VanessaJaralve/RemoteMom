@@ -19,8 +19,13 @@
     }
   }
 
+  function saveLocalBackup(key, entry) {
+    const entries = getSavedEntries(key);
+    window.localStorage.setItem(key, JSON.stringify([...entries, entry]));
+  }
+
   forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const formData = new FormData(form);
@@ -30,6 +35,8 @@
         createdAt: new Date().toISOString()
       };
       const status = form.querySelector('.form-status');
+      const submitButton = form.querySelector('button[type="submit"]');
+      const waitlistEndpoint = form.dataset.endpoint || '/api/waitlist';
 
       if (!signup.name || !signup.email) {
         if (status) {
@@ -39,20 +46,42 @@
         return;
       }
 
-      const signups = getSavedEntries(storageKey);
-      window.localStorage.setItem(storageKey, JSON.stringify([...signups, signup]));
-      form.reset();
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
 
-      if (status) {
-        status.textContent = 'You are on the local preview waitlist. Thank you.';
+      try {
+        const result = await fetch(waitlistEndpoint, {
+          body: JSON.stringify(signup),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST'
+        });
+
+        if (!result.ok) {
+          throw new Error('Waitlist collection request failed.');
+        }
+
+        form.reset();
+
+        if (status) {
+          status.textContent = 'You are on the RemoteMom waitlist. Thank you.';
+        }
+      } catch {
+        saveLocalBackup(storageKey, signup);
+
+        if (status) {
+          status.textContent =
+            'Could not reach the waitlist endpoint. Saved as a backup on this device.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
       }
     });
   });
-
-  function saveLocalBackup(response) {
-    const responses = getSavedEntries(validationStorageKey);
-    window.localStorage.setItem(validationStorageKey, JSON.stringify([...responses, response]));
-  }
 
   if (validationForm) {
     validationForm.addEventListener('submit', async (event) => {
@@ -94,7 +123,7 @@
           status.textContent = 'Validation answers sent. Thank you for helping shape RemoteMom.';
         }
       } catch {
-        saveLocalBackup(response);
+        saveLocalBackup(validationStorageKey, response);
 
         if (status) {
           status.textContent =

@@ -29,11 +29,17 @@ describe('Google Apps Script validation webhook', () => {
     const script = readFileSync(scriptPath, 'utf8');
 
     expect(script).toContain('function doPost(event)');
+    expect(script).toContain('appendValidationResponse');
+    expect(script).toContain('appendWaitlistSignup');
     expect(script).toContain('appendRow');
     expect(script).toContain('ensureResponsesSheet');
+    expect(script).toContain('ensureWaitlistSheet');
+    expect(script).toContain("WAITLIST_SHEET_NAME = 'Waitlist'");
     expect(script).toContain('insertSheet');
     expect(script).toContain('setValues');
     expect(script).toContain('childrenCount');
+    expect(script).toContain('email');
+    expect(script).toContain('name');
     expect(script).toContain('hardestArea');
     expect(script).toContain('premiumFeature');
     expect(script).toContain('priceComfort');

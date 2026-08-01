@@ -1,6 +1,7 @@
 # RemoteMom Validation Collection Setup
 
-The landing page validation survey now submits to `/api/validation`.
+The landing page validation survey now submits to `/api/validation`. The waitlist forms submit to
+`/api/waitlist`.
 
 Response sheet:
 https://docs.google.com/spreadsheets/d/1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s/edit
@@ -13,9 +14,9 @@ Set this variable on the hosting platform before sharing the landing page public
 VALIDATION_SUBMISSIONS_WEBHOOK_URL=<your secure webhook URL>
 ```
 
-The endpoint forwards each completed validation survey as JSON to that webhook. Use
-`integrations/google-apps-script/validation-webhook.gs` as the first webhook destination. Deploy it
-from the personal Gmail account that owns the response sheet.
+The endpoints forward each completed validation survey or waitlist signup as JSON to that webhook.
+Use `integrations/google-apps-script/validation-webhook.gs` as the first webhook destination. Deploy
+it from the personal Gmail account that owns the response sheet.
 
 ## Google Apps Script Deployment
 
@@ -39,8 +40,19 @@ from the personal Gmail account that owns the response sheet.
 }
 ```
 
+Waitlist submissions are sent as:
+
+```json
+{
+  "email": "vanessa@example.com",
+  "name": "Vanessa",
+  "submissionType": "waitlist",
+  "submittedAt": "2026-08-01T00:00:00.000Z"
+}
+```
+
 ## Preview Behavior
 
-If the endpoint is unavailable or the webhook is not configured, the landing page saves a local
-backup in the visitor's browser under `remotemom:validation-survey`. That keeps local preview useful,
-but public validation requires the webhook variable above.
+If an endpoint is unavailable or the webhook is not configured, the landing page saves a local backup
+in the visitor's browser under `remotemom:validation-survey` or `remotemom:waitlist`. That keeps
+local preview useful, but public collection requires the webhook variable above.

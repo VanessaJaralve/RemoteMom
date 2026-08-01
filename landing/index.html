@@ -29,7 +29,12 @@
           <p class="hero-subtitle">
             A calm daily command center for remote working moms.
           </p>
-          <form class="waitlist-form hero-form" id="hero-waitlist-form" data-waitlist-form>
+          <form
+            class="waitlist-form hero-form"
+            id="hero-waitlist-form"
+            data-waitlist-form
+            data-endpoint="/api/waitlist"
+          >
             <div class="field">
               <label for="hero-name">Name</label>
               <input id="hero-name" name="name" autocomplete="name" required />
@@ -200,7 +205,12 @@
             version.
           </p>
         </div>
-        <form class="waitlist-form" id="footer-waitlist-form" data-waitlist-form>
+        <form
+          class="waitlist-form"
+          id="footer-waitlist-form"
+          data-waitlist-form
+          data-endpoint="/api/waitlist"
+        >
           <div class="field">
             <label for="footer-name">Name</label>
             <input id="footer-name" name="name" autocomplete="name" required />
@@ -210,7 +220,7 @@
             <input id="footer-email" name="email" type="email" autocomplete="email" required />
           </div>
           <button type="submit">Join the waitlist</button>
-          <p class="form-note">Local mock signup for validation. No payment or account needed.</p>
+          <p class="form-note">Real waitlist collection. Offline preview saves a local backup.</p>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
