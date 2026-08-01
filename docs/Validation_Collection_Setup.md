@@ -3,7 +3,7 @@
 The landing page validation survey now submits to `/api/validation`.
 
 Response sheet:
-https://docs.google.com/spreadsheets/d/1RRs0PUdYNxtc0WRLbHmmVTc5PMXDxLueT0TWPk-V9PM/edit
+https://docs.google.com/spreadsheets/d/1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s/edit
 
 ## Required Environment Variable
 
@@ -14,7 +14,8 @@ VALIDATION_SUBMISSIONS_WEBHOOK_URL=<your secure webhook URL>
 ```
 
 The endpoint forwards each completed validation survey as JSON to that webhook. Use
-`integrations/google-apps-script/validation-webhook.gs` as the first webhook destination.
+`integrations/google-apps-script/validation-webhook.gs` as the first webhook destination. Deploy it
+from the personal Gmail account that owns the response sheet.
 
 ## Google Apps Script Deployment
 

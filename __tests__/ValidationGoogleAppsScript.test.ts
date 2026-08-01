@@ -21,7 +21,7 @@ describe('Google Apps Script validation webhook', () => {
   it('targets the RemoteMom validation response spreadsheet', () => {
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(script).toContain("SPREADSHEET_ID = '1RRs0PUdYNxtc0WRLbHmmVTc5PMXDxLueT0TWPk-V9PM'");
+    expect(script).toContain("SPREADSHEET_ID = '1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s'");
     expect(script).toContain("SHEET_NAME = 'Responses'");
   });
 
