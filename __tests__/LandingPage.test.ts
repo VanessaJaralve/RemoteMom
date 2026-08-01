@@ -51,10 +51,11 @@ describe('RemoteMom landing page', () => {
     const html = readFileSync(htmlPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(html).toContain('Real collection form for MVP validation');
+    expect(html).toContain('Your answers help decide what RemoteMom should become next.');
     expect(script).toContain('/api/validation');
     expect(script).toContain('fetch(validationEndpoint');
     expect(script).toContain('Saved as a backup on this device');
+    expect(html).not.toContain('Real collection form for MVP validation');
     expect(script).not.toContain('Local mock survey for MVP validation');
   });
 
@@ -62,11 +63,15 @@ describe('RemoteMom landing page', () => {
     const html = readFileSync(htmlPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(html).toContain('Real waitlist collection. Offline preview saves a local backup.');
+    expect(html).toContain('Join the early list and I will send updates as RemoteMom takes shape.');
     expect(script).toContain('/api/waitlist');
     expect(script).toContain('fetch(waitlistEndpoint');
     expect(script).toContain('remotemom:waitlist');
     expect(script).toContain('Saved as a backup on this device');
+    expect(html).not.toContain('Real waitlist collection');
+    expect(html).not.toContain('Offline preview saves a local backup');
+    expect(html).not.toContain('Focused MVP validation before payments.');
+    expect(html).toContain('Built with care for remote working moms.');
     expect(script).not.toContain('Firebase');
     expect(script).not.toContain('Stripe');
   });
