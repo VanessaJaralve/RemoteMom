@@ -2,6 +2,9 @@
 
 The landing page validation survey now submits to `/api/validation`.
 
+Response sheet:
+https://docs.google.com/spreadsheets/d/1RRs0PUdYNxtc0WRLbHmmVTc5PMXDxLueT0TWPk-V9PM/edit
+
 ## Required Environment Variable
 
 Set this variable on the hosting platform before sharing the landing page publicly:
@@ -10,8 +13,17 @@ Set this variable on the hosting platform before sharing the landing page public
 VALIDATION_SUBMISSIONS_WEBHOOK_URL=<your secure webhook URL>
 ```
 
-The endpoint forwards each completed validation survey as JSON to that webhook. A Google Apps
-Script web app is a good first destination because it can append rows directly to a Google Sheet.
+The endpoint forwards each completed validation survey as JSON to that webhook. Use
+`integrations/google-apps-script/validation-webhook.gs` as the first webhook destination.
+
+## Google Apps Script Deployment
+
+1. Open the response sheet above.
+2. Go to Extensions > Apps Script.
+3. Replace the default script with `integrations/google-apps-script/validation-webhook.gs`.
+4. Deploy it as a web app.
+5. Set access to anyone with the link.
+6. Copy the web app URL into `VALIDATION_SUBMISSIONS_WEBHOOK_URL` on the hosting platform.
 
 ## Expected Payload
 

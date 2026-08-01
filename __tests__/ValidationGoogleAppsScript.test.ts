@@ -1,0 +1,39 @@
+declare function require(moduleName: 'fs'): {
+  readFileSync: (path: string, encoding: string) => string;
+};
+declare function require(moduleName: 'path'): {
+  join: (...paths: string[]) => string;
+};
+declare const __dirname: string;
+
+const { readFileSync } = require('fs');
+const { join } = require('path');
+
+const scriptPath = join(
+  __dirname,
+  '..',
+  'integrations',
+  'google-apps-script',
+  'validation-webhook.gs'
+);
+
+describe('Google Apps Script validation webhook', () => {
+  it('targets the RemoteMom validation response spreadsheet', () => {
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(script).toContain("SPREADSHEET_ID = '1RRs0PUdYNxtc0WRLbHmmVTc5PMXDxLueT0TWPk-V9PM'");
+    expect(script).toContain("SHEET_NAME = 'Responses'");
+  });
+
+  it('accepts POST validation payloads and appends response rows', () => {
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(script).toContain('function doPost(event)');
+    expect(script).toContain('appendRow');
+    expect(script).toContain('childrenCount');
+    expect(script).toContain('hardestArea');
+    expect(script).toContain('premiumFeature');
+    expect(script).toContain('priceComfort');
+    expect(script).toContain('interviewPermission');
+  });
+});
