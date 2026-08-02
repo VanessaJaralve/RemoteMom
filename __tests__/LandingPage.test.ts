@@ -75,4 +75,14 @@ describe('RemoteMom landing page', () => {
     expect(script).not.toContain('Firebase');
     expect(script).not.toContain('Stripe');
   });
+
+  it('includes plain-language privacy and beta feedback paths', () => {
+    const html = readFileSync(htmlPath, 'utf8');
+
+    expect(html).toContain('Privacy in plain language');
+    expect(html).toContain('The mobile MVP keeps app data on your device.');
+    expect(html).toContain('RemoteMom is an organization tool, not medical advice.');
+    expect(html).toContain('Send beta feedback');
+    expect(html).toContain('mailto:vanessa.jaralve@gmail.com');
+  });
 });

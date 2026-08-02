@@ -87,6 +87,7 @@ The current MVP includes:
 - Validation form connected to Google Sheets
 - Waitlist form connected to Google Sheets
 - Interview script and validation scorecard
+- Plain-language privacy and beta feedback path
 
 ## Current Module Summary
 
@@ -178,17 +179,17 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. The remaining gaps are reliability and trust gaps around empty/error states and privacy/policy readiness for beta.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path, and landing-page privacy/feedback copy. The remaining gaps are reliability and polish gaps around empty/error states and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
 | Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels | Tasks update Today through shared state; stable ids exist; persistence saves changes; parseable date-only due dates are classified through shared local date logic | Due date input is still free text; no empty state; generated ids use `Date.now()` only | High |
 | Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag | Category grouping and checked logic work; recurring unchecked items feed Today as individual actionable source records | No empty state; category is free text | Medium |
 | One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes | Schedule items feed Today and persist locally; UI clearly states one-child MVP; start-time sorting uses shared parsed-time logic; child schedule records carry the internal default `childId` | Start/end times are still free text; recurrence is descriptive only | Medium |
-| Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times; Child medicine records carry the internal default `childId` | No medical disclaimer in UI; dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | High |
+| Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times; Child medicine records carry the internal default `childId`; the More screen states that RemoteMom does not provide medical advice | Health screen itself does not yet show the medicine disclaimer; dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | High |
 | Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today; parseable future due dates no longer become urgent | Today still uses simple free-text fallbacks; due-date input has no picker or validation; recurrence is not expanded by date | High |
 | Local persistence | `AppStateProvider` restores/saves one versioned AsyncStorage payload via `src/state/persistence.ts` | Local state survives reloads in tests; legacy no-version and schema v1 payloads migrate in memory; missing dose logs normalize safely; missing child collection normalizes to the default child; malformed collections or unsupported future schema versions fall back to sample data; malformed records inside valid arrays are dropped; no cloud claims in app code | Write failures are still silent; there is no user-facing recovery UI for corrupted storage; storage is local-only and not backed up | Medium |
-| Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium | No privacy policy yet; raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | High |
+| Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium; page now includes plain-language local-first privacy, medicine-safety, and beta feedback copy | Raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | Medium |
 
 ## Today Dashboard Integration Findings
 
@@ -223,14 +224,13 @@ High:
 Privacy:
 
 - No app analytics or logging of sensitive content was found.
-- The validation/waitlist pipeline stores raw payloads in Vanessa's Google Sheet. This is acceptable for early validation, but a privacy policy should disclose collection before broader beta sharing.
+- The validation/waitlist pipeline stores raw payloads in Vanessa's Google Sheet. The app and landing page now disclose this in plain language for beta readiness.
 
 ## Prioritized Improvement Backlog
 
 | Priority | Improvement | Rationale |
 | --- | --- | --- |
-| High | Add medicine safety copy and disclaimer in Health | Builds trust while avoiding medical advice, dosage calculations, or diagnosis. |
-| High | Add plain-language privacy policy and in-app/landing links | Needed before broader beta because the app touches family schedule and medicine data. |
+| High | Add medicine safety copy directly in Health | Builds trust at the point of medicine entry while avoiding medical advice, dosage calculations, or diagnosis. |
 | Medium | Add calm empty states across all module screens | Improves first-run and cleared-list experience. |
 | Medium | Split reusable form/card/action UI patterns after behavior stabilizes | Reduces duplication without a large premature refactor. |
 | Later | Add analytics or product metrics only after privacy rules are written | Useful for beta learning, but sensitive content must be excluded. |
@@ -247,12 +247,14 @@ Completed: Persistence schema versioning and migration guardrails.
 
 Completed: Internal default child entity/id.
 
-1. Privacy policy and beta feedback path.
-2. Empty states and small UI polish.
+Completed: Privacy policy and beta feedback path.
+
+1. Empty states and small UI polish.
+2. Medicine safety copy directly in Health.
 
 Single most important next development task:
 
-Add plain-language privacy policy and beta feedback path.
+Add calm empty states across module screens.
 
 ## Current Strategic Recommendation
 

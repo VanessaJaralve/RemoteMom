@@ -258,6 +258,7 @@ button:active {
 
 .fit-section,
 .tier-section,
+.privacy-section,
 .validation-section,
 .waitlist-section {
   padding: clamp(58px, 8vw, 104px) clamp(20px, 5vw, 64px);
@@ -291,7 +292,8 @@ h2 {
 }
 
 .fit-grid article,
-.tier-layout article {
+.tier-layout article,
+.privacy-grid article {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -320,7 +322,8 @@ h3 {
 }
 
 .fit-grid p,
-.tier-layout p {
+.tier-layout p,
+.privacy-grid p {
   color: var(--muted);
   line-height: 1.5;
   margin-bottom: 0;
@@ -350,6 +353,31 @@ h3 {
 .tier-layout article {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+.privacy-section {
+  background: #fbfaf7;
+  display: grid;
+  gap: 28px;
+}
+
+.privacy-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feedback-link {
+  align-items: center;
+  background: var(--accent);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  width: fit-content;
 }
 
 .validation-section {
@@ -436,6 +464,7 @@ legend {
 
   .proof-strip,
   .fit-grid,
+  .privacy-grid,
   .tier-layout {
     grid-template-columns: 1fr 1fr;
   }
@@ -456,6 +485,7 @@ legend {
   .hero-form,
   .proof-strip,
   .fit-grid,
+  .privacy-grid,
   .tier-layout {
     grid-template-columns: 1fr;
   }

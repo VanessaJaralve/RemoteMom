@@ -7,6 +7,7 @@ import { LIFE_AREA_COLORS, SURFACE_COLORS } from './src/constants/colors';
 import { GroceryScreen } from './src/screens/GroceryScreen';
 import { HealthScreen } from './src/screens/HealthScreen';
 import { KidScreen } from './src/screens/KidScreen';
+import { MoreScreen } from './src/screens/MoreScreen';
 import { TodayScreen } from './src/screens/TodayScreen';
 import { TodosScreen } from './src/screens/TodosScreen';
 import { AppStateProvider } from './src/state/AppState';
@@ -17,6 +18,7 @@ type RootTabParamList = {
   Kid: undefined;
   Grocery: undefined;
   'To-Dos': undefined;
+  More: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -26,7 +28,8 @@ const TAB_ICON_LABELS: Record<keyof RootTabParamList, string> = {
   Health: 'H',
   Kid: 'K',
   Grocery: 'G',
-  'To-Dos': '✓'
+  'To-Dos': '✓',
+  More: 'M'
 };
 
 const TAB_COLORS: Record<keyof RootTabParamList, string> = {
@@ -34,7 +37,8 @@ const TAB_COLORS: Record<keyof RootTabParamList, string> = {
   Health: LIFE_AREA_COLORS.health,
   Kid: LIFE_AREA_COLORS.kid,
   Grocery: LIFE_AREA_COLORS.household,
-  'To-Dos': LIFE_AREA_COLORS.work
+  'To-Dos': LIFE_AREA_COLORS.work,
+  More: LIFE_AREA_COLORS.work
 };
 
 export default function App() {
@@ -73,6 +77,7 @@ export default function App() {
           <Tab.Screen component={KidScreen} name="Kid" />
           <Tab.Screen component={GroceryScreen} name="Grocery" />
           <Tab.Screen component={TodosScreen} name="To-Dos" />
+          <Tab.Screen component={MoreScreen} name="More" />
         </Tab.Navigator>
       </NavigationContainer>
     </AppStateProvider>
