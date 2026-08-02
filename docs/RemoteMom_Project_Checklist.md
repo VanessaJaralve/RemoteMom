@@ -33,6 +33,17 @@ Use this as the living tracker for product, build, and business-readiness work.
 | RemoteMom Codex project instructions | Completed | 2026-08-02 | Saved the RemoteMom operating instructions as `AGENTS.md` at the repo root. |
 | Documentation and current app alignment audit | Completed | 2026-08-02 | Aligned existing documentation to `AGENTS.md`, documented source-of-truth conflicts, and added the module-by-module app audit/backlog. |
 | Today Dashboard source-aware actions | Completed | 2026-08-02 | Added Today actions that update original To-Do, Grocery, and Medicine source records without creating duplicate dashboard state. |
+| Phase 1: MVP Foundation | Completed | 2026-08-02 | Local-first app foundation is complete: app shell, To-Dos, Grocery, Child Schedule, Medicine, Today Dashboard, shared state, persistence, edit/delete, reminder-ready fields, and source-aware Today actions. |
+| Phase 2: Validation Foundation | Completed | 2026-08-02 | Demand validation foundation is complete: landing page, waitlist, validation survey, Google Sheets collection, pricing plan, interview script, and scorecard. |
+| Phase 3: Public Beta Readiness | Not Started |  | Prepare the app to be tested by people outside the immediate friend group. Includes feedback path, privacy policy, app polish, screenshots, beta setup, and invitation copy. |
+| Phase 3 task: In-app feedback path | Not Started |  | Add a simple feedback link or form so beta users can respond without messaging Vanessa directly. |
+| Phase 3 task: Basic privacy policy | Not Started |  | Add plain-language privacy policy coverage for local app data, validation/waitlist collection, family schedule data, and medicine-related entries. |
+| Phase 3 task: App identity and first impression polish | Not Started |  | Polish app name presentation, icon, splash, screenshots, and first-run impression before beta sharing. |
+| Phase 3 task: TestFlight and Android beta setup | Not Started |  | Prepare the controlled mobile beta distribution path before public app store launch. |
+| Phase 4: Beta Learning | Not Started |  | Invite 10 to 30 target users and review retention, repeated pain, feedback, and willingness-to-pay signals. |
+| Phase 5: Cloud Sync Planning and Build | Not Started |  | Add account-based Firebase sync only after validation supports it, while keeping signed-out local mode working. |
+| Phase 6: Premium Feature Validation | Not Started |  | Validate which paid feature cluster is strongest: multiple children, sharing, real reminders, medicine alerts, calendar sync, cloud backup, or weekly family view. |
+| Phase 7: Monetization and Launch | Not Started |  | Prepare pricing, premium gates, store listings, support contact, privacy policy, lightweight metrics, and focused niche launch only after paid-value proof. |
 | Firebase Auth + Firestore build | Not Started |  | Add cloud sync only after the local MVP and positioning are validated. |
 | Premium feature gating | Not Started |  | Gate multi-child, sharing, reminders, calendar sync, and cloud features later. |
 
