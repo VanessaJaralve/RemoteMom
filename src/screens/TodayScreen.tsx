@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
@@ -257,85 +258,94 @@ export function TodayScreen() {
         </View>
       </View>
 
-      <View style={styles.timeline}>
-        {timelineSections.map((section) => (
-          <View key={section.label} style={styles.timelineSection}>
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>{section.label}</Text>
-              <Text style={styles.sectionTime}>{section.timeRange}</Text>
-            </View>
+      {timelineItems.length === 0 ? (
+        <EmptyState
+          detail="Nothing urgent, overdue, or scheduled is waiting in the daily view."
+          message="Nothing needs attention right now."
+        />
+      ) : (
+        <>
+          <View style={styles.timeline}>
+            {timelineSections.map((section) => (
+              <View key={section.label} style={styles.timelineSection}>
+                <View style={styles.sectionHeader}>
+                  <Text style={styles.sectionTitle}>{section.label}</Text>
+                  <Text style={styles.sectionTime}>{section.timeRange}</Text>
+                </View>
 
-            {section.items.length > 0 ? (
-              section.items.map((item) => (
-                <View key={item.id} style={styles.timelineRow}>
-                  <Text style={styles.timelineTime}>{item.time}</Text>
-                  <View
-                    style={[
-                      styles.timelineDot,
-                      { backgroundColor: LIFE_AREA_TAG_COLORS[item.lifeArea] }
-                    ]}
-                  />
-                  <View style={styles.timelineCard}>
-                    <View style={styles.cardHeader}>
+                {section.items.length > 0 ? (
+                  section.items.map((item) => (
+                    <View key={item.id} style={styles.timelineRow}>
+                      <Text style={styles.timelineTime}>{item.time}</Text>
                       <View
                         style={[
-                          styles.lifeAreaTag,
+                          styles.timelineDot,
                           { backgroundColor: LIFE_AREA_TAG_COLORS[item.lifeArea] }
                         ]}
-                      >
-                        <Text style={styles.lifeAreaTagText}>{item.label}</Text>
+                      />
+                      <View style={styles.timelineCard}>
+                        <View style={styles.cardHeader}>
+                          <View
+                            style={[
+                              styles.lifeAreaTag,
+                              { backgroundColor: LIFE_AREA_TAG_COLORS[item.lifeArea] }
+                            ]}
+                          >
+                            <Text style={styles.lifeAreaTagText}>{item.label}</Text>
+                          </View>
+                          <Text
+                            style={[
+                              styles.priorityBadge,
+                              item.priority === 'urgent' ? styles.urgentBadge : null,
+                              item.priority === 'overdue' ? styles.overdueBadge : null
+                            ]}
+                          >
+                            {item.priority === 'normal'
+                              ? 'Planned'
+                              : item.priority === 'urgent'
+                                ? 'Urgent'
+                                : 'Overdue'}
+                          </Text>
+                        </View>
+                        <Text style={styles.itemTitle}>{item.title}</Text>
+                        <Text style={styles.itemDetail}>{item.detail}</Text>
+                        {item.action ? (
+                          <Pressable
+                            accessibilityLabel={item.action.accessibilityLabel}
+                            accessibilityRole="button"
+                            onPress={() => handleTimelineAction(item.action)}
+                            style={({ pressed }) => [
+                              styles.actionButton,
+                              pressed ? styles.actionButtonPressed : null
+                            ]}
+                          >
+                            <Text style={styles.actionButtonText}>{item.action.label}</Text>
+                          </Pressable>
+                        ) : null}
                       </View>
-                      <Text
-                        style={[
-                          styles.priorityBadge,
-                          item.priority === 'urgent' ? styles.urgentBadge : null,
-                          item.priority === 'overdue' ? styles.overdueBadge : null
-                        ]}
-                      >
-                        {item.priority === 'normal'
-                          ? 'Planned'
-                          : item.priority === 'urgent'
-                            ? 'Urgent'
-                            : 'Overdue'}
-                      </Text>
                     </View>
-                    <Text style={styles.itemTitle}>{item.title}</Text>
-                    <Text style={styles.itemDetail}>{item.detail}</Text>
-                    {item.action ? (
-                      <Pressable
-                        accessibilityLabel={item.action.accessibilityLabel}
-                        accessibilityRole="button"
-                        onPress={() => handleTimelineAction(item.action)}
-                        style={({ pressed }) => [
-                          styles.actionButton,
-                          pressed ? styles.actionButtonPressed : null
-                        ]}
-                      >
-                        <Text style={styles.actionButtonText}>{item.action.label}</Text>
-                      </Pressable>
-                    ) : null}
-                  </View>
-                </View>
-              ))
-            ) : (
-              <Text style={styles.emptyText}>No planned items in this part of the day.</Text>
-            )}
+                  ))
+                ) : (
+                  <Text style={styles.emptyText}>No planned items in this part of the day.</Text>
+                )}
+              </View>
+            ))}
           </View>
-        ))}
-      </View>
 
-      <View style={styles.focusPanel}>
-        <View style={styles.focusIcon}>
-          <Text style={styles.focusIconText}>*</Text>
-        </View>
-        <View style={styles.focusCopy}>
-          <Text style={styles.focusTitle}>Focus for today</Text>
-          <Text style={styles.focusText}>
-            Stay ahead of {urgentCount} urgent item{urgentCount === 1 ? '' : 's'} and close the
-            day with the child and health routines visible.
-          </Text>
-        </View>
-      </View>
+          <View style={styles.focusPanel}>
+            <View style={styles.focusIcon}>
+              <Text style={styles.focusIconText}>*</Text>
+            </View>
+            <View style={styles.focusCopy}>
+              <Text style={styles.focusTitle}>Focus for today</Text>
+              <Text style={styles.focusText}>
+                Stay ahead of {urgentCount} urgent item{urgentCount === 1 ? '' : 's'} and close the
+                day with the child and health routines visible.
+              </Text>
+            </View>
+          </View>
+        </>
+      )}
 
       <View style={styles.areaLegend}>
         {LEGEND_LIFE_AREAS.map((lifeArea) => (

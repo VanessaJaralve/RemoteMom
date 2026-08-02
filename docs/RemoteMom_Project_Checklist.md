@@ -45,7 +45,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Not Started |  | Create screenshots that show the Today Dashboard, To-Dos, Grocery, Child Schedule, and Medicine flow clearly. |
 | Phase 3: Public Beta Readiness | Beta distribution | Prepare TestFlight and Android beta setup | Not Started |  | Prepare the controlled mobile beta distribution path before public app store launch. |
 | Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Not Started |  | Prepare a short invite for moms outside the immediate friend group. |
-| Phase 3: Public Beta Readiness | UX polish | Add calm empty states across module screens | Not Started |  | Smaller UX polish task: add supportive blank/cleared-list states for Today, To-Dos, Grocery, Child Schedule, and Health. This improves first-run experience before broader app identity work. |
+| Phase 3: Public Beta Readiness | UX polish | Add calm empty states across module screens | Completed | 2026-08-02 | Added supportive blank/cleared-list states for Today, To-Dos, Grocery, Child Schedule, and Health without changing data models or roadmap scope. |
 | Phase 4: Beta Learning | Recruiting | Invite 10 to 30 target users | Not Started |  | Start with a small group outside the immediate friend network. |
 | Phase 4: Beta Learning | Metrics | Track installs, waitlist signups, and feedback | Not Started |  | Use lightweight tracking that avoids sensitive task, child, or medicine content. |
 | Phase 4: Beta Learning | User research | Ask users what they opened first | Not Started |  | Learn whether Today is becoming the starting habit. |
@@ -82,4 +82,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Add calm empty states across module screens.
+Add medicine safety copy directly in Health.

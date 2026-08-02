@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 
+import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Medicine } from '../models/Medicine';
 import { useAppState } from '../state/AppState';
@@ -168,6 +169,12 @@ export function HealthScreen() {
       </View>
 
       <View style={styles.medicineList}>
+        {medicines.length === 0 ? (
+          <EmptyState
+            detail="Add only routines you already know and want to keep visible."
+            message="No medicine routines added yet."
+          />
+        ) : null}
         {medicines.map((medicine) => (
           <View key={medicine.id} style={styles.medicineCard}>
             <View style={styles.cardHeader}>

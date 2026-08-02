@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 
+import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import { useAppState } from '../state/AppState';
@@ -175,6 +176,12 @@ export function KidScreen() {
       </View>
 
       <View style={styles.scheduleList}>
+        {sortedScheduleItems.length === 0 ? (
+          <EmptyState
+            detail="Add school, pickup, practice, or routine items when they need to be visible."
+            message="No child schedule items yet."
+          />
+        ) : null}
         {sortedScheduleItems.map((item) => (
           <View key={item.id} style={styles.scheduleCard}>
             <View style={styles.cardHeader}>

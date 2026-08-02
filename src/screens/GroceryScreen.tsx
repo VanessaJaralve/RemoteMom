@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 
+import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
 import { useAppState } from '../state/AppState';
@@ -166,6 +167,12 @@ export function GroceryScreen() {
       </View>
 
       <View style={styles.sections}>
+        {groceryItems.length === 0 ? (
+          <EmptyState
+            detail="Add staples, errands, or recurring items when the next shop starts to form."
+            message="Your grocery list is clear."
+          />
+        ) : null}
         {grocerySections.map((section) => (
           <View key={section.category} style={styles.section}>
             <Text style={styles.sectionTitle}>{section.category}</Text>

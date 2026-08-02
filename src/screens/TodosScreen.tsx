@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 
+import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
@@ -160,6 +161,12 @@ export function TodosScreen() {
       </View>
 
       <View style={styles.list}>
+        {tasks.length === 0 ? (
+          <EmptyState
+            detail="Add a task when something needs a place outside your head."
+            message="Nothing open right now."
+          />
+        ) : null}
         {tasks.map((task) => (
           <View key={task.id} style={styles.taskCard}>
             <View style={styles.taskMainRow}>
