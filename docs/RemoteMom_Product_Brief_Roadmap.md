@@ -178,15 +178,15 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. The remaining gaps are reliability and trust gaps around shared date logic, persistence versioning, child modeling, empty/error states, and privacy/policy readiness for beta.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. The remaining gaps are reliability and trust gaps around persistence versioning, child modeling, empty/error states, and privacy/policy readiness for beta.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
-| Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels | Tasks update Today through shared state; stable ids exist; persistence saves changes | Due date is free text, so Today cannot reliably evaluate overdue/today/tomorrow; no empty state; generated ids use `Date.now()` only | High |
+| Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels | Tasks update Today through shared state; stable ids exist; persistence saves changes; parseable date-only due dates are classified through shared local date logic | Due date input is still free text; no empty state; generated ids use `Date.now()` only | High |
 | Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag | Category grouping and checked logic work; recurring unchecked items feed Today as individual actionable source records | No empty state; category is free text | Medium |
-| One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes | Schedule items feed Today and persist locally; UI clearly states one-child MVP | No child entity or `childId`; start/end times are free text; sorting uses string comparison instead of parsed time; recurrence is descriptive only | High |
+| One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes | Schedule items feed Today and persist locally; UI clearly states one-child MVP; start-time sorting uses shared parsed-time logic | No child entity or `childId`; start/end times are still free text; recurrence is descriptive only | High |
 | Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times | No medical disclaimer in UI; dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | High |
-| Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today | Date/today logic is mostly label and fallback based; time parsing still lives inside Today instead of a shared utility | High |
+| Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today; parseable future due dates no longer become urgent | Today still uses simple free-text fallbacks; due-date input has no picker or validation; recurrence is not expanded by date | High |
 | Local persistence | `AppStateProvider` restores/saves one AsyncStorage payload via `src/state/persistence.ts` | Local state survives reloads in tests; invalid storage falls back safely to sample data; no cloud claims in app code | No schema version field or migrations; validation only checks arrays, not item shape; fallback to sample data after corrupt storage could hide data loss; write failures are silent | High |
 | Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium | No privacy policy yet; raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | High |
 
@@ -204,8 +204,8 @@ Current gaps:
 
 - Medicine actions from Today create or update a local `MedicineDoseLog` for the specific medicine, local date, and scheduled time. The permanent `Medicine` schedule is not changed.
 - Today's timeline item ids are still not fully normalized across sources. Tasks, schedule items, and grocery items use source ids; medicine uses `medicine.id + time` so multiple daily times can render separately.
-- Date handling is not yet a shared utility. Time parsing exists inside Today only, due dates are free text, and schedule sorting uses string comparison in the Kid screen.
-- Medicine completion is now per scheduled time and per local date, but it still depends on the current local date helper rather than a broader tested date/time service.
+- Date handling now has a shared utility for time parsing, local date keys, sort fallback minutes, and parseable due-date classification.
+- Medicine completion is now per scheduled time and per local date through the same shared local date key.
 
 ## Critical Data-Loss And Medicine-Safety Risks
 
@@ -217,7 +217,7 @@ Critical:
 High:
 
 - Local persistence needs schema versioning and safer validation before public beta. The current fallback behavior protects the UI but can mask malformed saved data.
-- Date and time parsing should be centralized and testable before more Today logic is added.
+- Date and time parsing is centralized for the current MVP behavior. The remaining date risk is that user inputs are still free text and recurrence is not expanded by calendar date.
 - The child model should introduce an internal default child id before multi-child premium work, without exposing multiple-child UI.
 
 Privacy:
@@ -229,7 +229,6 @@ Privacy:
 
 | Priority | Improvement | Rationale |
 | --- | --- | --- |
-| High | Add shared date/time utilities and tests for Today eligibility, sorting, overdue, and daily boundaries | Prevents duplicated and unreliable date logic. |
 | High | Add persistence schema versioning, stricter validation, and migration/fallback handling | Protects local user data before public beta. |
 | High | Add medicine safety copy and disclaimer in Health | Builds trust while avoiding medical advice, dosage calculations, or diagnosis. |
 | High | Add a default child entity/id internally while keeping one-child UI | Preserves MVP boundary while preparing for future multi-child premium support. |
@@ -242,16 +241,18 @@ Privacy:
 
 Completed: Today source-aware completion actions.
 
-1. Medicine daily completion model and UI adjustment.
-2. Shared date/time utility for Today and schedules.
-3. Persistence schema versioning and migration guardrails.
-4. Internal default child entity/id.
-5. Privacy policy and beta feedback path.
-6. Empty states and small UI polish.
+Completed: Medicine daily completion model and UI adjustment.
+
+Completed: Shared date/time utility for Today and schedules.
+
+1. Persistence schema versioning and migration guardrails.
+2. Internal default child entity/id.
+3. Privacy policy and beta feedback path.
+4. Empty states and small UI polish.
 
 Single most important next development task:
 
-Add shared date/time utilities and tests for Today eligibility, sorting, overdue status, and daily boundaries.
+Add persistence schema versioning, stricter validation, and migration/fallback guardrails.
 
 ## Current Strategic Recommendation
 

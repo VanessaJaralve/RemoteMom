@@ -9,6 +9,20 @@ function renderWithAppState(ui: React.ReactElement) {
   return render(<AppStateProvider>{ui}</AppStateProvider>);
 }
 
+function collectTextContent(node: unknown): string[] {
+  if (typeof node === 'string') {
+    return [node];
+  }
+
+  if (!node || typeof node !== 'object') {
+    return [];
+  }
+
+  const children = (node as { children?: unknown[] }).children ?? [];
+
+  return children.flatMap(collectTextContent);
+}
+
 describe('KidScreen', () => {
   it('uses the exact ScheduleItem model fields from the project brief', () => {
     const scheduleItem: ScheduleItem = {
@@ -73,5 +87,24 @@ describe('KidScreen', () => {
     expect(getByText('every Friday')).toBeOnTheScreen();
     expect(getAllByText('Recurring').length).toBeGreaterThan(0);
     expect(getAllByDisplayValue('')).toHaveLength(5);
+  });
+
+  it('sorts schedule items by parsed start time instead of alphabetical time text', async () => {
+    const screen = await renderWithAppState(<KidScreen />);
+    const { getByLabelText, getByText, toJSON } = screen;
+
+    await fireEvent.changeText(getByLabelText('Schedule title'), 'Noon pickup');
+    await fireEvent.changeText(getByLabelText('Start time'), '12:00 PM');
+    await fireEvent.changeText(getByLabelText('End time'), '12:30 PM');
+    await fireEvent.press(getByText('Add Schedule Item'));
+
+    const screenText = collectTextContent(toJSON());
+    const dropOffIndex = screenText.indexOf('School drop-off');
+    const noonIndex = screenText.indexOf('Noon pickup');
+    const soccerIndex = screenText.indexOf('Soccer practice');
+
+    expect(dropOffIndex).toBeGreaterThan(-1);
+    expect(noonIndex).toBeGreaterThan(dropOffIndex);
+    expect(soccerIndex).toBeGreaterThan(noonIndex);
   });
 });

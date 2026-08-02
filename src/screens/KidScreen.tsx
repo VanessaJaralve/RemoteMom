@@ -11,12 +11,17 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import { useAppState } from '../state/AppState';
+import { getSortMinutes } from '../utils/dateTime';
 import { formatReminderLabel } from '../utils/reminders';
 
 function sortByStartTime(items: ScheduleItem[]) {
-  return [...items].sort((leftItem, rightItem) =>
-    leftItem.startTime.localeCompare(rightItem.startTime)
-  );
+  return [...items].sort((leftItem, rightItem) => {
+    const timeDifference =
+      getSortMinutes(leftItem.startTime, 'morning') -
+      getSortMinutes(rightItem.startTime, 'morning');
+
+    return timeDifference || leftItem.startTime.localeCompare(rightItem.startTime);
+  });
 }
 
 export function KidScreen() {

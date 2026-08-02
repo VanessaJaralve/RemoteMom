@@ -35,7 +35,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 2: Validation Foundation | Documentation | Complete documentation and current app alignment audit | Completed | 2026-08-02 | Aligned existing documentation to `AGENTS.md`, documented source-of-truth conflicts, and added the module-by-module app audit/backlog. |
 | Phase 2: Validation Foundation | Checklist | Restructure checklist by roadmap phase | Completed | 2026-08-02 | Added phase, module, activity, status, completed date, and notes columns in the local checklist and Google Sheet. |
 | Phase 3: Public Beta Readiness | Family Health / Medicine Tracker | Separate medicine schedules from daily completion logs | Completed | 2026-08-02 | Added local per-date, per-time medicine dose logs so Health and Today can mark one scheduled dose without changing the permanent medicine schedule. |
-| Phase 3: Public Beta Readiness | Date and time logic | Add shared date/time utility for Today and schedules | Not Started |  | Centralize Today eligibility, sorting, overdue logic, and daily boundaries before broader beta testing. |
+| Phase 3: Public Beta Readiness | Date and time logic | Add shared date/time utility for Today and schedules | Completed | 2026-08-02 | Added shared date/time utilities for local date keys, time parsing, sort fallbacks, due-date classification, Kid schedule sorting, and Today priority behavior. |
 | Phase 3: Public Beta Readiness | Local persistence | Add persistence schema versioning and migration guardrails | Not Started |  | Protect existing local user data before public beta and avoid silent fallback masking data issues. |
 | Phase 3: Public Beta Readiness | Child data | Add internal default child entity/id | Not Started |  | Keep one-child MVP UI while preparing the data model for future multi-child premium support. |
 | Phase 3: Public Beta Readiness | Feedback | Add in-app feedback path | Not Started |  | Add a simple feedback link or form so beta users can respond without messaging Vanessa directly. |
@@ -82,4 +82,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Add shared date/time utilities and tests for Today eligibility, sorting, overdue status, and daily boundaries.
+Add persistence schema versioning, stricter validation, and migration/fallback guardrails.

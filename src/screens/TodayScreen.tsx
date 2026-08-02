@@ -8,6 +8,7 @@ import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
+import { classifyDueDate, getSortMinutes } from '../utils/dateTime';
 import { findMedicineDoseLog } from '../utils/medicineDoseLogs';
 
 type TodayLifeArea = TaskLifeArea | 'health';
@@ -62,31 +63,6 @@ type TimelineSection = {
   items: TimelineItem[];
 };
 
-const FALLBACK_SORT_MINUTES = {
-  morning: 8 * 60,
-  evening: 17 * 60 + 30
-} as const;
-
-function parseTimeToMinutes(time: string) {
-  const match = time.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i);
-
-  if (!match) {
-    return null;
-  }
-
-  const [, hourText, minuteText, meridiemText] = match;
-  const hour = Number(hourText);
-  const minutes = Number(minuteText ?? '0');
-  const meridiem = meridiemText.toUpperCase();
-  const normalizedHour = hour === 12 ? 0 : hour;
-
-  return normalizedHour * 60 + minutes + (meridiem === 'PM' ? 12 * 60 : 0);
-}
-
-function getSortMinutes(time: string, fallback: keyof typeof FALLBACK_SORT_MINUTES) {
-  return parseTimeToMinutes(time) ?? FALLBACK_SORT_MINUTES[fallback];
-}
-
 function sortTimelineItems(items: TimelineItem[]) {
   return [...items].sort((first, second) => first.sortMinutes - second.sortMinutes);
 }
@@ -138,22 +114,33 @@ function buildTimelineItems({
 
   const taskItems = tasks
     .filter((task) => !task.isDone)
-    .map((task) => ({
-      id: task.id,
-      lifeArea: task.lifeArea,
-      label: LIFE_AREA_LABELS[task.lifeArea],
-      priority: task.dueDate ? ('urgent' as const) : ('normal' as const),
-      title: task.title,
-      detail: task.dueDate ? `Due ${task.dueDate}` : 'Open to-do',
-      time: task.dueDate ?? 'Today',
-      sortMinutes: task.dueDate ? FALLBACK_SORT_MINUTES.evening : FALLBACK_SORT_MINUTES.morning,
-      action: {
-        accessibilityLabel: `Mark ${task.title} done from Today`,
-        label: 'Mark done',
-        sourceId: task.id,
-        type: 'task' as const
-      }
-    }));
+    .map((task) => {
+      const dueDateStatus = classifyDueDate(task.dueDate);
+
+      return {
+        id: task.id,
+        lifeArea: task.lifeArea,
+        label: LIFE_AREA_LABELS[task.lifeArea],
+        priority:
+          dueDateStatus === 'overdue'
+            ? ('overdue' as const)
+            : dueDateStatus === 'today'
+              ? ('urgent' as const)
+              : ('normal' as const),
+        title: task.title,
+        detail: task.dueDate ? `Due ${task.dueDate}` : 'Open to-do',
+        time: task.dueDate ?? 'Today',
+        sortMinutes: task.dueDate
+          ? getSortMinutes(task.dueDate, 'evening')
+          : getSortMinutes('Today', 'morning'),
+        action: {
+          accessibilityLabel: `Mark ${task.title} done from Today`,
+          label: 'Mark done',
+          sourceId: task.id,
+          type: 'task' as const
+        }
+      };
+    });
 
   const recurringGroceryItems = groceryItems
     .filter((item) => !item.isChecked && item.isRecurring)
@@ -165,7 +152,7 @@ function buildTimelineItems({
       title: item.itemName,
       detail: `${item.category} • Recurring grocery item`,
       time: '5:30 PM',
-      sortMinutes: FALLBACK_SORT_MINUTES.evening,
+      sortMinutes: getSortMinutes('5:30 PM', 'evening'),
       action: {
         accessibilityLabel: `Check ${item.itemName} from Today`,
         label: 'Check item',

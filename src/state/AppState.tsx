@@ -11,10 +11,10 @@ import type { Medicine } from '../models/Medicine';
 import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
+import { getLocalDateKey } from '../utils/dateTime';
 import {
   createMedicineDoseLogId,
-  formatDoseTakenAt,
-  getLocalDateKey
+  formatDoseTakenAt
 } from '../utils/medicineDoseLogs';
 import { loadPersistedAppState, savePersistedAppState } from './persistence';
 

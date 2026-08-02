@@ -2,6 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { TodayScreen } from '../src/screens/TodayScreen';
+import { TodosScreen } from '../src/screens/TodosScreen';
 import { AppStateProvider } from '../src/state/AppState';
 
 function renderWithAppState(ui: React.ReactElement) {
@@ -85,5 +86,22 @@ describe('TodayScreen', () => {
 
     expect(getByText(/Child • 5 ml • Taken today:/)).toBeOnTheScreen();
     expect(getAllByText('Child • 5 ml')).toHaveLength(1);
+  });
+
+  it('does not treat a parseable future due date as urgent', async () => {
+    const { getAllByText, getByLabelText, getByText } = await renderWithAppState(
+      <>
+        <TodosScreen />
+        <TodayScreen />
+      </>
+    );
+    const urgentCountBefore = getAllByText('Urgent').length;
+
+    await fireEvent.changeText(getByLabelText('Task title'), 'Plan summer camp');
+    await fireEvent.changeText(getByLabelText('Due date'), '2099-01-01');
+    await fireEvent.press(getByText('Add Task'));
+
+    expect(getAllByText('Plan summer camp').length).toBeGreaterThan(0);
+    expect(getAllByText('Urgent')).toHaveLength(urgentCountBefore);
   });
 });
