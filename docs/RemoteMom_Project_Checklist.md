@@ -32,6 +32,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | RemoteMom product brief and roadmap document | Completed | 2026-08-02 | Created the product brief and roadmap source document and shareable DOCX. |
 | RemoteMom Codex project instructions | Completed | 2026-08-02 | Saved the RemoteMom operating instructions as `AGENTS.md` at the repo root. |
 | Documentation and current app alignment audit | Completed | 2026-08-02 | Aligned existing documentation to `AGENTS.md`, documented source-of-truth conflicts, and added the module-by-module app audit/backlog. |
+| Today Dashboard source-aware actions | Completed | 2026-08-02 | Added Today actions that update original To-Do, Grocery, and Medicine source records without creating duplicate dashboard state. |
 | Firebase Auth + Firestore build | Not Started |  | Add cloud sync only after the local MVP and positioning are validated. |
 | Premium feature gating | Not Started |  | Gate multi-child, sharing, reminders, calendar sync, and cloud features later. |
 
@@ -44,4 +45,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Add source-aware actions to the Today Dashboard, starting with marking tasks done, checking grocery items, and marking medicine taken from Today while updating the original source records.
+Separate permanent medicine schedules from daily medicine completion records, so marking a medicine taken records a date-safe completion without changing the medicine schedule itself.

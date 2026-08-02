@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
@@ -19,6 +19,12 @@ type TimelineItem = {
   detail: string;
   time: string;
   sortMinutes: number;
+  action?: {
+    accessibilityLabel: string;
+    label: string;
+    sourceId: string;
+    type: 'task' | 'grocery' | 'medicine';
+  };
 };
 
 const LIFE_AREA_LABELS: Record<TodayLifeArea, string> = {
@@ -101,7 +107,13 @@ function buildTimelineItems({
           medicine.lastTaken ? ` • Last taken: ${medicine.lastTaken}` : ''
         }`,
         time,
-        sortMinutes
+        sortMinutes,
+        action: {
+          accessibilityLabel: `Mark ${medicine.medicineName} taken from Today`,
+          label: 'Mark taken',
+          sourceId: medicine.id,
+          type: 'medicine' as const
+        }
       };
     })
   );
@@ -127,27 +139,33 @@ function buildTimelineItems({
       title: task.title,
       detail: task.dueDate ? `Due ${task.dueDate}` : 'Open to-do',
       time: task.dueDate ?? 'Today',
-      sortMinutes: task.dueDate ? FALLBACK_SORT_MINUTES.evening : FALLBACK_SORT_MINUTES.morning
+      sortMinutes: task.dueDate ? FALLBACK_SORT_MINUTES.evening : FALLBACK_SORT_MINUTES.morning,
+      action: {
+        accessibilityLabel: `Mark ${task.title} done from Today`,
+        label: 'Mark done',
+        sourceId: task.id,
+        type: 'task' as const
+      }
     }));
 
-  const groceryNeeds = groceryItems.filter(
-    (item) => !item.isChecked && item.isRecurring
-  );
-  const recurringGroceryItems =
-    groceryNeeds.length > 0
-      ? [
-          {
-            id: 'grocery-recurring',
-            lifeArea: 'household' as const,
-            label: LIFE_AREA_LABELS.household,
-            priority: 'urgent' as const,
-            title: 'Buy recurring grocery staples',
-            detail: groceryNeeds.map((item) => item.itemName).join(', '),
-            time: '5:30 PM',
-            sortMinutes: FALLBACK_SORT_MINUTES.evening
-          }
-      ]
-      : [];
+  const recurringGroceryItems = groceryItems
+    .filter((item) => !item.isChecked && item.isRecurring)
+    .map((item) => ({
+      id: item.id,
+      lifeArea: 'household' as const,
+      label: LIFE_AREA_LABELS.household,
+      priority: 'urgent' as const,
+      title: item.itemName,
+      detail: `${item.category} • Recurring grocery item`,
+      time: '5:30 PM',
+      sortMinutes: FALLBACK_SORT_MINUTES.evening,
+      action: {
+        accessibilityLabel: `Check ${item.itemName} from Today`,
+        label: 'Check item',
+        sourceId: item.id,
+        type: 'grocery' as const
+      }
+    }));
 
   return sortTimelineItems([
     ...medicineItems,
@@ -176,7 +194,15 @@ function buildTimelineSections(timelineItems: TimelineItem[]): TimelineSection[]
 }
 
 export function TodayScreen() {
-  const { groceryItems, medicines, scheduleItems, tasks } = useAppState();
+  const {
+    groceryItems,
+    markMedicineTaken,
+    medicines,
+    scheduleItems,
+    tasks,
+    toggleGroceryItemChecked,
+    toggleTaskDone
+  } = useAppState();
   const timelineItems = useMemo(
     () => buildTimelineItems({ tasks, groceryItems, scheduleItems, medicines }),
     [groceryItems, medicines, scheduleItems, tasks]
@@ -185,6 +211,24 @@ export function TodayScreen() {
   const urgentCount = timelineItems.filter((item) => item.priority === 'urgent').length;
   const overdueCount = timelineItems.filter((item) => item.priority === 'overdue').length;
   const nextUpCount = Math.min(3, timelineItems.length);
+
+  const handleTimelineAction = (action: TimelineItem['action']) => {
+    if (!action) {
+      return;
+    }
+
+    if (action.type === 'task') {
+      toggleTaskDone(action.sourceId);
+      return;
+    }
+
+    if (action.type === 'grocery') {
+      toggleGroceryItemChecked(action.sourceId);
+      return;
+    }
+
+    markMedicineTaken(action.sourceId);
+  };
 
   return (
     <ScrollView
@@ -260,6 +304,19 @@ export function TodayScreen() {
                     </View>
                     <Text style={styles.itemTitle}>{item.title}</Text>
                     <Text style={styles.itemDetail}>{item.detail}</Text>
+                    {item.action ? (
+                      <Pressable
+                        accessibilityLabel={item.action.accessibilityLabel}
+                        accessibilityRole="button"
+                        onPress={() => handleTimelineAction(item.action)}
+                        style={({ pressed }) => [
+                          styles.actionButton,
+                          pressed ? styles.actionButtonPressed : null
+                        ]}
+                      >
+                        <Text style={styles.actionButtonText}>{item.action.label}</Text>
+                      </Pressable>
+                    ) : null}
                   </View>
                 </View>
               ))
@@ -301,6 +358,26 @@ export function TodayScreen() {
 }
 
 const styles = StyleSheet.create({
+  actionButton: {
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: '#E7F5F4',
+    borderColor: '#A8DAD8',
+    borderRadius: 8,
+    borderWidth: 1,
+    minHeight: 44,
+    justifyContent: 'center',
+    paddingHorizontal: 14,
+    paddingVertical: 10
+  },
+  actionButtonPressed: {
+    opacity: 0.72
+  },
+  actionButtonText: {
+    color: '#0F6F76',
+    fontSize: 13,
+    fontWeight: '700'
+  },
   areaLegend: {
     flexDirection: 'row',
     flexWrap: 'wrap',

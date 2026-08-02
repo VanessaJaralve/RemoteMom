@@ -78,7 +78,8 @@ describe('local persistence', () => {
     const { getByText } = await renderWithAppState(<TodayScreen />);
 
     await waitFor(() => expect(getByText('Review tomorrow morning priorities')).toBeOnTheScreen());
-    expect(getByText('Buy recurring grocery staples')).toBeOnTheScreen();
+    expect(getByText('Bread')).toBeOnTheScreen();
+    expect(getByText('Milk')).toBeOnTheScreen();
   });
 
   it('uses sample data when saved local state is invalid', async () => {
@@ -87,6 +88,7 @@ describe('local persistence', () => {
     const { getByText } = await renderWithAppState(<TodayScreen />);
 
     await waitFor(() => expect(getByText('Review tomorrow morning priorities')).toBeOnTheScreen());
-    expect(getByText('Buy recurring grocery staples')).toBeOnTheScreen();
+    expect(getByText('Bread')).toBeOnTheScreen();
+    expect(getByText('Milk')).toBeOnTheScreen();
   });
 });

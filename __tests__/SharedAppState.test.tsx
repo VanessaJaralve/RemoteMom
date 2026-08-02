@@ -28,7 +28,7 @@ describe('shared local app state', () => {
   });
 
   it('updates Today when a recurring grocery item is checked in Grocery', async () => {
-    const { getByLabelText, queryByText } = await renderSharedScreens(
+    const { getAllByText, getByLabelText } = await renderSharedScreens(
       <>
         <GroceryScreen />
         <TodayScreen />
@@ -37,7 +37,8 @@ describe('shared local app state', () => {
 
     await fireEvent.press(getByLabelText('Check Bread'));
 
-    expect(queryByText('Bread, Milk')).toBeNull();
+    expect(getAllByText('Bread')).toHaveLength(1);
+    expect(getAllByText('Milk')).toHaveLength(2);
   });
 
   it('updates Today when a schedule item is added in Kid', async () => {
