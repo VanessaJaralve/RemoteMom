@@ -111,6 +111,20 @@ export function HealthScreen() {
         ))}
       </View>
 
+      <View style={styles.safetyNote}>
+        <Text style={styles.safetyTitle}>Medicine safety note</Text>
+        <Text style={styles.safetyText}>RemoteMom organizes medicine routines only.</Text>
+        <Text style={styles.safetyText}>
+          Names, dosage text, and times should match what you already know or were told.
+        </Text>
+        <Text style={styles.safetyText}>
+          RemoteMom does not recommend dosages, diagnose, or change medical instructions.
+        </Text>
+        <Text style={styles.safetyText}>
+          Marking a dose taken only records completion; it does not change the saved schedule.
+        </Text>
+      </View>
+
       <View style={styles.form}>
         <TextInput
           accessibilityLabel="Person name"
@@ -452,6 +466,24 @@ const styles = StyleSheet.create({
   reminderText: {
     color: SURFACE_COLORS.muted,
     fontSize: 13,
+    fontWeight: '700'
+  },
+  safetyNote: {
+    backgroundColor: '#FFF8E5',
+    borderColor: '#E7D08A',
+    borderRadius: 8,
+    borderWidth: 1,
+    gap: 5,
+    padding: 14
+  },
+  safetyText: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    lineHeight: 19
+  },
+  safetyTitle: {
+    color: SURFACE_COLORS.text,
+    fontSize: 15,
     fontWeight: '700'
   },
   summary: {

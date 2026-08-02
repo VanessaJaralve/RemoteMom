@@ -43,6 +43,24 @@ describe('HealthScreen', () => {
     expect(queryByText('Today Dashboard')).toBeNull();
   });
 
+  it('shows medicine safety copy at the point of entry', async () => {
+    const { getByText, queryByText } = await renderWithAppState(<HealthScreen />);
+
+    expect(getByText('Medicine safety note')).toBeOnTheScreen();
+    expect(getByText('RemoteMom organizes medicine routines only.')).toBeOnTheScreen();
+    expect(
+      getByText('Names, dosage text, and times should match what you already know or were told.')
+    ).toBeOnTheScreen();
+    expect(
+      getByText('RemoteMom does not recommend dosages, diagnose, or change medical instructions.')
+    ).toBeOnTheScreen();
+    expect(
+      getByText('Marking a dose taken only records completion; it does not change the saved schedule.')
+    ).toBeOnTheScreen();
+    expect(queryByText('Recommended dosage')).toBeNull();
+    expect(queryByText('Diagnosis')).toBeNull();
+  });
+
   it('shows dosage, daily times, and refill threshold for sample medicines', async () => {
     const { getByText } = await renderWithAppState(<HealthScreen />);
 
