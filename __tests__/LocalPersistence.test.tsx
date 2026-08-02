@@ -88,7 +88,7 @@ describe('local persistence', () => {
       (AsyncStorage.setItem as jest.Mock).mock.calls.at(-1)[1]
     );
 
-    expect(latestSavedState.schemaVersion).toBe(1);
+    expect(latestSavedState.schemaVersion).toBe(2);
     expect(latestSavedState.tasks).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -143,6 +143,65 @@ describe('local persistence', () => {
     const { getByText } = await renderWithAppState(<TodayScreen />);
 
     await waitFor(() => expect(getByText('Call school office')).toBeOnTheScreen());
+  });
+
+  it('migrates saved child schedule and medicine records onto the default child id', async () => {
+    const legacyState = {
+      schemaVersion: 1,
+      tasks: [],
+      groceryItems: [],
+      scheduleItems: [
+        {
+          id: 'legacy-schedule-1',
+          title: 'Legacy school pickup',
+          category: 'kid',
+          startTime: '3:00 PM',
+          endTime: '3:30 PM',
+          recurring: false,
+          recurrenceRule: null
+        }
+      ],
+      medicines: [
+        {
+          id: 'legacy-medicine-1',
+          personName: 'Child',
+          medicineName: 'Legacy vitamins',
+          dosage: '1 gummy',
+          times: ['8:00 AM'],
+          refillReminderThreshold: 2,
+          lastTaken: null
+        }
+      ],
+      medicineDoseLogs: []
+    };
+
+    (AsyncStorage.getItem as jest.Mock).mockResolvedValue(JSON.stringify(legacyState));
+
+    await renderWithAppState(<TodayScreen />);
+
+    await waitFor(() => expect(AsyncStorage.setItem).toHaveBeenCalled());
+
+    const latestSavedState = JSON.parse(
+      (AsyncStorage.setItem as jest.Mock).mock.calls.at(-1)[1]
+    );
+
+    expect(latestSavedState.children).toEqual([{ id: 'child-default', name: 'Child' }]);
+    expect(latestSavedState.scheduleItems).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Legacy school pickup',
+          childId: 'child-default'
+        })
+      ])
+    );
+    expect(latestSavedState.medicines).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          medicineName: 'Legacy vitamins',
+          childId: 'child-default'
+        })
+      ])
+    );
   });
 
   it('uses sample data when saved collections are malformed', async () => {

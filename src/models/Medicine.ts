@@ -6,5 +6,6 @@ export type Medicine = {
   times: string[];
   refillReminderThreshold: number;
   reminderEnabled?: boolean;
+  childId?: string;
   lastTaken: string | null;
 };

@@ -1,5 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { DEFAULT_CHILD_ID, sampleChildren } from '../data/sampleData';
+import type { Child } from '../models/Child';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
 import type { MedicineDoseLog } from '../models/MedicineDoseLog';
@@ -7,10 +9,11 @@ import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
 
 export const APP_STATE_STORAGE_KEY = 'remotemom:appState:v1';
-export const CURRENT_APP_STATE_SCHEMA_VERSION = 1;
+export const CURRENT_APP_STATE_SCHEMA_VERSION = 2;
 
 export type PersistedAppState = {
   schemaVersion: typeof CURRENT_APP_STATE_SCHEMA_VERSION;
+  children: Child[];
   tasks: Task[];
   groceryItems: GroceryItem[];
   scheduleItems: ScheduleItem[];
@@ -47,9 +50,13 @@ function getNormalizedSchemaVersion(value: Record<string, unknown>) {
     return CURRENT_APP_STATE_SCHEMA_VERSION;
   }
 
-  return value.schemaVersion === CURRENT_APP_STATE_SCHEMA_VERSION
+  return value.schemaVersion === CURRENT_APP_STATE_SCHEMA_VERSION || value.schemaVersion === 1
     ? CURRENT_APP_STATE_SCHEMA_VERSION
     : null;
+}
+
+function isChild(value: unknown): value is Child {
+  return isRecord(value) && isString(value.id) && isString(value.name);
 }
 
 function isTask(value: unknown): value is Task {
@@ -88,6 +95,7 @@ function isScheduleItem(value: unknown): value is ScheduleItem {
     isString(value.endTime) &&
     isBoolean(value.recurring) &&
     (value.recurrenceRule === null || isString(value.recurrenceRule)) &&
+    isOptionalString(value.childId) &&
     isOptionalString(value.notes) &&
     isOptionalBoolean(value.reminderEnabled)
   );
@@ -104,6 +112,7 @@ function isMedicine(value: unknown): value is Medicine {
     value.times.every(isString) &&
     typeof value.refillReminderThreshold === 'number' &&
     isOptionalBoolean(value.reminderEnabled) &&
+    isOptionalString(value.childId) &&
     (value.lastTaken === null || isString(value.lastTaken))
   );
 }
@@ -117,6 +126,28 @@ function isMedicineDoseLog(value: unknown): value is MedicineDoseLog {
     isString(value.takenDate) &&
     isString(value.takenAt)
   );
+}
+
+function normalizeChildren(value: Record<string, unknown>) {
+  const persistedChildren = Array.isArray(value.children)
+    ? value.children.filter(isChild)
+    : [];
+
+  return persistedChildren.some((child) => child.id === DEFAULT_CHILD_ID)
+    ? persistedChildren
+    : sampleChildren;
+}
+
+function normalizeScheduleItem(item: ScheduleItem): ScheduleItem {
+  return item.category === 'kid' && !item.childId
+    ? { ...item, childId: DEFAULT_CHILD_ID }
+    : item;
+}
+
+function normalizeMedicine(medicine: Medicine): Medicine {
+  return medicine.personName.trim().toLowerCase() === 'child' && !medicine.childId
+    ? { ...medicine, childId: DEFAULT_CHILD_ID }
+    : medicine;
 }
 
 function normalizePersistedAppState(value: unknown): PersistedAppState | null {
@@ -141,10 +172,11 @@ function normalizePersistedAppState(value: unknown): PersistedAppState | null {
 
   return {
     schemaVersion,
+    children: normalizeChildren(value),
     tasks: value.tasks.filter(isTask),
     groceryItems: value.groceryItems.filter(isGroceryItem),
-    scheduleItems: value.scheduleItems.filter(isScheduleItem),
-    medicines: value.medicines.filter(isMedicine),
+    scheduleItems: value.scheduleItems.filter(isScheduleItem).map(normalizeScheduleItem),
+    medicines: value.medicines.filter(isMedicine).map(normalizeMedicine),
     medicineDoseLogs: Array.isArray(value.medicineDoseLogs)
       ? value.medicineDoseLogs.filter(isMedicineDoseLog)
       : []

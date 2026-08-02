@@ -9,5 +9,6 @@ export type ScheduleItem = {
   recurring: boolean;
   recurrenceRule: string | null;
   reminderEnabled?: boolean;
+  childId?: string;
   notes?: string;
 };

@@ -37,7 +37,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Family Health / Medicine Tracker | Separate medicine schedules from daily completion logs | Completed | 2026-08-02 | Added local per-date, per-time medicine dose logs so Health and Today can mark one scheduled dose without changing the permanent medicine schedule. |
 | Phase 3: Public Beta Readiness | Date and time logic | Add shared date/time utility for Today and schedules | Completed | 2026-08-02 | Added shared date/time utilities for local date keys, time parsing, sort fallbacks, due-date classification, Kid schedule sorting, and Today priority behavior. |
 | Phase 3: Public Beta Readiness | Local persistence | Add persistence schema versioning and migration guardrails | Completed | 2026-08-02 | Added schema versioning, legacy no-version normalization, unsupported-version fallback, and item-level validation for saved local records. |
-| Phase 3: Public Beta Readiness | Child data | Add internal default child entity/id | Not Started |  | Keep one-child MVP UI while preparing the data model for future multi-child premium support. |
+| Phase 3: Public Beta Readiness | Child data | Add internal default child entity/id | Completed | 2026-08-02 | Added a default Child entity, persisted children collection, schema v2 migration, and default childId links for child schedule and child medicine records without exposing multi-child UI. |
 | Phase 3: Public Beta Readiness | Feedback | Add in-app feedback path | Not Started |  | Add a simple feedback link or form so beta users can respond without messaging Vanessa directly. |
 | Phase 3: Public Beta Readiness | Privacy and trust | Add basic privacy policy | Not Started |  | Add plain-language privacy policy coverage for local app data, validation/waitlist collection, family schedule data, and medicine-related entries. |
 | Phase 3: Public Beta Readiness | App identity | Polish app identity and first impression | Not Started |  | Polish app name presentation, icon, splash, screenshots, and first-run impression before beta sharing. |
@@ -82,4 +82,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Add an internal default child entity/id while keeping the one-child MVP UI.
+Add plain-language privacy policy and beta feedback path.

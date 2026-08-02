@@ -1,7 +1,17 @@
+import type { Child } from '../models/Child';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task } from '../models/Task';
+
+export const DEFAULT_CHILD_ID = 'child-default';
+
+export const sampleChildren: Child[] = [
+  {
+    id: DEFAULT_CHILD_ID,
+    name: 'Child'
+  }
+];
 
 export const sampleTasks: Task[] = [
   {
@@ -56,6 +66,7 @@ export const sampleScheduleItems: ScheduleItem[] = [
     id: 'schedule-1',
     title: 'School drop-off',
     category: 'kid',
+    childId: DEFAULT_CHILD_ID,
     startTime: '7:45 AM',
     endTime: '8:10 AM',
     recurring: true,
@@ -67,6 +78,7 @@ export const sampleScheduleItems: ScheduleItem[] = [
     id: 'schedule-2',
     title: 'Soccer practice',
     category: 'kid',
+    childId: DEFAULT_CHILD_ID,
     startTime: '3:30 PM',
     endTime: '4:30 PM',
     recurring: true,
@@ -91,6 +103,7 @@ export const sampleMedicines: Medicine[] = [
     id: 'medicine-2',
     personName: 'Child',
     medicineName: 'Child Allergy Syrup',
+    childId: DEFAULT_CHILD_ID,
     dosage: '5 ml',
     times: ['8:00 AM', '8:00 PM'],
     refillReminderThreshold: 3,

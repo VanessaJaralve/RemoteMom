@@ -1,11 +1,14 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import {
+  DEFAULT_CHILD_ID,
+  sampleChildren,
   sampleGroceryItems,
   sampleMedicines,
   sampleScheduleItems,
   sampleTasks
 } from '../data/sampleData';
+import type { Child } from '../models/Child';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
 import type { MedicineDoseLog } from '../models/MedicineDoseLog';
@@ -65,6 +68,7 @@ type AppStateContextValue = {
   scheduleItems: ScheduleItem[];
   medicines: Medicine[];
   medicineDoseLogs: MedicineDoseLog[];
+  children: Child[];
   addTask: (input: AddTaskInput) => void;
   updateTask: (taskId: string, input: UpdateTaskInput) => void;
   deleteTask: (taskId: string) => void;
@@ -88,12 +92,17 @@ function createId(prefix: string) {
   return `${prefix}-${Date.now()}`;
 }
 
+function getChildIdForPersonName(personName: string) {
+  return personName.trim().toLowerCase() === 'child' ? DEFAULT_CHILD_ID : undefined;
+}
+
 export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>(sampleTasks);
   const [groceryItems, setGroceryItems] = useState<GroceryItem[]>(sampleGroceryItems);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>(sampleScheduleItems);
   const [medicines, setMedicines] = useState<Medicine[]>(sampleMedicines);
   const [medicineDoseLogs, setMedicineDoseLogs] = useState<MedicineDoseLog[]>([]);
+  const [trackedChildren, setTrackedChildren] = useState<Child[]>(sampleChildren);
   const [hasLoadedPersistedState, setHasLoadedPersistedState] = useState(false);
 
   useEffect(() => {
@@ -112,6 +121,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setScheduleItems(persistedState.scheduleItems);
         setMedicines(persistedState.medicines);
         setMedicineDoseLogs(persistedState.medicineDoseLogs);
+        setTrackedChildren(persistedState.children);
       }
 
       setHasLoadedPersistedState(true);
@@ -135,9 +145,18 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       groceryItems,
       scheduleItems,
       medicines,
-      medicineDoseLogs
+      medicineDoseLogs,
+      children: trackedChildren
     });
-  }, [groceryItems, hasLoadedPersistedState, medicineDoseLogs, medicines, scheduleItems, tasks]);
+  }, [
+    groceryItems,
+    hasLoadedPersistedState,
+    medicineDoseLogs,
+    medicines,
+    scheduleItems,
+    tasks,
+    trackedChildren
+  ]);
 
   const value = useMemo<AppStateContextValue>(
     () => ({
@@ -146,6 +165,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       scheduleItems,
       medicines,
       medicineDoseLogs,
+      children: trackedChildren,
       addTask: (input) => {
         const task: Task = {
           id: createId('task'),
@@ -223,6 +243,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           id: createId('schedule'),
           title: input.title,
           category: 'kid',
+          childId: DEFAULT_CHILD_ID,
           startTime: input.startTime,
           endTime: input.endTime,
           recurring: input.recurring,
@@ -240,6 +261,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
               ? {
                   ...item,
                   title: input.title,
+                  childId: DEFAULT_CHILD_ID,
                   startTime: input.startTime,
                   endTime: input.endTime,
                   recurring: input.recurring,
@@ -258,6 +280,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
           id: createId('medicine'),
           personName: input.personName,
           medicineName: input.medicineName,
+          childId: getChildIdForPersonName(input.personName),
           dosage: input.dosage,
           times: input.times,
           refillReminderThreshold: input.refillReminderThreshold,
@@ -277,6 +300,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
                   ...medicine,
                   personName: input.personName,
                   medicineName: input.medicineName,
+                  childId: getChildIdForPersonName(input.personName),
                   dosage: input.dosage,
                   times: input.times,
                   refillReminderThreshold: input.refillReminderThreshold
@@ -325,7 +349,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         );
       }
     }),
-    [groceryItems, medicineDoseLogs, medicines, scheduleItems, tasks]
+    [groceryItems, medicineDoseLogs, medicines, scheduleItems, tasks, trackedChildren]
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;
