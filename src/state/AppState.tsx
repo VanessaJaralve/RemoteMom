@@ -16,7 +16,11 @@ import {
   createMedicineDoseLogId,
   formatDoseTakenAt
 } from '../utils/medicineDoseLogs';
-import { loadPersistedAppState, savePersistedAppState } from './persistence';
+import {
+  CURRENT_APP_STATE_SCHEMA_VERSION,
+  loadPersistedAppState,
+  savePersistedAppState
+} from './persistence';
 
 type AddTaskInput = {
   title: string;
@@ -126,6 +130,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
     }
 
     void savePersistedAppState({
+      schemaVersion: CURRENT_APP_STATE_SCHEMA_VERSION,
       tasks,
       groceryItems,
       scheduleItems,
