@@ -65,8 +65,8 @@ describe('shared local app state', () => {
       </>
     );
 
-    await fireEvent.press(getByLabelText('Mark Vitamin D taken'));
+    await fireEvent.press(getByLabelText('Mark Vitamin D 8:00 AM taken'));
 
-    expect(getAllByText(/Mom • 1 tablet • Last taken:/).length).toBeGreaterThan(0);
+    expect(getAllByText(/Mom • 1 tablet • Taken today:/).length).toBeGreaterThan(0);
   });
 });

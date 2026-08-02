@@ -178,15 +178,15 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. The remaining gaps are reliability and trust gaps around medicine completion history, date logic, child modeling, empty/error states, and privacy/policy readiness for beta.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. The remaining gaps are reliability and trust gaps around shared date logic, persistence versioning, child modeling, empty/error states, and privacy/policy readiness for beta.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
 | Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels | Tasks update Today through shared state; stable ids exist; persistence saves changes | Due date is free text, so Today cannot reliably evaluate overdue/today/tomorrow; no empty state; generated ids use `Date.now()` only | High |
 | Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag | Category grouping and checked logic work; recurring unchecked items feed Today as individual actionable source records | No empty state; category is free text | Medium |
 | One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes | Schedule items feed Today and persist locally; UI clearly states one-child MVP | No child entity or `childId`; start/end times are free text; sorting uses string comparison instead of parsed time; recurrence is descriptive only | High |
-| Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines`; supports Mom/Child entries, dosage, times, refill threshold, mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated | `lastTaken` is stored on the permanent medicine record, not a separate daily completion log; Today treats each medicine time as overdue until any lastTaken exists, then all times look less urgent; no date-safe per-dose completion; no medical disclaimer in UI | Critical |
-| Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, and medicines | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark medicine taken from Today | Date/today logic is mostly label and fallback based; medicine action still uses the current single `lastTaken` field rather than per-day/per-dose completion | High |
+| Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times | No medical disclaimer in UI; dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | High |
+| Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today | Date/today logic is mostly label and fallback based; time parsing still lives inside Today instead of a shared utility | High |
 | Local persistence | `AppStateProvider` restores/saves one AsyncStorage payload via `src/state/persistence.ts` | Local state survives reloads in tests; invalid storage falls back safely to sample data; no cloud claims in app code | No schema version field or migrations; validation only checks arrays, not item shape; fallback to sample data after corrupt storage could hide data loss; write failures are silent | High |
 | Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium | No privacy policy yet; raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | High |
 
@@ -198,21 +198,21 @@ Current strengths:
 - Adding, editing, deleting, checking, or marking items in source modules updates Today because the same shared state arrays are used.
 - Completed tasks are filtered out of Today.
 - Checked recurring grocery items are removed from Today.
-- Marking a task done, checking a grocery item, or marking medicine taken from Today calls the existing source-module shared-state action.
+- Marking a task done, checking a grocery item, or marking an individual medicine dose taken from Today calls the existing source-module shared-state action.
 
 Current gaps:
 
-- Medicine actions from Today update the permanent medicine record's existing `lastTaken` field. This matches the current MVP model but remains insufficient for medicine-safety trust before beta.
+- Medicine actions from Today create or update a local `MedicineDoseLog` for the specific medicine, local date, and scheduled time. The permanent `Medicine` schedule is not changed.
 - Today's timeline item ids are still not fully normalized across sources. Tasks, schedule items, and grocery items use source ids; medicine uses `medicine.id + time` so multiple daily times can render separately.
 - Date handling is not yet a shared utility. Time parsing exists inside Today only, due dates are free text, and schedule sorting uses string comparison in the Kid screen.
-- Medicine completion is not per scheduled time or per day. One `lastTaken` value can make multiple daily medicine times look less urgent.
+- Medicine completion is now per scheduled time and per local date, but it still depends on the current local date helper rather than a broader tested date/time service.
 
 ## Critical Data-Loss And Medicine-Safety Risks
 
 Critical:
 
-- Medicine completion needs a daily completion log or per-dose record before beta trust work. The current single `lastTaken` field is not enough for a medicine routine with multiple daily times.
-- Source-aware Today actions are now implemented for tasks, grocery items, and medicine. The remaining critical safety risk is that medicine completion is not yet tracked per day and per scheduled dose.
+- No current unresolved medicine-completion data model issue is classified as Critical after the per-dose local completion log change. The remaining medicine safety work is still High priority before broader beta.
+- Source-aware Today actions are now implemented for tasks, grocery items, and individual medicine doses.
 
 High:
 
@@ -229,9 +229,9 @@ Privacy:
 
 | Priority | Improvement | Rationale |
 | --- | --- | --- |
-| Critical | Separate permanent medicine schedules from daily medicine completion records | Reduces medicine-safety risk and supports accurate Today status. |
 | High | Add shared date/time utilities and tests for Today eligibility, sorting, overdue, and daily boundaries | Prevents duplicated and unreliable date logic. |
 | High | Add persistence schema versioning, stricter validation, and migration/fallback handling | Protects local user data before public beta. |
+| High | Add medicine safety copy and disclaimer in Health | Builds trust while avoiding medical advice, dosage calculations, or diagnosis. |
 | High | Add a default child entity/id internally while keeping one-child UI | Preserves MVP boundary while preparing for future multi-child premium support. |
 | High | Add plain-language privacy policy and in-app/landing links | Needed before broader beta because the app touches family schedule and medicine data. |
 | Medium | Add calm empty states across all module screens | Improves first-run and cleared-list experience. |
@@ -251,7 +251,7 @@ Completed: Today source-aware completion actions.
 
 Single most important next development task:
 
-Separate permanent medicine schedules from daily medicine completion records, so marking a medicine taken records a date-safe completion without changing the medicine schedule itself.
+Add shared date/time utilities and tests for Today eligibility, sorting, overdue status, and daily boundaries.
 
 ## Current Strategic Recommendation
 

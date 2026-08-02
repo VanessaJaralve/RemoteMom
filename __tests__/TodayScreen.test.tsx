@@ -78,11 +78,12 @@ describe('TodayScreen', () => {
     expect(getByText('Milk')).toBeOnTheScreen();
   });
 
-  it('marks a source medicine taken from Today and updates the medicine timeline detail', async () => {
-    const { getByLabelText, getByText } = await renderWithAppState(<TodayScreen />);
+  it('marks a source medicine dose taken from Today and updates only that scheduled time', async () => {
+    const { getAllByText, getByLabelText, getByText } = await renderWithAppState(<TodayScreen />);
 
-    await fireEvent.press(getByLabelText('Mark Vitamin D taken from Today'));
+    await fireEvent.press(getByLabelText('Mark Child Allergy Syrup 8:00 AM taken from Today'));
 
-    expect(getByText(/Mom • 1 tablet • Last taken:/)).toBeOnTheScreen();
+    expect(getByText(/Child • 5 ml • Taken today:/)).toBeOnTheScreen();
+    expect(getAllByText('Child • 5 ml')).toHaveLength(1);
   });
 });

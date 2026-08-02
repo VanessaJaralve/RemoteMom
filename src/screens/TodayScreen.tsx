@@ -4,9 +4,11 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
+import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
+import { findMedicineDoseLog } from '../utils/medicineDoseLogs';
 
 type TodayLifeArea = TaskLifeArea | 'health';
 
@@ -22,6 +24,7 @@ type TimelineItem = {
   action?: {
     accessibilityLabel: string;
     label: string;
+    scheduledTime?: string;
     sourceId: string;
     type: 'task' | 'grocery' | 'medicine';
   };
@@ -50,6 +53,7 @@ type TimelineSource = {
   groceryItems: GroceryItem[];
   scheduleItems: ScheduleItem[];
   medicines: Medicine[];
+  medicineDoseLogs: MedicineDoseLog[];
 };
 
 type TimelineSection = {
@@ -91,29 +95,32 @@ function buildTimelineItems({
   tasks,
   groceryItems,
   scheduleItems,
-  medicines
+  medicines,
+  medicineDoseLogs
 }: TimelineSource): TimelineItem[] {
   const medicineItems = medicines.flatMap((medicine) =>
     medicine.times.map((time) => {
       const sortMinutes = getSortMinutes(time, 'morning');
+      const doseLog = findMedicineDoseLog(medicineDoseLogs, medicine.id, time);
 
       return {
         id: `${medicine.id}-${time}`,
         lifeArea: 'health' as const,
         label: LIFE_AREA_LABELS.health,
-        priority: medicine.lastTaken ? ('normal' as const) : ('overdue' as const),
+        priority: doseLog ? ('normal' as const) : ('overdue' as const),
         title: medicine.medicineName,
-        detail: `${medicine.personName} • ${medicine.dosage}${
-          medicine.lastTaken ? ` • Last taken: ${medicine.lastTaken}` : ''
-        }`,
+        detail: `${medicine.personName} • ${medicine.dosage}${doseLog ? ` • Taken today: ${doseLog.takenAt}` : ''}`,
         time,
         sortMinutes,
-        action: {
-          accessibilityLabel: `Mark ${medicine.medicineName} taken from Today`,
-          label: 'Mark taken',
-          sourceId: medicine.id,
-          type: 'medicine' as const
-        }
+        action: doseLog
+          ? undefined
+          : {
+              accessibilityLabel: `Mark ${medicine.medicineName} ${time} taken from Today`,
+              label: 'Mark taken',
+              scheduledTime: time,
+              sourceId: medicine.id,
+              type: 'medicine' as const
+            }
       };
     })
   );
@@ -197,6 +204,7 @@ export function TodayScreen() {
   const {
     groceryItems,
     markMedicineTaken,
+    medicineDoseLogs,
     medicines,
     scheduleItems,
     tasks,
@@ -204,8 +212,8 @@ export function TodayScreen() {
     toggleTaskDone
   } = useAppState();
   const timelineItems = useMemo(
-    () => buildTimelineItems({ tasks, groceryItems, scheduleItems, medicines }),
-    [groceryItems, medicines, scheduleItems, tasks]
+    () => buildTimelineItems({ tasks, groceryItems, scheduleItems, medicines, medicineDoseLogs }),
+    [groceryItems, medicineDoseLogs, medicines, scheduleItems, tasks]
   );
   const timelineSections = useMemo(() => buildTimelineSections(timelineItems), [timelineItems]);
   const urgentCount = timelineItems.filter((item) => item.priority === 'urgent').length;
@@ -227,7 +235,9 @@ export function TodayScreen() {
       return;
     }
 
-    markMedicineTaken(action.sourceId);
+    if (action.scheduledTime) {
+      markMedicineTaken(action.sourceId, action.scheduledTime);
+    }
   };
 
   return (

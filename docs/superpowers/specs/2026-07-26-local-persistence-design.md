@@ -12,7 +12,9 @@ This milestone adds local-only persistence. It does not add Firebase, auth, clou
 
 The existing `AppStateProvider` remains the only state API used by screens. A small storage module wraps AsyncStorage with typed `loadPersistedAppState` and `savePersistedAppState` functions. The provider initializes from sample data, attempts to restore saved state after mount, and saves the full shared state after user-driven changes.
 
-The storage payload mirrors the current shared provider shape: `tasks`, `groceryItems`, `scheduleItems`, and `medicines`. Keeping this boundary explicit makes Firebase a future replacement or companion for the storage module rather than a screen rewrite.
+The storage payload mirrors the current shared provider shape: `tasks`, `groceryItems`, `scheduleItems`, `medicines`, and `medicineDoseLogs`. `medicines` remains the permanent schedule model, while `medicineDoseLogs` records per-date, per-time completion state. Keeping this boundary explicit makes Firebase a future replacement or companion for the storage module rather than a screen rewrite.
+
+Older persisted payloads may not include `medicineDoseLogs`. The storage loader normalizes those payloads to an empty dose-log array so existing local data can continue loading.
 
 ## Data Flow
 

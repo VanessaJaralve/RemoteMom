@@ -11,6 +11,7 @@ import {
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Medicine } from '../models/Medicine';
 import { useAppState } from '../state/AppState';
+import { findMedicineDoseLog } from '../utils/medicineDoseLogs';
 import { formatReminderLabel } from '../utils/reminders';
 
 function parseTimes(timesText: string) {
@@ -21,8 +22,14 @@ function parseTimes(timesText: string) {
 }
 
 export function HealthScreen() {
-  const { addMedicine, deleteMedicine, markMedicineTaken, medicines, updateMedicine } =
-    useAppState();
+  const {
+    addMedicine,
+    deleteMedicine,
+    markMedicineTaken,
+    medicineDoseLogs,
+    medicines,
+    updateMedicine
+  } = useAppState();
   const [personName, setPersonName] = useState('');
   const [medicineName, setMedicineName] = useState('');
   const [dosage, setDosage] = useState('');
@@ -174,18 +181,32 @@ export function HealthScreen() {
             <Text style={styles.medicineName}>{medicine.medicineName}</Text>
             <Text style={styles.dosage}>{medicine.dosage}</Text>
             <Text style={styles.times}>{medicine.times.join(', ')}</Text>
-            <Text style={styles.lastTaken}>
-              {medicine.lastTaken ? `Last taken: ${medicine.lastTaken}` : 'Last taken: Not yet'}
-            </Text>
             <Text style={styles.reminderText}>{formatReminderLabel(medicine)}</Text>
-            <Pressable
-              accessibilityLabel={`Mark ${medicine.medicineName} taken`}
-              accessibilityRole="button"
-              onPress={() => markMedicineTaken(medicine.id)}
-              style={styles.takenButton}
-            >
-              <Text style={styles.takenButtonText}>Mark Taken</Text>
-            </Pressable>
+            <View style={styles.doseList}>
+              {medicine.times.map((time) => {
+                const doseLog = findMedicineDoseLog(medicineDoseLogs, medicine.id, time);
+
+                return (
+                  <View key={time} style={styles.doseRow}>
+                    <Text style={styles.doseStatus}>
+                      {doseLog
+                        ? `${time} dose taken today: ${doseLog.takenAt}`
+                        : `${time} dose still open`}
+                    </Text>
+                    {doseLog ? null : (
+                      <Pressable
+                        accessibilityLabel={`Mark ${medicine.medicineName} ${time} taken`}
+                        accessibilityRole="button"
+                        onPress={() => markMedicineTaken(medicine.id, time)}
+                        style={styles.takenButton}
+                      >
+                        <Text style={styles.takenButtonText}>Mark {time} taken</Text>
+                      </Pressable>
+                    )}
+                  </View>
+                );
+              })}
+            </View>
             <View style={styles.itemActions}>
               {confirmingDeleteMedicineId === medicine.id ? (
                 <>
@@ -304,6 +325,23 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '700'
   },
+  doseList: {
+    gap: 8
+  },
+  doseRow: {
+    alignItems: 'flex-start',
+    backgroundColor: '#F7FBFA',
+    borderColor: '#D8EDEB',
+    borderRadius: 6,
+    borderWidth: 1,
+    gap: 8,
+    padding: 10
+  },
+  doseStatus: {
+    color: SURFACE_COLORS.text,
+    fontSize: 14,
+    fontWeight: '600'
+  },
   eyebrow: {
     color: LIFE_AREA_COLORS.health,
     fontSize: 13,
@@ -336,10 +374,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 8
-  },
-  lastTaken: {
-    color: SURFACE_COLORS.muted,
-    fontSize: 14
   },
   medicineCard: {
     backgroundColor: SURFACE_COLORS.card,

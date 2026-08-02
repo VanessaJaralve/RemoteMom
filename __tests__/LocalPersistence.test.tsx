@@ -72,6 +72,32 @@ describe('local persistence', () => {
     );
   });
 
+  it('restores older saved local state without medicine dose logs', async () => {
+    const savedState = {
+      ...emptyPersistedState,
+      medicines: [
+        {
+          id: 'saved-medicine-1',
+          personName: 'Child',
+          medicineName: 'Evening Antibiotic',
+          dosage: '5 ml',
+          times: ['8:00 AM', '8:00 PM'],
+          refillReminderThreshold: 2,
+          lastTaken: null
+        }
+      ]
+    };
+
+    (AsyncStorage.getItem as jest.Mock).mockResolvedValue(JSON.stringify(savedState));
+
+    const { getAllByText, getByLabelText, getByText } = await renderWithAppState(<TodayScreen />);
+
+    await waitFor(() => expect(getAllByText('Evening Antibiotic').length).toBeGreaterThan(0));
+    await fireEvent.press(getByLabelText('Mark Evening Antibiotic 8:00 AM taken from Today'));
+
+    expect(getByText(/Child • 5 ml • Taken today:/)).toBeOnTheScreen();
+  });
+
   it('uses sample data when no saved local state exists', async () => {
     (AsyncStorage.getItem as jest.Mock).mockResolvedValue(null);
 

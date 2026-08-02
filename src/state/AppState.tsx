@@ -8,8 +8,14 @@ import {
 } from '../data/sampleData';
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
+import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
+import {
+  createMedicineDoseLogId,
+  formatDoseTakenAt,
+  getLocalDateKey
+} from '../utils/medicineDoseLogs';
 import { loadPersistedAppState, savePersistedAppState } from './persistence';
 
 type AddTaskInput = {
@@ -54,6 +60,7 @@ type AppStateContextValue = {
   groceryItems: GroceryItem[];
   scheduleItems: ScheduleItem[];
   medicines: Medicine[];
+  medicineDoseLogs: MedicineDoseLog[];
   addTask: (input: AddTaskInput) => void;
   updateTask: (taskId: string, input: UpdateTaskInput) => void;
   deleteTask: (taskId: string) => void;
@@ -68,7 +75,7 @@ type AppStateContextValue = {
   addMedicine: (input: AddMedicineInput) => void;
   updateMedicine: (medicineId: string, input: UpdateMedicineInput) => void;
   deleteMedicine: (medicineId: string) => void;
-  markMedicineTaken: (medicineId: string) => void;
+  markMedicineTaken: (medicineId: string, scheduledTime: string) => void;
 };
 
 const AppStateContext = createContext<AppStateContextValue | null>(null);
@@ -77,20 +84,12 @@ function createId(prefix: string) {
   return `${prefix}-${Date.now()}`;
 }
 
-function formatLastTaken(date: Date) {
-  return date.toLocaleString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit'
-  });
-}
-
 export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>(sampleTasks);
   const [groceryItems, setGroceryItems] = useState<GroceryItem[]>(sampleGroceryItems);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>(sampleScheduleItems);
   const [medicines, setMedicines] = useState<Medicine[]>(sampleMedicines);
+  const [medicineDoseLogs, setMedicineDoseLogs] = useState<MedicineDoseLog[]>([]);
   const [hasLoadedPersistedState, setHasLoadedPersistedState] = useState(false);
 
   useEffect(() => {
@@ -108,6 +107,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setGroceryItems(persistedState.groceryItems);
         setScheduleItems(persistedState.scheduleItems);
         setMedicines(persistedState.medicines);
+        setMedicineDoseLogs(persistedState.medicineDoseLogs);
       }
 
       setHasLoadedPersistedState(true);
@@ -129,9 +129,10 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       tasks,
       groceryItems,
       scheduleItems,
-      medicines
+      medicines,
+      medicineDoseLogs
     });
-  }, [groceryItems, hasLoadedPersistedState, medicines, scheduleItems, tasks]);
+  }, [groceryItems, hasLoadedPersistedState, medicineDoseLogs, medicines, scheduleItems, tasks]);
 
   const value = useMemo<AppStateContextValue>(
     () => ({
@@ -139,6 +140,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       groceryItems,
       scheduleItems,
       medicines,
+      medicineDoseLogs,
       addTask: (input) => {
         const task: Task = {
           id: createId('task'),
@@ -261,6 +263,8 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setMedicines((currentMedicines) => [medicine, ...currentMedicines]);
       },
       updateMedicine: (medicineId, input) => {
+        const scheduledTimes = new Set(input.times);
+
         setMedicines((currentMedicines) =>
           currentMedicines.map((medicine) =>
             medicine.id === medicineId
@@ -275,23 +279,48 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
               : medicine
           )
         );
+        setMedicineDoseLogs((currentLogs) =>
+          currentLogs.filter(
+            (log) => log.medicineId !== medicineId || scheduledTimes.has(log.scheduledTime)
+          )
+        );
       },
       deleteMedicine: (medicineId) => {
         setMedicines((currentMedicines) =>
           currentMedicines.filter((medicine) => medicine.id !== medicineId)
         );
+        setMedicineDoseLogs((currentLogs) =>
+          currentLogs.filter((log) => log.medicineId !== medicineId)
+        );
       },
-      markMedicineTaken: (medicineId) => {
-        const lastTaken = formatLastTaken(new Date());
+      markMedicineTaken: (medicineId, scheduledTime) => {
+        const now = new Date();
+        const takenDate = getLocalDateKey(now);
+        const takenAt = formatDoseTakenAt(now);
+        const doseLog: MedicineDoseLog = {
+          id: createMedicineDoseLogId(medicineId, scheduledTime, takenDate),
+          medicineId,
+          scheduledTime,
+          takenDate,
+          takenAt
+        };
 
-        setMedicines((currentMedicines) =>
-          currentMedicines.map((medicine) =>
-            medicine.id === medicineId ? { ...medicine, lastTaken } : medicine
-          )
+        setMedicineDoseLogs((currentLogs) =>
+          [
+            doseLog,
+            ...currentLogs.filter(
+              (log) =>
+                !(
+                  log.medicineId === medicineId &&
+                  log.scheduledTime === scheduledTime &&
+                  log.takenDate === takenDate
+                )
+            )
+          ]
         );
       }
     }),
-    [groceryItems, medicines, scheduleItems, tasks]
+    [groceryItems, medicineDoseLogs, medicines, scheduleItems, tasks]
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

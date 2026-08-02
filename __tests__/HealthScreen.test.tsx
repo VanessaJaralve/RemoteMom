@@ -72,13 +72,14 @@ describe('HealthScreen', () => {
     expect(getAllByDisplayValue('')).toHaveLength(5);
   });
 
-  it('marks a medicine as taken and updates lastTaken display', async () => {
+  it('marks one scheduled medicine dose as taken without changing the other daily dose', async () => {
     const { getAllByText, getByLabelText, getByText } =
       await renderWithAppState(<HealthScreen />);
 
-    await fireEvent.press(getByLabelText('Mark Vitamin D taken'));
+    await fireEvent.press(getByLabelText('Mark Child Allergy Syrup 8:00 AM taken'));
 
-    expect(getByText('Vitamin D')).toBeOnTheScreen();
-    expect(getAllByText(/Last taken:/).length).toBeGreaterThan(0);
+    expect(getByText('Child Allergy Syrup')).toBeOnTheScreen();
+    expect(getByText(/8:00 AM dose taken today:/)).toBeOnTheScreen();
+    expect(getAllByText('8:00 PM dose still open')).toHaveLength(1);
   });
 });

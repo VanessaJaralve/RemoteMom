@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import type { GroceryItem } from '../models/GroceryItem';
 import type { Medicine } from '../models/Medicine';
+import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task } from '../models/Task';
 
@@ -12,23 +13,36 @@ export type PersistedAppState = {
   groceryItems: GroceryItem[];
   scheduleItems: ScheduleItem[];
   medicines: Medicine[];
+  medicineDoseLogs: MedicineDoseLog[];
 };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
-function isPersistedAppState(value: unknown): value is PersistedAppState {
+function normalizePersistedAppState(value: unknown): PersistedAppState | null {
   if (!isRecord(value)) {
-    return false;
+    return null;
   }
 
-  return (
-    Array.isArray(value.tasks) &&
-    Array.isArray(value.groceryItems) &&
-    Array.isArray(value.scheduleItems) &&
-    Array.isArray(value.medicines)
-  );
+  if (
+    !Array.isArray(value.tasks) ||
+    !Array.isArray(value.groceryItems) ||
+    !Array.isArray(value.scheduleItems) ||
+    !Array.isArray(value.medicines)
+  ) {
+    return null;
+  }
+
+  return {
+    tasks: value.tasks as Task[],
+    groceryItems: value.groceryItems as GroceryItem[],
+    scheduleItems: value.scheduleItems as ScheduleItem[],
+    medicines: value.medicines as Medicine[],
+    medicineDoseLogs: Array.isArray(value.medicineDoseLogs)
+      ? (value.medicineDoseLogs as MedicineDoseLog[])
+      : []
+  };
 }
 
 export async function loadPersistedAppState() {
@@ -41,7 +55,7 @@ export async function loadPersistedAppState() {
 
     const parsedState: unknown = JSON.parse(rawState);
 
-    return isPersistedAppState(parsedState) ? parsedState : null;
+    return normalizePersistedAppState(parsedState);
   } catch {
     return null;
   }
