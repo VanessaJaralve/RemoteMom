@@ -14,13 +14,24 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Shared app state across modules | Completed | 2026-07-26 | Today Dashboard updates when items are added, checked, edited, or marked taken. |
 | Local persistence | Completed | 2026-07-26 | Added AsyncStorage so local data survives reloads. |
 | Edit and delete flows | Completed | 2026-07-26 | Added Edit, Save, Cancel, and Delete for all editable modules. |
-| Visual QA and UI polish | Not Started |  | Tap-test app in Expo Go, improve spacing, card layouts, and mobile button ergonomics. |
-| Delete confirmations | Not Started |  | Add confirmation state before removing To-Dos, Grocery items, Kid Schedule items, and Medicine entries. |
-| Today Dashboard v2 | Not Started |  | Make Today the core paid-value surface: urgent items, overdue items, morning/evening framing, and clearer priorities. |
-| Reminder-ready fields | Not Started |  | Prepare data model fields for future reminders without adding Firebase notifications yet. |
-| Landing / waitlist page | Not Started |  | Validate the niche promise and collect early interest before building payments. |
-| Pricing and tier validation | Not Started |  | Test Free vs Premium feature boundaries with target users. |
-| Firebase Auth + Firestore plan | Not Started |  | Plan account-based sync after paid-value validation. |
+| Visual QA and UI polish | Completed | 2026-07-26 | Polished form panels, card spacing, action button rows, 44px tap targets, and Today Dashboard text readability. |
+| Delete confirmations | Completed | 2026-07-26 | Added two-step inline delete confirmations across To-Dos, Grocery, Kid Schedule, and Medicine. |
+| Today Dashboard v2 | Completed | 2026-07-28 | Added urgent, overdue, next-up summary, morning/evening timeline sections, sorted items, focus framing, and cleaner life-area tags. |
+| Reminder-ready fields | Completed | 2026-07-28 | Added optional local reminder-ready fields and visible Reminder ready/off labels without Firebase, push notifications, permissions, or calendar sync. |
+| Landing / waitlist page | Completed | 2026-07-28 | Built a static RemoteMom landing/waitlist page with Today Dashboard preview image, niche positioning, Free/Future Premium framing, and waitlist intake. |
+| Pricing and tier validation | Completed | 2026-07-31 | Added Free vs Premium boundaries, competitor pricing anchors, price points to test, interview/survey prompts, and decision rules before Firebase. |
+| Firebase Auth + Firestore plan | Completed | 2026-07-31 | Added a future-only plan for auth strategy, Firestore data model, security rules, local-to-cloud migration, sync boundary, offline/privacy considerations, and future build phases. |
+| Validation survey form | Completed | 2026-08-01 | Added MVP validation survey for children count, hardest daily area, premium feature interest, price comfort, and interview permission. |
+| Real validation collection endpoint | Completed | 2026-08-01 | Connected validation form to `/api/validation`, webhook forwarding, local backup fallback, and setup docs. |
+| Google Sheets validation response destination | Completed | 2026-08-01 | Added Google Apps Script webhook template and response sheet destination for validation and waitlist collection. |
+| Personal validation response sheet migration | Completed | 2026-08-01 | Updated collection docs, tests, and Apps Script template to use Vanessa's personal Gmail-owned response sheet. |
+| Validation response write confirmation fix | Completed | 2026-08-01 | Required Apps Script JSON `ok: true` before treating collection as successful. |
+| Waitlist real collection pipeline | Completed | 2026-08-01 | Connected landing waitlist forms to `/api/waitlist` and routed signups to a Waitlist tab through the same webhook. |
+| Landing page visitor-facing copy polish | Completed | 2026-08-01 | Replaced technical public form notes with warmer visitor-facing copy. |
+| Validation interview script and scorecard | Completed | 2026-08-02 | Added interview script, follow-up templates, scorecard fields, scoring definitions, and decision thresholds. |
+| RemoteMom product brief and roadmap document | Completed | 2026-08-02 | Created the product brief and roadmap source document and shareable DOCX. |
+| RemoteMom Codex project instructions | Completed | 2026-08-02 | Saved the RemoteMom operating instructions as `AGENTS.md` at the repo root. |
+| Documentation and current app alignment audit | Completed | 2026-08-02 | Aligned existing documentation to `AGENTS.md`, documented source-of-truth conflicts, and added the module-by-module app audit/backlog. |
 | Firebase Auth + Firestore build | Not Started |  | Add cloud sync only after the local MVP and positioning are validated. |
 | Premium feature gating | Not Started |  | Gate multi-child, sharing, reminders, calendar sync, and cloud features later. |
 
@@ -33,4 +44,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Visual QA and UI polish, then delete confirmations.
+Add source-aware actions to the Today Dashboard, starting with marking tasks done, checking grocery items, and marking medicine taken from Today while updating the original source records.

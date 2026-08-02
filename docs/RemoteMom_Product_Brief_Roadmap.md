@@ -18,6 +18,10 @@ The app is not trying to become a complex family operating system right away. Th
 
 What does Mom need to remember, handle, or follow up on today?
 
+The core product promise is:
+
+> Manage the day without carrying it all in your head.
+
 ## Target User
 
 The first target user is a remote or hybrid working mom who is balancing paid work with household and parenting responsibilities.
@@ -110,6 +114,27 @@ The Medicine Tracker supports Mom and Child medicine entries. It includes dosage
 
 The Today Dashboard combines To-Dos, Grocery, Child Schedule, and Medicine into one scrollable daily timeline with life-area color tags. Today Dashboard v2 strengthens this as the core daily-value surface.
 
+## Product Principles
+
+RemoteMom should follow these product principles until the roadmap is explicitly changed:
+
+- The Today Dashboard is the central experience.
+- Today must be derived from source records, not disconnected duplicate records.
+- Completing or editing a Today item should update the original source module.
+- The MVP supports one child in the user interface.
+- Future data decisions should avoid permanently hard-coding the app around only one child.
+- The MVP is local-first and must not imply cloud backup while data is stored only on the device.
+- Current MVP features and future premium features must stay clearly separated.
+- The interface should feel calm, warm, practical, trustworthy, and easy to scan.
+- Medicine tracking is organizational only and must never calculate dosage, recommend dosage, diagnose conditions, or infer medical instructions.
+- Medicine names, dosage text, instructions, and schedules must remain user-entered.
+- Sensitive user content should not be sent to analytics or application logs.
+- Future readiness is useful only when it does not prematurely expose or build roadmap features.
+
+Final product decision rule:
+
+> Does this help a remote working mom manage today with less mental effort?
+
 ## Validation Status
 
 RemoteMom currently has a live landing page and connected collection pipeline.
@@ -120,6 +145,112 @@ https://remote-mom.vercel.app/
 Validation and waitlist submissions are collected through Vercel endpoints and forwarded to Google Sheets using Google Apps Script.
 
 Early survey responses are still limited, so they should be treated as directional signals, not proof. The strongest early signal so far is that respondents have two children, and that sharing or multiple-child support may become important premium features.
+
+## Documentation Inventory And Alignment
+
+Current documentation reviewed on 2026-08-02:
+
+| Document | Path | Current Coverage | Alignment Notes |
+| --- | --- | --- | --- |
+| Codex project instructions | `AGENTS.md` | Product principles, MVP boundaries, Today Dashboard rules, persistence, medicine safety, privacy, documentation rules, definition of done | Current operating guide for future work. |
+| Product brief and roadmap | `docs/RemoteMom_Product_Brief_Roadmap.md` | Product summary, objectives, MVP modules, validation, roadmap, success metrics, risks, next step | Updated as the primary product source of truth. |
+| Project checklist | `docs/RemoteMom_Project_Checklist.md` | Build/change history and next planned work | Was stale for several completed items; updated to match the current completed history. |
+| Pricing and tier validation | `docs/Pricing_Tier_Validation.md` | Free vs Premium hypothesis, price points, validation questions, decision rules | Aligned with one-child local MVP and future premium boundaries. |
+| Firebase Auth and Firestore plan | `docs/Firebase_Auth_Firestore_Plan.md` | Future cloud sync/auth architecture, data model, migration, rules, privacy | Future-only plan; do not build until validation supports account sync. |
+| Validation collection setup | `docs/Validation_Collection_Setup.md` | Vercel endpoints, webhook environment variable, Google Apps Script, response sheet | Current real collection pipeline for validation and waitlist. |
+| Interview script and scorecard | `docs/Validation_Interview_Script_Scorecard.md` | Interview script, scorecard fields, decision thresholds, follow-up templates | Current validation process document. |
+| Historical implementation plans | `docs/superpowers/plans/*.md` | Module-by-module build plans for app shell, To-Dos, Grocery, Kid Schedule, Medicine, Today, shared state, persistence, edit/delete | Useful change history, not the current roadmap source. |
+| Local persistence design | `docs/superpowers/specs/2026-07-26-local-persistence-design.md` | Local AsyncStorage persistence design | Useful technical design history. |
+
+Documentation gaps:
+
+- There is no separate standalone decision log file. Meaningful decisions currently live inside the product brief, pricing plan, Firebase plan, checklist, and historical plans.
+- There is no separate standalone data-model document beyond the TypeScript model files and Firebase plan.
+- There is no standalone change-history file beyond the project checklist and historical plan documents.
+
+Resolved conflicts:
+
+- `docs/RemoteMom_Project_Checklist.md` previously listed Visual QA, delete confirmations, Today Dashboard v2, reminder-ready fields, landing page, pricing validation, and Firebase planning as `Not Started`, even though later commits and the Google Sheet tracker showed them as completed. Resolution: treat the later dated commits and Google Sheet tracker as the latest approved status, and update the Markdown checklist.
+- Older implementation plans describe Today as initially read-only and sample-data based. Resolution: preserve those files as historical build plans, while this product brief reflects the current shared-state Today Dashboard.
+- The one-child MVP is current, but validation responses suggest moms with two children may be important. Resolution: keep one-child UI as MVP, preserve future readiness in architecture, and do not expose multiple-child features yet.
+
+## Current App Audit
+
+Audit date: 2026-08-02
+
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. The main gaps are not broad feature gaps; they are reliability and trust gaps around Today actions, date logic, child modeling, medicine completion history, empty/error states, and privacy/policy readiness for beta.
+
+| Area | Current Implementation | What Works | Gaps / Risks | Priority |
+| --- | --- | --- | --- | --- |
+| Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels | Tasks update Today through shared state; stable ids exist; persistence saves changes | Due date is free text, so Today cannot reliably evaluate overdue/today/tomorrow; no empty state; generated ids use `Date.now()` only | High |
+| Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag | Category grouping and checked logic work; recurring unchecked items feed Today summary | Today collapses recurring grocery items into one synthetic timeline item, so source ids are not individually actionable from Today; no empty state; category is free text | Medium |
+| One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes | Schedule items feed Today and persist locally; UI clearly states one-child MVP | No child entity or `childId`; start/end times are free text; sorting uses string comparison instead of parsed time; recurrence is descriptive only | High |
+| Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines`; supports Mom/Child entries, dosage, times, refill threshold, mark taken, edit/delete | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated | `lastTaken` is stored on the permanent medicine record, not a separate daily completion log; Today treats each medicine time as overdue until any lastTaken exists, then all times look less urgent; no date-safe per-dose completion; no medical disclaimer in UI | Critical |
+| Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, and medicines | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work | Today is read-only, so completing from Today does not update source records; date/today logic is mostly label and fallback based; no source-aware action model; grocery item is synthetic | Critical |
+| Local persistence | `AppStateProvider` restores/saves one AsyncStorage payload via `src/state/persistence.ts` | Local state survives reloads in tests; invalid storage falls back safely to sample data; no cloud claims in app code | No schema version field or migrations; validation only checks arrays, not item shape; fallback to sample data after corrupt storage could hide data loss; write failures are silent | High |
+| Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium | No privacy policy yet; raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | High |
+
+## Today Dashboard Integration Findings
+
+Current strengths:
+
+- Today derives from `tasks`, `groceryItems`, `scheduleItems`, and `medicines` in `AppStateProvider`.
+- Adding, editing, deleting, checking, or marking items in source modules updates Today because the same shared state arrays are used.
+- Completed tasks are filtered out of Today.
+- Checked recurring grocery items are removed from the Today grocery summary.
+
+Current gaps:
+
+- Today does not expose source-update actions. A user cannot mark a task done, check a grocery item, or mark medicine taken directly from Today.
+- Today's timeline item ids are inconsistent across sources. Tasks and schedule items use source ids, medicine uses `medicine.id + time`, and groceries use a synthetic `grocery-recurring` id.
+- Date handling is not yet a shared utility. Time parsing exists inside Today only, due dates are free text, and schedule sorting uses string comparison in the Kid screen.
+- Medicine completion is not per scheduled time or per day. One `lastTaken` value can make multiple daily medicine times look less urgent.
+
+## Critical Data-Loss And Medicine-Safety Risks
+
+Critical:
+
+- Medicine completion needs a daily completion log or per-dose record before beta trust work. The current single `lastTaken` field is not enough for a medicine routine with multiple daily times.
+- Today should support source-aware completion actions, especially for tasks, groceries, and medicine, so the central dashboard can actually reduce mental load.
+
+High:
+
+- Local persistence needs schema versioning and safer validation before public beta. The current fallback behavior protects the UI but can mask malformed saved data.
+- Date and time parsing should be centralized and testable before more Today logic is added.
+- The child model should introduce an internal default child id before multi-child premium work, without exposing multiple-child UI.
+
+Privacy:
+
+- No app analytics or logging of sensitive content was found.
+- The validation/waitlist pipeline stores raw payloads in Vanessa's Google Sheet. This is acceptable for early validation, but a privacy policy should disclose collection before broader beta sharing.
+
+## Prioritized Improvement Backlog
+
+| Priority | Improvement | Rationale |
+| --- | --- | --- |
+| Critical | Add source-aware Today actions for tasks, grocery items, and medicine | Makes the central experience useful, not just informative. |
+| Critical | Separate permanent medicine schedules from daily medicine completion records | Reduces medicine-safety risk and supports accurate Today status. |
+| High | Add shared date/time utilities and tests for Today eligibility, sorting, overdue, and daily boundaries | Prevents duplicated and unreliable date logic. |
+| High | Add persistence schema versioning, stricter validation, and migration/fallback handling | Protects local user data before public beta. |
+| High | Add a default child entity/id internally while keeping one-child UI | Preserves MVP boundary while preparing for future multi-child premium support. |
+| High | Add plain-language privacy policy and in-app/landing links | Needed before broader beta because the app touches family schedule and medicine data. |
+| Medium | Add calm empty states across all module screens | Improves first-run and cleared-list experience. |
+| Medium | Split reusable form/card/action UI patterns after behavior stabilizes | Reduces duplication without a large premature refactor. |
+| Later | Add analytics or product metrics only after privacy rules are written | Useful for beta learning, but sensitive content must be excluded. |
+
+## Recommended Order Of Implementation
+
+1. Today source-aware completion actions.
+2. Medicine daily completion model and UI adjustment.
+3. Shared date/time utility for Today and schedules.
+4. Persistence schema versioning and migration guardrails.
+5. Internal default child entity/id.
+6. Privacy policy and beta feedback path.
+7. Empty states and small UI polish.
+
+Single most important next development task:
+
+Add source-aware actions to the Today Dashboard, starting with marking tasks done, checking grocery items, and marking medicine taken from Today while updating the original source records.
 
 ## Current Strategic Recommendation
 
