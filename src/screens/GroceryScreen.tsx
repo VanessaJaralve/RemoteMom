@@ -19,6 +19,8 @@ type GrocerySection = {
   items: GroceryItem[];
 };
 
+const COMPACT_HIT_SLOP = 10;
+
 function normalizeCategory(category: string) {
   return category.trim().toLowerCase();
 }
@@ -133,8 +135,10 @@ export function GroceryScreen() {
           accessibilityLabel="Mark item recurring"
           accessibilityRole="checkbox"
           accessibilityState={{ checked: isRecurring }}
+          hitSlop={COMPACT_HIT_SLOP}
           onPress={() => setIsRecurring((currentValue) => !currentValue)}
           style={[styles.recurringToggle, isRecurring && styles.recurringToggleActive]}
+          testID="grocery-recurring-toggle"
         >
           <Text
             style={[
@@ -184,6 +188,7 @@ export function GroceryScreen() {
                       accessibilityLabel={`${item.isChecked ? 'Uncheck' : 'Check'} ${item.itemName}`}
                       accessibilityRole="checkbox"
                       accessibilityState={{ checked: item.isChecked }}
+                      hitSlop={COMPACT_HIT_SLOP}
                       onPress={() => toggleGroceryItemChecked(item.id)}
                       style={[styles.checkbox, item.isChecked && styles.checkboxChecked]}
                     >
@@ -321,8 +326,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   deleteButtonText: {
     color: '#B42318',
@@ -425,6 +430,8 @@ const styles = StyleSheet.create({
     borderColor: LIFE_AREA_COLORS.household,
     borderRadius: 6,
     borderWidth: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 12,
     paddingVertical: 10
   },
@@ -465,8 +472,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   secondaryButtonText: {
     color: SURFACE_COLORS.text,

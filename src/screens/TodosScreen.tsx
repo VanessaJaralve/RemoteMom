@@ -30,6 +30,8 @@ const TASK_LIFE_AREA_COLORS: Record<TaskLifeArea, string> = {
   self: LIFE_AREA_COLORS.health
 };
 
+const COMPACT_HIT_SLOP = 10;
+
 export function TodosScreen() {
   const { addTask, deleteTask, tasks, toggleTaskDone, updateTask } = useAppState();
   const [title, setTitle] = useState('');
@@ -174,6 +176,7 @@ export function TodosScreen() {
                 accessibilityLabel={`Mark ${task.title} ${task.isDone ? 'not done' : 'done'}`}
                 accessibilityRole="checkbox"
                 accessibilityState={{ checked: task.isDone }}
+                hitSlop={COMPACT_HIT_SLOP}
                 onPress={() => toggleTaskDone(task.id)}
                 style={[
                   styles.checkbox,
@@ -322,8 +325,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   deleteButtonText: {
     color: '#B42318',
@@ -366,6 +369,8 @@ const styles = StyleSheet.create({
   lifeAreaButton: {
     borderRadius: 6,
     borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
     paddingHorizontal: 10,
     paddingVertical: 8
   },
@@ -389,8 +394,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   secondaryButtonText: {
     color: SURFACE_COLORS.text,

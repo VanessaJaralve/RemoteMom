@@ -42,7 +42,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Feedback | Add in-app feedback path | Completed | 2026-08-02 | Added a More tab with a beta feedback email action that does not attach sensitive app data. |
 | Phase 3: Public Beta Readiness | Privacy and trust | Add basic privacy policy | Completed | 2026-08-02 | Added plain-language privacy and medicine-safety copy in the app and landing page covering local app data, waitlist/validation/feedback collection, family schedule data, and medicine-related entries. |
 | Phase 3: Public Beta Readiness | App identity | Polish app identity and first impression | Not Started |  | Broader product identity work: app name presentation, icon, splash screen, visual consistency, screenshots, and first-open impression before beta sharing. Separate from empty states. |
-| Phase 3: Public Beta Readiness | Mobile UI | Review mobile spacing and tap targets | Not Started |  | Confirm mobile-first screens remain calm, readable, and easy to scan before beta sharing. |
+| Phase 3: Public Beta Readiness | Mobile UI | Review mobile spacing and tap targets | Completed | 2026-08-02 | Added focused mobile ergonomics tests, roomier edit/delete action padding, compact hit areas for checkbox and recurring controls, and safer wrapping for child schedule time inputs. |
 | Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Not Started |  | Create screenshots that show the Today Dashboard, To-Dos, Grocery, Child Schedule, and Medicine flow clearly. |
 | Phase 3: Public Beta Readiness | Beta distribution | Prepare TestFlight and Android beta setup | Not Started |  | Prepare the controlled mobile beta distribution path before public app store launch. |
 | Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Not Started |  | Prepare a short invite for moms outside the immediate friend group. |
@@ -83,4 +83,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Review mobile spacing and tap targets.
+Polish app identity and first impression.

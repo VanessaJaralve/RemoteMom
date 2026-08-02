@@ -15,6 +15,8 @@ import { useAppState } from '../state/AppState';
 import { getSortMinutes } from '../utils/dateTime';
 import { formatReminderLabel } from '../utils/reminders';
 
+const COMPACT_HIT_SLOP = 10;
+
 function sortByStartTime(items: ScheduleItem[]) {
   return [...items].sort((leftItem, rightItem) => {
     const timeDifference =
@@ -135,8 +137,10 @@ export function KidScreen() {
           accessibilityLabel="Mark schedule item recurring"
           accessibilityRole="checkbox"
           accessibilityState={{ checked: recurring }}
+          hitSlop={COMPACT_HIT_SLOP}
           onPress={() => setRecurring((currentValue) => !currentValue)}
           style={[styles.recurringToggle, recurring && styles.recurringToggleActive]}
+          testID="schedule-recurring-toggle"
         >
           <Text
             style={[
@@ -310,8 +314,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   deleteButtonText: {
     color: '#B42318',
@@ -386,6 +390,8 @@ const styles = StyleSheet.create({
     borderColor: LIFE_AREA_COLORS.kid,
     borderRadius: 6,
     borderWidth: 1,
+    minHeight: 44,
+    justifyContent: 'center',
     paddingHorizontal: 12,
     paddingVertical: 10
   },
@@ -419,8 +425,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   secondaryButtonText: {
     color: SURFACE_COLORS.text,
@@ -436,6 +442,7 @@ const styles = StyleSheet.create({
   },
   timeRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 10
   },
   timeText: {

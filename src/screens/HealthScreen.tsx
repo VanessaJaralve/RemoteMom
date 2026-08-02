@@ -328,8 +328,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   deleteButtonText: {
     color: '#B42318',
@@ -425,8 +425,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 44,
     justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingHorizontal: 12,
+    paddingVertical: 10
   },
   secondaryButtonText: {
     color: SURFACE_COLORS.text,
