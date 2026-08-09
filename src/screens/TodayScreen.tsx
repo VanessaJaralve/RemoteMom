@@ -233,6 +233,18 @@ export function TodayScreen() {
       contentContainerStyle={styles.content}
       style={styles.container}
     >
+      <View style={styles.brandPanel}>
+        <View style={styles.brandMark}>
+          <Text style={styles.brandMarkText}>R</Text>
+        </View>
+        <View style={styles.brandCopy}>
+          <Text style={styles.brandName}>RemoteMom</Text>
+          <Text style={styles.brandPromise}>
+            Manage the day without carrying it all in your head.
+          </Text>
+        </View>
+      </View>
+
       <View style={styles.header}>
         <Text style={styles.eyebrow}>Today</Text>
         <Text style={styles.title}>Daily command center</Text>
@@ -389,6 +401,45 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 8
+  },
+  brandCopy: {
+    flex: 1,
+    gap: 3
+  },
+  brandMark: {
+    alignItems: 'center',
+    backgroundColor: LIFE_AREA_COLORS.work,
+    borderRadius: 8,
+    height: 46,
+    justifyContent: 'center',
+    width: 46
+  },
+  brandMarkText: {
+    color: '#FFFFFF',
+    fontSize: 24,
+    fontWeight: '800',
+    lineHeight: 28
+  },
+  brandName: {
+    color: SURFACE_COLORS.text,
+    fontSize: 19,
+    fontWeight: '800',
+    letterSpacing: 0
+  },
+  brandPanel: {
+    alignItems: 'center',
+    backgroundColor: SURFACE_COLORS.card,
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: 'row',
+    gap: 12,
+    padding: 14
+  },
+  brandPromise: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 14,
+    lineHeight: 20
   },
   cardHeader: {
     alignItems: 'center',

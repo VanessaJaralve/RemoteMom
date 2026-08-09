@@ -41,7 +41,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Child data | Add internal default child entity/id | Completed | 2026-08-02 | Added a default Child entity, persisted children collection, schema v2 migration, and default childId links for child schedule and child medicine records without exposing multi-child UI. |
 | Phase 3: Public Beta Readiness | Feedback | Add in-app feedback path | Completed | 2026-08-02 | Added a More tab with a beta feedback email action that does not attach sensitive app data. |
 | Phase 3: Public Beta Readiness | Privacy and trust | Add basic privacy policy | Completed | 2026-08-02 | Added plain-language privacy and medicine-safety copy in the app and landing page covering local app data, waitlist/validation/feedback collection, family schedule data, and medicine-related entries. |
-| Phase 3: Public Beta Readiness | App identity | Polish app identity and first impression | Not Started |  | Broader product identity work: app name presentation, icon, splash screen, visual consistency, screenshots, and first-open impression before beta sharing. Separate from empty states. |
+| Phase 3: Public Beta Readiness | App identity | Polish app identity and first impression | Completed | 2026-08-09 | Renamed the Expo app identity to RemoteMom, aligned the app scheme/slug, added a calm splash background, and added the RemoteMom brand promise to the Today first screen. |
 | Phase 3: Public Beta Readiness | Mobile UI | Review mobile spacing and tap targets | Completed | 2026-08-02 | Added focused mobile ergonomics tests, roomier edit/delete action padding, compact hit areas for checkbox and recurring controls, and safer wrapping for child schedule time inputs. |
 | Phase 3: Public Beta Readiness | Device testing | Run Expo Go local phone smoke test | Completed | 2026-08-09 | Android Expo Go smoke test completed by Vanessa. Core flows mostly passed, but failures/modification needs were found and added as follow-up checklist rows: To-Do date input, Child Schedule time input, Medicine form controls, More feedback email bug, and Grocery category selection improvement. |
 | Phase 3: Public Beta Readiness | To-Dos | Add structured date input for To-Dos | Completed | 2026-08-09 | Added Today/Tomorrow/No due date quick controls that fill parseable local date keys while preserving the manual due-date field and existing Task model. |
@@ -89,4 +89,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Polish app identity and first impression.
+Prepare app screenshots.

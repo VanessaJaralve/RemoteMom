@@ -19,6 +19,13 @@ describe('TodayScreen', () => {
     expect(queryByText('Placeholder timeline for daily priorities.')).toBeNull();
   });
 
+  it('shows RemoteMom identity and the core mental-load promise first', async () => {
+    const { getByText } = await renderWithAppState(<TodayScreen />);
+
+    expect(getByText('RemoteMom')).toBeOnTheScreen();
+    expect(getByText('Manage the day without carrying it all in your head.')).toBeOnTheScreen();
+  });
+
   it('shows v2 priority summary and focus framing', async () => {
     const { getAllByText, getByText } = await renderWithAppState(<TodayScreen />);
 

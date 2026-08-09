@@ -4,7 +4,16 @@ import { render } from '@testing-library/react-native';
 import App from '../App';
 import { LIFE_AREA_COLORS } from '../src/constants/colors';
 
-describe('Working Mom Command Center app shell', () => {
+const appConfig = require('../app.json');
+
+describe('RemoteMom app shell', () => {
+  it('uses RemoteMom app identity in Expo config', () => {
+    expect(appConfig.expo.name).toBe('RemoteMom');
+    expect(appConfig.expo.slug).toBe('remotemom');
+    expect(appConfig.expo.scheme).toBe('remotemom');
+    expect(appConfig.expo.splash.backgroundColor).toBe('#F7F4EF');
+  });
+
   it('renders the core bottom tab labels and the beta trust area', async () => {
     const { getAllByText, getByText } = await render(<App />);
 

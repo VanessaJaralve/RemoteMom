@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "Working Mom Command Center",
-    "slug": "working-mom-command-center",
+    "name": "RemoteMom",
+    "slug": "remotemom",
     "version": "0.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "scheme": "workingmom",
+    "scheme": "remotemom",
+    "splash": {
+      "backgroundColor": "#F7F4EF",
+      "resizeMode": "contain"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
