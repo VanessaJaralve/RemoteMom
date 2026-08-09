@@ -49,7 +49,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Family Health / Medicine Tracker | Add medicine person, time, and frequency controls | Completed | 2026-08-09 | Added Mom/Child selection and user-selected frequency shortcuts that fill daily medicine times without dosage advice or Medicine model changes. |
 | Phase 3: Public Beta Readiness | More / Feedback | Fix Email Feedback action crash | Completed | 2026-08-09 | Fixed the beta feedback action so failed email opens show a calm fallback with Vanessa's feedback email instead of crashing. |
 | Phase 3: Public Beta Readiness | Grocery List | Add grocery category selection | Completed | 2026-08-09 | Added common category selection controls that fill the existing category field while preserving custom category typing, category sorting, and the existing GroceryItem model. |
-| Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Not Started |  | Create screenshots that show the Today Dashboard, To-Dos, Grocery, Child Schedule, and Medicine flow clearly. |
+| Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Completed | 2026-08-09 | Created a local screenshot kit with generated PNGs for Today Dashboard, To-Dos, Grocery, Child Schedule, Medicine Tracker, plus a contact sheet for beta sharing and early store-listing drafts. |
 | Phase 3: Public Beta Readiness | Beta distribution | Prepare TestFlight and Android beta setup | Not Started |  | Prepare the controlled mobile beta distribution path before public app store launch. |
 | Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Not Started |  | Prepare a short invite for moms outside the immediate friend group. |
 | Phase 3: Public Beta Readiness | UX polish | Add calm empty states across module screens | Completed | 2026-08-02 | Added supportive blank/cleared-list states for Today, To-Dos, Grocery, Child Schedule, and Health without changing data models or roadmap scope. |
@@ -89,4 +89,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Prepare app screenshots.
+Prepare TestFlight and Android beta setup.

@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RemoteMom App Screenshots</title>
+    <style>
+      :root {
+        --background: #f7f4ef;
+        --card: #ffffff;
+        --text: #222222;
+        --muted: #6b6b6b;
+        --border: #e4ded4;
+        --work: #1f2d50;
+        --kid: #e0654d;
+        --health: #c9a227;
+        --household: #6b6b6b;
+        --teal: #0f8a94;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #e7dfd3;
+        color: var(--text);
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        margin: 0;
+      }
+
+      .board {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(5, 390px);
+        padding: 28px;
+        width: max-content;
+      }
+
+      .shot {
+        background: linear-gradient(180deg, #fbfaf7 0%, var(--background) 100%);
+        border-radius: 42px;
+        box-shadow: 0 26px 80px rgba(31, 45, 80, 0.18);
+        height: 844px;
+        overflow: hidden;
+        position: relative;
+        width: 390px;
+      }
+
+      .phone-safe {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: 100%;
+        padding: 28px 20px 22px;
+      }
+
+      .status {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 8px 2px;
+      }
+
+      .time {
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .status-dots {
+        display: flex;
+        gap: 4px;
+      }
+
+      .status-dots span {
+        background: var(--text);
+        border-radius: 999px;
+        height: 6px;
+        opacity: 0.8;
+        width: 6px;
+      }
+
+      .brand {
+        align-items: center;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        gap: 12px;
+        padding: 14px;
+      }
+
+      .mark {
+        align-items: center;
+        background: var(--work);
+        border-radius: 8px;
+        color: #ffffff;
+        display: flex;
+        font-size: 24px;
+        font-weight: 900;
+        height: 46px;
+        justify-content: center;
+        width: 46px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+        font-weight: 900;
+      }
+
+      .brand-copy {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 18px;
+        margin-top: 2px;
+      }
+
+      .eyebrow {
+        color: var(--work);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      .summary {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 21px;
+      }
+
+      .stats {
+        align-items: center;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr 1px 1fr;
+        padding: 14px 10px;
+      }
+
+      .stat {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .stat strong {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .divider {
+        background: var(--border);
+        height: 52px;
+      }
+
+      .urgent {
+        color: var(--kid);
+      }
+
+      .overdue {
+        color: #c46a16;
+      }
+
+      .next {
+        color: var(--teal);
+      }
+
+      .section-title {
+        align-items: baseline;
+        display: flex;
+        gap: 8px;
+      }
+
+      .section-title h2 {
+        font-size: 18px;
+      }
+
+      .section-title span {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .row {
+        align-items: flex-start;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 58px 10px 1fr;
+      }
+
+      .row-time {
+        font-size: 13px;
+        font-weight: 800;
+        padding-top: 14px;
+      }
+
+      .dot {
+        border-radius: 999px;
+        height: 10px;
+        margin-top: 18px;
+        width: 10px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 13px;
+      }
+
+      .card-header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .tag {
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 900;
+        padding: 3px 8px;
+        text-transform: uppercase;
+      }
+
+      .badge {
+        background: #efece6;
+        border-radius: 5px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        padding: 3px 8px;
+      }
+
+      .badge.urgent-bg {
+        background: #fde9e4;
+        color: var(--kid);
+      }
+
+      .badge.overdue-bg {
+        background: #fff2de;
+        color: #b85518;
+      }
+
+      .item-title {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 22px;
+      }
+
+      .detail {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .button {
+        align-self: flex-start;
+        background: #e7f5f4;
+        border: 1px solid #a8dad8;
+        border-radius: 8px;
+        color: #0f6f76;
+        font-size: 13px;
+        font-weight: 900;
+        padding: 10px 14px;
+      }
+
+      .tabs {
+        align-items: center;
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        left: 0;
+        padding: 8px 6px 12px;
+        position: absolute;
+        right: 0;
+      }
+
+      .tab {
+        align-items: center;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        font-weight: 800;
+        gap: 2px;
+      }
+
+      .tab strong {
+        font-size: 15px;
+      }
+
+      .tab.active {
+        color: var(--work);
+      }
+
+      .screen-body {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding-bottom: 74px;
+      }
+
+      .form {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .input {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--muted);
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 800;
+        padding: 9px 12px;
+      }
+
+      .chip.active-work {
+        background: var(--work);
+        border-color: var(--work);
+        color: #ffffff;
+      }
+
+      .chip.active-kid {
+        background: var(--kid);
+        border-color: var(--kid);
+        color: #ffffff;
+      }
+
+      .chip.active-household {
+        background: var(--household);
+        border-color: var(--household);
+        color: #ffffff;
+      }
+
+      .chip.active-health {
+        background: var(--health);
+        border-color: var(--health);
+        color: #ffffff;
+      }
+
+      .primary {
+        align-items: center;
+        background: var(--work);
+        border-radius: 6px;
+        color: #ffffff;
+        display: flex;
+        font-size: 15px;
+        font-weight: 900;
+        justify-content: center;
+        min-height: 44px;
+      }
+
+      .primary.kid {
+        background: var(--kid);
+      }
+
+      .primary.household {
+        background: var(--household);
+      }
+
+      .primary.health {
+        background: var(--health);
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .item-row {
+        align-items: flex-start;
+        display: flex;
+        gap: 12px;
+      }
+
+      .checkbox {
+        border: 2px solid var(--muted);
+        border-radius: 4px;
+        height: 26px;
+        width: 26px;
+      }
+
+      .checkbox.checked {
+        align-items: center;
+        background: var(--household);
+        border-color: var(--household);
+        color: #ffffff;
+        display: flex;
+        font-weight: 900;
+        justify-content: center;
+      }
+
+      .mini-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .mini-action {
+        border: 1px solid var(--muted);
+        border-radius: 6px;
+        color: var(--text);
+        flex: 1;
+        font-size: 13px;
+        font-weight: 800;
+        padding: 10px 12px;
+        text-align: center;
+      }
+
+      .safety {
+        background: #fff8e5;
+        border: 1px solid #e7d08a;
+        border-radius: 8px;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 14px;
+      }
+
+      .safety strong {
+        color: var(--text);
+        font-size: 15px;
+      }
+
+      .contact-sheet {
+        background: var(--background);
+        padding: 40px;
+        width: 1600px;
+      }
+
+      .contact-title {
+        color: var(--work);
+        font-size: 42px;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+
+      .contact-copy {
+        color: var(--muted);
+        font-size: 20px;
+        margin-bottom: 28px;
+      }
+
+      .contact-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .contact-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 14px;
+      }
+
+      .contact-card .shot {
+        box-shadow: none;
+        height: 590px;
+        transform: scale(0.7);
+        transform-origin: top left;
+      }
+
+      .contact-card h2 {
+        font-size: 18px;
+        margin-top: -238px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="board" aria-label="RemoteMom screenshot source board">
+      <section class="shot" data-shot="today-dashboard" aria-label="Today Dashboard screenshot">
+        <div class="phone-safe">
+          <div class="status"><span class="time">8:04</span><span class="status-dots"><span></span><span></span><span></span></span></div>
+          <div class="screen-body">
+            <div class="brand">
+              <div class="mark">R</div>
+              <div>
+                <div class="brand-name">RemoteMom</div>
+                <div class="brand-copy">Manage the day without carrying it all in your head.</div>
+              </div>
+            </div>
+            <div>
+              <div class="eyebrow">Today</div>
+              <h1>Daily command center</h1>
+              <p class="summary">9 items across work, child, health, and household.</p>
+            </div>
+            <div class="stats">
+              <div class="stat"><strong class="urgent">3</strong><span>Urgent</span></div>
+              <div class="divider"></div>
+              <div class="stat"><strong class="overdue">3</strong><span>Overdue</span></div>
+              <div class="divider"></div>
+              <div class="stat"><strong class="next">3</strong><span>Next up</span></div>
+            </div>
+            <div class="section-title"><h2>Morning</h2><span>6:00 AM - 12:00 PM</span></div>
+            <div class="timeline">
+              <div class="row">
+                <div class="row-time">7:45 AM</div>
+                <div class="dot" style="background: var(--kid)"></div>
+                <div class="card">
+                  <div class="card-header"><span class="tag" style="background: var(--kid)">Kid</span><span class="badge">Planned</span></div>
+                  <div class="item-title">School drop-off</div>
+                  <div class="detail">7:45 AM - 8:10 AM - Backpack and lunchbox</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="row-time">8:00 AM</div>
+                <div class="dot" style="background: var(--health)"></div>
+                <div class="card">
+                  <div class="card-header"><span class="tag" style="background: var(--health)">Health</span><span class="badge overdue-bg">Overdue</span></div>
+                  <div class="item-title">Vitamin D</div>
+                  <div class="detail">Mom - 1 tablet</div>
+                  <div class="button">Mark taken</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="tabs"><div class="tab active"><strong>T</strong>Today</div><div class="tab"><strong>H</strong>Health</div><div class="tab"><strong>K</strong>Kid</div><div class="tab"><strong>G</strong>Grocery</div><div class="tab"><strong>✓</strong>To-Dos</div><div class="tab"><strong>M</strong>More</div></nav>
+        </div>
+      </section>
+
+      <section class="shot" data-shot="to-dos" aria-label="To-Dos screenshot">
+        <div class="phone-safe">
+          <div class="status"><span class="time">8:05</span><span class="status-dots"><span></span><span></span><span></span></span></div>
+          <div class="screen-body">
+            <div><div class="eyebrow">To-Dos</div><h1>Universal To-Do List</h1><p class="summary">2 open tasks</p></div>
+            <div class="form">
+              <div class="input">Add a task</div>
+              <div class="chip-row"><span class="chip active-work">Work</span><span class="chip">Kid</span><span class="chip">Household</span><span class="chip">Self</span></div>
+              <div class="input">Optional due date, YYYY-MM-DD</div>
+              <div class="chip-row"><span class="chip active-work">Today</span><span class="chip">Tomorrow</span><span class="chip">No due date</span></div>
+              <div class="primary">Add Task</div>
+            </div>
+            <div class="list">
+              <div class="card">
+                <div class="item-row"><div class="checkbox"></div><div><span class="tag" style="background: var(--work)">Work</span><div class="item-title">Review tomorrow morning priorities</div><div class="detail">Due Tonight</div></div></div>
+              </div>
+              <div class="card">
+                <div class="item-row"><div class="checkbox"></div><div><span class="tag" style="background: var(--kid)">Kid</span><div class="item-title">Pack school folder</div><div class="detail">Reminder off</div></div></div>
+              </div>
+            </div>
+          </div>
+          <nav class="tabs"><div class="tab"><strong>T</strong>Today</div><div class="tab"><strong>H</strong>Health</div><div class="tab"><strong>K</strong>Kid</div><div class="tab"><strong>G</strong>Grocery</div><div class="tab active"><strong>✓</strong>To-Dos</div><div class="tab"><strong>M</strong>More</div></nav>
+        </div>
+      </section>
+
+      <section class="shot" data-shot="grocery" aria-label="Grocery screenshot">
+        <div class="phone-safe">
+          <div class="status"><span class="time">8:06</span><span class="status-dots"><span></span><span></span><span></span></span></div>
+          <div class="screen-body">
+            <div><div class="eyebrow" style="color: var(--household)">Household</div><h1>Grocery List</h1><p class="summary">3 unchecked items</p></div>
+            <div class="form">
+              <div class="input">Item name</div>
+              <div class="input">Category or aisle</div>
+              <div class="chip-row"><span class="chip">produce</span><span class="chip">dairy</span><span class="chip">bakery</span><span class="chip">pantry</span><span class="chip active-household">household</span></div>
+              <div class="primary household">Add Grocery Item</div>
+            </div>
+            <div class="list">
+              <div class="section-title"><h2>bakery</h2></div>
+              <div class="card"><div class="item-row"><div class="checkbox"></div><div><div class="item-title">Bread</div><div class="detail">Recurring - Reminder ready at 5:30 PM</div></div></div></div>
+              <div class="section-title"><h2>dairy</h2></div>
+              <div class="card"><div class="item-row"><div class="checkbox"></div><div><div class="item-title">Milk</div><div class="detail">Recurring - Reminder ready at 5:30 PM</div></div></div></div>
+            </div>
+          </div>
+          <nav class="tabs"><div class="tab"><strong>T</strong>Today</div><div class="tab"><strong>H</strong>Health</div><div class="tab"><strong>K</strong>Kid</div><div class="tab active"><strong>G</strong>Grocery</div><div class="tab"><strong>✓</strong>To-Dos</div><div class="tab"><strong>M</strong>More</div></nav>
+        </div>
+      </section>
+
+      <section class="shot" data-shot="child-schedule" aria-label="Child Schedule screenshot">
+        <div class="phone-safe">
+          <div class="status"><span class="time">8:07</span><span class="status-dots"><span></span><span></span><span></span></span></div>
+          <div class="screen-body">
+            <div><div class="eyebrow" style="color: var(--kid)">Child</div><h1>Kid's Schedule</h1><p class="summary">One-child MVP schedule</p></div>
+            <div class="form">
+              <div class="input">Activity or school item</div>
+              <div class="chip-row"><span class="chip active-kid">School morning</span><span class="chip">Afternoon activity</span><span class="chip">Bedtime routine</span></div>
+              <div class="input">Notes</div>
+              <div class="primary kid">Add Schedule Item</div>
+            </div>
+            <div class="list">
+              <div class="card">
+                <div class="card-header"><span class="tag" style="background: var(--kid)">Kid</span><span class="badge">Recurring</span></div>
+                <div class="item-title">School drop-off</div>
+                <div class="detail">7:45 AM - 8:10 AM</div>
+                <div class="detail">Backpack and lunchbox</div>
+              </div>
+              <div class="card">
+                <div class="card-header"><span class="tag" style="background: var(--kid)">Kid</span><span class="badge">Recurring</span></div>
+                <div class="item-title">Soccer practice</div>
+                <div class="detail">3:30 PM - 4:30 PM - Bring water bottle</div>
+              </div>
+            </div>
+          </div>
+          <nav class="tabs"><div class="tab"><strong>T</strong>Today</div><div class="tab"><strong>H</strong>Health</div><div class="tab active"><strong>K</strong>Kid</div><div class="tab"><strong>G</strong>Grocery</div><div class="tab"><strong>✓</strong>To-Dos</div><div class="tab"><strong>M</strong>More</div></nav>
+        </div>
+      </section>
+
+      <section class="shot" data-shot="health" aria-label="Health screenshot">
+        <div class="phone-safe">
+          <div class="status"><span class="time">8:08</span><span class="status-dots"><span></span><span></span><span></span></span></div>
+          <div class="screen-body">
+            <div><div class="eyebrow" style="color: var(--health)">Health</div><h1>Medicine Tracker</h1><p class="summary">Reminder times are labels until notifications are added.</p></div>
+            <div class="safety"><strong>Medicine safety note</strong><span>RemoteMom organizes medicine routines only.</span><span>It does not recommend dosages, diagnose, or change medical instructions.</span></div>
+            <div class="form">
+              <div class="chip-row"><span class="chip active-health">Mom</span><span class="chip">Child</span></div>
+              <div class="input">Medicine name</div>
+              <div class="input">Dosage</div>
+              <div class="chip-row"><span class="chip active-health">Once daily</span><span class="chip">Twice daily</span><span class="chip">Bedtime</span></div>
+              <div class="primary health">Add Medicine</div>
+            </div>
+            <div class="card">
+              <div class="card-header"><span class="tag" style="background: var(--health)">Mom</span><span class="badge">Refill at 5 doses</span></div>
+              <div class="item-title">Vitamin D</div>
+              <div class="detail">1 tablet - 8:00 AM</div>
+              <div class="button">Mark 8:00 AM taken</div>
+            </div>
+          </div>
+          <nav class="tabs"><div class="tab"><strong>T</strong>Today</div><div class="tab active"><strong>H</strong>Health</div><div class="tab"><strong>K</strong>Kid</div><div class="tab"><strong>G</strong>Grocery</div><div class="tab"><strong>✓</strong>To-Dos</div><div class="tab"><strong>M</strong>More</div></nav>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact-sheet" data-shot="contact-sheet" aria-label="RemoteMom screenshot contact sheet">
+      <h1 class="contact-title">RemoteMom MVP Screenshot Set</h1>
+      <p class="contact-copy">Today-first local mobile MVP for remote working moms.</p>
+      <div class="contact-grid">
+        <div class="contact-card"><div class="shot"></div><h2>Today Dashboard</h2></div>
+        <div class="contact-card"><div class="shot"></div><h2>To-Dos</h2></div>
+        <div class="contact-card"><div class="shot"></div><h2>Grocery</h2></div>
+        <div class="contact-card"><div class="shot"></div><h2>Child Schedule</h2></div>
+        <div class="contact-card"><div class="shot"></div><h2>Medicine Tracker</h2></div>
+      </div>
+    </section>
+  </body>
+</html>
