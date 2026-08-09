@@ -179,7 +179,7 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. The remaining gaps are recruiting trusted beta testers, collecting feedback, and broader beta-launch readiness.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. Android APK sideload beta configuration and tester guidance have been prepared; the actual APK binary still needs to be generated through EAS and tested on Vanessa's Android phone before sharing. The remaining gaps are recruiting trusted beta testers, collecting feedback, and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
@@ -267,13 +267,16 @@ Completed: Prepare no-budget Expo Go beta setup.
 
 Completed: Create beta invitation message.
 
-1. Invite 5 trusted Expo Go beta testers.
-2. Track tester completion and feedback.
-3. Review repeated beta feedback before paid app-store setup.
+In Progress: Prepare Android APK sideload beta package.
+
+1. Generate and test the Android APK on Vanessa's phone.
+2. Invite 5 trusted Android APK beta testers.
+3. Track tester completion and feedback.
+4. Review repeated beta feedback before paid app-store setup.
 
 Single most important next development task:
 
-Invite 5 trusted Expo Go beta testers.
+Generate and test the Android APK on Vanessa's phone.
 
 ## Current Strategic Recommendation
 

@@ -10,6 +10,10 @@
       "backgroundColor": "#F7F4EF",
       "resizeMode": "contain"
     },
+    "android": {
+      "package": "com.vanessajaralve.remotemom",
+      "versionCode": 1
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
