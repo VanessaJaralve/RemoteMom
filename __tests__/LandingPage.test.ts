@@ -12,6 +12,7 @@ const { join } = require('path');
 
 const landingDir = join(__dirname, '..', 'landing');
 const htmlPath = join(landingDir, 'index.html');
+const betaHtmlPath = join(landingDir, 'beta', 'index.html');
 const cssPath = join(landingDir, 'styles.css');
 const scriptPath = join(landingDir, 'waitlist.js');
 const mockupPath = join(landingDir, 'remotemom-dashboard-mockup.png');
@@ -84,5 +85,27 @@ describe('RemoteMom landing page', () => {
     expect(html).toContain('RemoteMom is an organization tool, not medical advice.');
     expect(html).toContain('Send beta feedback');
     expect(html).toContain('mailto:vanessa.jaralve@gmail.com');
+  });
+
+  it('includes a separate Android beta recruitment page without a public APK link', () => {
+    expect(existsSync(betaHtmlPath)).toBe(true);
+
+    const betaHtml = readFileSync(betaHtmlPath, 'utf8');
+    const normalizedBetaHtml = betaHtml.replace(/\s+/g, ' ');
+
+    expect(betaHtml).toContain('Help test RemoteMom for Android');
+    expect(betaHtml).toContain('Join the Android beta interest list.');
+    expect(betaHtml).toContain('data-endpoint="/api/waitlist"');
+    expect(betaHtml).toContain('../styles.css');
+    expect(betaHtml).toContain('../waitlist.js');
+    expect(betaHtml).toContain('../remotemom-dashboard-mockup.png');
+    expect(betaHtml).toContain(
+      'Was one child enough for this test, or would you need multiple children before using it weekly?'
+    );
+    expect(betaHtml).toContain('sharing with a partner or caregiver');
+    expect(betaHtml).toContain('RemoteMom organizes medicine routines only.');
+    expect(normalizedBetaHtml).toContain('not backed up to RemoteMom cloud storage');
+    expect(betaHtml).not.toContain('RemoteMom-0.1.0-beta.apk');
+    expect(betaHtml).not.toContain('expo.dev/artifacts');
   });
 });
