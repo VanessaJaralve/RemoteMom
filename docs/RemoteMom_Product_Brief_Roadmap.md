@@ -179,7 +179,7 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. The remaining gaps are reliability and polish gaps around error states, app identity, screenshots, and broader beta-launch readiness.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found one feedback-action crash plus several input-control improvements. The remaining gaps are reliability and polish gaps around the feedback action, structured date/time inputs, app identity, screenshots, and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
@@ -253,12 +253,14 @@ Completed: Medicine safety copy directly in Health.
 
 Completed: Mobile spacing and tap-target review.
 
-1. App identity and first impression polish.
-2. Prepare app screenshots.
+1. Fix Email Feedback action crash.
+2. Add structured date/time and medicine form controls.
+3. App identity and first impression polish.
+4. Prepare app screenshots.
 
 Single most important next development task:
 
-Polish app identity and first impression.
+Fix Email Feedback action crash.
 
 ## Current Strategic Recommendation
 
