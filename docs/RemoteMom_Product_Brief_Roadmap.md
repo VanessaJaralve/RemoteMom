@@ -179,12 +179,12 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, and medicine person/frequency shortcuts are now complete. The remaining gaps are reliability and polish gaps around grocery category selection, app identity, screenshots, and broader beta-launch readiness.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, and grocery category selection controls are now complete. The remaining gaps are polish gaps around app identity, screenshots, and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
 | Universal To-Do List | `TodosScreen` uses shared `tasks` from `AppStateProvider`; supports add, edit, delete confirmation, done toggle, life-area tags, optional due date, reminder-ready labels, and quick due-date controls | Tasks update Today through shared state; stable ids exist; persistence saves changes; Today/Tomorrow quick controls save parseable local date keys; cleared task lists show supportive empty-state copy | Manual free-text due dates are still allowed; generated ids use `Date.now()` only | Medium |
-| Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag | Category grouping and checked logic work; recurring unchecked items feed Today as individual actionable source records; cleared grocery lists show supportive empty-state copy | Category is free text | Medium |
+| Grocery List | `GroceryScreen` uses shared `groceryItems`; supports add, edit, delete confirmation, checked toggle, category sorting, recurring flag, category selection controls, and custom category typing | Category grouping and checked logic work; common category controls fill the existing category field; recurring unchecked items feed Today as individual actionable source records; cleared grocery lists show supportive empty-state copy | Custom category typing remains free text; no aisle library or store-specific ordering yet | Medium |
 | One-child schedule | `KidScreen` uses shared `scheduleItems`; supports add, edit, delete confirmation, recurring flag, recurrence text, notes, and quick start/end time presets | Schedule items feed Today and persist locally; UI clearly states one-child MVP; presets save parseable time labels; start-time sorting uses shared parsed-time logic; child schedule records carry the internal default `childId`; cleared schedule lists show supportive empty-state copy | Manual free-text times are still allowed; recurrence is descriptive only | Medium |
 | Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete, person selection, and user-selected frequency shortcuts | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; frequency shortcuts only fill the existing daily times field; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times; Child medicine records carry the internal default `childId`; Health and More both state that RemoteMom does not provide medical advice | Dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | Medium |
 | Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today; parseable future due dates no longer become urgent; an all-clear empty state appears when nothing needs attention | Today still uses simple free-text fallbacks; due-date input has no picker or validation; recurrence is not expanded by date | High |
@@ -257,13 +257,15 @@ Completed: Fix Email Feedback action crash.
 
 Completed: Structured date/time and medicine form controls.
 
-1. Add grocery category selection.
-2. App identity and first impression polish.
-3. Prepare app screenshots.
+Completed: Grocery category selection.
+
+1. App identity and first impression polish.
+2. Prepare app screenshots.
+3. Prepare TestFlight and Android beta setup.
 
 Single most important next development task:
 
-Add grocery category selection.
+App identity and first impression polish.
 
 ## Current Strategic Recommendation
 

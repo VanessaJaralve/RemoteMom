@@ -21,6 +21,15 @@ type GrocerySection = {
 
 const COMPACT_HIT_SLOP = 10;
 
+const GROCERY_CATEGORY_OPTIONS = [
+  'produce',
+  'dairy',
+  'bakery',
+  'pantry',
+  'frozen',
+  'household'
+];
+
 function normalizeCategory(category: string) {
   return category.trim().toLowerCase();
 }
@@ -131,6 +140,36 @@ export function GroceryScreen() {
           style={styles.input}
           value={category}
         />
+        <View style={styles.categorySelector}>
+          <Text style={styles.categorySelectorLabel}>Quick category</Text>
+          <View style={styles.categoryOptionRow}>
+            {GROCERY_CATEGORY_OPTIONS.map((categoryOption) => {
+              const isSelected = normalizeCategory(category) === categoryOption;
+
+              return (
+                <Pressable
+                  accessibilityLabel={`Select ${categoryOption} grocery category`}
+                  accessibilityRole="button"
+                  key={categoryOption}
+                  onPress={() => setCategory(categoryOption)}
+                  style={[
+                    styles.categoryOption,
+                    isSelected && styles.categoryOptionSelected
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.categoryOptionText,
+                      isSelected && styles.categoryOptionTextSelected
+                    ]}
+                  >
+                    {categoryOption}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
         <Pressable
           accessibilityLabel="Mark item recurring"
           accessibilityRole="checkbox"
@@ -312,6 +351,43 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '800',
     lineHeight: 18
+  },
+  categoryOption: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 9
+  },
+  categoryOptionRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
+  },
+  categoryOptionSelected: {
+    backgroundColor: LIFE_AREA_COLORS.household,
+    borderColor: LIFE_AREA_COLORS.household
+  },
+  categoryOptionText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700',
+    textTransform: 'lowercase'
+  },
+  categoryOptionTextSelected: {
+    color: '#FFFFFF'
+  },
+  categorySelector: {
+    gap: 8
+  },
+  categorySelectorLabel: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
   },
   checkedText: {
     color: LIFE_AREA_COLORS.health,
