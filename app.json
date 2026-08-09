@@ -16,6 +16,12 @@
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8ae5a453-4596-4728-9b86-446cadabab75"
+      }
+    },
+    "owner": "vanessajaralve"
   }
 }
