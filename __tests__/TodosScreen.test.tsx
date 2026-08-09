@@ -4,6 +4,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 import { TodosScreen } from '../src/screens/TodosScreen';
 import type { Task } from '../src/models/Task';
 import { AppStateProvider } from '../src/state/AppState';
+import { getLocalDateKey } from '../src/utils/dateTime';
 
 function renderWithAppState(ui: React.ReactElement) {
   return render(<AppStateProvider>{ui}</AppStateProvider>);
@@ -46,6 +47,18 @@ describe('TodosScreen', () => {
     expect(getAllByText('Kid').length).toBeGreaterThan(0);
     expect(getByText('Due Friday')).toBeOnTheScreen();
     expect(getAllByDisplayValue('')).toHaveLength(2);
+  });
+
+  it('fills and clears a parseable due date from quick date controls', async () => {
+    const { getByDisplayValue, getByLabelText } = await renderWithAppState(<TodosScreen />);
+
+    await fireEvent.press(getByLabelText('Set due date to today'));
+
+    expect(getByDisplayValue(getLocalDateKey())).toBeOnTheScreen();
+
+    await fireEvent.press(getByLabelText('Clear due date'));
+
+    expect(getByLabelText('Due date').props.value).toBe('');
   });
 
   it('toggles a task done and keeps it visible', async () => {

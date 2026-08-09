@@ -90,6 +90,22 @@ describe('HealthScreen', () => {
     expect(getAllByDisplayValue('')).toHaveLength(5);
   });
 
+  it('fills person and daily times from medicine form controls', async () => {
+    const { getAllByText, getByLabelText, getByText } =
+      await renderWithAppState(<HealthScreen />);
+
+    await fireEvent.press(getByLabelText('Select Child medicine person'));
+    await fireEvent.press(getByLabelText('Use twice daily medicine times'));
+    await fireEvent.changeText(getByLabelText('Medicine name'), 'Probiotic');
+    await fireEvent.changeText(getByLabelText('Dosage'), '1 packet');
+    await fireEvent.changeText(getByLabelText('Refill reminder threshold'), '4');
+    await fireEvent.press(getByText('Add Medicine'));
+
+    expect(getByText('Probiotic')).toBeOnTheScreen();
+    expect(getAllByText('Child').length).toBeGreaterThan(0);
+    expect(getAllByText('8:00 AM, 8:00 PM').length).toBeGreaterThan(0);
+  });
+
   it('marks one scheduled medicine dose as taken without changing the other daily dose', async () => {
     const { getAllByText, getByLabelText, getByText } =
       await renderWithAppState(<HealthScreen />);

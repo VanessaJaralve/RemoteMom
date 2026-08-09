@@ -12,6 +12,7 @@ import { EmptyState } from '../components/EmptyState';
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
+import { getLocalDateKey } from '../utils/dateTime';
 import { formatReminderLabel } from '../utils/reminders';
 
 const TASK_LIFE_AREAS: TaskLifeArea[] = ['work', 'kid', 'household', 'self'];
@@ -32,6 +33,13 @@ const TASK_LIFE_AREA_COLORS: Record<TaskLifeArea, string> = {
 
 const COMPACT_HIT_SLOP = 10;
 
+function getTomorrowDateKey() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  return getLocalDateKey(tomorrow);
+}
+
 export function TodosScreen() {
   const { addTask, deleteTask, tasks, toggleTaskDone, updateTask } = useAppState();
   const [title, setTitle] = useState('');
@@ -41,6 +49,8 @@ export function TodosScreen() {
   const [confirmingDeleteTaskId, setConfirmingDeleteTaskId] = useState<string | null>(null);
 
   const incompleteCount = useMemo(() => tasks.filter((task) => !task.isDone).length, [tasks]);
+  const todayDateKey = getLocalDateKey();
+  const tomorrowDateKey = getTomorrowDateKey();
 
   const resetForm = () => {
     setTitle('');
@@ -138,10 +148,59 @@ export function TodosScreen() {
         <TextInput
           accessibilityLabel="Due date"
           onChangeText={setDueDate}
-          placeholder="Optional due date"
+          placeholder="Optional due date, YYYY-MM-DD"
           style={styles.input}
           value={dueDate}
         />
+        <View style={styles.presetGroup}>
+          <Text style={styles.presetLabel}>Quick due date</Text>
+          <View style={styles.presetRow}>
+            <Pressable
+              accessibilityLabel="Set due date to today"
+              accessibilityRole="button"
+              onPress={() => setDueDate(todayDateKey)}
+              style={[
+                styles.presetButton,
+                dueDate === todayDateKey && styles.presetButtonActive
+              ]}
+            >
+              <Text
+                style={[
+                  styles.presetButtonText,
+                  dueDate === todayDateKey && styles.presetButtonTextActive
+                ]}
+              >
+                Today
+              </Text>
+            </Pressable>
+            <Pressable
+              accessibilityLabel="Set due date to tomorrow"
+              accessibilityRole="button"
+              onPress={() => setDueDate(tomorrowDateKey)}
+              style={[
+                styles.presetButton,
+                dueDate === tomorrowDateKey && styles.presetButtonActive
+              ]}
+            >
+              <Text
+                style={[
+                  styles.presetButtonText,
+                  dueDate === tomorrowDateKey && styles.presetButtonTextActive
+                ]}
+              >
+                Tomorrow
+              </Text>
+            </Pressable>
+            <Pressable
+              accessibilityLabel="Clear due date"
+              accessibilityRole="button"
+              onPress={() => setDueDate('')}
+              style={styles.presetButton}
+            >
+              <Text style={styles.presetButtonText}>No due date</Text>
+            </Pressable>
+          </View>
+        </View>
 
         <Pressable
           accessibilityRole="button"
@@ -385,6 +444,42 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 10
+  },
+  presetButton: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 9
+  },
+  presetButtonActive: {
+    backgroundColor: LIFE_AREA_COLORS.work,
+    borderColor: LIFE_AREA_COLORS.work
+  },
+  presetButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetButtonTextActive: {
+    color: '#FFFFFF'
+  },
+  presetGroup: {
+    gap: 8
+  },
+  presetLabel: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
   },
   secondaryButton: {
     alignItems: 'center',

@@ -22,6 +22,14 @@ function parseTimes(timesText: string) {
     .filter(Boolean);
 }
 
+const MEDICINE_PERSON_OPTIONS = ['Mom', 'Child'];
+
+const MEDICINE_TIME_PRESETS = [
+  { label: 'Once daily', timesText: '8:00 AM' },
+  { label: 'Twice daily', timesText: '8:00 AM, 8:00 PM' },
+  { label: 'Bedtime', timesText: '8:00 PM' }
+];
+
 export function HealthScreen() {
   const {
     addMedicine,
@@ -126,6 +134,33 @@ export function HealthScreen() {
       </View>
 
       <View style={styles.form}>
+        <View style={styles.presetGroup}>
+          <Text style={styles.presetLabel}>Who this is for</Text>
+          <View style={styles.presetRow}>
+            {MEDICINE_PERSON_OPTIONS.map((person) => {
+              const isSelected = personName === person;
+
+              return (
+                <Pressable
+                  accessibilityLabel={`Select ${person} medicine person`}
+                  accessibilityRole="button"
+                  key={person}
+                  onPress={() => setPersonName(person)}
+                  style={[styles.presetButton, isSelected && styles.presetButtonActive]}
+                >
+                  <Text
+                    style={[
+                      styles.presetButtonText,
+                      isSelected && styles.presetButtonTextActive
+                    ]}
+                  >
+                    {person}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
         <TextInput
           accessibilityLabel="Person name"
           onChangeText={setPersonName}
@@ -154,6 +189,33 @@ export function HealthScreen() {
           style={styles.input}
           value={timesText}
         />
+        <View style={styles.presetGroup}>
+          <Text style={styles.presetLabel}>Frequency shortcuts</Text>
+          <View style={styles.presetRow}>
+            {MEDICINE_TIME_PRESETS.map((preset) => {
+              const isSelected = timesText === preset.timesText;
+
+              return (
+                <Pressable
+                  accessibilityLabel={`Use ${preset.label.toLowerCase()} medicine times`}
+                  accessibilityRole="button"
+                  key={preset.label}
+                  onPress={() => setTimesText(preset.timesText)}
+                  style={[styles.presetButton, isSelected && styles.presetButtonActive]}
+                >
+                  <Text
+                    style={[
+                      styles.presetButtonText,
+                      isSelected && styles.presetButtonTextActive
+                    ]}
+                  >
+                    {preset.label}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+        </View>
         <TextInput
           accessibilityLabel="Refill reminder threshold"
           onChangeText={setRefillReminderThreshold}
@@ -413,6 +475,42 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   peopleRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
+  },
+  presetButton: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 9
+  },
+  presetButtonActive: {
+    backgroundColor: LIFE_AREA_COLORS.health,
+    borderColor: LIFE_AREA_COLORS.health
+  },
+  presetButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetButtonTextActive: {
+    color: '#FFFFFF'
+  },
+  presetGroup: {
+    gap: 8
+  },
+  presetLabel: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 8

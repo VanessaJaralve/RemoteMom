@@ -89,6 +89,15 @@ describe('KidScreen', () => {
     expect(getAllByDisplayValue('')).toHaveLength(5);
   });
 
+  it('fills start and end times from child schedule presets', async () => {
+    const { getByDisplayValue, getByLabelText } = await renderWithAppState(<KidScreen />);
+
+    await fireEvent.press(getByLabelText('Use school morning time preset'));
+
+    expect(getByDisplayValue('7:30 AM')).toBeOnTheScreen();
+    expect(getByDisplayValue('8:00 AM')).toBeOnTheScreen();
+  });
+
   it('sorts schedule items by parsed start time instead of alphabetical time text', async () => {
     const screen = await renderWithAppState(<KidScreen />);
     const { getByLabelText, getByText, toJSON } = screen;

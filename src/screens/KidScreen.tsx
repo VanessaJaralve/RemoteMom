@@ -17,6 +17,12 @@ import { formatReminderLabel } from '../utils/reminders';
 
 const COMPACT_HIT_SLOP = 10;
 
+const SCHEDULE_TIME_PRESETS = [
+  { label: 'School morning', startTime: '7:30 AM', endTime: '8:00 AM' },
+  { label: 'Afternoon activity', startTime: '3:30 PM', endTime: '4:30 PM' },
+  { label: 'Bedtime routine', startTime: '7:30 PM', endTime: '8:00 PM' }
+];
+
 function sortByStartTime(items: ScheduleItem[]) {
   return [...items].sort((leftItem, rightItem) => {
     const timeDifference =
@@ -125,6 +131,37 @@ export function KidScreen() {
             style={[styles.input, styles.timeInput]}
             value={endTime}
           />
+        </View>
+        <View style={styles.presetGroup}>
+          <Text style={styles.presetLabel}>Quick time</Text>
+          <View style={styles.presetRow}>
+            {SCHEDULE_TIME_PRESETS.map((preset) => {
+              const isSelected =
+                startTime === preset.startTime && endTime === preset.endTime;
+
+              return (
+                <Pressable
+                  accessibilityLabel={`Use ${preset.label.toLowerCase()} time preset`}
+                  accessibilityRole="button"
+                  key={preset.label}
+                  onPress={() => {
+                    setStartTime(preset.startTime);
+                    setEndTime(preset.endTime);
+                  }}
+                  style={[styles.presetButton, isSelected && styles.presetButtonActive]}
+                >
+                  <Text
+                    style={[
+                      styles.presetButtonText,
+                      isSelected && styles.presetButtonTextActive
+                    ]}
+                  >
+                    {preset.label}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
         </View>
         <TextInput
           accessibilityLabel="Schedule notes"
@@ -373,6 +410,42 @@ const styles = StyleSheet.create({
     color: LIFE_AREA_COLORS.kid,
     fontSize: 13,
     fontWeight: '700'
+  },
+  presetButton: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: SURFACE_COLORS.border,
+    borderRadius: 6,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 9
+  },
+  presetButtonActive: {
+    backgroundColor: LIFE_AREA_COLORS.kid,
+    borderColor: LIFE_AREA_COLORS.kid
+  },
+  presetButtonText: {
+    color: SURFACE_COLORS.text,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetButtonTextActive: {
+    color: '#FFFFFF'
+  },
+  presetGroup: {
+    gap: 8
+  },
+  presetLabel: {
+    color: SURFACE_COLORS.muted,
+    fontSize: 13,
+    fontWeight: '700'
+  },
+  presetRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8
   },
   reminderText: {
     color: SURFACE_COLORS.muted,

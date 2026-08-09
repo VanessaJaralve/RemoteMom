@@ -44,9 +44,9 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | App identity | Polish app identity and first impression | Not Started |  | Broader product identity work: app name presentation, icon, splash screen, visual consistency, screenshots, and first-open impression before beta sharing. Separate from empty states. |
 | Phase 3: Public Beta Readiness | Mobile UI | Review mobile spacing and tap targets | Completed | 2026-08-02 | Added focused mobile ergonomics tests, roomier edit/delete action padding, compact hit areas for checkbox and recurring controls, and safer wrapping for child schedule time inputs. |
 | Phase 3: Public Beta Readiness | Device testing | Run Expo Go local phone smoke test | Completed | 2026-08-09 | Android Expo Go smoke test completed by Vanessa. Core flows mostly passed, but failures/modification needs were found and added as follow-up checklist rows: To-Do date input, Child Schedule time input, Medicine form controls, More feedback email bug, and Grocery category selection improvement. |
-| Phase 3: Public Beta Readiness | To-Dos | Add structured date input for To-Dos | Not Started |  | Smoke test failed because a date picker is not available. Add a mobile-friendly date input or clearly guided date format so due dates are easier to enter and Today can classify them reliably. |
-| Phase 3: Public Beta Readiness | Child Schedule | Add structured start/end time input | Not Started |  | Smoke test failed because start/end time is free-form only. Add a mobile-friendly time format control or validation while preserving the one-child MVP boundary. |
-| Phase 3: Public Beta Readiness | Family Health / Medicine Tracker | Add medicine person, time, and frequency controls | Not Started |  | Smoke test failed because Mom/Child selection, medicine time picker, and frequency controls are not available. Keep medicine details user-entered and avoid dosage advice; improve form controls only. |
+| Phase 3: Public Beta Readiness | To-Dos | Add structured date input for To-Dos | Completed | 2026-08-09 | Added Today/Tomorrow/No due date quick controls that fill parseable local date keys while preserving the manual due-date field and existing Task model. |
+| Phase 3: Public Beta Readiness | Child Schedule | Add structured start/end time input | Completed | 2026-08-09 | Added school morning, afternoon activity, and bedtime routine presets that fill start/end times while preserving the one-child MVP UI and existing ScheduleItem model. |
+| Phase 3: Public Beta Readiness | Family Health / Medicine Tracker | Add medicine person, time, and frequency controls | Completed | 2026-08-09 | Added Mom/Child selection and user-selected frequency shortcuts that fill daily medicine times without dosage advice or Medicine model changes. |
 | Phase 3: Public Beta Readiness | More / Feedback | Fix Email Feedback action crash | Completed | 2026-08-09 | Fixed the beta feedback action so failed email opens show a calm fallback with Vanessa's feedback email instead of crashing. |
 | Phase 3: Public Beta Readiness | Grocery List | Add grocery category selection | Not Started |  | Smoke test passed but noted an improvement request: category/aisle should offer selection or dropdown instead of only free-form typing. |
 | Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Not Started |  | Create screenshots that show the Today Dashboard, To-Dos, Grocery, Child Schedule, and Medicine flow clearly. |
@@ -89,4 +89,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Polish app identity and first impression.
+Add grocery category selection.
