@@ -56,6 +56,8 @@ RemoteMom is a calm daily command center for remote working moms. It brings to-d
 
 This is an early no-budget beta, so it opens through Expo Go instead of the app store.
 
+One important note: this is a one-child MVP for now. I am testing whether the daily Today view is useful first, and I am also validating whether multiple children, partner/caregiver sharing, or reminders should come next.
+
 Please try this:
 
 1. Install Expo Go from the Google Play Store or App Store.
@@ -88,6 +90,9 @@ After testing, ask:
 4. What felt confusing or too much?
 5. Would you use this again tomorrow? Why or why not?
 6. What is one thing that would make this more valuable for your daily life?
+7. Was one child enough for this test, or would you need multiple children before using it weekly?
+8. Which would matter more to you next: multiple children, sharing with a partner or caregiver, or reminders?
+9. What would make RemoteMom feel worth paying for later?
 
 ## Success Criteria
 

@@ -79,6 +79,8 @@ RemoteMom is a calm daily command center for remote working moms. It brings to-d
 
 This is an early Android-only test package, so it is not from Google Play yet. Android may ask you to allow installing from this source.
 
+One important note: this is a one-child MVP for now. I am testing whether the daily Today view is useful first, and I am also validating whether multiple children, partner/caregiver sharing, or reminders should come next.
+
 Please try this:
 
 1. Download the APK file I send you.
@@ -112,6 +114,9 @@ After testing, ask:
 4. Which feature felt most useful today?
 5. What felt confusing or too much?
 6. Would you use this again tomorrow? Why or why not?
+7. Was one child enough for this test, or would you need multiple children before using it weekly?
+8. Which would matter more to you next: multiple children, sharing with a partner or caregiver, or reminders?
+9. What would make RemoteMom feel worth paying for later?
 
 ## Success Criteria
 
