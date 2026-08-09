@@ -179,7 +179,7 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, and beta screenshot assets are now complete. The remaining gaps are broader beta distribution and beta-launch readiness.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. The remaining gaps are recruiting trusted beta testers, collecting feedback, and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
@@ -263,13 +263,17 @@ Completed: App identity and first impression polish.
 
 Completed: Prepare app screenshots.
 
-1. Prepare TestFlight and Android beta setup.
-2. Create beta invitation message.
-3. Invite 10 to 30 target users.
+Completed: Prepare no-budget Expo Go beta setup.
+
+Completed: Create beta invitation message.
+
+1. Invite 5 trusted Expo Go beta testers.
+2. Track tester completion and feedback.
+3. Review repeated beta feedback before paid app-store setup.
 
 Single most important next development task:
 
-Prepare TestFlight and Android beta setup.
+Invite 5 trusted Expo Go beta testers.
 
 ## Current Strategic Recommendation
 
@@ -280,8 +284,8 @@ Instead, move toward a small public beta:
 - Keep the app free while testing the daily habit
 - Add an easy feedback path
 - Prepare privacy and trust basics
-- Test with strangers outside the immediate friend group
-- Use TestFlight or Android testing before a full public app store launch
+- Test with trusted Expo Go beta testers before asking strangers to install
+- Defer paid TestFlight or Google Play testing until budget is available and validation is stronger
 - Avoid building premium payments until demand is clearer
 
 This approach allows real-world learning without taking on the pressure of full launch support, app store reviews, paid subscriptions, and user expectations before the product is ready.
@@ -338,8 +342,9 @@ Recommended work:
 - Completed: Review mobile UI spacing and tap targets
 - Completed: Polish app name, icon, splash, and first impression
 - Completed: Prepare app screenshots
-- Prepare TestFlight and Android testing setup
-- Create a short beta invitation message
+- Completed: Prepare no-budget Expo Go beta setup
+- Completed: Create a short beta invitation message
+- Invite 5 trusted Expo Go beta testers
 
 Success criteria:
 

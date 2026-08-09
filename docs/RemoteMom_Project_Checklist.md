@@ -50,8 +50,8 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | More / Feedback | Fix Email Feedback action crash | Completed | 2026-08-09 | Fixed the beta feedback action so failed email opens show a calm fallback with Vanessa's feedback email instead of crashing. |
 | Phase 3: Public Beta Readiness | Grocery List | Add grocery category selection | Completed | 2026-08-09 | Added common category selection controls that fill the existing category field while preserving custom category typing, category sorting, and the existing GroceryItem model. |
 | Phase 3: Public Beta Readiness | Beta assets | Prepare app screenshots | Completed | 2026-08-09 | Created a local screenshot kit with generated PNGs for Today Dashboard, To-Dos, Grocery, Child Schedule, Medicine Tracker, plus a contact sheet for beta sharing and early store-listing drafts. |
-| Phase 3: Public Beta Readiness | Beta distribution | Prepare TestFlight and Android beta setup | Not Started |  | Prepare the controlled mobile beta distribution path before public app store launch. |
-| Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Not Started |  | Prepare a short invite for moms outside the immediate friend group. |
+| Phase 3: Public Beta Readiness | Beta distribution | Prepare no-budget Expo Go beta setup | Completed | 2026-08-09 | Created a free Expo Go beta guide with Vanessa setup steps, tester instructions, local-data limitations, tester checklist, success criteria, and follow-up questions. Paid TestFlight and Google Play testing remain future options when budget is available. |
+| Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Completed | 2026-08-09 | Added a short tester invite message in the Expo Go beta guide, including install steps, QR-code instructions, privacy/local-storage note, and medicine-safety note. |
 | Phase 3: Public Beta Readiness | UX polish | Add calm empty states across module screens | Completed | 2026-08-02 | Added supportive blank/cleared-list states for Today, To-Dos, Grocery, Child Schedule, and Health without changing data models or roadmap scope. |
 | Phase 4: Beta Learning | Recruiting | Invite 10 to 30 target users | Not Started |  | Start with a small group outside the immediate friend network. |
 | Phase 4: Beta Learning | Metrics | Track installs, waitlist signups, and feedback | Not Started |  | Use lightweight tracking that avoids sensitive task, child, or medicine content. |
@@ -89,4 +89,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Prepare TestFlight and Android beta setup.
+Invite 5 trusted Expo Go beta testers.
