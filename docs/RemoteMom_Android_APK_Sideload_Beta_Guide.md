@@ -10,12 +10,21 @@ RemoteMom can support a no-budget Android sideload beta by producing an APK file
 
 Use this only with trusted testers. Android will show security warnings because the app is installed outside Google Play.
 
+Current APK package status:
+
+- EAS build ID: `c517ff91-ac09-43c1-9447-5c62389e5524`
+- EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/c517ff91-ac09-43c1-9447-5c62389e5524`
+- Local APK file: `releases/android-sideload/RemoteMom-0.1.0-beta.apk`
+- Build account: Vanessa's personal Expo account, `vanessajaralve`
+- Status: generated and file-verified; still requires Vanessa's own Android install smoke test before sharing
+
 ## What Was Prepared
 
 - Android package identity: `com.vanessajaralve.remotemom`
 - Android version code: `1`
 - EAS build profile: `sideload-apk`
 - APK holding folder: `releases/android-sideload/`
+- Verified APK file: `releases/android-sideload/RemoteMom-0.1.0-beta.apk`
 - Tester installation instructions
 - Tester checklist and feedback questions
 
