@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react-native';
+import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 
 import { MoreScreen } from '../src/screens/MoreScreen';
 
@@ -21,7 +21,9 @@ describe('MoreScreen privacy and feedback', () => {
     const openFeedbackUrl = jest.fn();
     const { getByLabelText } = await render(<MoreScreen openFeedbackUrl={openFeedbackUrl} />);
 
-    fireEvent.press(getByLabelText('Send RemoteMom beta feedback'));
+    await act(async () => {
+      fireEvent.press(getByLabelText('Send RemoteMom beta feedback'));
+    });
 
     expect(openFeedbackUrl).toHaveBeenCalledWith(
       expect.stringContaining('mailto:vanessa.jaralve@gmail.com')
@@ -31,5 +33,22 @@ describe('MoreScreen privacy and feedback', () => {
     );
     expect(openFeedbackUrl).toHaveBeenCalledWith(expect.not.stringContaining('medicine'));
     expect(openFeedbackUrl).toHaveBeenCalledWith(expect.not.stringContaining('task'));
+  });
+
+  it('shows a calm fallback when the feedback email action cannot open', async () => {
+    const openFeedbackUrl = jest.fn().mockRejectedValue(new Error('No email app'));
+    const { getByLabelText, getByText } = await render(
+      <MoreScreen openFeedbackUrl={openFeedbackUrl} />
+    );
+
+    await act(async () => {
+      fireEvent.press(getByLabelText('Send RemoteMom beta feedback'));
+    });
+
+    await waitFor(() => {
+      expect(
+        getByText('Could not open your email app. Please email vanessa.jaralve@gmail.com.')
+      ).toBeOnTheScreen();
+    });
   });
 });

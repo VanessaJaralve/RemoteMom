@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
@@ -25,14 +25,22 @@ const PRIVACY_POINTS = [
 ];
 
 type MoreScreenProps = {
-  openFeedbackUrl?: (url: string) => void;
+  openFeedbackUrl?: (url: string) => Promise<void> | void;
 };
 
 export function MoreScreen({ openFeedbackUrl }: MoreScreenProps) {
-  const feedbackOpener = openFeedbackUrl ?? Linking?.openURL;
+  const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
 
-  const handleFeedbackPress = () => {
-    void feedbackOpener?.(FEEDBACK_URL);
+  const handleFeedbackPress = async () => {
+    try {
+      const feedbackOpener =
+        openFeedbackUrl ?? ((url: string) => Linking.openURL(url));
+
+      await feedbackOpener(FEEDBACK_URL);
+      setFeedbackMessage('Opening your email app.');
+    } catch {
+      setFeedbackMessage(`Could not open your email app. Please email ${FEEDBACK_EMAIL}.`);
+    }
   };
 
   return (
@@ -71,6 +79,7 @@ export function MoreScreen({ openFeedbackUrl }: MoreScreenProps) {
         >
           <Text style={styles.feedbackButtonText}>Email feedback</Text>
         </Pressable>
+        {feedbackMessage ? <Text style={styles.feedbackStatus}>{feedbackMessage}</Text> : null}
       </View>
     </ScrollView>
   );
@@ -135,6 +144,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     gap: 12,
     padding: 14
+  },
+  feedbackStatus: {
+    color: SURFACE_COLORS.text,
+    fontSize: 14,
+    fontWeight: '700',
+    lineHeight: 20
   },
   feedbackText: {
     color: SURFACE_COLORS.muted,
