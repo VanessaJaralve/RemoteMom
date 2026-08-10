@@ -114,9 +114,12 @@ describe('RemoteMom landing page', () => {
     expect(existsSync(betaFeedbackHtmlPath)).toBe(true);
 
     const feedbackHtml = readFileSync(betaFeedbackHtmlPath, 'utf8');
+    const css = readFileSync(cssPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
     expect(feedbackHtml).toContain('RemoteMom beta feedback');
+    expect(css).toContain('#feedback-title');
+    expect(css).toContain('font-size: clamp(56px, 7vw, 108px)');
     expect(feedbackHtml).toContain('data-beta-feedback-form');
     expect(feedbackHtml).toContain('data-endpoint="/api/beta-feedback"');
     expect(feedbackHtml).toContain('name="installedAndOpened"');
