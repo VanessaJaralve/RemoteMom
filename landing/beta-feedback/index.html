@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="RemoteMom beta feedback survey for trusted Android testers after trying the local-first MVP."
+    />
+    <title>RemoteMom | Beta Feedback</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="RemoteMom beta feedback">
+      <a class="brand" href="../" aria-label="RemoteMom home">RemoteMom</a>
+      <nav class="nav" aria-label="Feedback page links">
+        <a href="../beta/">Android beta</a>
+        <a class="nav-cta" href="#feedback-form">Send feedback</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="validation-section" aria-labelledby="feedback-title">
+        <div class="section-copy">
+          <p class="eyebrow">Post-test survey</p>
+          <h1 id="feedback-title">RemoteMom beta feedback</h1>
+          <p class="hero-subtitle">Tell me what happened after you tested RemoteMom.</p>
+          <p>
+            Feedback may be saved in Vanessa's Google Sheet. Do not enter private medicine
+            details. RemoteMom organizes routines only and does not provide medical advice.
+          </p>
+        </div>
+
+        <form
+          class="feedback-form"
+          id="feedback-form"
+          data-beta-feedback-form
+          data-endpoint="/api/beta-feedback"
+        >
+          <div class="form-grid">
+            <div class="field">
+              <label for="feedback-name">Name</label>
+              <input id="feedback-name" name="name" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="feedback-email">Email</label>
+              <input
+                id="feedback-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="installed-and-opened">Were you able to install and open the app?</label>
+            <select id="installed-and-opened" name="installedAndOpened" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes, I installed and opened it</option>
+              <option value="partly">Partly, but I got stuck</option>
+              <option value="no">No, I could not open it</option>
+            </select>
+          </div>
+
+          <div class="field textarea-field">
+            <label for="understood-purpose">What did you understand RemoteMom was for?</label>
+            <textarea id="understood-purpose" name="understoodPurpose" rows="3"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="first-screen">Which screen did you open first?</label>
+            <select id="first-screen" name="firstScreen">
+              <option value="">Choose one</option>
+              <option value="today">Today</option>
+              <option value="todos">To-Dos</option>
+              <option value="grocery">Grocery</option>
+              <option value="child">Child Schedule</option>
+              <option value="health">Health / Medicine</option>
+              <option value="more">More</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="today-helped">Did the Today view help you see what needed attention?</label>
+            <select id="today-helped" name="todayHelped" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="somewhat">Somewhat</option>
+              <option value="no">No</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="most-useful-feature">Which feature felt most useful?</label>
+            <select id="most-useful-feature" name="mostUsefulFeature" required>
+              <option value="">Choose one</option>
+              <option value="today">Today Dashboard</option>
+              <option value="todos">To-Dos</option>
+              <option value="grocery">Grocery List</option>
+              <option value="child-schedule">Child Schedule</option>
+              <option value="medicine">Medicine routines</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field textarea-field">
+            <label for="confusing-or-too-much">What felt confusing, too much, or unnecessary?</label>
+            <textarea id="confusing-or-too-much" name="confusingOrTooMuch" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="one-child-enough">Was one child enough for this test?</label>
+            <select id="one-child-enough" name="oneChildEnough" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes, one child was enough</option>
+              <option value="no">No, I would need multiple children</option>
+              <option value="not-applicable">Not applicable for me</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="next-priority">
+              Which matters most next: multiple children, sharing, or reminders?
+            </label>
+            <select id="next-priority" name="nextPriority" required>
+              <option value="">Choose one</option>
+              <option value="multiple-children">Multiple children</option>
+              <option value="sharing">Sharing with a partner or caregiver</option>
+              <option value="reminders">Reminders</option>
+              <option value="keep-simple">Keep the MVP simple first</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="use-again-tomorrow">Would you use this again tomorrow?</label>
+            <select id="use-again-tomorrow" name="useAgainTomorrow" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="field textarea-field">
+            <label for="worth-paying-for">What would make RemoteMom worth paying for later?</label>
+            <textarea id="worth-paying-for" name="worthPayingFor" rows="3"></textarea>
+          </div>
+
+          <div class="field textarea-field">
+            <label for="bugs-or-issues">Any bugs or issues?</label>
+            <textarea id="bugs-or-issues" name="bugsOrIssues" rows="4"></textarea>
+          </div>
+
+          <button type="submit">Send feedback</button>
+          <p class="form-note">
+            Do not enter private medicine details. APK links are shared privately with trusted
+            testers.
+          </p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>RemoteMom</span>
+      <span><a href="../beta/">Back to Android beta page</a></span>
+    </footer>
+
+    <script src="../waitlist.js"></script>
+  </body>
+</html>

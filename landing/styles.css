@@ -398,6 +398,40 @@ h3 {
   padding: 18px;
 }
 
+.feedback-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.textarea-field textarea {
+  background: #ffffff;
+  border: 1px solid #cfc7ba;
+  border-radius: 10px;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.45;
+  min-height: 104px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+.textarea-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(15, 138, 148, 0.18);
+  outline: none;
+}
+
 fieldset {
   border: 0;
   margin: 0;
@@ -483,6 +517,7 @@ legend {
   }
 
   .hero-form,
+  .form-grid,
   .proof-strip,
   .fit-grid,
   .privacy-grid,

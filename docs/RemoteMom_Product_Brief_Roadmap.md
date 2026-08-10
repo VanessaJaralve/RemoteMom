@@ -86,6 +86,7 @@ The current MVP includes:
 - Landing and waitlist page
 - Validation form connected to Google Sheets
 - Waitlist form connected to Google Sheets
+- Beta feedback form connected to Google Sheets
 - Interview script and validation scorecard
 - Plain-language privacy and beta feedback path
 
@@ -143,7 +144,7 @@ RemoteMom currently has a live landing page and connected collection pipeline.
 Public landing page:
 https://remote-mom.vercel.app/
 
-Validation and waitlist submissions are collected through Vercel endpoints and forwarded to Google Sheets using Google Apps Script.
+Validation, waitlist, and beta feedback submissions are collected through Vercel endpoints and forwarded to Google Sheets using Google Apps Script.
 
 Early survey responses are still limited, so they should be treated as directional signals, not proof. The strongest early signal so far is that respondents have two children, and that sharing or multiple-child support may become important premium features.
 
@@ -179,7 +180,7 @@ Resolved conflicts:
 
 Audit date: 2026-08-02
 
-Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. Android APK sideload beta configuration, tester guidance, EAS APK generation, and a separate `/beta/` Android tester recruitment page are now complete; the original survey and waitlist page remains available at `/`. The APK still needs to be tested on Vanessa's Android phone before sharing. The remaining gaps are recruiting trusted beta testers, collecting feedback, and broader beta-launch readiness.
+Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Structured To-Do date controls, Child Schedule time presets, medicine person/frequency shortcuts, grocery category selection controls, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. Android APK sideload beta configuration, tester guidance, EAS APK generation, a separate `/beta/` Android tester recruitment page, and a separate `/beta-feedback/` tester survey page are now complete; the original survey and waitlist page remains available at `/`. The APK still needs to be tested on Vanessa's Android phone before broader sharing. The remaining gaps are recruiting trusted beta testers, reviewing beta feedback, and broader beta-launch readiness.
 
 | Area | Current Implementation | What Works | Gaps / Risks | Priority |
 | --- | --- | --- | --- | --- |
@@ -189,7 +190,7 @@ Overall status: RemoteMom is a functional local-first MVP with shared state, loc
 | Family Health / Medicine Tracker | `HealthScreen` uses shared `medicines` plus local `medicineDoseLogs`; supports Mom/Child entries, dosage, times, refill threshold, per-time mark taken, edit/delete, person selection, and user-selected frequency shortcuts | Medicine entries feed Today; user-entered dosage is preserved; no dosage advice is generated; frequency shortcuts only fill the existing daily times field; marking one scheduled dose taken does not change the permanent medicine schedule or automatically complete other daily times; Child medicine records carry the internal default `childId`; Health and More both state that RemoteMom does not provide medical advice | Dose logs are local-only; no refill inventory math; date boundary depends on current local-date helper | Medium |
 | Today Dashboard | `TodayScreen` builds timeline from shared tasks, grocery items, schedule items, medicines, and dose logs | Derived from source arrays; updates when source records change; central daily view exists; RemoteMom identity and mental-load promise are visible on the first screen; life-area tags and priority summary work; users can mark tasks done, check grocery items, and mark individual medicine doses taken from Today; parseable future due dates no longer become urgent; an all-clear empty state appears when nothing needs attention | Today still uses simple free-text fallbacks; recurrence is not expanded by date | High |
 | Local persistence | `AppStateProvider` restores/saves one versioned AsyncStorage payload via `src/state/persistence.ts` | Local state survives reloads in tests; legacy no-version and schema v1 payloads migrate in memory; missing dose logs normalize safely; missing child collection normalizes to the default child; malformed collections or unsupported future schema versions fall back to sample data; malformed records inside valid arrays are dropped; no cloud claims in app code | Write failures are still silent; there is no user-facing recovery UI for corrupted storage; storage is local-only and not backed up | Medium |
-| Landing and waitlist page | Static landing page submits validation and waitlist forms to Vercel endpoints, then Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium; page now includes plain-language local-first privacy, medicine-safety, and beta feedback copy | Raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | Medium |
+| Landing, waitlist, and beta feedback pages | Static landing page submits validation and waitlist forms to Vercel endpoints, and the separate `/beta-feedback/` page submits tester feedback through the same real collection pipeline; Apps Script writes to Google Sheets | Public collection works; local browser backup exists for endpoint failure; copy distinguishes Free MVP and future premium; page now includes plain-language local-first privacy, medicine-safety, and beta feedback copy; tester feedback is collected without public APK links | Raw payloads are stored in the sheet; fallback copy can confuse public users if endpoint fails; no spam protection | Medium |
 
 ## Today Dashboard Integration Findings
 
@@ -271,14 +272,17 @@ Completed: Prepare Android APK sideload beta package.
 
 Completed: Create separate Android beta recruitment page.
 
+Completed: Create separate beta feedback survey page.
+
 1. Install and test the Android APK on Vanessa's phone.
 2. Invite 5 trusted Android APK beta testers.
-3. Track tester completion and feedback.
-4. Review repeated beta feedback before paid app-store setup.
+3. Send the private beta feedback page after testers use the app.
+4. Track tester completion and feedback.
+5. Review repeated beta feedback before paid app-store setup.
 
 Single most important next development task:
 
-Install and test the Android APK on Vanessa's phone.
+Share the beta feedback page with testers after they install and try the Android APK, then review repeated feedback before changing the MVP.
 
 ## Current Strategic Recommendation
 

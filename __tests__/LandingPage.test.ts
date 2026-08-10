@@ -13,6 +13,7 @@ const { join } = require('path');
 const landingDir = join(__dirname, '..', 'landing');
 const htmlPath = join(landingDir, 'index.html');
 const betaHtmlPath = join(landingDir, 'beta', 'index.html');
+const betaFeedbackHtmlPath = join(landingDir, 'beta-feedback', 'index.html');
 const cssPath = join(landingDir, 'styles.css');
 const scriptPath = join(landingDir, 'waitlist.js');
 const mockupPath = join(landingDir, 'remotemom-dashboard-mockup.png');
@@ -107,5 +108,28 @@ describe('RemoteMom landing page', () => {
     expect(normalizedBetaHtml).toContain('not backed up to RemoteMom cloud storage');
     expect(betaHtml).not.toContain('RemoteMom-0.1.0-beta.apk');
     expect(betaHtml).not.toContain('expo.dev/artifacts');
+  });
+
+  it('includes a separate beta feedback survey page with private APK handling', () => {
+    expect(existsSync(betaFeedbackHtmlPath)).toBe(true);
+
+    const feedbackHtml = readFileSync(betaFeedbackHtmlPath, 'utf8');
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(feedbackHtml).toContain('RemoteMom beta feedback');
+    expect(feedbackHtml).toContain('data-beta-feedback-form');
+    expect(feedbackHtml).toContain('data-endpoint="/api/beta-feedback"');
+    expect(feedbackHtml).toContain('name="installedAndOpened"');
+    expect(feedbackHtml).toContain('name="todayHelped"');
+    expect(feedbackHtml).toContain('name="mostUsefulFeature"');
+    expect(feedbackHtml).toContain('name="oneChildEnough"');
+    expect(feedbackHtml).toContain('name="nextPriority"');
+    expect(feedbackHtml).toContain('name="useAgainTomorrow"');
+    expect(feedbackHtml).toContain('Do not enter private medicine details.');
+    expect(feedbackHtml).not.toContain('RemoteMom-0.1.0-beta.apk');
+    expect(feedbackHtml).not.toContain('expo.dev/artifacts');
+    expect(script).toContain('remotemom:beta-feedback');
+    expect(script).toContain('data-beta-feedback-form');
+    expect(script).toContain('/api/beta-feedback');
   });
 });

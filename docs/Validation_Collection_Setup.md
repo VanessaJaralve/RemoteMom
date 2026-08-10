@@ -1,7 +1,7 @@
 # RemoteMom Validation Collection Setup
 
 The landing page validation survey now submits to `/api/validation`. The waitlist forms submit to
-`/api/waitlist`.
+`/api/waitlist`. The separate beta tester feedback page submits to `/api/beta-feedback`.
 
 Response sheet:
 https://docs.google.com/spreadsheets/d/1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s/edit
@@ -14,9 +14,9 @@ Set this variable on the hosting platform before sharing the landing page public
 VALIDATION_SUBMISSIONS_WEBHOOK_URL=<your secure webhook URL>
 ```
 
-The endpoints forward each completed validation survey or waitlist signup as JSON to that webhook.
-Use `integrations/google-apps-script/validation-webhook.gs` as the first webhook destination. Deploy
-it from the personal Gmail account that owns the response sheet.
+The endpoints forward each completed validation survey, waitlist signup, or beta feedback response as
+JSON to that webhook. Use `integrations/google-apps-script/validation-webhook.gs` as the first
+webhook destination. Deploy it from the personal Gmail account that owns the response sheet.
 
 ## Google Apps Script Deployment
 
@@ -51,8 +51,35 @@ Waitlist submissions are sent as:
 }
 ```
 
+Beta feedback submissions are sent as:
+
+```json
+{
+  "submissionType": "beta-feedback",
+  "name": "Vanessa",
+  "email": "vanessa@example.com",
+  "installedAndOpened": "yes",
+  "understoodPurpose": "yes",
+  "firstScreen": "today",
+  "todayHelped": "somewhat",
+  "mostUsefulFeature": "The Today view helped me see what to do next.",
+  "confusingOrTooMuch": "The medicine section needs clearer time controls.",
+  "oneChildEnough": "yes-for-beta",
+  "nextPriority": "sharing",
+  "useAgainTomorrow": "yes",
+  "worthPayingFor": "maybe",
+  "bugsOrIssues": "No crash found.",
+  "submittedAt": "2026-08-10T00:00:00.000Z"
+}
+```
+
+Google Apps Script routes `submissionType: "beta-feedback"` responses into a `Beta Feedback` tab.
+Tester feedback should not include private medicine names, dosage details, child details, or other
+sensitive family information.
+
 ## Preview Behavior
 
 If an endpoint is unavailable or the webhook is not configured, the landing page saves a local backup
-in the visitor's browser under `remotemom:validation-survey` or `remotemom:waitlist`. That keeps
-local preview useful, but public collection requires the webhook variable above.
+in the visitor's browser under `remotemom:validation-survey`, `remotemom:waitlist`, or
+`remotemom:beta-feedback`. That keeps local preview useful, but public collection requires the
+webhook variable above.

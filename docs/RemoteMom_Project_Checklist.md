@@ -53,6 +53,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 3: Public Beta Readiness | Beta distribution | Prepare no-budget Expo Go beta setup | Completed | 2026-08-09 | Created a free Expo Go beta guide with Vanessa setup steps, tester instructions, local-data limitations, tester checklist, success criteria, and follow-up questions. Paid TestFlight and Google Play testing remain future options when budget is available. |
 | Phase 3: Public Beta Readiness | Beta distribution | Prepare Android APK sideload beta package | Completed | 2026-08-09 | Generated EAS Android internal APK build `c517ff91-ac09-43c1-9447-5c62389e5524` under Vanessa's personal Expo account and downloaded the verified APK locally in the ignored sideload release folder. Next step: Vanessa pre-share phone test before sending to testers. |
 | Phase 3: Public Beta Readiness | Beta recruitment | Create separate Android beta recruitment page | Completed | 2026-08-09 | Added a separate `/beta/` Vercel page so Vanessa can recruit trusted Android testers while keeping the existing survey and waitlist page available at `/`. |
+| Phase 3: Public Beta Readiness | Beta feedback | Create separate beta feedback survey page | Completed | 2026-08-10 | Added a separate `/beta-feedback/` page and real collection endpoint so testers can submit structured feedback after trying the Android APK. |
 | Phase 3: Public Beta Readiness | Beta messaging | Create beta invitation message | Completed | 2026-08-09 | Added a short tester invite message in the Expo Go beta guide, including install steps, QR-code instructions, privacy/local-storage note, and medicine-safety note. |
 | Phase 3: Public Beta Readiness | Beta messaging | Update beta questions from early validation signals | Completed | 2026-08-09 | Added one-child MVP framing and follow-up questions to compare multiple-child support, partner/caregiver sharing, reminders, and later willingness to pay before beta testing. |
 | Phase 3: Public Beta Readiness | UX polish | Add calm empty states across module screens | Completed | 2026-08-02 | Added supportive blank/cleared-list states for Today, To-Dos, Grocery, Child Schedule, and Health without changing data models or roadmap scope. |
@@ -92,4 +93,4 @@ Use this as the living tracker for product, build, and business-readiness work.
 
 ## Current Recommended Next Step
 
-Install and test the Android APK on Vanessa's phone before sending it to trusted testers.
+Share the private beta feedback page with testers after they install and try the Android APK, then review repeated feedback before changing the MVP.

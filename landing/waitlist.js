@@ -1,8 +1,10 @@
 (function () {
   const storageKey = 'remotemom:waitlist';
   const validationStorageKey = 'remotemom:validation-survey';
+  const betaFeedbackStorageKey = 'remotemom:beta-feedback';
   const forms = document.querySelectorAll('[data-waitlist-form]');
   const validationForm = document.querySelector('[data-validation-form]');
+  const betaFeedbackForm = document.querySelector('[data-beta-feedback-form]');
 
   function getSavedEntries(key) {
     const savedEntries = window.localStorage.getItem(key);
@@ -128,6 +130,68 @@
         if (status) {
           status.textContent =
             'Could not reach the collection endpoint. Saved as a backup on this device.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      }
+    });
+  }
+
+  if (betaFeedbackForm) {
+    betaFeedbackForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(betaFeedbackForm);
+      const feedback = {
+        bugsOrIssues: String(formData.get('bugsOrIssues') ?? '').trim(),
+        confusingOrTooMuch: String(formData.get('confusingOrTooMuch') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        firstScreen: String(formData.get('firstScreen') ?? '').trim(),
+        installedAndOpened: String(formData.get('installedAndOpened') ?? '').trim(),
+        mostUsefulFeature: String(formData.get('mostUsefulFeature') ?? '').trim(),
+        name: String(formData.get('name') ?? '').trim(),
+        nextPriority: String(formData.get('nextPriority') ?? '').trim(),
+        oneChildEnough: String(formData.get('oneChildEnough') ?? '').trim(),
+        todayHelped: String(formData.get('todayHelped') ?? '').trim(),
+        understoodPurpose: String(formData.get('understoodPurpose') ?? '').trim(),
+        useAgainTomorrow: String(formData.get('useAgainTomorrow') ?? '').trim(),
+        worthPayingFor: String(formData.get('worthPayingFor') ?? '').trim(),
+        createdAt: new Date().toISOString()
+      };
+      const status = betaFeedbackForm.querySelector('.form-status');
+      const submitButton = betaFeedbackForm.querySelector('button[type="submit"]');
+      const betaFeedbackEndpoint = betaFeedbackForm.dataset.endpoint || '/api/beta-feedback';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      try {
+        const result = await fetch(betaFeedbackEndpoint, {
+          body: JSON.stringify(feedback),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST'
+        });
+
+        if (!result.ok) {
+          throw new Error('Beta feedback collection request failed.');
+        }
+
+        betaFeedbackForm.reset();
+
+        if (status) {
+          status.textContent = 'Feedback sent. Thank you for helping shape RemoteMom.';
+        }
+      } catch {
+        saveLocalBackup(betaFeedbackStorageKey, feedback);
+
+        if (status) {
+          status.textContent =
+            'Could not reach the feedback endpoint. Saved as a backup on this device.';
         }
       } finally {
         if (submitButton) {
