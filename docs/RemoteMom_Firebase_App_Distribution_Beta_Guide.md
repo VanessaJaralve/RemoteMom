@@ -25,8 +25,8 @@ Use these exact values when registering the Android app in Firebase:
 
 - App name: `RemoteMom`
 - Android package name: `com.vanessajaralve.remotemom`
-- App version: `0.1.0`
-- Android version code: `1`
+- App version: `0.1.1`
+- Android version code: `2`
 - Current Expo owner: `vanessajaralve`
 - EAS project ID: `8ae5a453-4596-4728-9b86-446cadabab75`
 
@@ -34,11 +34,13 @@ Important: Firebase package names are case-sensitive and cannot be changed for a
 
 ## Source APK
 
-Use the existing EAS internal APK build until a new build is generated:
+Use the latest EAS internal APK build for Firebase App Distribution:
 
-- EAS build ID: `c517ff91-ac09-43c1-9447-5c62389e5524`
-- EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/c517ff91-ac09-43c1-9447-5c62389e5524`
-- Local APK filename: `releases/android-sideload/RemoteMom-0.1.0-beta.apk`
+- EAS build ID: `db447bf4-41ae-48a3-8ad6-942b244cf43f`
+- EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/db447bf4-41ae-48a3-8ad6-942b244cf43f`
+- EAS APK artifact: `https://expo.dev/artifacts/eas/IoXroXzpER-S0SuxwnPLTDu93Q_Bf3ph-Cc_rCoxO-k.apk`
+- Local APK filename: `releases/android-sideload/RemoteMom-0.1.1-beta.apk`
+- SHA-256: `e89c6c05c3a919ee526f101d0e12e6cef97d03b4a6ad0c4c85eee89b7fb77343`
 
 The APK file is intentionally ignored by git and should not be committed.
 
@@ -72,7 +74,7 @@ com.vanessajaralve.remotemom
 Recommended release notes:
 
 ```text
-RemoteMom Android beta 0.1.0
+RemoteMom Android beta 0.1.1
 
 Thank you for helping test RemoteMom. This early beta is local-first and supports one child for now.
 

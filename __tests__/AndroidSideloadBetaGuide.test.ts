@@ -26,7 +26,9 @@ describe('RemoteMom Android APK sideload beta package', () => {
     expect(guide).toContain('without Expo Go');
     expect(guide).toContain('Android-only');
     expect(guide).toContain("Only run the build after Vanessa approves that upload");
-    expect(guide).toContain('RemoteMom-0.1.0-beta.apk');
+    expect(guide).toContain('RemoteMom-0.1.1-beta.apk');
+    expect(guide).toContain('db447bf4-41ae-48a3-8ad6-942b244cf43f');
+    expect(guide).toContain('e89c6c05c3a919ee526f101d0e12e6cef97d03b4a6ad0c4c85eee89b7fb77343');
     expect(guide).toContain('Vanessa Pre-Share Check');
     expect(guide).toContain('Tester Install Message');
     expect(guide).toContain('Local entries are not synced or backed up');
@@ -37,7 +39,7 @@ describe('RemoteMom Android APK sideload beta package', () => {
     const easConfig = readFileSync(easConfigPath, 'utf8');
 
     expect(appConfig).toContain('"package": "com.vanessajaralve.remotemom"');
-    expect(appConfig).toContain('"versionCode": 1');
+    expect(appConfig).toContain('"versionCode": 2');
     expect(easConfig).toContain('"sideload-apk"');
     expect(easConfig).toContain('"distribution": "internal"');
     expect(easConfig).toContain('"buildType": "apk"');

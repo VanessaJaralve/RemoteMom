@@ -24,6 +24,10 @@ describe('RemoteMom Firebase App Distribution beta guide', () => {
     expect(guide).toContain('distribution-only Firebase use');
     expect(guide).toContain('Spark plan');
     expect(guide).toContain('com.vanessajaralve.remotemom');
+    expect(guide).toContain('App version: `0.1.1`');
+    expect(guide).toContain('Android version code: `2`');
+    expect(guide).toContain('db447bf4-41ae-48a3-8ad6-942b244cf43f');
+    expect(guide).toContain('RemoteMom-0.1.1-beta.apk');
     expect(guide).toContain('RemoteMom Android Beta');
     expect(guide).toContain('trusted-android-beta');
     expect(guide).toContain('https://remote-mom.vercel.app/beta-feedback/');

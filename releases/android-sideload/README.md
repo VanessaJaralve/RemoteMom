@@ -5,7 +5,7 @@ Place generated Android APK files in this folder when preparing a trusted tester
 Recommended filename:
 
 ```text
-RemoteMom-0.1.0-beta.apk
+RemoteMom-0.1.1-beta.apk
 ```
 
 Do not commit APK binaries unless the project explicitly decides to store beta artifacts in GitHub. APK files can become large and should usually be shared through a private link with trusted testers.

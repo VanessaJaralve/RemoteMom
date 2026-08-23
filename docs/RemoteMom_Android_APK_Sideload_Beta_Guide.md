@@ -14,19 +14,21 @@ Recommended upgrade path: use Firebase App Distribution to send the same APK thr
 
 Current APK package status:
 
-- EAS build ID: `c517ff91-ac09-43c1-9447-5c62389e5524`
-- EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/c517ff91-ac09-43c1-9447-5c62389e5524`
-- Local APK file: `releases/android-sideload/RemoteMom-0.1.0-beta.apk`
+- EAS build ID: `db447bf4-41ae-48a3-8ad6-942b244cf43f`
+- EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/db447bf4-41ae-48a3-8ad6-942b244cf43f`
+- EAS APK artifact: `https://expo.dev/artifacts/eas/IoXroXzpER-S0SuxwnPLTDu93Q_Bf3ph-Cc_rCoxO-k.apk`
+- Local APK file: `releases/android-sideload/RemoteMom-0.1.1-beta.apk`
+- SHA-256: `e89c6c05c3a919ee526f101d0e12e6cef97d03b4a6ad0c4c85eee89b7fb77343`
 - Build account: Vanessa's personal Expo account, `vanessajaralve`
-- Status: generated and file-verified; still requires Vanessa's own Android install smoke test before sharing
+- Status: generated, downloaded, and file-verified; still requires Vanessa's own Android install smoke test before sharing
 
 ## What Was Prepared
 
 - Android package identity: `com.vanessajaralve.remotemom`
-- Android version code: `1`
+- Android version code: `2`
 - EAS build profile: `sideload-apk`
 - APK holding folder: `releases/android-sideload/`
-- Verified APK file: `releases/android-sideload/RemoteMom-0.1.0-beta.apk`
+- Verified APK file: `releases/android-sideload/RemoteMom-0.1.1-beta.apk`
 - Tester installation instructions
 - Tester checklist and feedback questions
 
@@ -46,7 +48,7 @@ When the build finishes, download the APK from the EAS build page.
 Recommended filename:
 
 ```text
-RemoteMom-0.1.0-beta.apk
+RemoteMom-0.1.1-beta.apk
 ```
 
 Save the downloaded APK in:
