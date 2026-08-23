@@ -10,6 +10,8 @@ RemoteMom can support a no-budget Android sideload beta by producing an APK file
 
 Use this only with trusted testers. Android will show security warnings because the app is installed outside Google Play.
 
+Recommended upgrade path: use Firebase App Distribution to send the same APK through private tester email invites and track invite/download status. See `docs/RemoteMom_Firebase_App_Distribution_Beta_Guide.md`.
+
 Current APK package status:
 
 - EAS build ID: `c517ff91-ac09-43c1-9447-5c62389e5524`
