@@ -1,7 +1,8 @@
 # RemoteMom Validation Collection Setup
 
 The landing page validation survey now submits to `/api/validation`. The waitlist forms submit to
-`/api/waitlist`. The separate beta tester feedback page submits to `/api/beta-feedback`.
+`/api/waitlist`. The separate beta tester feedback page submits to `/api/beta-feedback`. The
+Black Friday / Cyber Monday early-access page submits to `/api/black-friday`.
 
 Response sheet:
 https://docs.google.com/spreadsheets/d/1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s/edit
@@ -14,9 +15,10 @@ Set this variable on the hosting platform before sharing the landing page public
 VALIDATION_SUBMISSIONS_WEBHOOK_URL=<your secure webhook URL>
 ```
 
-The endpoints forward each completed validation survey, waitlist signup, or beta feedback response as
-JSON to that webhook. Use `integrations/google-apps-script/validation-webhook.gs` as the first
-webhook destination. Deploy it from the personal Gmail account that owns the response sheet.
+The endpoints forward each completed validation survey, waitlist signup, beta feedback response, or
+Black Friday early-access signup as JSON to that webhook. Use
+`integrations/google-apps-script/validation-webhook.gs` as the first webhook destination. Deploy it
+from the personal Gmail account that owns the response sheet.
 
 ## Google Apps Script Deployment
 
@@ -77,9 +79,28 @@ Google Apps Script routes `submissionType: "beta-feedback"` responses into a `Be
 Tester feedback should not include private medicine names, dosage details, child details, or other
 sensitive family information.
 
+Black Friday early-access submissions are sent as:
+
+```json
+{
+  "submissionType": "black-friday-early-access",
+  "name": "Vanessa",
+  "email": "vanessa@example.com",
+  "androidPhone": "yes",
+  "childrenCount": "two",
+  "biggestStruggle": "keeping-today-clear",
+  "betaInterest": "yes",
+  "submittedAt": "2026-09-27T00:00:00.000Z"
+}
+```
+
+Google Apps Script routes `submissionType: "black-friday-early-access"` responses into a
+`Black Friday Early Access` tab. This campaign is an early-access beta and founding-mom interest
+test, not a payment collection flow.
+
 ## Preview Behavior
 
 If an endpoint is unavailable or the webhook is not configured, the landing page saves a local backup
 in the visitor's browser under `remotemom:validation-survey`, `remotemom:waitlist`, or
-`remotemom:beta-feedback`. That keeps local preview useful, but public collection requires the
-webhook variable above.
+`remotemom:beta-feedback`, or `remotemom:black-friday-early-access`. That keeps local preview
+useful, but public collection requires the webhook variable above.

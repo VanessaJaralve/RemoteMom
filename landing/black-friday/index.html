@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Join RemoteMom Black Friday early access, a calm beta for remote working moms managing work, home, one child, groceries, and medicine routines."
+    />
+    <title>RemoteMom | Black Friday Early Access</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="RemoteMom Black Friday early access">
+      <a class="brand" href="../" aria-label="RemoteMom home">RemoteMom</a>
+      <nav class="nav" aria-label="Campaign sections">
+        <a href="#benefits">Benefits</a>
+        <a href="#fit">Who it helps</a>
+        <a href="#trust">Privacy</a>
+        <a class="nav-cta" href="#join">Join early access</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero campaign-hero" aria-labelledby="campaign-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Black Friday Early Access</p>
+          <h1 id="campaign-title">A calmer beta for remote working moms</h1>
+          <p class="hero-subtitle">
+            Join RemoteMom early access and get founding mom benefits later.
+          </p>
+          <div class="beta-actions">
+            <a class="button-link" href="#join">Join early access</a>
+            <a class="secondary-link" href="../beta/">Android beta details</a>
+          </div>
+          <p class="campaign-note">
+            This is not a full public launch yet. RemoteMom is still learning from early testers.
+          </p>
+        </div>
+
+        <div class="campaign-panel" aria-label="RemoteMom early-access offer">
+          <span class="campaign-badge">Founder list</span>
+          <h2>For the moms carrying the whole day in their head.</h2>
+          <p>
+            RemoteMom brings to-dos, groceries, one child's schedule, and family medicine routines
+            into one calm Today view.
+          </p>
+          <ul>
+            <li>Free early beta access</li>
+            <li>Priority tester invites</li>
+            <li>Founding mom benefits when premium launches</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="What early access validates">
+        <div>
+          <strong>Today</strong>
+          <span>what needs attention now</span>
+        </div>
+        <div>
+          <strong>Home</strong>
+          <span>groceries and errands</span>
+        </div>
+        <div>
+          <strong>Child</strong>
+          <span>one-child beta schedule</span>
+        </div>
+        <div>
+          <strong>Health</strong>
+          <span>routine tracking only</span>
+        </div>
+      </section>
+
+      <section class="fit-section" id="benefits" aria-labelledby="benefits-title">
+        <div class="section-copy">
+          <h2 id="benefits-title">Why join before Cyber Monday?</h2>
+          <p>
+            The goal is not to sell an unfinished app. It is to invite the right moms early, learn
+            what actually helps, and reward the people who shape it.
+          </p>
+        </div>
+        <div class="fit-grid campaign-benefit-grid">
+          <article>
+            <span>01</span>
+            <h3>Shape the app</h3>
+            <p>Tell Vanessa what feels useful, confusing, or missing before paid plans exist.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Get early access</h3>
+            <p>Android testers may receive a private Firebase invite while the MVP is still small.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Keep founder benefits</h3>
+            <p>Early supporters will be first in line for future discounts or premium trials.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="tier-section" id="fit" aria-labelledby="fit-title">
+        <h2 id="fit-title">This is for remote working moms who need the day in one place.</h2>
+        <div class="tier-layout">
+          <article>
+            <h3>Good fit</h3>
+            <p>
+              You manage work, home, groceries, one child's schedule, and family routines from the
+              same tired brain.
+            </p>
+          </article>
+          <article>
+            <h3>Not a paid launch</h3>
+            <p>
+              RemoteMom is not collecting payments yet. This campaign validates demand before
+              premium features are built.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="trust" aria-labelledby="trust-title">
+        <div class="section-copy">
+          <h2 id="trust-title">Clear beta boundaries</h2>
+          <p>
+            RemoteMom is an early local-first MVP. The current beta focuses on learning whether the
+            Today view reduces mental load.
+          </p>
+        </div>
+        <div class="privacy-grid">
+          <article>
+            <h3>Android first</h3>
+            <p>Beta testing currently starts with Android through private Firebase tester invites.</p>
+          </article>
+          <article>
+            <h3>Local-first app data</h3>
+            <p>Your app entries stay on your device for now and are not backed up to the cloud.</p>
+          </article>
+          <article>
+            <h3>Medicine safety</h3>
+            <p>
+              RemoteMom organizes medicine routines only. It does not provide medical advice or
+              calculate dosage.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="waitlist-section campaign-form-section" id="join" aria-labelledby="join-title">
+        <div>
+          <h2 id="join-title">Join the RemoteMom early-access beta.</h2>
+          <p>
+            Sign up before Cyber Monday to join the founding mom list. Vanessa will use these
+            answers to invite the right beta testers first.
+          </p>
+        </div>
+        <form
+          class="waitlist-form"
+          id="black-friday-form"
+          data-black-friday-form
+          data-endpoint="/api/black-friday"
+        >
+          <div class="form-grid">
+            <div class="field">
+              <label for="bf-name">Name</label>
+              <input id="bf-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="bf-email">Email</label>
+              <input id="bf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bf-android">Do you use an Android phone?</label>
+            <select id="bf-android" name="androidPhone" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes, I can test the Android beta</option>
+              <option value="no">No, but I want updates</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-children">How many children are you organizing around?</label>
+            <select id="bf-children" name="childrenCount" required>
+              <option value="">Choose one</option>
+              <option value="one">1 child</option>
+              <option value="two">2 children</option>
+              <option value="three-plus">3+ children</option>
+              <option value="expecting">Expecting or planning</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-struggle">What is hardest to keep organized right now?</label>
+            <select id="bf-struggle" name="biggestStruggle" required>
+              <option value="">Choose one</option>
+              <option value="keeping-today-clear">Knowing what needs attention today</option>
+              <option value="groceries-meals">Groceries, meals, and household needs</option>
+              <option value="child-schedule">Child schedule and routines</option>
+              <option value="medicine-routines">Medicine and health routines</option>
+              <option value="all-of-it">All of it together</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-beta-interest">Would you like to beta test?</label>
+            <select id="bf-beta-interest" name="betaInterest" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes, send me beta details</option>
+              <option value="maybe">Maybe, send me updates first</option>
+              <option value="no">Not now, waitlist only</option>
+            </select>
+          </div>
+          <button type="submit">Join early access</button>
+          <p class="form-note">
+            Signups may be saved in Vanessa's Google Sheet. Please do not enter private medicine
+            details or sensitive family information.
+          </p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>RemoteMom</span>
+      <span><a href="../">View the main RemoteMom page</a></span>
+    </footer>
+
+    <script src="../waitlist.js"></script>
+  </body>
+</html>

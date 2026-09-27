@@ -2,6 +2,7 @@ const SPREADSHEET_ID = '1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s';
 const SHEET_NAME = 'Responses';
 const WAITLIST_SHEET_NAME = 'Waitlist';
 const BETA_FEEDBACK_SHEET_NAME = 'Beta Feedback';
+const BLACK_FRIDAY_SHEET_NAME = 'Black Friday Early Access';
 
 function doPost(event) {
   const payload = parsePayload(event);
@@ -9,6 +10,10 @@ function doPost(event) {
 
   if (payload.submissionType === 'beta-feedback') {
     return appendBetaFeedback(spreadsheet, payload);
+  }
+
+  if (payload.submissionType === 'black-friday-early-access') {
+    return appendBlackFridayEarlyAccess(spreadsheet, payload);
   }
 
   if (payload.submissionType === 'waitlist') {
@@ -71,6 +76,25 @@ function appendWaitlistSignup(spreadsheet, payload) {
     payload.name || '',
     payload.email || '',
     'landing-waitlist-form',
+    JSON.stringify(payload)
+  ]);
+
+  return jsonResponse({ ok: true });
+}
+
+function appendBlackFridayEarlyAccess(spreadsheet, payload) {
+  const sheet = ensureBlackFridaySheet(spreadsheet);
+
+  sheet.appendRow([
+    new Date(),
+    payload.submittedAt || '',
+    payload.name || '',
+    payload.email || '',
+    payload.androidPhone || '',
+    payload.childrenCount || '',
+    payload.biggestStruggle || '',
+    payload.betaInterest || '',
+    'black-friday-early-access-form',
     JSON.stringify(payload)
   ]);
 
@@ -143,6 +167,35 @@ function ensureWaitlistSheet(spreadsheet) {
   const headers = ['Received At', 'Submitted At', 'Name', 'Email', 'Source', 'Raw Payload'];
   const sheet =
     spreadsheet.getSheetByName(WAITLIST_SHEET_NAME) || spreadsheet.insertSheet(WAITLIST_SHEET_NAME);
+  const headerRange = sheet.getRange(1, 1, 1, headers.length);
+  const currentHeaders = headerRange.getValues()[0];
+  const hasExpectedHeaders = headers.every(function (header, index) {
+    return currentHeaders[index] === header;
+  });
+
+  if (!hasExpectedHeaders) {
+    headerRange.setValues([headers]);
+  }
+
+  return sheet;
+}
+
+function ensureBlackFridaySheet(spreadsheet) {
+  const headers = [
+    'Received At',
+    'Submitted At',
+    'Name',
+    'Email',
+    'Android Phone',
+    'Children Count',
+    'Biggest Struggle',
+    'Beta Interest',
+    'Source',
+    'Raw Payload'
+  ];
+  const sheet =
+    spreadsheet.getSheetByName(BLACK_FRIDAY_SHEET_NAME) ||
+    spreadsheet.insertSheet(BLACK_FRIDAY_SHEET_NAME);
   const headerRange = sheet.getRange(1, 1, 1, headers.length);
   const currentHeaders = headerRange.getValues()[0];
   const hasExpectedHeaders = headers.every(function (header, index) {

@@ -14,6 +14,7 @@ const landingDir = join(__dirname, '..', 'landing');
 const htmlPath = join(landingDir, 'index.html');
 const betaHtmlPath = join(landingDir, 'beta', 'index.html');
 const betaFeedbackHtmlPath = join(landingDir, 'beta-feedback', 'index.html');
+const blackFridayHtmlPath = join(landingDir, 'black-friday', 'index.html');
 const cssPath = join(landingDir, 'styles.css');
 const scriptPath = join(landingDir, 'waitlist.js');
 const mockupPath = join(landingDir, 'remotemom-dashboard-mockup.png');
@@ -96,6 +97,9 @@ describe('RemoteMom landing page', () => {
 
     expect(betaHtml).toContain('Help test RemoteMom for Android');
     expect(betaHtml).toContain('Join the Android beta interest list.');
+    expect(betaHtml).toContain('How the Android invite works');
+    expect(betaHtml).toContain('same Google account');
+    expect(betaHtml).toContain('Firebase App Tester');
     expect(betaHtml).toContain('data-endpoint="/api/waitlist"');
     expect(betaHtml).toContain('../styles.css');
     expect(betaHtml).toContain('../waitlist.js');
@@ -134,5 +138,32 @@ describe('RemoteMom landing page', () => {
     expect(script).toContain('remotemom:beta-feedback');
     expect(script).toContain('data-beta-feedback-form');
     expect(script).toContain('/api/beta-feedback');
+  });
+
+  it('includes a separate Black Friday early-access beta page without payment collection', () => {
+    expect(existsSync(blackFridayHtmlPath)).toBe(true);
+
+    const campaignHtml = readFileSync(blackFridayHtmlPath, 'utf8');
+    const css = readFileSync(cssPath, 'utf8');
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(campaignHtml).toContain('Black Friday Early Access');
+    expect(campaignHtml).toContain('early-access beta');
+    expect(campaignHtml).toContain('founding mom benefits');
+    expect(campaignHtml).toContain('not a full public launch yet');
+    expect(campaignHtml).toContain('data-black-friday-form');
+    expect(campaignHtml).toContain('data-endpoint="/api/black-friday"');
+    expect(campaignHtml).toContain('name="androidPhone"');
+    expect(campaignHtml).toContain('name="childrenCount"');
+    expect(campaignHtml).toContain('name="biggestStruggle"');
+    expect(campaignHtml).toContain('name="betaInterest"');
+    expect(campaignHtml).toContain('RemoteMom organizes medicine routines only.');
+    expect(campaignHtml).toContain('does not provide medical advice');
+    expect(campaignHtml).not.toContain('Stripe');
+    expect(campaignHtml).not.toContain('Buy now');
+    expect(css).toContain('.campaign-hero');
+    expect(script).toContain('remotemom:black-friday-early-access');
+    expect(script).toContain('data-black-friday-form');
+    expect(script).toContain('/api/black-friday');
   });
 });

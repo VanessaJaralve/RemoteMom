@@ -2,9 +2,11 @@
   const storageKey = 'remotemom:waitlist';
   const validationStorageKey = 'remotemom:validation-survey';
   const betaFeedbackStorageKey = 'remotemom:beta-feedback';
+  const blackFridayStorageKey = 'remotemom:black-friday-early-access';
   const forms = document.querySelectorAll('[data-waitlist-form]');
   const validationForm = document.querySelector('[data-validation-form]');
   const betaFeedbackForm = document.querySelector('[data-beta-feedback-form]');
+  const blackFridayForm = document.querySelector('[data-black-friday-form]');
 
   function getSavedEntries(key) {
     const savedEntries = window.localStorage.getItem(key);
@@ -192,6 +194,77 @@
         if (status) {
           status.textContent =
             'Could not reach the feedback endpoint. Saved as a backup on this device.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      }
+    });
+  }
+
+  if (blackFridayForm) {
+    blackFridayForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(blackFridayForm);
+      const signup = {
+        androidPhone: String(formData.get('androidPhone') ?? '').trim(),
+        betaInterest: String(formData.get('betaInterest') ?? '').trim(),
+        biggestStruggle: String(formData.get('biggestStruggle') ?? '').trim(),
+        childrenCount: String(formData.get('childrenCount') ?? '').trim(),
+        email: String(formData.get('email') ?? '').trim(),
+        name: String(formData.get('name') ?? '').trim(),
+        createdAt: new Date().toISOString()
+      };
+      const status = blackFridayForm.querySelector('.form-status');
+      const submitButton = blackFridayForm.querySelector('button[type="submit"]');
+      const blackFridayEndpoint = blackFridayForm.dataset.endpoint || '/api/black-friday';
+
+      if (
+        !signup.name ||
+        !signup.email ||
+        !signup.androidPhone ||
+        !signup.betaInterest ||
+        !signup.biggestStruggle ||
+        !signup.childrenCount
+      ) {
+        if (status) {
+          status.textContent = 'Please complete the early-access signup.';
+        }
+
+        return;
+      }
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      try {
+        const result = await fetch(blackFridayEndpoint, {
+          body: JSON.stringify(signup),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST'
+        });
+
+        if (!result.ok) {
+          throw new Error('Black Friday early-access collection request failed.');
+        }
+
+        blackFridayForm.reset();
+
+        if (status) {
+          status.textContent =
+            'You are on the RemoteMom early-access list. Thank you for helping shape it.';
+        }
+      } catch {
+        saveLocalBackup(blackFridayStorageKey, signup);
+
+        if (status) {
+          status.textContent =
+            'Could not reach the early-access endpoint. Saved as a backup on this device.';
         }
       } finally {
         if (submitButton) {
