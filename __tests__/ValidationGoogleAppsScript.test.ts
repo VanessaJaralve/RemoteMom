@@ -37,12 +37,16 @@ describe('Google Apps Script validation webhook', () => {
     expect(script).toContain("WAITLIST_SHEET_NAME = 'Waitlist'");
     expect(script).toContain("BETA_FEEDBACK_SHEET_NAME = 'Beta Feedback'");
     expect(script).toContain("BLACK_FRIDAY_SHEET_NAME = 'Black Friday Early Access'");
+    expect(script).toContain("LAUNCHPAD_LEADS_SHEET_NAME = 'Launchpad Leads'");
     expect(script).toContain("payload.submissionType === 'beta-feedback'");
     expect(script).toContain("payload.submissionType === 'black-friday-early-access'");
+    expect(script).toContain("payload.submissionType === 'launchpad-lead'");
     expect(script).toContain('appendBetaFeedback');
     expect(script).toContain('appendBlackFridayEarlyAccess');
+    expect(script).toContain('appendLaunchpadLead');
     expect(script).toContain('ensureBetaFeedbackSheet');
     expect(script).toContain('ensureBlackFridaySheet');
+    expect(script).toContain('ensureLaunchpadLeadsSheet');
     expect(script).toContain('insertSheet');
     expect(script).toContain('setValues');
     expect(script).toContain('childrenCount');
@@ -59,5 +63,9 @@ describe('Google Apps Script validation webhook', () => {
     expect(script).toContain('androidPhone');
     expect(script).toContain('biggestStruggle');
     expect(script).toContain('betaInterest');
+    expect(script).toContain('biggestChallenge');
+    expect(script).toContain('utmSource');
+    expect(script).toContain('utmMedium');
+    expect(script).toContain('utmCampaign');
   });
 });

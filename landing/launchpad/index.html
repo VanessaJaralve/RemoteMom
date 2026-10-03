@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A free role-fit, schedule-fit, and remote-job safety starter kit for Filipino mothers exploring remote work."
+    />
+    <meta property="og:title" content="Pinay Mom's Remote Work Fit and Safety Starter Kit" />
+    <meta
+      property="og:description"
+      content="Choose a remote-work direction that fits your skills and your family."
+    />
+    <meta property="og:image" content="/launchpad-hero.png" />
+    <title>Remote Mom's Launchpad | Free Starter Kit</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="launchpad-header">
+      <a class="brand" href="/" aria-label="RemoteMom home">RemoteMom</a>
+      <a class="header-link" href="#starter-kit">Get the free starter kit</a>
+    </header>
+
+    <main>
+      <section class="launchpad-hero" aria-labelledby="launchpad-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Remote Mom's Launchpad for the Philippines</p>
+          <h1 id="launchpad-title">Find a remote-work direction that fits your skills and your family.</h1>
+          <p class="hero-subtitle">
+            Use a practical starter kit to choose a role, check schedule fit, and review opportunities more carefully.
+          </p>
+          <a class="primary-link" href="#starter-kit">Get the free starter kit</a>
+        </div>
+        <figure class="hero-photo">
+          <img
+            src="../launchpad-hero.png"
+            alt="Filipino professional reviewing remote-career notes at a calm home workspace"
+            width="1536"
+            height="1024"
+          />
+        </figure>
+      </section>
+
+      <section class="reality-strip" aria-label="What the starter kit helps evaluate">
+        <p>Role fit</p>
+        <p>Family schedule</p>
+        <p>Job verification</p>
+        <p>Weekly applications</p>
+      </section>
+
+      <section class="problem-section" aria-labelledby="problem-title">
+        <div class="problem-copy">
+          <h2 id="problem-title">Remote is a location. Flexibility is a working condition.</h2>
+          <p>
+            A role can be home-based and still require a fixed night shift, continuous calls, or hours that conflict with childcare.
+          </p>
+        </div>
+        <div class="fit-note">
+          <p class="fit-note-label">Before you apply</p>
+          <p>Compare the shift, meeting hours, benefits, equipment, childcare, and return-to-office expectations.</p>
+        </div>
+      </section>
+
+      <section class="contents-section" aria-labelledby="contents-title">
+        <h2 id="contents-title">A focused first step</h2>
+        <div class="contents-grid">
+          <article class="feature feature-wide">
+            <span>01</span>
+            <h3>Choose a realistic role direction</h3>
+            <p>Connect your existing work and education to roles you can explain and demonstrate honestly.</p>
+          </article>
+          <article class="feature feature-tinted">
+            <span>02</span>
+            <h3>Check family fit</h3>
+            <p>Review hours, childcare, backup care, benefits, equipment, and minimum sustainable income.</p>
+          </article>
+          <article class="feature feature-dark">
+            <span>03</span>
+            <h3>Verify before sharing</h3>
+            <p>Use official sources and protect banking details, passwords, one-time PINs, and identity information.</p>
+          </article>
+          <article class="feature feature-line">
+            <span>04</span>
+            <h3>Use a seven-day plan</h3>
+            <p>Make one useful improvement each day instead of opening every job platform at once.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="form-section" id="starter-kit" aria-labelledby="form-title">
+        <div class="form-intro">
+          <h2 id="form-title">Get the Pinay Mom's Remote Work Fit and Safety Starter Kit</h2>
+          <p>
+            Tell us where your search feels hardest. Your answer helps shape Remote Mom's Launchpad for Filipino mothers.
+          </p>
+          <p class="privacy-note">
+            We collect your name, email, selected challenge, and campaign source in Vanessa's Google Sheet. Do not enter child, banking, government ID, or health information.
+          </p>
+        </div>
+
+        <form
+          class="launchpad-form"
+          data-launchpad-form
+          data-endpoint="/api/launchpad-lead"
+          novalidate
+        >
+          <div class="field">
+            <label for="launchpad-name">Name</label>
+            <input id="launchpad-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="launchpad-email">Email</label>
+            <input
+              id="launchpad-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="launchpad-challenge">What is your biggest remote-work challenge?</label>
+            <select id="launchpad-challenge" name="biggestChallenge" required>
+              <option value="">Select one</option>
+              <option value="choosing-the-right-role">Choosing the right role</option>
+              <option value="finding-legitimate-opportunities">Finding legitimate opportunities</option>
+              <option value="resume-or-portfolio">Improving my resume or portfolio</option>
+              <option value="family-compatible-schedule">Finding a family-compatible schedule</option>
+              <option value="returning-after-career-gap">Returning after a career gap</option>
+            </select>
+          </div>
+          <button type="submit">Send me the starter kit</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-disclaimer">
+            This resource provides general career-organization information. It does not guarantee employment, income, or that a listing is safe.
+          </p>
+        </form>
+      </section>
+
+      <section class="safety-section" aria-labelledby="safety-title">
+        <h2 id="safety-title">A checklist supports judgment. It cannot certify a job.</h2>
+        <p>
+          Philippine authorities warn about copied company identities, unsolicited offers, requests for payment, and attempts to collect sensitive information. Verify unfamiliar opportunities through official channels.
+        </p>
+        <div class="source-links">
+          <a href="https://car.dole.gov.ph/news/fake-accounts-websites-and-jobs-on-social-media/">DOLE guidance</a>
+          <a href="https://pia.gov.ph/news/dmw-car-warns-public-vs-bogus-job-offers-shares-illegal-recruitment-red-flags/">DMW guidance</a>
+          <a href="https://pia.gov.ph/news/dream-job-or-digital-trap-ntc-warns-jobseekers-vs-online-scams/">NTC guidance</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="launchpad-footer">
+      <a class="brand" href="/">RemoteMom</a>
+      <p>Practical support for remote work and calmer family days.</p>
+    </footer>
+
+    <script src="../waitlist.js"></script>
+  </body>
+</html>

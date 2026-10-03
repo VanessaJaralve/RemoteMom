@@ -15,6 +15,14 @@ const htmlPath = join(landingDir, 'index.html');
 const betaHtmlPath = join(landingDir, 'beta', 'index.html');
 const betaFeedbackHtmlPath = join(landingDir, 'beta-feedback', 'index.html');
 const blackFridayHtmlPath = join(landingDir, 'black-friday', 'index.html');
+const launchpadHtmlPath = join(landingDir, 'launchpad', 'index.html');
+const launchpadDownloadHtmlPath = join(landingDir, 'launchpad', 'download', 'index.html');
+const launchpadPdfPath = join(
+  landingDir,
+  'launchpad',
+  'download',
+  'pinay-mom-remote-work-fit-safety-starter-kit.pdf'
+);
 const cssPath = join(landingDir, 'styles.css');
 const scriptPath = join(landingDir, 'waitlist.js');
 const mockupPath = join(landingDir, 'remotemom-dashboard-mockup.png');
@@ -165,5 +173,34 @@ describe('RemoteMom landing page', () => {
     expect(script).toContain('remotemom:black-friday-early-access');
     expect(script).toContain('data-black-friday-form');
     expect(script).toContain('/api/black-friday');
+  });
+
+  it('includes a dedicated Philippines Launchpad starter-kit funnel', () => {
+    expect(existsSync(launchpadHtmlPath)).toBe(true);
+    expect(existsSync(launchpadDownloadHtmlPath)).toBe(true);
+    expect(existsSync(launchpadPdfPath)).toBe(true);
+
+    const launchpadHtml = readFileSync(launchpadHtmlPath, 'utf8');
+    const downloadHtml = readFileSync(launchpadDownloadHtmlPath, 'utf8');
+    const script = readFileSync(scriptPath, 'utf8');
+
+    expect(launchpadHtml).toContain('Find a remote-work direction that fits your skills and your family.');
+    expect(launchpadHtml).toContain('Pinay Mom');
+    expect(launchpadHtml).toContain('data-launchpad-form');
+    expect(launchpadHtml).toContain('data-endpoint="/api/launchpad-lead"');
+    expect(launchpadHtml).toContain('name="name"');
+    expect(launchpadHtml).toContain('name="email"');
+    expect(launchpadHtml).toContain('name="biggestChallenge"');
+    expect(launchpadHtml).toContain('does not guarantee employment, income, or that a listing is safe');
+    expect(downloadHtml).toContain('Download your starter kit');
+    expect(downloadHtml).toContain('pinay-mom-remote-work-fit-safety-starter-kit.pdf');
+    expect(downloadHtml).toContain('/beta/');
+    expect(script).toContain('remotemom:launchpad-leads');
+    expect(script).toContain('data-launchpad-form');
+    expect(script).toContain('/api/launchpad-lead');
+    expect(script).toContain('utm_source');
+    expect(script).toContain('utm_medium');
+    expect(script).toContain('utm_campaign');
+    expect(script).toContain("window.location.assign('./download/')");
   });
 });

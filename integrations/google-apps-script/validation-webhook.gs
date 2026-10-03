@@ -3,6 +3,7 @@ const SHEET_NAME = 'Responses';
 const WAITLIST_SHEET_NAME = 'Waitlist';
 const BETA_FEEDBACK_SHEET_NAME = 'Beta Feedback';
 const BLACK_FRIDAY_SHEET_NAME = 'Black Friday Early Access';
+const LAUNCHPAD_LEADS_SHEET_NAME = 'Launchpad Leads';
 
 function doPost(event) {
   const payload = parsePayload(event);
@@ -14,6 +15,10 @@ function doPost(event) {
 
   if (payload.submissionType === 'black-friday-early-access') {
     return appendBlackFridayEarlyAccess(spreadsheet, payload);
+  }
+
+  if (payload.submissionType === 'launchpad-lead') {
+    return appendLaunchpadLead(spreadsheet, payload);
   }
 
   if (payload.submissionType === 'waitlist') {
@@ -95,6 +100,25 @@ function appendBlackFridayEarlyAccess(spreadsheet, payload) {
     payload.biggestStruggle || '',
     payload.betaInterest || '',
     'black-friday-early-access-form',
+    JSON.stringify(payload)
+  ]);
+
+  return jsonResponse({ ok: true });
+}
+
+function appendLaunchpadLead(spreadsheet, payload) {
+  const sheet = ensureLaunchpadLeadsSheet(spreadsheet);
+
+  sheet.appendRow([
+    new Date(),
+    payload.submittedAt || '',
+    payload.name || '',
+    payload.email || '',
+    payload.biggestChallenge || '',
+    payload.utmSource || '',
+    payload.utmMedium || '',
+    payload.utmCampaign || '',
+    'launchpad-starter-kit-form',
     JSON.stringify(payload)
   ]);
 
@@ -196,6 +220,35 @@ function ensureBlackFridaySheet(spreadsheet) {
   const sheet =
     spreadsheet.getSheetByName(BLACK_FRIDAY_SHEET_NAME) ||
     spreadsheet.insertSheet(BLACK_FRIDAY_SHEET_NAME);
+  const headerRange = sheet.getRange(1, 1, 1, headers.length);
+  const currentHeaders = headerRange.getValues()[0];
+  const hasExpectedHeaders = headers.every(function (header, index) {
+    return currentHeaders[index] === header;
+  });
+
+  if (!hasExpectedHeaders) {
+    headerRange.setValues([headers]);
+  }
+
+  return sheet;
+}
+
+function ensureLaunchpadLeadsSheet(spreadsheet) {
+  const headers = [
+    'Received At',
+    'Submitted At',
+    'Name',
+    'Email',
+    'Biggest Challenge',
+    'UTM Source',
+    'UTM Medium',
+    'UTM Campaign',
+    'Source',
+    'Raw Payload'
+  ];
+  const sheet =
+    spreadsheet.getSheetByName(LAUNCHPAD_LEADS_SHEET_NAME) ||
+    spreadsheet.insertSheet(LAUNCHPAD_LEADS_SHEET_NAME);
   const headerRange = sheet.getRange(1, 1, 1, headers.length);
   const currentHeaders = headerRange.getValues()[0];
   const hasExpectedHeaders = headers.every(function (header, index) {
