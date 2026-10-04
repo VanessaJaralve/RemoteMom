@@ -18,13 +18,13 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "output" / "pdf" / "pinay-mom-remote-work-fit-safety-starter-kit.pdf"
+OUTPUT = ROOT / "output" / "pdf" / "remote-moms-work-fit-safety-starter-kit.pdf"
 LANDING_COPY = (
     ROOT
     / "landing"
     / "launchpad"
     / "download"
-    / "pinay-mom-remote-work-fit-safety-starter-kit.pdf"
+    / "remote-moms-work-fit-safety-starter-kit.pdf"
 )
 
 GREEN = colors.HexColor("#245C45")
@@ -198,7 +198,7 @@ def footer(canvas, doc):
     canvas.line(20 * mm, 14 * mm, 190 * mm, 14 * mm)
     canvas.setFont("Helvetica", 7.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(20 * mm, 9 * mm, "Remote Mom's Launchpad | Philippines")
+    canvas.drawString(20 * mm, 9 * mm, "Remote Mom's Launchpad")
     canvas.drawRightString(190 * mm, 9 * mm, f"Page {doc.page}")
     canvas.restoreState()
 
@@ -213,9 +213,9 @@ def build_pdf():
         leftMargin=20 * mm,
         topMargin=18 * mm,
         bottomMargin=20 * mm,
-        title="Pinay Mom's Remote Work Fit and Safety Starter Kit",
+        title="Remote Mom's Work Fit and Safety Starter Kit",
         author="RemoteMom",
-        subject="Remote career planning and job verification worksheet for Filipino mothers",
+        subject="Remote career planning and job verification worksheet for working mothers",
     )
 
     story = []
@@ -223,7 +223,7 @@ def build_pdf():
         [
             Spacer(1, 18 * mm),
             p("REMOTE MOM'S LAUNCHPAD", "CoverLabel"),
-            p("Pinay Mom's Remote Work Fit and Safety Starter Kit", "CoverTitle"),
+            p("Remote Mom's Work Fit and Safety Starter Kit", "CoverTitle"),
             p(
                 "Choose a remote-work direction that fits your existing skills, your family schedule, and the way you need to work.",
                 "CoverDeck",
@@ -257,6 +257,32 @@ def build_pdf():
 
     story.extend(
         [
+            p("Choose the path that matches your current stage", "SectionTitle"),
+            p(
+                "Use the Career Path if you are looking for remote work or returning after a career break. Use the Remote-Life Path if you already work remotely and want calmer boundaries and routines. Complete only the worksheets that support your next step.",
+                "SectionIntro",
+            ),
+            worksheet_table(
+                ["Path", "Start here when", "Suggested sections"],
+                [
+                    ["Career Path", "You are looking for remote work or returning after a break.", "Life and role fit, transferable skills, verification, and application planning"],
+                    ["Remote-Life Path", "You already work remotely and want a more sustainable day.", "Pressure points, boundaries, routines, and the seven-day plan"],
+                    ["Exploring both", "You are still deciding what kind of work and routine would fit.", "Start with life fit, then choose one exercise from each path"],
+                ],
+                [35 * mm, 62 * mm, 73 * mm],
+                [12 * mm, 28 * mm, 28 * mm, 28 * mm],
+            ),
+            Spacer(1, 9 * mm),
+            p(
+                "There is no need to finish the full kit in one sitting. One honest answer and one practical experiment are useful progress.",
+                "Callout",
+            ),
+            PageBreak(),
+        ]
+    )
+
+    story.extend(
+        [
             p("1. Start with the life the job must fit", "SectionTitle"),
             p(
                 "Remote work can remove a commute, but it does not automatically provide flexible hours, reliable income, childcare, or a manageable day. Write down the conditions your next role must fit.",
@@ -268,11 +294,11 @@ def build_pdf():
                     ["How many focused work hours can I protect each weekday?", ""],
                     ["Which hours are reliably available?", ""],
                     ["Do I need a fixed shift, flexible schedule, or output-based work?", ""],
-                    ["Can I work Philippine night hours for an overseas client?", ""],
+                    ["Can I work across time zones when a role requires it?", ""],
                     ["Who will handle childcare during calls or focused work?", ""],
                     ["What happens when my child is sick or school is closed?", ""],
                     ["What is the longest commute I would accept for hybrid work?", ""],
-                    ["Which benefits matter: HMO, leave, 13th-month pay, equipment, taxes?", ""],
+                    ["Which benefits matter: health coverage, paid leave, retirement, equipment, taxes?", ""],
                     ["What is my minimum sustainable monthly income after work expenses?", ""],
                 ],
                 [92 * mm, 78 * mm],
@@ -353,7 +379,7 @@ def build_pdf():
         [
             p("4. Focus your search and verify opportunities", "SectionTitle"),
             p(
-                "Choose two or three sources that fit your role. Possible sources include official company career pages, LinkedIn, JobStreet, Indeed, Kalibrr, OnlineJobs.ph, Upwork, established outsourcing companies, and referrals.",
+                "Choose two or three sources that fit your role. Possible sources include official company career pages, LinkedIn, Indeed, reputable remote-work marketplaces, established staffing companies, professional communities, and referrals.",
                 "SectionIntro",
             ),
             worksheet_table(
@@ -374,7 +400,7 @@ def build_pdf():
                     "I searched the company name with terms such as review, scam, and complaint.",
                     "The recruiter did not request payment for an application, interview, equipment release, or placement.",
                     "I have not shared passwords, one-time PINs, full banking credentials, or unnecessary identity documents.",
-                    "If overseas recruitment is involved, I checked DMW authorization and job-order requirements.",
+                    "If a recruiter or staffing agency is involved, I checked the licensing and recruitment requirements in my country.",
                     "I will stop if I am pressured to act before I can verify the offer.",
                 ]
             ),
@@ -410,13 +436,13 @@ def build_pdf():
                 ),
             ),
             Spacer(1, 10 * mm),
-            p("Philippine safety references", "Callout"),
-            p("DOLE: car.dole.gov.ph/news/fake-accounts-websites-and-jobs-on-social-media/", "BodySmall"),
-            p("DMW guidance: pia.gov.ph/news/dmw-car-warns-public-vs-bogus-job-offers-shares-illegal-recruitment-red-flags/", "BodySmall"),
-            p("NTC guidance: pia.gov.ph/news/dream-job-or-digital-trap-ntc-warns-jobseekers-vs-online-scams/", "BodySmall"),
+            p("Find the official safety resources for your location", "Callout"),
+            p("Employment or labor authority: ______________________________________________", "BodySmall"),
+            p("Consumer-protection or cybercrime authority: _________________________________", "BodySmall"),
+            p("Official reporting channel: _________________________________________________", "BodySmall"),
             Spacer(1, 9 * mm),
             p(
-                "A checklist cannot certify an opportunity as safe. If an offer may involve fraud, illegal recruitment, identity theft, or financial loss, contact the appropriate Philippine authority or qualified adviser.",
+                "A checklist cannot certify an opportunity as safe. If an offer may involve fraud, illegal recruitment, identity theft, or financial loss, contact the appropriate authority in your country or a qualified adviser.",
                 "SectionIntro",
             ),
             PageBreak(),
@@ -425,21 +451,55 @@ def build_pdf():
 
     story.extend(
         [
-            p("6. Use a seven-day application plan", "SectionTitle"),
-            p("This plan assumes about 30 focused minutes a day. Adjust it to your circumstances.", "SectionIntro"),
+            p("6. Remote-Life Path: make remote work sustainable", "SectionTitle"),
+            p(
+                "Review where work and family responsibilities compete for the same time or attention. Choose one small boundary or routine to test; this is not a judgment of how well you are managing.",
+                "SectionIntro",
+            ),
             worksheet_table(
-                ["Day", "Focus", "Done"],
+                ["Pressure point", "What happens now", "Small boundary or routine to test"],
                 [
-                    ["1", "Choose one primary role and collect five suitable descriptions.", "[ ]"],
-                    ["2", "Highlight repeated skills and requirements.", "[ ]"],
-                    ["3", "Update the top third of your resume for the target role.", "[ ]"],
-                    ["4", "Prepare one relevant work sample or portfolio example.", "[ ]"],
-                    ["5", "Find and verify three strong opportunities.", "[ ]"],
-                    ["6", "Tailor and submit one or two careful applications.", "[ ]"],
-                    ["7", "Follow up where appropriate and review what slowed you down.", "[ ]"],
+                    ["Starting the workday", "", ""],
+                    ["Family interruptions", "", ""],
+                    ["Meals and groceries", "", ""],
+                    ["Child schedule transitions", "", ""],
+                    ["Ending the workday", "", ""],
                 ],
-                [18 * mm, 132 * mm, 20 * mm],
-                [12 * mm] + [18 * mm] * 7,
+                [43 * mm, 60 * mm, 67 * mm],
+                [12 * mm] + [20 * mm] * 5,
+            ),
+            Spacer(1, 8 * mm),
+            worksheet_table(
+                ["Daily planning prompt", "Your answer"],
+                [
+                    ["What needs attention today?", ""],
+                    ["What can safely wait?", ""],
+                    ["Which boundary or routine will I test?", ""],
+                ],
+                [72 * mm, 98 * mm],
+                [12 * mm, 20 * mm, 20 * mm, 20 * mm],
+            ),
+            PageBreak(),
+        ]
+    )
+
+    story.extend(
+        [
+            p("7. Choose a seven-day action path", "SectionTitle"),
+            p("Choose either the Career Path or the Remote-Life Path each day. This plan assumes about 30 focused minutes a day; adjust it to your circumstances.", "SectionIntro"),
+            worksheet_table(
+                ["Day", "Career Path", "Remote-Life Path", "Done"],
+                [
+                    ["1", "Choose one primary role.", "Name the biggest daily pressure point.", "[ ]"],
+                    ["2", "Review repeated role requirements.", "Choose one boundary to test.", "[ ]"],
+                    ["3", "Improve the top of your resume.", "Create a clearer workday start.", "[ ]"],
+                    ["4", "Prepare one work sample.", "Plan one interruption response.", "[ ]"],
+                    ["5", "Verify three opportunities.", "Simplify one meal or grocery step.", "[ ]"],
+                    ["6", "Submit one careful application.", "Create a clearer workday ending.", "[ ]"],
+                    ["7", "Follow up and review friction.", "Review what reduced mental load.", "[ ]"],
+                ],
+                [14 * mm, 70 * mm, 70 * mm, 16 * mm],
+                [12 * mm] + [20 * mm] * 7,
             ),
             Spacer(1, 9 * mm),
             p("Weekly review", "Callout"),
@@ -447,6 +507,7 @@ def build_pdf():
                 [
                     "Did the roles match my actual skills?",
                     "Did their schedules fit my family situation?",
+                    "Which remote-life boundary or routine helped?",
                     "Which qualification appeared most often?",
                     "Where did I spend time without improving an application?",
                     "What is the smallest useful improvement for next week?",
@@ -458,7 +519,7 @@ def build_pdf():
 
     story.extend(
         [
-            p("7. Track quality, not only quantity", "SectionTitle"),
+            p("8. Track quality, not only quantity", "SectionTitle"),
             p("Keep a record of where you applied, what you sent, and when to follow up.", "SectionIntro"),
             worksheet_table(
                 ["Date", "Company and role", "Source", "Verified", "Tailored", "Status", "Follow-up"],
@@ -469,7 +530,7 @@ def build_pdf():
             Spacer(1, 10 * mm),
             p("Your next step", "Callout"),
             p(
-                "Remote Mom's Launchpad is being shaped to help Filipino mothers choose a realistic remote-career direction, present existing skills clearly, verify opportunities, and run a focused application process.",
+                "Remote Mom's Launchpad is being shaped to help working mothers and career-returning moms choose a realistic remote-career direction, make remote work more sustainable, verify opportunities, and take one focused next step.",
                 "SectionIntro",
             ),
             p(

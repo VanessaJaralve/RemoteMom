@@ -284,6 +284,7 @@
       const searchParams = new URLSearchParams(window.location.search);
       const lead = {
         biggestChallenge: String(formData.get('biggestChallenge') ?? '').trim(),
+        currentStage: String(formData.get('currentStage') ?? '').trim(),
         email: String(formData.get('email') ?? '').trim(),
         name: String(formData.get('name') ?? '').trim(),
         utmCampaign: String(searchParams.get('utm_campaign') ?? '').trim().slice(0, 100),
@@ -295,9 +296,10 @@
       const submitButton = launchpadForm.querySelector('button[type="submit"]');
       const launchpadEndpoint = launchpadForm.dataset.endpoint || '/api/launchpad-lead';
 
-      if (!lead.name || !lead.email || !lead.biggestChallenge) {
+      if (!lead.name || !lead.email || !lead.currentStage || !lead.biggestChallenge) {
         if (status) {
-          status.textContent = 'Please add your name, email, and biggest challenge.';
+          status.textContent =
+            'Please add your name, email, current stage, and biggest challenge.';
         }
 
         return;

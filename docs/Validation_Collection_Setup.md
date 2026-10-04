@@ -106,11 +106,12 @@ Launchpad starter-kit submissions are sent as:
   "submissionType": "launchpad-lead",
   "name": "Vanessa",
   "email": "vanessa@example.com",
+  "currentStage": "already-working-remotely",
   "biggestChallenge": "family-compatible-schedule",
   "utmSource": "instagram",
   "utmMedium": "social",
   "utmCampaign": "launchpad-validation",
-  "submittedAt": "2026-10-03T00:00:00.000Z"
+  "submittedAt": "2026-10-04T00:00:00.000Z"
 }
 ```
 
@@ -118,10 +119,13 @@ Google Apps Script routes `submissionType: "launchpad-lead"` responses into a `L
 tab. The page captures only `utm_source`, `utm_medium`, and `utm_campaign`; each value is normalized
 and limited to 100 characters by the endpoint. The allowed challenge values are role choice,
 legitimate opportunities, resume or portfolio, family-compatible schedule, and returning after a
-career gap.
+career gap. The required `currentStage` value is one of `looking-for-remote-work`,
+`returning-after-career-break`, `already-working-remotely`, or `exploring-both`. New rows include a
+`Current Stage` column. Historical payloads that do not contain `currentStage` remain compatible and
+are written with an empty stage cell.
 
 After a confirmed submission, the visitor is sent to `/launchpad/download/`. The downloadable file
-is `landing/launchpad/download/pinay-mom-remote-work-fit-safety-starter-kit.pdf`. This is a direct
+is `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`. This is a direct
 download flow; it does not currently send the file by email.
 
 ## Preview Behavior

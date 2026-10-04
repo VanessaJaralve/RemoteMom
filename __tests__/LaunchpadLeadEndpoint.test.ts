@@ -37,6 +37,7 @@ describe('Launchpad lead endpoint', () => {
   const validBody = {
     email: 'maria@example.com',
     biggestChallenge: 'finding-legitimate-opportunities',
+    currentStage: 'looking-for-remote-work',
     name: 'Maria',
     utmCampaign: 'starter-kit-launch',
     utmMedium: 'organic-social',
@@ -46,15 +47,21 @@ describe('Launchpad lead endpoint', () => {
   it('rejects incomplete or unsupported lead submissions', async () => {
     const missingResponse = createResponse();
     const invalidChallengeResponse = createResponse();
+    const invalidStageResponse = createResponse();
 
     await handler({ method: 'POST', body: { name: 'Maria' } }, missingResponse);
     await handler(
       { method: 'POST', body: { ...validBody, biggestChallenge: 'anything' } },
       invalidChallengeResponse
     );
+    await handler(
+      { method: 'POST', body: { ...validBody, currentStage: 'not-approved' } },
+      invalidStageResponse
+    );
 
     expect(missingResponse.statusCode).toBe(400);
     expect(invalidChallengeResponse.statusCode).toBe(400);
+    expect(invalidStageResponse.statusCode).toBe(400);
     expect(missingResponse.body).toEqual({
       error: 'Please complete the starter-kit signup before submitting.'
     });
@@ -96,6 +103,12 @@ describe('Launchpad lead endpoint', () => {
       'https://example.com/remotemom-webhook',
       expect.objectContaining({
         body: expect.stringContaining('"utmSource":"instagram"')
+      })
+    );
+    expect(global.fetch).toHaveBeenCalledWith(
+      'https://example.com/remotemom-webhook',
+      expect.objectContaining({
+        body: expect.stringContaining('"currentStage":"looking-for-remote-work"')
       })
     );
 

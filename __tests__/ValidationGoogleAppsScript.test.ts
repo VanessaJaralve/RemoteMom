@@ -64,6 +64,8 @@ describe('Google Apps Script validation webhook', () => {
     expect(script).toContain('biggestStruggle');
     expect(script).toContain('betaInterest');
     expect(script).toContain('biggestChallenge');
+    expect(script).toContain("'Current Stage'");
+    expect(script).toContain("payload.currentStage || ''");
     expect(script).toContain('utmSource');
     expect(script).toContain('utmMedium');
     expect(script).toContain('utmCampaign');

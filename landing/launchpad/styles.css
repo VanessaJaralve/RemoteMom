@@ -225,6 +225,39 @@ h1 {
   padding: clamp(72px, 10vw, 132px) clamp(18px, 5vw, 72px);
 }
 
+.stage-section {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: clamp(72px, 10vw, 132px) clamp(18px, 5vw, 72px) 0;
+}
+
+.stage-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 36px;
+}
+
+.stage-grid article {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.stage-grid h3 {
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin-bottom: 12px;
+}
+
+.stage-grid p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
 h2 {
   font-size: clamp(34px, 4.7vw, 62px);
   letter-spacing: -0.045em;
@@ -362,6 +395,36 @@ h2 {
   margin-bottom: 20px;
 }
 
+.stage-field {
+  border: 0;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.stage-field legend {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.stage-option {
+  align-items: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-height: 50px;
+  padding: 13px 14px;
+}
+
+.stage-option input {
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+}
+
 .field label {
   display: block;
   font-size: 14px;
@@ -424,11 +487,19 @@ h2 {
 }
 
 .source-links a,
-.download-next a {
+.download-next a,
+.social-links a {
   color: var(--accent);
   font-weight: 800;
   min-height: 44px;
   padding: 10px 0;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 24px;
 }
 
 .launchpad-footer {
@@ -516,6 +587,10 @@ h2 {
   }
 
   .contents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-grid {
     grid-template-columns: 1fr;
   }
 

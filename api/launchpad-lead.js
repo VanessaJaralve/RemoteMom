@@ -6,6 +6,13 @@ const allowedChallenges = [
   'returning-after-career-gap'
 ];
 
+const allowedCurrentStages = [
+  'looking-for-remote-work',
+  'returning-after-career-break',
+  'already-working-remotely',
+  'exploring-both'
+];
+
 function setCorsHeaders(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -39,6 +46,7 @@ function normalizeLead(body) {
 
   return {
     biggestChallenge: String(lead.biggestChallenge || '').trim(),
+    currentStage: String(lead.currentStage || '').trim(),
     email: String(lead.email || '').trim(),
     name: String(lead.name || '').trim(),
     submissionType: 'launchpad-lead',
@@ -54,6 +62,7 @@ function isValidLead(lead) {
     lead.name &&
       lead.email &&
       lead.email.includes('@') &&
+      allowedCurrentStages.includes(lead.currentStage) &&
       allowedChallenges.includes(lead.biggestChallenge)
   );
 }
@@ -133,3 +142,4 @@ module.exports = async function handler(req, res) {
 };
 
 module.exports.allowedChallenges = allowedChallenges;
+module.exports.allowedCurrentStages = allowedCurrentStages;

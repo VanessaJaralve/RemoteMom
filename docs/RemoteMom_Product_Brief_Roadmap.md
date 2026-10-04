@@ -1,6 +1,6 @@
 # RemoteMom Product Brief And Roadmap
 
-Last updated: 2026-09-13
+Last updated: 2026-10-04
 
 ## Executive Summary
 
@@ -311,9 +311,17 @@ Next recommended: invite 5 to 10 trusted Android beta testers through Firebase A
 5. Track invite acceptance, build downloads, and feedback responses.
 6. Review repeated beta feedback before changing the MVP.
 
-Single most important next development task:
+Single most important next mobile-app task:
 
 Invite trusted Android testers through Firebase App Distribution, monitor install friction, and review feedback before changing the MVP.
+
+Active audience-building focus:
+
+1. Use Remote Mom's Launchpad as the primary content and lead-generation funnel while the mobile beta waits for additional testers.
+2. Serve two equal audience lanes through Vanessa's existing Facebook and Instagram accounts: mothers seeking remote work and mothers already working remotely.
+3. Track each Launchpad lead's current stage, challenge, platform, and campaign source without collecting sensitive family details.
+4. Run a 30-day two-lane content validation cycle after confirming the page, direct download, PDF, and Google Sheet routing work end to end.
+5. Keep RemoteMoms beta recruitment as a secondary path for leads who voluntarily express a daily work-family organization need.
 
 ## Current Strategic Recommendation
 
@@ -395,12 +403,16 @@ Success criteria:
 
 ### Phase 4: Beta Learning
 
-Status: Not Started
+Status: In Progress
 
 Objective: Learn whether users return to the app and which pain is strongest.
 
 Recommended work:
 
+- Completed: Build and globally position the Launchpad starter-kit funnel
+- Completed: Polish the funnel and Starter Kit for two equal audience lanes
+- Publish the two-lane Facebook and Instagram content cycle through the existing accounts
+- Track Launchpad signups by current stage, challenge, platform, and campaign
 - Invite 10 to 30 target users
 - Track installs, waitlist signups, and feedback
 - Ask users what they opened first

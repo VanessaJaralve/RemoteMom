@@ -21,7 +21,7 @@ const launchpadPdfPath = join(
   landingDir,
   'launchpad',
   'download',
-  'pinay-mom-remote-work-fit-safety-starter-kit.pdf'
+  'remote-moms-work-fit-safety-starter-kit.pdf'
 );
 const cssPath = join(landingDir, 'styles.css');
 const scriptPath = join(landingDir, 'waitlist.js');
@@ -175,7 +175,7 @@ describe('RemoteMom landing page', () => {
     expect(script).toContain('/api/black-friday');
   });
 
-  it('includes a dedicated Philippines Launchpad starter-kit funnel', () => {
+  it('includes a dedicated global Launchpad starter-kit funnel', () => {
     expect(existsSync(launchpadHtmlPath)).toBe(true);
     expect(existsSync(launchpadDownloadHtmlPath)).toBe(true);
     expect(existsSync(launchpadPdfPath)).toBe(true);
@@ -184,16 +184,32 @@ describe('RemoteMom landing page', () => {
     const downloadHtml = readFileSync(launchpadDownloadHtmlPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(launchpadHtml).toContain('Find a remote-work direction that fits your skills and your family.');
-    expect(launchpadHtml).toContain('Pinay Mom');
+    expect(launchpadHtml).toContain('Build a remote-work path that fits your career and your family life.');
+    expect(launchpadHtml).toContain("Remote Mom's Work Fit and Safety Starter Kit");
+    expect(launchpadHtml).toContain('working mothers and career-returning moms');
+    expect(launchpadHtml).not.toContain('Pinay Mom');
+    expect(launchpadHtml).not.toContain('for the Philippines');
+    expect(launchpadHtml).not.toContain('Filipino mothers');
     expect(launchpadHtml).toContain('data-launchpad-form');
     expect(launchpadHtml).toContain('data-endpoint="/api/launchpad-lead"');
     expect(launchpadHtml).toContain('name="name"');
     expect(launchpadHtml).toContain('name="email"');
+    expect(launchpadHtml).toContain('name="currentStage"');
+    expect(launchpadHtml).toContain('value="looking-for-remote-work"');
+    expect(launchpadHtml).toContain('value="returning-after-career-break"');
+    expect(launchpadHtml).toContain('value="already-working-remotely"');
+    expect(launchpadHtml).toContain('value="exploring-both"');
     expect(launchpadHtml).toContain('name="biggestChallenge"');
-    expect(launchpadHtml).toContain('does not guarantee employment, income, or that a listing is safe');
+    expect(launchpadHtml).toContain('Already working remotely');
+    expect(launchpadHtml).toContain('Improve work-from-home boundaries and routines');
+    expect(launchpadHtml).toContain(
+      'does not guarantee employment, income, flexibility, or that a listing is safe'
+    );
     expect(downloadHtml).toContain('Download your starter kit');
-    expect(downloadHtml).toContain('pinay-mom-remote-work-fit-safety-starter-kit.pdf');
+    expect(downloadHtml).toContain('remote-moms-work-fit-safety-starter-kit.pdf');
+    expect(downloadHtml).toContain('Start with the path that matches your current stage');
+    expect(downloadHtml).toContain('https://www.facebook.com/VanJaralve');
+    expect(downloadHtml).toContain('https://www.instagram.com/vdjaralve/');
     expect(downloadHtml).toContain('/beta/');
     expect(script).toContain('remotemom:launchpad-leads');
     expect(script).toContain('data-launchpad-form');
@@ -201,6 +217,7 @@ describe('RemoteMom landing page', () => {
     expect(script).toContain('utm_source');
     expect(script).toContain('utm_medium');
     expect(script).toContain('utm_campaign');
+    expect(script).toContain("formData.get('currentStage')");
     expect(script).toContain("window.location.assign('./download/')");
   });
 });
