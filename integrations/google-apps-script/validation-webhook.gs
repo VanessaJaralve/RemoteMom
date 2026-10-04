@@ -235,6 +235,18 @@ function ensureBlackFridaySheet(spreadsheet) {
 }
 
 function ensureLaunchpadLeadsSheet(spreadsheet) {
+  const legacyLaunchpadHeaders = [
+    'Received At',
+    'Submitted At',
+    'Name',
+    'Email',
+    'Biggest Challenge',
+    'UTM Source',
+    'UTM Medium',
+    'UTM Campaign',
+    'Source',
+    'Raw Payload'
+  ];
   const headers = [
     'Received At',
     'Submitted At',
@@ -251,6 +263,16 @@ function ensureLaunchpadLeadsSheet(spreadsheet) {
   const sheet =
     spreadsheet.getSheetByName(LAUNCHPAD_LEADS_SHEET_NAME) ||
     spreadsheet.insertSheet(LAUNCHPAD_LEADS_SHEET_NAME);
+  const legacyHeaderRange = sheet.getRange(1, 1, 1, legacyLaunchpadHeaders.length);
+  const currentLegacyHeaders = legacyHeaderRange.getValues()[0];
+  const hasLegacyHeaders = legacyLaunchpadHeaders.every(function (header, index) {
+    return currentLegacyHeaders[index] === header;
+  });
+
+  if (hasLegacyHeaders) {
+    sheet.insertColumnAfter(4);
+  }
+
   const headerRange = sheet.getRange(1, 1, 1, headers.length);
   const currentHeaders = headerRange.getValues()[0];
   const hasExpectedHeaders = headers.every(function (header, index) {
