@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Your Launchpad Starter Kit | RemoteMom</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../design.css" />
+    <style>
+      .download-main{max-width:1188px;margin:auto;padding:52px 5%}
+      .download-panel{display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:start}
+      .download-panel h1{font-size:clamp(36px,5vw,56px)}
+      .download-next{background:#dbe5d7;border-radius:5px;padding:26px}
+      .download-next h2{font-size:26px}
+      .download-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:24px 0}
+      .social-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px;font:15px Source,Arial,sans-serif}
+      .kit-preview{margin-top:40px}
+      .kit-preview h2{font-size:30px}
+      .pdf-viewer{display:block;width:100%;height:80vh;min-height:480px;border:1px solid #a9c0a8;background:#fffdf8;border-radius:5px}
+      .preview-help{font-size:15px}
+      @media(max-width:760px){.download-panel{grid-template-columns:1fr;gap:28px}.download-main{padding:36px 6%}.pdf-viewer{height:65vh;min-height:400px}}
+    </style>
   </head>
   <body>
     <header class="launchpad-header">
@@ -21,11 +35,12 @@
           <p>
             Start with the path that matches your current stage. You do not need to complete every worksheet at once.
           </p>
-          <a
-            class="primary-link"
-            href="./remote-moms-work-fit-safety-starter-kit.pdf"
+          <div class="download-actions"><a
+            class="button"
+            href="./remote-moms-work-fit-safety-starter-kit.pdf?v=20261024"
             download
           >Download the PDF</a>
+          <a href="./remote-moms-work-fit-safety-starter-kit.pdf?v=20261024" target="_blank" rel="noopener">Open the PDF in a new tab ↗</a></div>
           <nav class="social-links" aria-label="Follow Vanessa">
             <a href="https://www.facebook.com/VanJaralve">Follow on Facebook</a>
             <a href="https://www.instagram.com/vdjaralve/">Follow on Instagram</a>
@@ -38,6 +53,14 @@
           </p>
           <a href="/beta/">Explore the Android beta</a>
         </aside>
+      </section>
+      <section class="kit-preview" aria-labelledby="preview-title">
+        <p class="eyebrow">START WHERE YOU ARE</p>
+        <h2 id="preview-title">Read your Starter Kit here</h2>
+        <p class="preview-help">Choose Find Remote Work or Manage Remote Life. If the preview does not appear on your device, use Open the PDF or Download the PDF above.</p>
+        <object class="pdf-viewer" data="./remote-moms-work-fit-safety-starter-kit.pdf?v=20261024#view=FitH" type="application/pdf" aria-label="Remote Mom's Work Fit and Safety Starter Kit, 10-page PDF">
+          <p>Your browser cannot display this PDF. <a href="./remote-moms-work-fit-safety-starter-kit.pdf?v=20261024">Open the Starter Kit</a> to read or save it.</p>
+        </object>
       </section>
     </main>
 
