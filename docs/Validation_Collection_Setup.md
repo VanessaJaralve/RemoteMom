@@ -126,13 +126,58 @@ are written with an empty stage cell.
 
 After a confirmed submission, the visitor is sent to `/launchpad/download/`. The downloadable file
 is `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`. This is a direct
-download flow; it does not currently send the file by email.
+download flow; email delivery is not part of the documented current design.
 
 ## Preview Behavior
 
-If an endpoint is unavailable or the webhook is not configured, the landing page saves a local backup
+If an endpoint is unavailable or the webhook is not configured, the landing page attempts a local backup
 in the visitor's browser under `remotemom:validation-survey`, `remotemom:waitlist`,
 `remotemom:beta-feedback`, `remotemom:black-friday-early-access`, or
 `remotemom:launchpad-leads`. Launchpad visitors are not redirected to the download page when the
 webhook cannot confirm collection. These local backups keep previews and retry recovery useful, but
-public collection requires the webhook variable above.
+public collection requires the webhook variable above. A local backup is not remote collection and
+is not automatically replayed. Browser storage may be unavailable; a failure to save locally must not
+be presented as a successful backup. Confirm actual failure behavior under issue #19.
+
+## Launchpad help and recovery (issue #16)
+
+**Draft branch guidance, 2026-11-14; not a production verification record.** The proposed help route
+reuses `vanessa.jaralve@gmail.com`, already present in the RemoteMom app/landing beta-feedback source,
+with the subject `RemoteMom Launchpad help`. Keep the address visible and copyable if the visitor's
+email application does not open. The owner still needs to confirm Launchpad monitoring responsibility
+and cadence.
+
+Public response expectation:
+
+> Email help is handled manually; there is no guaranteed response time during this early version.
+
+### Visitor recovery guidance
+
+- If signup does not finish, check the required fields and connection before retrying. A message about a
+  backup on this device does not mean the request reached the collection destination or will be sent later.
+- If the PDF does not open after reaching the download page, open the download link in a browser and use the
+  PDF viewer's save/download action where available. Do not tell the reader to wait for a delivery email.
+- If the issue continues, use the help route and include the affected page, visible error, and general
+  device/browser. Remove personal information from screenshots. Do not request passwords, payment-card
+  information, private family/health details, or a copy of browser storage.
+- Do not prescribe clearing browser data as a routine fix: it can remove the local backup. Do not repeatedly
+  resubmit uncertain requests without considering duplicate records during support investigation.
+
+### Maintainer investigation and evidence
+
+Use labeled test data and inspect the selected destination privately to distinguish confirmed receipt,
+an unconfirmed request, a duplicate, and a local-only backup. Do not publish private sheet rows, contact
+details, webhook URLs, or credentials. Escalate reproducible defects to the repository maintainer with
+sanitized expected/actual behavior and reproduction steps; coordinate the live checks with #19.
+
+The support process, response ownership decisions, file inventory, and release/rollback rules live in
+[the existing Launchpad business roadmap](launchpad-business/README.md#issue-16--help-file-handling-and-buyer-operations).
+The current distribution PDF and legacy generated output are different files. The editable source for
+the current published design was not found in the repository or saved-assets review; staging output must not be
+treated as design-equivalent or automatically copied over it.
+
+Before marking the Stage 1 support gate complete, link deployed desktop/mobile help checks, the
+owner-confirmed monitoring arrangement, verified failure/retry instructions, and #19's collection/download
+evidence. Source inspection and local tests alone do not establish that the live integration works.
+No email automation, marketing enrollment, purchase, refund, or customer outreach is performed by this
+documentation change.
