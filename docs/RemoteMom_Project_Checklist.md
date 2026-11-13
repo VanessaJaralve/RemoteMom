@@ -75,6 +75,7 @@ Use this as the living tracker for product, build, and business-readiness work.
 | Phase 4: Beta Learning | Global audience positioning | Reposition Launchpad funnel and Week 1 campaign globally | Completed | 2026-10-03 | Reframed the public funnel, starter kit, social graphics, and Facebook/Instagram copy for working mothers and career-returning moms worldwide while retaining the Philippines content pack as a regional edition. |
 | Phase 4: Beta Learning | Launchpad conversion | Polish Launchpad for two equal audience lanes | Completed | 2026-10-04 | Added job-seeking and already-working audience recognition, required current-stage segmentation, backward-compatible Google Sheet routing, a balanced Career Path and Remote-Life Path Starter Kit, existing-account social links, and focused conversion tests. |
 | Phase 4: Beta Learning | Launchpad deployment | Publish and verify the two-lane Launchpad funnel | Completed | 2026-10-04 | Pushed the two-lane funnel to `main`, confirmed the updated Vercel page and API, deployed Apps Script version 17 across all active webhook deployments, safely inserted `Current Stage` after Email without shifting historical lead meaning, and verified a privacy-safe test lead with stage and UTM values. |
+| Phase 4: Beta Learning / Launchpad Stage 1 | Launchpad help and file handling (#16) | Prepare early help route, recovery guidance, master inventory, and gated buyer operations | In Progress |  | Draft branch work reviewed 2026-11-14; proposes reusing the existing public beta email for manual Launchpad help with no guaranteed response time. Monitoring owner/cadence remain to confirm. Published PDF and legacy output/generator are distinguished; source master for the published design is not found. Staging-only generation and release/rollback rules are prepared. Not deployed; #19 live collection/download checks remain. Stage 2 policies and platform behavior require #2–#4/#10 verification before activation. See `docs/launchpad-business/README.md` for the decision/evidence record. |
 | Phase 4: Beta Learning | Recruiting | Invite 10 to 30 target users | Not Started |  | Start with a small group outside the immediate friend network. |
 | Phase 4: Beta Learning | Metrics | Track installs, waitlist signups, and feedback | Not Started |  | Use lightweight tracking that avoids sensitive task, child, or medicine content. |
 | Phase 4: Beta Learning | User research | Ask users what they opened first | Not Started |  | Learn whether Today is becoming the starting habit. |
@@ -114,3 +115,8 @@ Use this as the living tracker for product, build, and business-readiness work.
 ## Current Recommended Next Step
 
 Invite 5 to 10 trusted Android testers through Firebase App Distribution, use the clarified same-account install instructions, then review install/download status with beta feedback responses before changing the MVP.
+
+For the separate Launchpad workstream, review the #16 draft, confirm the support monitoring arrangement,
+and complete its Stage 1 deployment/evidence checks with #19 before the #14 free-kit experiment. Keep
+the published PDF intact while #11 resolves its editable-source provenance. Mature buyer operations and
+full email automation do not block the initial free-kit experiment once the Stage 1 gates pass.
