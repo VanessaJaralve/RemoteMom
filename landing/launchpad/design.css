@@ -642,6 +642,13 @@ footer p {
   margin:12px 0 0;
   line-height:1.5;
 }
+.form-help {
+  font-size:15px;
+  margin:12px 0;
+}
+.support-email {
+  overflow-wrap:anywhere;
+}
 @media(max-width:760px) {
   .form-section {
     grid-template-columns:1fr;
