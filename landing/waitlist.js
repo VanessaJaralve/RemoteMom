@@ -310,7 +310,7 @@
       }
 
       if (status) {
-        status.textContent = 'Sending your starter kit...';
+        status.textContent = 'Confirming your signup...';
       }
 
       try {
