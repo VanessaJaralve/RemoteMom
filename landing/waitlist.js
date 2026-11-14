@@ -277,8 +277,108 @@
   }
 
   if (launchpadForm) {
+    const launchpadFields = ['name', 'email', 'currentStage', 'biggestChallenge'];
+    const backupFields = [...launchpadFields, 'utmSource', 'utmMedium', 'utmCampaign'];
+    const requestTimeoutMs = 20000;
+    let submissionInFlight = false;
+
+    function isResponseObject(value) {
+      return value !== null && typeof value === 'object' && !Array.isArray(value);
+    }
+
+    function clearLaunchpadErrors() {
+      launchpadFields.forEach((name) => {
+        launchpadForm.querySelectorAll(`[name="${name}"]`).forEach((field) => {
+          field.removeAttribute('aria-invalid');
+          const descriptions = (field.getAttribute('aria-describedby') || '')
+            .split(/\s+/)
+            .filter((id) => id && id !== 'launchpad-status');
+
+          if (descriptions.length) {
+            field.setAttribute('aria-describedby', descriptions.join(' '));
+          } else {
+            field.removeAttribute('aria-describedby');
+          }
+        });
+      });
+    }
+
+    function showLaunchpadValidationError(validation) {
+      const status = launchpadForm.querySelector('.form-status');
+
+      if (status) {
+        status.textContent = validation.error;
+      }
+
+      if (launchpadFields.includes(validation.field)) {
+        const fields = launchpadForm.querySelectorAll(`[name="${validation.field}"]`);
+
+        fields.forEach((field) => {
+          field.setAttribute('aria-invalid', 'true');
+          const descriptions = new Set(
+            (field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean)
+          );
+          descriptions.add('launchpad-status');
+          field.setAttribute('aria-describedby', Array.from(descriptions).join(' '));
+        });
+
+        if (fields[0]) {
+          fields[0].focus();
+        }
+      }
+    }
+
+    function serverValidationMessage(body) {
+      // Only use known field names and our own copy, never arbitrary response text.
+      const messages = {
+        name: 'Please check your name and try again.',
+        email: 'Please enter a valid email address.',
+        currentStage: 'Please select your current stage.',
+        biggestChallenge: 'Please select your biggest remote-work challenge.'
+      };
+      const field = isResponseObject(body) && launchpadFields.includes(body.field)
+        ? body.field
+        : null;
+
+      return {
+        field,
+        error: field
+          ? messages[field]
+          : 'Please check your signup details and try again. If the problem continues, use Get help below.'
+      };
+    }
+
+    function saveLaunchpadBackup(lead) {
+      // Keep the legacy helpers/other forms unchanged. Do not overwrite unreadable data.
+      try {
+        const storage = window.localStorage;
+        const saved = storage.getItem(launchpadStorageKey);
+        const entries = saved === null ? [] : JSON.parse(saved);
+
+        if (!Array.isArray(entries)) {
+          return false;
+        }
+
+        const alreadySaved = entries.some((entry) =>
+          isResponseObject(entry) && backupFields.every((field) => entry[field] === lead[field])
+        );
+
+        if (!alreadySaved) {
+          storage.setItem(launchpadStorageKey, JSON.stringify([...entries, lead]));
+        }
+
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
     launchpadForm.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      if (submissionInFlight) {
+        return;
+      }
 
       const formData = new FormData(launchpadForm);
       const searchParams = new URLSearchParams(window.location.search);
@@ -295,15 +395,28 @@
       const status = launchpadForm.querySelector('.form-status');
       const submitButton = launchpadForm.querySelector('button[type="submit"]');
       const launchpadEndpoint = launchpadForm.dataset.endpoint || '/api/launchpad-lead';
+      const validator = window.RemoteMomLaunchpadValidation;
 
-      if (!lead.name || !lead.email || !lead.currentStage || !lead.biggestChallenge) {
+      clearLaunchpadErrors();
+
+      if (!validator || typeof validator.validateLead !== 'function') {
         if (status) {
           status.textContent =
-            'Please add your name, email, current stage, and biggest challenge.';
+            'The signup check could not load. Your details are still in the form. Reload the page when ready, or use Get help below.';
         }
 
         return;
       }
+
+      const validation = validator.validateLead(lead);
+
+      if (validation) {
+        showLaunchpadValidationError(validation);
+        return;
+      }
+
+      submissionInFlight = true;
+      launchpadForm.setAttribute('aria-busy', 'true');
 
       if (submitButton) {
         submitButton.disabled = true;
@@ -313,19 +426,76 @@
         status.textContent = 'Confirming your signup...';
       }
 
+      const controller = typeof AbortController === 'function' ? new AbortController() : null;
+      let timer;
+      let timedOut = false;
+      let confirmed = false;
+
       try {
-        const result = await fetch(launchpadEndpoint, {
+        const request = fetch(launchpadEndpoint, {
           body: JSON.stringify(lead),
           headers: {
             'Content-Type': 'application/json'
           },
-          method: 'POST'
-        });
+          method: 'POST',
+          ...(controller ? { signal: controller.signal } : {})
+        }).then(async (response) => {
+          let body = null;
 
-        if (!result.ok) {
-          throw new Error('Launchpad lead collection request failed.');
+          try {
+            body = await response.json();
+          } catch {
+            // A successful HTTP response alone does not confirm collection.
+          }
+
+          return { response, body };
+        });
+        const timeout = new Promise((_, reject) => {
+          timer = window.setTimeout(() => {
+            timedOut = true;
+
+            if (controller) {
+              controller.abort();
+            }
+
+            reject(new Error('Launchpad confirmation timed out.'));
+          }, requestTimeoutMs);
+        });
+        const { response, body } = await Promise.race([request, timeout]);
+
+        if (response.status === 400) {
+          showLaunchpadValidationError(serverValidationMessage(body));
+          return;
         }
 
+        if (!response.ok || !isResponseObject(body) || body.ok !== true) {
+          throw new Error('Launchpad collection was not confirmed.');
+        }
+
+        confirmed = true;
+      } catch {
+        const savedLocally = saveLaunchpadBackup(lead);
+
+        if (status) {
+          const confirmation = timedOut
+            ? 'The confirmation took too long. We could not confirm whether your signup was received.'
+            : 'We could not confirm whether your signup was received.';
+          const backup = savedLocally
+            ? 'A copy of your details is saved on this device and is not sent automatically.'
+            : 'We could not save a backup on this device; your details are still in the form. There is no automatic retry.';
+          status.textContent = `${confirmation} ${backup} You can try once more or use Get help below; retrying may create a duplicate signup.`;
+        }
+      } finally {
+        window.clearTimeout(timer);
+        submissionInFlight = false;
+        launchpadForm.setAttribute('aria-busy', 'false');
+
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      }
+
+      if (confirmed) {
         launchpadForm.reset();
 
         if (status) {
@@ -333,17 +503,6 @@
         }
 
         window.location.assign('./download/');
-      } catch {
-        saveLocalBackup(launchpadStorageKey, lead);
-
-        if (status) {
-          status.textContent =
-            'Could not reach the signup endpoint. Your entry was saved as a backup on this device.';
-        }
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-        }
       }
     });
   }
