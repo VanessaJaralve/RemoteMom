@@ -74,7 +74,9 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 The earlier business plan proposed 50–100 qualified product-page visits, 10–20 free-resource subscribers,
 and 3–5 genuine paid customers for a 30-day experiment. These are historical working hypotheses, not
-forecasts or release gates. Select the current experiment's measures under #1/#13/#14; paid-customer
+forecasts or release gates. For the initial kit-only experiment, measure **confirmed kit requests**;
+the historical subscriber wording does not imply permission to send marketing. Select the current
+experiment's measures under #1/#13/#14; paid-customer
 targets apply only when a paid route is operating. If traffic is limited, investigate distribution
 before drawing pricing conclusions. If qualified traffic reaches a verified paid offer but checkout
 remains inactive, interview visitors and test page clarity, trust, and offer relevance.
@@ -87,6 +89,47 @@ remains inactive, interview visitors and test page clarity, trust, and offer rel
 - Keep the app beta waitlist and Launchpad marketing list distinct unless people explicitly consent to both.
 - Keep customer data, private webhook URLs, API keys, and credentials out of this public repository.
 - Close an issue only when its acceptance criteria are met and evidence is linked in the issue.
+
+## Issues #12 and #18 — kit requests and audience choices
+
+**Decision recorded 2026-11-14:** the initial free-kit experiment collects Starter Kit requests only.
+After confirmed collection, the visitor downloads the existing PDF on the next page. The form states
+this before submission, explains why the details are collected, and says that requesting the kit does
+not subscribe the visitor to marketing emails or join the RemoteMom app beta. The download page keeps
+beta interest optional and separate.
+
+No marketing permission is collected in Stage 1. The conditional consent-purpose/version/timestamp
+criterion in #12 is therefore not applicable to this version; do not create or infer those values from
+the request timestamp. Current and historical Launchpad records remain kit requests. They must not be
+treated as a marketing audience or an app-beta list. Support contact also remains separate from
+marketing permission. The existing manual help route makes no guaranteed-response, retention, or
+automatic-removal promise.
+
+**Stage 2 decision:** defer email delivery and the proposed 4–5 email nurture sequence. Retain the
+gated follow-up in [#12](https://github.com/VanessaJaralve/RemoteMom/issues/12); there is no email-service
+selection or activation in this release. Revisit only after the verified free-kit experiment and
+reader findings show a useful purpose, then approve and test the service, separate permission record,
+unsubscribe, failure handling, and exclusion of people without the relevant permission. Keep #12 open
+for that follow-up unless its deferral is moved into a separately linked issue; completing Stage 1 does
+not claim that the full email workflow exists.
+
+For #18, use one native grouped list: four career choices and five work/family choices. Keep all five
+historical values and add boundaries, interruptions, workload planning, and task transitions. All nine
+choices remain available at every stage, including “exploring both”; a stage change intentionally keeps
+the selected challenge. This supports people with overlapping needs without splitting the kit funnel
+or collecting private family details.
+
+The exact value/label mapping, unchanged sheet schema, historical interpretation, and #13 reporting
+rules live in [Validation Collection Setup](../Validation_Collection_Setup.md#issues-12-and-18--request-scope-and-challenge-mapping).
+Measure stage and challenge as separate dimensions and record the deployment boundary when comparing
+old and new option sets. No historical answer is rewritten into a more specific new category.
+
+**Remaining evidence:** representative-reader wording checks remain under #15; none were completed in
+that issue when this decision was recorded. Controlled source tests and a browser preview do not alone
+prove the production destination mapping. Link the actual release and labeled destination evidence to
+#18/#19 before marking that criterion complete. The broader #19 journey checks, #13 baseline, #16
+monitoring arrangement, and spreadsheet literal-text hardening remain prerequisites before broad
+promotion. This change does not authorize outreach, beta invitations, or the four-week campaign.
 
 ## Issue #16 — help, file handling, and buyer operations
 
