@@ -102,12 +102,23 @@ describe('Launchpad lead endpoint', () => {
   const options: Array<[string, string]> = handler.allowedCurrentStages.flatMap((currentStage: string) =>
     handler.allowedChallenges.map((biggestChallenge: string): [string, string] => [currentStage, biggestChallenge])
   );
-  it.each(options)('accepts the current stage/challenge pair %s / %s', async (currentStage, biggestChallenge) => {
+  it.each(options)('forwards the selected stage/challenge pair %s / %s with attribution intact', async (currentStage, biggestChallenge) => {
     const response = createResponse();
-    await handler({ method: 'POST', body: { ...validBody, currentStage, biggestChallenge } }, response);
+    await handler({ method: 'POST', body: {
+      ...validBody,
+      currentStage: ` ${currentStage} `,
+      biggestChallenge: ` ${biggestChallenge} `
+    } }, response);
     expect(response.statusCode).toBe(200);
     expect(response.body).toEqual({ ok: true });
     expect(global.fetch).toHaveBeenCalledTimes(1);
+    const [destination, request] = global.fetch.mock.calls[0];
+    expect(destination).toBe('https://example.com/remotemom-webhook');
+    expect(request.method).toBe('POST');
+    expect(JSON.parse(request.body)).toEqual({
+      ...validBody, currentStage, biggestChallenge,
+      submissionType: 'launchpad-lead', submittedAt: expect.any(String)
+    });
   });
 
   it('accepts JSON object text, trims strings, bounds attribution, and generates its own timestamp', async () => {
@@ -160,6 +171,23 @@ describe('Launchpad lead endpoint', () => {
     expect(JSON.parse(global.fetch.mock.calls[0][1].body)).toEqual(expect.objectContaining({
       utmSource: '', utmMedium: '', utmCampaign: ''
     }));
+  });
+
+  it('keeps injected marketing and beta permission flags out of the kit-request payload', async () => {
+    const response = createResponse();
+    await handler({ method: 'POST', body: {
+      ...validBody,
+      marketingConsent: true,
+      betaInterest: 'yes',
+      appBetaConsent: true,
+      permissionVersion: 'unapproved',
+      permissionTimestamp: '2026-11-14T00:00:00.000Z'
+    } }, response);
+
+    expect(response.statusCode).toBe(200);
+    expect(JSON.parse(global.fetch.mock.calls[0][1].body)).toEqual({
+      ...validBody, submissionType: 'launchpad-lead', submittedAt: expect.any(String)
+    });
   });
 
   it('requires a configured webhook without attempting collection', async () => {
