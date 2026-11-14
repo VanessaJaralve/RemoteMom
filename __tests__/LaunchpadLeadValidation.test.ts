@@ -6,6 +6,14 @@ const { join } = require('path');
 const { runInNewContext } = require('vm');
 
 describe('Shared Launchpad lead validation', () => {
+  const historicalChallenges = [
+    'choosing-the-right-role', 'finding-legitimate-opportunities',
+    'resume-or-portfolio', 'family-compatible-schedule', 'returning-after-career-gap'
+  ];
+  const remoteLifeChallenges = [
+    'work-family-boundaries', 'managing-interruptions',
+    'planning-workload', 'switching-between-tasks'
+  ];
   const validLead = {
     name: 'Maria', email: 'maria@example.com',
     currentStage: 'looking-for-remote-work',
@@ -58,7 +66,17 @@ describe('Shared Launchpad lead validation', () => {
     expect(lead).toEqual(original);
   });
 
-  it('exposes equivalent validation and unchanged options to browser and CommonJS callers', () => {
+  it('preserves historical challenge values and adds the four remote-life choices', () => {
+    expect([...validation.allowedChallenges].sort()).toEqual(
+      [...historicalChallenges, ...remoteLifeChallenges].sort()
+    );
+    expect(new Set(validation.allowedChallenges).size).toBe(9);
+    for (const biggestChallenge of [...historicalChallenges, ...remoteLifeChallenges]) {
+      expect(validation.validateLead({ ...validLead, biggestChallenge })).toBe(null);
+    }
+  });
+
+  it('exposes equivalent validation and options to browser and CommonJS callers', () => {
     const source = readFileSync(join(__dirname, '../landing/launchpad/lead-validation.js'), 'utf8');
     const context: any = { window: {} };
     runInNewContext(source, context);
@@ -68,14 +86,14 @@ describe('Shared Launchpad lead validation', () => {
       'looking-for-remote-work', 'returning-after-career-break',
       'already-working-remotely', 'exploring-both'
     ]);
-    expect(browserValidation.allowedChallenges).toEqual([
-      'choosing-the-right-role', 'finding-legitimate-opportunities',
-      'resume-or-portfolio', 'family-compatible-schedule', 'returning-after-career-gap'
-    ]);
+    expect([...browserValidation.allowedChallenges].sort()).toEqual(
+      [...historicalChallenges, ...remoteLifeChallenges].sort()
+    );
     expect(browserValidation.allowedCurrentStages).toEqual(validation.allowedCurrentStages);
     expect(browserValidation.allowedChallenges).toEqual(validation.allowedChallenges);
     for (const lead of [
-      validLead, null, [], {}, { ...validLead, email: 'wrong@@example.com' },
+      validLead, ...remoteLifeChallenges.map((biggestChallenge) => ({ ...validLead, biggestChallenge })),
+      null, [], {}, { ...validLead, email: 'wrong@@example.com' },
       { ...validLead, currentStage: 'unknown' }, { ...validLead, biggestChallenge: 'unknown' },
       { ...validLead, name: { value: 'nested' } }, { ...validLead, utmSource: ['nested'] }
     ]) {

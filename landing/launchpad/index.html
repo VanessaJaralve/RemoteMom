@@ -131,7 +131,10 @@
             Tell us where remote work feels hardest. Your answer helps shape Remote Mom's Launchpad for job-seeking and already-working moms.
           </p>
 <p class="privacy-note">
-            We collect your name, email, current stage, selected challenge, and campaign source in Vanessa's Google Sheet. The kit is available as a direct download after confirmed signup. Do not enter child, banking, government ID, or health information.
+            After we confirm your request, you can download the free PDF on the next page. We do not send the kit by email.
+          </p>
+<p class="privacy-note">
+            We use your name and email to keep a record of your kit request and help with it if you contact us. Your current stage, selected challenge, and campaign source help us understand what readers need and where they found Launchpad. Vanessa stores these details in a Google Sheet. Do not enter child, banking, government ID, or health information.
           </p>
 </div>
 
@@ -139,6 +142,8 @@
           class="launchpad-form"
           data-launchpad-form
           data-endpoint="/api/launchpad-lead"
+          aria-labelledby="form-title"
+          aria-describedby="launchpad-request-note"
           novalidate
         >
 <div class="field">
@@ -177,15 +182,25 @@
 </div>
 <div class="field">
 <label for="launchpad-challenge">What is your biggest remote-work challenge?</label>
-            <select id="launchpad-challenge" name="biggestChallenge" required>
+            <select id="launchpad-challenge" name="biggestChallenge" aria-describedby="launchpad-challenge-help" required>
               <option value="">Select one</option>
-              <option value="choosing-the-right-role">Choosing the right role</option>
-              <option value="finding-legitimate-opportunities">Finding legitimate opportunities</option>
-              <option value="resume-or-portfolio">Improving my resume or portfolio</option>
-              <option value="family-compatible-schedule">Finding a family-compatible schedule</option>
-              <option value="returning-after-career-gap">Returning after a career gap</option>
+              <optgroup label="Finding or returning to remote work">
+                <option value="choosing-the-right-role">Choosing the right role</option>
+                <option value="finding-legitimate-opportunities">Finding legitimate opportunities</option>
+                <option value="resume-or-portfolio">Improving my resume or portfolio</option>
+                <option value="returning-after-career-gap">Returning after a career gap</option>
+              </optgroup>
+              <optgroup label="Making remote work fit family life">
+                <option value="family-compatible-schedule">Finding a family-compatible schedule</option>
+                <option value="work-family-boundaries">Work and family boundaries</option>
+                <option value="managing-interruptions">Handling work interruptions</option>
+                <option value="planning-workload">Planning my workload</option>
+                <option value="switching-between-tasks">Switching work and family tasks</option>
+              </optgroup>
             </select>
+<p class="small" id="launchpad-challenge-help">Choose the one that matters most right now. You can choose from either group.</p>
 </div>
+<p class="small request-note" id="launchpad-request-note">This is a request for the free Starter Kit. It does not subscribe you to marketing emails or join the RemoteMom app beta.</p>
 <button type="submit">Get the free Starter Kit</button>
 <p id="launchpad-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <p class="form-help"><a href="#help">Trouble signing up or getting your PDF? Get help</a></p>
@@ -205,6 +220,9 @@
 <details>
 <summary>How do I get my Starter Kit?</summary>
 <p>After your signup is confirmed, you will reach the download page. Choose Download the PDF, then check your device’s Downloads or Files folder. The kit is a direct download; an automated kit email is not sent.</p></details>
+<details>
+<summary>Does requesting the kit subscribe me to emails or the app beta?</summary>
+<p>No. This form records your Starter Kit request and helps us understand which resources readers need. It does not subscribe you to marketing emails or join the RemoteMom app beta. The kit is a direct download. If you want to explore the app beta, you can make a separate request on its page.</p></details>
 <details>
 <summary>What if my signup cannot be confirmed?</summary>
 <p>Check your name, email, current stage, and challenge, then check your connection and try once more. If the same problem continues, email Vanessa with the message you saw.</p>

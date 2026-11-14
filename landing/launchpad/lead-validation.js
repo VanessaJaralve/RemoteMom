@@ -4,7 +4,11 @@
     'finding-legitimate-opportunities',
     'resume-or-portfolio',
     'family-compatible-schedule',
-    'returning-after-career-gap'
+    'returning-after-career-gap',
+    'work-family-boundaries',
+    'managing-interruptions',
+    'planning-workload',
+    'switching-between-tasks'
   ]);
 
   const allowedCurrentStages = Object.freeze([
