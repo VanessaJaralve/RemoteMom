@@ -204,7 +204,7 @@ retained; no customer or app-local data was altered.
 | One valid labeled signup | Confirmed collection and progression to the download page | One existing stage/challenge combination only |
 | Private destination evidence | Exactly one matching synthetic row; 11 expected columns; name, email, stage, challenge, and all UTM fields matched | Verified privately; no private rows or payloads are published here |
 | Public PDF new-tab fallback | Opened the current ten-page kit | Distribution PDF unchanged; marker `20261024` retained |
-| Primary Download action | Link clicked | Local saved-file completion remains unverified: browser security policy blocked the downloads page and no workaround was used |
+| Primary Download action | Link clicked; local save/open confirmed by Vanessa on 2026-11-14 | User replied “confirmed open” after being asked to check Downloads and open `remote-moms-work-fit-safety-starter-kit.pdf`; this is user-confirmed evidence. Earlier browser inspection was blocked by policy; no workaround was used |
 | Python regression tests | Two passed again against the release head | Focused regression evidence only |
 | Supplemental assertion harness | Head and base each reported 11 passed and the same two stale-copy failures | Official Jest unavailable; this is not a Jest/Expo pass |
 | Collection failure, storage failure, retry, and duplicate handling | Not verified in this production case | Remaining #19 work; source inspection does not substitute for these checks |
