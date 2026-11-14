@@ -556,6 +556,9 @@ footer p {
   line-height:1.6;
   margin-top:26px;
 }
+.request-note {
+  margin:14px 0 16px;
+}
 .launchpad-form {
   transform:none;
   width:100%;
