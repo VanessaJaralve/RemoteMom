@@ -1,5 +1,6 @@
+"""Generate the historical Starter Kit into staging for review."""
+
 from pathlib import Path
-from shutil import copyfile
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
@@ -19,13 +20,6 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "remote-moms-work-fit-safety-starter-kit.pdf"
-LANDING_COPY = (
-    ROOT
-    / "landing"
-    / "launchpad"
-    / "download"
-    / "remote-moms-work-fit-safety-starter-kit.pdf"
-)
 
 GREEN = colors.HexColor("#245C45")
 DARK = colors.HexColor("#17221D")
@@ -205,7 +199,6 @@ def footer(canvas, doc):
 
 def build_pdf():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    LANDING_COPY.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(
         str(OUTPUT),
         pagesize=A4,
@@ -541,10 +534,12 @@ def build_pdf():
     )
 
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
-    copyfile(OUTPUT, LANDING_COPY)
 
 
 if __name__ == "__main__":
     build_pdf()
-    print(OUTPUT)
-    print(LANDING_COPY)
+    print(f"Staging PDF generated: {OUTPUT}")
+    print(
+        "Staging only. Follow docs/launchpad-business/README.md for review and publication. "
+        "The current public Starter Kit remains unchanged."
+    )

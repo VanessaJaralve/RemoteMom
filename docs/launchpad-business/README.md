@@ -34,46 +34,50 @@ These are the owner's reported starting figures, not independently verified anal
 
 Serve both Philippine and international audiences, with localized examples, platforms, payment expectations, and resource links where needed. Avoid promising guaranteed remote jobs or employment outcomes.
 
-## Work phases and completion gates
+## Work stages and completion gates
 
-| Phase | Focus | Completion gate |
+The stages below align this existing roadmap with the revised GitHub backlog. Basic help and file
+handling belong before the free-kit experiment; mature buyer operations and email automation do not.
+
+| Stage | Focus | Completion gate |
 |---|---|---|
-| 1. Foundation | Audience, promise, product roles, claims | One clear audience-facing message and accurate product scope |
-| 2. Storefront | Payhip page, previews, trust, checkout | Both listings are clear; purchase and delivery tested |
-| 3. Flagship collection | Companion resources and bundle | Bundle contents are complete, useful, and quality-checked |
-| 4. Lead funnel | Free starter resource and email nurture | Opt-in, consent, delivery, and unsubscribe tested |
-| 5. Promotion | Consistent organic content and distribution | Four weeks of tracked promotion published |
-| 6. Analytics | UTM attribution, weekly review, interviews | Can identify traffic sources and funnel drop-off |
-| 7. Customer operations | Support, feedback, updates | Reliable delivery/support and feedback loop |
-| 8. App readiness (later) | Beta quality and separate positioning | Core beta gaps addressed before monetization tests |
+| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1, #11, #13, #18, #19 and the Stage 1 subsets of #12/#16 are verified before #14; #15 research can run alongside this work |
+| 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
+| 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
+| 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
+| 5. App readiness | Separate beta assessment | #17 documents evidence and follow-up decisions; it does not block Launchpad validation or authorize app monetization |
 
-## Recommended execution order: first 30 days
+## Recommended execution order
 
-**Week 1 — Foundation and storefront**
-- Confirm the primary buyer and the specific problem solved.
-- Rewrite the main eBook Payhip page around the reader's outcome and contents.
-- Add an accurate preview, author introduction, FAQs, and clear purchase/delivery details.
-- Test the complete buyer journey, including payment and file delivery.
+**Before the four-week experiment**
 
-**Week 2 — Lead capture**
-- Create a practical free Work Fit & Safety Starter Kit.
-- Connect the opt-in form to a permission-based email list.
-- Draft a short welcome/nurture sequence and test delivery, consent, and unsubscribe.
+- Confirm both audience paths and the page's immediate conversion goal under #1.
+- Review the existing Starter Kit under #11 rather than assume it needs recreating.
+- Verify signup wording, collection, direct download, attribution, and the early help/file-handling
+  process under #12, #13, #16, #18, and #19.
+- Start the 5–10 reader conversations in #15. Inventory reusable assets without committing to new production.
 
-**Week 3 — Promotion**
-- Publish educational content consistently on the existing social channels.
-- Use separate UTM links for each channel.
-- Cross-link the eBook and High-Value Hybrid with clear next-step positioning.
+**During the four-week experiment**
 
-**Week 4 — Learn and adjust**
-- Review visits, opt-ins, checkout starts, sales, and source attribution.
-- Conduct 5–10 short conversations with target readers.
-- Improve one major page or funnel friction point based on evidence.
-- Decide whether the flagship bundle is ready to build.
+- Publish a sustainable content cycle on existing channels, primarily directing readers to the free kit.
+- Review channel visits, confirmed signups, delivery issues, and feedback weekly using #13's definitions.
+- Mention a paid offer only after its relevant listing, checkout/delivery, and support checks pass.
+- Keep email automation optional and separate from the initial direct-download journey.
+
+**After reviewing the evidence**
+
+- Record what to continue, change, or stop in #14.
+- Use the experiment and #15 research to decide whether to build, narrow, or defer the collection in #6.
+- Build only selected resources, then verify the actual bundle before promotion.
 
 ## Working validation targets (not forecasts)
 
-For the first 30-day experiment: 50–100 qualified product-page visits, 10–20 free-resource subscribers, and 3–5 genuine paid customers. Treat these as learning targets, not guaranteed outcomes. If traffic is below target, improve distribution before making major pricing decisions. If qualified traffic arrives but checkout remains inactive, interview visitors and test page clarity, trust, and offer relevance.
+The earlier business plan proposed 50–100 qualified product-page visits, 10–20 free-resource subscribers,
+and 3–5 genuine paid customers for a 30-day experiment. These are historical working hypotheses, not
+forecasts or release gates. Select the current experiment's measures under #1/#13/#14; paid-customer
+targets apply only when a paid route is operating. If traffic is limited, investigate distribution
+before drawing pricing conclusions. If qualified traffic reaches a verified paid offer but checkout
+remains inactive, interview visitors and test page clarity, trust, and offer relevance.
 
 ## Operating rules
 
@@ -83,6 +87,113 @@ For the first 30-day experiment: 50–100 qualified product-page visits, 10–20
 - Keep the app beta waitlist and Launchpad marketing list distinct unless people explicitly consent to both.
 - Keep customer data, private webhook URLs, API keys, and credentials out of this public repository.
 - Close an issue only when its acceptance criteria are met and evidence is linked in the issue.
+
+## Issue #16 — help, file handling, and buyer operations
+
+**Draft branch work, reviewed 2026-11-14.** This section records the proposed operating process and
+evidence gaps for [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16). It does not record a
+deployment, a successful live signup/download test, or completed customer-support operations.
+Production checks under #19 remain outstanding.
+
+### Stage 1: contact, intake, and escalation
+
+The branch proposes reusing `vanessa.jaralve@gmail.com` with a `RemoteMom Launchpad help` subject.
+This address already appears publicly as RemoteMom beta feedback in `landing/index.html` and
+`src/screens/MoreScreen.tsx`; no new inbox is assumed. The owner must confirm who monitors Launchpad
+requests and the review cadence before the Stage 1 support gate can be considered complete.
+
+Public expectation wording for this early version:
+
+> Email help is handled manually; there is no guaranteed response time during this early version.
+
+Place the contact link and a copyable address on the Launchpad and download surfaces. Help should
+explain the direct-download design and what to try when signup or opening the PDF fails. A browser-local
+backup is not confirmed remote collection and is not automatically resent. Do not promise email kit
+delivery, automatic recovery, or a numeric response time. See the recovery guidance in
+[Validation Collection Setup](../Validation_Collection_Setup.md#launchpad-help-and-recovery-issue-16).
+
+Use the selected inbox and a private support log with only the information needed to resolve a request:
+case reference, date received, category, affected page/resource version, general device/browser,
+short problem description, status, next action, and resolution. Suggested categories are signup,
+download, incorrect/unreadable file, and content question. Suggested statuses are New, Investigating,
+Waiting for information, and Resolved. These are a template, not actual customer records.
+
+Prioritize blocked delivery and incorrect files. Reproduce a technical problem with test data, then
+send a sanitized defect report to the repository maintainer: affected page, expected/actual behavior,
+reproduction steps, general device/browser, resource version, and any safe screenshots. Link collection
+and download defects to #19. If a general blocker is confirmed, pause promotion of the affected route
+until it is fixed and retested. Keep customer messages, email addresses, receipts, private sheet rows,
+webhook URLs, and credentials out of GitHub; do not ask for passwords or private family/health details.
+
+### Stage 1: Starter Kit artifact inventory
+
+The following is a repository inventory from the reviewed `main` tree, not fresh production-download
+verification. Git blob IDs identify the observed bytes; they are not a claim of matching design sources.
+
+| Artifact | Location | Observed identity | Handling |
+|---|---|---|---|
+| Current distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Preserve this published-design artifact while #11 reviews its contents and provenance |
+| Legacy generated output | `output/pdf/remote-moms-work-fit-safety-starter-kit.pdf` | 20,025 bytes; Git blob `38251317eb1904322d6b9cc001ce47f03a6dacec` | Different bytes from the distribution PDF; not an interchangeable master |
+| Legacy editable generator | `scripts/build-launchpad-starter-kit.py` | Existing ReportLab source | Treat staging-only output as a review candidate; it is not verified to reproduce the published design |
+| Editable master for current published design | Not identified in the repository or saved-assets review | **Source master not found** | Recover or identify the original source before claiming the current design is reproducible |
+
+The existing download link uses `?v=20261024`. Preserve it until a reviewed replacement is released;
+it is an observed link marker, not evidence of an approved release date. Do not overwrite the current
+distribution PDF with legacy output to make the inventory appear consistent.
+
+For future candidates, use `remote-moms-work-fit-safety-starter-kit_YYYY-MM-DD_rN.pdf`, with the actual
+candidate date and revision. Keep the public filename stable so existing links remain usable. Record
+the candidate's source, file hash, revision, review result, and relationship to the distribution artifact.
+The staging-only generator replaces the legacy `output/pdf` review copy only. It must not publish a PDF
+or replace the distribution artifact automatically.
+
+For a release, preserve the previous distribution artifact and commit, render/check every page, test
+mobile opening and links, and record the selected source and review evidence. Update the public file,
+link version marker, and inventory together only after release approval. The change-log entry records
+the old/new identities, actual release date, reason, QA evidence, deployment reference, and rollback
+target. This section's draft record and `docs/RemoteMom_Project_Checklist.md` track current work; future
+release entries should be added here rather than creating a competing roadmap.
+
+If a replacement is defective, restore the recorded previous PDF and corresponding download link/version
+marker, redeploy through the normal process, and verify the restored download. Record the rollback and
+reason. Keep historical artifacts; do not regenerate an unverified substitute as a recovery action.
+
+### Stage 2: buyer support, feedback, and updates
+
+Activate these steps only after the owner verifies the actual listings, delivery behavior, and applicable
+policies under #2–#4 (and #10 for the bundle). This draft creates no refund entitlement, refund restriction,
+payment promise, or assumed Payhip capability.
+
+- For purchase/access problems, verify the transaction privately using the available platform tools and
+  provide the recovery steps confirmed during checkout testing. Never request payment-card details.
+- Use a short optional feedback prompt: “Were you able to open and use the files? Which exercise or resource
+  did you try first? What felt useful, unclear, or missing?” Store responses privately and summarize themes.
+- Turn actionable feedback into a sanitized issue linked to the affected product/version. Record the decision
+  to fix, clarify, investigate, or defer. Feedback is not permission to publish a testimonial.
+- Before replacing a paid file, verify the platform's actual update and customer re-download behavior. Record
+  old/new versions, the correction, checks, and delivery method. Do not promise automated updates or email
+  notifications until those functions are configured and tested.
+- Keep necessary delivery/correction communication separate from optional marketing. This preparation does
+  not send outreach, enroll subscribers, or activate email automation.
+- Review recurring questions at the owner-confirmed cadence and update the existing FAQ/instructions when
+  repeated confusion appears. Keep the listing and help wording consistent.
+
+### #16 decision and acceptance-evidence record
+
+| Item | Current status | Evidence needed before completion |
+|---|---|---|
+| Launchpad contact route | Existing public beta email reused as a proposal in this branch | Owner confirms Launchpad monitoring; deployed help links and copyable address work on both surfaces |
+| Response expectations and escalation | Manual/no-guaranteed-time wording and sanitized maintainer escalation drafted | Owner confirms monitoring owner/cadence; published wording and an actionable escalation route |
+| Signup/download recovery | Guidance prepared against current source design | #19 verifies live success, failure, retry, actual lead collection, and PDF opening without exposing private data |
+| Master and version handling | Distribution/legacy artifacts distinguished; published design source not found | #11 records source recovery/provenance outcome; reviewed artifact inventory, staging safeguard, and usable release/rollback record |
+| Privacy of support records | Private-intake template and public-defect boundaries documented | Actual support handling uses a private location; published evidence contains no customer data |
+| Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
+| Deployment and issue closure | **In Progress; draft branch only** | Deployed evidence linked in #16 and remaining #19 checks passed; Stage 2 completed or explicitly deferred to linked follow-up |
+
+**Draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
+public email, artifact divergence record, staging-only generation requirement, and release/rollback
+instructions. No published PDF is replaced by this documentation work. No live support, email, checkout,
+or collection result is asserted. #14 depends only on completed Stage 1 support, not Stage 2 buyer operations.
 
 ## GitHub tracking
 
