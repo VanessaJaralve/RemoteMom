@@ -141,7 +141,7 @@ be presented as a successful backup. Confirm actual failure behavior under issue
 
 ## Launchpad help and recovery (issue #16)
 
-**Draft branch guidance, 2026-11-14; not a production verification record.** The proposed help route
+**Guidance drafted 2026-11-14; help subset released through PR #20.** The live help route
 reuses `vanessa.jaralve@gmail.com`, already present in the RemoteMom app/landing beta-feedback source,
 with the subject `RemoteMom Launchpad help`. Keep the address visible and copyable if the visitor's
 email application does not open. The owner still needs to confirm Launchpad monitoring responsibility
@@ -181,3 +181,36 @@ owner-confirmed monitoring arrangement, verified failure/retry instructions, and
 evidence. Source inspection and local tests alone do not establish that the live integration works.
 No email automation, marketing enrollment, purchase, refund, or customer outreach is performed by this
 documentation change.
+
+## Issue #19 initial production test — 2026-11-14
+
+**Initial validation started; #19 is not closed.** This evidence applies to the released help subset at
+commit [`061c31bd7e4eb968ecfef740a9a63239e1490bef`](https://github.com/VanessaJaralve/RemoteMom/commit/061c31bd7e4eb968ecfef740a9a63239e1490bef),
+merged through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20) at 13:58:58 Manila
+(`2026-11-14T05:58:58Z`). The production deployment succeeded; see the
+[release record](launchpad-business/README.md#issue-16--help-file-handling-and-buyer-operations).
+
+The synthetic case `QA TEST issue19 20261114055933Z` was submitted at **14:01:48.538 Manila**
+(`2026-11-14T06:01:48.538Z`). It used the existing stage `already-working-remotely` and challenge
+`family-compatible-schedule`, with UTM source `qa`, medium `validation`, and campaign
+`issue19-20261114055933z`. The test email, destination link, private row location, and raw payload are
+intentionally omitted. Exclude this QA campaign from #13 baseline reporting. One synthetic row is
+retained; no customer or app-local data was altered.
+
+| Check | Observed result | Scope or remaining evidence |
+|---|---|---|
+| Public help surfaces | Passed on desktop and 390 × 844 mobile at `/launchpad/#help` and `/launchpad/download/#download-help` | Anchors/return navigation, disclosures, keyboard interaction, and visible correct mailto checked; no inbox monitoring or email-delivery test implied |
+| Empty form | Blocked with clear required-fields message | Does not establish malformed-email, unknown-value, or all-field validation coverage |
+| One valid labeled signup | Confirmed collection and progression to the download page | One existing stage/challenge combination only |
+| Private destination evidence | Exactly one matching synthetic row; 11 expected columns; name, email, stage, challenge, and all UTM fields matched | Verified privately; no private rows or payloads are published here |
+| Public PDF new-tab fallback | Opened the current ten-page kit | Distribution PDF unchanged; marker `20261024` retained |
+| Primary Download action | Link clicked | Local saved-file completion remains unverified: browser security policy blocked the downloads page and no workaround was used |
+| Python regression tests | Two passed again against the release head | Focused regression evidence only |
+| Supplemental assertion harness | Head and base each reported 11 passed and the same two stale-copy failures | Official Jest unavailable; this is not a Jest/Expo pass |
+| Collection failure, storage failure, retry, and duplicate handling | Not verified in this production case | Remaining #19 work; source inspection does not substitute for these checks |
+| Full stage/challenge, malformed-input, and cross-device coverage | Not complete | #12/#18 decisions remain pending; do not infer full funnel readiness from one success case |
+
+This initial test supports the released subset only. Keep #16 In Progress until the monitoring
+owner/cadence, #11 editable-source gap, remaining #19 evidence, and Stage 2 completion or explicit
+deferral are recorded. The earlier draft guidance remains the operating reference; this section adds
+only observed release and validation evidence.
