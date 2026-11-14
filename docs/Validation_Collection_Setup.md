@@ -165,10 +165,10 @@ most right now. You can choose from either group.” It is associated with the s
 | Finding or returning to remote work | `resume-or-portfolio` | Improving my resume or portfolio | Existing; unchanged meaning |
 | Finding or returning to remote work | `returning-after-career-gap` | Returning after a career gap | Existing; unchanged meaning |
 | Making remote work fit family life | `family-compatible-schedule` | Finding a family-compatible schedule | Existing; unchanged meaning |
-| Making remote work fit family life | `work-family-boundaries` | Setting boundaries between work and family | Added in this revision |
-| Making remote work fit family life | `managing-interruptions` | Handling interruptions during work | Added in this revision |
-| Making remote work fit family life | `planning-workload` | Planning a manageable workload | Added in this revision |
-| Making remote work fit family life | `switching-between-tasks` | Switching between work and family tasks | Added in this revision |
+| Making remote work fit family life | `work-family-boundaries` | Work and family boundaries | Added in this revision |
+| Making remote work fit family life | `managing-interruptions` | Handling work interruptions | Added in this revision |
+| Making remote work fit family life | `planning-workload` | Planning my workload | Added in this revision |
+| Making remote work fit family life | `switching-between-tasks` | Switching work and family tasks | Added in this revision |
 
 Changing the stage intentionally keeps the selected challenge: every pair is supported, including
 `exploring-both`. No option becomes hidden or invalid after a stage change. The browser and endpoint
@@ -229,6 +229,11 @@ Script for nine values and legacy stage/header compatibility. The repository def
 production-build script. Deployment, desktop/mobile UI, and live destination results belong in the
 linked release evidence; these local checks do not establish them. Final UI polish adds spacing above
 the submit button without changing the validated behavior.
+
+The 390-pixel preview exposed a truncated new label in the closed native select. The four new labels
+were shortened to the wording in the table above, preserving their values and meaning. Browser
+verification checks the shortened labels, native keyboard selection, and the associated request/helper
+copy. Existing historical values and labels remain unchanged.
 
 ## Preview Behavior
 
