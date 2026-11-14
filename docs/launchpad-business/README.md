@@ -131,7 +131,7 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 
 The following identities come from the reviewed `main` tree. The release preserved the distribution
 PDF, and the public ten-page kit opened during the production check. Git blob IDs identify the recorded
-repository bytes; they are not a claim of matching editable design sources or verified local-file saving.
+repository bytes; they are not a claim of matching editable design sources. Local save/open evidence is recorded separately below.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
@@ -187,7 +187,7 @@ payment promise, or assumed Payhip capability.
 |---|---|---|
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
-| Signup/download recovery | One production signup, private destination match, empty-form validation, and public PDF opening verified | Remaining #19 failure/retry/full-coverage checks and locally saved-file completion remain unverified |
+| Signup/download recovery | One production signup, private destination match, empty-form validation, and public PDF opening verified; local save/open user-confirmed on 2026-11-14 | Remaining #19 failure/retry/full-coverage checks remain unverified |
 | Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #11 records source recovery/provenance outcome; no regenerated design equivalence is claimed |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Actual support handling uses a private location; published evidence contains no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
@@ -207,8 +207,10 @@ succeeded. The [Launchpad help section](https://remote-mom.vercel.app/launchpad/
 
 Desktop and 390 × 844 mobile help checks covered anchors/return navigation, disclosures, keyboard use,
 and the visible correct mailto. The PDF was unchanged, retains marker `20261024`, and opened as the
-current ten-page kit in a new tab. The primary Download link was clicked; completion of a locally saved
-file remains unverified because browser policy blocked the downloads page. No workaround was used.
+current ten-page kit in a new tab. The primary Download link was clicked. Browser policy initially
+blocked inspection of the downloads page; no workaround was used. On 2026-11-14, Vanessa replied
+“confirmed open” after being asked to check Downloads and open `remote-moms-work-fit-safety-starter-kit.pdf`.
+Local save/open is therefore user-confirmed; it was not verified through an automated/browser inspection.
 
 One labeled #19 signup was confirmed in the intended private destination with exactly one matching
 synthetic row and all 11 expected columns correctly mapped. Empty-form submission was also blocked
