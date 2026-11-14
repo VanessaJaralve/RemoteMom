@@ -132,6 +132,76 @@ describe('Launchpad signup events', () => {
     expect(document.querySelector('#help')).not.toBeNull();
   });
 
+  it('offers every validated challenge in two labeled native groups with accessible guidance', () => {
+    const fixture = mountSignup();
+    const select = fixture.form.elements.namedItem('biggestChallenge');
+    const groups = Array.from(select.querySelectorAll('optgroup'));
+    const options = Array.from(select.options).filter((option) => option.value);
+    const descriptionIds = (select.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean);
+
+    expect(select.required).toBe(true);
+    expect(Array.from(select.labels).map((label) => label.textContent.trim())).toContain(
+      'What is your biggest remote-work challenge?'
+    );
+    expect(descriptionIds.length).toBeGreaterThan(0);
+    const guidance = descriptionIds.map((id) => document.getElementById(id).textContent).join(' ');
+    expect(guidance.replace(/\s+/g, ' ').trim()).toBe(
+      'Choose the one that matters most right now. You can choose from either group.'
+    );
+    expect(groups.map((group) => group.label)).toEqual([
+      'Finding or returning to remote work', 'Making remote work fit family life'
+    ]);
+    expect(groups.map((group) => Array.from(group.querySelectorAll('option')).map((option) => option.value))).toEqual([
+      ['choosing-the-right-role', 'finding-legitimate-opportunities', 'resume-or-portfolio', 'returning-after-career-gap'],
+      ['family-compatible-schedule', 'work-family-boundaries', 'managing-interruptions', 'planning-workload', 'switching-between-tasks']
+    ]);
+    expect(options.map((option) => option.value).sort()).toEqual([...validation.allowedChallenges].sort());
+    expect(new Set(options.map((option) => option.value)).size).toBe(9);
+    expect(options.every((option) => !option.disabled && !option.hidden)).toBe(true);
+    expect(groups.every((group) => !group.disabled && !group.hidden)).toBe(true);
+  });
+
+  it('associates the kit-only notice with the form without adding subscription permission controls', () => {
+    const fixture = mountSignup();
+    const notice = document.getElementById('launchpad-request-note');
+    const sectionText = document.getElementById('starter-kit').textContent.replace(/\s+/g, ' ');
+
+    expect(fixture.form.getAttribute('aria-labelledby')).toBe('form-title');
+    expect(fixture.form.getAttribute('aria-describedby').split(/\s+/)).toContain(notice.id);
+    expect(notice.textContent).toContain('This is a request for the free Starter Kit.');
+    expect(notice.textContent).toContain('It does not subscribe you to marketing emails or join the RemoteMom app beta.');
+    expect(notice.compareDocumentPosition(fixture.button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(fixture.form.querySelector('input[type="checkbox"]')).toBeNull();
+    expect(sectionText).toContain('After we confirm your request, you can download the free PDF on the next page.');
+    expect(sectionText).toContain('We do not send the kit by email.');
+    expect(sectionText).toContain('Vanessa stores these details in a Google Sheet.');
+    expect(fixture.form.querySelector('[name="marketingConsent"], [name="appBetaConsent"], [name="betaInterest"]')).toBeNull();
+  });
+
+  it('keeps challenge guidance connected through required-field error and correction', async () => {
+    const fixture = mountSignup();
+    const select = fixture.form.elements.namedItem('biggestChallenge');
+    const originalDescriptions = select.getAttribute('aria-describedby').split(/\s+/);
+    fixture.fill({ ...validValues, biggestChallenge: '' });
+
+    await fixture.submit();
+
+    expect(document.activeElement).toBe(select);
+    expect(select.getAttribute('aria-invalid')).toBe('true');
+    expect(select.getAttribute('aria-describedby').split(/\s+/)).toEqual(
+      expect.arrayContaining([...originalDescriptions, 'launchpad-status'])
+    );
+    expect(fixture.fetchMock).not.toHaveBeenCalled();
+    select.value = 'planning-workload';
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+
+    await fixture.submit();
+
+    expect(fixture.redirect).toHaveBeenCalledWith('./download/');
+    expect(select.getAttribute('aria-invalid')).toBeNull();
+    expect(select.getAttribute('aria-describedby').split(/\s+/)).toEqual(originalDescriptions);
+  });
+
   it.each([
     ['name', ''],
     ['email', ''],
@@ -217,6 +287,65 @@ describe('Launchpad signup events', () => {
     expect(fixture.button.disabled).toBe(false);
     expect(fixture.form.getAttribute('aria-busy')).toBe('false');
     expect(window.localStorage.getItem(storageKey)).toBeNull();
+  });
+
+  it.each([
+    'work-family-boundaries', 'managing-interruptions', 'planning-workload', 'switching-between-tasks'
+  ])('submits the new remote-life challenge %s through the actual form', async (biggestChallenge) => {
+    const fixture = mountSignup({ search: '?utm_source=qa&utm_medium=test&utm_campaign=challenge-options' });
+    fixture.fill({ ...validValues, biggestChallenge });
+
+    await fixture.submit();
+
+    expect(fixture.fetchMock).toHaveBeenCalledTimes(1);
+    expect(JSON.parse(fixture.fetchMock.mock.calls[0][1].body)).toEqual({
+      ...validValues, biggestChallenge,
+      utmSource: 'qa', utmMedium: 'test', utmCampaign: 'challenge-options',
+      createdAt: expect.any(String)
+    });
+    expect(fixture.redirect).toHaveBeenCalledWith('./download/');
+  });
+
+  it.each([
+    'looking-for-remote-work', 'returning-after-career-break', 'already-working-remotely', 'exploring-both'
+  ])('retains the chosen challenge and all options when changing stage to %s', async (currentStage) => {
+    const fixture = mountSignup();
+    const previousStage = currentStage === 'already-working-remotely'
+      ? 'looking-for-remote-work' : 'already-working-remotely';
+    fixture.fill({ ...validValues, currentStage: previousStage, biggestChallenge: 'work-family-boundaries' });
+    const select = fixture.form.elements.namedItem('biggestChallenge');
+    const optionsBefore = Array.from(select.options).map((option) => option.value);
+
+    fixture.form.querySelector(`[name="currentStage"][value="${currentStage}"]`).click();
+
+    expect(fixture.values().currentStage).toBe(currentStage);
+    expect(select.value).toBe('work-family-boundaries');
+    expect(Array.from(select.options).map((option) => option.value)).toEqual(optionsBefore);
+    expect(Array.from(select.querySelectorAll('option, optgroup')).every((option) => !option.disabled && !option.hidden)).toBe(true);
+    await fixture.submit();
+
+    expect(JSON.parse(fixture.fetchMock.mock.calls[0][1].body)).toEqual(expect.objectContaining({
+      currentStage, biggestChallenge: 'work-family-boundaries'
+    }));
+    expect(fixture.redirect).toHaveBeenCalledWith('./download/');
+  });
+
+  it('keeps historical challenge backups intact when saving an unconfirmed new choice', async () => {
+    const historical = [{ ...validValues, biggestChallenge: 'family-compatible-schedule', createdAt: '2026-10-04T00:00:00.000Z' }];
+    window.localStorage.setItem(storageKey, JSON.stringify(historical));
+    const fixture = mountSignup({ fetch: jest.fn().mockRejectedValue(new Error('Offline')) });
+    fixture.fill({ ...validValues, biggestChallenge: 'managing-interruptions' });
+    const valuesBefore = fixture.values();
+
+    await fixture.submit();
+
+    expectUnconfirmed(fixture, valuesBefore);
+    const saved = JSON.parse(window.localStorage.getItem(storageKey));
+    expect(saved).toHaveLength(2);
+    expect(saved[0]).toEqual(historical[0]);
+    expect(saved[1]).toEqual(expect.objectContaining({
+      currentStage: validValues.currentStage, biggestChallenge: 'managing-interruptions'
+    }));
   });
 
   it('preserves the existing payload, bounded UTMs, and unrelated stored data', async () => {
