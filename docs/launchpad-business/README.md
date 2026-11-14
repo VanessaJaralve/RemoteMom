@@ -90,14 +90,16 @@ remains inactive, interview visitors and test page clarity, trust, and offer rel
 
 ## Issue #16 — help, file handling, and buyer operations
 
-**Draft branch work, reviewed 2026-11-14.** This section records the proposed operating process and
-evidence gaps for [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16). It does not record a
-deployment, a successful live signup/download test, or completed customer-support operations.
-Production checks under #19 remain outstanding.
+**Released subset; issue #16 remains In Progress.** The help and file-handling changes originally
+drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20).
+The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
+Monitoring ownership/cadence, the editable-source gap, remaining #19 coverage, and Stage 2 operations
+remain unresolved. The release record below preserves the distinction between deployed help and full
+completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
 ### Stage 1: contact, intake, and escalation
 
-The branch proposes reusing `vanessa.jaralve@gmail.com` with a `RemoteMom Launchpad help` subject.
+The released help surfaces reuse `vanessa.jaralve@gmail.com` with a `RemoteMom Launchpad help` subject.
 This address already appears publicly as RemoteMom beta feedback in `landing/index.html` and
 `src/screens/MoreScreen.tsx`; no new inbox is assumed. The owner must confirm who monitors Launchpad
 requests and the review cadence before the Stage 1 support gate can be considered complete.
@@ -106,8 +108,8 @@ Public expectation wording for this early version:
 
 > Email help is handled manually; there is no guaranteed response time during this early version.
 
-Place the contact link and a copyable address on the Launchpad and download surfaces. Help should
-explain the direct-download design and what to try when signup or opening the PDF fails. A browser-local
+The contact link and copyable address are live on the Launchpad and download surfaces. Help explains
+the direct-download design and what to try when signup or opening the PDF fails. A browser-local
 backup is not confirmed remote collection and is not automatically resent. Do not promise email kit
 delivery, automatic recovery, or a numeric response time. See the recovery guidance in
 [Validation Collection Setup](../Validation_Collection_Setup.md#launchpad-help-and-recovery-issue-16).
@@ -127,8 +129,9 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 
 ### Stage 1: Starter Kit artifact inventory
 
-The following is a repository inventory from the reviewed `main` tree, not fresh production-download
-verification. Git blob IDs identify the observed bytes; they are not a claim of matching design sources.
+The following identities come from the reviewed `main` tree. The release preserved the distribution
+PDF, and the public ten-page kit opened during the production check. Git blob IDs identify the recorded
+repository bytes; they are not a claim of matching editable design sources or verified local-file saving.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
@@ -182,18 +185,41 @@ payment promise, or assumed Payhip capability.
 
 | Item | Current status | Evidence needed before completion |
 |---|---|---|
-| Launchpad contact route | Existing public beta email reused as a proposal in this branch | Owner confirms Launchpad monitoring; deployed help links and copyable address work on both surfaces |
-| Response expectations and escalation | Manual/no-guaranteed-time wording and sanitized maintainer escalation drafted | Owner confirms monitoring owner/cadence; published wording and an actionable escalation route |
-| Signup/download recovery | Guidance prepared against current source design | #19 verifies live success, failure, retry, actual lead collection, and PDF opening without exposing private data |
-| Master and version handling | Distribution/legacy artifacts distinguished; published design source not found | #11 records source recovery/provenance outcome; reviewed artifact inventory, staging safeguard, and usable release/rollback record |
+| Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
+| Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
+| Signup/download recovery | One production signup, private destination match, empty-form validation, and public PDF opening verified | Remaining #19 failure/retry/full-coverage checks and locally saved-file completion remain unverified |
+| Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #11 records source recovery/provenance outcome; no regenerated design equivalence is claimed |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Actual support handling uses a private location; published evidence contains no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; draft branch only** | Deployed evidence linked in #16 and remaining #19 checks passed; Stage 2 completed or explicitly deferred to linked follow-up |
+| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, resolve/track #11 source gap, complete remaining #19 coverage, and complete or explicitly defer Stage 2 with linked follow-up; #12/#18 decisions remain pending |
 
-**Draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
+**Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
 instructions. No published PDF is replaced by this documentation work. No live support, email, checkout,
 or collection result is asserted. #14 depends only on completed Stage 1 support, not Stage 2 buyer operations.
+
+**Release and initial validation record — 2026-11-14:** PR #20 merged to `main` as
+[`061c31bd7e4eb968ecfef740a9a63239e1490bef`](https://github.com/VanessaJaralve/RemoteMom/commit/061c31bd7e4eb968ecfef740a9a63239e1490bef)
+at **13:58:58 Manila** (`2026-11-14T05:58:58Z`).
+[Vercel production deployment](https://vercel.com/vanessajaralve-5251s-projects/remote-mom/44kTFpf2eUU3uxTM5HfxzMuBF5Lv)
+succeeded. The [Launchpad help section](https://remote-mom.vercel.app/launchpad/#help) and
+[download help section](https://remote-mom.vercel.app/launchpad/download/#download-help) are live.
+
+Desktop and 390 × 844 mobile help checks covered anchors/return navigation, disclosures, keyboard use,
+and the visible correct mailto. The PDF was unchanged, retains marker `20261024`, and opened as the
+current ten-page kit in a new tab. The primary Download link was clicked; completion of a locally saved
+file remains unverified because browser policy blocked the downloads page. No workaround was used.
+
+One labeled #19 signup was confirmed in the intended private destination with exactly one matching
+synthetic row and all 11 expected columns correctly mapped. Empty-form submission was also blocked
+with clear required-fields feedback. See the [initial production test matrix](../Validation_Collection_Setup.md#issue-19-initial-production-test--2026-11-14)
+for the precise scope and remaining checks. One synthetic row is retained and its QA campaign must be
+excluded from baseline reporting; no customer or app-local data was altered.
+
+Two Python regression tests passed again against the release head. Official Jest was unavailable.
+The supplemental assertion harness reported 11 passes and the same two stale-copy failures on both
+release head and base; this is not a Jest or Expo pass. #16 and #19 remain open/In Progress; this release
+does not clear all Stage 1 gates or activate Stage 2 operations.
 
 ## GitHub tracking
 
