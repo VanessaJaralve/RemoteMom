@@ -139,6 +139,98 @@ public collection requires the webhook variable above. A local backup is not rem
 is not automatically replayed. Browser storage may be unavailable; a failure to save locally must not
 be presented as a successful backup. Confirm actual failure behavior under issue #19.
 
+## Issue #19 signup reliability — PR #21, 2026-11-14
+
+The `issue-19-signup-reliability` branch adds the validation and recovery changes below. Implementation
+and test evidence are recorded here; the merge state, deployment commit, and subsequent production
+checks are recorded in [PR #21](https://github.com/VanessaJaralve/RemoteMom/pull/21) and
+[issue #19](https://github.com/VanessaJaralve/RemoteMom/issues/19). The broader issue remains open.
+The initial production test later in this document still describes the earlier release.
+
+- `landing/launchpad/lead-validation.js` supplies one validation contract to the browser and the
+  endpoint. Required name, email, stage, and challenge values must be nonblank strings. Stage and
+  challenge values retain the current allowlists. Email validation checks practical public-address
+  syntax, including plus tags and subdomains; it does not verify mailbox ownership, deliverability,
+  or domain existence. Optional UTM values must be strings when present and remain bounded to
+  100 characters when forwarded.
+- Malformed JSON, null, arrays, scalar bodies, and structured field values receive `400` before any
+  webhook call. The endpoint returns a known field and a correction message. The browser highlights
+  that field, preserves the entered details, and does not describe a validation failure as a saved backup.
+- The browser resets and redirects only after a successful HTTP response with a JSON object whose
+  `ok` value is exactly `true`. The endpoint continues requiring confirmation from the collection
+  destination. A non-confirming or malformed response never becomes a successful signup.
+- A single in-flight submission guard blocks overlapping attempts. Confirmation is bounded to
+  20 seconds, including JSON-body reading. Timeout/network/server errors retain the form values and
+  attempt a local backup under the existing `remotemom:launchpad-leads` key. The message distinguishes
+  an available local copy from a backup that could not be saved.
+- Backups preserve existing entries, avoid appending an identical name/email/stage/challenge/UTM
+  entry on a retry, and leave malformed or non-array stored data untouched. They are not automatically
+  sent, cleared, or migrated. The other form handlers and mobile-app storage are unchanged.
+
+**Retry limit:** a timeout, lost response, or browser abort does not prove that the destination failed
+to write. A later manual retry can create a second remote row. This branch prevents overlapping
+browser submissions and duplicate local backups; it does not implement server/destination idempotency
+or automatic retries. The error message explains the uncertain result and provides retry/help guidance.
+Investigate uncertain receipts privately before repeated retries, account for duplicates in reporting,
+and exclude all labeled QA activity from #13 baseline figures.
+
+**Release boundary:** no Google Apps Script deployment, sheet schema migration, production submission,
+email enrollment, PDF replacement, or mobile-app change is part of this branch. The #12 permission
+decision, #18 challenge taxonomy, complete mobile/PDF and audience-path coverage, and any destination
+deduplication decision remain separate evidence before #19 can close.
+
+### Controlled verification for the review branch
+
+Checks ran on 2026-11-14 using the locked dependencies installed with
+`pnpm install --frozen-lockfile --ignore-scripts`; `package.json` and `pnpm-lock.yaml` are unchanged.
+The actual repository Jest/Babel setup was used, including JSDOM with the real form markup for
+browser event tests. Network responses, exceptional storage access, and navigation were controlled;
+no production requests or new lead records were created.
+
+| Check | Result | Scope |
+|---|---|---|
+| Focused endpoint and shared-validator tests | 131 passed in 2 suites | Malformed/type-invalid input, practical email syntax, all 20 current stage/challenge pairs, normalized UTMs/timestamp, and collection confirmation/failure |
+| Browser event-flow tests | 47 passed in 1 suite | Actual form DOM/FormData, required/invalid fields and focus, strict confirmation, 400 vs uncertain failures, storage preservation, retries, overlap prevention, timeout and late responses |
+| Initial full Jest suite | 297 passed, 2 failed; 31 suites passed, 1 failed | The same two test cases failed on untouched baseline `a2d7ee62`: Android beta invite guidance and Launchpad hero text. Baseline: 123 passed, 2 failed. The release follow-up below resolves both cases |
+| `pnpm exec tsc --noEmit` | Passed | Test tuple typing corrected before final verification |
+| `node --check` for endpoint, shared validator, and submission script | Passed | JavaScript syntax |
+| `git diff --check` | Passed | No whitespace errors |
+
+The repository defines no lint or production-build script. This initial review did not verify a
+production deployment or complete the remaining mobile/PDF, audience-path, consent, or destination checks.
+
+### Release review and regression follow-up — 2026-11-14
+
+The final review found that the Android case identified missing documented installation guidance,
+not only an obsolete heading. The beta page and its existing Firebase distribution guide now explain
+private invitations, optional Firebase App Tester, and use of the Google account that accepted the
+invitation. The accepting account may differ from the invitation email. The public page still has no
+APK URL, and joining the interest list does not send an automatic invitation. The guide links the
+current official Firebase instructions and troubleshooting reference.
+
+`LandingPage.test.ts` retains the Android requirements and adds checks for the account distinction
+and optional App Tester. Its obsolete Launchpad hero/benefit assertions now reflect the current page;
+the required fields, four stages, attribution, endpoint, safety language, PDF, and secondary beta
+checks remain in place. No signup runtime behavior was changed during this follow-up.
+
+| Final pre-merge check | Result |
+|---|---|
+| Actual full `pnpm exec jest --runInBand` | **299 passed, 32 suites passed, zero failures**, including all 178 signup reliability tests |
+| `pnpm exec tsc --noEmit` | Passed |
+| Runtime JavaScript syntax and patch whitespace | Passed |
+| Independent signup source review | No introduced release blocker found |
+
+The locked dependency manifest and lockfile are unchanged. This is pre-merge evidence; consult PR #21
+and issue #19 for the observed release result. No production signup, Apps Script deployment, public
+PDF replacement, or app-local data change was performed by these tests. The destination retry and
+literal-text ingestion follow-ups remain open, as do the wider #19 acceptance criteria.
+
+**Separate ingestion follow-up found in source review:** the existing Apps Script writes submitted
+name/tracking strings directly with `appendRow`. Ensure that untrusted text is stored literally at
+that boundary; [Google documents that a leading equals sign is interpreted as a formula](https://developers.google.com/apps-script/reference/spreadsheet/sheet#appendrowrowcontents).
+This pre-existing destination behavior is unchanged by the signup-validation PR and needs its own
+controlled test and deployment review before broad promotion.
+
 ## Launchpad help and recovery (issue #16)
 
 **Guidance drafted 2026-11-14; help subset released through PR #20.** The live help route

@@ -1,17 +1,8 @@
-const allowedChallenges = [
-  'choosing-the-right-role',
-  'finding-legitimate-opportunities',
-  'resume-or-portfolio',
-  'family-compatible-schedule',
-  'returning-after-career-gap'
-];
-
-const allowedCurrentStages = [
-  'looking-for-remote-work',
-  'returning-after-career-break',
-  'already-working-remotely',
-  'exploring-both'
-];
+const {
+  validateLead,
+  allowedChallenges,
+  allowedCurrentStages
+} = require('../landing/launchpad/lead-validation.js');
 
 function setCorsHeaders(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,15 +11,11 @@ function setCorsHeaders(res) {
 }
 
 function parseBody(body) {
-  if (!body) {
-    return {};
-  }
-
   if (typeof body === 'string') {
     try {
       return JSON.parse(body);
     } catch {
-      return {};
+      return null;
     }
   }
 
@@ -36,35 +23,21 @@ function parseBody(body) {
 }
 
 function cleanTrackingValue(value) {
-  return String(value || '')
-    .trim()
-    .slice(0, 100);
+  return typeof value === 'string' ? value.trim().slice(0, 100) : '';
 }
 
-function normalizeLead(body) {
-  const lead = parseBody(body);
-
+function normalizeLead(lead) {
   return {
-    biggestChallenge: String(lead.biggestChallenge || '').trim(),
-    currentStage: String(lead.currentStage || '').trim(),
-    email: String(lead.email || '').trim(),
-    name: String(lead.name || '').trim(),
+    biggestChallenge: lead.biggestChallenge.trim(),
+    currentStage: lead.currentStage.trim(),
+    email: lead.email.trim(),
+    name: lead.name.trim(),
     submissionType: 'launchpad-lead',
     submittedAt: new Date().toISOString(),
     utmCampaign: cleanTrackingValue(lead.utmCampaign),
     utmMedium: cleanTrackingValue(lead.utmMedium),
     utmSource: cleanTrackingValue(lead.utmSource)
   };
-}
-
-function isValidLead(lead) {
-  return Boolean(
-    lead.name &&
-      lead.email &&
-      lead.email.includes('@') &&
-      allowedCurrentStages.includes(lead.currentStage) &&
-      allowedChallenges.includes(lead.biggestChallenge)
-  );
 }
 
 async function forwardToWebhook(lead) {
@@ -104,14 +77,13 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Only POST Launchpad lead submissions are supported.' });
   }
 
-  const lead = normalizeLead(req.body);
-
-  if (!isValidLead(lead)) {
-    return res.status(400).json({
-      error: 'Please complete the starter-kit signup before submitting.'
-    });
+  const body = parseBody(req.body);
+  const validationError = validateLead(body);
+  if (validationError) {
+    return res.status(400).json(validationError);
   }
 
+  const lead = normalizeLead(body);
   try {
     const delivery = await forwardToWebhook(lead);
 
@@ -127,7 +99,12 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    if (!delivery.body || delivery.body.ok !== true) {
+    if (
+      !delivery.body ||
+      typeof delivery.body !== 'object' ||
+      Array.isArray(delivery.body) ||
+      delivery.body.ok !== true
+    ) {
       return res.status(502).json({
         error: 'Launchpad lead destination did not confirm the sheet write.'
       });

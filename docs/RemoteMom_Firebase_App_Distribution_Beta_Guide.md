@@ -96,7 +96,12 @@ Please do not enter private medicine details in the feedback form. RemoteMom org
 
 Hi! Thank you for helping test RemoteMom.
 
-You should receive a Firebase App Distribution invite by email. Please open it on your Android phone, sign in with Google if asked, and install the RemoteMom beta.
+After Vanessa sends your private Firebase App Distribution invitation:
+
+1. Open the invitation email on your Android phone.
+2. Sign in with Google and accept the invitation. The Google account you choose may differ from the email address that received the invitation.
+3. Firebase App Tester is optional. If you use it, sign in with the **same Google account you used to accept the invitation**. Use that account when opening the invitation in your browser too.
+4. In Firebase App Tester, choose **RemoteMom**, then **Download**. If you are using your browser, follow the download steps in the invitation.
 
 RemoteMom is a calm daily command center for remote working moms. It brings to-dos, groceries, one child's schedule, and family medicine routines into one Today view so you do not have to carry everything in your head.
 
@@ -107,6 +112,14 @@ After trying it, please answer the short feedback form:
 https://remote-mom.vercel.app/beta-feedback/
 
 Please do not include private medicine details, child details, or sensitive family information in the feedback form.
+
+## Installation Troubleshooting
+
+If RemoteMom is missing, first check which Google account accepted the invitation, then use that account in Firebase App Tester or the browser. Matching only the email address that received the invitation is not enough if a different Google account accepted it.
+
+If the app is still missing or the download cannot be completed, contact Vanessa at [vanessa.jaralve@gmail.com](mailto:vanessa.jaralve@gmail.com?subject=RemoteMom%20beta%20install%20help). Describe the step and error without sending passwords or private app entries. Joining the interest list does not automatically send a Firebase invitation.
+
+Guidance checked on 2026-11-14 against Firebase's official [Android tester setup instructions](https://firebase.google.com/docs/app-distribution/get-set-up-as-a-tester?platform=android) and [App Distribution troubleshooting](https://firebase.google.com/docs/app-distribution/troubleshooting). Firebase App Distribution is only the installation/distribution channel; RemoteMom entries remain local to the device, with no app cloud backup added.
 
 ## What To Track In Firebase
 
