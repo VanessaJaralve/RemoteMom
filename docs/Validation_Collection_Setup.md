@@ -117,9 +117,9 @@ Launchpad starter-kit submissions are sent as:
 
 Google Apps Script routes `submissionType: "launchpad-lead"` responses into a `Launchpad Leads`
 tab. The page captures only `utm_source`, `utm_medium`, and `utm_campaign`; each value is normalized
-and limited to 100 characters by the endpoint. The allowed challenge values are role choice,
-legitimate opportunities, resume or portfolio, family-compatible schedule, and returning after a
-career gap. The required `currentStage` value is one of `looking-for-remote-work`,
+and limited to 100 characters by the endpoint. The challenge contract now retains the five original
+values and adds four remote-life choices; see the exact mapping below. The required `currentStage`
+value is one of `looking-for-remote-work`,
 `returning-after-career-break`, `already-working-remotely`, or `exploring-both`. New rows include a
 `Current Stage` column. Historical payloads that do not contain `currentStage` remain compatible and
 are written with an empty stage cell.
@@ -127,6 +127,108 @@ are written with an empty stage cell.
 After a confirmed submission, the visitor is sent to `/launchpad/download/`. The downloadable file
 is `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`. This is a direct
 download flow; email delivery is not part of the documented current design.
+
+## Issues #12 and #18 — request scope and challenge mapping
+
+**Implementation decision — 2026-11-14:** the initial experiment collects **Starter Kit requests
+only**. The form explains the direct PDF download before submission, describes the use of submitted
+details, and states that a request does not subscribe the reader to marketing emails or join the
+RemoteMom app beta. The download page keeps the optional beta interest form as a separate action.
+
+Name and email identify the kit request and support an investigation if the reader contacts Vanessa.
+Stage, challenge, and bounded campaign values support aggregate learning about reader needs and
+acquisition sources. The existing `submissionType: "launchpad-lead"` and sheet source
+`launchpad-starter-kit-form` identify a kit request. They are **not** marketing or app-beta permission.
+The endpoint constructs an explicit payload and does not forward additional marketing/beta flags.
+There is no marketing checkbox, consent field, consent version, or consent timestamp in this flow.
+The request timestamp must not be repurposed as a marketing-permission timestamp.
+
+Treat historical Launchpad rows the same way: preserve them as kit-request records and never infer
+marketing or beta permission from their presence. Do not import these records into a marketing or
+beta list on the strength of the kit request alone. Any later email delivery/nurture proposal remains
+gated under [issue #12 Stage 2](https://github.com/VanessaJaralve/RemoteMom/issues/12), with a separate
+purpose, permission decision, service choice, and delivery/unsubscribe/failure checks. No such service
+or enrollment is activated by this change. Use the existing manual help route; no retention deadline,
+automatic deletion, or self-service unsubscribe capability is promised.
+
+### One grouped challenge list
+
+All nine options are available to all four stages. Native option groups make the two needs easy to
+scan without filtering a reader into a single path. The helper says: “Choose the one that matters
+most right now. You can choose from either group.” It is associated with the select using
+`aria-describedby`; validation feedback adds its own description without removing the helper.
+
+| Group | Stable value | Visible wording | Compatibility |
+|---|---|---|---|
+| Finding or returning to remote work | `choosing-the-right-role` | Choosing the right role | Existing; unchanged meaning |
+| Finding or returning to remote work | `finding-legitimate-opportunities` | Finding legitimate opportunities | Existing; unchanged meaning |
+| Finding or returning to remote work | `resume-or-portfolio` | Improving my resume or portfolio | Existing; unchanged meaning |
+| Finding or returning to remote work | `returning-after-career-gap` | Returning after a career gap | Existing; unchanged meaning |
+| Making remote work fit family life | `family-compatible-schedule` | Finding a family-compatible schedule | Existing; unchanged meaning |
+| Making remote work fit family life | `work-family-boundaries` | Setting boundaries between work and family | Added in this revision |
+| Making remote work fit family life | `managing-interruptions` | Handling interruptions during work | Added in this revision |
+| Making remote work fit family life | `planning-workload` | Planning a manageable workload | Added in this revision |
+| Making remote work fit family life | `switching-between-tasks` | Switching between work and family tasks | Added in this revision |
+
+Changing the stage intentionally keeps the selected challenge: every pair is supported, including
+`exploring-both`. No option becomes hidden or invalid after a stage change. The browser and endpoint
+share `landing/launchpad/lead-validation.js`, which accepts the same nine values and rejects unknown
+values before collection. The four stage values, timestamp, and UTM bounds are unchanged.
+
+The existing Apps Script copies the stable challenge into `Biggest Challenge` and the stage into
+`Current Stage` in the eleven-column `Launchpad Leads` layout. It has no challenge-specific allowlist
+to update. New choices therefore need no new columns, Apps Script deployment, or historical-row
+migration. Its existing support for older payloads without a stage remains unchanged. Local backups
+use the existing key and retain old records; the Today Dashboard and app-local storage are unaffected.
+
+### Reporting contract for #13
+
+- Report `currentStage` and `biggestChallenge` separately. A challenge group does not establish the
+  reader's work stage, because readers may choose from either group.
+- Preserve raw challenge values and the mapping above. Never recode an old schedule selection as
+  boundaries, interruptions, workload, or transitions; the original answer does not establish that detail.
+- Record the actual deployment commit/time in the linked release evidence. Compare periods with the
+  option-set change identified; the new choices were unavailable in earlier periods. Do not treat an
+  earlier zero for a new choice as evidence that the need did not exist.
+- Count confirmed kit requests, not newsletter subscribers or completed PDF downloads. Keep unknown
+  or historical blank values visible as unmapped/unknown; do not silently guess a category.
+- Exclude labeled QA campaigns and account for uncertain duplicate submissions in the #13 baseline.
+
+### Acceptance boundary
+
+The wording follows the approved two-path design and remains subject to representative-reader review
+under [#15](https://github.com/VanessaJaralve/RemoteMom/issues/15). No completed reader findings were
+available in that issue when this revision was prepared. Do not mark the reader-review criterion of
+#18 complete on the strength of internal review.
+
+Controlled tests must exercise all 36 stage/challenge pairs, the real form's changed-stage behavior,
+and Apps Script's old/new mapping. They establish source behavior, not a new production destination
+write. Link the actual test and deployment evidence in #12/#18/#19, and record a labeled new-category
+destination check before claiming the changed taxonomy is verified in production. The existing
+spreadsheet literal-text ingestion and remote retry/idempotency follow-ups remain separate.
+
+### Controlled verification — 2026-11-14
+
+The existing locked dependencies and actual Jest/Babel/JSDOM setup were used. No dependency manifests
+changed. These checks used synthetic data, mocked HTTP responses, and stubbed Google spreadsheet
+services; they did not create production records.
+
+| Check | Executed result |
+|---|---|
+| Focused validator, endpoint, real form events, and Apps Script routing suites | **221 tests passed across 4 suites** |
+| Full `pnpm exec jest --runInBand` | **340 tests passed across all 32 suites; zero failures** |
+| `pnpm exec tsc --noEmit` | Passed |
+| `node --check` for shared validator, endpoint, and submission script | Passed |
+| `git diff --check` | Passed |
+| Independent permission/source review | No Stage 1 blocker found; confirmed the kit-only copy and separate beta action match behavior |
+
+The focused coverage includes all 36 stage/challenge pairs, exact forwarded values/UTMs, all four new
+choices through the actual form, every changed-stage destination, helper/error associations, injected
+marketing/beta flag exclusion, old local-backup preservation, and execution of the repository Apps
+Script for nine values and legacy stage/header compatibility. The repository defines no lint or
+production-build script. Deployment, desktop/mobile UI, and live destination results belong in the
+linked release evidence; these local checks do not establish them. Final UI polish adds spacing above
+the submit button without changing the validated behavior.
 
 ## Preview Behavior
 
