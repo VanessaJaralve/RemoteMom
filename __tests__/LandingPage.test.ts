@@ -107,7 +107,10 @@ describe('RemoteMom landing page', () => {
     expect(betaHtml).toContain('Join the Android beta interest list.');
     expect(betaHtml).toContain('How the Android invite works');
     expect(betaHtml).toContain('same Google account');
+    expect(normalizedBetaHtml).toContain('the same Google account you used to accept the invitation');
+    expect(normalizedBetaHtml).toContain('account may differ from the email address that received the invitation');
     expect(betaHtml).toContain('Firebase App Tester');
+    expect(betaHtml).toContain('Firebase App Tester is optional.');
     expect(betaHtml).toContain('data-endpoint="/api/waitlist"');
     expect(betaHtml).toContain('../styles.css');
     expect(betaHtml).toContain('../waitlist.js');
@@ -184,7 +187,9 @@ describe('RemoteMom landing page', () => {
     const downloadHtml = readFileSync(launchpadDownloadHtmlPath, 'utf8');
     const script = readFileSync(scriptPath, 'utf8');
 
-    expect(launchpadHtml).toContain('Build a remote-work path that fits your career and your family life.');
+    expect(launchpadHtml).toContain(
+      '<h1 id="launchpad-title">Remote work<br>that fits <em>real life.</em></h1>'
+    );
     expect(launchpadHtml).toContain("Remote Mom's Work Fit and Safety Starter Kit");
     expect(launchpadHtml).toContain('working mothers and career-returning moms');
     expect(launchpadHtml).not.toContain('Pinay Mom');
@@ -200,8 +205,9 @@ describe('RemoteMom landing page', () => {
     expect(launchpadHtml).toContain('value="already-working-remotely"');
     expect(launchpadHtml).toContain('value="exploring-both"');
     expect(launchpadHtml).toContain('name="biggestChallenge"');
-    expect(launchpadHtml).toContain('Already working remotely');
-    expect(launchpadHtml).toContain('Improve work-from-home boundaries and routines');
+    expect(launchpadHtml).toContain("I'm already working remotely");
+    expect(launchpadHtml).toContain('Look at boundaries that support your day.');
+    expect(launchpadHtml).toContain('Boundaries, routines, and a seven-day action plan');
     expect(launchpadHtml).toContain(
       'does not guarantee employment, income, flexibility, or that a listing is safe'
     );
