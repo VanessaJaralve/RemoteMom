@@ -159,11 +159,11 @@ completed work may finish earlier than its target.
 |---|---|---|
 | **Nov 16** | **#1:** publish this decision/offer map and link it from the issue; retain one confirmed-kit-request goal and the two paths | Record the decision as adopted planning scope, with reader assumptions still explicit; no claim of completed research |
 | **Nov 17–18** | **#11:** review the existing ten-page kit, promised exercises, links, printability/accessibility, next step, and content inventory; record source recovery or an explicit linked follow-up | Actual physical-mobile PDF review is required. Material defects requiring an unavailable editable source can move this target; preserve the current file |
-| **Nov 18** | **#18:** finish representative-reader wording and native dropdown keyboard checks | Obtain real reader input from both paths and a recorded real-browser/device picker check; internal review alone is insufficient |
+| **Nov 18** | **#18:** finish representative-reader wording and the explicit native arrow-key check; keyboard typeahead verified November 16 | Obtain real reader input from both paths and record actual native arrow-key selection. Typeahead evidence below does not replace that remaining criterion |
 | **Nov 18** | **#16 Stage 1:** confirm support ownership, cadence/escalation, private record handling, and the #11 source-handling outcome | Vanessa confirms the operating arrangement. Full #16 also contains buyer operations; it stays open unless those pass or move to a linked follow-up under its existing close rule |
 | **Nov 19** | **#13:** finish measurement-source inventory, channel links, definitions, dated baseline, applied QA exclusions, duplicate treatment, and a weekly reporting example | Actual reporting access and metric availability must be verified. A small baseline is acceptable; missing visitor/download metrics stay explicitly unmeasured |
 | **Nov 20** | **#19:** finish both audience paths, links, note/copy fallback, keyboard, PDF evidence, duplicate accounting, and actual baseline exclusions; fix/recheck critical defects | Depends on #11/#13/#18 evidence. Accounting for duplicates is allowed by the existing criterion; building remote idempotency is not a new sprint requirement |
-| **By Nov 20 — preparation only** | **#14:** prepare the four-week calendar, first holiday-content drafts/assets, tracked links, and weekly review routine | Publication starts only after Stage 1 readiness passes. A prepared calendar does not complete four weeks of publishing or learning |
+| **By Nov 20 — preparation only** | **#14:** four-week calendar, first holiday captions/Story text, 24 prepared links, and review/publication records prepared November 16 | Publication starts only after Stage 1 readiness passes. Prepared copy and links do not complete platform routing or four weeks of publishing and learning |
 | **During the week — conditional** | **#15:** collect early wording/kit reactions to inform #11/#18; aim for the existing 5–10-reader study only if participants are available | Full closure requires actual conversations across both paths, anonymized synthesis, paid-value reactions, and the #6 recommendation; recruitment and responses are not assumed |
 
 **November 20 readiness decision:** proceed with the free-kit campaign only when #1, #11, #13, #18,
@@ -177,6 +177,88 @@ new implementation commitments because of the holiday deadline.
 promise/positioning, free-first release choice, optional paid map, regional review rules, separate app
 boundary, and realistic-claims decision. After publication, link it as #1's close evidence. Preserve
 the release records below; update the assumptions when #15 supplies actual reader findings.
+
+### Campaign preparation completed — 2026-11-16
+
+The [holiday campaign pack](../../marketing/launchpad-social/holiday-2026-campaign.md) supplies #14's
+prepared four-week calendar for **November 23–December 20**, with **12 master posts: six Career and
+six Remote-Life**. The first six holiday posts have complete Facebook captions and Instagram Story
+text; the remaining six have usable briefs. Every post has one primary action—request the existing
+free Starter Kit—and a matching Facebook and Instagram URL, **24 prepared links** in total. All 24 passed direct HTTP checks; six live Chrome examples preserved their UTMs through the signup anchor, as recorded in the [collection guide](../Validation_Collection_Setup.md#holiday-direct-link-verification--2026-11-16).
+Thanksgiving, Black Friday, and Cyber Monday have distinct themes; December slots continue the
+practical-tech theme without representing those dates as Cyber Monday.
+
+This completes the calendar, both-path coverage, and per-post action/link preparation subset of
+#14. It does not complete publication, actual social-app routing, weekly results, or the four-week
+learning decision. The download page names the existing Facebook and Instagram profiles; the pack
+does not establish their current publishing capability or audience. Publication remains subject to
+the Stage 1 decision above, and the proposed 20:00 Asia/Manila slots are not scheduled. Use the pack's
+publication and weekly-review records when the experiment starts. Email, Pinterest, and paid-product
+promotion are not part of this prepared posting plan.
+
+### Journey checks completed — 2026-11-16
+
+The following checks use the live Launchpad in Chrome and harmless temporary exercise notes.
+The controlled tests execute the existing runtime; they do not stand in for a physical-phone or
+screen-reader test. This record advances #19 and the native-keyboard subset of #18 while keeping
+their remaining acceptance evidence explicit.
+
+| Scenario | Observed result and boundary |
+|---|---|
+| Primary navigation | Actual navigation reached `#main`, `#paths`, `#approach`, `#kit`, and `#starter-kit`. The closing “Choose one useful step” link reached `#paths` with Enter, and the banner brand returned to the top with Enter. Intermediate smooth-scroll positions were not treated as final layout results |
+| Both audience cards and exercises | Each card selected its corresponding exercise. The prompts, labels, and selected state matched Find Remote Work or Manage Remote Life |
+| Independent notes | A harmless note entered in each path reappeared after switching away and back; one path did not overwrite the other |
+| Normal copy | Both paths copied the exact matching prompt plus note to the clipboard; the success feedback matched the observed copy |
+| Fresh-page behavior | Reloading the live page cleared the exercise note, matching the visible warning that notes stay on the page and clear on refresh |
+| Keyboard traversal | Tab moved from the name field through the checked stage radio, email, native challenge select, Submit, signup-help link, and email contact. Tab from the note field reached Copy |
+| Native challenge keyboard selection | Real keyboard typeahead selected “Work and family boundaries” with `w`, “Choosing the right role” with `c`, and “Handling work interruptions” with `h`; the selected labels and values were observed, and Tab moved to Submit. Changing stage to already-working retained the valid “Choosing the right role” selection. This verifies native keyboard selection by typeahead; no arrow-menu selection result is claimed |
+| Emulated 390 × 844 Chrome viewport | Both path controls and copy actions worked; exact career/remote-life prompt-plus-note values were copied and switching restored the appropriate note. Empty-copy feedback said “Write one small next step first.” and focused the textarea. The checked controls appeared readable and unclipped; document width and viewport width were both 390 pixels, with no horizontal overflow. This is viewport emulation, not a physical-phone PDF readability result |
+| Controlled fallback and transience | Nine new runtime cases cover exercise switching, note isolation, both-path copying, empty-copy feedback, missing or denied clipboard fallback, and fresh-page note transience. Clipboard fallback and fresh-page behavior here are controlled-test evidence |
+
+The focused command passed **77 tests across three suites**:
+
+```bash
+NODE_PATH=/workspace/scratch/2dac166eba49/RemoteMom-holiday-readiness/node_modules/.pnpm/@babel+runtime@7.29.7/node_modules node node_modules/jest/bin/jest.js --runInBand __tests__/LaunchpadExercises.test.js __tests__/LaunchpadSignup.test.js __tests__/LandingPage.test.ts
+```
+
+The full configured Jest run passed **392 tests across 33 suites**, and `tsc --noEmit` passed.
+The repository defines no lint or production-build script; no such result is claimed. Full native
+OS-picker popup/arrow behavior was not established, while actual native keyboard selection by
+typeahead was verified as described above. The explicit arrow-key criterion in #18 and the combined
+keyboard criterion in #19 remain open; their verified Tab/typeahead subset is retained.
+
+No new signup was submitted for these interaction checks. The prior production collection, QA
+exclusion, PDF-release, and user-reported phone-link evidence remain the relevant records for those
+separate behaviors. Physical-phone PDF readability, native arrow-key selection, representative-reader wording findings,
+measurement readiness, and the operating support arrangement are still open; this is not full #19
+closure or campaign publication approval.
+
+### Prepared Launchpad reader wording check — #18 and #15
+
+Use the current Launchpad page and kit for a short check with readers from both audience paths.
+This protocol is specific to the educational Launchpad; the existing app interview guide remains
+about the separate RemoteMom app. No participants, conversations, responses, or outreach are
+recorded by preparing this protocol.
+
+1. Ask which current stage describes the reader, in their own words, before showing the form choices.
+2. Show the page and ask what they expect to receive after requesting the kit. Check whether they
+   understand direct PDF download and the separate marketing/app-beta choices without coaching them.
+3. Ask them to choose a path and explain which exercise they would try first.
+4. Show the stage and challenge choices. Ask which fits, what wording is unclear, and what they
+   would call the same challenge naturally; record when none fits instead of forcing a choice.
+5. Ask them to try one relevant kit exercise and identify any instruction they could not follow.
+6. Summarize what to retain, clarify, or investigate, with the audience represented and evidence limits.
+
+Keep contact details and raw conversation notes private. Publish only anonymized findings using
+this empty template; an internal review is not a completed reader response:
+
+| Anonymous reference / date | Audience path represented | Signup expectation understood? | Stage/challenge fit and wording | Exercise tried / unclear instruction | Finding and resulting action |
+|---|---|---|---|---|---|
+| No completed reader result recorded | — | — | — | — | — |
+
+Link actual findings to #18. The fuller #15 study still requires its 5–10-reader coverage, synthesis,
+paid-value questions, and #6 recommendation; preparing or completing a short wording check does not
+close that study.
 
 ## Work stages and completion gates
 
@@ -272,8 +354,9 @@ old and new option sets. No historical answer is rewritten into a more specific 
 
 **Release and remaining evidence:** PR #22 records the production permission/taxonomy release and
 matching new-category destination case; retain/exclude campaign `issue18-20261114100210z` in #13
-reporting. #18 still needs representative-reader wording findings under #15 and manual native-picker
-keyboard verification. The broader #19 journey checks, #13 baseline, and #16 monitoring arrangement
+reporting. The November 16 [journey record](#journey-checks-completed--2026-11-16) adds actual native
+keyboard selection by typeahead; no arrow-menu result is claimed. #18 still needs representative-reader
+wording findings under #15 and its explicit native arrow-key check. The broader #19 acceptance, #13 reporting, and #16 monitoring arrangement
 remain prerequisites before broad promotion; #23's production ingestion acceptance is now complete.
 #24 email work does not block the free-kit experiment. This change does not authorize outreach,
 beta invitations, or the four-week campaign.
@@ -571,6 +654,23 @@ Detailed physical-phone readability, paper-print and screen-reader checks remain
 unperformed; the wider #11/#19 and #18 acceptance stays open. No new signup, marketing permission,
 paid link, customer record, or app-local data change is introduced by this candidate.
 
+### Bounded print and accessibility assessment — 2026-11-16
+
+This consolidates the recorded desktop/structure review and #27 preservation evidence for version
+`20261116`; it is not a new physical-device, print, or assistive-technology test.
+
+| Area assessed | Recorded evidence and practical limit |
+|---|---|
+| Page geometry and desktop layout | Ten A4 pages; all-page desktop rendering found no clipping, overlap, missing text, or broken table rows. The repair preserves pages 1–9 and adds the reviewed page-10 block. This supports the layout assessment, not a claim about printer settings or a physical printout |
+| Text and fonts | Text is extractable and the repaired block reuses the embedded Arial font. Extractability alone does not verify reading order or comprehension |
+| Language and destinations | #27 adds `/Lang en` and two visible/clickable page-10 destinations. Both destinations were checked in desktop Chrome and Vanessa confirmed both work on her phone |
+| Structure and form use | The PDF remains static and untagged, with no AcroForm fields. It is not a verified fillable or fully accessible document; no screen-reader, tagged reading-order, or keyboard-form result is claimed |
+| Remaining physical evidence | Detailed saved-PDF readability on a phone remains open under #11/#19. Paper output and screen-reader behavior have not been tested; retain those limits in any completion record |
+
+The bounded assessment is recorded with its limitations. It does not mark the combined #11
+device/print/accessibility criterion complete while physical-phone readability remains outstanding,
+or require a new editable master merely to preserve the already verified free-link repair.
+
 ## Issue #16 — help, file handling, and buyer operations
 
 **Released subset; issue #16 remains In Progress.** The help and file-handling changes originally
@@ -588,6 +688,14 @@ The released help surfaces reuse `vanessa.jaralve@gmail.com` with a `RemoteMom L
 This address already appears publicly as RemoteMom beta feedback in `landing/index.html` and
 `src/screens/MoreScreen.tsx`; no new inbox is assumed. The owner must confirm who monitors Launchpad
 requests and the review cadence before the Stage 1 support gate can be considered complete.
+
+**Operating proposal prepared November 16, not an adopted commitment:** reuse the existing private
+inbox and one email thread per help request, with a small private case log only if needed. A practical
+starting arrangement is one inbox review each weekday during the experiment and a follow-up action
+for each unresolved delivery case. Vanessa still needs to confirm the monitor, workable cadence,
+follow-up owner, and whether the private email threads or an existing private log will hold the case
+record. No mailbox label, log, schedule, or access setting was created by this proposal, and it does
+not establish that support monitoring is operating.
 
 Public expectation wording for this early version:
 
@@ -676,11 +784,11 @@ payment promise, or assumed Payhip capability.
 |---|---|---|
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
-| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile and audience-path/copy/keyboard checks; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
+| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback | Physical-phone PDF readability and final #19 acceptance remain open; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
 | Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; #27 guarded repair, pinned rebuild, and exact rollback recorded | #27 completed November 16 with user-reported phone-link success; editable master remains missing and broader #11/#19 readability/accessibility evidence remains open |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; released subset only** | #27 is complete. Confirm monitoring arrangement, finish remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
+| Deployment and issue closure | **In Progress; released subset only** | #27 is complete. Confirm monitoring/private-record arrangement, finish remaining #19 acceptance, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader wording/native arrow-key work, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
