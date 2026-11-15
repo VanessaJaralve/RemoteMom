@@ -316,18 +316,147 @@ The exact procedure, PDF digest, bounded evidence, and rollback steps are in
 [Validation Collection Setup](../Validation_Collection_Setup.md#issue-23--literal-text-spreadsheet-ingestion).
 #23 is closed; its source and documentation are merged in
 [PR #25](https://github.com/VanessaJaralve/RemoteMom/pull/25).
-#19 retains broader journey QA and the remote duplicate/idempotency decision; #14 remains gated on
-the remaining Stage 1 work. No paid transaction, outreach, permission, PDF, or app-local data change
-is part of #23.
+#19 retains broader journey QA; the November 16 collection-guide update adopts operational duplicate
+accounting without implementing remote idempotency. #14 remains gated on the remaining Stage 1 work.
+No paid transaction, outreach, permission, PDF, or app-local data change is part of #23.
+
+## Issue #11 - published Starter Kit content review - 2026-11-16
+
+**Content inventory and promise check completed; full issue acceptance remains open.** This review
+used the actual [published distribution PDF](../../landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf),
+not the different legacy generator output. It covers the text of all ten pages, audience paths,
+exercise coverage, wording, next steps, PDF structure, and the desktop rendering evidence below.
+It does not claim a physical-phone test,
+reader interview, paper printout, complete accessibility test, or recovered editable design source.
+The remaining device and live-journey evidence belongs in the accompanying #11/#19 verification.
+
+**Reviewed identity:** ten A4 pages, **110,460 bytes**, SHA-256
+`b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`; the download link's observed
+version marker remains `20261024`. `pypdf` extracted text from every page and `pdfinfo` confirmed the
+page count/size. The existing PDF, generator, and user data were not changed. The ReportLab producer
+metadata is not evidence that the saved legacy generator reproduces this design; the existing
+[artifact/source distinction](#stage-1-starter-kit-artifact-inventory) still applies.
+
+### Page-by-page content inventory
+
+| Page | Actual section and material | Audience and useful output | Review result or limit |
+|---|---|---|---|
+| 1 | Cover; Find Remote Work / Manage Remote Life, skills, boundaries/routines, privacy, and seven-day-plan signposts | Both paths can recognize the resource; the introduction frames work fit around existing skills and the reader's circumstances | Includes an explicit employment/income/legitimacy limit and a low-pressure starting message |
+| 2 | Choose a path: Career Path, Remote-Life Path, or Exploring both; suggested sections | Directs job seekers/returners to career exercises, current remote workers to routines, and exploratory readers to selected exercises from each | Explicitly says readers need not finish the full kit or complete irrelevant worksheets |
+| 3 | Life/work fit worksheet: available hours, shift/output needs, timezones, care coverage, disruptions, hybrid commute, benefits/equipment, and income after expenses | Career readers identify constraints before choosing a role; current workers can reassess an existing arrangement | Clearly states remote work does not automatically provide flexibility, income, childcare, or a manageable day; no country-specific entitlement is asserted |
+| 4 | Transferable-skills table connecting prior responsibilities, skills, evidence, and possible roles; five examples and blank examples | Job seekers/returners can turn demonstrated experience into a role hypothesis; current workers can review existing strengths | Examples require honest evidence. The sentence about ordinary parenting responsibilities has a tone risk for returners; see the editorial follow-up below |
+| 5 | Role comparison: six questions scored 0-2 for three candidate roles, a total out of 12, primary and backup directions | Career readers choose a focused direction using experience, evidence, schedule, equipment, and role understanding | Scoring instructions and arithmetic are consistent; it is a self-reflection aid, not a validated hiring or aptitude assessment |
+| 6 | Search-source planning table and ten opportunity-verification checks | Career readers select sources and check employer identity, role details, communication, payments, data requests, and pressure | Sources are examples, not endorsements or verified openings. The country-specific recruitment check asks the reader to verify relevant requirements without asserting a particular rule |
+| 7 | Privacy guidance; blanks for local employment/labor, consumer-protection/cybercrime, and reporting resources | Both paths can decide what personal information to withhold or verify before sharing | Explicitly says a checklist cannot certify safety; local resource blanks are intentional reader work, not completed/verified links |
+| 8 | Remote-Life pressure-point table: start/end of day, interruptions, meals/groceries, child transitions; three daily-planning prompts | Already-working readers select one small boundary/routine experiment and identify what needs attention or can wait | Provides a substantive dedicated exercise and avoids judging the reader's performance; no promised reduction in stress or workload is measured |
+| 9 | Seven-day plan with separate Career and Remote-Life actions for every day; weekly review | Either audience can select one daily action and review the result; the suggested 30 minutes is explicitly adjustable | All seven days have both options. Some weekly-review prompts are career-specific; readers should skip irrelevant prompts under the page-2 instruction |
+| 10 | Application tracker: date, company/role, source, verification, tailoring, status, follow-up; final invitation to return to Launchpad | Career readers can track quality and follow-up; the closing paragraph names both career and remote-life needs | The final invitation lacks a written web address, clickable link, and specific feedback route. This is an unresolved standalone next-step usability gap |
+
+### Match to the advertised exercises and audience paths
+
+The [Launchpad kit description](../../landing/launchpad/index.html) promises role fit and transferable
+skills; working conditions and opportunity checks; and boundaries, routines, and a seven-day action
+plan. Each category is present in the reviewed PDF:
+
+| Promised area | Evidence in the PDF |
+|---|---|
+| Role/life fit | Pages 3 and 5: constraints worksheet and primary/backup role comparison |
+| Transferable skills | Page 4: experience-to-skill-to-evidence-to-role examples and blank responses |
+| Working conditions | Page 3: actual hours, meetings, employment type, equipment, benefits, and return-to-office considerations; page 6: role description checks |
+| Opportunity verification and privacy | Pages 6-7: independent verification questions, data-sharing limits, and reader-selected local authorities |
+| Boundaries and routines | Page 8: five pressure points and one small routine/boundary to test |
+| Interruptions and transitions | Page 8's interruption/child-transition rows and page 9's interruption-response, workday-start, and workday-end actions |
+| Seven-day action plan | Page 9: seven paired career/remote-life choices, adjustable time assumption, and weekly review |
+
+**Desk-review judgment:** both audiences have useful, actionable starter material. The Career Path
+has more dedicated pages, while pages 2, 8, and 9 give already-working readers a clear shorter route;
+page 3 can also support reviewing an existing role. Equal page counts are not required for a useful
+starting exercise. This is a content assessment, not evidence that representative readers found the
+kit useful; comprehension and relevance remain questions for [#15](https://github.com/VanessaJaralve/RemoteMom/issues/15).
+
+### Desktop rendering evidence - 2026-11-16
+
+All ten pages were rendered at **115 DPI** and visually inspected individually on desktop. No clipped,
+overlapping, or missing text, or broken table rows were observed. Page numbering was consistent and
+margins were generous. The narrow columns on pages 4 and 10 remained readable in this desktop review;
+page 6's longer checklist items wrapped within the margins. The A4 response areas appear practical
+for paper use or separate notes, but no physical printout was tested.
+
+The visual review also confirmed page 10's missing destination for its return/feedback instruction.
+This rendering result does not establish physical-phone readability, paper-print quality, screen-reader
+behavior, or full accessibility. The existing PDF was not modified.
+
+### Wording, next steps, and remaining usability limits
+
+The extracted copy contains no guarantee of employment, income, flexibility, or opportunity safety.
+Pages 1, 3, and 7 state the relevant limits. Instructions consistently ask for a small choice or
+experiment rather than a complete life change, and page 9 permits adjusting the time commitment.
+No blocking omission in the promised exercise categories or obvious spelling/scoring error was found
+in the ten-page text review. The separate 115-DPI desktop rendering review found no clipping,
+overlap, missing text, or broken table rows. Physical-device and paper-print legibility remain
+unverified; text extraction and desktop rendering alone do not establish them.
+
+**Editorial follow-ups, not established content blockers:** page 4's warning about inflating ordinary
+parenting responsibilities can sound dismissive. When the verified source is available, consider
+inviting specific, truthful evidence from paid work, volunteering, projects, or caregiving without
+inflating titles or responsibilities. Page 9 could label its mixed weekly-review questions by path.
+Page 10's `Verified` tracker heading should be understood as recording checks performed, not certifying
+an employer or opportunity as safe; page 7 supplies that limit. Test these wording points with readers
+before treating the suggestions as validated improvements.
+
+**Next-step/link gap:** page 10 asks the reader to visit Launchpad and share the section where they
+need help, but supplies no web address or actionable feedback destination; the desktop visual review
+confirmed this gap. Structural inspection found **zero link annotations** in the whole PDF. There is
+no broken embedded link to report; the problem
+is a missing destination for the stated action. Resolve or explicitly track this gap before marking
+the standalone next-step/link review fully complete. A future verified revision should point clearly
+to the existing [free Launchpad page](https://remote-mom.vercel.app/launchpad/) and its help route;
+it must not require a new kit signup, marketing enrollment, or purchase to ask for help.
+
+The immediate useful action remains free: choose the path on page 2, complete one relevant exercise,
+and select an appropriate action from page 9. No paid product, price, checkout, or paid link appears in
+this PDF. Keep any eBook transition gated by #2-#4 and Stage 2 #16, as recorded in the
+[#1 offer map](#issue-1-decision-and-offer-map--2026-11-15); the kit does not need a paid CTA to be useful.
+
+**Structure/accessibility limits:** the PDF has no AcroForm fields, no structure-tag tree, and no
+document-language entry. It is a static worksheet PDF with extractable text, not a verified fillable
+form or a tagged accessible document. A4 page size and blank response areas do not prove successful
+printing or usable physical-phone text. No screen-reader, reading-order, keyboard-form, color-contrast,
+physical-phone, or paper-print result is claimed here. Keep the combined rendering/mobile/printability/
+accessibility criterion open for its remaining evidence and explicit limitations.
+
+### Reuse inventory for #6 and closure boundary
+
+This reviewed inventory supplies [#6](https://github.com/VanessaJaralve/RemoteMom/issues/6) with the
+free material that already exists. It is not a decision to produce a collection:
+
+| Later candidate | Material already included free | What a later scope decision must establish |
+|---|---|---|
+| #7 readiness/skills worksheets | Pages 3-5: life constraints, evidence-based skills mapping, and role comparison | Additional reader-supported depth or a distinct output; avoid selling the same starter tables again |
+| #8 job-search tools | Pages 6-7 and 10: search planning, opportunity/privacy checks, and application tracking | Demonstrated needs beyond these basics; truthful examples and verified references if expanded |
+| #9 work-life planning tools | Pages 8-9: pressure points, boundary/routine experiment, daily priorities, and seven-day actions | Evidence that a longer planner or different workflow is useful; a 30-day format alone does not establish added value |
+
+**Evidence now available for #11:** page inventory, both-path content assessment, advertised-exercise
+match, extracted-copy proofreading/claims review, all-page desktop rendering, and the free-content
+comparison for #6. The explicit source/provenance follow-up is
+[#27](https://github.com/VanessaJaralve/RemoteMom/issues/27), assigned to Vanessa and added to the
+Launchpad project as **Todo / P1 — First sprint**. It preserves this baseline, identifies the source
+search/patch options, and specifies the page-10 destination repair, versioning, and release checks.
+This satisfies the linked-follow-up option in #11/#16; it does not recover the editable master or
+repair the PDF. Keep #11 open for the page-10 destination, physical-mobile/delivery evidence with #19,
+and the stated print/accessibility limitations. No source recovery, PDF replacement, customer-facing
+copy change, or new submission/download test was performed by this review. The live download page
+was inspected on November 16 and still displays version `20261024` and the existing help route.
 
 ## Issue #16 — help, file handling, and buyer operations
 
 **Released subset; issue #16 remains In Progress.** The help and file-handling changes originally
 drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20).
 The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
-Monitoring ownership/cadence, the editable-source gap, remaining #19 coverage, and Stage 2 operations
-remain unresolved. The release record below preserves the distinction between deployed help and full
-completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
+Monitoring ownership/cadence, private support-record handling, remaining #19 coverage, and Stage 2
+operations remain unresolved. The editable master is still missing, with the source/repair work now
+explicitly tracked in #27. The release record below preserves the distinction between deployed help
+and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
 ### Stage 1: contact, intake, and escalation
 
@@ -419,11 +548,11 @@ payment promise, or assumed Payhip capability.
 |---|---|---|
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
-| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile, audience-path/copy/keyboard, and remote duplicate accounting |
-| Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #11 records source recovery/provenance outcome; no regenerated design equivalence is claimed |
-| Privacy of support records | Private-intake template and public-defect boundaries documented | Actual support handling uses a private location; published evidence contains no customer data |
+| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile and audience-path/copy/keyboard checks; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
+| Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #27 satisfies the explicit linked-follow-up option; the editable master remains missing and the PDF repair stays open |
+| Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, resolve/track #11 source gap, complete remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
+| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, complete the tracked #27 repair and remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
