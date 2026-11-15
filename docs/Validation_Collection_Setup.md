@@ -245,8 +245,9 @@ copy. Existing historical values and labels remain unchanged.
 
 **Readiness review — 2026-11-15, Asia/Manila:** this inventory supports the November 20 readiness
 target for Thanksgiving, Black Friday, and Cyber Monday content about practical tech and workspaces.
-It documents available evidence and proposed counting rules; **no fresh baseline or weekly report
-has been produced**. The Launchpad free-kit journey is separate from the `/black-friday/` app-beta
+At that review, it documented available evidence and proposed counting rules; **no fresh baseline or
+weekly report had been produced**. The subsequent November 16 request baseline and adopted duplicate
+convention are recorded below. The Launchpad free-kit journey is separate from the `/black-friday/` app-beta
 early-access campaign and its sheet tab. Do not combine their records.
 
 ### Reporting sources and verification boundary
@@ -254,7 +255,7 @@ early-access campaign and its sheet tab. Do not combine their records.
 | Source | Evidence and current availability |
 |---|---|
 | Launchpad attribution and collection code | Reviewed `landing/waitlist.js`, `api/launchpad-lead.js`, and `integrations/google-apps-script/validation-webhook.gs`. The page reads only `utm_source`, `utm_medium`, and `utm_campaign` from its current URL at submission; the endpoint trims/bounds each to 100 characters and supplies UTC `submittedAt`. The destination stores eleven columns, including a native `Received At` date, stage, challenge, UTMs, and `Source: launchpad-starter-kit-form`. This is request attribution, not visitor tracking or a first-touch attribution system. |
-| Live Launchpad destination | The labeled November 14 checks under #19, #18/PR #22, and #23/PR #25 verified controlled requests and destination mapping. Those checks establish collection behavior, not an aggregate audience baseline. No customer-row aggregation or reporting export was performed for this inventory. |
+| Live Launchpad destination | The labeled November 14 checks under #19, #18/PR #22, and #23/PR #25 verified controlled requests and destination mapping. Those checks establish collection behavior, not an aggregate audience baseline. No customer-row aggregation or reporting export was performed for the November 15 inventory. The separate November 16 bounded read and request baseline are recorded below. |
 | Vercel Web Analytics | **Not enabled**, observed read-only on November 15 in the [production deployment details](https://vercel.com/vanessajaralve-5251s-projects/remote-mom/8cALk2rKLhacwjc9rfM7Bsvqx4nr) for source commit `b09fd5c`: “Web Analytics Not Enabled.” Speed Insights also showed Not Enabled. No setting was changed. This is an unavailable reporting source, not an account-permission denial. |
 | Browser funnel events | No analytics SDK or page/form/download event reporting was found in the reviewed Launchpad HTML/scripts, API, or package dependencies. Form validation/recovery code and ordinary PDF links exist; they do not persist event totals. Other externally configured reporting, if any, remains unverified. |
 | Facebook, Instagram, Pinterest, and Payhip reports | No account reporting or dated export was inspected here. Social-platform clicks cannot substitute for website visits. The approximately 149 historical combined Payhip views, zero sales, and no reported checkout activity remain unverified owner-reported context, not a Launchpad baseline. Paid-product measures require the operating paid route and its verified reporting source. |
@@ -268,12 +269,12 @@ proposed and the result must read **not measured**, never zero or an estimated c
 |---|---|---|
 | Visits, visitors, and page views | Use **visits** to mean sessions covering `/launchpad/`; report source-defined visitors and page views separately. Record the chosen provider's identity, session, bot-filtering, and attribution rules before using its totals. | No verified source supplies these measures today; Vercel Web Analytics is disabled. **Not measured.** Request rows and social clicks cannot supply these denominators. |
 | Form starts | One first interaction with a signup field per measured visit; repeated edits in that visit do not add starts. Requires a visit identifier and collected start event. | No such event/visit collection is implemented in the reviewed source. **Not measured.** A submitted request does not reveal abandoned starts. |
-| Confirmed kit requests | Count persisted `Launchpad Leads` rows with `Source: launchpad-starter-kit-form` in the reporting window, after the QA exclusions below; disclose raw counts and any separately reviewed duplicate adjustment. | The destination is verified for controlled requests. A private dated aggregate is still pending. A row confirms collection, not that the browser received confirmation, marketing permission, or a completed download. Local browser backups do not count. |
+| Confirmed kit requests | Count persisted `Launchpad Leads` rows with `Source: launchpad-starter-kit-form` in the reporting window, after the QA exclusions below; disclose raw counts and any separately reviewed duplicate adjustment. | Controlled requests verified the destination. The November 16 record below adds an actual dated request baseline. A row confirms collection, not that the browser received confirmation, marketing permission, or a completed download. Local browser backups do not count. |
 | Submission errors | Count failed attempts by category: validation rejection, destination/server failure, and network/timeout/unknown receipt. Keep those categories separate; a lost response may follow a successful write. | Source code defines the states but stores no aggregate attempt/error events. **Not measured.** Do not infer a failed write from every browser error or compute an error rate without an attempt denominator. |
 | PDF link clicks | Count activations of the main download link and fallback open-PDF link separately; repeat activations are repeat click events. | Both are ordinary links in `landing/launchpad/download/index.html`; no click reporting is implemented. **Not measured.** Download-page visits or PDF HTTP requests are not equivalent to clicks. |
 | Completed PDF downloads | Successful file receipt/save on the reader's device, distinct from a click, viewer open, or HTTP 200 response. | No reliable aggregate completion source is available. **Not measured.** Controlled file-open/download checks are delivery QA, not audience download totals. |
 
-For the first actual report, record the site/product, source/export date, exact start and end
+For every report, record the site/product, source/export date, exact start and end
 (start inclusive, end exclusive), timezone, exclusions, unknown values, and duplicate policy.
 Use the API's UTC `Submitted At` for request-window inclusion and `Received At` for reconciliation;
 convert explicitly when presenting an Asia/Manila window. Flag missing/invalid historical times
@@ -284,16 +285,18 @@ boundary described above. Report stage and challenge separately from campaign au
 
 Retain but exclude these synthetic campaigns, plus any other clearly labeled QA, when a report is
 actually prepared: **`issue19-20261114055933z`**, **`issue18-20261114100210z`**, and
-**`issue23-20261114120210z`**. Their exclusion is a rule, not a claim that a baseline has already been
-filtered. Use a separate labeled QA campaign for future end-to-end checks rather than a promotion ID.
+**`issue23-20261114120210z`**. The November 15 inventory established this rule; its actual application
+to the November 15 reporting window is recorded in the November 16 baseline below. Use a separate
+labeled QA campaign for future end-to-end checks rather than a promotion ID.
 
-**Duplicate recommendation — pending operational adoption:** preserve all rows. Privately flag
+**Original duplicate recommendation — 2026-11-15, pending adoption at that time:** preserve all rows. Privately flag
 nearby requests with the same trimmed email, stage, challenge, and UTMs for review against receipt
 times and any known retry; a flag alone is not proof of duplication. Decide and record the review
 window before producing adjusted counts. Report raw non-QA requests, suspected repeat requests,
 and any evidence-based adjusted total separately. Do not count unique emails as unique visitors,
 delete repeat rows, or assume every repeat request is accidental. The current flow has no remote
 idempotency key. Keep contact values and raw payloads out of published reports.
+The dated November 16 convention below adopts and specifies this recommendation.
 
 ### Prepared holiday campaign links
 
@@ -322,11 +325,90 @@ preserves all three query values to the form. These exact links have not receive
 submission checks in this inventory. Email links remain deferred with #24; no email audience or
 permission is inferred from kit requests.
 
-**Remaining #13 work:** obtain a dated, private aggregate from the confirmed collection destination;
-adopt the counting/duplicate rules; and choose and verify a source for the presently unmeasured
-traffic and funnel events before reporting conversion or drop-off. No analytics service has been
-enabled by this documentation. A dated baseline and weekly reporting remain pending; source
-discovery and prepared links do not complete #13 or authorize campaign publication.
+### Observed request baseline — 2026-11-16
+
+**Scope:** the [Launchpad free Starter Kit](https://remote-mom.vercel.app/launchpad/), using persisted
+`Launchpad Leads` records with `Source: launchpad-starter-kit-form`. This is a confirmed-request
+baseline; it does not establish website traffic, conversion, marketing permission, or download totals.
+
+| Reporting metadata | Verified value |
+|---|---|
+| Reporting window | **2026-11-15 00:00 to 2026-11-16 00:00 Asia/Manila**, start inclusive and end exclusive |
+| Equivalent UTC bounds | **`2026-11-14T16:00:00Z` <= `Submitted At` < `2026-11-15T16:00:00Z`** |
+| Read/extraction time | **`2026-11-15T19:26:42.931Z`**, or **2026-11-16 03:26:42.931 Asia/Manila** |
+| Source and access | Authorized read-only owner-browser access to the collection sheet succeeded after the Sheets connector returned HTTP 403; no access setting changed |
+| Bounded-read checks | All eleven expected headers matched. A last-nonempty-receipt check and blank next-row check bounded the snapshot. The read was limited to headers, receipt-boundary navigation, submitted timestamps, and stage/challenge/UTM/source values; no Name, Email, or Raw Payload values were read |
+| Snapshot coverage | Eight stored rows; all had valid `Submitted At` values and the expected Launchpad source. Every submitted timestamp preceded the reporting window. These historical rows were not classified as customers or unique readers |
+
+This complete calendar day follows the November 14 taxonomy and ingestion releases. The snapshot
+contained each of the three known QA campaign identifiers listed above, all before the reporting
+window. Their exclusion was applied to the period selection; **zero QA requests were removed from
+this period**, not three. Other historical records were not classified or deduplicated by this read.
+
+| Request measure | Observed result for the stated window |
+|---|---|
+| Persisted Launchpad requests before QA exclusion | **0** |
+| In-window QA requests excluded | **0** |
+| Raw non-QA confirmed kit requests | **0** |
+| Requests in the five-minute pre-window duplicate-review lookback | **0** |
+| Candidate duplicate groups / extra rows | **0 / 0** |
+| Independently confirmed accidental-retry extras | **0** |
+| Retry-adjusted confirmed requests | **0**; no subtraction or row alteration occurred |
+| Current stage, challenge, and UTM source/medium/campaign breakdowns | **No observations in the window** |
+
+All eight examined stored timestamps and sources were valid, so no unclassifiable timestamp/source
+record affected this bounded read. No period or lookback request required an email comparison.
+The zero duplicate counts describe this empty period, not the duplicate status of historical rows.
+No sheet record was created, changed, or deleted.
+
+Visits, visitors, sessions, page views, form starts, submission-error totals, PDF clicks, and completed
+downloads remain **not measured**. Do not calculate conversion, error, or drop-off rates, infer that
+nobody visited, or draw a demand/sales conclusion from zero recorded requests in this one-day window.
+
+### Adopted duplicate accounting — 2026-11-16
+
+Keep **raw non-QA confirmed requests** as the primary total and retain every source row. For a period
+with eligible requests, privately compare the same trimmed email, stage, challenge, and all three
+UTM values. Sort by the API's `Submitted At`; matching requests within **five minutes of the first
+request in a group** are review candidates. Start a new group after that interval rather than
+extending a group indefinitely through successive retries. Include a five-minute pre-window
+lookback for boundary repeats; lookback rows do not enter the period's count.
+
+The five-minute convention is a review aid, not proof of duplication. A repeat may be intentional;
+changed values or longer-delayed retries may evade the flag. Preserve the extraction time, private
+row references, and review rationale. Report candidate groups/extra rows separately. Subtract an
+extra row only when independent evidence confirms an accidental retry; otherwise retain it in the
+primary total and disclose the unresolved candidate count. Label any resulting adjustment as
+retry-adjusted requests, not unique visitors or subscribers. Publish no contact values or raw payloads.
+
+This method was applied to the observed period by checking source, timestamps, QA markers, and the
+lookback first; there were no eligible requests to compare. No historical duplicate review or
+automatic deduplication was performed. Remote idempotency remains unimplemented; this convention
+provides the operational/accounting option allowed by #19.
+
+### Prepared manual weekly reporting routine — 2026-11-16
+
+Use a manual Monday review of the previous complete Monday-to-Monday week in Asia/Manila, with
+start-inclusive/end-exclusive bounds. The next complete period would be **November 16 00:00 to
+November 23 00:00 Asia/Manila**. Confirm the reporting owner alongside Stage 1 #16 support ownership.
+This is a prepared routine, not a scheduled automation or a completed weekly report.
+
+For each report, reuse the metadata and request-measure tables above: record the period and extraction
+time, privately verify the source/header/read boundary, apply QA exclusions and duplicate accounting,
+and retain raw and adjusted totals separately. Add request counts by UTM channel/campaign, current
+stage, and challenge as separate dimensions, retaining unknown/unattributed values. Report unavailable
+traffic/event measures as **not measured**; add conversion/drop-off only after reliable compatible
+denominators exist. Record observed delivery issues and the next investigation/action without private
+contact data. Add paid-product measures only when that separate route and its reporting are verified.
+
+The baseline table above is the worked **one-day** example. No seven-day figures or weekly audience
+trends have been observed or fabricated. The manual routine does not enable analytics or email.
+
+**Remaining #13 work after the November 16 read:** choose and verify reliable sources/counting for
+the presently unmeasured traffic and funnel events; confirm actual channels and test their final
+campaign links; and produce an actual weekly report using an agreed owner/cadence. The dated
+confirmed-request baseline, applied QA filters, and duplicate convention are now recorded, but these
+do not complete #13 or authorize campaign publication. No analytics service has been enabled.
 
 ## Preview Behavior
 
