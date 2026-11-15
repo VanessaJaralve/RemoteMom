@@ -322,17 +322,19 @@ No paid transaction, outreach, permission, PDF, or app-local data change is part
 
 ## Issue #11 - published Starter Kit content review - 2026-11-16
 
-**Content inventory and promise check completed; full issue acceptance remains open.** This review
-used the actual [published distribution PDF](../../landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf),
+**Historical baseline review; content inventory and promise check completed; full issue acceptance
+remains open.** This review used the actual [distribution PDF at the pre-patch commit](https://github.com/VanessaJaralve/RemoteMom/blob/8888c881417b8caac04c20fd6ca03e104e12b52d/landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf),
 not the different legacy generator output. It covers the text of all ten pages, audience paths,
 exercise coverage, wording, next steps, PDF structure, and the desktop rendering evidence below.
 It does not claim a physical-phone test,
 reader interview, paper printout, complete accessibility test, or recovered editable design source.
 The remaining device and live-journey evidence belongs in the accompanying #11/#19 verification.
+The subsequent [#27 repair record](#issue-27---guarded-starter-kit-link-repair---2026-11-16) prepares
+the missing page-10 destinations; this baseline review retains the original findings and file identity.
 
 **Reviewed identity:** ten A4 pages, **110,460 bytes**, SHA-256
 `b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`; the download link's observed
-version marker remains `20261024`. `pypdf` extracted text from every page and `pdfinfo` confirmed the
+version marker was `20261024`. `pypdf` extracted text from every page and `pdfinfo` confirmed the
 page count/size. The existing PDF, generator, and user data were not changed. The ReportLab producer
 metadata is not evidence that the saved legacy generator reproduces this design; the existing
 [artifact/source distinction](#stage-1-starter-kit-artifact-inventory) still applies.
@@ -438,15 +440,133 @@ free material that already exists. It is not a decision to produce a collection:
 
 **Evidence now available for #11:** page inventory, both-path content assessment, advertised-exercise
 match, extracted-copy proofreading/claims review, all-page desktop rendering, and the free-content
-comparison for #6. The explicit source/provenance follow-up is
+comparison for #6. At the time of this baseline review, the explicit source/provenance follow-up was
 [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27), assigned to Vanessa and added to the
-Launchpad project as **Todo / P1 — First sprint**. It preserves this baseline, identifies the source
+Launchpad project as **Todo / P1 — First sprint**. It preserved this baseline, identified the source
 search/patch options, and specifies the page-10 destination repair, versioning, and release checks.
 This satisfies the linked-follow-up option in #11/#16; it does not recover the editable master or
 repair the PDF. Keep #11 open for the page-10 destination, physical-mobile/delivery evidence with #19,
 and the stated print/accessibility limitations. No source recovery, PDF replacement, customer-facing
 copy change, or new submission/download test was performed by this review. The live download page
-was inspected on November 16 and still displays version `20261024` and the existing help route.
+was inspected on November 16 and displayed version `20261024` and the existing help route.
+The verified candidate below now advances #27 to In Progress; it does not retroactively turn this
+baseline review into a release or a physical-device check.
+
+## Issue #27 - guarded Starter Kit link repair - 2026-11-16
+
+**In Progress — repair implemented and locally verified; physical-phone acceptance remains open.**
+The `free-links-v1` patch adds a visible page-10 block with two clickable destinations:
+[Launchpad](https://remote-mom.vercel.app/launchpad/) and
+[help or feedback](https://remote-mom.vercel.app/launchpad/#help). It explains that asking for help
+or sharing feedback does not require a new kit request. The existing content and stable public
+filename remain intact. The download HTML in this revision uses **`20261116`** in both PDF links and
+the visible file-version text. The [#27 release record](https://github.com/VanessaJaralve/RemoteMom/issues/27)
+tracks the actual merge, deployment, public-byte readback, and browser checks separately from the
+local implementation evidence below.
+
+### Provenance and repair boundary
+
+The reviewed original binary was introduced by
+[`472f1742f7609627a31390f3eb9779d4c5271dac`](https://github.com/VanessaJaralve/RemoteMom/commit/472f1742f7609627a31390f3eb9779d4c5271dac)
+on **2026-10-24 at 18:36:40 Asia/Manila**. That commit changed the download HTML and PDF binary,
+without adding an editable PDF source. The original ReportLab metadata gives a creation time of
+18:25:24 that day; it does not identify a saved design master. The tracked legacy generator uses
+different typography and output and was not updated with that redesign.
+
+The editable master remains **not recovered**. The new
+[`scripts/patch-launchpad-starter-kit.py`](../../scripts/patch-launchpad-starter-kit.py) instead
+reproduces a bounded repair from the exact reviewed baseline. It checks the baseline SHA-256,
+clones the original PDF, reuses its embedded Arial font objects for the added text, preserves the
+PDF 1.4 format and ten A4 pages, and adds two page-10 URI annotations plus document language `en`.
+The document remains static and untagged; a language entry is not full accessibility remediation.
+Its fixed metadata date identifies this patch revision, not an observed production deployment time.
+
+The script writes only a new `.pdf` under `tmp/pdfs/issue27`, rejects redirected staging paths, and
+refuses existing outputs, in-place replacement, an incorrect baseline, or output outside staging.
+It never publishes the distribution file. The legacy staging-only generator remains separate.
+
+| Artifact | Verified identity and purpose |
+|---|---|
+| Preserved original / rollback PDF | **110,460 bytes**; SHA-256 `b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`; original Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` |
+| Selected `free-links-v1` ASCII-safe distribution artifact | **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37`; selected for version `20261116` at the stable public filename |
+| Equivalent normal serialization | **115,552 bytes**; SHA-256 `9bbdd8253efb19bbbc0e05afe640d76c00ecff20b34633ce7c8449b59fd7e86d`; comparison/rebuild evidence, not the selected release bytes |
+| Guarded patch source | Revision `free-links-v1`; script SHA-256 `cc5154d3cc6ba0ebdfd0e21ddceae5d3840c8b056fcf5c6d8cb252eb6bc6a873` |
+
+The ASCII-safe serialization was selected after a binary browser-upload timeout. It adds a standard
+outer ASCIIHexDecode filter while retaining the original stream filters and parameters; it preserves
+all **19 decoded streams** and renders identically to the normal candidate. It contains only printable
+ASCII, LF, or TAB, with no CR or NUL bytes. The larger byte count is a transport-serialization choice;
+the reader receives the same PDF content and links.
+
+### Rebuild and rollback
+
+Use an isolated Python environment with **`pypdf==6.21.4`** and **`reportlab==4.4.9`**. These exact
+versions produced the recorded deterministic hashes; Poppler **26.05.0** supplied the render checks.
+The pre-patch commit
+[`8888c881417b8caac04c20fd6ca03e104e12b52d`](https://github.com/VanessaJaralve/RemoteMom/commit/8888c881417b8caac04c20fd6ca03e104e12b52d)
+retains the exact original PDF and the latest pre-patch download/help HTML. It is the rollback source,
+and avoids relying on the public path after that path contains the new revision. Ensure that commit
+is available locally; do not substitute a newly patched file as input.
+
+From the repository root, with the isolated environment activated, use new staging filenames:
+
+```bash
+(
+  set -eu
+  set -o noclobber
+  mkdir -p tmp/pdfs/issue27
+  git show 8888c881417b8caac04c20fd6ca03e104e12b52d:landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf > tmp/pdfs/issue27/baseline-from-8888c88.pdf
+  python -m pip install 'pypdf==6.21.4' 'reportlab==4.4.9'
+  python scripts/patch-launchpad-starter-kit.py \
+    --input tmp/pdfs/issue27/baseline-from-8888c88.pdf \
+    --output tmp/pdfs/issue27/starter-kit-20261116-rebuild-01-ascii.pdf \
+    --ascii-safe
+  sha256sum tmp/pdfs/issue27/starter-kit-20261116-rebuild-01-ascii.pdf
+)
+```
+
+The expected output hash is the selected **`1bd4cc49…d204f37`** hash in the table above. Use another
+unused output filename for a repeat run; the guards intentionally refuse overwrites. Omitting
+`--ascii-safe` produces the separately recorded normal serialization. Keep staging PDFs, render
+images, and private/local verification artifacts out of the repository commit.
+
+For rollback, extract the preserved PDF and HTML into new staging files:
+
+```bash
+(
+  set -eu
+  set -o noclobber
+  mkdir -p tmp/pdfs/issue27
+  git show 8888c881417b8caac04c20fd6ca03e104e12b52d:landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf > tmp/pdfs/issue27/rollback-20261024.pdf
+  git show 8888c881417b8caac04c20fd6ca03e104e12b52d:landing/launchpad/download/index.html > tmp/pdfs/issue27/rollback-20261024-download.html
+  sha256sum tmp/pdfs/issue27/rollback-20261024.pdf
+)
+```
+
+Verify the full original hash above, restore that PDF at the stable public filename in the reviewed
+rollback change, and return both PDF query markers plus visible version text to **`20261024`**.
+Use the extracted HTML as a reference while preserving any unrelated later help changes. Deploy
+through the normal review process, verify the restored public bytes and both download routes, and
+record the rollback outcome. Extraction alone does not change production.
+
+### Executed verification and remaining acceptance
+
+| Check | Observed candidate result |
+|---|---|
+| Strict PDF parse and structure | Passed for normal and selected ASCII-safe variants; PDF 1.4, ten A4 pages, unchanged page boxes/rotation, language `en`, and exactly two page-10 URI links with matching visible URLs and bounded rectangles |
+| Original content and fonts | All original text preserved; pages 1–9 retain original decoded page content; the added block reuses original embedded Arial regular/bold fonts |
+| Repeat builds | Both variants reproduced their exact recorded SHA-256 hashes with the pinned dependencies |
+| 115-DPI render comparison | Pages 1–9 match the baseline pixel for pixel; all ten normal/ASCII-safe candidate renders match. Page 10 changes only the added block, within pixel bounds `(90, 1150)` to `(860, 1251)` on 951 × 1345 renders |
+| ASCII serialization equivalence | All 19 decoded streams unchanged; printable ASCII/LF/TAB only, with zero CR/NUL bytes |
+| Negative guards | Rejected changed-input hash, existing output, same input/output, output outside staging, and a symlink-redirected staging root; preserved baseline remained unchanged |
+| Focused landing-page Jest suite | **9 tests passed** |
+| Existing Python staging safeguards | **2 tests passed**; legacy generation preserved an existing distribution file and did not create a distribution directory |
+
+The patch and download HTML implement version **`20261116`**. Record the actual merge, deployment,
+public PDF hash/content type, both download routes, and real browser link navigation in
+[#27](https://github.com/VanessaJaralve/RemoteMom/issues/27) after those checks occur. Physical-phone readability, paper-print and screen-reader checks remain
+unperformed; the wider #11/#19 and #18 acceptance stays open. No new signup, marketing permission,
+paid link, customer record, or app-local data change is introduced by this candidate.
 
 ## Issue #16 — help, file handling, and buyer operations
 
@@ -454,8 +574,10 @@ was inspected on November 16 and still displays version `20261024` and the exist
 drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20).
 The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
 Monitoring ownership/cadence, private support-record handling, remaining #19 coverage, and Stage 2
-operations remain unresolved. The editable master is still missing, with the source/repair work now
-explicitly tracked in #27. The release record below preserves the distinction between deployed help
+operations remain unresolved. The editable master is still missing. The guarded #27 repair candidate
+and its rebuild/rollback record are now verified locally; #27 records release checks and remaining
+physical-device evidence.
+The release record below preserves the distinction between deployed help
 and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
 ### Stage 1: contact, intake, and escalation
@@ -490,20 +612,24 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 
 ### Stage 1: Starter Kit artifact inventory
 
-The following identities come from the reviewed `main` tree. The release preserved the distribution
-PDF, and the public ten-page kit opened during the production check. Git blob IDs identify the recorded
-repository bytes; they are not a claim of matching editable design sources. Local save/open evidence is recorded separately below.
+**Inventory updated 2026-11-16:** this revision selects the guarded #27 artifact at the stable
+repository path. The [#27 release record](https://github.com/VanessaJaralve/RemoteMom/issues/27)
+tracks deployed-byte verification. Git blob IDs identify recorded bytes; they do not establish
+a matching editable master.
+Historical local save/open evidence remains recorded separately below.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
-| Current distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Preserve this published-design artifact while #11 reviews its contents and provenance |
+| Distribution artifact selected for version `20261116` | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | `free-links-v1`, marker `20261116`, **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37` | Verified guarded patch with page-10 free return/help links; confirm live delivery against the #27 release record |
+| Preserved published baseline / rollback | Same path at commit `8888c881417b8caac04c20fd6ca03e104e12b52d` | Marker `20261024`, 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Retain exact original bytes and historical review; reconstruct with the #27 `git show` procedure |
+| Reproducible repair source | `scripts/patch-launchpad-starter-kit.py` | Guarded revision `free-links-v1`; pinned dependency and hash evidence above | New staging output only; repairs the verified baseline without claiming editable-master recovery |
 | Legacy generated output | `output/pdf/remote-moms-work-fit-safety-starter-kit.pdf` | 20,025 bytes; Git blob `38251317eb1904322d6b9cc001ce47f03a6dacec` | Different bytes from the distribution PDF; not an interchangeable master |
 | Legacy editable generator | `scripts/build-launchpad-starter-kit.py` | Existing ReportLab source | Treat staging-only output as a review candidate; it is not verified to reproduce the published design |
 | Editable master for current published design | Not identified in the repository or saved-assets review | **Source master not found** | Recover or identify the original source before claiming the current design is reproducible |
 
-The existing download link uses `?v=20261024`. Preserve it until a reviewed replacement is released;
-it is an observed link marker, not evidence of an approved release date. Do not overwrite the current
-distribution PDF with legacy output to make the inventory appear consistent.
+The previous public link used `?v=20261024`. This revision uses `?v=20261116` in both download links
+and the visible version label. Record the actual release separately; a marker
+alone does not prove deployment. Do not replace either reviewed artifact with legacy generator output.
 
 For future candidates, use `remote-moms-work-fit-safety-starter-kit_YYYY-MM-DD_rN.pdf`, with the actual
 candidate date and revision. Keep the public filename stable so existing links remain usable. Record
@@ -549,7 +675,7 @@ payment promise, or assumed Payhip capability.
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
 | Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile and audience-path/copy/keyboard checks; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
-| Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #27 satisfies the explicit linked-follow-up option; the editable master remains missing and the PDF repair stays open |
+| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; #27 guarded candidate, pinned rebuild, and exact rollback verified locally | Editable master remains missing; #27 records merge/production readback/link navigation separately, with physical-phone evidence still required |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
 | Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, complete the tracked #27 repair and remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
