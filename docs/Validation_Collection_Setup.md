@@ -209,9 +209,33 @@ available in that issue when this revision was prepared. Do not mark the reader-
 Controlled tests cover all 36 stage/challenge pairs, the real form's changed-stage behavior, and Apps
 Script's old/new mapping. PR #22 separately records the production release and labeled new-category
 destination check, campaign `issue18-20261114100210z`; exclude that QA activity from #13 reporting.
-#12 is Done after its optional email scope moved to #24. #18 remains In Progress for representative
-reader wording and manual native-picker keyboard verification. The spreadsheet safeguard in #23 and
-remote retry/idempotency decision in #19 remain separate from that verified taxonomy release.
+#12 is Done after its optional email scope moved to #24. Vanessa's November 16 confirmation below
+completes the manual native-arrow check; #18 remains In Progress for representative-reader wording.
+The spreadsheet safeguard in #23 is complete. #19 adopts the documented operational duplicate-accounting
+option without implementing remote idempotency; its remaining physical-PDF and journey acceptance is
+separate from the verified taxonomy release.
+
+### User-reported keyboard acceptance — 2026-11-16
+
+In direct response to the request to open the challenge dropdown, use the up/down arrow keys, press
+Enter, and check that the answer remains selected, Vanessa replied: “It worked for me.” This is
+**user-reported success** for the explicit native-arrow selection/commit check. Device, operating
+system, and browser were not specified; do not label it as a new automated Chrome or phone test.
+
+Together with the earlier Tab navigation, native typeahead, form submission/error focus, and
+exercise/note/copy/fallback evidence, this completes the remaining keyboard items in #18/#19.
+#18 still needs representative-reader wording findings. #19 still needs detailed physical-phone/
+saved-PDF readability and final acceptance. Vanessa's separate page-10 report identifies a circular
+next-step journey, not a readability pass. The bounded correction is implemented and locally verified
+as `next-step-v2`, marker `20261116b`: choose one page-9 action, optionally explore Android beta
+interest, or use the existing help route. Exact artifact identities, preservation checks, and pinned
+rebuild/rollback instructions are in the
+[business roadmap](launchpad-business/README.md#issue-11--useful-next-step-after-the-kit--2026-11-16).
+Record actual deployment, public-byte readback, destination checks, and release acceptance in
+[#11](https://github.com/VanessaJaralve/RemoteMom/issues/11); local verification does not establish a
+live replacement. The paid eBook CTA remains deferred until its actual Payhip listing/delivery and
+support are verified under #2–#4/Stage 2 #16. No collection payload, permission, or app-data change is
+part of this PDF revision.
 
 ### Controlled verification — 2026-11-14
 
@@ -429,7 +453,8 @@ provides the operational/accounting option allowed by #19.
 
 Use a manual Monday review of the previous complete Monday-to-Monday week in Asia/Manila, with
 start-inclusive/end-exclusive bounds. The next complete period would be **November 16 00:00 to
-November 23 00:00 Asia/Manila**. Confirm the reporting owner alongside Stage 1 #16 support ownership.
+November 23 00:00 Asia/Manila**. Confirm the weekly reporting owner separately; Vanessa's daily
+help-inbox monitoring commitment does not assign ownership of the weekly report.
 This is a prepared routine, not a scheduled automation or a completed weekly report.
 
 For each report, reuse the metadata and request-measure tables above: record the period and extraction
@@ -675,8 +700,14 @@ No paid checkout, outreach, email automation, app-beta enrollment, or app-data c
 **Guidance drafted 2026-11-14; help subset released through PR #20.** The live help route
 reuses `vanessa.jaralve@gmail.com`, already present in the RemoteMom app/landing beta-feedback source,
 with the subject `RemoteMom Launchpad help`. Keep the address visible and copyable if the visitor's
-email application does not open. The owner still needs to confirm Launchpad monitoring responsibility
-and cadence.
+email application does not open. On November 16, Vanessa answered “I can check everyday” to the
+existing help-inbox monitoring question. **Vanessa is the confirmed monitor, with a daily review
+cadence during the campaign.** No automated reminder or guaranteed response time is implied.
+
+The earlier proposal uses one private email thread per help request, with a separate private case log
+only if needed. Unresolved-case follow-up responsibility and the private support-record arrangement
+remain unconfirmed; the cadence answer alone does not establish them or actual case-handling history.
+No mailbox settings, labels, log, or schedule were created by recording this confirmation.
 
 Public response expectation:
 
@@ -707,15 +738,20 @@ The current distribution PDF and legacy generated output are different files. Th
 the current published design was not found in the repository or saved-assets review; staging output must not be
 treated as design-equivalent or automatically copied over it.
 
-Before marking the Stage 1 support gate complete, link deployed desktop/mobile help checks, the
-owner-confirmed monitoring arrangement, verified failure/retry instructions, and #19's collection/download
-evidence. Source inspection and local tests alone do not establish that the live integration works.
+Before marking the Stage 1 support gate complete, link deployed desktop/mobile help checks, Vanessa's
+confirmed daily monitoring commitment, confirmed unresolved-case follow-up/private-record handling,
+verified failure/retry instructions, and #19's collection/download evidence. Ownership/cadence no
+longer need reconfirmation. Source inspection and local tests alone do not establish that the live
+integration works.
 No email automation, marketing enrollment, purchase, refund, or customer outreach is performed by this
 documentation change.
 
 ## Issue #19 initial production test — 2026-11-14
 
-**Initial validation started; #19 is not closed.** This evidence applies to the released help subset at
+**Historical initial validation; #19 is not closed.** The remaining-work statements in this initial
+record reflect the November 14 check. Current keyboard acceptance is recorded above, and November 16
+confirms daily inbox monitoring; neither changes the scope of this earlier production test.
+This evidence applies to the released help subset at
 commit [`061c31bd7e4eb968ecfef740a9a63239e1490bef`](https://github.com/VanessaJaralve/RemoteMom/commit/061c31bd7e4eb968ecfef740a9a63239e1490bef),
 merged through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20) at 13:58:58 Manila
 (`2026-11-14T05:58:58Z`). The production deployment succeeded; see the
