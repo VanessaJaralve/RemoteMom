@@ -321,9 +321,48 @@ or selected on-page path. Do not use `utm_content`, which this form does not cap
 | Pinterest / Cyber Monday | [Prepared p05](https://remote-mom.vercel.app/launchpad/?utm_source=pinterest&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p05) | [Prepared p06](https://remote-mom.vercel.app/launchpad/?utm_source=pinterest&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p06) |
 
 Before publishing, finalize the post/channel mapping and verify that the actual social-link route
-preserves all three query values to the form. These exact links have not received live HTTP or
-submission checks in this inventory. Email links remain deferred with #24; no email audience or
+preserves all three query values to the form. These original examples had not received live HTTP or
+submission checks at the November 15 inventory. The dated direct-link checks below cover the later
+Facebook/Instagram campaign register. Email links remain deferred with #24; no email audience or
 permission is inferred from kit requests.
+
+### Holiday direct-link verification — 2026-11-16
+
+The [canonical campaign pack](../marketing/launchpad-social/holiday-2026-campaign.md) now contains
+12 post IDs across both paths, each with Facebook and Instagram variants. These are the existing
+accounts referenced by the download page; current activity and actual posting routes are not
+established by those account links. Pinterest and email are not in the prepared posting plan.
+
+| Verification | Observed result |
+|---|---|
+| All 24 direct HTTP URLs | **24/24 passed** on November 16, 05:15:16–05:15:54 Asia/Manila (`2026-11-15T21:15:16.665417Z`–`21:15:54.402038Z`). Each returned HTTP 200 and `text/html; charset=utf-8`, retained its exact URL and all three expected UTM values, and contained the expected Launchpad title and actual `data-launchpad-form` targeting `/api/launchpad-lead` |
+| Browser navigation to signup | Chrome opened Facebook p01/p03/p05 and Instagram p02/p04/p06. Activating the hero Starter Kit link reached `#starter-kit` while preserving all three query values exactly in each of the six cases |
+| Naming and coverage | 24 unique links, approved source values, `organic_social` medium, stable post IDs, and each captured value under 100 characters. Original p01–p06 occasion/audience pairs are retained |
+| Submission and attribution limit | No form was submitted for these checks. Prior labeled production checks establish collection mapping; these direct URL checks do not establish a social-app redirect, Story sticker, shared bio route, visitor counter, or new collected request |
+
+Use the post's registered link when its actual placement is approved and record that real route in
+the campaign publication log. A changing Instagram bio link cannot reliably identify the originating
+older feed post; report its observed active interval and route limitation. The full #13 channel-link
+criterion remains open for the actual platform routes.
+
+### Reporting capability decision — 2026-11-16
+
+A read-only check of the [project Analytics page](https://vercel.com/vanessajaralve-5251s-projects/remote-mom/analytics)
+showed the **Hobby** team plan, an **Enable** control, and an explicit **Demo Data** preview. Analytics
+is still disabled; the demo figures are not RemoteMom results. No setting, plan, or service was changed.
+
+The current [Vercel custom-event documentation](https://vercel.com/docs/analytics/custom-events) limits
+custom events to Pro/Enterprise. Its [pricing table](https://vercel.com/docs/analytics/limits-and-pricing),
+checked November 16, includes 50,000 monthly events for Hobby but no custom events or UTM reporting;
+Pro events are usage-priced and the optional Plus add-on includes UTM reporting. Therefore enabling
+basic Hobby page views alone would not supply the required form-start/error/PDF-click breakdowns.
+
+The remaining concrete decision is an approved reporting source and cost boundary for the full
+funnel, or an explicit limited-measurement experiment decision with unavailable metrics retained.
+Any approved event implementation should send only the fixed page/event category and permitted
+campaign metadata, never names, emails, notes, form answers, or raw request bodies. Keep confirmed
+requests sourced from the existing private destination and apply the recorded QA/duplicate rules.
+No full-funnel source, paid upgrade, new telemetry, or campaign-go decision is claimed here.
 
 ### Observed request baseline — 2026-11-16
 
