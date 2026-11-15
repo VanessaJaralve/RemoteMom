@@ -5,7 +5,7 @@ Extract the October 24 baseline as documented in docs/launchpad-business/README.
 then run from the repository root with explicit paths:
   python scripts/patch-launchpad-starter-kit.py \
     --input tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf \
-    --output tmp/pdfs/issue27/starter-kit-free-links.pdf
+    --output tmp/pdfs/issue27/starter-kit-useful-next-step.pdf
 
 Add --ascii-safe for an optional 7-bit transport serialization of the same patch.
 The normal binary PDF is preferred when direct file upload is available. Both
@@ -46,14 +46,14 @@ from reportlab.pdfgen.canvas import Canvas
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 STAGING_ROOT = REPOSITORY_ROOT / "tmp" / "pdfs" / "issue27"
 BASELINE_SHA256 = "b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e"
-PATCH_REVISION = "free-links-v1"
-PATCH_DATE = "D:20261116000000+08'00'"
+PATCH_REVISION = "next-step-v2"
+PATCH_DATE = "D:20261116060000+08'00'"
 PAGE_SIZE = (595.2756, 841.8898)
 # PDF coordinates use the bottom-left origin. The original closing paragraph ends
 # above y=131.93; the existing footer line/text is below this reviewed blank band.
 PATCH_BOUNDS = (56.69291, 54.0, 538.58271, 122.0)
 TEXT_X = 62.69291
-LAUNCHPAD_URL = "https://remote-mom.vercel.app/launchpad/"
+BETA_URL = "https://remote-mom.vercel.app/beta/"
 HELP_URL = "https://remote-mom.vercel.app/launchpad/#help"
 
 
@@ -75,12 +75,14 @@ def overlay(source: PdfReader) -> tuple[PdfReader, list[dict]]:
     canvas.line(PATCH_BOUNDS[0], 122, PATCH_BOUNDS[2], 122)
     canvas.setFillColor(HexColor("#173d32"))
     canvas.setFont("Helvetica-Bold", 10)
-    canvas.drawString(TEXT_X, 108, "Continue for free")
+    canvas.drawString(TEXT_X, 108, "Choose your next step")
+    canvas.setFont("Helvetica", 10)
+    canvas.drawString(TEXT_X, 92, "Choose one Career or Remote-Life action from page 9.")
 
     links = []
     for label, url, baseline in (
-        ("Launchpad: ", LAUNCHPAD_URL, 92),
-        ("Help or feedback: ", HELP_URL, 76),
+        ("Optional Android beta interest: ", BETA_URL, 76),
+        ("Help or feedback: ", HELP_URL, 60),
     ):
         canvas.setFont("Helvetica", 10)
         canvas.drawString(TEXT_X, baseline, label)
@@ -94,8 +96,6 @@ def overlay(source: PdfReader) -> tuple[PdfReader, list[dict]]:
             "rect": (url_x - 0.5, baseline - 2, url_x + url_width + 0.5, baseline + 11),
         })
 
-    canvas.setFont("Helvetica", 9)
-    canvas.drawString(TEXT_X, 60, "No new kit request is needed to ask for help or share feedback.")
     canvas.showPage()
     canvas.save()
     reader = PdfReader(BytesIO(buffer.getvalue()))
