@@ -241,6 +241,93 @@ were shortened to the wording in the table above, preserving their values and me
 verification checks the shortened labels, native keyboard selection, and the associated request/helper
 copy. Existing historical values and labels remain unchanged.
 
+## Issue #13 — measurement inventory and definitions
+
+**Readiness review — 2026-11-15, Asia/Manila:** this inventory supports the November 20 readiness
+target for Thanksgiving, Black Friday, and Cyber Monday content about practical tech and workspaces.
+It documents available evidence and proposed counting rules; **no fresh baseline or weekly report
+has been produced**. The Launchpad free-kit journey is separate from the `/black-friday/` app-beta
+early-access campaign and its sheet tab. Do not combine their records.
+
+### Reporting sources and verification boundary
+
+| Source | Evidence and current availability |
+|---|---|
+| Launchpad attribution and collection code | Reviewed `landing/waitlist.js`, `api/launchpad-lead.js`, and `integrations/google-apps-script/validation-webhook.gs`. The page reads only `utm_source`, `utm_medium`, and `utm_campaign` from its current URL at submission; the endpoint trims/bounds each to 100 characters and supplies UTC `submittedAt`. The destination stores eleven columns, including a native `Received At` date, stage, challenge, UTMs, and `Source: launchpad-starter-kit-form`. This is request attribution, not visitor tracking or a first-touch attribution system. |
+| Live Launchpad destination | The labeled November 14 checks under #19, #18/PR #22, and #23/PR #25 verified controlled requests and destination mapping. Those checks establish collection behavior, not an aggregate audience baseline. No customer-row aggregation or reporting export was performed for this inventory. |
+| Vercel Web Analytics | **Not enabled**, observed read-only on November 15 in the [production deployment details](https://vercel.com/vanessajaralve-5251s-projects/remote-mom/8cALk2rKLhacwjc9rfM7Bsvqx4nr) for source commit `b09fd5c`: “Web Analytics Not Enabled.” Speed Insights also showed Not Enabled. No setting was changed. This is an unavailable reporting source, not an account-permission denial. |
+| Browser funnel events | No analytics SDK or page/form/download event reporting was found in the reviewed Launchpad HTML/scripts, API, or package dependencies. Form validation/recovery code and ordinary PDF links exist; they do not persist event totals. Other externally configured reporting, if any, remains unverified. |
+| Facebook, Instagram, Pinterest, and Payhip reports | No account reporting or dated export was inspected here. Social-platform clicks cannot substitute for website visits. The approximately 149 historical combined Payhip views, zero sales, and no reported checkout activity remain unverified owner-reported context, not a Launchpad baseline. Paid-product measures require the operating paid route and its verified reporting source. |
+
+### Metric definitions and counting limits
+
+The definitions below are the reporting contract. Where event collection is absent, the method is
+proposed and the result must read **not measured**, never zero or an estimated conversion rate.
+
+| Metric | Counting rule | Available evidence / limitation |
+|---|---|---|
+| Visits, visitors, and page views | Use **visits** to mean sessions covering `/launchpad/`; report source-defined visitors and page views separately. Record the chosen provider's identity, session, bot-filtering, and attribution rules before using its totals. | No verified source supplies these measures today; Vercel Web Analytics is disabled. **Not measured.** Request rows and social clicks cannot supply these denominators. |
+| Form starts | One first interaction with a signup field per measured visit; repeated edits in that visit do not add starts. Requires a visit identifier and collected start event. | No such event/visit collection is implemented in the reviewed source. **Not measured.** A submitted request does not reveal abandoned starts. |
+| Confirmed kit requests | Count persisted `Launchpad Leads` rows with `Source: launchpad-starter-kit-form` in the reporting window, after the QA exclusions below; disclose raw counts and any separately reviewed duplicate adjustment. | The destination is verified for controlled requests. A private dated aggregate is still pending. A row confirms collection, not that the browser received confirmation, marketing permission, or a completed download. Local browser backups do not count. |
+| Submission errors | Count failed attempts by category: validation rejection, destination/server failure, and network/timeout/unknown receipt. Keep those categories separate; a lost response may follow a successful write. | Source code defines the states but stores no aggregate attempt/error events. **Not measured.** Do not infer a failed write from every browser error or compute an error rate without an attempt denominator. |
+| PDF link clicks | Count activations of the main download link and fallback open-PDF link separately; repeat activations are repeat click events. | Both are ordinary links in `landing/launchpad/download/index.html`; no click reporting is implemented. **Not measured.** Download-page visits or PDF HTTP requests are not equivalent to clicks. |
+| Completed PDF downloads | Successful file receipt/save on the reader's device, distinct from a click, viewer open, or HTTP 200 response. | No reliable aggregate completion source is available. **Not measured.** Controlled file-open/download checks are delivery QA, not audience download totals. |
+
+For the first actual report, record the site/product, source/export date, exact start and end
+(start inclusive, end exclusive), timezone, exclusions, unknown values, and duplicate policy.
+Use the API's UTC `Submitted At` for request-window inclusion and `Received At` for reconciliation;
+convert explicitly when presenting an Asia/Manila window. Flag missing/invalid historical times
+separately instead of silently substituting a timestamp. Keep missing UTMs as **unattributed**,
+missing stage/challenge values as **unknown**, and unrecognized values as **unmapped**. Retain
+recognized historical values under the existing mapping. Preserve raw values and the option-set
+boundary described above. Report stage and challenge separately from campaign audience.
+
+Retain but exclude these synthetic campaigns, plus any other clearly labeled QA, when a report is
+actually prepared: **`issue19-20261114055933z`**, **`issue18-20261114100210z`**, and
+**`issue23-20261114120210z`**. Their exclusion is a rule, not a claim that a baseline has already been
+filtered. Use a separate labeled QA campaign for future end-to-end checks rather than a promotion ID.
+
+**Duplicate recommendation — pending operational adoption:** preserve all rows. Privately flag
+nearby requests with the same trimmed email, stage, challenge, and UTMs for review against receipt
+times and any known retry; a flag alone is not proof of duplication. Decide and record the review
+window before producing adjusted counts. Report raw non-QA requests, suspected repeat requests,
+and any evidence-based adjusted total separately. Do not count unique emails as unique visitors,
+delete repeat rows, or assume every repeat request is accidental. The current flow has no remote
+idempotency key. Keep contact values and raw payloads out of published reports.
+
+### Prepared holiday campaign links
+
+**Proposal only — not published or tested end to end.** Facebook, Instagram, and Pinterest are
+candidate channels; finalize only those Vanessa confirms are used. Account availability has not
+been verified here. For practical tech/workspace content, assess existing equipment and skills,
+identify a real work constraint, and evaluate a tool or upgrade against that need. These links
+direct readers to the free kit; they do not establish a paid discount or a tech product endorsement.
+Examples cover both audience paths and all three occasions; they are not a committed posting schedule.
+
+Use `utm_source=facebook|instagram|pinterest`, `utm_medium=organic_social`, and
+`utm_campaign=holiday2026-{occasion}-{audience}-pNN`, where occasion is `thanksgiving`, `blackfriday`,
+or `cybermonday`, and audience is `career` or `remote-life`. Keep a stable post ID in the #14 content
+record and reuse it for that post's link. All three captured values must remain within 100 characters.
+The campaign identifies the post's intended audience; it does not infer the reader's `currentStage`
+or selected on-page path. Do not use `utm_content`, which this form does not capture.
+
+| Channel / occasion | Career-path example | Remote-life-path example |
+|---|---|---|
+| Facebook / Thanksgiving | [Prepared p01](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p01) | [Prepared p02](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p02) |
+| Instagram / Black Friday | [Prepared p03](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p03) | [Prepared p04](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-remote-life-p04) |
+| Pinterest / Cyber Monday | [Prepared p05](https://remote-mom.vercel.app/launchpad/?utm_source=pinterest&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p05) | [Prepared p06](https://remote-mom.vercel.app/launchpad/?utm_source=pinterest&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p06) |
+
+Before publishing, finalize the post/channel mapping and verify that the actual social-link route
+preserves all three query values to the form. These exact links have not received live HTTP or
+submission checks in this inventory. Email links remain deferred with #24; no email audience or
+permission is inferred from kit requests.
+
+**Remaining #13 work:** obtain a dated, private aggregate from the confirmed collection destination;
+adopt the counting/duplicate rules; and choose and verify a source for the presently unmeasured
+traffic and funnel events before reporting conversion or drop-off. No analytics service has been
+enabled by this documentation. A dated baseline and weekly reporting remain pending; source
+discovery and prepared links do not complete #13 or authorize campaign publication.
+
 ## Preview Behavior
 
 If an endpoint is unavailable or the webhook is not configured, the landing page attempts a local backup
