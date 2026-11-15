@@ -30,6 +30,10 @@ from the personal Gmail account that owns the response sheet.
 5. Set access to anyone with the link.
 6. Copy the web app URL into `VALIDATION_SUBMISSIONS_WEBHOOK_URL` on the hosting platform.
 
+These are initial setup instructions. For an existing production deployment, use the endpoint-match,
+verification, and rollback procedure in [issue #23 below](#issue-23--literal-text-spreadsheet-ingestion).
+Saving Apps Script HEAD does not update an existing versioned web-app deployment.
+
 ## Expected Payload
 
 ```json
@@ -145,8 +149,9 @@ The request timestamp must not be repurposed as a marketing-permission timestamp
 
 Treat historical Launchpad rows the same way: preserve them as kit-request records and never infer
 marketing or beta permission from their presence. Do not import these records into a marketing or
-beta list on the strength of the kit request alone. Any later email delivery/nurture proposal remains
-gated under [issue #12 Stage 2](https://github.com/VanessaJaralve/RemoteMom/issues/12), with a separate
+beta list on the strength of the kit request alone. [Issue #12](https://github.com/VanessaJaralve/RemoteMom/issues/12)
+is Done for the verified Stage 1 request/permission work. Optional email delivery/nurture is deferred
+to [issue #24](https://github.com/VanessaJaralve/RemoteMom/issues/24), status **Later**, with a separate
 purpose, permission decision, service choice, and delivery/unsubscribe/failure checks. No such service
 or enrollment is activated by this change. Use the existing manual help route; no retention deadline,
 automatic deletion, or self-service unsubscribe capability is promised.
@@ -201,11 +206,12 @@ under [#15](https://github.com/VanessaJaralve/RemoteMom/issues/15). No completed
 available in that issue when this revision was prepared. Do not mark the reader-review criterion of
 #18 complete on the strength of internal review.
 
-Controlled tests must exercise all 36 stage/challenge pairs, the real form's changed-stage behavior,
-and Apps Script's old/new mapping. They establish source behavior, not a new production destination
-write. Link the actual test and deployment evidence in #12/#18/#19, and record a labeled new-category
-destination check before claiming the changed taxonomy is verified in production. The existing
-spreadsheet literal-text ingestion and remote retry/idempotency follow-ups remain separate.
+Controlled tests cover all 36 stage/challenge pairs, the real form's changed-stage behavior, and Apps
+Script's old/new mapping. PR #22 separately records the production release and labeled new-category
+destination check, campaign `issue18-20261114100210z`; exclude that QA activity from #13 reporting.
+#12 is Done after its optional email scope moved to #24. #18 remains In Progress for representative
+reader wording and manual native-picker keyboard verification. The spreadsheet safeguard in #23 and
+remote retry/idempotency decision in #19 remain separate from that verified taxonomy release.
 
 ### Controlled verification — 2026-11-14
 
@@ -281,10 +287,12 @@ or automatic retries. The error message explains the uncertain result and provid
 Investigate uncertain receipts privately before repeated retries, account for duplicates in reporting,
 and exclude all labeled QA activity from #13 baseline figures.
 
-**Release boundary:** no Google Apps Script deployment, sheet schema migration, production submission,
+**PR #21 release boundary:** no Google Apps Script deployment, sheet schema migration, production submission,
 email enrollment, PDF replacement, or mobile-app change is part of this branch. The #12 permission
 decision, #18 challenge taxonomy, complete mobile/PDF and audience-path coverage, and any destination
-deduplication decision remain separate evidence before #19 can close.
+deduplication decision were separate work at that review point. PR #22 subsequently supplied the
+permission/taxonomy release evidence; #12 is Done and optional email is #24 Later. The remaining
+#18 checks, wider #19 coverage, and destination safeguards are still required before their issues close.
 
 ### Controlled verification for the review branch
 
@@ -329,14 +337,130 @@ checks remain in place. No signup runtime behavior was changed during this follo
 
 The locked dependency manifest and lockfile are unchanged. This is pre-merge evidence; consult PR #21
 and issue #19 for the observed release result. No production signup, Apps Script deployment, public
-PDF replacement, or app-local data change was performed by these tests. The destination retry and
-literal-text ingestion follow-ups remain open, as do the wider #19 acceptance criteria.
+PDF replacement, or app-local data change was performed by these tests. At that review point,
+destination retry and literal-text ingestion were separate follow-ups. #23's verified ingestion
+release is recorded below; the destination retry decision and wider #19 acceptance remain open.
 
-**Separate ingestion follow-up found in source review:** the existing Apps Script writes submitted
-name/tracking strings directly with `appendRow`. Ensure that untrusted text is stored literally at
+**Separate ingestion follow-up found in the PR #21 source review:** the then-current Apps Script wrote
+submitted name/tracking strings directly with `appendRow`. Store untrusted text literally at
 that boundary; [Google documents that a leading equals sign is interpreted as a formula](https://developers.google.com/apps-script/reference/spreadsheet/sheet#appendrowrowcontents).
-This pre-existing destination behavior is unchanged by the signup-validation PR and needs its own
-controlled test and deployment review before broad promotion.
+The signup-validation PR did not change that destination behavior. The implementation, isolated proof,
+and verified production release are tracked under #23 below.
+
+## Issue #23 — literal-text spreadsheet ingestion
+
+**Verified release and completed acceptance — 2026-11-14:** the matched live Apps Script deployment
+was updated from version **16 to 18 at 20:01 Asia/Manila**. Source tests, isolated real-Sheets checks,
+one labeled production request, and actual production value/formula readback passed. The deployment
+URL, execute-as identity, and access settings stayed the same; other deployments remain on versions
+17 and 15. This completes the ingestion safeguard's implementation and production acceptance.
+[Issue #23](https://github.com/VanessaJaralve/RemoteMom/issues/23) closes after its repository PR is
+published and merged. The broader #19/#14 gates remain separate.
+
+### Write behavior and compatibility
+
+`appendLiteralRow` in `integrations/google-apps-script/validation-webhook.gs` is the common write
+boundary for validation responses, waitlist signups, beta feedback, Black Friday early access, and
+Launchpad kit requests. It prefixes every nonempty string with one apostrophe before the single
+submission-row `appendRow` call. This includes submitted text, the fixed source value, and raw JSON;
+there is no initial unsafe append followed by a rewrite. Empty strings remain empty. Native `Date`,
+number, and boolean cell values pass through unchanged.
+
+The existing payload-field defaults (`value || ''`), route selection, source values, column order,
+and eleven-column Launchpad layout are unchanged. In particular, route-level falsy values retain the
+old empty-cell defaults; the helper does not change those defaults to preserve zero or false in a
+field that already replaced them. Old challenge values, existing rows, missing-stage payloads, and
+the existing legacy stage-column insertion remain supported. No customer-row rewrite or new schema
+migration is introduced. The form, API payload, published PDF, and app-local data are unchanged.
+
+Objects, arrays, and other unsupported cell types throw a generic error during encoding, before any
+submission row is appended or a success response is produced. The route's existing sheet/header
+initialization runs first: a missing sheet may be created, headers may be written, or the legacy
+stage column may be inserted before such a rejection. This is not a promise of zero spreadsheet
+changes on every invalid request. A failed append also prevents the normal JSON success response.
+
+This change does not add remote idempotency, automatic retry, or a concurrency guarantee for existing
+sheet initialization/legacy migration. A lost response can still follow a successful remote write;
+inspect an uncertain result before retrying, account for duplicates, and keep that decision in #19.
+
+### Verification procedure and observed results
+
+The Jest fixture executes the actual repository Apps Script with Google services substituted. It
+asserts the exact arguments supplied to `appendRow`; it does not emulate apostrophe parsing, formula
+evaluation, stored cell values, or display behavior.
+
+For real service verification, add `integrations/google-apps-script/literal-text-verification.gs`
+beside the reviewed webhook candidate in the Apps Script editor and select
+`verifyLiteralTextInIsolatedSpreadsheet`. Do not run the production `doPost` entry point. Each run
+creates a new QA-only workbook, passes that workbook to the actual append functions, and retains it
+privately. The runner does not open the production workbook, share or delete data, or make network
+requests. Keep the workbook identity in private verification records; publish only the date and
+aggregate result.
+
+The runner flushes writes and checks exact values/types with `getValues()` plus empty `getFormulas()`
+for every checked cell. It covers formula-like strings, whitespace and existing apostrophes,
+leading-zero/date-like text, Unicode, empty values, native dates/numbers/booleans, raw JSON, all five
+routes, all nine Launchpad challenges, missing-stage payloads, one legacy-column insertion, preserved
+synthetic historical data, and rejected structured cell values. Do not replace real service readback
+with the Jest argument fixture when verifying a later implementation change.
+
+| Check | Observed result |
+|---|---|
+| Focused `ValidationGoogleAppsScript.test.ts` suite | **56 tests passed** |
+| Full `pnpm exec jest --runInBand` | **383 tests passed across 32 suites; zero failures** |
+| `pnpm exec tsc --noEmit` | Passed |
+| `git diff --check` | Passed |
+| Independent source review | No introduced blocker; existing initialization/concurrency and remote retry limits retained |
+| Isolated actual Apps Script run | **Passed**, 2026-11-14 **19:56:52–19:57:10 Asia/Manila**; summary logged at **19:57:09** |
+| Real-Sheets aggregate checks | **21 row checks; 254 cell checks; 225 string cells; 254 empty-formula checks; 14 route cases across all five routes; 2 rejected-value cases** |
+| Isolated evidence retention | QA-only workbook retained privately; no workbook identifier, URL, or contact value published here |
+
+### Production release evidence and rollback
+
+The pre-release inventory on 2026-11-14 found three active deployments using versions **17, 16, and
+15**. The earlier checklist claim that all active deployments used version 17 was not a valid current
+inventory. Saving HEAD and passing the isolated runner alone did not identify the live target.
+
+The live-route match was established through Apps Script execution history: the known production QA
+requests at **14:01:48** and **18:03:06 Asia/Manila on 2026-11-14** both show completed `doPost` Web App
+executions on **version 16**, matching the previously recorded private receipt times. Exactly one
+active deployment used that version. The hosting variable is a write-only secret; its URL was not
+read and no environment setting was changed. Only that matched deployment was updated to **version
+18 at 20:01 Manila**. Its URL, execute-as identity, and access settings were preserved. The active
+versions after this release are **17, 18, and 15**; versions 17/15 were not changed.
+
+One normal production form request used QA campaign **`issue23-20261114120210z`**, submitted at
+**20:04:21.106 Manila** and received at **20:04:22.597 Manila**. A bounded before/after read found
+exactly one new eleven-column row, with submitted fields and raw JSON matching the synthetic request.
+The checked header and seven earlier rows were unchanged. This is the scope of the preservation
+readback; it is not a claim that every historical row was re-audited.
+
+| Production evidence | Observed result |
+|---|---|
+| Live deployment | **Version 18**, released **2026-11-14 at 20:01 Asia/Manila** on the matched original version 16 deployment; existing URL, execution identity, and access preserved |
+| Original rollback target | **Version 16**, with the existing matched deployment/configuration retained; other active deployments stay on 17 and 15 |
+| Labeled request and mapping | Exactly one new row; eleven expected columns; submitted fields, stage/challenge, UTMs, source, and raw JSON matched privately |
+| Literal values | Original leading-apostrophe text and numeric-looking text `00123` preserved as submitted |
+| Actual production `getValues()` / `getFormulas()` check | **Passed at 20:09:35–20:09:36 Manila**: ten exact string cells, eleven empty-formula cells, valid native received-at `Date`, and matching headers |
+| Existing bounded data | Checked header plus seven earlier rows unchanged between the before/after reads |
+| Browser journey | Redirect to `/launchpad/download/` observed after collection |
+| Public PDF | HTTP **200**, `application/pdf`, **110,460 bytes**, SHA-256 `b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`; unchanged |
+| QA evidence and reporting | One labeled synthetic row retained; exclude campaign `issue23-20261114120210z` from #13 reporting together with the earlier QA campaigns |
+
+The bounded production verification was read-only. Its temporary check was removed by restoring the
+unchanged isolated runner afterward; no further deployment was created. No private contact values,
+workbook/deployment identifiers, endpoint URL, row location, or raw payload are published here.
+The production case verifies the normal request journey and its literal values. Formula-like input
+across all five routes was exercised in the isolated workbook, not by sending those cases through
+every public form. Physical mobile PDF readability and wider audience/copy checks remain in #11/#19.
+
+**Rollback procedure:** restore only the matched deployment to its recorded original **version 16**,
+keeping its URL, execute-as identity, and access settings. Keep the other deployments at versions
+17 and 15. Verify the restored route, record the outcome, and retain the labeled QA evidence; do not
+delete or rewrite historical/customer rows. Inspect any uncertain receipt before retrying. The
+successful release did not require a rollback and does not establish remote exactly-once delivery.
+
+No paid checkout, outreach, email automation, app-beta enrollment, or app-data change is part of #23.
 
 ## Launchpad help and recovery (issue #16)
 
@@ -407,7 +531,7 @@ retained; no customer or app-local data was altered.
 | Python regression tests | Two passed again against the release head | Focused regression evidence only |
 | Supplemental assertion harness | Head and base each reported 11 passed and the same two stale-copy failures | Official Jest unavailable; this is not a Jest/Expo pass |
 | Collection failure, storage failure, retry, and duplicate handling | Not verified in this production case | Remaining #19 work; source inspection does not substitute for these checks |
-| Full stage/challenge, malformed-input, and cross-device coverage | Not complete | #12/#18 decisions remain pending; do not infer full funnel readiness from one success case |
+| Full stage/challenge, malformed-input, and cross-device coverage | Not complete in this initial case | PR #22 later verified the permission/taxonomy release; #12 is Done, #24 is Later, and #18 reader/native-picker plus wider #19 checks remain open |
 
 This initial test supports the released subset only. Keep #16 In Progress until the monitoring
 owner/cadence, #11 editable-source gap, remaining #19 evidence, and Stage 2 completion or explicit

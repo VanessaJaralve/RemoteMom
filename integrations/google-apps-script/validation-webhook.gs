@@ -31,7 +31,7 @@ function doPost(event) {
 function appendValidationResponse(spreadsheet, payload) {
   const sheet = ensureResponsesSheet(spreadsheet);
 
-  sheet.appendRow([
+  appendLiteralRow(sheet, [
     new Date(),
     payload.submittedAt || '',
     payload.childrenCount || '',
@@ -49,7 +49,7 @@ function appendValidationResponse(spreadsheet, payload) {
 function appendBetaFeedback(spreadsheet, payload) {
   const sheet = ensureBetaFeedbackSheet(spreadsheet);
 
-  sheet.appendRow([
+  appendLiteralRow(sheet, [
     new Date(),
     payload.submittedAt || '',
     payload.name || '',
@@ -75,7 +75,7 @@ function appendBetaFeedback(spreadsheet, payload) {
 function appendWaitlistSignup(spreadsheet, payload) {
   const sheet = ensureWaitlistSheet(spreadsheet);
 
-  sheet.appendRow([
+  appendLiteralRow(sheet, [
     new Date(),
     payload.submittedAt || '',
     payload.name || '',
@@ -90,7 +90,7 @@ function appendWaitlistSignup(spreadsheet, payload) {
 function appendBlackFridayEarlyAccess(spreadsheet, payload) {
   const sheet = ensureBlackFridaySheet(spreadsheet);
 
-  sheet.appendRow([
+  appendLiteralRow(sheet, [
     new Date(),
     payload.submittedAt || '',
     payload.name || '',
@@ -109,7 +109,7 @@ function appendBlackFridayEarlyAccess(spreadsheet, payload) {
 function appendLaunchpadLead(spreadsheet, payload) {
   const sheet = ensureLaunchpadLeadsSheet(spreadsheet);
 
-  sheet.appendRow([
+  appendLiteralRow(sheet, [
     new Date(),
     payload.submittedAt || '',
     payload.name || '',
@@ -124,6 +124,27 @@ function appendLaunchpadLead(spreadsheet, payload) {
   ]);
 
   return jsonResponse({ ok: true });
+}
+
+function appendLiteralRow(sheet, values) {
+  // Escape every non-empty string before the single append, including numeric-looking text,
+  // whitespace and existing apostrophes. Never append raw text and rewrite it afterward.
+  // The isolated verification script checks exact getValues() results and empty getFormulas().
+  const literalValues = values.map(function (value) {
+    if (typeof value === 'string') {
+      return value === '' ? '' : "'" + value;
+    }
+
+    if (value instanceof Date || typeof value === 'number' || typeof value === 'boolean') {
+      return value;
+    }
+
+    // Reject unsupported cell values before any row is appended. In particular, an array
+    // must not reach Sheets' implicit string conversion and become a formula.
+    throw new Error('Unsupported spreadsheet cell value');
+  });
+
+  sheet.appendRow(literalValues);
 }
 
 function ensureResponsesSheet(spreadsheet) {
