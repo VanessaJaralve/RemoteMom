@@ -41,7 +41,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 | Stage | Focus | Completion gate |
 |---|---|---|
-| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1, #11, #13, #18, #19 and the Stage 1 subsets of #12/#16 are verified before #14; #15 research can run alongside this work |
+| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #12 is Done and #23 ingestion acceptance is complete; verify #1, #11, #13, #18, #19, and the Stage 1 subset of #16 before #14; #15 research can run alongside this work |
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
@@ -53,8 +53,9 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 - Confirm both audience paths and the page's immediate conversion goal under #1.
 - Review the existing Starter Kit under #11 rather than assume it needs recreating.
-- Verify signup wording, collection, direct download, attribution, and the early help/file-handling
-  process under #12, #13, #16, #18, and #19.
+- Retain the verified kit-request permission decision in completed #12 and the released spreadsheet
+  safeguard in #23. Finish collection/journey, direct download, attribution, and early help/file
+  handling under #13, #16, #18, and #19. Optional email work is #24 Later.
 - Start the 5–10 reader conversations in #15. Inventory reusable assets without committing to new production.
 
 **During the four-week experiment**
@@ -85,7 +86,8 @@ remains inactive, interview visitors and test page clarity, trust, and offer rel
 
 - Do not create another standalone eBook before validating the existing products and bundle.
 - Do not lower prices or buy ads based only on low historical traffic.
-- Track weekly: channel visits, product-page views, opt-ins, checkout starts, sales, revenue, and top content.
+- Track weekly: channel visits, confirmed kit requests, and top content; add product-page views,
+  checkout starts, sales, and revenue when the verified paid route operates.
 - Keep the app beta waitlist and Launchpad marketing list distinct unless people explicitly consent to both.
 - Keep customer data, private webhook URLs, API keys, and credentials out of this public repository.
 - Close an issue only when its acceptance criteria are met and evidence is linked in the issue.
@@ -105,13 +107,13 @@ treated as a marketing audience or an app-beta list. Support contact also remain
 marketing permission. The existing manual help route makes no guaranteed-response, retention, or
 automatic-removal promise.
 
-**Stage 2 decision:** defer email delivery and the proposed 4–5 email nurture sequence. Retain the
-gated follow-up in [#12](https://github.com/VanessaJaralve/RemoteMom/issues/12); there is no email-service
-selection or activation in this release. Revisit only after the verified free-kit experiment and
-reader findings show a useful purpose, then approve and test the service, separate permission record,
-unsubscribe, failure handling, and exclusion of people without the relevant permission. Keep #12 open
-for that follow-up unless its deferral is moved into a separately linked issue; completing Stage 1 does
-not claim that the full email workflow exists.
+**Stage 1 completion / Stage 2 deferral:** [#12](https://github.com/VanessaJaralve/RemoteMom/issues/12)
+is **Done** for the verified kit-request wording and permission decision. Its optional email-delivery
+and proposed 4–5 email nurture scope moved to [#24](https://github.com/VanessaJaralve/RemoteMom/issues/24),
+status **Later**; no email service is selected or activated. Revisit only after the verified free-kit
+experiment and reader findings show a useful purpose, then approve and test the service, separate
+permission record, unsubscribe, failure handling, and exclusion of people without the relevant
+permission. Closing #12 under its linked-deferral rule does not claim that an email workflow exists.
 
 For #18, use one native grouped list: four career choices and five work/family choices. Keep all five
 historical values and add boundaries, interruptions, workload planning, and task transitions. All nine
@@ -124,12 +126,54 @@ rules live in [Validation Collection Setup](../Validation_Collection_Setup.md#is
 Measure stage and challenge as separate dimensions and record the deployment boundary when comparing
 old and new option sets. No historical answer is rewritten into a more specific new category.
 
-**Remaining evidence:** representative-reader wording checks remain under #15; none were completed in
-that issue when this decision was recorded. Controlled source tests and a browser preview do not alone
-prove the production destination mapping. Link the actual release and labeled destination evidence to
-#18/#19 before marking that criterion complete. The broader #19 journey checks, #13 baseline, #16
-monitoring arrangement, and spreadsheet literal-text hardening remain prerequisites before broad
-promotion. This change does not authorize outreach, beta invitations, or the four-week campaign.
+**Release and remaining evidence:** PR #22 records the production permission/taxonomy release and
+matching new-category destination case; retain/exclude campaign `issue18-20261114100210z` in #13
+reporting. #18 still needs representative-reader wording findings under #15 and manual native-picker
+keyboard verification. The broader #19 journey checks, #13 baseline, and #16 monitoring arrangement
+remain prerequisites before broad promotion; #23's production ingestion acceptance is now complete.
+#24 email work does not block the free-kit experiment. This change does not authorize outreach,
+beta invitations, or the four-week campaign.
+
+## Issue #23 — literal-text ingestion before promotion
+
+**Verified release — implementation and production acceptance complete.** The common
+Apps Script helper encodes nonempty strings before a single submission-row append across all five
+collection routes. It preserves the existing payload defaults, columns, source values, native cell
+types, and legacy Launchpad mapping, while rejecting structured cell values before a submission-row
+append. Existing sheet/header initialization may precede rejection. Historical customer rows are not
+rewritten, and no remote idempotency or legacy-migration concurrency guarantee is introduced.
+
+On 2026-11-14, the focused suite passed **56 tests**, the full suite passed **383 tests in 32 suites**,
+and TypeScript/patch-whitespace checks passed.
+The isolated actual-Sheets runner passed at **19:56:52–19:57:10 Asia/Manila**, with **21 row checks,
+254 cell checks, 225 string cells, 254 empty-formula checks, 14 route cases across five routes, and
+2 rejected-value cases**. The QA-only workbook remains private. This proves the candidate's stored
+values/types, empty formulas, and tested legacy behavior in that workbook. The production checks below
+separately verify the live release.
+
+The pre-release deployment inventory contained versions **17, 16, and 15**. Known production QA
+requests at **14:01:48** and **18:03:06 Manila** matched completed Apps Script Web App executions on
+version **16**, uniquely identifying the active target. The hosted webhook variable is write-only;
+no URL was read or setting changed. Only that deployment moved from **16 to 18 at 20:01 Manila**,
+preserving its URL, execute-as identity, and access. Versions **17 and 15** remain unchanged.
+Rollback is to the original **version 16** on the matched deployment, not a blanket version change.
+
+One production QA request, campaign **`issue23-20261114120210z`**, was submitted at **20:04:21.106**
+and received at **20:04:22.597 Manila**. Exactly one new eleven-column row matched the submitted
+fields/raw JSON, including original apostrophe and `00123` text. The header and seven earlier rows
+were unchanged in the bounded before/after read. Actual read-only production `getValues()` and
+`getFormulas()` checks passed at **20:09:35–20:09:36 Manila**: **ten exact string cells, eleven empty
+formula cells, a valid native date, and matching headers**. The browser reached the download page;
+the PDF returned HTTP 200 and retained its verified 110,460-byte identity. Retain/exclude the QA
+campaign from #13 reporting. Private values/identifiers are omitted. The temporary read-only check
+was replaced with the unchanged isolated runner, without another deployment.
+
+The exact procedure, PDF digest, bounded evidence, and rollback steps are in
+[Validation Collection Setup](../Validation_Collection_Setup.md#issue-23--literal-text-spreadsheet-ingestion).
+#23's acceptance is complete; GitHub closure follows publication and merge of its repository PR.
+#19 retains broader journey QA and the remote duplicate/idempotency decision; #14 remains gated on
+the remaining Stage 1 work. No paid transaction, outreach, permission, PDF, or app-local data change
+is part of #23.
 
 ## Issue #16 — help, file handling, and buyer operations
 
@@ -230,11 +274,11 @@ payment promise, or assumed Payhip capability.
 |---|---|---|
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
-| Signup/download recovery | One production signup, private destination match, empty-form validation, and public PDF opening verified; local save/open user-confirmed on 2026-11-14 | Remaining #19 failure/retry/full-coverage checks remain unverified |
+| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile, audience-path/copy/keyboard, and remote duplicate accounting |
 | Master and version handling | Distribution/legacy artifacts distinguished; staging safeguard released; published design source not found | #11 records source recovery/provenance outcome; no regenerated design equivalence is claimed |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Actual support handling uses a private location; published evidence contains no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, resolve/track #11 source gap, complete remaining #19 coverage, and complete or explicitly defer Stage 2 with linked follow-up; #12/#18 decisions remain pending |
+| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, resolve/track #11 source gap, complete remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
