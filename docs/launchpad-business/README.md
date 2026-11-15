@@ -454,7 +454,7 @@ baseline review into a release or a physical-device check.
 
 ## Issue #27 - guarded Starter Kit link repair - 2026-11-16
 
-**In Progress — repair implemented and locally verified; physical-phone acceptance remains open.**
+**Completed — 2026-11-16 Asia/Manila; bounded return/help-link repair accepted.**
 The `free-links-v1` patch adds a visible page-10 block with two clickable destinations:
 [Launchpad](https://remote-mom.vercel.app/launchpad/) and
 [help or feedback](https://remote-mom.vercel.app/launchpad/#help). It explains that asking for help
@@ -463,6 +463,9 @@ filename remain intact. The download HTML in this revision uses **`20261116`** i
 the visible file-version text. The [#27 release record](https://github.com/VanessaJaralve/RemoteMom/issues/27)
 tracks the actual merge, deployment, public-byte readback, and browser checks separately from the
 local implementation evidence below.
+
+**Closure addendum — 2026-11-16 Asia/Manila:** after [PR #29](https://github.com/VanessaJaralve/RemoteMom/pull/29) and the current-version `20261116` phone-check instructions, Vanessa [reported](https://github.com/VanessaJaralve/RemoteMom/issues/27#issuecomment-6901140396): “I checked in my phone and its working fine for both links”.
+This is user-reported phone success for both links; the phone model/browser were unspecified, with no automated physical test or independent saved-file inspection. [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27) closed as completed at **04:49:31 Manila**. #11/#16/#19 remain open for their other requirements, including detailed readability, print, and accessibility evidence under #11/#19.
 
 ### Provenance and repair boundary
 
@@ -562,9 +565,9 @@ record the rollback outcome. Extraction alone does not change production.
 | Focused landing-page Jest suite | **9 tests passed** |
 | Existing Python staging safeguards | **2 tests passed**; legacy generation preserved an existing distribution file and did not create a distribution directory |
 
-The patch and download HTML implement version **`20261116`**. Record the actual merge, deployment,
-public PDF hash/content type, both download routes, and real browser link navigation in
-[#27](https://github.com/VanessaJaralve/RemoteMom/issues/27) after those checks occur. Physical-phone readability, paper-print and screen-reader checks remain
+The patch and download HTML implement version **`20261116`**. The merge/deployment, public PDF
+readback, download routes, and browser link evidence are recorded in [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27), with the user-reported phone-link result above.
+Detailed physical-phone readability, paper-print and screen-reader checks remain
 unperformed; the wider #11/#19 and #18 acceptance stays open. No new signup, marketing permission,
 paid link, customer record, or app-local data change is introduced by this candidate.
 
@@ -575,8 +578,7 @@ drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJ
 The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
 Monitoring ownership/cadence, private support-record handling, remaining #19 coverage, and Stage 2
 operations remain unresolved. The editable master is still missing. The guarded #27 repair candidate
-and its rebuild/rollback record are now verified locally; #27 records release checks and remaining
-physical-device evidence.
+and its rebuild/rollback record are verified; #27 records release and user-reported phone-link success. Remaining detailed device/readability evidence stays under #11/#19.
 The release record below preserves the distinction between deployed help
 and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
@@ -675,10 +677,10 @@ payment promise, or assumed Payhip capability.
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Monitoring owner/cadence remain explicitly unconfirmed |
 | Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified | Remaining #19 physical-mobile and audience-path/copy/keyboard checks; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
-| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; #27 guarded candidate, pinned rebuild, and exact rollback verified locally | Editable master remains missing; #27 records merge/production readback/link navigation separately, with physical-phone evidence still required |
+| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; #27 guarded repair, pinned rebuild, and exact rollback recorded | #27 completed November 16 with user-reported phone-link success; editable master remains missing and broader #11/#19 readability/accessibility evidence remains open |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
 | Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; released subset only** | Confirm monitoring arrangement, complete the tracked #27 repair and remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
+| Deployment and issue closure | **In Progress; released subset only** | #27 is complete. Confirm monitoring arrangement, finish remaining #19 coverage, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader/native-picker checks, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
