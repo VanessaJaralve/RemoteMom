@@ -34,6 +34,150 @@ These are the owner's reported starting figures, not independently verified anal
 
 Serve both Philippine and international audiences, with localized examples, platforms, payment expectations, and resource links where needed. Avoid promising guaranteed remote jobs or employment outcomes.
 
+## Issue #1 decision and offer map — 2026-11-15
+
+**Decision:** focus the upcoming Thanksgiving, Black Friday, and Cyber Monday work on one Launchpad
+campaign with practical remote-work and digital-workspace guidance. Prepare the existing free Starter
+Kit journey for a **November 20 readiness decision**, then use it as the main destination for the
+holiday content. This is free-resource validation first. One existing paid eBook may become an optional
+next step only after the paid-offer checks below pass. The campaign adds no bundle, email sequence,
+app feature, or new product, and makes no discount or limited-availability claim.
+
+This records the positioning and journey decisions for [#1](https://github.com/VanessaJaralve/RemoteMom/issues/1).
+It builds on the existing [Launchpad page](../../landing/launchpad/index.html),
+[download page](../../landing/launchpad/download/index.html), and completed
+[#12 permission decision](https://github.com/VanessaJaralve/RemoteMom/issues/12).
+The audience needs below are working hypotheses to test with readers, not completed research findings.
+
+### Promise, positioning, and primary goal
+
+**Brand phrase:** Remote work that fits real life.
+
+**Practical promise:** Educational tools to help a mom choose a useful next step in remote work and
+plan around the week she actually has.
+
+**Positioning statement:** The Remote Mom's Launchpad helps mothers seeking or returning to remote
+work, and mothers already working remotely or in a hybrid arrangement, reflect on work fit,
+boundaries, and realistic next steps. Both paths lead to the same free Work Fit & Safety Starter Kit;
+readers choose the exercises relevant to their current stage. The existing page also lets them try a
+short reflection before requesting the kit.
+
+**One immediate conversion goal: confirmed Starter Kit requests.** Count successful remote collection
+in the dated reporting window under [#13](https://github.com/VanessaJaralve/RemoteMom/issues/13), with
+labeled QA activity excluded and the duplicate-counting method recorded. A button click, local backup,
+newsletter subscription, app-beta request, or PDF download click is a different event. Use the current
+stage and selected challenge as separate reporting dimensions. Visitor and conversion-rate reporting
+requires a verified source and denominator; mark unavailable metrics as not measured. No numerical
+signup or sales forecast is a November 20 acceptance condition.
+
+The promise is about practical educational support. It does not guarantee employment, income,
+flexible hours, a particular family outcome, or that an opportunity is safe. Checking a listing helps
+readers ask and verify questions; it does not certify that listing. Use the same limits in holiday
+content, the kit review, and any later paid listing.
+
+### Audience needs and useful next steps
+
+| Reader | Working need to validate with #15 | Useful next step in this release | Possible paid role, after verification |
+|---|---|---|---|
+| Seeking remote work or returning after a break | Connect real experience to a role; compare hours, meetings, location conditions, and opportunities; make the next application session manageable | Start with **Find remote work**, name one role to explore, then request the kit and choose the relevant career exercise. #11 must verify the advertised exercises and instructions against the actual PDF | The existing main eBook could provide deeper guidance beyond the free exercise if its actual contents support that claim under #2; purchasing is optional |
+| Already working remotely or in a hybrid arrangement | Set useful boundaries, plan work blocks, and handle interruptions and work/family transitions | Start with **Manage remote life**, identify one adjustment to try, then use the relevant kit exercise and a small action for the week after the #11 review | Offer the main eBook only if #2 verifies useful additional content for this audience; otherwise the useful next step remains free |
+| Exploring what would work for their family | Understand both paths without prematurely choosing an employment or product identity | Use either reflection, switch paths when helpful, and select `exploring-both` if appropriate. All challenge groups remain available; no extra signup or purchase is required | No separate exploratory product or required purchase; revisit only if the reader identifies a relevant need |
+
+The free journey is **useful reflection → confirmed kit request → direct PDF download → one relevant
+exercise/action**. The kit is not automatically emailed. The current PDF is preserved while
+[#11](https://github.com/VanessaJaralve/RemoteMom/issues/11) completes content, source-provenance,
+printability/accessibility, and physical-device review. Its checklist permits an explicit linked
+source follow-up; that does not mean the missing editable design source has been recovered.
+
+The only candidate paid next step for this holiday scope is the existing main eBook,
+*The Remote Mom's Launchpad: Mastering the Mindset, Time, and Tech to Go Remote*. Its title alone is
+not evidence of its contents or value. Before mentioning it in campaign content or adding a paid
+transition, complete [#2](https://github.com/VanessaJaralve/RemoteMom/issues/2) for the actual listing,
+contents, and distinction from the free kit; [#3](https://github.com/VanessaJaralve/RemoteMom/issues/3)
+for representative previews; [#4](https://github.com/VanessaJaralve/RemoteMom/issues/4) for checkout
+and delivery; and Stage 2 of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16) for verified
+buyer support. Record the actual price/currency and policies when checked. Until then, prepare a
+free-kit campaign with no paid CTA. The companion and collection remain in their existing later
+backlog; no new paid resource is needed for this sprint.
+
+### Philippine and international use
+
+These are editorial and review decisions, not claims about current services, employment rules,
+platform availability, or purchasing power:
+
+| Topic | Philippine-facing treatment | International-facing treatment | Shared verification rule |
+|---|---|---|---|
+| Timing and work conditions | Label campaign and example schedules with **Asia/Manila**; ask readers to compare any proposed work hours with their own week | Name the timezone/date in examples and invite readers to use their local schedule; do not assume every audience shares the holiday | Check an actual role's hours, meetings, and permitted work location independently; remote does not imply flexible hours |
+| Resources and examples | Use locally relevant examples where a reader finding supports them; verify any named resource before including it | Use country-neutral examples or clearly label the country a resource serves | Record a source and review date for named platforms, availability, eligibility, or other external claims; otherwise omit those claims |
+| Paid offer information | Show the currency and payment/delivery facts verified on the actual checkout, without inventing a peso conversion or local discount | Show the same verified offer facts and clearly identify any confirmed country limitations | #2–#4 and Stage 2 #16 own these checks; make no assumed payment-method, refund, access, or outcome promise |
+| Holiday framing | Offer useful week-planning and technology habits even for readers who do not observe a named holiday | Treat Thanksgiving as the referenced U.S. calendar occasion, not a universal celebration | Keep the practical action optional, useful, and relevant to either audience path |
+
+### Evidence, assumptions, and app separation
+
+**Verified product facts:** the existing page presents two paths and an exploratory stage; PR #22
+records the kit-only wording, grouped challenges, and production destination mapping. The direct
+download and literal-text collection safeguard are verified in
+[PR #25](https://github.com/VanessaJaralve/RemoteMom/pull/25) and
+[#23](https://github.com/VanessaJaralve/RemoteMom/issues/23). These establish behavior, not demand.
+
+**Reader hypotheses still open:** which path/topic is most useful, whether the wording reflects
+readers' needs, whether the kit exercises help in practice, and whether the eBook adds enough value
+to buy. [#15](https://github.com/VanessaJaralve/RemoteMom/issues/15) has no completed reader findings
+recorded at this decision point. Internal review, existing features, and synthetic QA rows do not
+validate those hypotheses. #1 can document the decisions and assumptions; it does not close #15,
+#18's reader check, or the remaining kit/journey acceptance.
+
+RemoteMom's planning app is a separate complementary beta. A reader may separately explore its beta
+interest form, but a Launchpad kit request is neither app-beta nor marketing permission. The existing
+[`/black-friday/` page](../../landing/black-friday/index.html) is an **app-beta early-access page**;
+its [design](../superpowers/specs/2026-09-27-black-friday-early-access-design.md) routes separate beta
+interest and collects no payment. It is not the destination for this educational kit campaign. Keep
+that page, beta recruitment, and [#17 app readiness](https://github.com/VanessaJaralve/RemoteMom/issues/17)
+separate; this holiday scope does not activate invitations, subscriptions, or app engineering.
+
+## Holiday and practical-tech readiness — November 16–20, 2026
+
+**Scope confirmed 2026-11-15:** one campaign, three distinct occasions, and one primary free-kit CTA.
+Here, **tech** means practical habits for remote work and an existing digital workspace, such as
+organizing application files, checking calendar timezones, and choosing a manageable focus routine.
+It does not mean new app features, a technology product launch, or unverified tool recommendations.
+Use the existing channels and reusable assets. This section is the preparation plan; it is not
+published social copy or a record of outreach.
+
+| Occasion and verified date | Distinct content theme to prepare | Connection to the kit |
+|---|---|---|
+| [U.S. Thanksgiving — Thursday, November 26](https://www.timeanddate.com/holidays/us/thanksgiving-day) | Recognize the people or routines that help, then plan a realistic week: name one availability boundary and check the timezone on work commitments; participation in the holiday is optional | Choose a practical work-fit or remote-life action appropriate to the reader's stage |
+| [Black Friday — Friday, November 27](https://www.timeanddate.com/holidays/us/black-friday) | Start with the work problem before a tool purchase: review what an existing tool already supports and what is actually missing | Use a kit reflection to identify a need; an existing eBook CTA is optional only after the paid gates above pass, with no assumed discount |
+| [Cyber Monday — Monday, November 30](https://www.timeanddate.com/holidays/us/cyber-monday) | Make a small digital-workspace improvement: organize one application/work folder, useful bookmarks, or a focus routine | Turn that improvement into one manageable next step rather than requiring a new product |
+
+Dates use the linked 2026 calendars. Campaign scheduling will state its timezone; the readiness
+cutoff remains **Friday, November 20, Asia/Manila**. Dates below are candidate completion targets,
+conditional on evidence and the stated human inputs. Start useful preparation on November 15;
+completed work may finish earlier than its target.
+
+| Target | Issue and bounded deliverable | Human input or closure condition |
+|---|---|---|
+| **Nov 16** | **#1:** publish this decision/offer map and link it from the issue; retain one confirmed-kit-request goal and the two paths | Record the decision as adopted planning scope, with reader assumptions still explicit; no claim of completed research |
+| **Nov 17–18** | **#11:** review the existing ten-page kit, promised exercises, links, printability/accessibility, next step, and content inventory; record source recovery or an explicit linked follow-up | Actual physical-mobile PDF review is required. Material defects requiring an unavailable editable source can move this target; preserve the current file |
+| **Nov 18** | **#18:** finish representative-reader wording and native dropdown keyboard checks | Obtain real reader input from both paths and a recorded real-browser/device picker check; internal review alone is insufficient |
+| **Nov 18** | **#16 Stage 1:** confirm support ownership, cadence/escalation, private record handling, and the #11 source-handling outcome | Vanessa confirms the operating arrangement. Full #16 also contains buyer operations; it stays open unless those pass or move to a linked follow-up under its existing close rule |
+| **Nov 19** | **#13:** finish measurement-source inventory, channel links, definitions, dated baseline, applied QA exclusions, duplicate treatment, and a weekly reporting example | Actual reporting access and metric availability must be verified. A small baseline is acceptable; missing visitor/download metrics stay explicitly unmeasured |
+| **Nov 20** | **#19:** finish both audience paths, links, note/copy fallback, keyboard, PDF evidence, duplicate accounting, and actual baseline exclusions; fix/recheck critical defects | Depends on #11/#13/#18 evidence. Accounting for duplicates is allowed by the existing criterion; building remote idempotency is not a new sprint requirement |
+| **By Nov 20 — preparation only** | **#14:** prepare the four-week calendar, first holiday-content drafts/assets, tracked links, and weekly review routine | Publication starts only after Stage 1 readiness passes. A prepared calendar does not complete four weeks of publishing or learning |
+| **During the week — conditional** | **#15:** collect early wording/kit reactions to inform #11/#18; aim for the existing 5–10-reader study only if participants are available | Full closure requires actual conversations across both paths, anonymized synthesis, paid-value reactions, and the #6 recommendation; recruitment and responses are not assumed |
+
+**November 20 readiness decision:** proceed with the free-kit campaign only when #1, #11, #13, #18,
+#19, and Stage 1 #16 have the required evidence; #12 and #23 are already complete. If a gate is still
+open, retain the prepared assets and finish that gate before publishing the affected journey. Add the
+existing eBook only if its separate #2–#4/Stage 2 #16 gates pass. #14's four-week experiment, later
+collection production (#6–#10), optional email (#24), and app work (#17) do not become completed or
+new implementation commitments because of the holiday deadline.
+
+**Decision/change record:** this dated section supplies #1's audience definitions, primary goal,
+promise/positioning, free-first release choice, optional paid map, regional review rules, separate app
+boundary, and realistic-claims decision. After publication, link it as #1's close evidence. Preserve
+the release records below; update the assumptions when #15 supplies actual reader findings.
+
 ## Work stages and completion gates
 
 The stages below align this existing roadmap with the revised GitHub backlog. Basic help and file
@@ -170,7 +314,8 @@ was replaced with the unchanged isolated runner, without another deployment.
 
 The exact procedure, PDF digest, bounded evidence, and rollback steps are in
 [Validation Collection Setup](../Validation_Collection_Setup.md#issue-23--literal-text-spreadsheet-ingestion).
-#23's acceptance is complete; GitHub closure follows publication and merge of its repository PR.
+#23 is closed; its source and documentation are merged in
+[PR #25](https://github.com/VanessaJaralve/RemoteMom/pull/25).
 #19 retains broader journey QA and the remote duplicate/idempotency decision; #14 remains gated on
 the remaining Stage 1 work. No paid transaction, outreach, permission, PDF, or app-local data change
 is part of #23.
