@@ -252,30 +252,77 @@ recording these replies.
 
 ### Prepared Launchpad reader wording check — #18 and #15
 
-Use the current Launchpad page and kit for a short check with readers from both audience paths.
-This protocol is specific to the educational Launchpad; the existing app interview guide remains
-about the separate RemoteMom app. No participants, conversations, responses, or outreach are
-recorded by preparing this protocol.
+**Ready-to-run subset prepared November 16, 2026 (Asia/Manila).** Use two initial readers, one from
+each audience path, for a short phone and wording check. This expands the existing educational
+Launchpad protocol; the separate app interview guide is unchanged. **No reader has been selected,
+contacted, scheduled, or assessed by this preparation. All result slots are pending.**
 
-1. Ask which current stage describes the reader, in their own words, before showing the form choices.
-2. Show the page and ask what they expect to receive after requesting the kit. Check whether they
-   understand direct PDF download and the separate marketing/app-beta choices without coaching them.
-3. Ask them to choose a path and explain which exercise they would try first.
-4. Show the stage and challenge choices. Ask which fits, what wording is unclear, and what they
-   would call the same challenge naturally; record when none fits instead of forcing a choice.
-5. Ask them to try one relevant kit exercise and identify any instruction they could not follow.
-6. Summarize what to retain, clarify, or investigate, with the audience represented and evidence limits.
+### Review material and scope
 
-Keep contact details and raw conversation notes private. Publish only anonymized findings using
-this empty template; an internal review is not a completed reader response:
+- [Launchpad page](https://remote-mom.vercel.app/launchpad/)
+- [Free Starter Kit download page](https://remote-mom.vercel.app/launchpad/download/)
+- Current review edition: **ten-page free Starter Kit, version `20261116b`**. Check the visible
+  download-page version; an older saved copy does not update itself.
+- Use the reader's own phone and normal PDF reader/zoom. No name/email entry, signup submission,
+  purchase, paid eBook download, or beta-interest submission is needed for this check.
+- Ask about expectations before explaining the intended answers. Readers may skip a question,
+  decline to share personal circumstances, or stop. Keep worksheet answers and raw notes private.
+
+| Initial slot | Audience to recruit | Small exercise to try |
+|---|---|---|
+| R1 - pending | A mom seeking remote work or returning after a break | Page 4: one responsibility-to-skill-to-evidence-to-role row. Use page 3's work/life-fit questions instead if more relevant; record the reason. |
+| R2 - pending | A mom already working remotely or in a hybrid arrangement | Page 8: choose one pressure point and one small boundary or routine to try. |
+
+### Ten-minute facilitator sequence
+
+Allow more time if the reader needs it. An unfinished step is **Not checked**, not a pass.
+
+| Time | Neutral prompt or action | Record |
+|---|---|---|
+| 0-1 min | Before showing form choices: "How would you describe your current work stage, and what would you most like help with?" | The reader's own words, summarized without private circumstances. |
+| 1-3 min | Show the page: "What do you think this offers? What happens after requesting the kit?" Then ask which path, stage, and challenge they would choose and whether any wording is unclear or none fits. Do not submit the form. | Expected outcome; suitable or missing choice; exact confusing label; preferred natural wording. Do not coach before recording the first answer. |
+| 3-5 min | Open the current kit on the phone. Ask the reader to move through the pages and point out difficult text or tables, using normal zoom. Include the chosen exercise and the narrow tables on pages 4 and 10. If a current saved copy is available, reopen it. | Edition, phone/browser/PDF app, pages actually inspected, any clipping or difficult zoom, and whether a saved copy was reopened. |
+| 5-8 min | Ask R1 or R2 to try the small exercise above using an example they are comfortable sharing. "What, if anything, made the instruction difficult to follow?" | Whether the reader could begin and complete that small task without explanation; unclear words or missing guidance. Record usability, not private answers. |
+| 8-9 min | Show page 9: "Which action could you realistically try next?" Briefly show page 10: "What do these next-step choices mean?" | One relevant action and the reader's understanding of the optional, separate Android beta interest/help choices. Existing link-click tests need not be repeated. |
+| 9-10 min | "What was most useful? What would you change or make clearer?" Summarize and ask whether the summary is accurate. | One useful element, any concern, and the resulting retain/clarify/investigate action. |
+
+### Evidence and decision rules
+
+Use **Pass / Needs clarification / Not checked**, and label each finding **observed** or
+**reader-reported**. For the short check, look for understanding of the free direct-download kit,
+a suitable stage/challenge choice or an identified mismatch, one usable exercise, one manageable
+next action, and readable inspected pages on the actual phone.
+
+- Record page coverage explicitly. Opening the PDF alone does not establish readability.
+  A partial review does not establish all-page readability or successful reopening of a saved copy.
+- If the full physical-phone reading check is completed, record that all ten pages of
+  `20261116b` were inspected, the device/app, zoom use, and any limitations. Otherwise retain
+  the unchecked pages and saved-copy result as open under #11/#19.
+- The expected route is the free PDF after confirmed signup, with no automatic kit email,
+  marketing subscription, or app-beta enrollment. These are facilitator interpretation notes;
+  ask the neutral expectation question before explaining the route.
+- A material wording or exercise problem becomes a specific clarification/investigation under
+  #18 or #11. Recheck only the affected part after a fix. An unresolved blocker stays open.
+- Paper output and screen-reader behavior are not established by this phone review.
+
+### Existing anonymized findings log
+
+Keep contacts and raw conversation notes private. Publish only sanitized findings in this existing
+six-column log. The rows below reserve review slots and contain **no completed reader evidence**.
 
 | Anonymous reference / date | Audience path represented | Signup expectation understood? | Stage/challenge fit and wording | Exercise tried / unclear instruction | Finding and resulting action |
 |---|---|---|---|---|---|
-| No completed reader result recorded | — | — | — | — | — |
+| R1 - not scheduled | Career - intended, not yet represented | Pending | Pending | Planned: page 4; page 3 if more relevant | Pending |
+| R2 - not scheduled | Remote-Life - intended, not yet represented | Pending | Pending | Planned: page 8 | Pending |
 
-Link actual findings to #18. The fuller #15 study still requires its 5–10-reader coverage, synthesis,
-paid-value questions, and #6 recommendation; preparing or completing a short wording check does not
-close that study.
+**Phone/evidence notes:** R1 - pending; R2 - pending. For each completed session, add date,
+observed versus reported status, device/browser/PDF app, version, inspected/read page numbers,
+zoom issues, saved-copy reopen result, and any untested scope. Do not add identifying details.
+
+Link actual findings to #18 and relevant device evidence to #11/#19. This initial two-reader
+check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
+the #6 build/revise/defer recommendation. It does not validate pricing or demand, and the separate
+#13 tracking and Stage 1 #16 support gates still apply before the #14 campaign is published.
 
 ## Work stages and completion gates
 
