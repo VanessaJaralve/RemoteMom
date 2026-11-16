@@ -16,7 +16,7 @@ Validate a repeatable, ethical path from qualified audience attention to the fir
 - Main eBook page: more than 100 views.
 - High-Value Hybrid page: fewer than 25 views.
 - Sales: 0.
-- Checkout activity: none reported.
+- Checkout activity: none reported in the owner's starting baseline. The later controlled USD 0 QA order under #4 is excluded from customer/sales/conversion reporting.
 - Traffic source: not yet tracked.
 - Promotion: no consistent active promotion yet.
 
@@ -230,9 +230,10 @@ completes the arrow-key check without changing the scope of these earlier observ
 
 No new signup was submitted for these interaction checks. The prior production collection, QA
 exclusion, PDF-release, and user-reported phone-link evidence remain the relevant records for those
-separate behaviors. The current remaining work is physical-phone PDF readability, release acceptance
-of the page-10 next-step correction, representative-reader wording findings, measurement readiness,
-unresolved-case follow-up ownership, and private support-record handling. This is not full #19 closure
+separate behaviors. The current remaining work is physical-phone/saved-PDF readability of `20261116b`,
+representative-reader wording findings, measurement readiness, unresolved-case follow-up ownership,
+and private support-record handling. The page-10 next-step correction is already released and
+verified through PR #32, as recorded in #11. This is not full #19 closure
 or campaign publication approval.
 
 ### User confirmations and next-step feedback — 2026-11-16
@@ -244,7 +245,7 @@ answer only for the behavior it establishes:
 |---|---|---|
 | “It worked for me,” answering the requested challenge-dropdown check with the up/down arrow keys and Enter | **User-reported pass** for native arrow-key selection and committing the choice. This completes #18's explicit arrow-key check and #19's combined keyboard item alongside the existing Tab/typeahead evidence | Device, operating system, and browser were not specified. #18 remains open for representative-reader wording; this is not a new automated test or a full accessibility result |
 | “I can check everyday,” answering the existing help-inbox monitoring question | **Confirmed monitoring owner: Vanessa. Cadence: daily during the campaign** | Unresolved-case follow-up responsibility and the private support-record arrangement are not established by the cadence statement alone. No automated reminder, mailbox configuration, response-time guarantee, or actual customer-case handling is claimed |
-| Page 10's “Continue for free” link returns to the Launchpad step used to obtain the kit; Vanessa suggested an eBook or mobile-app link | **Reported next-step usability problem** under #11. The working-link evidence in completed #27 remains valid | `next-step-v2` is implemented and locally verified below; record actual release acceptance in #11. This answer does not establish detailed phone-PDF readability; #11/#19 and final journey acceptance remain open |
+| Page 10's “Continue for free” link returns to the Launchpad step used to obtain the kit; Vanessa suggested an eBook or mobile-app link | **Reported next-step usability problem** under #11. The working-link evidence in completed #27 remains valid | `next-step-v2` is released through PR #32, with production file/version and page-10 destinations verified under #11. This answer does not establish detailed phone-PDF readability; that review and final #19 acceptance remain open |
 
 The confirmations change the current acceptance record, not the historical browser/device coverage.
 No signup, private support record, email, app-beta invitation, or scheduled task was created by
@@ -746,14 +747,18 @@ or require a new editable master merely to preserve the already verified free-li
 
 ## Issue #11 — useful next step after the kit — 2026-11-16
 
-**Implemented and locally verified; selected revision `next-step-v2`, marker `20261116b`.** Vanessa
-reported that page 10's “Continue for free” route feels circular because it returns to the Launchpad journey used to get the
-kit. She suggested linking to the eBook or mobile app instead. The existing #27 release still proves
-that its two links work; it does not settle whether the next action is clear enough for a reader who
-already has the kit. [Implementation commit `3937363`](https://github.com/VanessaJaralve/RemoteMom/commit/3937363b9ab76a87ac66a407196c677415f8e965)
-replaces that block with “Choose your next step.” Actual merge/deployment, public-byte readback,
-destination checks, and release acceptance belong in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11);
-local implementation evidence alone does not establish that this revision is live.
+**Released and verified in production — November 16, 2026 (Asia/Manila).** Revision `next-step-v2`,
+marker `20261116b`, was released through [PR #32](https://github.com/VanessaJaralve/RemoteMom/pull/32),
+merged as `7556367775cef16e0476618cdbf63268a07b3504`; production completed at **06:18:41 Manila**.
+[#11 records](https://github.com/VanessaJaralve/RemoteMom/issues/11) the exact public-file match,
+live version label, ten-page PDF opening, and both page-10 beta/help destinations. The reviewed
+220,847-byte artifact and hash below are the released distribution. Detailed physical-phone/saved-file
+readability and final #19 acceptance remain open.
+
+Vanessa reported that page 10's “Continue for free” route felt circular because it returned a reader
+who already had the kit to its acquisition journey. She suggested an eBook or mobile-app continuation.
+The earlier #27 release remains valid technical link evidence. [Implementation commit `3937363`](https://github.com/VanessaJaralve/RemoteMom/commit/3937363b9ab76a87ac66a407196c677415f8e965)
+replaces the block with “Choose your next step”; PR #32 supplies its production release evidence.
 
 The replacement makes the immediate free action explicit: choose one Career or Remote-Life
 action from page 9's seven-day plan. It also offers the existing `/beta/` route as optional **Android
@@ -763,11 +768,13 @@ iPhone or public app-store release. Review of the live beta page confirmed that 
 Android interest/invitations. No repeat kit signup or purchase is needed to use the PDF action or ask
 for help. Both download query markers and the visible HTML version are `20261116b` in the implementation.
 
-Defer the paid eBook CTA until the actual Payhip URL, product identity/content, checkout/delivery,
-and buyer-support facts are verified under #2–#4 and Stage 2 #16. The eBook remains a possible later
-next step; its title alone does not justify a paid destination or delivery promise.
+Keep the paid eBook CTA deferred pending the remaining receipt-link/recovery and affected-step checks
+in [#4](https://github.com/VanessaJaralve/RemoteMom/issues/4) and Stage 2 #16 operations. The actual
+[main eBook listing](https://payhip.com/b/zUYPA), reviewed 36-page product identity/file match, preview,
+and approved policy are established under completed #2/#3. Their completion does not pass the
+remaining paid-promotion gate.
 
-**Selected artifacts:** ASCII-safe distribution PDF **220,847 bytes**, SHA-256
+**Released distribution and equivalent comparison artifact:** ASCII-safe distribution PDF **220,847 bytes**, SHA-256
 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2`; equivalent normal PDF
 **115,554 bytes**, SHA-256 `7e194d57315299dd4fe64f42c20209828b17162470a40e66cf842a8104dc6652`.
 The `next-step-v2` script SHA-256 is
@@ -838,10 +845,19 @@ baseline remains retained separately for rebuilding either patch revision.
 
 ## Issue #2 — recovered eBook source review — 2026-11-16
 
-**Source-only review; paid offer not verified.** The user-provided **`Book 1 The Remote Mom's Launchpad.pdf`**
-contains **44 pages**. It provides a concrete source for assessing a possible paid next step, but has
-not been matched to the current Payhip listing or the file buyers actually receive. No paid PDF,
-private source location, contact details, or personal biography is published by this record.
+**Historical 44-page source review; superseded for the current product identity.** The user-provided
+**`Book 1 The Remote Mom's Launchpad.pdf`** contains **44 pages**. At this review it had not been
+matched to the listing or delivered file. The source observations below are retained as history.
+
+**Current status — November 16, 2026:** [#2](https://github.com/VanessaJaralve/RemoteMom/issues/2)
+and [#3](https://github.com/VanessaJaralve/RemoteMom/issues/3) are complete. The current
+[Payhip main eBook](https://payhip.com/b/zUYPA) is the reviewed **36-page branded edition**; the
+user-supplied download matches the approved pages and navigation, and the **seven-page preview**
+and approved policy are published. [#4](https://github.com/VanessaJaralve/RemoteMom/issues/4)
+remains **8/10, In Progress**: receipt arrival and computer/phone reading are user-confirmed;
+receipt instructions/link recovery and the final affected-step checks remain open. This is distinct
+from the ten-page free Starter Kit. No private PDF, source location, contact details, or biography
+is published by this record.
 
 The source's workspace guidance on pages **24–29**, time planning on **30–35**, and communication on
 **36–40** offer potential depth beyond the free Starter Kit's short routines and seven-day actions
@@ -850,10 +866,11 @@ value. Before using the source for a paid offer, update the stale release-date w
 check the next-book promotion on pages **41–42**, and revise pages **20–21** where parenting-skills
 language overstates project-management mastery; describe specific, demonstrable skills instead.
 
-The exact Payhip URL/current listing and its delivery-file match remain unverified. No actual paid
-master/version, checkout, or delivery has been established. Keep the paid CTA deferred under
-[#2](https://github.com/VanessaJaralve/RemoteMom/issues/2), #3–#4, and Stage 2 #16. After those checks,
-an optional **“Explore the paid eBook”** link could provide a clear choice after the free action.
+At the earlier source review, the Payhip URL, current product identity, and delivery-file match were
+unverified; the current status above supersedes that limitation. Paid placement remains deferred
+pending the outstanding #4 delivery/recovery and Stage 2 #16 operating checks. The controlled
+USD 0 QA order is not a charged sale or proof of a live payment-processor transaction. After the
+remaining gates pass, an optional **“Explore the paid eBook”** link could follow the free action.
 Keep the companion product in the later backlog; this review does not expand the holiday offer.
 
 ## Issue #16 — help, file handling, and buyer operations
@@ -863,8 +880,11 @@ drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJ
 The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
 Vanessa confirmed daily inbox monitoring on November 16. Unresolved-case follow-up responsibility,
 private support-record handling, remaining #19 coverage, and Stage 2 operations remain unresolved.
-The editable master is still missing. The guarded #27 repair candidate
-and its rebuild/rollback record are verified; #27 records release and user-reported phone-link success. Remaining detailed device/readability evidence stays under #11/#19.
+The editable master is still missing. #27 records the earlier guarded repair, rebuild/rollback,
+and user-reported phone-link success. PR #32 subsequently released `20261116b`; #11 records
+its production file/version and beta/help destination checks. Detailed physical-phone/saved-file
+readability remains under #11/#19. The main eBook listing/preview/policy work is complete under
+#2/#3; #4 remains 8/10 for the outstanding receipt-link/recovery and final affected-step checks.
 The release record below preserves the distinction between deployed help
 and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
@@ -911,17 +931,17 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 
 ### Stage 1: Starter Kit artifact inventory
 
-**Selected revision and release boundary — 2026-11-16:** `next-step-v2` is locally verified and selected
-for marker `20261116b`; actual release evidence belongs in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11).
+**Current released distribution — 2026-11-16:** `next-step-v2`, marker `20261116b`, is live through
+PR #32. [#11 records production deployment, the exact public-file match, and both page-10 destinations](https://github.com/VanessaJaralve/RemoteMom/issues/11).
 The preceding `free-links-v1` artifact was released through PR #29, with deployed-byte verification
-in [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27). This inventory does not independently
-claim the new selection is live. Git blob IDs identify recorded bytes; they do not establish a
-matching editable master.
+in [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27), and remains the immediate rollback.
+Detailed physical-phone/saved-PDF readability and final journey acceptance remain open. Git blob
+IDs identify recorded bytes; they do not establish a matching editable master.
 Historical local save/open evidence remains recorded separately below.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
-| Current selected distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | `next-step-v2`, marker `20261116b`, **220,847 bytes**; SHA-256 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2` | Locally verified page-9 action plus beta-interest/help links; track actual release acceptance in #11 |
+| Current released distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | `next-step-v2`, marker `20261116b`, **220,847 bytes**; SHA-256 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2` | Released through PR #32; public file/version and beta-interest/help destinations verified under #11. Detailed physical-phone/saved-PDF readability remains open |
 | Previous released artifact / immediate rollback | Same PDF path at commit `2a925932dac419baa529b348ebd62abbdfe8ca7e` | `free-links-v1`, marker `20261116`, **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37` | Retain with matching script/HTML; #27 supplies the prior release and phone-link evidence |
 | Preserved original rebuild input | Same PDF path at commit `8888c881417b8caac04c20fd6ca03e104e12b52d` | Marker `20261024`, 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Exact baseline for both guarded patch revisions; do not use a previously patched PDF as input |
 | Reproducible repair source | `scripts/patch-launchpad-starter-kit.py` | Guarded revision `next-step-v2`; SHA-256 `0e83a321411a3c56399983397272ab374dee5289bfba0677fd1f72dfa17f2c02` | New staging output only; current and historical recipes above are pinned to their implementation commits |
@@ -929,10 +949,10 @@ Historical local save/open evidence remains recorded separately below.
 | Legacy editable generator | `scripts/build-launchpad-starter-kit.py` | Existing ReportLab source | Treat staging-only output as a review candidate; it is not verified to reproduce the published design |
 | Editable master for current published design | Not identified in the repository or saved-assets review | **Source master not found** | Recover or identify the original source before claiming the current design is reproducible |
 
-The original marker was `20261024`, followed by PR #29's `20261116`. The selected next-step revision
-uses `20261116b` in both download links and the visible version label. Record the actual release
-separately; a marker alone does not prove deployment. Do not replace a reviewed artifact with legacy
-generator output.
+The original marker was `20261024`, followed by PR #29's `20261116` and PR #32's current
+`20261116b`. Both current download links and the visible version label were verified alongside
+the production file, as recorded in #11; a marker alone would not prove deployment. Do not replace
+a reviewed artifact with legacy generator output.
 
 For future candidates, use `remote-moms-work-fit-safety-starter-kit_YYYY-MM-DD_rN.pdf`, with the actual
 candidate date and revision. Keep the public filename stable so existing links remain usable. Record
@@ -953,9 +973,11 @@ reason. Keep historical artifacts; do not regenerate an unverified substitute as
 
 ### Stage 2: buyer support, feedback, and updates
 
-Activate these steps only after the owner verifies the actual listings, delivery behavior, and applicable
-policies under #2–#4 (and #10 for the bundle). This draft creates no refund entitlement, refund restriction,
-payment promise, or assumed Payhip capability.
+The [main eBook listing](https://payhip.com/b/zUYPA) is the customer-facing source for the approved
+and published refund policy and purchase-help instructions. #2/#3 are complete. The operating
+guidance below remains subject to outstanding #4/#16 checks; published policy and receipt arrival
+do not establish tested email-link recovery, support-case handling, refunds, or customer-update
+delivery. Bundle-specific behavior remains under #10. This record does not change policy terms.
 
 - For purchase/access problems, verify the transaction privately using the available platform tools and
   provide the recovery steps confirmed during checkout testing. Never request payment-card details.
@@ -978,11 +1000,11 @@ payment promise, or assumed Payhip capability.
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Inbox monitoring owner/cadence | **Confirmed November 16: Vanessa checks the existing help inbox daily during the campaign** | No repeat ownership/cadence confirmation is needed; this does not establish a response-time guarantee or actual handled-case history |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Confirm who follows up on unresolved delivery cases; daily monitoring alone does not settle that responsibility |
-| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check | Physical-phone PDF readability, release acceptance of the locally verified page-10 correction, and final #19 acceptance remain open; November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
-| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; both guarded revisions have pinned rebuild/rollback records; `next-step-v2` is locally verified and selected | #27 supplies prior release/phone-link evidence; #11 owns actual `20261116b` release acceptance. Editable master remains missing and broader #11/#19 readability/accessibility evidence remains open |
+| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check | Physical-phone/saved-PDF readability of `20261116b` and final #19 acceptance remain open. The page-10 correction is released and verified under #11/PR #32. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
+| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; both guarded revisions have pinned rebuild/rollback records; `next-step-v2` is released and publicly verified through PR #32 | #27 supplies prior release/phone-link evidence; #11 records `20261116b` production acceptance. The editable master remains missing and broader #11/#19 readability/accessibility evidence remains open |
 | Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
-| Buyer policy, feedback, and update workflow | Draft instructions only; not activated | Owner verifies #2–#4/#10 behavior and policies, feedback handling, and supported update/re-download steps |
-| Deployment and issue closure | **In Progress; released subset plus confirmed daily monitor** | #27 is complete. Confirm unresolved-case follow-up/private-record arrangement, finish remaining #19 acceptance and #11's next-step correction, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader wording work, and optional email is #24 Later |
+| Buyer policy, feedback, and update workflow | Main eBook policy, preview, and support copy published and verified; #3 complete. Receipt arrival is user-confirmed under #4. Remaining buyer-support/update operations are not fully verified | Complete #4's receipt instructions/email-link and support-recovery checks, plus #16's unresolved-case/private-record and remaining buyer-operation requirements. Keep the main listing as the policy source; #10 remains bundle-specific |
+| Deployment and issue closure | **In Progress; released subset plus confirmed daily monitor** | #27 is complete. Confirm unresolved-case follow-up/private-record arrangement, finish remaining #11/#19 physical-phone/saved-PDF and journey acceptance, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader wording work, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
