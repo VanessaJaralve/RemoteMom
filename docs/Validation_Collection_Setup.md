@@ -465,14 +465,82 @@ traffic/event measures as **not measured**; add conversion/drop-off only after r
 denominators exist. Record observed delivery issues and the next investigation/action without private
 contact data. Add paid-product measures only when that separate route and its reporting are verified.
 
-The baseline table above is the worked **one-day** example. No seven-day figures or weekly audience
-trends have been observed or fabricated. The manual routine does not enable analytics or email.
+The baseline table above was the worked **one-day** example at the November 16 preparation.
+No seven-day figures or weekly audience trends had been observed at that time. The November 17
+pre-launch seven-day report below adds a completed request aggregate; the manual routine does not
+enable analytics or email.
 
 **Remaining #13 work after the November 16 read:** choose and verify reliable sources/counting for
 the presently unmeasured traffic and funnel events; confirm actual channels and test their final
 campaign links; and produce an actual weekly report using an agreed owner/cadence. The dated
 confirmed-request baseline, applied QA filters, and duplicate convention are now recorded, but these
 do not complete #13 or authorize campaign publication. No analytics service has been enabled.
+
+### Pre-UAT measurement readiness — 2026-11-17
+
+This separates completed preparation from owner decisions, platform actions, and later reporting.
+It preserves all thirteen #13 acceptance criteria; the three composite criteria for actual channel
+routes, the full-funnel reporting source, and weekly reporting remain open.
+
+| Work item | Current evidence | Remaining action / category |
+|---|---|---|
+| Campaign and profile link preparation | The existing register contains 24 holiday URLs across 12 post IDs, with a Facebook and Instagram variant for each, plus two separate profile URLs. A November 17 static check passed the destination, exact three supported UTM keys, allowed source/medium values, unique post coverage, and 100-character limits. Earlier November 16 HTTP and browser checks remain the live direct-link evidence | Preparation complete. No additional tracking code is needed merely to preserve the registered parameters |
+| Existing Facebook profile route | The November 16 actual desktop profile click and signup-anchor continuation retained the registered `facebook / organic_social / launchpad-profile` values | Desktop route complete for the recorded placement. Check other actual placements when used; do not infer mobile-app routing from this result |
+| Existing Instagram profile route | The replacement Starter Kit URL is prepared and directly verified; the last observed bio still targets the separate five-minute toolkit, and the desktop editor requires its mobile app | Platform action: replace the bio link on mobile, then verify the actual route and all three UTMs. This cannot be established by repository inspection |
+| Future campaign post and Story routes | All direct URLs are prepared; no holiday posts or Stories have been published | Placement check with #14 when each real placement is used. Prepared URLs are not evidence of a published route |
+| Request attribution and counting | The current browser, endpoint, and eleven-column destination contract retain stage, challenge, source, and bounded UTMs. QA exclusions, unknown/unattributed handling, and five-minute duplicate-review rules are documented above | Ready for reporting against the authorized request source. Keep raw requests primary; do not infer visits, subscribers, or completed downloads |
+| Traffic, starts, errors, and PDF clicks | No verified reporting source is available; the last observed Vercel configuration was disabled. The present source stores none of these event totals | Owner decision: approve a suitable source with scope/cost boundaries, or explicitly accept a request-only experiment with these metrics marked **not measured**. No service, telemetry, paid plan, or permission change is made here |
+| Weekly operating arrangement | The manual Monday review method and report fields are prepared | Owner decision: confirm the weekly reporting owner and cadence. Daily help-inbox monitoring does not independently assign this work |
+| Completed pre-launch seven-day report | The authorized owner-browser read completed the November 10 00:00–November 17 00:00 Asia/Manila report below: four in-window persisted requests, three known QA exclusions, and one raw non-QA-labeled request | This completed pre-launch example supplies actual reporting evidence. Owner/cadence and the unavailable traffic/event source remain open; it is not a campaign week |
+| Four-week campaign results | The first planned campaign week is November 23–30; the campaign has not begun | Later observation under #14. A pre-launch seven-day report must be labeled separately and cannot satisfy a campaign week's results |
+
+### Completed pre-launch seven-day request report — 2026-11-17
+
+**Scope:** the existing Launchpad free-kit request source, before the planned four-week campaign.
+This is a completed seven-day request report. It does not measure website visits, unique people,
+demand, conversions, or completed downloads, and it does not count as a campaign week's results.
+
+| Reporting metadata | Observed evidence |
+|---|---|
+| Reporting window | **November 10 00:00–November 17 00:00, 2026, Asia/Manila**; start inclusive, end exclusive |
+| Equivalent UTC bounds | **`2026-11-09T16:00:00Z` <= `Submitted At` < `2026-11-16T16:00:00Z`** |
+| Duplicate-review lookback | Five minutes before the start, beginning `2026-11-09T15:55:00Z`; lookback rows are excluded from the period total |
+| Extraction completed | **`2026-11-16T22:25:33Z`**, or **November 17, 06:25:33 Asia/Manila**; source inspection occurred approximately 22:23–22:25 UTC |
+| Access method | The purpose-built Sheets metadata read first returned permission denied before row access. The subsequent authorized owner-browser read succeeded without changing sharing or permissions |
+| Source and header verification | The visible source and `Launchpad Leads` tab matched the established destination; all eleven headers exactly matched the current contract |
+| Read boundary | Upward navigation from row 1000 in receipt column A, submitted-time column B, and source column J each found row 10 as the last data row. `A11:B11` and `E11:J11` were blank |
+| Read scope | Only `A2:B10` and `E2:J10` were read: nine stored data rows. Name/Email columns C:D and Raw Payload column K were not read |
+| Date coverage | All nine submitted timestamps were explicit valid UTC values; five stored rows were outside the reporting period. The period spans the November 14 taxonomy/ingestion releases and is not a homogeneous post-release week |
+
+| Request measure | Observed result for this window |
+|---|---|
+| In-window persisted rows with source `launchpad-starter-kit-form`, before QA exclusion | **4** |
+| In-window rows excluded by the exact three known QA campaign identifiers | **3** |
+| Raw non-QA-labeled confirmed kit requests | **1** |
+| In-window rows with another source | **0** |
+| Invalid or missing submitted timestamps in the bounded snapshot | **0** |
+| Requests in the five-minute pre-window lookback | **0** |
+| Duplicate candidate groups / extra rows | **0 / 0**; with only one eligible request and no lookback rows, no email comparison was needed |
+| Independently confirmed accidental-retry extras subtracted | **0** |
+| Retry-adjusted requests | **1**; no subtraction or record alteration occurred |
+| UTM attribution of the non-QA-labeled request | **1 unattributed**: source, medium, and campaign were all missing |
+| Current-stage and challenge coverage | The eligible request used recognized values. Public category detail is omitted for this one-request sample |
+
+The three exclusions matched `issue19-20261114055933z`, `issue18-20261114100210z`, and
+`issue23-20261114120210z`. No unknown record was classified as QA by guesswork. The remaining request
+is described as **non-QA-labeled**, not as a verified customer, unique person, or demonstrated demand.
+The earlier one-day zero-request baseline remains valid for its different window.
+
+Visits, visitors, page views, form starts, submission errors, PDF clicks, completed downloads,
+conversion, and drop-off remain **not measured**. Missing UTMs prevent source/campaign attribution of
+the one remaining request. No customer contact values, row-level records, raw payloads, or private
+access links are included in this report. No source row, signup, analytics setting, permission,
+scheduled report, or email workflow was created or changed.
+
+This adds actual pre-launch reporting evidence while #13 remains **Open / In Progress, 10/13**.
+The three composite criteria stay open for the actual Instagram/future-placement routes, the
+traffic/event source or explicit limited-measurement decision, and the reporting owner/cadence.
+Future campaign reporting remains under the planned #14 observation windows.
 
 ## Preview Behavior
 
