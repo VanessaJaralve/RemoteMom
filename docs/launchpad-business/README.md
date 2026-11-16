@@ -51,13 +51,38 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #5 — High-Value Hybrid | **In Progress, 2/9**; source comparison, audience/output definition, [current listing](https://payhip.com/b/ryYbl) and single-file configuration reviewed | The owner download timed out; uploaded/delivered-file content and editable-source identity remain unverified. Resolve the recorded editorial gaps before publishing the prepared replacement copy. No revised companion or paid offer is complete. |
 | #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared | Finish the existing-asset inventory and scope/packaging decisions supported by evidence. Collection production remains conditional on #15/#14; no assets or price are adopted. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
-| #13 — measurement | **In Progress, 10/13**; the completed November 10–16 Manila report records four in-window requests, three known QA exclusions and one non-QA-labeled, unattributed request | Confirm request-only reporting or a suitable traffic/event source, the weekly owner/cadence, and Instagram’s mobile bio correction/actual route. Visits, conversion and completed downloads remain not measured; this pre-launch report is not a campaign week. |
-| #16 — support operations | **In Progress**; help route live and Vanessa's daily inbox review confirmed | Owner choice remains for unresolved-case follow-up and private-thread/log handling. The private-thread proposal is not an adopted operating arrangement; applicable buyer-operation checks remain open. |
+| #13 — measurement | **In Progress, 12/13 under the approved request-only scope**; Vanessa approved manual Monday reporting on November 17. The completed November 10–16 Manila report remains the separate pre-launch example | Complete Instagram’s mobile bio correction/actual route and verify other real placements when used. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured; broader instrumentation is deferred, not implemented. |
+| #16 — support operations | **In Progress, 14/17 overall; Stage 1 complete, 10/10**. Vanessa approved unresolved-case follow-up and one private email thread per case on November 17; daily inbox review was already confirmed | Stage 2 remains **4/7** for actual buyer recovery, update/re-download behavior and the paid-support review arrangement. Approval establishes operating commitments, not a history of handled customer cases. |
 
-Finish the available source/editorial, reporting and platform work, and resolve the specific existing
-owner choices before starting the remaining UAT. The Stage 1 gate still controls free-kit promotion;
+The support and reporting owner choices below are now approved. Finish the remaining source/editorial
+and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion;
 paid promotion retains the relevant #4/Stage 2 #16 requirements. The dated November 16–20 plan and
 release evidence below remain history and planning context, not automatic launch authorization.
+
+## Approved support and reporting arrangements — 2026-11-17 (Asia/Manila)
+
+Vanessa approved the concrete support and reporting arrangement presented in chat with “yes please
+proceed.” This is a new owner decision, superseding earlier statements that follow-up responsibility,
+private record handling, reporting scope and weekly ownership were unconfirmed.
+
+- **Support:** Vanessa owns unresolved signup/download requests through resolution or an explicitly
+  recorded handoff. Keep one private email thread per case in the existing help inbox, with the
+  affected resource/version, problem, status, next action and resolution. Daily inbox review was
+  already confirmed. Keep customer details and raw messages private; only sanitized, reproducible
+  defects belong in GitHub. This completes #16's Stage 1 operating commitments, **10/10**.
+- **Reporting:** use request-only measurement for the initial free-kit experiment, with Vanessa
+  manually reviewing the previous complete Monday-to-Monday week in **Asia/Manila** each Monday.
+  The first regular review is **November 23**, for **November 16 00:00–November 23 00:00**,
+  start inclusive/end exclusive. The completed November 10–17 report remains a separate pre-launch
+  example. The [collection guide](../Validation_Collection_Setup.md) retains the source, QA exclusions,
+  duplicate review and attribution rules. Missing traffic/funnel measures remain **not measured**;
+  the original broader instrumentation goals are explicitly deferred under this approved scope.
+
+These decisions complete two #13 preparation criteria under its approved limited scope, bringing it
+to **12/13**, with actual channel routing still open. #16 remains **In Progress, 14/17**: its three
+Stage 2 buyer-operation criteria are not completed by a free-kit support or request-reporting
+commitment. No actual customer handling, future report, scheduled automation, new service, paid
+platform recovery, UAT pass or campaign launch is claimed by recording this approval.
 
 ## Issue #1 decision and offer map — 2026-11-15
 
@@ -185,7 +210,7 @@ completed work may finish earlier than its target.
 | **Nov 16** | **#1:** publish this decision/offer map and link it from the issue; retain one confirmed-kit-request goal and the two paths | Record the decision as adopted planning scope, with reader assumptions still explicit; no claim of completed research |
 | **Nov 17–18** | **#11:** review the existing ten-page kit, promised exercises, links, printability/accessibility, next step, and content inventory; record source recovery or an explicit linked follow-up | Actual physical-mobile PDF review is required. Material defects requiring an unavailable editable source can move this target; preserve the current file |
 | **Nov 18** | **#18:** finish representative-reader wording; native arrow-key selection is user-confirmed November 16 | Obtain real reader input from both paths. Vanessa's contextual arrow-key/Enter result completes that keyboard check; device/browser unspecified |
-| **Nov 18** | **#16 Stage 1:** finish unresolved-case follow-up ownership and private record handling; Vanessa confirmed daily inbox monitoring November 16 | Daily monitoring owner/cadence are confirmed. Follow-up responsibility and private-record arrangement remain unconfirmed. Full #16 also contains buyer operations; it stays open unless those pass or move to a linked follow-up under its existing close rule |
+| **Nov 18 target; completed Nov 17** | **#16 Stage 1:** daily monitoring, unresolved-case follow-up ownership and private email-thread handling are approved | Stage 1 is **10/10**. These are operating commitments, not completed case-handling evidence. Full #16 remains open for Stage 2 buyer operations unless those pass or move to a linked follow-up under its existing close rule |
 | **Nov 19** | **#13:** finish measurement-source inventory, channel links, definitions, dated baseline, applied QA exclusions, duplicate treatment, and a weekly reporting example | Actual reporting access and metric availability must be verified. A small baseline is acceptable; missing visitor/download metrics stay explicitly unmeasured |
 | **Nov 20** | **#19:** finish both audience paths, links, note/copy fallback, keyboard, PDF evidence, duplicate accounting, and actual baseline exclusions; fix/recheck critical defects | Depends on #11/#13/#18 evidence. Accounting for duplicates is allowed by the existing criterion; building remote idempotency is not a new sprint requirement |
 | **By Nov 20 — preparation only** | **#14:** four-week calendar, first holiday captions/Story text, 24 prepared links, and review/publication records prepared November 16 | Publication starts only after Stage 1 readiness passes. Prepared copy and links do not complete platform routing or four weeks of publishing and learning |
@@ -255,7 +280,7 @@ completes the arrow-key check without changing the scope of these earlier observ
 
 No new signup was submitted for these interaction checks. The prior production collection, QA
 exclusion, PDF-release, and user-reported phone-link evidence remain the relevant records for those
-separate behaviors. The current remaining work is physical-phone/saved-PDF readability of `20261116b`,
+separate behaviors. At this November 16 check, the remaining work was physical-phone/saved-PDF readability of `20261116b`,
 representative-reader wording findings, measurement readiness, unresolved-case follow-up ownership,
 and private support-record handling. The page-10 next-step correction is already released and
 verified through PR #32, as recorded in #11. This is not full #19 closure
@@ -274,7 +299,9 @@ answer only for the behavior it establishes:
 
 The confirmations change the current acceptance record, not the historical browser/device coverage.
 No signup, private support record, email, app-beta invitation, or scheduled task was created by
-recording these replies.
+recording these replies. The separate November 17 approval above subsequently confirms unresolved-case
+follow-up, private email-thread handling and manual request-reporting ownership; it does not expand
+the device evidence in this historical record.
 
 ### Prepared Launchpad reader wording check — #18 and #15
 
@@ -562,7 +589,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 | Stage | Focus | Completion gate |
 |---|---|---|
-| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #12 is Done and #23 ingestion acceptance is complete; verify #1, #11, #13, #18, #19, and the Stage 1 subset of #16 before #14; #15 research can run alongside this work |
+| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1/#12 are Done, #23 ingestion acceptance is complete and #16 Stage 1 is complete at 10/10. Finish #11/#18/#19 acceptance and #13 actual channel routing under the approved request-only scope before #14; #15 research can run alongside this work |
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
@@ -582,7 +609,9 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 **During the four-week experiment**
 
 - Publish a sustainable content cycle on existing channels, primarily directing readers to the free kit.
-- Review channel visits, confirmed signups, delivery issues, and feedback weekly using #13's definitions.
+- Review confirmed kit requests, available attribution, delivery issues and feedback each Monday using
+  #13's approved request-only definitions. Mark channel visits, conversion and other unavailable
+  funnel measures **not measured**; do not infer them from request totals.
 - Mention a paid offer only after its relevant listing, checkout/delivery, and support checks pass.
 - Keep email automation optional and separate from the initial direct-download journey.
 
@@ -652,9 +681,10 @@ matching new-category destination case; retain/exclude campaign `issue18-2026111
 reporting. The November 16 [journey record](#journey-checks-completed--2026-11-16) adds actual native
 keyboard selection by typeahead. Vanessa's later [user confirmation](#user-confirmations-and-next-step-feedback--2026-11-16)
 completes the explicit arrow-key/Enter check, with device/browser unspecified. #18 still needs
-representative-reader wording findings under #15. Broader #19 acceptance, #13 reporting, and the
-remaining #16 follow-up/private-record arrangement remain prerequisites before broad promotion;
-Vanessa's daily monitoring commitment is confirmed. #23's production ingestion acceptance is complete.
+representative-reader wording findings under #15. Broader #19 acceptance and #13 actual channel
+routing remain prerequisites before broad promotion. November 17 approval completes #16 Stage 1
+follow-up/private-record commitments and adopts #13 request-only reporting with Vanessa as the
+manual Monday reviewer. #23's production ingestion acceptance is complete.
 #24 email work does not block the free-kit experiment. This change does not authorize outreach,
 beta invitations, or the four-week campaign.
 
@@ -1237,11 +1267,13 @@ recovery, customer re-downloads or update delivery. Preserve the remaining #4/#1
 
 ## Issue #16 — help, file handling, and buyer operations
 
-**Released subset; issue #16 remains In Progress.** The help and file-handling changes originally
-drafted on 2026-11-14 were released through [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20).
-The published-help criterion is satisfied, and #19 has one verified production signup/collection case.
-Vanessa confirmed daily inbox monitoring on November 16. Unresolved-case follow-up responsibility,
-private support-record handling, remaining #19 coverage, and Stage 2 operations remain unresolved.
+**Stage 1 complete, 10/10; issue #16 remains In Progress, 14/17 overall.** The help and file-handling
+changes originally drafted on 2026-11-14 were released through
+[PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20). The published-help criterion is satisfied,
+and #19 has one verified production signup/collection case. Vanessa confirmed daily inbox monitoring
+on November 16 and explicitly approved unresolved-case follow-up and one private email thread per
+case on November 17. Remaining #19 coverage and Stage 2 operations remain unresolved; the approved
+operating arrangement is not evidence of actual customer-case handling.
 The editable master is still missing. #27 records the earlier guarded repair, rebuild/rollback,
 and user-reported phone-link success. The current `reader-clarity-v4` PDF, edition `20261117b`,
 is released through PR #33 with exact public-file, copy/continue and existing-reader access checks.
@@ -1265,10 +1297,13 @@ history of support-case handling.
 **Earlier operating proposal — November 16:** reuse the existing private inbox and one email thread
 per help request, with a small private case log only if needed; review each weekday and assign a
 follow-up action for unresolved delivery cases. Vanessa's later daily commitment supersedes the
-proposed weekday cadence. Follow-up responsibility and whether private email threads or an existing
-private log hold the case record remain unconfirmed; do not infer them from the cadence answer alone.
-No mailbox label, log, automated reminder, schedule, or access setting was created by this proposal
-or confirmation. The remaining Stage 1 support checks stay open.
+proposed weekday cadence. At that time, follow-up responsibility and the private-record arrangement
+remained unconfirmed. **Approval — November 17:** Vanessa now owns follow-up through resolution or
+an explicitly recorded handoff, and one private email thread per case in the existing help inbox is
+the adopted record. The approved fields below guide those threads. A separate private log is only
+needed if the existing threads later prove insufficient. This completes the two remaining Stage 1
+operating commitments; it does not claim that any customer case has already been handled. No mailbox
+label, log, automated reminder, schedule, or access setting was created by this documentation change.
 
 Public expectation wording for this early version:
 
@@ -1280,8 +1315,8 @@ backup is not confirmed remote collection and is not automatically resent. Do no
 delivery, automatic recovery, or a numeric response time. See the recovery guidance in
 [Validation Collection Setup](../Validation_Collection_Setup.md#launchpad-help-and-recovery-issue-16).
 
-The proposed private record, whether an email thread or a log if needed, should contain only the
-information needed to resolve a request:
+The approved private email thread for each case should contain only the information needed to
+resolve that request:
 case reference, date received, category, affected page/resource version, general device/browser,
 short problem description, status, next action, and resolution. Suggested categories are signup,
 download, incorrect/unreadable file, and content question. Suggested statuses are New, Investigating,
@@ -1370,12 +1405,12 @@ delivery. Bundle-specific behavior remains under #10. This record does not chang
 |---|---|---|
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Inbox monitoring owner/cadence | **Confirmed November 16: Vanessa checks the existing help inbox daily during the campaign** | No repeat ownership/cadence confirmation is needed; this does not establish a response-time guarantee or actual handled-case history |
-| Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented | Confirm who follows up on unresolved delivery cases; daily monitoring alone does not settle that responsibility |
+| Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented; Vanessa approved follow-up ownership November 17 | Vanessa follows each unresolved case through resolution or an explicitly recorded handoff. Actual case handling is not claimed by this commitment |
 | Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed for an earlier edition; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check. PR #33 adds verified public delivery and desktop/mobile-width continuation for edition `20261117b` | Physical-phone/saved-PDF readability of `20261117b`, the focused reader retest and final #19 acceptance remain open. The current page-10 correction is released and verified through PR #33. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
 | Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; guarded revisions have pinned rebuild/rollback records; `reader-clarity-v4` / edition `20261117b` is released and publicly verified through PR #33. `next-step-v2` / `20261116b` from PR #32 is the previous release and immediate PDF rollback target | #27 supplies prior release/phone-link evidence; the November 17 release record above gives the current exact public PDF identity and verification. The editable master remains missing and broader #11/#19 reader, readability and accessibility evidence remains open |
-| Privacy of support records | Private-intake template and public-defect boundaries documented | Confirm the private support-record location and operating handling arrangement; published evidence must contain no customer data |
-| Buyer policy, feedback, and update workflow | Main eBook policy, preview, and support copy published and verified; #3 complete. Receipt arrival is user-confirmed under #4. Remaining buyer-support/update operations are not fully verified | Complete #4's receipt instructions/email-link and support-recovery checks, plus #16's unresolved-case/private-record and remaining buyer-operation requirements. Keep the main listing as the policy source; #10 remains bundle-specific |
-| Deployment and issue closure | **In Progress; released subset plus confirmed daily monitor** | #27 is complete. Confirm unresolved-case follow-up/private-record arrangement, finish remaining #11/#19 physical-phone/saved-PDF and journey acceptance, and complete or explicitly defer Stage 2 buyer operations with linked follow-up; #12 is Done, #18 has reader wording work, and optional email is #24 Later |
+| Privacy of support records | **Approved November 17:** one private email thread per case in the existing help inbox, using the documented intake/status/action/resolution fields | Apply the approved rules when support operates. No customer records were created or inspected by recording this decision; public evidence must contain no customer data |
+| Buyer policy, feedback, and update workflow | Main eBook policy, preview, and support copy published and verified; #3 complete. Receipt arrival is user-confirmed under #4. #16 Stage 2 remains **4/7** | Complete #4's receipt instructions/email-link and support-recovery checks, actual update/re-download behavior, and the paid-support questions/review arrangement. The approved weekly request report does not establish these paid operations. Keep the main listing as the policy source; #10 remains bundle-specific |
+| Deployment and issue closure | **In Progress, 14/17; Stage 1 complete at 10/10, Stage 2 at 4/7** | #27 is complete. Finish remaining #11/#19 physical-phone/saved-PDF and journey acceptance separately, and complete or explicitly defer Stage 2 buyer operations with linked follow-up before closing full #16. #12 is Done, #18 has reader wording work, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
