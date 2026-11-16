@@ -267,6 +267,40 @@ copy. Existing historical values and labels remain unchanged.
 
 ## Issue #13 — measurement inventory and definitions
 
+### Owner-approved request-only reporting — 2026-11-17
+
+Vanessa approved the proposed operating arrangement on November 17: the initial free-kit experiment
+uses **request-only reporting**, and **Vanessa reviews the report manually each Monday**. This resolves
+the reporting-scope and weekly-owner/cadence decisions. It is an explicit change to the initial
+measurement scope, not evidence that the original full-funnel events have been implemented.
+
+Use the existing verified `Launchpad Leads` source and the definitions below. Count persisted requests
+within the stated window, exclude known QA, retain missing UTMs as unattributed, and apply the existing
+five-minute duplicate-review rule. Keep raw requests primary and record any independently supported
+retry adjustment separately. Report channel/campaign, stage and challenge only where the source and
+sample size support a useful, privacy-safe aggregate.
+
+Visits, visitors, page views, form starts, submission errors, PDF clicks, completed downloads,
+conversion and drop-off remain **not measured**. Their full-funnel goals and definitions are retained
+for a later separately approved source, scope and cost decision; they are deferred from this initial
+request-only experiment. No zero, estimate, conversion rate or unique-person count may substitute for
+unavailable measures. Paid-product reporting remains conditional on the verified paid route.
+
+**Manual review window:** each Monday, review the previous Monday at 00:00 through the current Monday
+at 00:00 in Asia/Manila, start inclusive and end exclusive. The first regular review is **Monday,
+November 23, 2026**, for **November 16 00:00–November 23 00:00 Asia/Manila**. The completed November
+10–17 report below is a separate pre-launch example; it is not that upcoming period or one of the
+four campaign weeks. The first planned campaign week remains November 23–30, with its review on
+November 30 if the campaign proceeds through its existing gates.
+
+**Current #13 acceptance: 12/13; Open / In Progress.** The source/counting decision and weekly-report
+preparation criteria are satisfied under this approved limited scope, using the completed pre-launch
+example and the adopted manual routine. The actual-channel route criterion remains open for the
+Instagram mobile bio correction and real placement checks when those placements are used. Future
+reports still require actual extraction and review; this approval does not claim they have happened.
+No assistant automation, reminder, analytics service, paid plan, permission change or campaign launch
+is created by this operating decision.
+
 **Readiness review — 2026-11-15, Asia/Manila:** this inventory supports the November 20 readiness
 target for Thanksgiving, Black Friday, and Cyber Monday content about practical tech and workspaces.
 At that review, it documented available evidence and proposed counting rules; **no fresh baseline or
@@ -451,11 +485,13 @@ provides the operational/accounting option allowed by #19.
 
 ### Prepared manual weekly reporting routine — 2026-11-16
 
-Use a manual Monday review of the previous complete Monday-to-Monday week in Asia/Manila, with
-start-inclusive/end-exclusive bounds. The next complete period would be **November 16 00:00 to
-November 23 00:00 Asia/Manila**. Confirm the weekly reporting owner separately; Vanessa's daily
-help-inbox monitoring commitment does not assign ownership of the weekly report.
-This is a prepared routine, not a scheduled automation or a completed weekly report.
+This routine was prepared November 16 and **adopted by Vanessa on November 17** for request-only
+reporting. **Owner: Vanessa; cadence: manual review each Monday.** Review the previous complete
+Monday-to-Monday week in Asia/Manila with start-inclusive/end-exclusive bounds. The first regular
+review is **November 23**, covering **November 16 00:00 to November 23 00:00 Asia/Manila**.
+The separate November 10–17 pre-launch report is the completed example, not this upcoming reporting
+period. The routine is a manual owner commitment; no scheduled automation or future completed report
+is implied.
 
 For each report, reuse the metadata and request-measure tables above: record the period and extraction
 time, privately verify the source/header/read boundary, apply QA exclusions and duplicate accounting,
@@ -478,9 +514,10 @@ do not complete #13 or authorize campaign publication. No analytics service has 
 
 ### Pre-UAT measurement readiness — 2026-11-17
 
-This separates completed preparation from owner decisions, platform actions, and later reporting.
-It preserves all thirteen #13 acceptance criteria; the three composite criteria for actual channel
-routes, the full-funnel reporting source, and weekly reporting remain open.
+After Vanessa's November 17 approval, #13 is **12/13; Open / In Progress** under the explicitly
+approved request-only scope above. The reporting-source decision and weekly-owner/cadence preparation
+are resolved. Full-funnel goals remain documented as deferred and unmeasured; the actual channel-route
+criterion remains open. Later reports and campaign results require their own observed evidence.
 
 | Work item | Current evidence | Remaining action / category |
 |---|---|---|
@@ -489,9 +526,9 @@ routes, the full-funnel reporting source, and weekly reporting remain open.
 | Existing Instagram profile route | The replacement Starter Kit URL is prepared and directly verified; the last observed bio still targets the separate five-minute toolkit, and the desktop editor requires its mobile app | Platform action: replace the bio link on mobile, then verify the actual route and all three UTMs. This cannot be established by repository inspection |
 | Future campaign post and Story routes | All direct URLs are prepared; no holiday posts or Stories have been published | Placement check with #14 when each real placement is used. Prepared URLs are not evidence of a published route |
 | Request attribution and counting | The current browser, endpoint, and eleven-column destination contract retain stage, challenge, source, and bounded UTMs. QA exclusions, unknown/unattributed handling, and five-minute duplicate-review rules are documented above | Ready for reporting against the authorized request source. Keep raw requests primary; do not infer visits, subscribers, or completed downloads |
-| Traffic, starts, errors, and PDF clicks | No verified reporting source is available; the last observed Vercel configuration was disabled. The present source stores none of these event totals | Owner decision: approve a suitable source with scope/cost boundaries, or explicitly accept a request-only experiment with these metrics marked **not measured**. No service, telemetry, paid plan, or permission change is made here |
-| Weekly operating arrangement | The manual Monday review method and report fields are prepared | Owner decision: confirm the weekly reporting owner and cadence. Daily help-inbox monitoring does not independently assign this work |
-| Completed pre-launch seven-day report | The authorized owner-browser read completed the November 10 00:00–November 17 00:00 Asia/Manila report below: four in-window persisted requests, three known QA exclusions, and one raw non-QA-labeled request | This completed pre-launch example supplies actual reporting evidence. Owner/cadence and the unavailable traffic/event source remain open; it is not a campaign week |
+| Traffic, starts, errors, and PDF clicks | No verified reporting source is available; the last observed Vercel configuration was disabled. The present source stores none of these event totals | **Resolved scope decision:** Vanessa approved request-only reporting November 17. These metrics, completed downloads, conversion and drop-off stay **not measured**; full-funnel implementation is deferred until a separate source/scope/cost decision |
+| Weekly operating arrangement | **Approved November 17:** Vanessa owns a manual review each Monday using the existing report fields and counting rules | First regular review: November 23 for November 16–23 Manila. No automation is created and no future review is claimed completed |
+| Completed pre-launch seven-day report | The authorized owner-browser read completed the November 10 00:00–November 17 00:00 Asia/Manila report below: four in-window persisted requests, three known QA exclusions, and one raw non-QA-labeled request | Completed example for the approved request-only routine. It is separate from the upcoming November 16–23 period and is not a campaign week |
 | Four-week campaign results | The first planned campaign week is November 23–30; the campaign has not begun | Later observation under #14. A pre-launch seven-day report must be labeled separately and cannot satisfy a campaign week's results |
 
 ### Completed pre-launch seven-day request report — 2026-11-17
@@ -537,10 +574,11 @@ the one remaining request. No customer contact values, row-level records, raw pa
 access links are included in this report. No source row, signup, analytics setting, permission,
 scheduled report, or email workflow was created or changed.
 
-This adds actual pre-launch reporting evidence while #13 remains **Open / In Progress, 10/13**.
-The three composite criteria stay open for the actual Instagram/future-placement routes, the
-traffic/event source or explicit limited-measurement decision, and the reporting owner/cadence.
-Future campaign reporting remains under the planned #14 observation windows.
+At the time of this extraction, #13 was **Open / In Progress, 10/13**. Vanessa's later November 17
+approval above resolves the request-only scope and manual reporting owner/cadence, bringing the
+current approved-scope acceptance to **12/13**. The actual Instagram/future-placement route criterion
+remains open. This report's figures and limits are unchanged; future campaign reporting remains
+under the planned #14 observation windows.
 
 ## Preview Behavior
 
@@ -772,10 +810,13 @@ email application does not open. On November 16, Vanessa answered “I can check
 existing help-inbox monitoring question. **Vanessa is the confirmed monitor, with a daily review
 cadence during the campaign.** No automated reminder or guaranteed response time is implied.
 
-The earlier proposal uses one private email thread per help request, with a separate private case log
-only if needed. Unresolved-case follow-up responsibility and the private support-record arrangement
-remain unconfirmed; the cadence answer alone does not establish them or actual case-handling history.
-No mailbox settings, labels, log, or schedule were created by recording this confirmation.
+**Approved November 17:** Vanessa owns unresolved signup/download follow-up through resolution or
+an explicitly recorded handoff. Keep one private email thread per case in the existing help inbox,
+recording the affected resource/version, problem, status, next action and resolution; use a separate
+private log only if later needed. Keep customer details and raw messages private, and publish only
+sanitized, reproducible technical defects in GitHub. This confirms the operating arrangement; it does
+not claim actual customer cases were handled. No mailbox settings, labels, log or automated schedule
+were created by recording the approval.
 
 Public response expectation:
 
@@ -806,11 +847,12 @@ The current distribution PDF and legacy generated output are different files. Th
 the current published design was not found in the repository or saved-assets review; staging output must not be
 treated as design-equivalent or automatically copied over it.
 
-Before marking the Stage 1 support gate complete, link deployed desktop/mobile help checks, Vanessa's
-confirmed daily monitoring commitment, confirmed unresolved-case follow-up/private-record handling,
-verified failure/retry instructions, and #19's collection/download evidence. Ownership/cadence no
-longer need reconfirmation. Source inspection and local tests alone do not establish that the live
-integration works.
+The support-readiness record combines the deployed desktop/mobile help checks, verified failure/retry
+instructions, file-handling evidence, Vanessa's confirmed daily monitoring and the November 17
+follow-up/private-thread approval. Those owner decisions no longer need reconfirmation. #16 retains
+its separate Stage 2 buyer-operation requirements, while #11/#18/#19 retain their remaining reader,
+physical-phone/saved-PDF and final journey acceptance. Approval of the operating arrangement does not
+supply new live-integration or customer-case evidence.
 No email automation, marketing enrollment, purchase, refund, or customer outreach is performed by this
 documentation change.
 
