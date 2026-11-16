@@ -34,6 +34,31 @@ These are the owner's reported starting figures, not independently verified anal
 
 Serve both Philippine and international audiences, with localized examples, platforms, payment expectations, and resource links where needed. Avoid promising guaranteed remote jobs or employment outcomes.
 
+## Pre-UAT execution — 2026-11-17
+
+Vanessa asked to finish feasible work in the existing issues before UAT. Project 1 now uses
+**Ready for UAT** for implementation-complete work whose original reader/device acceptance remains
+open. #11, #18 and #19 have that status; none is closed. The counts below refer to current acceptance
+criteria, not historical task lists. Preparation does not activate UAT, promotion or new offers.
+
+| Issue | Current status and completed/prepared work | Remaining work or acceptance boundary |
+|---|---|---|
+| #11 — Starter Kit | **Ready for UAT, 10/12**; PR #33 / `reader-clarity-v4` / `20261117b` is released and technically verified | Physical-phone/saved-PDF readability and dated device/app evidence remain with #19. The missing editable master has its accepted linked follow-up; print/accessibility limits remain explicit. |
+| #18 — challenge choices | **Ready for UAT, 11/12**; taxonomy, compatibility, production mapping, keyboard and technical checks complete | Representative readers must assess the actual stage/challenge wording. F1 does not establish their selections or both planned sessions. |
+| #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
+| #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. The remaining #4 and applicable Stage 2 #16 checks still govern paid promotion. |
+| #4 — main eBook delivery/recovery | **In Progress, 8/10**; receipt arrival and full-book computer/phone readability accepted | Finish receipt instructions/email-link access, support recovery and affected-step checks using the existing order/receipt; record actual platform outcomes. |
+| #5 — High-Value Hybrid | **In Progress, 2/9**; source comparison, audience/output definition, [current listing](https://payhip.com/b/ryYbl) and single-file configuration reviewed | The owner download timed out; uploaded/delivered-file content and editable-source identity remain unverified. Resolve the recorded editorial gaps before publishing the prepared replacement copy. No revised companion or paid offer is complete. |
+| #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared | Finish the existing-asset inventory and scope/packaging decisions supported by evidence. Collection production remains conditional on #15/#14; no assets or price are adopted. |
+| #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
+| #13 — measurement | **In Progress, 10/13**; the completed November 10–16 Manila report records four in-window requests, three known QA exclusions and one non-QA-labeled, unattributed request | Confirm request-only reporting or a suitable traffic/event source, the weekly owner/cadence, and Instagram’s mobile bio correction/actual route. Visits, conversion and completed downloads remain not measured; this pre-launch report is not a campaign week. |
+| #16 — support operations | **In Progress**; help route live and Vanessa's daily inbox review confirmed | Owner choice remains for unresolved-case follow-up and private-thread/log handling. The private-thread proposal is not an adopted operating arrangement; applicable buyer-operation checks remain open. |
+
+Finish the available source/editorial, reporting and platform work, and resolve the specific existing
+owner choices before starting the remaining UAT. The Stage 1 gate still controls free-kit promotion;
+paid promotion retains the relevant #4/Stage 2 #16 requirements. The dated November 16–20 plan and
+release evidence below remain history and planning context, not automatic launch authorization.
+
 ## Issue #1 decision and offer map — 2026-11-15
 
 **Decision:** focus the upcoming Thanksgiving, Black Friday, and Cyber Monday work on one Launchpad
@@ -335,6 +360,77 @@ Link actual findings to #18 and relevant device evidence to #11/#19. This initia
 check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
 the #6 build/revise/defer recommendation. It does not validate pricing or demand, and the separate
 #13 tracking and Stage 1 #16 support gates still apply before the #14 campaign is published.
+
+### Broader reader research preparation — #15
+
+**Prepared November 17, 2026 (Asia/Manila); research preparation only.** This supplements the
+ten-minute R1/R2 wording and phone check above. It prepares the original **5–10-reader** study;
+it does not establish recruitment, completed conversations, reader acceptance, paid demand or a
+new offer decision. Keep all nine #15 acceptance criteria open until their evidence exists.
+
+Use the current Launchpad page, ten-page Starter Kit **`20261117b`**, the verified existing main
+eBook listing and approved preview, and the current proposed collection described in the offer
+map. Label proposed resources as proposals. The planning app is a separate product; its interview
+script and premium-feature scorecard do not replace this Launchpad study. No signup submission,
+purchase, paid-file delivery test or beta-interest submission is needed for these conversations.
+
+#### Reader coverage and session counting
+
+- Recruit **5–10 distinct relevant readers** across the Career and Remote-Life audiences. Record
+  which audience needs are represented; the study does not require an invented equal quota.
+- Include overlapping needs where relevant, such as a mom already working remotely who wants an
+  additional part-time role. Record both goals while counting that person once.
+- R1 and R2 remain initial planned slots. F1 is one relayed feedback batch with participant count
+  and session details unconfirmed; do not convert it into two participants or a completed-session
+  count. Link later verified context to the same evidence record rather than duplicating it.
+- A short retest may contribute to the study when its actual coverage is recorded. Mark topics
+  that were not discussed as **Not checked**; do not imply that the ten-minute check covered
+  the eBook, collection or paid-value questions.
+- Keep participant contact details and raw notes private. Public summaries use anonymous
+  references, dates, audience needs and sanitized findings. Readers may skip questions or stop.
+
+#### Broader conversation guide
+
+Use a relaxed conversation, allowing more time than the short retest when needed. Ask about the
+reader's situation before showing the resource or explaining its intended meaning.
+
+| Topic | Neutral prompt | Capture |
+|---|---|---|
+| Current goal | “What would you most like to change about finding remote work or making remote work fit your life?” | The reader's own goal, including overlapping needs. |
+| Repeated barriers and constraints | “Can you describe a recent time that was difficult? What tends to get in the way? What limits or requirements matter when you consider your options?” | A concrete example, recurring versus occasional difficulty, and voluntarily shared practical constraints. Do not collect private family, child, health or employer details. |
+| Existing support and alternatives | “What do you use or ask for help with now? What works, and what still takes effort?” | Existing resources, workarounds and unmet needs; do not assume the reader needs another product. |
+| Page promise and signup | Show the current page: “What do you think this offers, who is it for, and what would you expect after requesting the kit?” | Uncoached expectations about the two paths and direct PDF download. Record the initial answer before explaining the actual flow. |
+| Stage and challenge choices | “Which choices would you select for yourself? Does anything feel missing or unclear? How would you say it?” | Actual selected stage/challenge, mismatch or unclear label, and natural wording for #18. Readers may use either challenge group. Do not submit the form. |
+| Kit exercise and next action | Ask the reader to try a relevant exercise using a comfortable example, then ask: “What would you do with this next? What was unclear, missing or not useful?” | Edition, exercise/page, what the reader could begin or complete, any explanation needed, and the next action they understood. Use the existing five targeted retest questions where relevant. |
+| Existing eBook | Show the verified listing and approved preview: “Which parts, if any, would help with the goal you described? What does this add beyond the free kit or resources you already use? What would you leave out or need more help with?” | Concrete additional value, missing depth, objections and material the reader would not use. Do not assume they want to buy. |
+| Proposed collection and paid value | Explain that it is a proposal: “Which proposed resources, if any, would you use together? What additional help would make a paid resource worth choosing over your current or free alternatives?” | Useful combinations, duplication, priority and stated value conditions. A hypothetical preference or price answer is stated interest, not evidence of a purchase. |
+| Close and verify | “What was most useful? What would you change first?” Summarize the main points and ask whether the summary is accurate. | The reader's priority, corrections to the summary and specific follow-up findings. |
+
+The physical-phone portion keeps the existing evidence rules: record the actual device/browser/PDF
+app, edition, inspected pages, normal zoom use and saved-copy result. A partial review, technical
+parse or browser viewport check does not establish all-page physical-phone readability.
+
+#### Anonymized synthesis and decisions
+
+Extend the existing findings log when actual study evidence arrives; do not create a second
+participant count or recode F1 as a completed conversation. Alongside its existing wording/exercise
+columns, capture the following details in the sanitized finding or linked synthesis:
+
+| Field | Record only what the evidence supports |
+|---|---|
+| Conversation coverage | Anonymous reference, date, distinct-reader count, audience needs and topics completed or not checked. |
+| Goal and recurring difficulty | The goal, practical constraint, repeated barrier and current support/workaround, without private circumstances. |
+| Resource value | What the free kit already solves; additional eBook/collection value, duplication, objections and missing support. |
+| Evidence type | Observed task behavior, reader-reported experience or stated hypothetical interest. Record purchase behavior only when it is actually evidenced; do not infer it from praise or willingness-to-pay answers. |
+| Theme and audience difference | The supporting anonymous references and denominator; distinguish one person's view from a repeated theme and identify differences or overlaps between paths. |
+| Resulting action | Retain, clarify, investigate or defer; link any concrete positioning, kit, product-page or free-to-paid-transition change to the relevant issue and its evidence. |
+| #6 recommendation | Build, revise or defer the proposed resource scope, with the findings that support the decision and the uncertainties that remain. |
+
+When synthesizing, report the actual completed-conversation count and audience coverage, including
+partial sessions and unanswered topics. Summarize common needs and objections without inventing a
+threshold or treating stated interest as demonstrated demand. Give #6 a bounded recommendation
+based on the collected evidence; major new resource or bundle production still follows the existing
+#15/#14 evidence gate. This preparation does not close #15 or replace #11/#18/#19 acceptance.
 
 ### Reader feedback and focused correction - 2026-11-17
 
@@ -1007,6 +1103,138 @@ USD 0 QA order is not a charged sale or proof of a live payment-processor transa
 remaining gates pass, an optional **“Explore the paid eBook”** link could follow the free action.
 Keep the companion product in the later backlog; this review does not expand the holiday offer.
 
+## Pre-UAT paid-asset review and collection preparation — 2026-11-17
+
+This entry prepares existing #5/#6 work. It does not close buyer acceptance or authorize a new
+collection. #2/#3 remain complete for the approved 36-page main eBook; #4 remains **8/10** for the
+existing order's receipt instructions/email-link entry, support recovery, and affected-step retest.
+Receipt arrival and full-book computer/phone readability were already accepted and need not be
+repeated merely to prepare the next work.
+
+**Current issue progress:** #5 is **In Progress, 2/9** for source comparison and audience/output
+definition; #6 is **In Progress, 3/9** for scope/reuse preparation. These counts do not establish a
+finished companion, collection or paid offer.
+
+### Asset identity and content comparison
+
+| Asset | Reviewed identity/readiness | Practical value and boundary |
+|---|---|---|
+| Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
+| Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 and applicable #16 buyer operations still gate promotion. |
+| High-Value Hybrid | A 47-page source candidate reviewed November 17; [public listing](https://payhip.com/b/ryYbl) identified and displays PDF (31 MB); precise revision and uploaded/delivered-file match remain unverified | Audit/reflection 9–16; niche/role selection 18–21; practice project 22–25; resume/LinkedIn 26–29; company/outreach work 30–33; onboarding 34–37. Potential distinct career-preparation depth, with correction needs below. Rounded size and matching topics do not establish exact file identity. |
+| Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
+
+### #5 public listing identified — November 17
+
+The actual store product link resolves to [High-Value Hybrid](https://payhip.com/b/ryYbl).
+The displayed title is **The Remote Mom's Launchpad: The High-Value Hybrid: Identifying Your Top
+Transferrable Skills**. The page shows **$19.99** and **PDF (31 MB)**, and describes audits,
+scorecards, niche selection, a practice project, resume work, outreach and onboarding. These topics
+correspond to the reviewed 47-page source candidate. The displayed size is rounded; neither it nor
+the title/topic match proves the uploaded or delivered PDF's exact identity.
+
+**Owner configuration inspected November 17:** the Payhip editor for `ryYbl` lists one file, `Book 2 The High-Value Hybrid.pdf` (**30.9 MB displayed**). The product is Visible and marked as an eBook; the preview-file and automatic mailing-list subscription options are unchecked. No setting was changed. The displayed size is rounded, and the filename/settings do not prove exact file-content identity. The normal owner-file download attempt timed out, so no downloaded bytes or file contents were inspected. This is configuration verification only; the exact uploaded/delivered-file match remains open. No order was placed and no buyer download credit was used.
+
+The public copy also makes senior-leadership, one-week tool-mastery, applicant-system and
+hiring-outcome claims. Correct those claims alongside the source before promotion. No listing,
+price, file or policy was changed by identifying the destination. #5's first combined criterion
+remains unchecked because delivered-version verification is still outstanding.
+
+### #5 proposed position and editorial work
+
+The companion can serve mothers seeking a first, next or additional remote role who need to connect
+specific experience to relevant skills evidence. Reasonable outputs are an experience/evidence
+inventory, a role/industry shortlist, a clearly labeled practice workflow, a draft resume/value
+statement, and an outreach plan. Keep it optional. These outputs do not establish professional
+seniority, software mastery, employment or income.
+
+| Candidate pages | Issue to resolve before promotion |
+|---|---|
+| 7–16, especially 10 | Replace the self-score-to-senior-manager conclusion and automatic household-to-executive equivalence with bounded reflection, specific evidence and role-specific skill development. |
+| 13, 15, 24–27 | Clearly label examples, use actual supported results or placeholders, identify practice/personal work accurately, and avoid unearned experience/proficiency claims. |
+| 19, 23, 31 | Remove or verify/cite the unsupported percentage claims about learning, software adoption and unadvertised roles. The supplied references do not substantiate them. |
+| 21, 33 | Check the original layout and repair promised next sections: the extracted sequence does not supply the promised next niche matrix or interview chapter. Image-only material was not visually audited in this source-text review. |
+| 22–25, 34–37, 40–41 | Narrow the promise to career evidence and preparation; distinguish short tool practice from mastery and reduce overlap with the main eBook's boundaries/communication guidance. |
+
+**Recommendation:** revise the companion before promoting it. The uploaded-file configuration
+for the identified [product](https://payhip.com/b/ryYbl) is already inspected; its owner download
+timed out. Obtain an inspectable copy without a new order or buyer-credit use, establish its exact
+match to the reviewed source or record the difference, and identify the editable source. Then
+correct the content and finalize a listing grounded in that version. The main
+eBook's published refund terms must not be assumed to cover a separate product. Apply #4 and
+relevant #16 verification to the companion before paid promotion. #5 stays open at **2/9**; the
+source comparison and audience/output definition are complete, while the listing destination is
+now known and file/editorial acceptance remains open.
+
+### #5 replacement listing copy — draft, not published
+
+**Publication condition:** verify the exact uploaded/delivered version and resolve the editorial
+items above before using this copy. Confirm that the corrected edition actually retains each
+listed exercise. This draft adopts no price, delivery promise, support term or refund policy.
+
+> **The High-Value Hybrid: Skills Evidence for Your Next Remote Role**
+>
+> Turn your experience into clear examples of the work you can do. This optional PDF companion
+> helps mothers returning to work, changing direction, or seeking additional remote work identify
+> relevant skills and prepare a focused career plan.
+>
+> Work through guided reflections and exercises to:
+>
+> - Identify useful skills from paid work, volunteering, study and caregiving, with examples you can support.
+> - Compare a role or industry with your interests, skills and available working hours.
+> - Build a clearly labeled practice workflow to explore relevant digital tools.
+> - Draft a resume summary, LinkedIn introduction and outreach message using your own evidence.
+> - Choose one practical next step for your search or preparation.
+>
+> Use the examples as prompts and adapt them to what you have actually done. Keep practice
+> projects clearly identified and use only results you can support.
+>
+> For broader guidance on workspace setup, daily planning, boundaries and communication, explore
+> [The Remote Mom's Launchpad](https://payhip.com/b/zUYPA). Choose the resource that fits your
+> current goal; the High-Value Hybrid is an optional companion, and either book can be considered
+> independently of the free Starter Kit.
+
+Before publication, add the verified edition/page count, actual included files and format, tested
+Payhip access instructions, and this product's confirmed purchase-help/policy details. Check the
+main-book link and any selected reciprocal journey. The draft itself does not complete #5's live
+listing, included-file/support, optional-positioning or cross-link acceptance criteria.
+
+### #6 reuse map and production boundary
+
+| Candidate | One practical reader outcome | Reuse and decision still needed |
+|---|---|---|
+| #7 readiness/skills | A job seeker chooses a role using specific experience evidence and real work constraints | Reuse kit 3–5, main eBook 17–18/34 and corrected companion exercises. Validate whether deeper guidance adds value; avoid duplicating starter tables or inventing readiness scores. |
+| #8 search/application tools | A job seeker tracks verified opportunities and prepares truthful application examples | Reuse kit 6–7/10 and corrected companion company/outreach material. Identify the actual missing task before creating another tracker or template. |
+| #9 work-life tools | An already-remote/hybrid reader plans and adjusts a realistic week | Reuse kit 8–9 and main eBook 20–32. A longer 30-day format alone is not evidence of added value. |
+
+The available relayed reader feedback supports clearer directions and additional-part-time search
+help. It does not supply the full #15 sample, #14's completed four-week findings, paid demand or a
+validated price. **Recommend deferring collection production** while correcting/identifying #5 and
+collecting that evidence. No collection assets or price are adopted. #7–#10 remain conditional;
+#6 cannot close from inventory preparation alone.
+
+Prepared review standards for any later selection: name one distinct outcome, verify truthful
+examples and instructions, record the editable source/version/files/change history/rollback, test
+realistic sample entries and links, inspect page rendering and the intended formats, and complete
+the reader/scenario checks required by #7–#9. Keep technical correctness, comprehension and
+accessibility evidence separate. Keep paid masters and customer data out of public issue records.
+
+If a defined offer is later supported, record a price/currency/version hypothesis and intended
+audience before a separate test. Distinguish interview interest from actual purchases. Use #13's
+verified metrics and QA exclusions to review qualified visits, completed paid orders, support and
+refunds over a stated period; low traffic is inconclusive. Free requests and the zero-total QA order
+do not validate pricing. This prepares a learning approach and makes no price or sales forecast.
+
+### Remaining external evidence in #4 and Stage 2 #16
+
+Payhip receipt-link access and recovery are platform behaviors outside this repository. Use the
+existing receipt/order and already saved eBook for the remaining check. Inspect the receipt's
+instructions and open its access link only to the purchased-file page; do not trigger another full
+book download, order, resend, credit change, support message or refund as part of this source review.
+A later authorized recovery exercise must record the actual outcome. The published contact route,
+approved policy, draft support prompts and file-update rules do not by themselves prove operational
+recovery, customer re-downloads or update delivery. Preserve the remaining #4/#16 acceptance items.
+
 ## Issue #16 — help, file handling, and buyer operations
 
 **Released subset; issue #16 remains In Progress.** The help and file-handling changes originally
@@ -1015,10 +1243,13 @@ The published-help criterion is satisfied, and #19 has one verified production s
 Vanessa confirmed daily inbox monitoring on November 16. Unresolved-case follow-up responsibility,
 private support-record handling, remaining #19 coverage, and Stage 2 operations remain unresolved.
 The editable master is still missing. #27 records the earlier guarded repair, rebuild/rollback,
-and user-reported phone-link success. PR #32 subsequently released `20261116b`; #11 records
-its production file/version and beta/help destination checks. Detailed physical-phone/saved-file
-readability remains under #11/#19. The main eBook listing/preview/policy work is complete under
-#2/#3; #4 remains 8/10 for the outstanding receipt-link/recovery and final affected-step checks.
+and user-reported phone-link success. The current `reader-clarity-v4` PDF, edition `20261117b`,
+is released through PR #33 with exact public-file, copy/continue and existing-reader access checks.
+Its three destinations are LinkedIn, JobStreet and Launchpad help; the approved beta removal applies
+to the PDF, while the separate website invitation remains. #11/#19 are Ready for UAT with
+physical-phone/saved-file readability and final acceptance still open. The main eBook listing/preview/policy
+work is complete under #2/#3; #4 remains 8/10 for the outstanding receipt-link/recovery and final
+affected-step checks.
 The release record below preserves the distinction between deployed help
 and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
