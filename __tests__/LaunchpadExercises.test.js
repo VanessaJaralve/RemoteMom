@@ -61,7 +61,10 @@ describe('Launchpad exercise journey', () => {
     expect(fixture.selectedLanes()).toEqual(['life']);
     expect(document.querySelector('#exercise-title').textContent).toBe('Leave yourself a next-action note.');
     expect(fixture.field.labels[0].textContent).toBe('When I return, my next action will be:');
-    expect(fixture.status.textContent).toBe('Your note stays on this page and clears when you refresh.');
+    expect(document.querySelector('#exercise-continuation').textContent).toContain('page 8');
+    expect(document.querySelector('#exercise-next-link').getAttribute('href')).toBe('#starter-kit');
+    expect(document.querySelector('#exercise-kit-link').hidden).toBe(true);
+    expect(fixture.status.textContent).toBe('');
     fixture.field.value = 'Draft the project update';
 
     fixture.choose('work');
@@ -70,6 +73,10 @@ describe('Launchpad exercise journey', () => {
     expect(fixture.selectedLanes()).toEqual(['work']);
     expect(document.querySelector('#exercise-title').textContent).toBe('Choose one role to explore this week.');
     expect(fixture.field.labels[0].textContent).toBe('One role I want to understand better:');
+    expect(document.querySelector('#exercise-continuation').textContent).toContain('page 3');
+    expect(document.querySelector('#exercise-continuation').textContent).toContain('page 4');
+    expect(document.querySelector('#exercise-next-link').getAttribute('href')).toBe('#where-to-look');
+    expect(document.querySelector('#exercise-kit-link').hidden).toBe(false);
 
     fixture.choose('life');
 
@@ -98,7 +105,7 @@ describe('Launchpad exercise journey', () => {
 
     expect(fixture.clipboard.writeText).not.toHaveBeenCalled();
     expect(document.activeElement).toBe(fixture.field);
-    expect(fixture.status.textContent).toBe('Write one small next step first.');
+    expect(fixture.status.textContent).toBe('Write a note to copy, or use the next-step links below.');
   });
 
   it.each([
@@ -114,7 +121,9 @@ describe('Launchpad exercise journey', () => {
     expect(fixture.clipboard.writeText).toHaveBeenCalledTimes(1);
     expect(fixture.clipboard.writeText).toHaveBeenCalledWith(`${prompt} ${note}`);
     expect(fixture.field.value).toBe(`  ${note}  `);
-    expect(fixture.status.textContent).toBe('Copied. Paste your note somewhere useful to you.');
+    expect(fixture.status.textContent).toBe('Copied. Paste it into your notes app, then use the next-step links below.');
+    expect(document.querySelector('#note-storage').textContent).toBe('Your note stays on this page and clears when you refresh.');
+    expect(fixture.scroll).not.toHaveBeenCalled();
   });
 
   it.each(['unavailable', 'denied'])('retains and selects the note for manual copying when clipboard access is %s', async (failure) => {
@@ -132,7 +141,7 @@ describe('Launchpad exercise journey', () => {
     expect(document.activeElement).toBe(fixture.field);
     expect(fixture.field.selectionStart).toBe(0);
     expect(fixture.field.selectionEnd).toBe(note.length);
-    expect(fixture.status.textContent).toBe('Select and copy your note using your device’s copy command.');
+    expect(fixture.status.textContent).toBe('Use your device’s copy command, or continue with the next-step links below.');
   });
 
   it('clears transient notes on a fresh page without changing unrelated persisted data', () => {
