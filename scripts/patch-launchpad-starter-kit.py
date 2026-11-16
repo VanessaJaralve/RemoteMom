@@ -47,11 +47,10 @@ from pypdf.generic import (
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 STAGING_ROOT = REPOSITORY_ROOT / "tmp" / "pdfs" / "issue27"
 BASELINE_SHA256 = "b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e"
-PATCH_REVISION = "reader-clarity-v3"
+PATCH_REVISION = "reader-clarity-v4"
 PATCH_DATE = "D:20261117090000+08'00'"
-EDITION = "20261117"
+EDITION = "20261117b"
 PAGE_SIZE = (595.2756, 841.8898)
-BETA_URL = "https://remote-mom.vercel.app/beta/"
 HELP_URL = "https://remote-mom.vercel.app/launchpad/#help"
 LINKEDIN_URL = "https://www.linkedin.com/jobs/"
 JOBSTREET_URL = "https://ph.jobstreet.com/Remote-jobs/part-time"
@@ -168,8 +167,6 @@ REPLACEMENTS = {
                 row("Need help with a step?", 72, BOLD, 11),
                 row("Tell Vanessa the page number and the instruction that felt unclear.", 88),
                 row("Help: " + HELP_URL, 103, uri=HELP_URL),
-                row("Optional Android beta interest: " + BETA_URL, 125, uri=BETA_URL),
-                row("Separate interest form for the planning app; it is not required to use this kit.", 140),
                 row("Edition: " + EDITION, 163, size=10),
             ],
         },
