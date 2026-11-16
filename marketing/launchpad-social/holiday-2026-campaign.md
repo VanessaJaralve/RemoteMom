@@ -29,10 +29,10 @@ requires the separate #2–#4 and Stage 2 #16 checks in the roadmap; it is not n
 
 The [download page](../../landing/launchpad/download/index.html) links the existing
 [Facebook profile](https://www.facebook.com/VanJaralve) and
-[Instagram profile](https://www.instagram.com/vdjaralve/). These links establish which accounts the
-site names; their current publishing capability, activity, audience, and reporting were not inspected.
-This pack prepares those two channels only. Pinterest is not in this posting plan, and email remains
-deferred under #24.
+[Instagram profile](https://www.instagram.com/vdjaralve/). The November 16 profile-route check below
+records their observed link destinations and the saved Facebook correction. Broader posting capability,
+Story placement, audience, and traffic reporting are not established by that check. This pack prepares
+those two channels only. Pinterest is not in this posting plan, and email remains deferred under #24.
 
 | Placement | Prepared use | Check before publication |
 |---|---|---|
@@ -45,6 +45,40 @@ in this directory retain “For Filipino moms exploring remote work”; the firs
 headings. They are regional career assets. The pack can start with Facebook text and native Story
 text, so preparing global or remote-life graphics is not a prerequisite for drafting the campaign.
 Preserve the existing images; their presence is not evidence of global or both-path coverage.
+
+### Existing profile links — checked 2026-11-16
+
+**Observed November 16, 21:18–21:24 Asia/Manila, in desktop Chrome.** This is an existing-profile
+route check and link correction, separate from publishing any holiday post or Story.
+
+| Route | Observed result and action | Remaining limit |
+|---|---|---|
+| [Facebook profile](https://www.facebook.com/VanJaralve), Links → Remote work that fits real life | The original link reached the current Launchpad but supplied none of the three UTM fields. Its URL was replaced with the registered Facebook profile link below. After saving and returning to the profile, the actual outbound click reached Launchpad with `facebook / organic_social / launchpad-profile`; the hero signup action reached `#starter-kit` with all three values intact | This verifies the desktop profile route, not a mobile Facebook app, future post, Story route, visitor total, or completed request |
+| [Instagram profile](https://www.instagram.com/vdjaralve/), Free Starter Kit bio link | The current `subscribepage.io/6OBwYY` link redirected to `https://6obwyy.subscribepage.io/`, a separate **5-Minute Focus Toolkit** signup page. It retained `utm_source=ig`, `utm_medium=social`, and no `utm_campaign`; it did not reach the current ten-page Work Fit and Safety Starter Kit | Instagram's desktop edit page disables Website and explicitly requires its mobile app to edit bio links. No Instagram link was changed; replace the existing link on mobile, then verify the actual route |
+| Direct replacement-link checks | Both registered links below opened the current Launchpad and preserved their exact three UTM values through the hero `#starter-kit` action | The Instagram direct test is preparation, not proof that its bio is updated |
+
+#### Profile-link register
+
+These are separate from the **24 holiday post links**. Use `launchpad-profile` for the shared
+profile placement; it does not identify an individual older feed post. Record any later replacement
+and its effective date before interpreting a reporting period.
+
+| Channel | Exact link | State at this check |
+|---|---|---|
+| Facebook | [Current Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Saved and actual desktop profile route verified** |
+| Instagram | [Prepared Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Direct URL verified; mobile bio replacement and actual route pending** |
+
+For the Facebook correction, only the Starter Kit URL changed. The link description, public audience,
+and other consulting link were preserved. The previous Starter Kit URL was
+`https://remote-mom.vercel.app/launchpad/` with no UTM query; retain it as the rollback reference.
+Platform-added click-identifier values are omitted from this public record.
+
+No form was submitted, no download initiated, and no holiday post/Story published or scheduled by
+these checks. The old Instagram toolkit's signup and delivery were not tested. No reporting service
+was enabled; existing persisted request rows remain the source for confirmed-request counts under
+#13's QA/duplicate rules. Visits, form starts/errors, PDF clicks, conversion, and drop-off remain
+unmeasured. #13 stays open for the remaining channel routes, reporting-source decision, and weekly
+reporting; this profile maintenance does not pass the campaign readiness gate.
 
 ## Four-week calendar
 
