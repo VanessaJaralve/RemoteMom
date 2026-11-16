@@ -264,9 +264,10 @@ the report to both planned reader slots.
 
 - [Launchpad page](https://remote-mom.vercel.app/launchpad/)
 - [Free Starter Kit download page](https://remote-mom.vercel.app/launchpad/download/)
-- Next correction retest: **ten-page free Starter Kit candidate, version `20261117b`**, with the
-  matching `reader-feedback-20261117` webpage preview. This candidate is pending release; the
-  production links above still refer to the published `20261116b` edition until deployment.
+- Next correction retest: **ten-page free Starter Kit, version `20261117b`**, with the matching
+  Launchpad webpage released through PR #33 on November 17. Merge and deployment are recorded
+  below, including public-file, desktop, emulated-mobile and existing-reader route checks.
+  These do not replace the reader's physical-phone and saved-copy review.
   Check the PDF's visible edition and the download-page version; an older saved copy does not
   update itself. Record the actual edition reviewed.
 - Use the reader's own phone and normal PDF reader/zoom. No name/email entry, signup submission,
@@ -302,7 +303,7 @@ next action, and readable inspected pages on the actual phone.
 - Record page coverage explicitly. Opening the PDF alone does not establish readability.
   A partial review does not establish all-page readability or successful reopening of a saved copy.
 - If the full physical-phone reading check is completed, record that all ten pages of the actual
-  reviewed edition (`20261117b` for the next candidate retest) were inspected, the device/app,
+  reviewed edition (`20261117b` for the next correction retest) were inspected, the device/app,
   zoom use, and any limitations. Otherwise retain
   the unchecked pages and saved-copy result as open under #11/#19.
 - The expected route is the free PDF after confirmed signup, with no automatic kit email,
@@ -352,9 +353,9 @@ is not inferred. Exact participant count, review edition and device remain uncon
 | Page 9 actions are clear and all relevant; selecting only one seems unnecessary | Explain sequencing: use relevant actions from either path, start with one, and adjust order/pace | If several actions apply, how would you start? |
 | Page 10 seems like a result of page 9, and its next-step text lacks a clear destination | Explain that page 9 is the plan and page 10 is an optional application tracker; consolidate the closing instructions into one ending with direct help. Following Vanessa's approval, remove the app-beta invitation from the PDF | What is page 10 for, and where would you go for help? |
 
-**Source finding:** extraction of the current `20261116b` PDF confirms that it still contains the
-original "Visit the Launchpad page..." paragraph above the `next-step-v2` added block. This is a
-current-edition content problem; it is not dismissed as use of an old download. The new patch removes
+**Source finding before this release:** extraction of the then-current `20261116b` PDF confirmed the
+original "Visit the Launchpad page..." paragraph above the `next-step-v2` added block. This was a
+current-edition content problem; it was not dismissed as use of an old download. The released patch removes
 the superseded text operators and replaces the ending, rather than layering another instruction
 over it. The established source/provenance limitation remains: the original editable design master
 has not been recovered.
@@ -382,15 +383,36 @@ reading and final journey acceptance are not closed by this report or by technic
 removal from the Starter Kit. The kit's ending should focus on the page-9 action plan, the optional
 page-10 application tracker, and help with the instructions. The separate planning-app invitation
 stays on the website, where its purpose is explained. This supersedes the optional beta line in the
-earlier `reader-clarity-v3` candidate; the update is `reader-clarity-v4`, edition `20261117b`, in the
-existing [review draft #33](https://github.com/VanessaJaralve/RemoteMom/pull/33).
+earlier `reader-clarity-v3` candidate; the update is `reader-clarity-v4`, edition `20261117b`, released
+through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33).
 
-**Review candidate:** branch `reader-feedback-20261117` contains the web corrections and
-`reader-clarity-v4`, edition `20261117b`. This record describes a prepared candidate, not a production
-release or completed reader acceptance. The November 16 release records below remain historical
-evidence for the currently published `20261116b` edition until this candidate is released.
+**Release - November 17, 2026 (Asia/Manila):** with Vanessa's publication authorization,
+[PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33) merged at **05:36:28 Manila**
+(`2026-11-16T21:36:28Z`) as
+[`ab91375`](https://github.com/VanessaJaralve/RemoteMom/commit/ab91375f4debc4ac5d09a67e32a6282834e3393d).
+[Vercel reported production deployment success](https://vercel.com/vanessajaralve-5251s-projects/remote-mom/5wwASMeSbRRELTek2dgKeRru8yh5)
+for the webpage corrections and `reader-clarity-v4`, edition `20261117b`. The November 16 release
+records below remain historical evidence for the preceding `20261116b` edition.
 
-| Candidate artifact | Identity and verification |
+**Production readback - November 17:** the public download HTML and PDF both returned HTTP 200.
+The PDF response was `application/pdf`, **253,449 bytes**, SHA-256
+`e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c`, matching the reviewed release.
+It contains ten pages, visible edition `20261117b`, no beta text or beta URI, and exactly three URI
+destinations for LinkedIn, JobStreet and Launchpad help. Both HTML PDF controls use `v=20261117b`,
+and the visible version label agrees.
+
+On the live desktop page, **Copy my note** displayed the concrete paste/next-link instruction
+without navigation; **See where to look** reached `/launchpad/#where-to-look`; both search hrefs
+matched the reviewed destinations; and **Manage remote life** displayed page-8 guidance.
+At a **390 × 844 browser viewport**, both the public Launchpad and download page had
+`clientWidth = scrollWidth = 390`, with no horizontal page overflow. Career's **See where to look**
+reached `/launchpad/#where-to-look`, and Remote-Life displayed page-8 guidance. **Open the download
+page** reached `/launchpad/download/` without a form submission; the page displayed edition
+`20261117b` and the download href used `v=20261117b`. This is an emulated viewport check, not a
+physical-phone test. These delivery and navigation results do not establish reader comprehension,
+physical-phone readability, or reopening of a saved copy; those outcomes remain open.
+
+| Released artifact | Identity and verification |
 |---|---|
 | Selected ASCII-safe distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`; 253,449 bytes; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` |
 | Equivalent normal PDF | 131,846 bytes; SHA-256 `4c786afedef0ec664b372c85f1908c368c92021155c2809ad70888e41173f768` |
@@ -410,7 +432,7 @@ these checks do not establish
 screen-reader accessibility or physical-phone readability. No compilation/build step exists for
 the static Launchpad pages.
 
-Rebuild the selected candidate from the original baseline, using a new staging output name:
+Rebuild the released artifact from the original baseline, using a new staging output name:
 
 ```bash
 mkdir -p tmp/pdfs/issue27/baseline
@@ -1034,28 +1056,34 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 
 ### Stage 1: Starter Kit artifact inventory
 
-**Current released distribution — 2026-11-16:** `next-step-v2`, marker `20261116b`, is live through
-PR #32. [#11 records production deployment, the exact public-file match, and both page-10 destinations](https://github.com/VanessaJaralve/RemoteMom/issues/11).
-The preceding `free-links-v1` artifact was released through PR #29, with deployed-byte verification
-in [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27), and remains the immediate rollback.
+**Current released distribution — 2026-11-17:** `reader-clarity-v4`, marker `20261117b`, is released
+through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33), merge `ab91375`, with successful
+production deployment, exact public-file readback, desktop/emulated-mobile continuation and
+existing-reader access checks recorded above. Physical-phone and saved-copy review remain open.
+The preceding `next-step-v2` artifact, marker `20261116b`, is the immediate rollback;
+[#11 retains its verified PR #32 release evidence](https://github.com/VanessaJaralve/RemoteMom/issues/11).
+The earlier `free-links-v1` artifact and its deployed-byte verification remain historical in
+[#27](https://github.com/VanessaJaralve/RemoteMom/issues/27).
 Detailed physical-phone/saved-PDF readability and final journey acceptance remain open. Git blob
 IDs identify recorded bytes; they do not establish a matching editable master.
 Historical local save/open evidence remains recorded separately below.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
-| Current released distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` | `next-step-v2`, marker `20261116b`, **220,847 bytes**; SHA-256 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2` | Released through PR #32; public file/version and beta-interest/help destinations verified under #11. Detailed physical-phone/saved-PDF readability remains open |
-| Previous released artifact / immediate rollback | Same PDF path at commit `2a925932dac419baa529b348ebd62abbdfe8ca7e` | `free-links-v1`, marker `20261116`, **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37` | Retain with matching script/HTML; #27 supplies the prior release and phone-link evidence |
-| Preserved original rebuild input | Same PDF path at commit `8888c881417b8caac04c20fd6ca03e104e12b52d` | Marker `20261024`, 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Exact baseline for both guarded patch revisions; do not use a previously patched PDF as input |
-| Reproducible repair source | `scripts/patch-launchpad-starter-kit.py` | Guarded revision `next-step-v2`; SHA-256 `0e83a321411a3c56399983397272ab374dee5289bfba0677fd1f72dfa17f2c02` | New staging output only; current and historical recipes above are pinned to their implementation commits |
+| Current released distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` at merge `ab91375` | `reader-clarity-v4`, marker `20261117b`, **253,449 bytes**; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` | PR #33 merged and production deployment succeeded. Public PDF identity, three destinations, beta removal, HTML versions, desktop/emulated-mobile continuation and existing-reader access verified. Reader comprehension, physical-phone and saved-copy acceptance remain open |
+| Previous released artifact / immediate rollback | Same PDF path at commit `297058d259ef008343fb7f67f035c98e8211fad9` | `next-step-v2`, marker `20261116b`, **220,847 bytes**; SHA-256 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2` | Restore with its matching script/HTML; #11 retains PR #32 public-file/version and beta-interest/help destination evidence |
+| Earlier released artifact | Same PDF path at commit `2a925932dac419baa529b348ebd62abbdfe8ca7e` | `free-links-v1`, marker `20261116`, **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37` | Retain with matching script/HTML; #27 supplies the historical release and phone-link evidence |
+| Preserved original rebuild input | Same PDF path at commit `8888c881417b8caac04c20fd6ca03e104e12b52d` | Marker `20261024`, 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Exact baseline for the guarded patch revisions; do not use a previously patched PDF as input |
+| Reproducible repair source | `scripts/patch-launchpad-starter-kit.py` at merge `ab91375` | Guarded revision `reader-clarity-v4`; SHA-256 `75d00a8a1a03979418b48ab4aaefa2821b3223f9c65ae6738c291cc826783fe3` | New staging output only; rebuild and rollback recipe above retains the original baseline and prior release |
 | Legacy generated output | `output/pdf/remote-moms-work-fit-safety-starter-kit.pdf` | 20,025 bytes; Git blob `38251317eb1904322d6b9cc001ce47f03a6dacec` | Different bytes from the distribution PDF; not an interchangeable master |
 | Legacy editable generator | `scripts/build-launchpad-starter-kit.py` | Existing ReportLab source | Treat staging-only output as a review candidate; it is not verified to reproduce the published design |
 | Editable master for current published design | Not identified in the repository or saved-assets review | **Source master not found** | Recover or identify the original source before claiming the current design is reproducible |
 
-The original marker was `20261024`, followed by PR #29's `20261116` and PR #32's current
-`20261116b`. Both current download links and the visible version label were verified alongside
-the production file, as recorded in #11; a marker alone would not prove deployment. Do not replace
-a reviewed artifact with legacy generator output.
+The original marker was `20261024`, followed by PR #29's `20261116`, PR #32's `20261116b`, and
+PR #33's current `20261117b`. The current release's download links, edition label and exact public PDF
+identity passed the production readback recorded above; a marker alone would not prove the correct
+bytes are served. Prior public-file verification remains historical evidence in #11/#27.
+Do not replace a reviewed artifact with legacy generator output.
 
 For future candidates, use `remote-moms-work-fit-safety-starter-kit_YYYY-MM-DD_rN.pdf`, with the actual
 candidate date and revision. Keep the public filename stable so existing links remain usable. Record
@@ -1067,7 +1095,7 @@ For a release, preserve the previous distribution artifact and commit, render/ch
 mobile opening and links, and record the selected source and review evidence. Update the public file,
 link version marker, and inventory together only after release approval. The change-log entry records
 the old/new identities, actual release date, reason, QA evidence, deployment reference, and rollback
-target. This section's draft record and `docs/RemoteMom_Project_Checklist.md` track current work; future
+target. This section's release record and `docs/RemoteMom_Project_Checklist.md` track current work; future
 release entries should be added here rather than creating a competing roadmap.
 
 If a replacement is defective, restore the recorded previous PDF and corresponding download link/version
