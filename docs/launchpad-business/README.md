@@ -432,6 +432,15 @@ these checks do not establish
 screen-reader accessibility or physical-phone readability. No compilation/build step exists for
 the static Launchpad pages.
 
+**Technical recheck - November 17, 2026 (Asia/Manila):** public release source matched
+`origin/main` before this test-only correction. Updated one stale `LandingPage` assertion from
+“current stage” to the approved “next goal”; the existing `LaunchpadExercises`, `LaunchpadSignup`
+and `LandingPage` suites then passed **77 tests across 3 suites**. Independent PDF checks passed
+**2 existing Python safeguards** and the existing `assert_patch` validator, confirming ten pages,
+edition `20261117b`, no beta text/URI, three expected destinations, and successful parsing of a
+saved copy. These technical checks do not establish reader comprehension, physical-phone
+readability, or opening a saved copy in the reader's PDF app. Existing acceptance gates remain open.
+
 Rebuild the released artifact from the original baseline, using a new staging output name:
 
 ```bash
