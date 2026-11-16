@@ -10,7 +10,7 @@ remains the source of truth for priorities and release gates.
 
 ## Campaign decision
 
-**Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261116`.
+**Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261116b` (released through [PR #32](https://github.com/VanessaJaralve/RemoteMom/pull/32); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
 **Primary action:** request the kit at the Launchpad page and download it after confirmation.
 **Learning goal:** learn which practical topics lead to confirmed kit requests and useful reader
 feedback across the two audience paths. No numerical request or sales forecast is assumed.
