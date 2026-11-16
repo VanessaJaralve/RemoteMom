@@ -264,7 +264,7 @@ the report to both planned reader slots.
 
 - [Launchpad page](https://remote-mom.vercel.app/launchpad/)
 - [Free Starter Kit download page](https://remote-mom.vercel.app/launchpad/download/)
-- Next correction retest: **ten-page free Starter Kit candidate, version `20261117`**, with the
+- Next correction retest: **ten-page free Starter Kit candidate, version `20261117b`**, with the
   matching `reader-feedback-20261117` webpage preview. This candidate is pending release; the
   production links above still refer to the published `20261116b` edition until deployment.
   Check the PDF's visible edition and the download-page version; an older saved copy does not
@@ -289,7 +289,7 @@ Allow more time if the reader needs it. An unfinished step is **Not checked**, n
 | 1-3 min | Show the page: "What do you think this offers? What happens after requesting the kit?" Then ask which path, stage, and challenge they would choose and whether any wording is unclear or none fits. Do not submit the form. | Expected outcome; suitable or missing choice; exact confusing label; preferred natural wording. Do not coach before recording the first answer. |
 | 3-5 min | Open the current kit on the phone. Ask the reader to move through the pages and point out difficult text or tables, using normal zoom. Include the chosen exercise and the narrow tables on pages 4 and 10. If a current saved copy is available, reopen it. | Edition, phone/browser/PDF app, pages actually inspected, any clipping or difficult zoom, and whether a saved copy was reopened. |
 | 5-8 min | Ask R1 or R2 to try the small exercise above using an example they are comfortable sharing. "What, if anything, made the instruction difficult to follow?" | Whether the reader could begin and complete that small task without explanation; unclear words or missing guidance. Record usability, not private answers. |
-| 8-9 min | Show page 9: "Which action could you realistically try next?" Briefly show page 10: "What do these next-step choices mean?" | One relevant action and the reader's understanding of the optional, separate Android beta interest/help choices. Existing link-click tests need not be repeated. |
+| 8-9 min | Show page 9: "Which action could you realistically try next?" Briefly show page 10: "What is this page for, and where would you go for help?" | One relevant action and the reader's understanding of the optional application tracker and direct help route. Existing link-click tests need not be repeated. |
 | 9-10 min | "What was most useful? What would you change or make clearer?" Summarize and ask whether the summary is accurate. | One useful element, any concern, and the resulting retain/clarify/investigate action. |
 
 ### Evidence and decision rules
@@ -302,7 +302,7 @@ next action, and readable inspected pages on the actual phone.
 - Record page coverage explicitly. Opening the PDF alone does not establish readability.
   A partial review does not establish all-page readability or successful reopening of a saved copy.
 - If the full physical-phone reading check is completed, record that all ten pages of the actual
-  reviewed edition (`20261117` for the next candidate retest) were inspected, the device/app,
+  reviewed edition (`20261117b` for the next candidate retest) were inspected, the device/app,
   zoom use, and any limitations. Otherwise retain
   the unchecked pages and saved-copy result as open under #11/#19.
 - The expected route is the free PDF after confirmed signup, with no automatic kit email,
@@ -350,7 +350,7 @@ is not inferred. Exact participant count, review edition and device remain uncon
 | Page 3 asks about work fit but does not explain how to use the answers | Connect the answers to role selection on pages 4-5 and comparison of an actual listing from page 6 | How would you use these answers with a job listing? |
 | Page 8 is described as clear | Retain its exercise | No repeat of unchanged page-8 review is needed for this correction |
 | Page 9 actions are clear and all relevant; selecting only one seems unnecessary | Explain sequencing: use relevant actions from either path, start with one, and adjust order/pace | If several actions apply, how would you start? |
-| Page 10 seems like a result of page 9, and its next-step text lacks a clear destination | Explain that page 9 is the plan and page 10 is an optional application tracker; consolidate the closing instructions into one ending with direct help and a separate optional beta route | What is page 10 for, and where would you go for help? |
+| Page 10 seems like a result of page 9, and its next-step text lacks a clear destination | Explain that page 9 is the plan and page 10 is an optional application tracker; consolidate the closing instructions into one ending with direct help. Following Vanessa's approval, remove the app-beta invitation from the PDF | What is page 10 for, and where would you go for help? |
 
 **Source finding:** extraction of the current `20261116b` PDF confirms that it still contains the
 original "Visit the Launchpad page..." paragraph above the `next-step-v2` added block. This is a
@@ -378,24 +378,35 @@ wording problems are resolved for readers. Record actual answers before coaching
 5-10-reader study, #18's representative wording/choice evidence, and #11/#19's remaining physical
 reading and final journey acceptance are not closed by this report or by technical tests.
 
+**Approved follow-up - November 17:** Vanessa questioned the app-beta invitation and approved its
+removal from the Starter Kit. The kit's ending should focus on the page-9 action plan, the optional
+page-10 application tracker, and help with the instructions. The separate planning-app invitation
+stays on the website, where its purpose is explained. This supersedes the optional beta line in the
+earlier `reader-clarity-v3` candidate; the update is `reader-clarity-v4`, edition `20261117b`, in the
+existing [review draft #33](https://github.com/VanessaJaralve/RemoteMom/pull/33).
+
 **Review candidate:** branch `reader-feedback-20261117` contains the web corrections and
-`reader-clarity-v3`, edition `20261117`. This record describes a prepared candidate, not a production
+`reader-clarity-v4`, edition `20261117b`. This record describes a prepared candidate, not a production
 release or completed reader acceptance. The November 16 release records below remain historical
 evidence for the currently published `20261116b` edition until this candidate is released.
 
 | Candidate artifact | Identity and verification |
 |---|---|
-| Selected ASCII-safe distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`; 254,320 bytes; SHA-256 `692cc3b495025459aff0739fb5b5d2a85f57ca832528946069f9c494076f1a79` |
-| Equivalent normal PDF | 132,408 bytes; SHA-256 `4ccbad22d6145d69d4d9f721a389bdbdfd251143a318a9028f783b95ecdfda4f` |
-| Guarded patch script | `scripts/patch-launchpad-starter-kit.py`; revision `reader-clarity-v3`; SHA-256 `4eef759fb78281d4bfd11928ef7fbe84696de6c944ca6d84f7b3347ca8557ed2`; tested with `pypdf 6.21.4` |
-| Download page | Both download URL markers and the visible edition label are `20261117`; existing readers can reopen the kit without submitting the request form again |
+| Selected ASCII-safe distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`; 253,449 bytes; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` |
+| Equivalent normal PDF | 131,846 bytes; SHA-256 `4c786afedef0ec664b372c85f1908c368c92021155c2809ad70888e41173f768` |
+| Guarded patch script | `scripts/patch-launchpad-starter-kit.py`; revision `reader-clarity-v4`; SHA-256 `75d00a8a1a03979418b48ab4aaefa2821b3223f9c65ae6738c291cc826783fe3`; tested with `pypdf 6.21.4` |
+| Download page | Both download URL markers and the visible edition label are `20261117b`; existing readers can reopen the kit without submitting the request form again |
 
-Verification: the full configured Jest suite passes **392 tests across 33 suites**, and
-`pnpm exec tsc --noEmit` passes. The existing Python safeguards pass both tests. Both PDF
-serializations strictly parse as ten pages and render identically at 115 DPI. Changed pages
-2, 3, 6, 9 and 10 were visually inspected; pages 1, 4, 5, 7 and 8 are pixel-identical to the original
-baseline. Four clickable URI rectangles cover their visible URL text. Deterministic rebuilding and
-all four negative guards pass. The PDF remains static and untagged; these checks do not establish
+Verification: the full configured Jest suite passed **392 tests across 33 suites**, and
+`pnpm exec tsc --noEmit` passed for the earlier webpage corrections. These were not rerun for the
+subsequent PDF/edition-only change. The two existing Python safeguards pass for `reader-clarity-v4`.
+Both PDF serializations strictly parse as ten pages and render identically at 115 DPI. The revised
+page 10 was visually inspected; pages 1-9 match `reader-clarity-v3` in decoded content streams and
+rendered pixels. The prior visual review of pages 2, 3, 6 and 9 still applies; pages 1, 4, 5, 7 and 8
+remain pixel-identical to the original baseline. Exactly three clickable URI rectangles cover the
+visible LinkedIn, JobStreet and help URLs. No active beta text or beta link remains in the PDF.
+Deterministic rebuilding and all four negative guards pass. The PDF remains static and untagged;
+these checks do not establish
 screen-reader accessibility or physical-phone readability. No compilation/build step exists for
 the static Launchpad pages.
 
@@ -406,9 +417,9 @@ mkdir -p tmp/pdfs/issue27/baseline
 git show 8888c881417b8caac04c20fd6ca03e104e12b52d:landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf > tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf
 python scripts/patch-launchpad-starter-kit.py \
   --input tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf \
-  --output tmp/pdfs/issue27/starter-kit-20261117-rebuild-01-ascii.pdf \
+  --output tmp/pdfs/issue27/starter-kit-20261117b-rebuild-01-ascii.pdf \
   --ascii-safe
-sha256sum tmp/pdfs/issue27/starter-kit-20261117-rebuild-01-ascii.pdf
+sha256sum tmp/pdfs/issue27/starter-kit-20261117b-rebuild-01-ascii.pdf
 ```
 
 The baseline hash must be `b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`.
