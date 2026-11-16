@@ -253,17 +253,22 @@ recording these replies.
 
 ### Prepared Launchpad reader wording check — #18 and #15
 
-**Ready-to-run subset prepared November 16, 2026 (Asia/Manila).** Use two initial readers, one from
+**Prepared November 16; feedback update November 17, 2026 (Asia/Manila).** Use two initial readers, one from
 each audience path, for a short phone and wording check. This expands the existing educational
-Launchpad protocol; the separate app interview guide is unchanged. **No reader has been selected,
-contacted, scheduled, or assessed by this preparation. All result slots are pending.**
+Launchpad protocol; the separate app interview guide is unchanged. The preparation itself did not
+select, contact, schedule, or assess readers. **One feedback batch was subsequently relayed by
+Vanessa on November 17.** It is recorded below without assuming a participant count or assigning
+the report to both planned reader slots.
 
 ### Review material and scope
 
 - [Launchpad page](https://remote-mom.vercel.app/launchpad/)
 - [Free Starter Kit download page](https://remote-mom.vercel.app/launchpad/download/)
-- Current review edition: **ten-page free Starter Kit, version `20261116b`**. Check the visible
-  download-page version; an older saved copy does not update itself.
+- Next correction retest: **ten-page free Starter Kit candidate, version `20261117b`**, with the
+  matching `reader-feedback-20261117` webpage preview. This candidate is pending release; the
+  production links above still refer to the published `20261116b` edition until deployment.
+  Check the PDF's visible edition and the download-page version; an older saved copy does not
+  update itself. Record the actual edition reviewed.
 - Use the reader's own phone and normal PDF reader/zoom. No name/email entry, signup submission,
   purchase, paid eBook download, or beta-interest submission is needed for this check.
 - Ask about expectations before explaining the intended answers. Readers may skip a question,
@@ -284,7 +289,7 @@ Allow more time if the reader needs it. An unfinished step is **Not checked**, n
 | 1-3 min | Show the page: "What do you think this offers? What happens after requesting the kit?" Then ask which path, stage, and challenge they would choose and whether any wording is unclear or none fits. Do not submit the form. | Expected outcome; suitable or missing choice; exact confusing label; preferred natural wording. Do not coach before recording the first answer. |
 | 3-5 min | Open the current kit on the phone. Ask the reader to move through the pages and point out difficult text or tables, using normal zoom. Include the chosen exercise and the narrow tables on pages 4 and 10. If a current saved copy is available, reopen it. | Edition, phone/browser/PDF app, pages actually inspected, any clipping or difficult zoom, and whether a saved copy was reopened. |
 | 5-8 min | Ask R1 or R2 to try the small exercise above using an example they are comfortable sharing. "What, if anything, made the instruction difficult to follow?" | Whether the reader could begin and complete that small task without explanation; unclear words or missing guidance. Record usability, not private answers. |
-| 8-9 min | Show page 9: "Which action could you realistically try next?" Briefly show page 10: "What do these next-step choices mean?" | One relevant action and the reader's understanding of the optional, separate Android beta interest/help choices. Existing link-click tests need not be repeated. |
+| 8-9 min | Show page 9: "Which action could you realistically try next?" Briefly show page 10: "What is this page for, and where would you go for help?" | One relevant action and the reader's understanding of the optional application tracker and direct help route. Existing link-click tests need not be repeated. |
 | 9-10 min | "What was most useful? What would you change or make clearer?" Summarize and ask whether the summary is accurate. | One useful element, any concern, and the resulting retain/clarify/investigate action. |
 
 ### Evidence and decision rules
@@ -296,8 +301,9 @@ next action, and readable inspected pages on the actual phone.
 
 - Record page coverage explicitly. Opening the PDF alone does not establish readability.
   A partial review does not establish all-page readability or successful reopening of a saved copy.
-- If the full physical-phone reading check is completed, record that all ten pages of
-  `20261116b` were inspected, the device/app, zoom use, and any limitations. Otherwise retain
+- If the full physical-phone reading check is completed, record that all ten pages of the actual
+  reviewed edition (`20261117b` for the next candidate retest) were inspected, the device/app,
+  zoom use, and any limitations. Otherwise retain
   the unchecked pages and saved-copy result as open under #11/#19.
 - The expected route is the free PDF after confirmed signup, with no automatic kit email,
   marketing subscription, or app-beta enrollment. These are facilitator interpretation notes;
@@ -309,14 +315,18 @@ next action, and readable inspected pages on the actual phone.
 ### Existing anonymized findings log
 
 Keep contacts and raw conversation notes private. Publish only sanitized findings in this existing
-six-column log. The rows below reserve review slots and contain **no completed reader evidence**.
+six-column log. R1/R2 remain planned slots until the participant mapping is confirmed; F1 is one
+received feedback batch, not a count of completed sessions.
 
 | Anonymous reference / date | Audience path represented | Signup expectation understood? | Stage/challenge fit and wording | Exercise tried / unclear instruction | Finding and resulting action |
 |---|---|---|---|---|---|
 | R1 - not scheduled | Career - intended, not yet represented | Pending | Pending | Planned: page 4; page 3 if more relevant | Pending |
 | R2 - not scheduled | Remote-Life - intended, not yet represented | Pending | Pending | Planned: page 8 | Pending |
+| F1 - received 2026-11-17 | Already working remotely and seeking additional part-time remote work; needs span both paths | Not reported | Actual stage/challenge selections not supplied; path copy should recognize overlapping goals | Page 3 continuation unclear; page 8 described as clear; page 9 actions useful, with all applicable; page 10 purpose unclear | Reader-reported via Vanessa. Clarify copy versus navigation, worksheet transitions and page-10 purpose; provide verified search starting points; retain page 8. Retest affected steps. |
 
-**Phone/evidence notes:** R1 - pending; R2 - pending. For each completed session, add date,
+**Phone/evidence notes:** R1 - pending; R2 - pending; F1 - device/browser/PDF app, edition,
+session date, saved-copy reopening and number of distinct readers not supplied. The report mentions
+pages 3, 8, 9 and 10, but does not establish all-page reading or task completion. For each completed session, add date,
 observed versus reported status, device/browser/PDF app, version, inspected/read page numbers,
 zoom issues, saved-copy reopen result, and any untested scope. Do not add identifying details.
 
@@ -324,6 +334,99 @@ Link actual findings to #18 and relevant device evidence to #11/#19. This initia
 check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
 the #6 build/revise/defer recommendation. It does not validate pricing or demand, and the separate
 #13 tracking and Stage 1 #16 support gates still apply before the #14 campaign is published.
+
+### Reader feedback and focused correction - 2026-11-17
+
+**Evidence:** one batch received from Vanessa, recorded as reader-reported. The report describes the
+kit as useful for clarity and action planning, but identifies unclear transitions. It is not a public
+testimonial, a quantified satisfaction result, a second reader, a phone-readability pass, or evidence
+of paid demand. The last supplied sentence ends at "There are some steps that"; its missing ending
+is not inferred. Exact participant count, review edition and device remain unconfirmed.
+
+| Finding | Decision and bounded change | Retest question |
+|---|---|---|
+| An already-remote reader wants additional part-time work and asks where to look | Explain that either or both paths can be used. Keep current stage and challenge values; add two search starting points to the existing Launchpad and page 6 | Can you find where to begin looking for a part-time remote role? |
+| Copy my next step only confirms clipboard copying, leaving the next action unclear | Rename it Copy my note; retain the persistent clears-on-refresh notice; provide separate visible continuation links that do not require copying | After copying or skipping the note, what would you do next? |
+| Page 3 asks about work fit but does not explain how to use the answers | Connect the answers to role selection on pages 4-5 and comparison of an actual listing from page 6 | How would you use these answers with a job listing? |
+| Page 8 is described as clear | Retain its exercise | No repeat of unchanged page-8 review is needed for this correction |
+| Page 9 actions are clear and all relevant; selecting only one seems unnecessary | Explain sequencing: use relevant actions from either path, start with one, and adjust order/pace | If several actions apply, how would you start? |
+| Page 10 seems like a result of page 9, and its next-step text lacks a clear destination | Explain that page 9 is the plan and page 10 is an optional application tracker; consolidate the closing instructions into one ending with direct help. Following Vanessa's approval, remove the app-beta invitation from the PDF | What is page 10 for, and where would you go for help? |
+
+**Source finding:** extraction of the current `20261116b` PDF confirms that it still contains the
+original "Visit the Launchpad page..." paragraph above the `next-step-v2` added block. This is a
+current-edition content problem; it is not dismissed as use of an old download. The new patch removes
+the superseded text operators and replaces the ending, rather than layering another instruction
+over it. The established source/provenance limitation remains: the original editable design master
+has not been recovered.
+
+**Search sources checked November 17, 2026 (Asia/Manila):**
+
+- [LinkedIn Jobs](https://www.linkedin.com/jobs/). Official help documents the
+  [Remote filter](https://www.linkedin.com/help/linkedin/answer/a508610) and
+  [Part-time employment-type filter](https://www.linkedin.com/help/linkedin/answer/a512746/find-part-time-and-temporary-jobs-on-linkedin).
+- [JobStreet Philippines remote/part-time search](https://ph.jobstreet.com/Remote-jobs/part-time).
+  The official public search page displayed remote, part-time results. No result count, suitability,
+  employer verification, free-account capability or continuing vacancy availability is asserted.
+
+These are search starting points. Readers should compare permitted location, hours, timezone and
+working conditions with their page-3 answers, and use the existing employer/opportunity checks.
+This adds educational links; it does not create a job board, recruitment service, paid offer or app
+feature. The free-kit, marketing and beta permissions remain separate.
+
+**Acceptance remains open:** check the corrected steps with the same reader before claiming the
+wording problems are resolved for readers. Record actual answers before coaching. #15's broader
+5-10-reader study, #18's representative wording/choice evidence, and #11/#19's remaining physical
+reading and final journey acceptance are not closed by this report or by technical tests.
+
+**Approved follow-up - November 17:** Vanessa questioned the app-beta invitation and approved its
+removal from the Starter Kit. The kit's ending should focus on the page-9 action plan, the optional
+page-10 application tracker, and help with the instructions. The separate planning-app invitation
+stays on the website, where its purpose is explained. This supersedes the optional beta line in the
+earlier `reader-clarity-v3` candidate; the update is `reader-clarity-v4`, edition `20261117b`, in the
+existing [review draft #33](https://github.com/VanessaJaralve/RemoteMom/pull/33).
+
+**Review candidate:** branch `reader-feedback-20261117` contains the web corrections and
+`reader-clarity-v4`, edition `20261117b`. This record describes a prepared candidate, not a production
+release or completed reader acceptance. The November 16 release records below remain historical
+evidence for the currently published `20261116b` edition until this candidate is released.
+
+| Candidate artifact | Identity and verification |
+|---|---|
+| Selected ASCII-safe distribution PDF | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf`; 253,449 bytes; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` |
+| Equivalent normal PDF | 131,846 bytes; SHA-256 `4c786afedef0ec664b372c85f1908c368c92021155c2809ad70888e41173f768` |
+| Guarded patch script | `scripts/patch-launchpad-starter-kit.py`; revision `reader-clarity-v4`; SHA-256 `75d00a8a1a03979418b48ab4aaefa2821b3223f9c65ae6738c291cc826783fe3`; tested with `pypdf 6.21.4` |
+| Download page | Both download URL markers and the visible edition label are `20261117b`; existing readers can reopen the kit without submitting the request form again |
+
+Verification: the full configured Jest suite passed **392 tests across 33 suites**, and
+`pnpm exec tsc --noEmit` passed for the earlier webpage corrections. These were not rerun for the
+subsequent PDF/edition-only change. The two existing Python safeguards pass for `reader-clarity-v4`.
+Both PDF serializations strictly parse as ten pages and render identically at 115 DPI. The revised
+page 10 was visually inspected; pages 1-9 match `reader-clarity-v3` in decoded content streams and
+rendered pixels. The prior visual review of pages 2, 3, 6 and 9 still applies; pages 1, 4, 5, 7 and 8
+remain pixel-identical to the original baseline. Exactly three clickable URI rectangles cover the
+visible LinkedIn, JobStreet and help URLs. No active beta text or beta link remains in the PDF.
+Deterministic rebuilding and all four negative guards pass. The PDF remains static and untagged;
+these checks do not establish
+screen-reader accessibility or physical-phone readability. No compilation/build step exists for
+the static Launchpad pages.
+
+Rebuild the selected candidate from the original baseline, using a new staging output name:
+
+```bash
+mkdir -p tmp/pdfs/issue27/baseline
+git show 8888c881417b8caac04c20fd6ca03e104e12b52d:landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf > tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf
+python scripts/patch-launchpad-starter-kit.py \
+  --input tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf \
+  --output tmp/pdfs/issue27/starter-kit-20261117b-rebuild-01-ascii.pdf \
+  --ascii-safe
+sha256sum tmp/pdfs/issue27/starter-kit-20261117b-rebuild-01-ascii.pdf
+```
+
+The baseline hash must be `b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e`.
+For rollback, restore the PDF, download page and patch script together from
+`297058d259ef008343fb7f67f035c98e8211fad9`; this returns edition `20261116b` and its recorded
+220,847-byte PDF. Do not patch an already-patched distribution file or replace files before
+reviewing the staged output.
 
 ## Work stages and completion gates
 

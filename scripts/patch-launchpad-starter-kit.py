@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Create a guarded, reproducible page-10 link patch; never publish a PDF.
+"""Create a guarded, reproducible reader-clarity patch; never publish a PDF.
 
 Extract the October 24 baseline as documented in docs/launchpad-business/README.md,
 then run from the repository root with explicit paths:
   python scripts/patch-launchpad-starter-kit.py \
     --input tmp/pdfs/issue27/baseline/starter-kit-baseline.pdf \
-    --output tmp/pdfs/issue27/starter-kit-useful-next-step.pdf
+    --output tmp/pdfs/issue27/starter-kit-reader-clarity.pdf
 
 Add --ascii-safe for an optional 7-bit transport serialization of the same patch.
 The normal binary PDF is preferred when direct file upload is available. Both
 variants remain static, untagged PDFs; this is not recovery of the editable master.
 
-Tested dependencies: pypdf 6.21.4 and ReportLab 4.4.9. Metadata uses a fixed patch
-revision date so rebuilding the same revision with these versions is deterministic.
+Tested dependency: pypdf 6.21.4. Metadata uses a fixed patch revision date so
+rebuilding the same revision with this version is deterministic. Selected original
+BT..ET text blocks are replaced, not covered by opaque overlays; embedded original
+fonts and all other drawing/text operations are retained.
 Render and review the staging candidate before any separately approved release.
 """
 
@@ -31,78 +33,272 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.annotations import Link
 from pypdf.generic import (
     ArrayObject,
+    ContentStream,
     EncodedStreamObject,
+    FloatObject,
     IndirectObject,
     NameObject,
     NullObject,
     StreamObject,
     TextStringObject,
 )
-import reportlab
-from reportlab.lib.colors import HexColor
-from reportlab.pdfgen.canvas import Canvas
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 STAGING_ROOT = REPOSITORY_ROOT / "tmp" / "pdfs" / "issue27"
 BASELINE_SHA256 = "b0d245586b9de17d4b77ad42a14e398f4123082f2266e5f69511a7dabf45e06e"
-PATCH_REVISION = "next-step-v2"
-PATCH_DATE = "D:20261116060000+08'00'"
+PATCH_REVISION = "reader-clarity-v4"
+PATCH_DATE = "D:20261117090000+08'00'"
+EDITION = "20261117b"
 PAGE_SIZE = (595.2756, 841.8898)
-# PDF coordinates use the bottom-left origin. The original closing paragraph ends
-# above y=131.93; the existing footer line/text is below this reviewed blank band.
-PATCH_BOUNDS = (56.69291, 54.0, 538.58271, 122.0)
-TEXT_X = 62.69291
-BETA_URL = "https://remote-mom.vercel.app/beta/"
 HELP_URL = "https://remote-mom.vercel.app/launchpad/#help"
+LINKEDIN_URL = "https://www.linkedin.com/jobs/"
+JOBSTREET_URL = "https://ph.jobstreet.com/Remote-jobs/part-time"
+# The first baseline and horizontal origin of every replacement are inherited
+# from its exact original text block. Additional lines use explicit offsets.
+# Each tuple is (text, offset_below_first_baseline, font_name, point_size, URI).
+REGULAR = "/F4+0"
+BOLD = "/F5+0"
+HEADING = "/F3+0"
 
 
-def overlay(source: PdfReader) -> tuple[PdfReader, list[dict]]:
-    # The guarded baseline embeds Arial with the full printable-ASCII mapping.
-    # Reuse those original font objects and widths so the new block does not
-    # depend on a viewer's substitute for unembedded standard Helvetica fonts.
-    original_fonts = source.pages[9]["/Resources"]["/Font"]
-    regular_font = original_fonts["/F4+0"].get_object()
+def row(text: str, offset: float, font: str = REGULAR, size: float = 10.5,
+        uri: str | None = None) -> tuple:
+    return (text, offset, font, size, uri)
 
-    def width(value: str, size: float = 10) -> float:
-        first_char = int(regular_font["/FirstChar"])
-        return sum(float(regular_font["/Widths"][ord(char) - first_char]) for char in value) * size / 1000
 
-    buffer = BytesIO()
-    canvas = Canvas(buffer, pagesize=PAGE_SIZE, invariant=1, pageCompression=1)
-    canvas.setStrokeColor(HexColor("#b1c4aa"))
-    canvas.setLineWidth(0.4)
-    canvas.line(PATCH_BOUNDS[0], 122, PATCH_BOUNDS[2], 122)
-    canvas.setFillColor(HexColor("#173d32"))
-    canvas.setFont("Helvetica-Bold", 10)
-    canvas.drawString(TEXT_X, 108, "Choose your next step")
-    canvas.setFont("Helvetica", 10)
-    canvas.drawString(TEXT_X, 92, "Choose one Career or Remote-Life action from page 9.")
+# Exact source strings are a second guard in addition to the whole-file hash.
+# Page numbers are human-readable (one-based). No other blocks are changed.
+REPLACEMENTS = {
+    2: [
+        {
+            "old": ("Choose the path that matches your current", "stage"),
+            "width": 475.8898,
+            "rows": [row("Choose the path that matches your current", 0, HEADING, 25),
+                     row("goal", 29, HEADING, 25)],
+        },
+        {
+            "old": (
+                "Use the Career Path if you are looking for remote work or returning after a career break. Use the",
+                "Remote-Life Path if you already work remotely and want calmer boundaries and routines. Complete",
+                "only the worksheets that support your next step.",
+            ),
+            "width": 475.8898,
+            "rows": [
+                row("Use either or both paths for your next goal. Already working remotely and seeking another", 0),
+                row("part-time role? Use the Career Path. For calmer boundaries and routines, use the Remote-Life Path.", 15),
+                row("Complete only the worksheets that help you now; you can switch paths as your goals change.", 30),
+            ],
+        },
+        {
+            "old": ("You are looking for remote work or", "returning after a break."),
+            "width": 163.748,
+            "rows": [row("You want your first, next, or", 0),
+                     row("additional part-time remote role,", 13),
+                     row("including after a career break.", 26)],
+        },
+        {
+            "old": ("You are still deciding what kind of", "work and routine would fit."),
+            "width": 163.748,
+            "rows": [row("You want to explore roles and", 0),
+                     row("improve your routine; goals", 13),
+                     row("can overlap.", 26)],
+        },
+        {
+            "old": ("Start with life fit, then choose one", "exercise from each path"),
+            "width": 188.929,
+            "rows": [row("Start with life fit, then use the", 0),
+                     row("exercises that match your goals", 13)],
+        },
+    ],
+    3: [{
+        "old": (
+            "Do not describe a role as a good fit merely because it is remote. Check the hours, meeting",
+            "expectations, employment type, benefits, equipment requirements, and return-to-office",
+            "policy.",
+        ),
+        "width": 475.8898,
+        "rows": [
+            row("Use your answers next", 0, BOLD, 11),
+            row("Mark your must-have hours and conditions. Use pages 4-5 to choose a role, then page 6 to search.", 18),
+            row("For one listing, compare location, hours, meetings, employment type, benefits, equipment,", 33),
+            row("and return-to-office expectations with your answers. Note what fits, what does not,", 48),
+            row("and what you need to ask. Use pages 6-7 to verify the opportunity before applying.", 63),
+        ],
+    }],
+    6: [{
+        "old": (
+            "Choose two or three sources that fit your role. Possible sources include official company career",
+            "pages, LinkedIn, Indeed, reputable remote-work marketplaces, established staffing companies,",
+            "professional communities, and referrals.",
+        ),
+        "width": 475.8898,
+        "rows": [
+            row('Search your role + "part-time remote" + your country. Verify each listing.', 0),
+            row("LinkedIn Jobs: " + LINKEDIN_URL, 15, uri=LINKEDIN_URL),
+            row("JobStreet Philippines: " + JOBSTREET_URL, 30, uri=JOBSTREET_URL),
+        ],
+    }],
+    9: [{
+        "old": (
+            "Choose either the Career Path or the Remote-Life Path each day. This plan assumes about 30",
+            "focused minutes a day; adjust it to your circumstances.",
+        ),
+        "width": 475.8898,
+        "rows": [
+            row("Keep all useful actions from either path; start with one. Plan about 30 minutes a day,", 0),
+            row("adjust the order and pace to your week, and skip actions or review questions that do not apply.", 15),
+        ],
+    }],
+    10: [
+        {
+            "old": ("Keep a record of where you applied, what you sent, and when to follow up.",),
+            "width": 475.8898,
+            "rows": [row("Optional: record applications from page 9 here. This tracker is not an automatic result.", 0)],
+        },
+        {
+            "old": ("Your next step",),
+            "width": 475.8898,
+            "rows": [
+                row("After your seven-day plan", 0, BOLD, 11),
+                row("Page 9 is your action plan. Use this optional tracker for applications you make.", 20),
+                row("For remote-life actions, record what happened on page 9 or in your own notes.", 35),
+                row("You do not submit your answers, and this kit does not generate an automatic result.", 50),
+                row("Need help with a step?", 72, BOLD, 11),
+                row("Tell Vanessa the page number and the instruction that felt unclear.", 88),
+                row("Help: " + HELP_URL, 103, uri=HELP_URL),
+                row("Edition: " + EDITION, 163, size=10),
+            ],
+        },
+        {
+            "old": (
+                "Remote Mom's Launchpad is being shaped to help working mothers and career-returning moms",
+                "choose a realistic remote-career direction, make remote work more sustainable, verify opportunities,",
+                "and take one focused next step.",
+            ),
+            "width": 475.8898,
+            "rows": [],
+        },
+        {
+            "old": (
+                "Visit the Launchpad page and share the one section where you still need help. Your response will",
+                "guide what is built next.",
+            ),
+            "width": 475.8898,
+            "rows": [],
+        },
+    ],
+}
 
-    links = []
-    for label, url, baseline in (
-        ("Optional Android beta interest: ", BETA_URL, 76),
-        ("Help or feedback: ", HELP_URL, 60),
-    ):
-        canvas.setFont("Helvetica", 10)
-        canvas.drawString(TEXT_X, baseline, label)
-        url_x = TEXT_X + width(label)
-        url_width = width(url)
-        canvas.drawString(url_x, baseline, url)
-        canvas.setStrokeColor(HexColor("#173d32"))
-        canvas.line(url_x, baseline - 1.2, url_x + url_width, baseline - 1.2)
-        links.append({
-            "uri": url,
-            "rect": (url_x - 0.5, baseline - 2, url_x + url_width + 0.5, baseline + 11),
-        })
 
-    canvas.showPage()
-    canvas.save()
-    reader = PdfReader(BytesIO(buffer.getvalue()))
-    fonts = reader.pages[0]["/Resources"]["/Font"]
-    fonts[NameObject("/F1")] = original_fonts.raw_get("/F4+0")
-    fonts[NameObject("/F2")] = original_fonts.raw_get("/F5+0")
-    return reader, links
+def text_lines(block: list) -> tuple[str, ...]:
+    """Read the baseline's individual Tj lines; reject unexpected text syntax."""
+    if any(op in (b"TJ", b"'", b'"') for _, op in block):
+        raise ValueError("Baseline text syntax changed; do not guess a replacement")
+    return tuple(str(args[0]) for args, op in block if op == b"Tj")
+
+
+def font_width(page, value: str, name: str, size: float) -> float:
+    font = page["/Resources"]["/Font"][name].get_object()
+    start, end = int(font["/FirstChar"]), int(font["/LastChar"])
+    if any(not start <= ord(char) <= end or ord(char) > 126 for char in value):
+        raise ValueError("Replacement must use the reviewed embedded ASCII glyphs")
+    return sum(float(font["/Widths"][ord(char) - start]) for char in value) * size / 1000
+
+
+def numbers(values: tuple | list) -> list:
+    return [FloatObject(value) for value in values]
+
+
+def replace_page_text(page, pdf, page_number: int) -> tuple[ContentStream, list[dict]]:
+    """Replace exact original BT..ET blocks while retaining other operations.
+
+    The baseline uses only translation matrices around these blocks. Guard that
+    assumption so URL annotation rectangles stay tied to actual text positions.
+    """
+    stream = ContentStream(page.get_contents(), pdf)
+    output, links = [], []
+    matrix = [1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+    stack = []
+    expected = {item["old"]: item for item in REPLACEMENTS[page_number]}
+    seen = set()
+    index = 0
+    while index < len(stream.operations):
+        args, operator = stream.operations[index]
+        if operator == b"q":
+            stack.append(matrix.copy())
+        elif operator == b"Q":
+            matrix = stack.pop()
+        elif operator == b"cm":
+            values = list(map(float, args))
+            if values[:4] != [1.0, 0.0, 0.0, 1.0]:
+                raise ValueError("Unexpected baseline transform; do not infer link coordinates")
+            matrix[4] += values[4]
+            matrix[5] += values[5]
+        if operator != b"BT":
+            output.append((args, operator))
+            index += 1
+            continue
+        end = index + 1
+        while end < len(stream.operations) and stream.operations[end][1] != b"ET":
+            end += 1
+        if end == len(stream.operations):
+            raise ValueError("Unterminated baseline text block")
+        block = stream.operations[index:end + 1]
+        key = text_lines(block)
+        replacement = expected.get(key)
+        if replacement is None:
+            output.extend(block)
+        else:
+            if key in seen:
+                raise ValueError("Ambiguous repeated text block")
+            seen.add(key)
+            positions = [a for a, o in block if o == b"Tm"]
+            if len(positions) != 1 or list(map(float, positions[0][:4])) != [1, 0, 0, 1]:
+                raise ValueError("Unexpected baseline text position")
+            origin_x, origin_y = map(float, positions[0][4:])
+            underlines = []
+            if replacement["rows"]:
+                output.append(([], b"BT"))
+            for value, offset, font, size, uri in replacement["rows"]:
+                if size < 10:
+                    raise ValueError("Replacement body text must not shrink below 10 points")
+                width = font_width(page, value, font, size)
+                if width > replacement["width"] + 0.01:
+                    raise ValueError(f"Replacement exceeds its reviewed width: {value}")
+                y = origin_y - offset
+                output.extend([
+                    (numbers([1, 0, 0, 1, origin_x, y]), b"Tm"),
+                    ([NameObject(font), FloatObject(size)], b"Tf"),
+                    ([TextStringObject(value)], b"Tj"),
+                ])
+                if uri:
+                    if value.count(uri) != 1:
+                        raise ValueError("Visible link must contain its exact URL once")
+                    prefix = value[:value.index(uri)]
+                    x = origin_x + font_width(page, prefix, font, size)
+                    url_width = font_width(page, uri, font, size)
+                    absolute_x, absolute_y = matrix[4] + x, matrix[5] + y
+                    links.append({
+                        "page": page_number,
+                        "uri": uri,
+                        "rect": (absolute_x - 0.5, absolute_y - 3,
+                                 absolute_x + url_width + 0.5, absolute_y + size + 1),
+                    })
+                    underlines.append((x, y - 1.2, x + url_width))
+            if replacement["rows"]:
+                output.append(([], b"ET"))
+            if underlines:
+                output.extend([([], b"q"), (numbers([0.4]), b"w"),
+                               (numbers([23 / 255, 61 / 255, 50 / 255]), b"RG")])
+                for x1, y, x2 in underlines:
+                    output.extend([(numbers([x1, y]), b"m"), (numbers([x2, y]), b"l"), ([], b"S")])
+                output.append(([], b"Q"))
+        index = end + 1
+    if seen != set(expected):
+        raise ValueError(f"Page {page_number} is missing an exact target text block")
+    stream.operations = output
+    return stream, links
 
 
 def assert_patch(source: PdfReader, candidate: PdfReader, links: list[dict]) -> None:
@@ -116,34 +312,37 @@ def assert_patch(source: PdfReader, candidate: PdfReader, links: list[dict]) -> 
                 raise ValueError(f"Page {index + 1} geometry changed")
         if old_page.get("/Rotate", 0) != new_page.get("/Rotate", 0):
             raise ValueError(f"Page {index + 1} rotation changed")
-        old_text = (old_page.extract_text() or "").split()
-        new_text = (new_page.extract_text() or "").split()
-        if new_text[:len(old_text)] != old_text:
-            raise ValueError(f"Original page {index + 1} text was not preserved")
-        if index < 9 and (
-            new_text != old_text
-            or new_page.get_contents().get_data() != old_page.get_contents().get_data()
-        ):
-            raise ValueError(f"Page {index + 1} content changed")
-
-    annotations = candidate.pages[9].get("/Annots", [])
-    if len(annotations) != 2:
-        raise ValueError("Expected exactly two page-10 link annotations")
-    last_text = candidate.pages[9].extract_text()
-    for annotation_ref, expected in zip(annotations, links):
-        annotation = annotation_ref.get_object()
-        action = annotation.get("/A", {})
-        rectangle = tuple(float(value) for value in annotation["/Rect"])
-        if (
-            annotation.get("/Subtype") != "/Link"
-            or action.get("/S") != "/URI"
-            or action.get("/URI") != expected["uri"]
-            or expected["uri"] not in last_text
-            or any(abs(actual - wanted) > 0.001 for actual, wanted in zip(rectangle, expected["rect"]))
-            or not (PATCH_BOUNDS[0] <= rectangle[0] < rectangle[2] <= PATCH_BOUNDS[2])
-            or not (PATCH_BOUNDS[1] <= rectangle[1] < rectangle[3] <= PATCH_BOUNDS[3])
-        ):
-            raise ValueError("A page-10 visible URL, URI action, or rectangle is incorrect")
+        page_number = index + 1
+        if page_number in REPLACEMENTS:
+            expected_stream, _ = replace_page_text(old_page, source, page_number)
+            if ContentStream(new_page.get_contents(), candidate).get_data() != expected_stream.get_data():
+                raise ValueError(f"Page {page_number} contains changes outside the exact text replacements")
+        elif new_page.get_contents().get_data() != old_page.get_contents().get_data():
+            raise ValueError(f"Unaffected page {page_number} content changed")
+        expected_links = [link for link in links if link["page"] == page_number]
+        annotations = new_page.get("/Annots", [])
+        if len(annotations) != len(expected_links):
+            raise ValueError(f"Unexpected link count on page {page_number}")
+        page_text = new_page.extract_text()
+        for annotation_ref, expected in zip(annotations, expected_links):
+            annotation = annotation_ref.get_object()
+            action = annotation.get("/A", {})
+            rectangle = tuple(float(value) for value in annotation["/Rect"])
+            if (
+                annotation.get("/Subtype") != "/Link"
+                or action.get("/S") != "/URI"
+                or action.get("/URI") != expected["uri"]
+                or expected["uri"] not in page_text
+                or any(abs(actual - wanted) > 0.001 for actual, wanted in zip(rectangle, expected["rect"]))
+                or not (56 <= rectangle[0] < rectangle[2] <= 539)
+                or not (55 <= rectangle[1] < rectangle[3] <= 730)
+            ):
+                raise ValueError(f"A page-{page_number} visible URL, URI action, or rectangle is incorrect")
+    final_text = candidate.pages[9].extract_text()
+    if "Visit the Launchpad page" in final_text or "Your next step" in final_text:
+        raise ValueError("Superseded closing instructions must be removed, not covered")
+    if "Edition: " + EDITION not in final_text:
+        raise ValueError("Current edition must be visible in the PDF")
     root = candidate.trailer["/Root"]
     if root.get("/StructTreeRoot") or candidate.get_fields():
         raise ValueError("The patch must not claim new structure tags or interactive form fields")
@@ -256,15 +455,19 @@ def build(input_path: Path, output_path: Path, ascii_safe: bool) -> dict:
 
     writer = PdfWriter(clone_from=source)
     writer.pdf_header = source.pdf_header
-    overlay_reader, links = overlay(source)
-    writer.pages[9].merge_page(overlay_reader.pages[0], over=True, expand=False)
+    links = []
+    for page_number in REPLACEMENTS:
+        page = writer.pages[page_number - 1]
+        content, page_links = replace_page_text(page, writer, page_number)
+        page.replace_contents(content)
+        links.extend(page_links)
     for link in links:
-        writer.add_annotation(page_number=9, annotation=Link(rect=link["rect"], url=link["uri"]))
+        writer.add_annotation(page_number=link["page"] - 1, annotation=Link(rect=link["rect"], url=link["uri"]))
     writer._root_object[NameObject("/Lang")] = TextStringObject("en")
     writer.add_metadata({
         "/ModDate": PATCH_DATE,
         "/Creator": "scripts/patch-launchpad-starter-kit.py (" + PATCH_REVISION + ")",
-        "/Producer": "pypdf " + pypdf.__version__ + "; ReportLab " + reportlab.Version,
+        "/Producer": "pypdf " + pypdf.__version__ + "; original embedded fonts retained",
     })
     writer.generate_file_identifiers()
     buffer = BytesIO()
@@ -288,13 +491,13 @@ def build(input_path: Path, output_path: Path, ascii_safe: bool) -> dict:
         "ascii_safe": ascii_safe,
         "wrapped_streams": wrapped_streams,
         "page_count": 10,
-        "patched_page": 10,
-        "patch_bounds_bottom_left_points": PATCH_BOUNDS,
+        "patched_pages": list(REPLACEMENTS),
+        "unchanged_pages": [1, 4, 5, 7, 8],
+        "edition": EDITION,
         "links": links,
         "language": "en",
         "pdf_header": source.pdf_header,
         "pypdf_version": pypdf.__version__,
-        "reportlab_version": reportlab.Version,
         "limits": "Static, untagged PDF; editable source master not recovered; staging only",
     }
 
