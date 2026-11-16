@@ -213,7 +213,7 @@ describe('RemoteMom landing page', () => {
     );
     expect(downloadHtml).toContain('Download your starter kit');
     expect(downloadHtml).toContain('remote-moms-work-fit-safety-starter-kit.pdf');
-    expect(downloadHtml).toContain('Start with the path that matches your current stage');
+    expect(downloadHtml).toContain('Start with the path that matches your next goal');
     expect(downloadHtml).toContain('https://www.facebook.com/VanJaralve');
     expect(downloadHtml).toContain('https://www.instagram.com/vdjaralve/');
     expect(downloadHtml).toContain('/beta/');
