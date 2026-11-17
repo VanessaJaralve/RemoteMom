@@ -55,7 +55,7 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #16 — support operations | **Completed, 17/17 overall; Stage 1 10/10; Stage 2 7/7**. Main-eBook policy/recovery guidance and existing-order file-update/download behavior are verified. Daily monitoring, unresolved-case ownership and private email threads remain approved | Vanessa’s later November 17 “please proceed” approves extending the same workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns. This is an operating commitment, not handled-case history. Book 2 delivery and reader/device UAT remain separate. |
 | #17 — app-readiness assessment | **Closed / Done; assessment complete, 9/9**; original source/evidence review preserved and Vanessa's approved follow-ups now tracked in #38/#39 | This completes assessment and disposition, not implementation, runtime/demand validation or app monetization. |
 | #38 — local-data protection | **Closed, 8/8**; PR #40 merged at `8cd714a9ca1a04d0471e5aed977677904b86c8e0`. Verified code head `79e3b9fa406a84b9a61c9081a0ff09c870f91d9e`: 26 adapter checks, 435 Jest tests/34 suites, TypeScript and Android JS/assets export passed | These source checks do not establish physical-device/installed-APK behavior or a released build. |
-| #39 — source/build reconciliation | **In Progress, 3/7**; signed-in Expo details now identify the reported commit references and retained 0.1.2 (3) build configuration. Firebase 0.1.2 (3) upload/no testers and 0.1.1 (2) prior distribution remain verified | Exact uploaded source/uncommitted delta is unproven; project metadata fails to load and EAS artifacts are expired and logs are unavailable. Obtain the owner-retained September 13 project folder/archive and original 0.1.2 APK to establish the artifact/hash/source relationship. |
+| #39 — source/build reconciliation | **Paused—originals unavailable; open at 3/7**. Signed-in Expo details identify the reported commit references and retained 0.1.2 (3) build configuration. Firebase 0.1.2 (3) upload/no testers and 0.1.1 (2) prior distribution remain verified | On November 18, Vanessa confirmed she does not have the original September 13, 2026 project folder/source archive or original 0.1.2 APK. Criteria 4–7 remain unpassed; exact uploaded source/uncommitted delta and artifact/hash/source relationships remain unproven. The earlier retrieval requests are paused. |
 
 The support and reporting owner choices below are now approved. Finish the remaining source/editorial
 and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion.
@@ -85,7 +85,8 @@ The initial type-narrowing error was fixed before this successful run. No lint t
 No physical-device test, installed-APK pass,
 native Android build or release is claimed.
 
-**#39 — build provenance:** keep this issue open at **3/7**. Owner Expo access is resolved.
+**#39 — build provenance: Paused—originals unavailable.** Keep this issue open at **3/7**, with
+criteria 4–7 unpassed, following Vanessa's November 18 confirmation below. Owner Expo access is resolved.
 The 0.1.2 build shows version 0.1.2 (3), `sideload-apk`/`preview`, SDK 57/EAS CLI 24.3.0 and the
 literal commit label `e2e39c5*`, resolved to `e2e39c5f02f136ed2d362b4cfe3eaa40b11db099`.
 That committed config is 0.1.1 (2); retained fingerprint configuration directly shows 0.1.2 (3) but
@@ -101,8 +102,10 @@ were opened. No download was attempted during this signed-in Expo follow-up. Pre
 no file path or inspectable bytes were returned. No APK bytes were obtained for inspection and no APK
 was installed; the checksum remains unverified. No retry, bypass, new build, invitation, release or
 settings action occurred. Exact source/artifact/hash relationships and current tester-device version
-remain unverified. The next evidence is the owner's retained original September 13 project folder or
-archive and original 0.1.2 APK; no further sign-in request is needed. The
+remain unverified. On November 18, Vanessa confirmed she does not have the original September 13,
+2026 project folder/source archive or original 0.1.2 APK. The earlier requests to obtain those originals
+are paused; no further original-file task or retrieval retry is assigned. A fresh build would not
+recover or verify the historical source/artifact relationship. The
 [existing Firebase guide](../RemoteMom_Firebase_App_Distribution_Beta_Guide.md#source-and-build-reconciliation--2026-11-18)
 records the detailed build/fingerprint identities without private account, console or artifact links.
 
@@ -428,8 +431,9 @@ requirement to recruit exactly two new people before independent work can contin
 representative-reader feedback or relevant available #15 findings; retain the actual evidence scope
 and the separate 5–10-reader study. No reader or device pass is claimed by this scheduling decision.
 Existing technical, collection and keyboard acceptance remains valid. The known-asset archive
-review and #17 assessment have since been recorded; independent work now focuses on #39's remaining
-source/artifact/hash relationship. PR #40 merged the verified #38 source fix at 8cd714a9; #38 is closed at 8/8. Campaign publication retains
+review and #17 assessment have since been recorded. #39 is now **Paused—originals unavailable**
+following Vanessa's November 18 confirmation; it remains open at 3/7, with criteria 4–7 unpassed.
+PR #40 merged the verified #38 source fix at 8cd714a9; #38 is closed at 8/8. Campaign publication retains
 its existing reader/device readiness requirements.
 
 This is the educational Launchpad protocol; the separate app interview guide is unchanged.
@@ -763,7 +767,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
-| 5. App readiness | Completed assessment/source fix; provenance follow-up | #17 is closed / Done at 9/9. #38 is closed at 8/8 after PR #40 merged at 8cd714a9. #39 remains open at 3/7 for the exact source/artifact/hash relationship. These app items do not block Launchpad validation or authorize monetization or release |
+| 5. App readiness | Completed assessment/source fix; provenance paused | #17 is closed / Done at 9/9. #38 is closed at 8/8 after PR #40 merged at 8cd714a9. #39 remains open at 3/7, Paused—originals unavailable after Vanessa's November 18 confirmation; criteria 4–7 remain unpassed. These app items do not block Launchpad validation or authorize monetization or release |
 
 ## Recommended execution order
 
