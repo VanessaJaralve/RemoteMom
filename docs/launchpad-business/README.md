@@ -46,18 +46,18 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #11 — Starter Kit | **Ready for UAT, 10/12**; PR #33 / `reader-clarity-v4` / `20261117b` is released and technically verified | Physical-phone/saved-PDF readability and dated device/app evidence remain with #19. The missing editable master has its accepted linked follow-up; print/accessibility limits remain explicit. |
 | #18 — challenge choices | **Ready for UAT, 11/12**; taxonomy, compatibility, production mapping, keyboard and technical checks complete | Representative readers must assess the actual stage/challenge wording. F1 does not establish their selections or both planned sessions. |
 | #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
-| #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. #4 is now complete for its approved scope; the remaining Stage 2 #16 paid-support scope extension still governs broader paid promotion. |
+| #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. #4 is now complete for its approved scope; Stage 2 #16 is also complete following the paid-scope approval below. Product-specific acceptance and actual campaign publication retain their own requirements. |
 | #4 — main eBook delivery/recovery | **Completed, 10/10** for the approved main-eBook zero-total, signed-in test. November 17 receipt-link verification and the dated friction review below complete the original criteria | Live charging and guest checkout were outside the approved test. Resend, credit-reset, refund and automated-update operations were not exercised; these are limits, not additional criteria for this completed scope. |
-| #5 — High-Value Hybrid | **In Progress, 8/9** after #6/#7 decision readback; corrected 33-page contents/subtitle and final master approved; Payhip listing, cover and saved file configuration published and verified at USD 19.99; Book 1 and Contact destinations verified | Actual customer receipt/download identity remains open. Owner filename/rounded-size readback is not a byte match; no Book 2 order, receipt or customer download was tested. Earlier upload timeouts are historical. #16’s paid-support scope and existing reader/device UAT remain separate. |
-| #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared; inventory includes the corrected companion’s final master and verified published listing/configuration; retain-and-revise decision shared with #7 | Finish actual companion delivery identity, remaining usable-asset inventory and evidence-supported collection decisions. #7 remains 0/9; no separate worksheets or other collection assets are selected/produced. #14/#15 and #16’s separate paid-support scope are unchanged. |
+| #5 — High-Value Hybrid | **In Progress, 8/9** after #6/#7 decision readback; corrected 33-page contents/subtitle and final master approved; Payhip listing, cover and saved file configuration published and verified at USD 19.99; Book 1 and Contact destinations verified | Actual customer receipt/download identity remains open. Owner filename/rounded-size readback is not a byte match; no Book 2 order, receipt or customer download was tested. Earlier upload timeouts are historical. #16’s paid-support scope is now complete at 17/17; actual Book 2 delivery identity and existing reader/device UAT remain separate and open. |
+| #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared; inventory includes the corrected companion’s final master and verified published listing/configuration; retain-and-revise decision shared with #7 | Finish actual companion delivery identity, remaining usable-asset inventory and evidence-supported collection decisions. #7 remains 0/9; no separate worksheets or other collection assets are selected/produced. #14/#15 evidence gates are unchanged. The separate #16 paid-support approval is complete and does not authorize collection production. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
 | #13 — measurement | **Completed, 13/13 under the approved request-only readiness scope**. November 17 at 10:42 Manila: the actual Instagram profile click and Starter Kit anchor retained `instagram / organic_social / launchpad-profile`; Facebook was already verified. Manual Monday reporting and the completed pre-launch example remain in place | Future post/Story routes are checked under #14 when used; later reports still require actual extraction/review. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured. Broader instrumentation is deferred, and UAT/campaign publication are separate gates. |
-| #16 — support operations | **In Progress, 16/17 overall; Stage 1 10/10; Stage 2 6/7**. Main-eBook policy/recovery guidance and existing-order file-update/download behavior are verified. Daily monitoring, unresolved-case ownership and private email threads are already approved | Only approval to extend that daily review/private-thread workflow to recurring paid-buyer questions and delivery issues, updating help/listings from verified patterns, remains. No new cadence or log is proposed; existing commitments need no reconfirmation. |
+| #16 — support operations | **Completed, 17/17 overall; Stage 1 10/10; Stage 2 7/7**. Main-eBook policy/recovery guidance and existing-order file-update/download behavior are verified. Daily monitoring, unresolved-case ownership and private email threads remain approved | Vanessa’s later November 17 “please proceed” approves extending the same workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns. This is an operating commitment, not handled-case history. Book 2 delivery and reader/device UAT remain separate. |
 
 The support and reporting owner choices below are now approved. Finish the remaining source/editorial
 and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion.
-The main-eBook #4 gate is complete; the remaining Stage 2 #16 paid-support scope extension and applicable offer
-requirements still govern broader paid promotion. The dated November 16–20 plan and
+The main-eBook #4 and Stage 2 #16 gates are complete. Applicable product-specific delivery
+requirements still govern paid promotion; recording support approval does not publish a campaign. The dated November 16–20 plan and
 release evidence below remain history and planning context, not automatic launch authorization.
 
 ## Approved support and reporting arrangements — 2026-11-17 (Asia/Manila)
@@ -83,9 +83,20 @@ These owner decisions completed two #13 preparation criteria under its approved 
 bringing it to **12/13 at that time**. The later 10:42 Instagram route check below completes #13 at
 **13/13**. At this operating approval, #16 was **In Progress, 14/17**: its three Stage 2 criteria
 were not completed by a free-kit support or request-reporting commitment. The later November 17
-receipt/evidence reconciliation below brings #16 to **16/17**, with the paid-support scope extension remaining.
+receipt/evidence reconciliation below brought #16 to **16/17**, with the paid-support scope extension
+still open at that stage. The subsequent explicit approval below completes **17/17**.
 No actual customer handling, future report, scheduled automation, new service, paid
 platform recovery, UAT pass or campaign launch is claimed by recording this approval.
+
+## Paid-buyer review scope approved — 2026-11-17 (Asia/Manila)
+
+**Issue #16 complete: 17/17 overall, Stage 1 10/10 and Stage 2 7/7.** Vanessa replied **“please proceed”** after the concrete recommendation to extend her already-approved daily inbox review and private case-thread workflow to recurring paid-buyer questions and delivery problems, using verified patterns to improve the existing buyer help and product listings.
+
+The same operating arrangement now covers those paid-buyer cases. Vanessa remains the daily reviewer and owns unresolved cases through resolution or an explicitly recorded handoff. Keep one private email thread per case in the existing help inbox, recording the affected resource/version, problem, status, next action and resolution. Review recurring questions and delivery issues within that arrangement; update existing help/listings when patterns are verified. No new cadence, inbox, separate log or response-time guarantee is introduced.
+
+This completes the remaining operating-scope commitment. It does not claim a handled customer case, receipt resend, download-credit change, refund, automated update email or other new platform test. Main-eBook #4 remains complete at 10/10 within its accepted scope. Book 2's actual receipt/download identity remains under #5; #11/#18/#19 keep their remaining reader/device UAT criteria. The approval does not select collection assets, publish a campaign or change the existing reporting commitment.
+
+Earlier dated support entries preserve their counts and limits. This current approval supersedes references to the paid-review scope as awaiting confirmation.
 
 ## Instagram tracking verified; measurement readiness complete — 2026-11-17
 
@@ -355,12 +366,16 @@ the device evidence in this historical record.
 
 ### Prepared Launchpad reader wording check — #18 and #15
 
-**Prepared November 16; feedback update November 17, 2026 (Asia/Manila).** Use two initial readers, one from
-each audience path, for a short phone and wording check. This expands the existing educational
-Launchpad protocol; the separate app interview guide is unchanged. The preparation itself did not
-select, contact, schedule, or assess readers. **One feedback batch was subsequently relayed by
-Vanessa on November 17.** It is recorded below without assuming a participant count or assigning
-the report to both planned reader slots.
+**Prepared November 16; feedback and execution-handoff update November 17, 2026 (Asia/Manila).**
+Vanessa asked to proceed with the remaining sprint steps, including this two-reader phone UAT.
+Use the existing sequence below for one Career reader (R1) and one Remote-Life reader (R2), with
+the current Starter Kit `20261117b`. The protocol is ready; **R1/R2 remain pending and not scheduled**.
+No reader has been selected, contacted or assessed by recording this handoff, and no UAT pass
+is claimed. Existing technical, collection and keyboard acceptance remains valid.
+
+This is the educational Launchpad protocol; the separate app interview guide is unchanged.
+**One feedback batch was relayed by Vanessa on November 17.** It remains recorded as F1 below,
+without assuming a participant count or assigning the report to both planned reader slots.
 
 ### Review material and scope
 
@@ -429,9 +444,40 @@ received feedback batch, not a count of completed sessions.
 
 **Phone/evidence notes:** R1 - pending; R2 - pending; F1 - device/browser/PDF app, edition,
 session date, saved-copy reopening and number of distinct readers not supplied. The report mentions
-pages 3, 8, 9 and 10, but does not establish all-page reading or task completion. For each completed session, add date,
-observed versus reported status, device/browser/PDF app, version, inspected/read page numbers,
-zoom issues, saved-copy reopen result, and any untested scope. Do not add identifying details.
+pages 3, 8, 9 and 10, but does not establish all-page reading or task completion.
+
+Copy the following blank record into the facilitator's private session notes before each actual review.
+Keep raw answers and any contact details there; publish only the sanitized result in the log above.
+
+```text
+Anonymous reference: R1 / R2
+Session date and time (Asia/Manila):
+Audience needs / current goal (brief, non-identifying):
+Phone / operating system / browser / PDF app:
+Download-page version / PDF visible edition:
+Pages actually read / zoom used / reading limitations:
+Current PDF saved and reopened? Result or Not checked:
+Initial understanding of page promise and signup outcome:
+Actual path / stage / challenge chosen; unclear or missing wording:
+Exercise page / small task attempted / completion / explanation needed:
+Page 9 next action / page 10 purpose and help understood:
+Per-step result: Pass / Needs clarification / Not checked
+Evidence type for each result: Observed / Reader-reported
+Sanitized outcome: Pass / Finding / Blocked; reason and affected step:
+Remaining untested scope:
+Resulting action / linked issue / affected-step retest result:
+```
+
+Use **Finding** for a specific usability or wording problem. Use **Blocked** when the reader cannot
+complete an intended step; identify that step and keep acceptance open. A step that was not attempted
+remains **Not checked**, with its missing evidence explicit. These labels organize actual findings;
+they do not add new acceptance criteria or turn an incomplete session into a pass.
+
+Reuse the same dated physical-phone/saved-file evidence for #11 and #19 rather than repeating it.
+Record actual choices and the reader's understanding for #18. Partial page coverage cannot close
+the all-page phone-reading requirement; list the untested pages and saved-copy result as open.
+Preserve #11 at 10/12, #18 at 11/12, #19 at 20/22 current criteria and #15 at 0/9 until actual
+evidence changes the relevant item. The existing full-study and promotion boundaries below apply.
 
 Link actual findings to #18 and relevant device evidence to #11/#19. This initial two-reader
 check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
@@ -1192,8 +1238,8 @@ This entry prepares existing #5/#6 work. It does not close buyer acceptance or a
 collection. #2/#3 remain complete for the approved 36-page main eBook. The November 17 receipt-link
 check and final evidence reconciliation below complete #4 at **10/10** for the approved zero-total,
 signed-in test. Receipt arrival and full-book computer/phone readability were already accepted;
-the same-order replacement download and verified copy need no redundant transfer. #16 remains
-**16/17**, with only the narrow paid-support scope extension outstanding.
+the same-order replacement download and verified copy need no redundant transfer. The later
+paid-review scope approval above completes #16 at **17/17**; Book 2 delivery remains separate.
 
 **Current issue progress:** #5 is **In Progress, 8/9** after the #6/#7 decision updates: the
 corrected companion listing/configuration is published, while actual customer receipt/download
@@ -1205,7 +1251,7 @@ reader UAT pass or paid-demand validation is established.
 | Asset | Reviewed identity/readiness | Practical value and boundary |
 |---|---|---|
 | Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
-| Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. Only #16's paid-support scope extension remains for this main-eBook promotion gate; companion verification remains separate. |
+| Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. #16's paid-support scope is now approved and complete; companion verification and actual campaign publication remain separate. |
 | High-Value Hybrid | Owner-approved corrected 33-page master `Book_2_High_Value_Hybrid_2026-11-17.pdf` (1,404,736 bytes; SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`); saved Payhip editor lists only that filename at 1.4 MB, with the new cover/title and USD 19.99. Public listing/configuration is verified; actual customer bytes/receipt remain untested | Retain and revise this existing optional companion. Reuse skills/truthful examples 6–12, role comparison 13–15, practice 16–18 and search/outreach 22–24 before selecting any new tool. The 47-page source and 36-page visual-only edition remain historical identities. Publication does not establish paid demand, reader acceptance or collection production readiness. |
 | Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
 
@@ -1244,7 +1290,7 @@ Vanessa approved the corrected 33-page Book 2 contents and the subtitle **“Ski
 
 The approved release specification is **The High-Value Hybrid: Skills Evidence for Your Next Remote Role**: a 33-page static PDF by Vanessa Jaralve, used with a notebook or separate document, with five concrete preparation outputs and optional positioning. The existing price/currency were to remain unchanged. The later publication record shows the verified result and platform-documented access guidance; no separate email workflow, response-time guarantee or new refund policy was adopted.
 
-Content/subtitle approval and final master preparation remain complete. The owner approval did not by itself establish publication or buyer delivery; the subsequent saved/public verification is recorded below. The 36-page original-wording edition is preserved separately. This decision did not extend #16’s recurring paid-buyer review/private-thread scope; #16 remains 16/17. At the approval stage #5 was 2/9 and #6 was 3/9; current progress is recorded above. Collection production and UAT were not activated by the content decision.
+Content/subtitle approval and final master preparation remain complete. The owner approval did not by itself establish publication or buyer delivery; the subsequent saved/public verification is recorded below. The 36-page original-wording edition is preserved separately. This content decision did not extend #16’s recurring paid-buyer review/private-thread scope; #16 was 16/17 at that stage. A separate later approval, recorded above, completes #16 at 17/17. At the approval stage #5 was 2/9 and #6 was 3/9; current progress is recorded above. Collection production and UAT were not activated by the content decision.
 
 ### Final customer master prepared; earlier upload attempts — November 17, 2026
 
@@ -1255,6 +1301,12 @@ Independent verification passed all **346 body/table units**, **13 bookmarks** a
 Two Payhip upload attempts ended in file-transfer timeouts. At that earlier attempt stage, the saved editor showed the original `Book 2 The High-Value Hybrid.pdf` at **30.9 MB displayed**; no file, listing or settings changes were saved by those attempts. The cause is not confirmed; Chrome file-access permission was not observed to be off. The browser upload recovery guidance called for checking/enabling **Allow access to file URLs** for the connected Chrome extension before retrying. Vanessa subsequently reported the files uploaded; the saved/public verification below supersedes that earlier blocker.
 
 The next action at that preparation stage was to replace the PDF/cover, apply the approved listing and verify the saved/public result. Those configuration/listing steps are now verified below. At that earlier stage #5 was 2/9 and #6 was 3/9. Actual customer receipt/download identity, #16’s paid-support scope and the existing UAT/collection gates remain separate.
+
+### Book 2 buyer-test preparation — November 17, 2026
+
+Vanessa asked to proceed with the sprint's remaining buyer-path check. A private QA coupon is saved in Payhip for **Book 2 only, 100% off, one use total (0/1 used)**, with end date displayed **November 21, 2026**. The public price remains USD 19.99. Keep the code, buyer information and receipt/access links private.
+
+No test order, receipt-link access or customer file download was performed by preparing the coupon. The owner buyer step is a Book 2-only checkout with a verified zero total, followed by the actual receipt link and downloaded PDF. Compare that file with the approved 33-page customer master and record the result in #5; exclude the QA order from sales/demand evidence. #5 stays 8/9 until its delivered-version criterion has evidence. The separately approved #16 operating scope is complete at 17/17; free-kit reader/device UAT remains open.
 
 ### Book 2 listing and file configuration published — November 17, 2026
 
@@ -1293,8 +1345,8 @@ authorized buyer path and record the delivered version. The configuration/listin
 published and verified; repeat neither the accepted final-master QA nor main-eBook #4. A saved
 filename and rounded size do not prove the customer file hash. The source findings above refer to
 the original 47-page content and are addressed in the owner-approved corrected edition. #5 is
-**8/9** after the #6/#7 retain-and-revise decision updates. #16’s paid-support scope, existing UAT
-and evidence-led collection production remain separate.
+**8/9** after the #6/#7 retain-and-revise decision updates. #16’s paid-support scope is now approved
+at **17/17**; actual Book 2 delivery, existing UAT and evidence-led collection production remain separate.
 
 ### #5 listing content published — November 17, 2026
 
@@ -1338,7 +1390,8 @@ receipt arrival or actual customer download was tested, and no response-time/ref
 Publication and saved/public readback are complete. The body Book 1 link actually reached the
 correct main-eBook page; the Contact link destination matches the independently opened store form.
 The public access guidance is platform-documented, not a tested Book 2 receipt. Keep the actual
-customer receipt/download identity criterion open and retain #16’s separate paid-support scope.
+customer receipt/download identity criterion open. The separate paid-support scope is now approved
+under #16; that approval does not verify the Book 2 receipt/download.
 
 ### Existing-companion retain-and-revise decision — November 17, 2026
 
@@ -1348,7 +1401,7 @@ The reuse boundary is now concrete. The free Starter Kit already covers initial 
 
 The Book 2 listing and saved file configuration are now published and verified under #5. The configured filename/rounded size are recorded there; an actual customer receipt/download identity remains unverified. This reuse decision does not establish that remaining check.
 
-Keep #6 In Progress at 3/9. The full asset inventory, reader/experiment evidence and collection decision remain open; no new collection assets, price, packaging or production authorization are adopted. #7–#10 remain conditional. Book-content approval/publication does not complete #16’s separate paid-support scope or the existing UAT gates.
+Keep #6 In Progress at 3/9. The full asset inventory, reader/experiment evidence and collection decision remain open; no new collection assets, price, packaging or production authorization are adopted. #7–#10 remain conditional. Book-content approval/publication did not complete #16’s separate paid-support scope; the later operating approval above now completes #16. Existing UAT and evidence-led collection requirements remain open.
 
 
 ### #6 reuse map and production boundary
@@ -1381,12 +1434,13 @@ do not validate pricing. This prepares a learning approach and makes no price or
 
 The main-eBook evidence below completes [#4](https://github.com/VanessaJaralve/RemoteMom/issues/4)
 at **10/10** for the approved zero-total, signed-in test and the policy/platform items in
-[#16](https://github.com/VanessaJaralve/RemoteMom/issues/16), now **16/17**. The original criteria
+[#16](https://github.com/VanessaJaralve/RemoteMom/issues/16), which reached **16/17 at that reconciliation**. The original criteria
 require receipt access, support/recovery instructions and verified file-update/download behavior;
 they do not mandate an artificial lost-receipt case or a second transfer of an already verified file.
-Only #16's extension of the existing daily review/private-thread workflow to recurring paid-buyer
-questions, delivery issues and verified help/listing updates remains. Any later recovery action must have
-its own authorization and actual outcome recorded, without turning optional drills into current gates.
+The subsequent paid-review scope approval above completes #16 at **17/17**, extending the existing
+daily review/private-thread workflow to recurring paid-buyer questions, delivery issues and verified
+help/listing updates. Any later recovery action must have its own authorization and actual outcome
+recorded, without turning optional drills into current gates.
 
 **Bounded buyer-access runbook and result — 2026-11-17 (Asia/Manila).**
 
@@ -1466,11 +1520,12 @@ the original receipt and the verified manual support/recovery instructions also 
 The earlier interpretation requiring an additional end-to-end recovery drill or unspecified broader
 fresh-download tests was stricter than the original criteria. This review corrects that interpretation
 using existing evidence; it does not expand scope, simulate a new failure or initiate a test charge.
-**#4 is complete at 10/10; #16 is In Progress at 16/17, Stage 1 10/10 and Stage 2 6/7.** Only owner
-confirmation that the approved daily review/private-case-thread workflow also covers recurring
-paid-buyer questions and delivery issues, with help/listing updates when verified patterns appear,
-remains. This is a narrow scope extension, not a new cadence or record setup. Daily inbox review,
-follow-up ownership and private email-thread handling are already approved and need no reconfirmation.
+**At that reconciliation, #4 was complete at 10/10 and #16 was In Progress at 16/17, Stage 1 10/10
+and Stage 2 6/7.** The one remaining decision was the paid-review scope extension. Vanessa’s later
+“please proceed,” recorded above, now approves applying the same daily review/private-case-thread
+workflow to recurring paid-buyer questions and delivery issues, with help/listing updates from verified
+patterns, completing #16 at **17/17**. Daily review, follow-up ownership and private thread handling
+retain their existing approval; no new cadence or record setup is required.
 
 **Limits:** no live charged payment, guest-input validation, receipt resend, credit reset, support-form
 delivery, refund execution or automated update email was tested. No fresh PDF transfer occurred during
@@ -1480,15 +1535,15 @@ their own requirements; this review does not publish a campaign or promise autom
 
 ## Issue #16 — help, file handling, and buyer operations
 
-**Stage 1 complete, 10/10; issue #16 remains In Progress, 16/17 overall, Stage 2 6/7.** The help and file-handling
+**Issue #16 complete, 17/17 overall: Stage 1 10/10 and Stage 2 7/7.** The help and file-handling
 changes originally drafted on 2026-11-14 were released through
 [PR #20](https://github.com/VanessaJaralve/RemoteMom/pull/20). The published-help criterion is satisfied,
 and #19 has one verified production signup/collection case. Vanessa confirmed daily inbox monitoring
 on November 16 and explicitly approved unresolved-case follow-up and one private email thread per
-case on November 17. Remaining #19 coverage is separate; #16's only remaining item is extending that
-approved daily review/private-thread workflow to recurring paid-buyer issues and verified help/listing
-updates. The approved operating arrangement is not evidence of actual
-customer-case handling.
+case on November 17. Her later “please proceed” approves extending that same daily review/private-thread
+workflow to recurring paid-buyer questions/delivery issues and verified help/listing updates, completing
+the final #16 criterion. Remaining #19 coverage and Book 2 delivery identity are separate. The approved
+operating arrangement is not evidence of actual customer-case handling.
 The editable master is still missing. #27 records the earlier guarded repair, rebuild/rollback,
 and user-reported phone-link success. The current `reader-clarity-v4` PDF, edition `20261117b`,
 is released through PR #33 with exact public-file, copy/continue and existing-reader access checks.
@@ -1497,8 +1552,8 @@ to the PDF, while the separate website invitation remains. #11/#19 are Ready for
 physical-phone/saved-file readability and final acceptance still open. The main eBook listing/preview/policy
 work is complete under #2/#3. The original buyer-receipt link now reaches the current branded file;
 #4 is complete at 10/10 after the dated friction/evidence reconciliation above.
-The release record below preserves the distinction between deployed help
-and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
+The release record below preserves the earlier deployed-help evidence; the later approval above
+completes [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16) without claiming new customer-case execution.
 
 ### Stage 1: contact, intake, and escalation
 
@@ -1599,9 +1654,10 @@ and published refund policy and purchase-help instructions. #2/#3/#4 are complet
 approved scope. The verified same-order replacement download, matched file and original receipt access
 establish its file-update/download behavior; public guidance and contact routes establish the manual
 support/recovery instructions. Optional resend, credit-reset, refund and automated-update operations
-remain unexercised limits. #16 is **16/17, Stage 2 6/7**, awaiting the narrow paid-support scope
-extension of the existing daily review/private-thread workflow. Bundle-specific behavior remains
-under #10. This record does not change policy terms.
+remain unexercised limits. #16 is **complete at 17/17, Stage 2 7/7**, after approval to extend the
+existing daily review/private-thread workflow to recurring paid-buyer questions/delivery issues and
+verified help/listing updates. Bundle-specific behavior remains under #10; Book 2 delivery identity
+remains under #5. This record does not change policy terms.
 
 - For purchase/access problems, verify the transaction privately using the available platform tools and
   provide the recovery steps confirmed during checkout testing. Never request payment-card details.
@@ -1614,9 +1670,9 @@ under #10. This record does not change policy terms.
   notifications until those functions are configured and tested.
 - Keep necessary delivery/correction communication separate from optional marketing. This preparation does
   not send outreach, enroll subscribers, or activate email automation.
-- After the narrow paid-support scope extension is confirmed, apply the already approved daily review
-  and private case threads to recurring paid-buyer questions/delivery issues; update existing help/listings
-  when verified patterns appear. This requires no new cadence, log or repeat setup approval.
+- Apply the approved daily review and private case threads to recurring paid-buyer questions/delivery
+  issues; Vanessa confirmed this scope on November 17. Update existing help/listings when verified
+  patterns appear. Use the same cadence, inbox, ownership and case fields; no repeat setup approval is needed.
 
 ### #16 decision and acceptance-evidence record
 
@@ -1628,8 +1684,8 @@ under #10. This record does not change policy terms.
 | Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed for an earlier edition; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check. PR #33 adds verified public delivery and desktop/mobile-width continuation for edition `20261117b` | Physical-phone/saved-PDF readability of `20261117b`, the focused reader retest and final #19 acceptance remain open. The current page-10 correction is released and verified through PR #33. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
 | Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; guarded revisions have pinned rebuild/rollback records; `reader-clarity-v4` / edition `20261117b` is released and publicly verified through PR #33. `next-step-v2` / `20261116b` from PR #32 is the previous release and immediate PDF rollback target | #27 supplies prior release/phone-link evidence; the November 17 release record above gives the current exact public PDF identity and verification. The editable master remains missing and broader #11/#19 reader, readability and accessibility evidence remains open |
 | Privacy of support records | **Approved November 17:** one private email thread per case in the existing help inbox, using the documented intake/status/action/resolution fields | Apply the approved rules when support operates. No customer records were created or inspected by recording this decision; public evidence must contain no customer data |
-| Buyer policy, feedback, and update workflow | #4 is complete at **10/10** for the main eBook. Published policy/help, verified replacement download and matched copy, and original receipt access at 14:45 Manila November 17 satisfy the policy/platform criteria. #16 Stage 2 is **6/7** | Confirm extension of the approved daily review/private-thread workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns. No new cadence, log, transfer or recovery drill is required. Unexercised resend/credit/refund/automated-email functions remain explicit limits. Keep the main listing as the policy source; #10 remains bundle-specific |
-| Deployment and issue closure | **In Progress, 16/17; Stage 1 complete at 10/10, Stage 2 at 6/7** | #27 is complete. Finish remaining #11/#19 physical-phone/saved-PDF and journey acceptance separately. Confirm or explicitly defer the narrow paid-support scope extension with a linked follow-up before closing full #16; existing daily monitoring and private threads need no reconfirmation. #12 is Done, #18 has reader wording work, and optional email is #24 Later |
+| Buyer policy, feedback, and update workflow | #4 is complete at **10/10** for the main eBook. Published policy/help, verified replacement download and matched copy, and original receipt access at 14:45 Manila November 17 satisfy the policy/platform criteria. #16 Stage 2 is **7/7**, with the paid-review scope approved November 17 | Apply the approved daily review/private-thread workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns; record actual cases only when they occur. No new cadence, log, transfer or recovery drill is required. Unexercised resend/credit/refund/automated-email functions remain explicit limits. Keep the main listing as the policy source; #10 remains bundle-specific |
+| Deployment and issue closure | **Completed, 17/17; Stage 1 10/10 and Stage 2 7/7**. The November 17 paid-review scope approval completes the sole remaining operating criterion | #27 is complete. #11/#19 physical-phone/saved-PDF and final journey acceptance, #18 reader wording, and #5 Book 2 delivery identity remain separate. #12 is Done; optional email is #24 Later. No new case handling, recovery action or campaign publication is claimed. |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
