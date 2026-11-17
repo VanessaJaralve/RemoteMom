@@ -48,8 +48,8 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
 | #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. #4 is now complete for its approved scope; the remaining Stage 2 #16 paid-support scope extension still governs broader paid promotion. |
 | #4 — main eBook delivery/recovery | **Completed, 10/10** for the approved main-eBook zero-total, signed-in test. November 17 receipt-link verification and the dated friction review below complete the original criteria | Live charging and guest checkout were outside the approved test. Resend, credit-reset, refund and automated-update operations were not exercised; these are limits, not additional criteria for this completed scope. |
-| #5 — High-Value Hybrid | **In Progress, 2/9**; source comparison and audience/output definition complete; supplied 47-page original inspected; 36-page brand redesign, cover and rebuildable source package complete for owner review; separate 33-page editorial-review candidate prepared and visually checked, pending owner content approval | The visual redesign preserves original body/exercise wording and remains unpublished. Current Payhip-file identity, the separate unapproved 14-section editorial draft, live listing/support details, delivery checks and reader/device acceptance remain open. The new source package does not verify the original authoring master. |
-| #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared; inventory now records the supplied Book 2 original and unpublished 36-page brand redesign/source package | Finish the remaining existing-asset inventory and evidence-supported scope/packaging decisions. Book 2 editorial and current-delivery identity checks remain open. Collection production stays conditional on #15/#14; no collection assets or price are adopted. |
+| #5 — High-Value Hybrid | **In Progress, 2/9**; corrected 33-page contents/subtitle approved; final customer PDF, cover and editable-source ZIP ready and verified | Two upload attempts ended in file-transfer timeouts; the saved editor still has the original 30.9 MB file and no changes were saved. For browser upload recovery, check/enable **Allow access to file URLs**, then retry replacing the PDF/cover and applying the prepared listing, retaining $19.99/currency; then verify publication and actual delivery. #16’s paid-support scope and reader/device acceptance remain separate. |
+| #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared; inventory records the Book 2 original, 36-page visual redesign/source package and owner-approved corrected 33-page contents/subtitle plus the final customer PDF, cover and editable-source ZIP | Finish the remaining existing-asset inventory and evidence-supported scope/packaging decisions. Book 2 upload is blocked following file-transfer timeouts; the cause is unconfirmed; publication and current-delivery identity checks remain open; its content approval does not approve collection production. Collection production stays conditional on #15/#14; no collection assets or price are adopted. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
 | #13 — measurement | **Completed, 13/13 under the approved request-only readiness scope**. November 17 at 10:42 Manila: the actual Instagram profile click and Starter Kit anchor retained `instagram / organic_social / launchpad-profile`; Facebook was already verified. Manual Monday reporting and the completed pre-launch example remain in place | Future post/Story routes are checked under #14 when used; later reports still require actual extraction/review. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured. Broader instrumentation is deferred, and UAT/campaign publication are separate gates. |
 | #16 — support operations | **In Progress, 16/17 overall; Stage 1 10/10; Stage 2 6/7**. Main-eBook policy/recovery guidance and existing-order file-update/download behavior are verified. Daily monitoring, unresolved-case ownership and private email threads are already approved | Only approval to extend that daily review/private-thread workflow to recurring paid-buyer questions and delivery issues, updating help/listings from verified patterns, remains. No new cadence or log is proposed; existing commitments need no reconfirmation. |
@@ -1205,7 +1205,7 @@ finished companion, collection or paid offer.
 |---|---|---|
 | Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
 | Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. Only #16's paid-support scope extension remains for this main-eBook promotion gate; companion verification remains separate. |
-| High-Value Hybrid | Supplied 47-page original inspected; core text/layout/links match the earlier reviewed candidate, with a different binary identity. Unpublished 36-page brand redesign, cover and rebuildable source ZIP completed November 17; exact current Payhip-file match remains unverified | The original-page map remains: audit/reflection 9–16; niche/role selection 18–21; practice project 22–25; resume/LinkedIn 26–29; company/outreach work 30–33; onboarding 34–37. All 371 body/table units and seven external link targets are preserved in the redesign. Editorial corrections remain unapproved and were not applied to this 36-page edition; this asset is not ready for collection packaging or paid promotion. |
+| High-Value Hybrid | Supplied 47-page original inspected; core text/layout/links match the earlier reviewed candidate, with a different binary identity. Unpublished 36-page brand redesign, cover and rebuildable source ZIP completed November 17; exact current Payhip-file match remains unverified | The original-page map remains: audit/reflection 9–16; niche/role selection 18–21; practice project 22–25; resume/LinkedIn 26–29; company/outreach work 30–33; onboarding 34–37. All 371 body/table units and seven external link targets are preserved in the redesign. The corrected 33-page contents/subtitle are owner-approved and the final customer PDF, cover and source ZIP are ready; the 36-page original-wording artifact remains unchanged. Payhip upload is blocked following file-transfer timeouts; the cause is unconfirmed; the saved editor still has the original 30.9 MB file. Publication and current delivery verification remain open, and this approval does not establish collection packaging or paid-promotion readiness. |
 | Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
 
 ### #5 public listing identified — November 17
@@ -1230,15 +1230,33 @@ The 36-page `Book_2_High_Value_Hybrid_RemoteMom_Brand_Edition.pdf` is complete a
 
 The supplied 47-page `Book 2 The High-Value Hybrid.pdf` was inspected. Its embedded text, text layout, page geometry and links match the earlier 47-page candidate; the files have different hashes/export metadata and minor decorative-header rendering differences. This identifies the supplied original's content, but does not verify which file Payhip currently serves. The rebuilt source package supports further approved edits; it is not recovery or verification of the original authoring master.
 
-This completes the brand/layout subtask only. The separate 14-section editorial-corrections document remains unapproved and was not applied to this 36-page edition: its original claims and examples remain. The new PDF and cover are not published to Payhip. Current uploaded/delivered-file identity, editorial approval and implementation, listing/support details, product-specific delivery checks, and reader/device UAT remain open. Keep the paid PDF, editable source and private review artifacts out of the public repository; record their filenames and this verification evidence here.
+This completed the brand/layout subtask only. The editorial corrections were not applied to this 36-page edition: its original claims and examples remain. The separate corrected 33-page content/subtitle approval is recorded below. No Payhip publication is established by the visual-production evidence. Current uploaded/delivered-file identity, final release/listing implementation, product-specific support/delivery checks and reader/device UAT remain open. Keep the paid PDF, editable source and private review artifacts out of the public repository; record their filenames and verification evidence here.
 
 ### Branded editorial-review candidate prepared — November 17, 2026
 
 A separate **33-page** `Book_2_High_Value_Hybrid_Editorial_Review_Draft.pdf` is prepared for owner review from the 14-section correction manuscript. SHA-256: `a75b9de28657d6c69ffa18b23de32c0880a5a4994fdb10c64b92d456357ba746`; **1,405,573 bytes**. All 33 pages passed visual QA. The independent audit confirms all 372 manuscript units are represented, all 346 body/table units are present in order, and 26 contents links resolve to the 13 correct bookmark destinations. Every page is marked editorial review draft; it is not published.
 
-The proposed edition replaces unsupported statistics, automatic seniority scoring, invented achievement metrics and rapid-mastery/hiring promises with skills-evidence exercises, clearly labeled examples, flexible practice sessions and accurate chapter directions. Its proposed subtitle is “Skills Evidence for Your Next Remote Role.” The proposed author panel aligns Instagram with the already verified Launchpad profile, `@vdjaralve`; the 36-page original-wording edition retains its source links. This remains a content proposal, not approval of the corrections or adoption as the delivered product.
+The proposed edition replaces unsupported statistics, automatic seniority scoring, invented achievement metrics and rapid-mastery/hiring promises with skills-evidence exercises, clearly labeled examples, flexible practice sessions and accurate chapter directions. Its proposed subtitle is “Skills Evidence for Your Next Remote Role.” The proposed author panel aligns Instagram with the already verified Launchpad profile, `@vdjaralve`; the 36-page original-wording edition retains its source links. This paragraph records the reviewed candidate. Vanessa’s subsequent content/subtitle approval is recorded below; adoption as the delivered product still requires the publication and delivery checks.
 
-This is a proposed editorial review artifact, pending owner content approval and publication. It has not replaced the 36-page original-wording brand edition or the Payhip file. The 36-page edition and its completed visual QA remain unchanged. The proposal does not complete current Payhip-file identity, live listing/delivery verification, reader/device UAT, or another original #5/#6 acceptance criterion. Keep #5 at 2/9 and #6 at 3/9.
+The reviewed contents and subtitle have now been approved by Vanessa, as recorded below. The final customer master is identified below; publication and actual current Payhip delivery identity remain pending. The review artifact is not the final customer PDF. The separate 36-page original-wording edition and its completed visual QA remain unchanged. Content approval does not complete current Payhip-file identity, live listing/delivery verification, reader/device UAT or another original #5/#6 acceptance criterion. Keep #5 at 2/9 and #6 at 3/9.
+
+### Owner approval of corrected contents and subtitle — November 17, 2026
+
+Vanessa approved the corrected 33-page Book 2 contents and the subtitle **“Skills Evidence for Your Next Remote Role”**, and asked to apply the changes. The approved content reference is `Book_2_High_Value_Hybrid_Editorial_Review_Draft.pdf`, SHA-256 `a75b9de28657d6c69ffa18b23de32c0880a5a4994fdb10c64b92d456357ba746`. This identifies the reviewed, content-approved artifact; it is not a claim that these review-draft bytes are the published download.
+
+The final customer master is ready as recorded below. Align the listing with **The High-Value Hybrid: Skills Evidence for Your Next Remote Role**: a 33-page static PDF by Vanessa Jaralve, used with a notebook or separate document, with five concrete preparation outputs and optional-companion positioning. Retain the existing **$19.99** price and currency; no price change was requested. Add only verified product-specific access, help and policy details; no automatic-email or response-time promise is adopted.
+
+Content/subtitle approval and final master preparation are complete. Payhip file/listing publication, the actual uploaded/delivered-version check and product-specific buyer/reader acceptance remain pending in this record. The completed 36-page original-wording edition remains unchanged as a separate earlier artifact. This approval does not extend #16's recurring paid-buyer review/private-thread scope; #16 remains 16/17 with that separate item open. Keep #5 at 2/9 and #6 at 3/9 until their remaining criteria have actual evidence. Collection production and UAT are not activated by this decision.
+
+### Final customer master ready; Payhip upload blocked — November 17, 2026
+
+The approved customer PDF is ready: `Book_2_High_Value_Hybrid_2026-11-17.pdf`, **33 pages**, **1,404,736 bytes**, SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`. The matching `Book_2_High_Value_Hybrid_2026-11-17_Cover.png` is **1404 × 1944 pixels**, and `Book_2_High_Value_Hybrid_2026-11-17_Editable_Source.zip` is prepared. These are owner-held release artifacts, not public repository attachments.
+
+Independent verification passed all **346 body/table units**, **13 bookmarks** and **26 contents links**. Across all 33 pages, content above the footer is pixel-identical to the approved review copy; review labels were removed, normal branded footer/edition marker restored, and metadata finalized; approved content retained. The earlier 36-page original-wording edition remains unchanged.
+
+Two Payhip upload attempts ended in file-transfer timeouts. The saved editor still shows the original `Book 2 The High-Value Hybrid.pdf` at **30.9 MB displayed**; no file, listing or settings changes were saved. The cause is not confirmed; Chrome file-access permission was not observed to be off. Browser upload recovery calls for checking/enabling **Allow access to file URLs** for the connected Chrome extension before retrying.
+
+Next: replace the PDF and cover with the final artifacts, apply the prepared listing copy for the approved contents/subtitle, retain the existing **$19.99** price/currency, save, and verify the actual uploaded/delivered PDF plus the live listing and Book 1 link. Publication, actual current delivery identity and product-specific acceptance are still open. #5 remains **2/9**, #6 **3/9**; #16's separate paid-support scope and existing UAT/collection gates are unchanged.
 
 ### #5 proposed position and editorial work
 
@@ -1248,6 +1266,8 @@ inventory, a role/industry shortlist, a clearly labeled practice workflow, a dra
 statement, and an outreach plan. Keep it optional. These outputs do not establish professional
 seniority, software mastery, employment or income.
 
+The table below preserves findings from the 47-page original. The approved corrected 33-page content addresses them; publication and delivery verification remain separate.
+
 | Candidate pages | Issue to resolve before promotion |
 |---|---|
 | 7–16, especially 10 | Replace the self-score-to-senior-manager conclusion and automatic household-to-executive equivalence with bounded reflection, specific evidence and role-specific skill development. |
@@ -1256,50 +1276,61 @@ seniority, software mastery, employment or income.
 | 21, 33 | Check the original layout and repair promised next sections: the extracted sequence does not supply the promised next niche matrix or interview chapter. Image-only material was not visually audited in this source-text review. |
 | 22–25, 34–37, 40–41 | Narrow the promise to career evidence and preparation; distinguish short tool practice from mastery and reduce overlap with the main eBook's boundaries/communication guidance. |
 
-**Recommendation:** resolve the recorded editorial issues before promoting the companion.
-The supplied original and new brand-redesign package are now identified. Confirm which file the
-identified [Payhip product](https://payhip.com/b/ryYbl) currently delivers; the earlier timed-out owner
-download remains a historical limitation, and the supplied file's identity does not by itself close
-that check. Obtain a decision on the separate 14-section editorial draft, apply only approved
-corrections to the rebuildable source, and verify the resulting edition before finalizing its listing.
-The editorial table above refers to physical pages in the 47-page original, not the redesigned
-36-page pagination. Confirm this product's own support/policy details and delivery journey before
-paid promotion. The main eBook's completed #4 evidence remains accepted and does not verify the
-companion. #5 stays open at **2/9**; the brand/layout subtask is complete, while current delivery
-identity, editorial acceptance, publication and product-specific verification remain open.
+**Current action:** follow browser upload recovery by checking/enabling the connected extension’s **Allow access to file URLs**
+setting, then replace the PDF and cover with the prepared final artifacts and apply the matching
+[Payhip listing](https://payhip.com/b/ryYbl) copy, retaining the existing $19.99 price and currency.
+The final master identity is recorded above. Save and verify the actual new uploaded/delivered
+version; the saved editor currently still shows the original 30.9 MB file. No publication is
+established by the two incomplete upload attempts.
+The editorial table above records findings in the 47-page original. They are addressed in the
+reviewed corrected content now approved by Vanessa; the 36-page original-wording edition remains
+a separate unchanged artifact. Confirm this product's own access, support/policy details and
+delivery journey before paid promotion. Main-eBook #4 remains complete within its accepted scope.
+#5 stays open at **2/9** until remaining acceptance has evidence; #16's paid-support scope, reader
+acceptance, publication and actual current delivery verification remain separate.
 
-### #5 replacement listing copy — draft, not published
+### #5 listing copy for the approved contents — prepared, not yet published
 
-**Publication condition:** verify the exact uploaded/delivered version and resolve the editorial
-items above before using this copy. Confirm that the corrected edition actually retains each
-listed exercise. This draft adopts no price, delivery promise, support term or refund policy.
+The corrected 33-page contents and subtitle are owner-approved. The copy below describes that
+edition; apply it with the verified corrected release file. Keep the existing **$19.99** price and
+currency. Product-specific delivery/help/policy facts must come from the inspected Payhip setup;
+this preparation adopts no automatic-email, response-time or refund-policy promise.
 
 > **The High-Value Hybrid: Skills Evidence for Your Next Remote Role**
 >
-> Turn your experience into clear examples of the work you can do. This optional PDF companion
-> helps mothers returning to work, changing direction, or seeking additional remote work identify
-> relevant skills and prepare a focused career plan.
+> By Vanessa Jaralve
 >
-> Work through guided reflections and exercises to:
+> Turn your experience into clear examples of the work you can do. This optional companion helps mothers returning to work, changing direction, or seeking additional remote work identify relevant skills and prepare useful career materials.
 >
-> - Identify useful skills from paid work, volunteering, study and caregiving, with examples you can support.
-> - Compare a role or industry with your interests, skills and available working hours.
-> - Build a clearly labeled practice workflow to explore relevant digital tools.
-> - Draft a resume summary, LinkedIn introduction and outreach message using your own evidence.
-> - Choose one practical next step for your search or preparation.
+> What you can prepare
 >
-> Use the examples as prompts and adapt them to what you have actually done. Keep practice
-> projects clearly identified and use only results you can support.
+> - A skills record supported by specific examples from paid work, volunteering, study, caregiving or personal projects.
+> - A short comparison of roles, requirements and working conditions.
+> - A clearly labeled practice project and a list of what still needs learning.
+> - Draft résumé, profile and outreach wording based on your own evidence.
+> - One next action for your search or preparation.
 >
-> For broader guidance on workspace setup, daily planning, boundaries and communication, explore
-> [The Remote Mom's Launchpad](https://payhip.com/b/zUYPA). Choose the resource that fits your
-> current goal; the High-Value Hybrid is an optional companion, and either book can be considered
-> independently of the free Starter Kit.
+> The book includes guided reflections, worksheet prompts, clearly labeled examples, seven flexible practice sessions, a review checkpoint and a final preparation checklist. Use the examples as prompts, describe what you actually did, and include only results you can support.
+>
+> Format and use
+>
+> 33-page static PDF. Keep your answers in a notebook or a separate document as you work through the prompts. The PDF does not contain interactive fillable fields.
+>
+> These exercises support career preparation. They do not certify your skills or guarantee a job, income or a flexible schedule.
+>
+> An optional companion
+>
+> You can use this book on its own or alongside the free Starter Kit. It is not a required purchase.
+>
+> For broader guidance on workspace setup, daily planning, boundaries and communication, explore The Remote Mom's Launchpad:
+> [The Remote Mom’s Launchpad](https://payhip.com/b/zUYPA)
+>
+> Choose the resource that fits your current goal.
 
-Before publication, add the verified edition/page count, actual included files and format, tested
-Payhip access instructions, and this product's confirmed purchase-help/policy details. Check the
-main-book link and any selected reciprocal journey. The draft itself does not complete #5's live
-listing, included-file/support, optional-positioning or cross-link acceptance criteria.
+Publication and readback remain pending. Verify the actual included file, page count/version,
+current download route, live description and Book 1 destination after applying the changes. Record
+only verified access/help/policy details; #16's separate paid-support scope is still open. Preparing
+this copy does not complete #5's listing, delivery/support, optional-positioning or cross-link criteria.
 
 ### #6 reuse map and production boundary
 
