@@ -30,15 +30,15 @@ requires the separate #2–#4 and Stage 2 #16 checks in the roadmap; it is not n
 The [download page](../../landing/launchpad/download/index.html) links the existing
 [Facebook profile](https://www.facebook.com/VanJaralve) and
 [Instagram profile](https://www.instagram.com/vdjaralve/). The November 16 profile-route check below
-records the original destinations and saved Facebook correction. The November 17 update records the
-Instagram destination correction and remaining tracking gap. Broader posting capability,
-Story placement, audience, and traffic reporting are not established by that check. This pack prepares
+records the original destinations and saved Facebook correction. The November 17 records preserve the
+earlier Instagram tracking gap and its successful 10:42 Manila verification. Broader posting capability,
+Story placement, audience, and traffic reporting are not established by these checks. This pack prepares
 those two channels only. Pinterest is not in this posting plan, and email remains deferred under #24.
 
 | Placement | Prepared use | Check before publication |
 |---|---|---|
 | Facebook | A text post with the complete matching Facebook URL in the caption. Existing art is optional where its audience fits | Confirm the intended account, then open the actual post link in a normal browser and check the destination and all three UTM values |
-| Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story has been published; the November 17 bio correction and remaining tracking gap are recorded below |
+| Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story has been published; the corrected bio's desktop route and registered tracking were verified November 17 at 10:42 Manila |
 | Instagram feed or shared bio link | An optional adaptation after the actual route is decided | A rotating shared bio link does not reliably identify which older feed post caused a visit. Record the link's active dates and report it as bio-link traffic; do not claim exact feed-post attribution |
 
 **Existing visual assets:** visual inspection on November 16 found that all four committed PNGs
@@ -67,7 +67,7 @@ and its effective date before interpreting a reporting period.
 | Channel | Exact registered link | Current state — November 17 |
 |---|---|---|
 | Facebook | [Current Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Saved and actual desktop profile route verified** |
-| Instagram | [Registered Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Launchpad destination verified from the actual desktop profile; registered tracking values not retained. Exact full-URL mobile replacement and route verification remain open** |
+| Instagram | [Registered Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Actual desktop profile click and signup-anchor continuation verified November 17 at 10:42 Manila; all three registered tracking values retained** |
 
 For the Facebook correction, only the Starter Kit URL changed. The link description, public audience,
 and other consulting link were preserved. The previous Starter Kit URL was
@@ -84,7 +84,8 @@ readiness gate.
 
 ### Instagram bio destination correction — 2026-11-17
 
-**Recorded November 17 at 10:16 Asia/Manila (02:16 UTC).** Vanessa reported replacing the bio link on
+**Earlier result, recorded November 17 at 10:16 Asia/Manila (02:16 UTC); superseded by the successful
+10:42 verification below.** Vanessa reported replacing the bio link on
 her phone. An actual click from [the Instagram profile](https://www.instagram.com/vdjaralve/) in
 desktop Chrome now reaches `https://remote-mom.vercel.app/launchpad/`. The hero Starter Kit action
 reaches `#starter-kit` with the same query values. This corrects the previously observed destination,
@@ -103,15 +104,43 @@ visible field and route; it does not establish hidden platform behavior or why t
 Platform-added click identifiers are omitted. The exact time the mobile change took effect was not
 supplied; November 17 is the user-reported change date and this is the first observed corrected route.
 
-**Remaining action:** on mobile, replace the Website URL with the complete
+**Action identified at 10:16, now resolved:** replace the Website URL on mobile with the complete
 [registered Starter Kit profile URL](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile),
 including all three query parameters, save it, then verify a fresh click from the actual profile and
-the `#starter-kit` continuation. **#13 remains 12/13 / Open / In Progress** until that tracking check
-passes. Future post/Story placement checks remain under #14 when used.
+the `#starter-kit` continuation. **At that check, #13 remained 12/13 / Open / In Progress.** The later
+10:42 verification below resolves this gap. Future post/Story placement checks remain under #14 when used.
 
 No form was submitted. This desktop result does not verify the Instagram mobile in-app route, create
 a request, establish UAT acceptance, or change the existing baseline/report figures. Missing campaign
-values must stay missing; do not reinterpret this route as `launchpad-profile` attribution.
+values in this earlier observation must stay missing; do not reinterpret that route as
+`launchpad-profile` attribution.
+
+### Instagram tracking verification — 2026-11-17
+
+**Passed November 17 at 10:42 Asia/Manila (02:42 UTC).** After reloading
+[the actual Instagram profile](https://www.instagram.com/vdjaralve/), clicking its saved bio link in
+desktop Chrome reached `https://remote-mom.vercel.app/launchpad/` with all three registered values:
+
+| Parameter | Expected and observed value |
+|---|---|
+| `utm_source` | `instagram` |
+| `utm_medium` | `organic_social` |
+| `utm_campaign` | `launchpad-profile` |
+
+Instagram also supplied `utm_content=link_in_bio`. The hero Starter Kit action reached `#starter-kit`
+while retaining all three expected values. Private click identifiers are omitted. This is an actual
+profile-route check, separate from the earlier direct URL checks; 10:42 is the observed verification
+time, not an assertion of the exact time the saved link changed.
+
+Together with the November 16 Facebook profile-route evidence, this completes the initial
+actual-channel criterion for the two channels used. **Current #13 readiness: Completed, 13/13 under
+the previously approved request-only scope.** Future real post and Story routes must still be checked
+and recorded under #14 when those placements are used; no campaign post or Story is claimed published.
+
+No form was submitted and no PDF operation was performed. This desktop check does not establish the
+Instagram mobile in-app route, a new collected request, physical-phone PDF behavior, UAT acceptance,
+or traffic/conversion/download totals. Existing baselines, QA/duplicate rules, and manual Monday
+reporting remain unchanged. The 10:16 tracking gap above remains historical evidence.
 
 ## Four-week calendar
 
