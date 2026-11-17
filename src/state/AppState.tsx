@@ -29,7 +29,8 @@ import {
 import type { PersistedAppStateLoadResult } from './persistence';
 
 type RestoreStatus =
-  | { status: 'loading' | 'ready' }
+  | { status: 'loading' }
+  | { status: 'ready' }
   | Extract<PersistedAppStateLoadResult, { status: 'blocked' }>;
 
 type AddTaskInput = {
