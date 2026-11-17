@@ -639,7 +639,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 | Stage | Focus | Completion gate |
 |---|---|---|
-| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1/#12 are Done, #23 ingestion acceptance is complete and #16 Stage 1 is complete at 10/10. Finish #11/#18/#19 acceptance and #13 actual channel routing under the approved request-only scope before #14; #15 research can run alongside this work |
+| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1/#12 are Done, #23 ingestion acceptance is complete, #16 Stage 1 is complete at 10/10, and #13 is complete at 13/13 under the approved request-only scope, including the verified Facebook/Instagram profile routes. Finish #11/#18/#19 acceptance before #14; check future post/Story routes when used. #15 research can run alongside this work |
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
@@ -651,9 +651,10 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 - Confirm both audience paths and the page's immediate conversion goal under #1.
 - Review the existing Starter Kit under #11 rather than assume it needs recreating.
-- Retain the verified kit-request permission decision in completed #12 and the released spreadsheet
-  safeguard in #23. Finish collection/journey, direct download, attribution, and early help/file
-  handling under #13, #16, #18, and #19. Optional email work is #24 Later.
+- Retain the verified kit-request permission decision in completed #12, the released spreadsheet
+  safeguard in #23, completed request-only measurement readiness in #13, and completed Stage 1
+  help/file handling in #16. Finish the remaining reader/device acceptance in #11, #18 and #19.
+  Optional email work is #24 Later.
 - Start the 5–10 reader conversations in #15. Inventory reusable assets without committing to new production.
 
 **During the four-week experiment**
@@ -686,8 +687,9 @@ remains inactive, interview visitors and test page clarity, trust, and offer rel
 
 - Do not create another standalone eBook before validating the existing products and bundle.
 - Do not lower prices or buy ads based only on low historical traffic.
-- Track weekly: channel visits, confirmed kit requests, and top content; add product-page views,
-  checkout starts, sales, and revenue when the verified paid route operates.
+- Review confirmed kit requests and available attribution each Monday under #13's approved
+  request-only scope. Mark visits, conversion, drop-off and completed downloads as not measured.
+  Add paid-route measures only when their sources and definitions are verified.
 - Keep the app beta waitlist and Launchpad marketing list distinct unless people explicitly consent to both.
 - Keep customer data, private webhook URLs, API keys, and credentials out of this public repository.
 - Close an issue only when its acceptance criteria are met and evidence is linked in the issue.
@@ -731,10 +733,11 @@ matching new-category destination case; retain/exclude campaign `issue18-2026111
 reporting. The November 16 [journey record](#journey-checks-completed--2026-11-16) adds actual native
 keyboard selection by typeahead. Vanessa's later [user confirmation](#user-confirmations-and-next-step-feedback--2026-11-16)
 completes the explicit arrow-key/Enter check, with device/browser unspecified. #18 still needs
-representative-reader wording findings under #15. Broader #19 acceptance and #13 actual channel
-routing remain prerequisites before broad promotion. November 17 approval completes #16 Stage 1
-follow-up/private-record commitments and adopts #13 request-only reporting with Vanessa as the
-manual Monday reviewer. #23's production ingestion acceptance is complete.
+representative-reader wording findings under #15. Broader #19 acceptance remains a prerequisite
+before broad promotion. #13 is complete at 13/13 under the approved request-only scope, including
+the actual Facebook/Instagram profile routes; future post/Story routes are checked under #14 when
+used. November 17 approval completes #16 Stage 1 follow-up/private-record commitments and adopts
+#13 request-only reporting with Vanessa as the manual Monday reviewer. #23's production ingestion acceptance is complete.
 #24 email work does not block the free-kit experiment. This change does not authorize outreach,
 beta invitations, or the four-week campaign.
 
@@ -1201,7 +1204,7 @@ finished companion, collection or paid offer.
 | Asset | Reviewed identity/readiness | Practical value and boundary |
 |---|---|---|
 | Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
-| Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 and applicable #16 buyer operations still gate promotion. |
+| Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. Only #16's paid-support scope extension remains for this main-eBook promotion gate; companion verification remains separate. |
 | High-Value Hybrid | A 47-page source candidate reviewed November 17; [public listing](https://payhip.com/b/ryYbl) identified and displays PDF (31 MB); precise revision and uploaded/delivered-file match remain unverified | Audit/reflection 9–16; niche/role selection 18–21; practice project 22–25; resume/LinkedIn 26–29; company/outreach work 30–33; onboarding 34–37. Potential distinct career-preparation depth, with correction needs below. Rounded size and matching topics do not establish exact file identity. |
 | Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
 
