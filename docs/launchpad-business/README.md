@@ -47,7 +47,7 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #18 — challenge choices | **Ready for UAT, 11/12**; taxonomy, compatibility, production mapping, keyboard and technical checks complete | Representative readers must assess the actual stage/challenge wording. F1 does not establish their selections or both planned sessions. |
 | #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
 | #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. The remaining #4 and applicable Stage 2 #16 checks still govern paid promotion. |
-| #4 — main eBook delivery/recovery | **In Progress, 8/10**; receipt arrival and full-book computer/phone readability accepted | Finish receipt instructions/email-link access, support recovery and affected-step checks using the existing order/receipt; record actual platform outcomes. |
+| #4 — main eBook delivery/recovery | **In Progress, 8/10**; receipt arrival and full-book computer/phone readability accepted. November 17 at 14:45 Manila: original buyer-receipt instructions and link access to the current branded file verified | Finish actual support/recovery and the final affected-step review using the existing order; no new file transfer or recovery action was performed by the receipt-link check. |
 | #5 — High-Value Hybrid | **In Progress, 2/9**; source comparison, audience/output definition, [current listing](https://payhip.com/b/ryYbl) and single-file configuration reviewed | The owner download timed out; uploaded/delivered-file content and editable-source identity remain unverified. Resolve the recorded editorial gaps before publishing the prepared replacement copy. No revised companion or paid offer is complete. |
 | #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared | Finish the existing-asset inventory and scope/packaging decisions supported by evidence. Collection production remains conditional on #15/#14; no assets or price are adopted. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
@@ -1185,9 +1185,10 @@ Keep the companion product in the later backlog; this review does not expand the
 
 This entry prepares existing #5/#6 work. It does not close buyer acceptance or authorize a new
 collection. #2/#3 remain complete for the approved 36-page main eBook; #4 remains **8/10** for the
-existing order's receipt instructions/email-link entry, support recovery, and affected-step retest.
-Receipt arrival and full-book computer/phone readability were already accepted and need not be
-repeated merely to prepare the next work.
+existing order's actual support/recovery and final affected-step review. Receipt instructions and
+original email-link access passed at 14:45 Manila on November 17, as recorded below. Receipt arrival
+and full-book computer/phone readability were already accepted and need not be repeated merely to
+prepare the next work.
 
 **Current issue progress:** #5 is **In Progress, 2/9** for source comparison and audience/output
 definition; #6 is **In Progress, 3/9** for scope/reuse preparation. These counts do not establish a
@@ -1305,13 +1306,73 @@ do not validate pricing. This prepares a learning approach and makes no price or
 
 ### Remaining external evidence in #4 and Stage 2 #16
 
-Payhip receipt-link access and recovery are platform behaviors outside this repository. Use the
-existing receipt/order and already saved eBook for the remaining check. Inspect the receipt's
-instructions and open its access link only to the purchased-file page; do not trigger another full
-book download, order, resend, credit change, support message or refund as part of this source review.
-A later authorized recovery exercise must record the actual outcome. The published contact route,
-approved policy, draft support prompts and file-update rules do not by themselves prove operational
-recovery, customer re-downloads or update delivery. Preserve the remaining #4/#16 acceptance items.
+Payhip receipt-link access and recovery are platform behaviors outside this repository. The bounded
+original-receipt check below now passes; actual support/recovery and final affected-step review remain
+open. Use the existing order and saved eBook for follow-up; no new purchase or repeat file comparison
+is needed. A later separately authorized recovery exercise must record its actual outcome. Receipt-link
+access, the published contact route, policy and draft support prompts do not by themselves prove
+operational recovery, a fresh customer re-download or update delivery. Preserve those acceptance items.
+
+**Bounded buyer-access runbook and result — 2026-11-17 (Asia/Manila).**
+
+The public [main eBook listing](https://payhip.com/b/zUYPA) was rechecked: buyer-receipt,
+missing-receipt, download-limit and manual-support guidance and the approved 14-day policy remain
+published. Its actual **Get help with your purchase** link opened the
+[store Contact page](https://payhip.com/TheRemoteMomsLaunchpad/contact), showing First Name,
+Last Name, Email, Message and Send. No form was submitted. This verifies public instructions and
+navigation, not email delivery, a handled support case or private receipt-link recovery.
+
+**Earlier permission pause — November 17:** automatic approval review blocked inspection of the
+signed-in email account pending specific permission for the buyer receipt. No inbox or receipt
+content was read during that pause and no alternate access path was attempted. This was an
+authorization boundary, not an observed Payhip delivery failure; the later approval below supersedes
+the pending-permission state. Receipt arrival, file identity and computer/phone readability remain accepted.
+
+**Authorized check passed — November 17, 14:45 Manila, Chrome on Mac.** Vanessa explicitly
+authorized locating and reading only the existing main-eBook buyer receipt, following its access
+link and stopping before the file download. A targeted sender/date/product search located the
+original buyer receipt; only that receipt was opened. Its instruction was **You can access all your
+downloads below**. The actual **Download Now** receipt link opened Payhip's **Welcome to your
+download page**, with the main-eBook title and `remote-moms-launchpad-brand-edition-20261116.pdf`
+(PDF, **3 MB displayed**) beside a **Download** control. The file's Download control was not clicked.
+The receipt footer's email-help link matched the existing published support address.
+This verifies the receipt instructions and original-receipt access to the current replacement-file
+listing. No fresh file transfer, resend, support/recovery action, message, order or credit change
+occurred. No download-attempt counter was displayed, so an unchanged counter is not claimed.
+
+1. After receipt-specific authorization, inspect the existing buyer receipt's access instructions.
+   Use its purchase-access link; the seller notification's **View Order Details in Payhip** button
+   is a different route, as explained in Payhip's
+   [buyer/seller email guidance](https://help.payhip.com/article/208-customer-did-not-receive-email).
+2. Stop at the purchased-file page and confirm it offers
+   `remote-moms-launchpad-brand-edition-20261116.pdf`. Do not click the file's **Download** button,
+   create another order or repeat the saved-book checks. Preserve the last reported download credit.
+3. Record the Manila date/time, general device/browser, receipt instructions and link label,
+   expected/actual destination type, offered filename, any error, and next action. Distinguish
+   observed behavior from Vanessa's report. Keep account details, order identifiers, private access
+   URLs, receipts and screenshots with personal data out of public issue evidence.
+4. If the receipt is missing or its link fails, record the actual problem before choosing recovery.
+   Payhip documents **Customers → … → Resend Receipt** for the existing order in its
+   [receipt-recovery guidance](https://help.payhip.com/article/85-resend-receipts). A resend sends an
+   email and requires separate explicit authorization; a credit change likewise needs explicit
+   authorization. Neither is included in this read-only check. Record each authorized action and
+   its actual result separately; a resend alone does not prove link access or restored credits.
+
+**Conditional download-limit fallback — documentation only.** Payhip's
+[buyer download help](https://help.payhip.com/article/228-unable-to-open-file), updated November 4,
+2026, describes a **Reset download credits** control using the purchase email. This control has
+not been observed or tested on this store. If it appears in a real limit-exceeded case, explain the
+documented option and obtain explicit authorization before operating it; otherwise use the existing
+manual support route. The earlier seller-account observation used **Increase Download Credits**;
+do not conflate it with the documented buyer control. Keep this fallback in the internal runbook
+until its actual behavior is verified; the live listing is unchanged by this preparation.
+
+**Acceptance remains #4 8/10; #16 14/17 overall, with Stage 2 at 4/7.** Receipt instructions and
+original-link access now pass as a subset. Actual support/recovery, the final affected-step review
+and broader update/re-download operations remain open; no fresh transfer or recovery is inferred.
+The paid-support questions/delivery-issue record and review cadence still need their
+separate owner confirmation; the approved Stage 1 daily inbox review and Monday request report do
+not satisfy that criterion. This bounded pass does not clear paid promotion.
 
 ## Issue #16 — help, file handling, and buyer operations
 
@@ -1328,8 +1389,8 @@ is released through PR #33 with exact public-file, copy/continue and existing-re
 Its three destinations are LinkedIn, JobStreet and Launchpad help; the approved beta removal applies
 to the PDF, while the separate website invitation remains. #11/#19 are Ready for UAT with
 physical-phone/saved-file readability and final acceptance still open. The main eBook listing/preview/policy
-work is complete under #2/#3; #4 remains 8/10 for the outstanding receipt-link/recovery and final
-affected-step checks.
+work is complete under #2/#3. The original buyer-receipt link now reaches the current branded file;
+#4 remains 8/10 for actual support/recovery and the final affected-step review.
 The release record below preserves the distinction between deployed help
 and full completion of [#16](https://github.com/VanessaJaralve/RemoteMom/issues/16).
 
@@ -1429,9 +1490,10 @@ reason. Keep historical artifacts; do not regenerate an unverified substitute as
 
 The [main eBook listing](https://payhip.com/b/zUYPA) is the customer-facing source for the approved
 and published refund policy and purchase-help instructions. #2/#3 are complete. The operating
-guidance below remains subject to outstanding #4/#16 checks; published policy and receipt arrival
-do not establish tested email-link recovery, support-case handling, refunds, or customer-update
-delivery. Bundle-specific behavior remains under #10. This record does not change policy terms.
+guidance below remains subject to outstanding #4/#16 checks. Original buyer-receipt instructions and
+access to the replacement-file listing passed at 14:45 Manila on November 17; actual support/recovery,
+fresh re-downloads, refunds and customer-update delivery remain untested. Bundle-specific behavior
+remains under #10. This record does not change policy terms.
 
 - For purchase/access problems, verify the transaction privately using the available platform tools and
   provide the recovery steps confirmed during checkout testing. Never request payment-card details.
@@ -1457,7 +1519,7 @@ delivery. Bundle-specific behavior remains under #10. This record does not chang
 | Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed for an earlier edition; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check. PR #33 adds verified public delivery and desktop/mobile-width continuation for edition `20261117b` | Physical-phone/saved-PDF readability of `20261117b`, the focused reader retest and final #19 acceptance remain open. The current page-10 correction is released and verified through PR #33. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
 | Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; guarded revisions have pinned rebuild/rollback records; `reader-clarity-v4` / edition `20261117b` is released and publicly verified through PR #33. `next-step-v2` / `20261116b` from PR #32 is the previous release and immediate PDF rollback target | #27 supplies prior release/phone-link evidence; the November 17 release record above gives the current exact public PDF identity and verification. The editable master remains missing and broader #11/#19 reader, readability and accessibility evidence remains open |
 | Privacy of support records | **Approved November 17:** one private email thread per case in the existing help inbox, using the documented intake/status/action/resolution fields | Apply the approved rules when support operates. No customer records were created or inspected by recording this decision; public evidence must contain no customer data |
-| Buyer policy, feedback, and update workflow | Main eBook policy, preview, and support copy published and verified; #3 complete. Receipt arrival is user-confirmed under #4. #16 Stage 2 remains **4/7** | Complete #4's receipt instructions/email-link and support-recovery checks, actual update/re-download behavior, and the paid-support questions/review arrangement. The approved weekly request report does not establish these paid operations. Keep the main listing as the policy source; #10 remains bundle-specific |
+| Buyer policy, feedback, and update workflow | Main eBook policy, preview, and support copy published and verified; #3 complete. Receipt arrival is user-confirmed; original receipt instructions/link access to the current branded file passed November 17 at 14:45 Manila. #16 Stage 2 remains **4/7** | Complete #4's actual support/recovery and final affected-step review, broader update/re-download behavior, and the paid-support questions/review arrangement. No fresh file transfer or recovery was performed by the receipt-link check. The approved weekly request report does not establish these paid operations. Keep the main listing as the policy source; #10 remains bundle-specific |
 | Deployment and issue closure | **In Progress, 14/17; Stage 1 complete at 10/10, Stage 2 at 4/7** | #27 is complete. Finish remaining #11/#19 physical-phone/saved-PDF and journey acceptance separately, and complete or explicitly defer Stage 2 buyer operations with linked follow-up before closing full #16. #12 is Done, #18 has reader wording work, and optional email is #24 Later |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
