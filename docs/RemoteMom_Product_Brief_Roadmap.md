@@ -1,6 +1,6 @@
 # RemoteMom Product Brief And Roadmap
 
-Last updated: 2026-10-04
+Last updated: 2026-11-18
 
 ## Executive Summary
 
@@ -161,7 +161,7 @@ The current beta learning questions now focus on:
 - Whether one-child MVP is enough for beta.
 - Whether sharing, reminders, multiple children, or paid pricing deserve future work.
 
-Beta feedback reviewed on 2026-09-13 showed three early responses. All three testers installed and opened the app. The repeated product signal was not to add full push notifications yet, but to make reminder-ready timing and schedule frequency clearer inside the local MVP. RemoteMom now supports To-Do reminder-ready time presets, structured Child Schedule frequency choices, calmer no-reminder copy, and clearer Today timing/detail display without adding Firebase notifications, calendar sync, or cloud persistence.
+**Historical September 13 record:** the product brief recorded three early feedback responses and reported that all three testers installed and opened the app. The recorded product signal was not to add full push notifications yet, but to make reminder-ready timing and schedule frequency clearer inside the local MVP. That record described To-Do reminder-ready time presets, structured Child Schedule frequency choices, calmer no-reminder copy, and clearer Today timing/detail display as completed, without Firebase notifications, calendar sync or cloud persistence. Preserve this dated completion history. The [November 18 source assessment below](#current-app-audit) identifies differences in current main; source/build provenance remains unresolved, so the historical statement is not a new current-source or APK verification.
 
 Seasonal early-access validation added on 2026-09-27 creates a Black Friday / Cyber Monday page for
 recruiting founding-mom beta interest without collecting payments or implying a full public launch.
@@ -199,6 +199,84 @@ Resolved conflicts:
 
 ## Current App Audit
 
+### November 18, 2026 readiness assessment — issue #17
+
+**Assessment complete for eight of nine criteria; follow-up disposition remains open. Recommendation: improve and reconcile the existing beta, then continue research before considering app monetization.** This is a read-only assessment under [#17](https://github.com/VanessaJaralve/RemoteMom/issues/17). It does not authorize new features, subscriptions, entitlement work, cloud services, recruitment, invitations or public launch. The one-child, local-first MVP remains the scope. Launchpad's free-kit and existing-PDF workstreams retain their separate accepted checks and gates.
+
+**Evidence baseline:** main commit [2d70752](https://github.com/VanessaJaralve/RemoteMom/commit/2d70752e6884b378b4c158be26b20080bee3edc7), committed November 17, 2026 at 13:57:21 UTC. The review read the current app entry point, all source modules/models, configuration, nine relevant existing test files and the existing project documents. Retrieved code/test files were checked against their Git blob hashes. The findings below are source-backed observations and explicitly identified control-flow inferences. No app was installed or run, no Jest/type-check/build pass is claimed, no Firebase console or private response rows were inspected, and no personal app data was read or changed.
+
+#### Current implementation and limits
+
+| Area | Source-backed finding | Practical limit or remaining evidence |
+|---|---|---|
+| App scope and Today integration | [App.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/App.tsx#L7-L83) imports and mounts the reviewed provider and Today, Health, Kid, Grocery, To-Dos and More screens. [TodayScreen](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodayScreen.tsx#L71-L229) derives items from shared source arrays and calls task, grocery and individual-dose actions. [AppState](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/AppState.tsx#L169-L350) preserves source-backed completion; medicine completion remains a separate per-date/per-time log. | These are current-code findings, not a new device usability or reliability pass. The historical source-aware completion and per-dose work remains completed; it is not reopened. |
+| Reminder labels and recurrence | [Reminder formatting](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/reminders.ts#L1-L12) only returns labels. Current [To-Dos inputs](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodosScreen.tsx#L43-L80) and [task actions](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/AppState.tsx#L28-L34) expose title, life area and due date; creation sets reminderEnabled to false. [Kid](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/KidScreen.tsx#L60-L96) stores a recurring flag and free-text rule. [Today](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodayScreen.tsx#L105-L170) includes every schedule record and unchecked recurring groceries; it does not expand weekday recurrence or regenerate checked groceries. The Task model has no recurring-task rule. | Sample/persisted reminder metadata is display data, not scheduled notifications. No notification, calendar-sync or Firebase app SDK is present in the reviewed package/source. Current source does not substantiate the recorded September reminder-time presets, structured frequency choices or Today reminder/recurrence display. Source/build provenance must be reconciled; do not infer a regression or assume a distributed APK equals main. |
+| First run and sample records | [AppState](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/AppState.tsx#L99-L159) initially renders sample collections, then restores saved data. [Sample data](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/data/sampleData.ts#L16-L113) includes tasks, recurring schedules, groceries and example medicine entries. App/Today have no first-run gate or explicit sample-mode label. Valid saved empty arrays are accepted. Existing empty-state components are present. | The current source can present examples as ordinary actionable items, including health entries and reminder-ready labels. This warrants a bounded first-run/build check; no actual reader confusion is claimed. Do not reset an existing user's data or invent an onboarding feature to complete this review. |
+| Local persistence and recovery | [Persistence](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/persistence.ts#L11-L208) stores schema version 2 under the existing local key, normalizes legacy/schema-1 records, validates items and supplies the default child. Missing storage, malformed/unsupported data and read errors all return null. The [provider](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/AppState.tsx#L108-L159) then sets hydration complete and saves its current state. Write errors are swallowed. | **Source inference:** after an unsuccessful restore or unsupported payload, a successful subsequent write can replace the original key with sample state. This is not observed user data loss, but the control flow does not preserve the raw payload or distinguish failure from a new install. There is no user-facing save-failure/recovery path, export or cloud backup in the reviewed source. Preserve current valid/empty/legacy data in any separately scoped fix. |
+| Today timing | [Today medicine items](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodayScreen.tsx#L78-L103) label every dose lacking today's log as overdue, without comparing its scheduled time with the clock. Its [memoized timeline](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodayScreen.tsx#L191-L205) depends on source arrays, not a day/clock or foreground-refresh signal. [Date helpers](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/dateTime.ts#L35-L99) and [dose lookup](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/medicineDoseLogs.ts#L28-L42) do use the local date when called. | Future scheduled doses can receive an overdue label by construction; an unchanged mounted timeline has no explicit midnight-refresh trigger. Reproduce those bounded display cases on the identified beta build before implementation. This concerns accurate organizational labels, not clinical advice or changes to entered medicine instructions. |
+| Child/family scope | The source keeps a stable default child entity. New Kid records use that child; Child medicine entries can carry its ID. There is no exposed child selector, shared-family account or task-assignment service. | Architectural preparation does not validate multi-child/shared-family demand or authorize those features. Keep one-child UI and local use. |
+| Privacy and permissions | [More](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/MoreScreen.tsx#L6-L82) states that app entries stay local, are not cloud-backed and provide no medical advice. Its feedback action opens an email subject without app-entry attachments and has a failure message. Static search found no app-entry network upload or analytics/logging call in the reviewed app source. The [Launchpad form](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/landing/launchpad/index.html#L227-L249) expressly excludes marketing/app-beta enrollment; [beta interest](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/landing/beta/index.html#L204-L230) is separate. | This is a source-boundary assessment, not a security certification, OS-backup audit or live permission test. Survey/feedback submissions remain a separate collection population; Starter Kit requests do not prove app installation, use or permission for app marketing. |
+
+#### Existing beta, build and paid-value evidence
+
+The earlier [Validation Status](#validation-status) records a September 13 review of three beta responses, all reported as installed/opened, and the earlier audit records Vanessa's APK download plus installation difficulty. Preserve those dated aggregates and completed preparation. The current review did not re-read the underlying private responses or verify unique users, the tested build, current installation counts, repeat use or retention.
+
+The [Firebase distribution guide](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/docs/RemoteMom_Firebase_App_Distribution_Beta_Guide.md#L35-L45) calls version 0.1.1 its latest build, while the [project checklist](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/docs/RemoteMom_Project_Checklist.md#L54-L64) records a later 0.1.2 build as ready for Firebase upload. Those records do not establish which binary is currently distributed or which contains the documented September controls. Firebase App Distribution is a distribution channel; it is not app-data sync or backup. Reconcile actual release/build/source evidence before treating source or old device findings as current-beta behavior.
+
+The early two-child/sharing signal remains directional: the reviewed records do not supply a denominator, segment comparison or repeated paid-priority result. The [pricing plan](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/docs/Pricing_Tier_Validation.md#L167-L191) and [interview scorecard](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/docs/Validation_Interview_Script_Scorecard.md#L81-L109) define prospective thresholds, not achieved results. [Beta questions](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/landing/beta-feedback/index.html#L139-L155) about returning tomorrow or what would make the app worth paying for later measure stated intent, not observed retention or purchase. No app-specific paid-value threshold or repeat-use outcome is established by the reviewed repository evidence. July competitor-price references remain dated historical research and were not refreshed.
+
+The current [checklist](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/docs/RemoteMom_Project_Checklist.md#L100-L123) still leaves the relevant app research, metrics, review and premium-validation rows unstarted. Do not convert completed survey preparation or secondary research into completed primary-user study work. With no reader available now, preserve these evidence gaps; another invitation template or speculative feature draft would not resolve them.
+
+#### Prioritized bounded recommendations
+
+1. **Protect local data first.** Scope a reproduction and recovery fix for failed reads, invalid/unsupported payloads and silent write failures. Preserve a valid prior payload and valid empty/legacy states; avoid silently replacing real data with examples. The evidence above justifies a focused existing-MVP reliability follow-up, not cloud sync.
+2. **Reconcile source, build and documentation.** Identify the currently distributed APK and its source/build evidence, then check the already-recorded reminder, frequency and date/time controls against that artifact. Keep historical completed work intact; correct active capability claims only from verified provenance. No new beta release or outreach is implied.
+3. **Verify Today labels at time boundaries.** Reproduce a future scheduled dose and an unchanged app crossing local midnight/returning to foreground; define a narrowly scoped correction for inaccurate labels or stale day state. Preserve separate dose logs and user-entered instructions. Do not add alerts or a recurrence engine.
+4. **Continue research when participants are available.** Revisit actual return use, daily benefit, multi-child/shared-family priorities and willingness to pay for a shared outcome. Current evidence does not justify subscriptions, entitlements, new premium features or public app launch.
+
+The source review also records sample-mode clarity and unlabelled example entries as a bounded first-run concern. Combine it with source/build verification rather than expanding the app. These are recommendations; implementation follow-up approval and issue references remain the ninth #17 item.
+
+#### Checks actually performed and acceptance mapping
+
+The reviewer inspected existing tests for persistence, reminder labels, Today actions, child identity, shared state, empty states, Health, More and date helpers. The persistence tests assert fallback to samples for malformed/unsupported data, but do not establish preservation of the original raw payload after that fallback. Reminder tests cover seeded metadata/labels, not creation of the documented missing preset controls. The reviewed Today tests cover source completion and future task priority, not the future-dose/midnight cases above. **Test-file inspection is not test execution.** No new tests, app build, simulator, physical-device or live-cloud checks were run in this assessment.
+
+| Original #17 criterion | Assessment outcome |
+|---|---|
+| 1. Current scope and existing beta evidence | Reviewed; implemented current source, historical reported evidence and future requests are separated above. |
+| 2. Reminders/notifications and recurring tasks | Assessed, including display-only metadata, recurrence limits and current-source/documentation mismatch. |
+| 3. First-run/sample data and daily planning | Assessed from the mounted provider/screens; sample visibility, source actions and timing limits recorded. Physical-device behavior remains untested. |
+| 4. Multi-child/shared-family demand | Existing directional evidence reviewed; insufficient validated demand recorded without changing MVP scope. |
+| 5. Persistence, backup/sync, privacy/security | Assessed from source and existing plans; local storage/recovery risks and the lack of verified cloud backup are explicit. |
+| 6. Willingness to use/pay | Existing evidence and thresholds reviewed; retention and paid-value outcomes remain unverified, so no subscription proposal is made. |
+| 7. App-beta and Launchpad permission separation | Preserved in the reviewed separate forms and this recommendation; no enrollment or contact performed. |
+| 8. Prioritized readiness report | Recorded in this existing product document with dated evidence, limits and the improve-beta/continue-research recommendation. |
+| 9. Separately scoped approved follow-ups | **Open.** Add actual issue references after follow-up disposition. This assessment does not create or approve an implementation epic. |
+
+Keep #17 **In Progress, 8/9** once this assessment is recorded. Its assessment is complete within the stated read-only scope; unresolved implementation work and human evidence do not become passed runtime tests. This does not reopen completed Launchpad #4/#13/#16 or clear any Launchpad reader/device, Book 2 customer-file or promotion gate.
+
+#### Pinned source identity
+
+All links in this assessment pin the reviewed commit. The following blob identities make the critical code findings independently traceable; the project checklist remains the existing change-history destination.
+
+| File | Git blob SHA |
+|---|---|
+| [App.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/App.tsx) | 4cf216f33182cd97857cd0c429924238236135bf |
+| [src/state/AppState.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/AppState.tsx) | aadb4a0befb18733b1d54b2fd0e6562eb88fb697 |
+| [src/state/persistence.ts](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/state/persistence.ts) | 7b7f2b82e1853a5593a2d394f3a23aec34ceb824 |
+| [src/screens/TodosScreen.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodosScreen.tsx) | 3d9312e0d0fe3a41a39ade07a16af9b9e73fa0a5 |
+| [src/screens/KidScreen.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/KidScreen.tsx) | 94e3aa0ff4e8c6b53465897a7a60e7c6992b531a |
+| [src/screens/TodayScreen.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/TodayScreen.tsx) | ce6ac781dc8c4a2a1757b57c6064df407d63e6d2 |
+| [src/data/sampleData.ts](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/data/sampleData.ts) | 24ac3c538fd208d2bfbc74277d4104f3569a9767 |
+| [src/utils/reminders.ts](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/reminders.ts) | 05f0b7b72547bb3db90e3bc3adca8c54d5734f8b |
+| [src/utils/dateTime.ts](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/dateTime.ts) | e335f9c83cb17378758716c945d34c828a599bc9 |
+| [src/utils/medicineDoseLogs.ts](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/utils/medicineDoseLogs.ts) | 43131e224eb42050e34c69ead5fbdefcdbf316d2 |
+| [src/screens/MoreScreen.tsx](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/src/screens/MoreScreen.tsx) | 82b7d22d539fb3511c25b15c1476913117e3b342 |
+| [package.json](https://github.com/VanessaJaralve/RemoteMom/blob/2d70752e6884b378b4c158be26b20080bee3edc7/package.json) | df7a7b60c914dd670afd361a64cb8a1b86788683 |
+
+### Earlier audit and completed work — historical record
+
+The following audit, later August/September additions and completed statuses are preserved. Where their active-behavior wording differs from the pinned November 18 source findings above, source/build identity is unresolved; neither a regression nor the distributed APK's contents is inferred.
+
 Audit date: 2026-08-02
 
 Overall status: RemoteMom is a functional local-first MVP with shared state, local persistence, and a Today Dashboard that derives from source module records. Source-aware Today actions now let users complete common items from the central dashboard. Medicine schedules are now separate from per-day, per-time completion logs. Shared date/time utilities now support common time parsing, local date keys, due-date classification, Kid schedule sorting, and safer Today priority behavior. Local persistence now includes schema versioning, legacy normalization, unsupported-version fallback, item-level validation, and an internal default child entity. Beta trust basics now include a plain-language in-app privacy note, medicine-safety copy, a feedback email path with crash fallback, landing-page privacy/feedback copy, calm empty states across core module screens, point-of-entry medicine-safety copy in Health, and a focused mobile spacing and tap-target pass across core modules. Android Expo Go smoke testing was completed on 2026-08-09 and found several input-control improvements. Calendar-style To-Do date picker controls with fixed week rows, Child Schedule 12-hour alarm-style start/end time controls, medicine person/frequency shortcuts, grocery category selection controls, To-Do reminder-ready time presets, structured Child Schedule frequency choices, the first-pass RemoteMom app identity polish, beta screenshot assets, and a no-budget Expo Go beta guide are now complete. Android APK sideload beta configuration, tester guidance, EAS APK generation, a separate `/beta/` Android tester recruitment page, a separate `/beta-feedback/` tester survey page, and a distribution-only Firebase App Distribution setup guide are now complete; the original survey and waitlist page remains available at `/`. The Android APK has been uploaded to Firebase App Distribution, Vanessa has downloaded it successfully, and the Firebase tester install instructions have been clarified after the first beta feedback reported that installation was hard. The remaining gaps are recruiting trusted beta testers, reviewing install/download status with beta feedback, and broader beta-launch readiness.
@@ -223,7 +301,7 @@ Current strengths:
 - Checked recurring grocery items are removed from Today.
 - Marking a task done, checking a grocery item, or marking an individual medicine dose taken from Today calls the existing source-module shared-state action.
 
-Current gaps:
+Completed integration improvements and the earlier remaining ID note (historical):
 
 - Medicine actions from Today create or update a local `MedicineDoseLog` for the specific medicine, local date, and scheduled time. The permanent `Medicine` schedule is not changed.
 - Today's timeline item ids are still not fully normalized across sources. Tasks, schedule items, and grocery items use source ids; medicine uses `medicine.id + time` so multiple daily times can render separately.
@@ -252,6 +330,9 @@ Privacy:
 
 | Priority | Improvement | Rationale |
 | --- | --- | --- |
+| High | Scope local-state recovery and preservation after failed/unsupported restore | November 18 source review identifies a possible sample-state overwrite path and silent save failures. Reproduce safely before a bounded fix; preserve existing data. |
+| High | Reconcile the current source, documented controls and distributed beta build | Historical completed controls are not all present in pinned main; 0.1.1/0.1.2 distribution records need an evidence-based reconciliation. |
+| High | Verify Today future-dose labels and date-refresh behavior | Current source labels every unlogged dose overdue and has no explicit clock/foreground timeline refresh. Reproduce organizational display cases without adding alerts or clinical logic. |
 | High | Validate Today Planning Check-In / Calm Command Center with beta testers | Reddit pain-point ranking shows the strongest MVP-aligned opportunity is helping moms know what needs attention today without carrying everything mentally. |
 | Medium | Validate sick-day and backup-care follow-up needs through beta questions | Reddit evidence shows frequent daycare illness and care gaps, but this should be tested before adding a new module. |
 | Medium | Validate grocery/meal planning visibility in Today | Grocery planning appears as invisible mental load; first confirm whether the existing Grocery-to-Today flow is enough. |
@@ -302,7 +383,11 @@ Completed: Prepare Firebase App Distribution beta setup.
 
 Completed: Clarify reminder-ready time and schedule frequency controls from early beta feedback.
 
-Next recommended: invite 5 to 10 trusted Android beta testers through Firebase App Distribution before building larger roadmap features.
+**Current November 18 next step:** disposition the three bounded readiness follow-ups above. No new reader is available; recruitment and repeat-use research remain pending. The assessment does not authorize implementation or distribution changes.
+
+The following earlier recruitment recommendation is retained as planning history, not a new invitation instruction:
+
+Previously recommended: invite 5 to 10 trusted Android beta testers through Firebase App Distribution before building larger roadmap features.
 
 1. Invite 5 to 10 trusted Android testers through Firebase App Distribution.
 2. Send each tester the clarified install message and ask them to use the same Google account for the invite and App Tester.
@@ -325,18 +410,11 @@ Active audience-building focus:
 
 ## Current Strategic Recommendation
 
-Do not launch as a full world-market app store product yet.
+**November 18, 2026:** improve and reconcile the existing beta, then continue research before considering monetization. Prioritize local-data preservation, source/build identity and accurate Today labels within the one-child, local-first MVP. Keep known limitations visible and preserve completed preparation.
 
-Instead, move toward a small public beta:
+The historical beta and survey records do not establish current-build reliability, repeated use or a paid-value threshold. Keep subscriptions, entitlements, cloud sync, shared-family access, multiple-child UI, real notifications and public launch deferred. No new recruitment, release or implementation is authorized by this assessment.
 
-- Keep the app free while testing the daily habit
-- Add an easy feedback path
-- Prepare privacy and trust basics
-- Test with trusted Expo Go beta testers before asking strangers to install
-- Defer paid TestFlight or Google Play testing until budget is available and validation is stronger
-- Avoid building premium payments until demand is clearer
-
-This approach allows real-world learning without taking on the pressure of full launch support, app store reviews, paid subscriptions, and user expectations before the product is ready.
+The earlier Expo Go preparation remains completed history. Firebase App Distribution is the later documented distribution approach, but the current distributed binary still needs reconciliation; do not describe either channel as a new tested release.
 
 ## Roadmap
 
@@ -532,14 +610,6 @@ Open questions:
 
 ## Recommended Immediate Next Step
 
-Prepare RemoteMom for a small public beta rather than a full public launch.
+Record disposition and separately scoped references for the November 18 readiness findings in #17 before treating that assessment as closed. Preserve its eight completed review criteria and the explicit lack of new runtime or demand evidence.
 
-The next build step should be:
-
-1. Add an in-app feedback path.
-2. Add a basic privacy policy page.
-3. Polish app first impressions.
-4. Prepare beta screenshots and invitation copy.
-5. Share the beta with a small group outside the immediate friend network.
-
-This keeps momentum moving while still protecting the product from becoming too large before the market signal is clear.
+The next implementation proposal should address a reproduced existing-MVP reliability or provenance gap from the prioritized backlog. Do not repeat completed feedback/privacy/assets preparation or start speculative premium work while readers are unavailable. The current assessment does not schedule recruitment or change Launchpad's independent acceptance gates.
