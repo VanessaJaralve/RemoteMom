@@ -9,7 +9,12 @@ import type { MedicineDoseLog } from '../models/MedicineDoseLog';
 import type { ScheduleItem } from '../models/ScheduleItem';
 import type { Task, TaskLifeArea } from '../models/Task';
 import { useAppState } from '../state/AppState';
-import { classifyDueDate, getSortMinutes } from '../utils/dateTime';
+import {
+  classifyDueDate,
+  getLocalDateKey,
+  getSortMinutes,
+  parseTimeToMinutes
+} from '../utils/dateTime';
 import { findMedicineDoseLog } from '../utils/medicineDoseLogs';
 
 type TodayLifeArea = TaskLifeArea | 'health';
@@ -68,23 +73,31 @@ function sortTimelineItems(items: TimelineItem[]) {
   return [...items].sort((first, second) => first.sortMinutes - second.sortMinutes);
 }
 
-function buildTimelineItems({
-  tasks,
-  groceryItems,
-  scheduleItems,
-  medicines,
-  medicineDoseLogs
-}: TimelineSource): TimelineItem[] {
+function buildTimelineItems(
+  {
+    tasks,
+    groceryItems,
+    scheduleItems,
+    medicines,
+    medicineDoseLogs
+  }: TimelineSource,
+  now = new Date()
+): TimelineItem[] {
+  const today = getLocalDateKey(now);
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
   const medicineItems = medicines.flatMap((medicine) =>
     medicine.times.map((time) => {
       const sortMinutes = getSortMinutes(time, 'morning');
-      const doseLog = findMedicineDoseLog(medicineDoseLogs, medicine.id, time);
+      const scheduledMinutes = parseTimeToMinutes(time);
+      const doseLog = findMedicineDoseLog(medicineDoseLogs, medicine.id, time, today);
+      const isOverdue =
+        !doseLog && scheduledMinutes !== null && scheduledMinutes < currentMinutes;
 
       return {
         id: `${medicine.id}-${time}`,
         lifeArea: 'health' as const,
         label: LIFE_AREA_LABELS.health,
-        priority: doseLog ? ('normal' as const) : ('overdue' as const),
+        priority: isOverdue ? ('overdue' as const) : ('normal' as const),
         title: medicine.medicineName,
         detail: `${medicine.personName} • ${medicine.dosage}${doseLog ? ` • Taken today: ${doseLog.takenAt}` : ''}`,
         time,
@@ -116,7 +129,7 @@ function buildTimelineItems({
   const taskItems = tasks
     .filter((task) => !task.isDone)
     .map((task) => {
-      const dueDateStatus = classifyDueDate(task.dueDate);
+      const dueDateStatus = classifyDueDate(task.dueDate, now);
 
       return {
         id: task.id,
