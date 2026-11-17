@@ -106,9 +106,9 @@ a file path or inspectable bytes. No APK bytes were obtained for inspection and 
 the checksum remains unverified. No retry, bypass, invitation, release or settings action occurred. Private account identifiers,
 owner-console links and direct APK artifact links are not published here.
 
-### Paused Provenance Checks — November 18, 2026
+### Remaining Provenance Checks
 
-**Owner confirmation:** Vanessa does not have the original RemoteMom 0.1.2 APK or the September 13,
+**Owner confirmation — November 18, 2026:** Vanessa does not have the original RemoteMom 0.1.2 APK or the September 13,
 2026 project folder/source archive. Issue #39 remains **open at 3/7; Paused—originals unavailable**.
 Expo access is resolved, but the exact uploaded source, APK bytes/checksum and Firebase-to-EAS
 artifact relationship remain unproven. The inspected expired/unavailable views did not supply this
