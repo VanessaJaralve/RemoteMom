@@ -51,7 +51,7 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #5 — High-Value Hybrid | **In Progress, 2/9**; source comparison, audience/output definition, [current listing](https://payhip.com/b/ryYbl) and single-file configuration reviewed | The owner download timed out; uploaded/delivered-file content and editable-source identity remain unverified. Resolve the recorded editorial gaps before publishing the prepared replacement copy. No revised companion or paid offer is complete. |
 | #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared | Finish the existing-asset inventory and scope/packaging decisions supported by evidence. Collection production remains conditional on #15/#14; no assets or price are adopted. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
-| #13 — measurement | **In Progress, 12/13 under the approved request-only scope**; Vanessa approved manual Monday reporting on November 17. The completed November 10–16 Manila report remains the separate pre-launch example | Complete Instagram’s mobile bio correction/actual route and verify other real placements when used. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured; broader instrumentation is deferred, not implemented. |
+| #13 — measurement | **In Progress, 12/13 under the approved request-only scope**; Vanessa approved manual Monday reporting on November 17. The completed November 10–16 Manila report remains the separate pre-launch example | The Instagram destination is corrected and its actual desktop profile route/Starter Kit anchor work. The observed route has `ig / social` and no campaign; paste the complete registered URL on mobile and verify the tracking values. Future post/Story routes are checked under #14 when used. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured; broader instrumentation is deferred, not implemented. |
 | #16 — support operations | **In Progress, 14/17 overall; Stage 1 complete, 10/10**. Vanessa approved unresolved-case follow-up and one private email thread per case on November 17; daily inbox review was already confirmed | Stage 2 remains **4/7** for actual buyer recovery, update/re-download behavior and the paid-support review arrangement. Approval establishes operating commitments, not a history of handled customer cases. |
 
 The support and reporting owner choices below are now approved. Finish the remaining source/editorial
@@ -83,6 +83,30 @@ to **12/13**, with actual channel routing still open. #16 remains **In Progress,
 Stage 2 buyer-operation criteria are not completed by a free-kit support or request-reporting
 commitment. No actual customer handling, future report, scheduled automation, new service, paid
 platform recovery, UAT pass or campaign launch is claimed by recording this approval.
+
+## Instagram destination corrected; tracking repair pending — 2026-11-17
+
+Vanessa reported changing the Instagram bio link from her phone. At **10:16 Asia/Manila**
+(`02:16 UTC`), the follow-up owner-browser check established:
+
+- The actual link from [the Instagram profile](https://www.instagram.com/vdjaralve/) reaches the
+  current Launchpad page, and its hero action reaches `#starter-kit`.
+- The observed destination retains `utm_source=ig`, `utm_medium=social` and
+  `utm_content=link_in_bio`; `utm_campaign` is absent. These are not the registered
+  `instagram / organic_social / launchpad-profile` values. Private click identifiers are omitted.
+- Instagram’s disabled Website field displays `remote-mom.vercel.app/launchpad`, with no query.
+  The owner page states that bio links can only be edited in the mobile app. No desktop profile
+  setting was changed during this check.
+- **Next action:** paste the complete [registered Instagram URL](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile)
+  into the mobile profile’s URL field, save it, and verify the actual profile click and Starter Kit
+  continuation retain all three values. Keep #13 **Open / In Progress, 12/13** until this passes.
+
+This is a verified desktop destination correction, with the phone edit accepted as user-reported.
+It does not establish the Instagram mobile in-app route or a UAT pass. No form was submitted or PDF
+download started. Existing request rows and reports remain unchanged; no prior unattributed request
+is relabeled. Future post/Story placement checks remain with #14 when used. The
+[campaign register](../../marketing/launchpad-social/holiday-2026-campaign.md) and
+[collection guide](../Validation_Collection_Setup.md) record the same evidence and remaining action.
 
 ## Issue #1 decision and offer map — 2026-11-15
 
