@@ -21,7 +21,7 @@ Firebase App Distribution is listed by Firebase as a no-cost product. Keep the p
 
 ## Required App Identity
 
-Use these exact values when registering the Android app in Firebase:
+The following values are recorded by the current repository configuration. They identify the source configuration reviewed on November 18. The Firebase versions/distribution metadata observed below do not by themselves establish the APK bytes, EAS build or source relationship.
 
 - App name: `RemoteMom`
 - Android package name: `com.vanessajaralve.remotemom`
@@ -32,17 +32,64 @@ Use these exact values when registering the Android app in Firebase:
 
 Important: Firebase package names are case-sensitive and cannot be changed for an app after registration.
 
-## Source APK
+## Recorded 0.1.1 Source APK
 
-Use the latest EAS internal APK build for Firebase App Distribution:
+The original guide records this EAS internal APK package. Keep it as historical package evidence; reconcile the later 0.1.2 record and the observed Firebase releases with exact EAS artifacts and source before selecting a release:
 
 - EAS build ID: `db447bf4-41ae-48a3-8ad6-942b244cf43f`
 - EAS build page: `https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/db447bf4-41ae-48a3-8ad6-942b244cf43f`
-- EAS APK artifact: `https://expo.dev/artifacts/eas/IoXroXzpER-S0SuxwnPLTDu93Q_Bf3ph-Cc_rCoxO-k.apk`
+- APK access: use the owner-controlled build page after reconciling the source and artifact metadata; direct download links are not published here.
 - Local APK filename: `releases/android-sideload/RemoteMom-0.1.1-beta.apk`
 - SHA-256: `e89c6c05c3a919ee526f101d0e12e6cef97d03b4a6ad0c4c85eee89b7fb77343`
 
 The APK file is intentionally ignored by git and should not be committed.
+
+## Source And Build Reconciliation — 2026-11-18
+
+This read-only review is tracked in the approved source/build follow-up [issue #39](https://github.com/VanessaJaralve/RemoteMom/issues/39), currently **In Progress, 3/7**. Together with approved local-data protection [#38](https://github.com/VanessaJaralve/RemoteMom/issues/38), it completes the follow-up disposition for the **9/9 assessment** in [#17](https://github.com/VanessaJaralve/RemoteMom/issues/17). Historical completed build and beta records remain valid as records of the work reported at the time. The source and artifact used for each Firebase release must be identified separately from the version and distribution metadata now observed in the owner Console.
+
+### Verified Repository And EAS Evidence
+
+- Reviewed main: [`4e5f8dab2695120efd261f66ebd2ce98ee9af885`](https://github.com/VanessaJaralve/RemoteMom/commit/4e5f8dab2695120efd261f66ebd2ce98ee9af885). At this commit, `app.json` records version `0.1.1`, Android version code `2`, package `com.vanessajaralve.remotemom`, Expo owner `vanessajaralve` and EAS project ID `8ae5a453-4596-4728-9b86-446cadabab75`.
+- All 15 retained non-main branches were behind that main commit, with no commits ahead. No retained unmerged branch supplied the missing later app controls.
+- The July/August implementation history identifies [reminder-ready model fields and labels](https://github.com/VanessaJaralve/RemoteMom/commit/17eb7141f8c8511ea715e9f46d953d540929fbdc), [shared date/time utilities](https://github.com/VanessaJaralve/RemoteMom/commit/b017a2c18257f786e63147de0c24d1dd36ed8069), and [quick To-Do date / Child time / Health controls](https://github.com/VanessaJaralve/RemoteMom/commit/c1a912bf6d1b61e34d466b6a21d4eba00c3aa709).
+- The August 15 calendar picker/alarm-style controls and September 13 reminder-time/Child frequency completion records first appear in the reviewed GitHub documentation history in [`4eae3422792478dd50457b54b0ffeded363e0d78`](https://github.com/VanessaJaralve/RemoteMom/commit/4eae3422792478dd50457b54b0ffeded363e0d78), committed September 27. That commit changes no `src/` app files. Current main still has the earlier simple controls. This is an unresolved source/build provenance mismatch; it does not prove that the historical work never existed or that a regression occurred.
+- The live EAS share pages for both recorded builds below showed `@vanessajaralve/remotemom`, `APK`, `Android internal distribution build` and `Succeeded` on November 18. Those pages did not expose Git SHA, app version/build number, profile or build date. No APK was downloaded or installed during this earlier EAS share-page check.
+
+| Historical package record | EAS build | Recorded SHA-256 | What is established |
+| --- | --- | --- | --- |
+| 0.1.1; guide/source preparation committed August 23 | [`db447bf4-41ae-48a3-8ad6-942b244cf43f`](https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/db447bf4-41ae-48a3-8ad6-942b244cf43f) | `e89c6c05c3a919ee526f101d0e12e6cef97d03b4a6ad0c4c85eee89b7fb77343` | The guide's historical artifact record and EAS success/package-type status. Firebase lists 0.1.1 (2) with prior invitation/acceptance/download activity. Exact artifact/hash/source identity was not reverified from bytes. |
+| 0.1.2; checklist record dated September 13 | [`22e9fb3f-b612-454f-8c51-850b92044c83`](https://expo.dev/accounts/vanessajaralve/projects/remotemom/builds/22e9fb3f-b612-454f-8c51-850b92044c83) | `2a2f13cb7b07db8d0546497f227a0bf79bfdec26db66fc89a26cad7844e903e6` | The checklist historically reported ready for Firebase upload. The November 18 Console check now confirms a 0.1.2 (3) upload with no testers added. EAS success/package-type status is verified; exact artifact/hash/source identity remains unresolved. |
+
+### Firebase Release Metadata — Read November 18, 2026
+
+A read-only review of the signed-in owner Console for the RemoteMom project found **two releases**:
+
+| Firebase release | Listed timestamp | Observed distribution state |
+| --- | --- | --- |
+| **0.1.2 (3)** | September 13, 2026, **1:21:40 PM UTC+8** | Expanded Add testers pane reported **No testers added to this release**; the next control was to proceed to adding release notes. |
+| **0.1.1 (2)** | August 23, 2026, **10:31:02 PM UTC+8** | Collapsed aggregate summary: **Invited 1 / Accepted 1 / Downloaded 1 / Feedback 0**. |
+
+This establishes the newer upload and the older release's recorded distribution/download activity.
+It does not match either Firebase release to exact EAS artifact bytes, a recorded hash or a source
+snapshot, and it does not verify the version currently installed on a tester's device. Issue #39
+therefore remains **3/7**: criterion 6 requires the release-to-artifact relationship, which is still
+unresolved. No tester identities or private feedback were opened. The normal owner Firebase 0.1.2
+Download release request was attempted; browser download capture timed out and reset without returning
+a file path or inspectable bytes. No APK bytes were obtained for inspection and no APK was installed;
+the checksum remains unverified. No retry, bypass, invitation, release or settings action occurred. Private account identifiers,
+owner-console links and direct APK artifact links are not published here.
+
+### Remaining Provenance Checks
+
+The EAS owner project view required sign-in, so its detailed source/build metadata was unavailable. That limitation is specific to Expo; the signed-in Firebase release/version/distribution metadata is recorded above. The remaining gap is the exact Firebase-to-EAS artifact/hash/source relationship and the unverified current tester-device version.
+
+1. Obtain the recorded EAS 0.1.2 build's source Git SHA and any uncommitted-source indicator or original source archive, plus its detailed build metadata. Firebase now lists 0.1.2 (3), but that version match alone does not establish which EAS artifact/source was uploaded.
+2. Compare the exact APK bytes with the recorded hash when that artifact is available through the owner route.
+3. Match the observed RemoteMom Android Firebase releases to the exact EAS artifacts, hashes and source snapshots. Release versions, timestamps and aggregate distribution metadata are now known; the artifact relationship required by criterion 6 is still open. No tester identities or private feedback responses are needed.
+4. Update this guide and the existing project brief/checklist with the proven relationship, or retain the specific unresolved limitation. Do not equate the currently reviewed source with a distributed binary without that evidence.
+
+These checks do not require a new build, installation, tester invitation or release. The existing setup and distribution instructions below remain procedural reference; no new distribution took place in this review. [PR #40](https://github.com/VanessaJaralve/RemoteMom/pull/40) is the integration record for the separately approved #38 data-protection source fix, with **8/8 technical acceptance** at code head `79e3b9fa406a84b9a61c9081a0ff09c870f91d9e`. The actual corrected persistence adapter passed 26 cases; [CI run 44184433162 / job 134397033866](https://github.com/VanessaJaralve/RemoteMom/actions/runs/44184433162/job/134397033866) passed frozen install, 435 Jest tests across 34 suites, TypeScript and Android JavaScript/assets export. The baseline used nine actual-persistence cases with synthetic storage and modeled provider save selection; it was not a device run. The source fix preserves unsafe stored payloads, blocks unsafe restore edits/saves and provides read/save retries without cloud backup or logging private app content. The final PR head must pass CI before merge. These source checks do not prove that an existing APK includes the fix and are not a native build, installation or release.
 
 ## Firebase Console Setup
 
