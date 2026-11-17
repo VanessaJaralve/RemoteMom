@@ -394,7 +394,7 @@ without assuming a participant count or assigning the report to both planned rea
 
 | Initial slot | Audience to recruit | Small exercise to try |
 |---|---|---|
-| R1 - pending | A mom seeking remote work or returning after a break | Page 4: one responsibility-to-skill-to-evidence-to-role row. Use page 3's work/life-fit questions instead if more relevant; record the reason. |
+| R1 - pending | A mom seeking remote work, returning after a break, or seeking additional remote work | Page 4: one responsibility-to-skill-to-evidence-to-role row. Use page 3's work/life-fit questions instead if more relevant; record the reason. |
 | R2 - pending | A mom already working remotely or in a hybrid arrangement | Page 8: choose one pressure point and one small boundary or routine to try. |
 
 ### Ten-minute facilitator sequence
@@ -481,8 +481,23 @@ evidence changes the relevant item. The existing full-study and promotion bounda
 
 Link actual findings to #18 and relevant device evidence to #11/#19. This initial two-reader
 check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
-the #6 build/revise/defer recommendation. It does not validate pricing or demand, and the separate
-#13 tracking and Stage 1 #16 support gates still apply before the #14 campaign is published.
+the #6 build/revise/defer recommendation. It does not validate pricing or demand. **#13 is complete at 13/13** and **#16 is complete at
+17/17** (Stage 1 **10/10**, Stage 2 **7/7**); preserve those accepted checks. The #14 free-kit
+campaign still requires the remaining #11/#18/#19 reader/device acceptance and actual post/Story
+placement and route checks.
+
+### Three-page facilitator handout prepared — November 17, 2026
+
+`RemoteMom_Two_Reader_Check_2026-11-17.pdf` is a three-page facilitator aid for the existing
+protocol and current Starter Kit **`20261117b` / `reader-clarity-v4`**. Page 1 is the guide;
+pages 2 and 3 are blank private records for R1 and R2. The guide includes readers seeking an
+additional remote role and treats page 10 as the optional application tracker and help page.
+Keep completed records and raw notes private; transfer only sanitized findings to the existing log.
+
+This handout records preparation only. **R1 and R2 remain pending**; no recruitment, contact,
+scheduling, completed conversation or reader/device result is established. It does not replace
+the broader 5–10-reader study or change #11 **10/12**, #18 **11/12**, #19 **20/22** or #15 **0/9**.
+The free-kit reader check does not require a Book 2 purchase or completion of its separate file comparison.
 
 ### Broader reader research preparation — #15
 
@@ -1255,7 +1270,11 @@ reader UAT pass or paid-demand validation is established.
 | Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
 | Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. #16's paid-support scope is now approved and complete; companion verification and actual campaign publication remain separate. |
 | High-Value Hybrid | Owner-approved corrected 33-page master `Book_2_High_Value_Hybrid_2026-11-17.pdf` (1,404,736 bytes; SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`); saved Payhip editor lists only that filename at 1.4 MB, with the new cover/title and USD 19.99. Public listing/configuration, zero-total checkout and actual buyer-receipt access are verified. Chrome blocked the customer PDF transfer; no inspectable customer bytes are available for identity comparison | Retain and revise this existing optional companion. Reuse skills/truthful examples 6–12, role comparison 13–15, practice 16–18 and search/outreach 22–24 before selecting any new tool. The 47-page source and 36-page visual-only edition remain historical identities. Publication does not establish paid demand, reader acceptance or collection production readiness. |
-| Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
+| App-beta outreach workbook | `RemoteMom_Targeted_Outreach.xlsx`; preparation for the separate app-beta workstream | Internal outreach planning, not a customer planning template or evidence that Launchpad readers were contacted or studied. |
+| Content execution workbook | `RemoteMom_Content_Execution_Tracker.xlsx`; internal social/calendar planning with earlier proposed dates | Use as an internal planning reference; proposed dates do not establish actual publication, reader findings or a customer-facing planner. |
+| Reminder draft and planning graphics | Editorial/promotional preparation | These assets support content planning and promotion; they do not establish a release-ready customer template or completed research. |
+| Two-reader facilitator handout | `RemoteMom_Two_Reader_Check_2026-11-17.pdf`; three-page guide and blank private R1/R2 records for kit `20261117b` | Operational aid for the existing reader check. Both slots remain pending; preparation is not reader evidence or a new collection asset. |
+| Additional planning/template assets | No further release-ready customer planning template established by this bounded review; archive bundles remain uninspected | Reuse existing kit tables and eBook guidance first. The full usable-asset inventory remains open under #6 at 3/9, along with the separate companion-file and reader/experiment evidence gaps. |
 
 ### Earlier #5 public-listing inspection — November 17, before the corrected release
 

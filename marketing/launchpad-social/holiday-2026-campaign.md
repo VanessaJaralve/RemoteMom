@@ -406,8 +406,10 @@ complete Monday-to-Monday period in Asia/Manila, using the [#13 reporting method
 The first regular review is November 23 for November 16–23; the campaign-week windows below remain
 unchanged. This is the approved request-only reporting scope, not a scheduled automation or a completed
 future report. Under Stage 1 #16, Vanessa’s daily inbox review, unresolved-case ownership and one
-private email thread per case are also already approved. The separate paid-buyer review-scope
-extension remains open. See the [approved arrangements in the business roadmap](../../docs/launchpad-business/README.md).
+private email thread per case are already approved. Her separate November 17 approval also completes
+paid-buyer review under #16 at **17/17** (Stage 1 **10/10**, Stage 2 **7/7**). The remaining
+#11/#18/#19 reader/device acceptance and actual post/Story route checks still govern the campaign.
+See the [approved arrangements in the business roadmap](../../docs/launchpad-business/README.md).
 
 | Review | Start inclusive | End exclusive | Planned review date | Status |
 |---|---|---|---|---|
