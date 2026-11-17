@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { LIFE_AREA_COLORS, SURFACE_COLORS } from '../constants/colors';
 import {
   DEFAULT_CHILD_ID,
   sampleChildren,
@@ -24,6 +26,12 @@ import {
   loadPersistedAppState,
   savePersistedAppState
 } from './persistence';
+import type { PersistedAppStateLoadResult } from './persistence';
+
+type RestoreStatus =
+  | { status: 'loading' }
+  | { status: 'ready' }
+  | Extract<PersistedAppStateLoadResult, { status: 'blocked' }>;
 
 type AddTaskInput = {
   title: string;
@@ -103,19 +111,28 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [medicines, setMedicines] = useState<Medicine[]>(sampleMedicines);
   const [medicineDoseLogs, setMedicineDoseLogs] = useState<MedicineDoseLog[]>([]);
   const [trackedChildren, setTrackedChildren] = useState<Child[]>(sampleChildren);
-  const [hasLoadedPersistedState, setHasLoadedPersistedState] = useState(false);
+  const [restoreStatus, setRestoreStatus] = useState<RestoreStatus>({ status: 'loading' });
+  const [loadAttempt, setLoadAttempt] = useState(0);
+  const [saveAttempt, setSaveAttempt] = useState(0);
+  const [saveFailed, setSaveFailed] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
 
     async function restoreAppState() {
-      const persistedState = await loadPersistedAppState();
+      const result = await loadPersistedAppState();
 
       if (!isMounted) {
         return;
       }
 
-      if (persistedState) {
+      if (result.status === 'blocked') {
+        setRestoreStatus(result);
+        return;
+      }
+
+      if (result.status === 'loaded') {
+        const persistedState = result.state;
         setTasks(persistedState.tasks);
         setGroceryItems(persistedState.groceryItems);
         setScheduleItems(persistedState.scheduleItems);
@@ -124,7 +141,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setTrackedChildren(persistedState.children);
       }
 
-      setHasLoadedPersistedState(true);
+      setRestoreStatus({ status: 'ready' });
     }
 
     void restoreAppState();
@@ -132,13 +149,14 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [loadAttempt]);
 
   useEffect(() => {
-    if (!hasLoadedPersistedState) {
+    if (restoreStatus.status !== 'ready') {
       return;
     }
 
+    let isLatestRequest = true;
     void savePersistedAppState({
       schemaVersion: CURRENT_APP_STATE_SCHEMA_VERSION,
       tasks,
@@ -147,15 +165,24 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       medicines,
       medicineDoseLogs,
       children: trackedChildren
+    }).then((saved) => {
+      if (isLatestRequest) {
+        setSaveFailed(!saved);
+      }
     });
+
+    return () => {
+      isLatestRequest = false;
+    };
   }, [
     groceryItems,
-    hasLoadedPersistedState,
+    restoreStatus.status,
     medicineDoseLogs,
     medicines,
     scheduleItems,
     tasks,
-    trackedChildren
+    trackedChildren,
+    saveAttempt
   ]);
 
   const value = useMemo<AppStateContextValue>(
@@ -352,8 +379,102 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
     [groceryItems, medicineDoseLogs, medicines, scheduleItems, tasks, trackedChildren]
   );
 
-  return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;
+  // Consumers cannot edit sample state while a restore is pending or blocked.
+  if (restoreStatus.status !== 'ready') {
+    return (
+      <ScrollView contentContainerStyle={styles.recovery}>
+        <Text accessibilityRole="header" style={styles.heading}>
+          {restoreStatus.status === 'loading'
+            ? 'Opening your saved data'
+            : 'We couldn’t open your saved data'}
+        </Text>
+        {restoreStatus.status === 'loading' ? (
+          <Text accessibilityLiveRegion="polite" style={styles.message}>
+            One moment while RemoteMom opens your lists.
+          </Text>
+        ) : (
+          <>
+            <Text accessibilityRole="alert" style={styles.message}>
+              {restoreStatus.reason === 'unsupported-version'
+                ? 'This version of RemoteMom can’t read your saved data. We haven’t replaced it. Use the app version that saved it, or a newer version, then try again.'
+                : 'We haven’t replaced your saved data. Try again to open your lists.'}
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => {
+                setRestoreStatus({ status: 'loading' });
+                setLoadAttempt((attempt) => attempt + 1);
+              }}
+              style={styles.retryButton}
+            >
+              <Text style={styles.retryLabel}>Try again</Text>
+            </Pressable>
+          </>
+        )}
+      </ScrollView>
+    );
+  }
+
+  return (
+    <AppStateContext.Provider value={value}>
+      <View style={styles.app}>
+        {saveFailed ? (
+          <View style={styles.saveWarning}>
+            <Text accessibilityRole="alert" accessibilityLiveRegion="polite" style={styles.message}>
+              Your latest changes aren’t saved yet.
+            </Text>
+            <Text style={styles.message}>Keep RemoteMom open and try saving again.</Text>
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => setSaveAttempt((attempt) => attempt + 1)}
+              style={styles.retryButton}
+            >
+              <Text style={styles.retryLabel}>Retry saving</Text>
+            </Pressable>
+          </View>
+        ) : null}
+        {children}
+      </View>
+    </AppStateContext.Provider>
+  );
 }
+
+const styles = StyleSheet.create({
+  app: { flex: 1 },
+  recovery: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    backgroundColor: SURFACE_COLORS.background,
+    padding: 24,
+    paddingTop: 64,
+    paddingBottom: 48
+  },
+  heading: {
+    color: SURFACE_COLORS.text,
+    fontSize: 22,
+    fontWeight: '700',
+    marginBottom: 16
+  },
+  message: { color: SURFACE_COLORS.text, fontSize: 16, lineHeight: 24 },
+  saveWarning: {
+    backgroundColor: SURFACE_COLORS.background,
+    borderBottomColor: SURFACE_COLORS.border,
+    borderBottomWidth: 1,
+    paddingHorizontal: 20,
+    paddingTop: 48,
+    paddingBottom: 12
+  },
+  retryButton: {
+    alignSelf: 'flex-start',
+    justifyContent: 'center',
+    minHeight: 48,
+    paddingHorizontal: 20,
+    marginTop: 12,
+    borderRadius: 12,
+    backgroundColor: LIFE_AREA_COLORS.work
+  },
+  retryLabel: { color: SURFACE_COLORS.card, fontSize: 16, fontWeight: '700' }
+});
 
 export function useAppState() {
   const context = useContext(AppStateContext);

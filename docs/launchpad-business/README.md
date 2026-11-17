@@ -53,12 +53,58 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
 | #13 — measurement | **Completed, 13/13 under the approved request-only readiness scope**. November 17 at 10:42 Manila: the actual Instagram profile click and Starter Kit anchor retained `instagram / organic_social / launchpad-profile`; Facebook was already verified. Manual Monday reporting and the completed pre-launch example remain in place | Future post/Story routes are checked under #14 when used; later reports still require actual extraction/review. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured. Broader instrumentation is deferred, and UAT/campaign publication are separate gates. |
 | #16 — support operations | **Completed, 17/17 overall; Stage 1 10/10; Stage 2 7/7**. Main-eBook policy/recovery guidance and existing-order file-update/download behavior are verified. Daily monitoring, unresolved-case ownership and private email threads remain approved | Vanessa’s later November 17 “please proceed” approves extending the same workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns. This is an operating commitment, not handled-case history. Book 2 delivery and reader/device UAT remain separate. |
+| #17 — app-readiness assessment | **Closed / Done; assessment complete, 9/9**; original source/evidence review preserved and Vanessa's approved follow-ups now tracked in #38/#39 | This completes assessment and disposition, not implementation, runtime/demand validation or app monetization. |
+| #38 — local-data protection | **Technical source acceptance complete, 8/8**, in PR #40 at code head `79e3b9fa406a84b9a61c9081a0ff09c870f91d9e`; 26 adapter checks, 435 Jest tests/34 suites, TypeScript and Android JS/assets export passed | The final PR head must pass CI before merge. These source checks do not establish physical-device/installed-APK behavior or a released build. |
+| #39 — source/build reconciliation | **In Progress, 3/7**; repository/history/branches, both recorded EAS success statuses and Firebase metadata verified: 0.1.2 (3) uploaded with no testers added; 0.1.1 (2) has prior invitation/acceptance/download activity | Detailed EAS owner metadata is blocked by sign-in. Exact Firebase-to-EAS artifact/hash/source relationships and the current tester-device version remain unverified; criterion 6 stays open. |
 
 The support and reporting owner choices below are now approved. Finish the remaining source/editorial
 and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion.
 The main-eBook #4 and Stage 2 #16 gates are complete. Applicable product-specific delivery
 requirements still govern paid promotion; recording support approval does not publish a campaign. The dated November 16–20 plan and
 release evidence below remain history and planning context, not automatic launch authorization.
+
+## Approved app follow-ups — 2026-11-18 (Asia/Manila)
+
+Vanessa approved proceeding with data protection and beta-build reconciliation. The existing
+[#17 assessment](https://github.com/VanessaJaralve/RemoteMom/issues/17) is complete at **9/9** because
+its approved follow-ups now have actual issue references: [#38](https://github.com/VanessaJaralve/RemoteMom/issues/38)
+and [#39](https://github.com/VanessaJaralve/RemoteMom/issues/39). The detailed original review remains in
+[the existing Product Brief and Roadmap](../RemoteMom_Product_Brief_Roadmap.md#current-app-audit).
+
+**#38 — data protection: technical source acceptance complete, 8/8**, in
+[PR #40](https://github.com/VanessaJaralve/RemoteMom/pull/40), code head
+`79e3b9fa406a84b9a61c9081a0ff09c870f91d9e`. The fix preserves stored bytes on unsafe restores,
+blocks ordinary edits/saves until loading is safe, provides read/save retries and visible unsaved-change
+feedback, and serializes storage operations while retaining valid/empty/legacy states and the existing
+local key/schema. Nine baseline cases used actual persistence with synthetic storage and modeled
+provider save selection; the corrected actual adapter passed 26 cases. React/provider UI was not
+executed in that adapter harness. [CI run 44184433162 / job 134397033866](https://github.com/VanessaJaralve/RemoteMom/actions/runs/44184433162/job/134397033866)
+passed frozen install, 435 Jest tests across 34 suites, TypeScript and Android JavaScript/assets export.
+The initial type-narrowing error was fixed before this successful run. No lint task is configured.
+The final PR head must pass CI before merge. No physical-device test, installed-APK pass,
+native Android build or release is claimed.
+
+**#39 — build provenance:** keep this issue open at **3/7**. Both recorded EAS pages showed
+`@vanessajaralve/remotemom`, APK, Android internal distribution build and Succeeded. The EAS owner
+project view required sign-in, leaving its detailed source/build metadata unavailable. In a signed-in
+Firebase owner-console review on November 18, **0.1.2 (3)** was listed September 13, 2026 at
+**1:21:40 PM UTC+8**, with **no testers added to this release**. **0.1.1 (2)** was listed August 23,
+2026 at **10:31:02 PM UTC+8**, with aggregate **Invited 1 / Accepted 1 / Downloaded 1 / Feedback 0**.
+The newer upload and older distribution/download record are established; their exact EAS
+artifact/hash/source relationships and the current tester-device version are not. Criterion 6 remains
+open. Repository history does not establish a regression or the APK's undocumented contents.
+The [existing Firebase guide](../RemoteMom_Firebase_App_Distribution_Beta_Guide.md#source-and-build-reconciliation--2026-11-18)
+records these checks without private account, console or artifact links. No tester identities or
+private feedback were opened. The normal owner Firebase 0.1.2 Download release request was attempted;
+the browser download capture timed out and reset without returning a file path or inspectable bytes.
+No APK bytes were obtained for inspection and no APK was installed; the checksum remains unverified.
+No retry, bypass, invitation, release or settings action occurred.
+
+Today future-dose labels and midnight/foreground refresh remain separate, unimplemented findings.
+These approvals preserve the one-child, local-first app scope and do not select new features,
+monetization, recruitment or distribution. Reader fieldwork remains deferred pending availability;
+#11/#18/#19, #15, Book 2 customer-file evidence and campaign publication keep their existing gates.
+Completed #4/#13/#16 checks and support/reporting approvals remain accepted.
 
 ## Approved support and reporting arrangements — 2026-11-17 (Asia/Manila)
 
@@ -375,9 +421,10 @@ The sequence and two-reader handout below are an optional method for initial fee
 requirement to recruit exactly two new people before independent work can continue. #18 permits
 representative-reader feedback or relevant available #15 findings; retain the actual evidence scope
 and the separate 5–10-reader study. No reader or device pass is claimed by this scheduling decision.
-Existing technical, collection and keyboard acceptance remains valid. Continue the known-asset
-inventory and the scoped app-readiness assessment in #17; campaign publication retains its existing
-reader/device readiness requirements.
+Existing technical, collection and keyboard acceptance remains valid. The known-asset archive
+review and #17 assessment have since been recorded; independent work now focuses on #39's remaining
+source/artifact/hash relationship. PR #40 is the integration record for the verified #38 source fix. Campaign publication retains
+its existing reader/device readiness requirements.
 
 This is the educational Launchpad protocol; the separate app interview guide is unchanged.
 **One feedback batch was relayed by Vanessa on November 17.** It remains recorded as F1 below,
@@ -710,7 +757,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
-| 5. App readiness | Separate beta assessment | #17 documents evidence and follow-up decisions; it does not block Launchpad validation or authorize app monetization |
+| 5. App readiness | Completed assessment; scoped beta follow-ups | #17 is closed / Done at 9/9. #38 technical source acceptance is complete at 8/8 in PR #40; the final PR head must pass CI before merge. #39 remains open at 3/7 for build provenance. These app items do not block Launchpad validation or authorize monetization or release |
 
 ## Recommended execution order
 

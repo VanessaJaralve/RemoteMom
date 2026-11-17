@@ -11,6 +11,11 @@ import type { Task, TaskLifeArea } from '../models/Task';
 export const APP_STATE_STORAGE_KEY = 'remotemom:appState:v1';
 export const CURRENT_APP_STATE_SCHEMA_VERSION = 2;
 
+const PERSISTED_STATE_KEYS = new Set([
+  'schemaVersion', 'children', 'tasks', 'groceryItems', 'scheduleItems', 'medicines',
+  'medicineDoseLogs'
+]);
+
 export type PersistedAppState = {
   schemaVersion: typeof CURRENT_APP_STATE_SCHEMA_VERSION;
   children: Child[];
@@ -20,6 +25,24 @@ export type PersistedAppState = {
   medicines: Medicine[];
   medicineDoseLogs: MedicineDoseLog[];
 };
+
+export type PersistedAppStateLoadResult =
+  | { status: 'empty' }
+  | { status: 'loaded'; state: PersistedAppState }
+  | {
+      status: 'blocked';
+      reason: 'read-failed' | 'invalid-data' | 'unsupported-version';
+    };
+
+// A later provider must finish earlier writes before reading the same key.
+// Keep this queue outside React so it also covers unmount/remount and retries.
+let storageOperations: Promise<void> = Promise.resolve();
+
+function queueStorageOperation<T>(operation: () => Promise<T>): Promise<T> {
+  const result = storageOperations.then(operation);
+  storageOperations = result.then(() => undefined, () => undefined);
+  return result;
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -39,6 +62,10 @@ function isOptionalString(value: unknown): value is string | undefined {
 
 function isOptionalBoolean(value: unknown): value is boolean | undefined {
   return value === undefined || isBoolean(value);
+}
+
+function isArrayOf<T>(value: unknown, isItem: (item: unknown) => item is T): value is T[] {
+  return Array.isArray(value) && value.every(isItem);
 }
 
 function isTaskLifeArea(value: unknown): value is TaskLifeArea {
@@ -111,6 +138,7 @@ function isMedicine(value: unknown): value is Medicine {
     Array.isArray(value.times) &&
     value.times.every(isString) &&
     typeof value.refillReminderThreshold === 'number' &&
+    Number.isFinite(value.refillReminderThreshold) &&
     isOptionalBoolean(value.reminderEnabled) &&
     isOptionalString(value.childId) &&
     (value.lastTaken === null || isString(value.lastTaken))
@@ -128,14 +156,22 @@ function isMedicineDoseLog(value: unknown): value is MedicineDoseLog {
   );
 }
 
-function normalizeChildren(value: Record<string, unknown>) {
-  const persistedChildren = Array.isArray(value.children)
-    ? value.children.filter(isChild)
-    : [];
+function normalizeChildren(
+  children: Child[] | undefined,
+  scheduleItems: ScheduleItem[],
+  medicines: Medicine[]
+) {
+  if (children === undefined) {
+    return sampleChildren;
+  }
 
-  return persistedChildren.some((child) => child.id === DEFAULT_CHILD_ID)
-    ? persistedChildren
-    : sampleChildren;
+  const needsDefaultChild =
+    scheduleItems.some((item) => item.childId === DEFAULT_CHILD_ID) ||
+    medicines.some((medicine) => medicine.childId === DEFAULT_CHILD_ID);
+
+  return needsDefaultChild && !children.some((child) => child.id === DEFAULT_CHILD_ID)
+    ? [...children, ...sampleChildren]
+    : children;
 }
 
 function normalizeScheduleItem(item: ScheduleItem): ScheduleItem {
@@ -150,59 +186,86 @@ function normalizeMedicine(medicine: Medicine): Medicine {
     : medicine;
 }
 
-function normalizePersistedAppState(value: unknown): PersistedAppState | null {
+function normalizePersistedAppState(value: unknown): PersistedAppStateLoadResult {
   if (!isRecord(value)) {
-    return null;
+    return { status: 'blocked', reason: 'invalid-data' };
   }
 
   const schemaVersion = getNormalizedSchemaVersion(value);
 
   if (!schemaVersion) {
-    return null;
+    return { status: 'blocked', reason: 'unsupported-version' };
   }
 
   if (
-    !Array.isArray(value.tasks) ||
-    !Array.isArray(value.groceryItems) ||
-    !Array.isArray(value.scheduleItems) ||
-    !Array.isArray(value.medicines)
+    Object.keys(value).some((key) => !PERSISTED_STATE_KEYS.has(key)) ||
+    !isArrayOf(value.tasks, isTask) ||
+    !isArrayOf(value.groceryItems, isGroceryItem) ||
+    !isArrayOf(value.scheduleItems, isScheduleItem) ||
+    !isArrayOf(value.medicines, isMedicine) ||
+    (value.children !== undefined && !isArrayOf(value.children, isChild)) ||
+    (value.medicineDoseLogs !== undefined &&
+      !isArrayOf(value.medicineDoseLogs, isMedicineDoseLog))
   ) {
-    return null;
+    // Never filter and save a shortened copy over the only stored payload.
+    return { status: 'blocked', reason: 'invalid-data' };
   }
 
+  const scheduleItems = value.scheduleItems.map(normalizeScheduleItem);
+  const medicines = value.medicines.map(normalizeMedicine);
+
   return {
-    schemaVersion,
-    children: normalizeChildren(value),
-    tasks: value.tasks.filter(isTask),
-    groceryItems: value.groceryItems.filter(isGroceryItem),
-    scheduleItems: value.scheduleItems.filter(isScheduleItem).map(normalizeScheduleItem),
-    medicines: value.medicines.filter(isMedicine).map(normalizeMedicine),
-    medicineDoseLogs: Array.isArray(value.medicineDoseLogs)
-      ? value.medicineDoseLogs.filter(isMedicineDoseLog)
-      : []
+    status: 'loaded',
+    state: {
+      schemaVersion,
+      children: normalizeChildren(value.children, scheduleItems, medicines),
+      tasks: value.tasks,
+      groceryItems: value.groceryItems,
+      scheduleItems,
+      medicines,
+      medicineDoseLogs: value.medicineDoseLogs ?? []
+    }
   };
 }
 
-export async function loadPersistedAppState() {
-  try {
-    const rawState = await AsyncStorage.getItem(APP_STATE_STORAGE_KEY);
-
-    if (!rawState) {
-      return null;
+export function loadPersistedAppState(): Promise<PersistedAppStateLoadResult> {
+  return queueStorageOperation<PersistedAppStateLoadResult>(async () => {
+    let rawState: string | null;
+    try {
+      rawState = await AsyncStorage.getItem(APP_STATE_STORAGE_KEY);
+    } catch {
+      return { status: 'blocked', reason: 'read-failed' };
     }
 
-    const parsedState: unknown = JSON.parse(rawState);
+    // An empty string is damaged data, not an absent storage key.
+    if (rawState === null) {
+      return { status: 'empty' };
+    }
 
-    return normalizePersistedAppState(parsedState);
-  } catch {
-    return null;
-  }
+    try {
+      const parsedState: unknown = JSON.parse(rawState);
+      return normalizePersistedAppState(parsedState);
+    } catch {
+      return { status: 'blocked', reason: 'invalid-data' };
+    }
+  });
 }
 
-export async function savePersistedAppState(state: PersistedAppState) {
+export function savePersistedAppState(state: PersistedAppState): Promise<boolean> {
+  let serializedState: string;
   try {
-    await AsyncStorage.setItem(APP_STATE_STORAGE_KEY, JSON.stringify(state));
+    serializedState = JSON.stringify(state);
   } catch {
-    // Local UI state should remain usable even if the device write fails.
+    return Promise.resolve(false);
   }
+
+  return queueStorageOperation(async () => {
+    try {
+      await AsyncStorage.setItem(APP_STATE_STORAGE_KEY, serializedState);
+      return true;
+    } catch {
+      // Report failure without logging private app data or the native error.
+      return false;
+    }
+  });
 }
