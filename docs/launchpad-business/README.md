@@ -48,7 +48,7 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
 | #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. #4 is now complete for its approved scope; Stage 2 #16 is also complete following the paid-scope approval below. Product-specific acceptance and actual campaign publication retain their own requirements. |
 | #4 — main eBook delivery/recovery | **Completed, 10/10** for the approved main-eBook zero-total, signed-in test. November 17 receipt-link verification and the dated friction review below complete the original criteria | Live charging and guest checkout were outside the approved test. Resend, credit-reset, refund and automated-update operations were not exercised; these are limits, not additional criteria for this completed scope. |
-| #5 — High-Value Hybrid | **In Progress, 8/9** after #6/#7 decision readback; corrected 33-page contents/subtitle and final master approved; Payhip listing, cover and saved file configuration published and verified at USD 19.99; Book 1 and Contact destinations verified | Actual customer receipt/download identity remains open. Owner filename/rounded-size readback is not a byte match; no Book 2 order, receipt or customer download was tested. Earlier upload timeouts are historical. #16’s paid-support scope is now complete at 17/17; actual Book 2 delivery identity and existing reader/device UAT remain separate and open. |
+| #5 — High-Value Hybrid | **In Progress, 8/9**. Approved corrected 33-page master and Payhip listing/cover/configuration remain verified at USD 19.99. November 17, 20:48 Manila: Book 2-only USD 0.00 checkout and actual buyer-receipt link access succeeded | Chrome blocked the normal customer PDF download with `ERR_BLOCKED_BY_CLIENT`; no inspectable PDF bytes were obtained. Obtain the actual PDF from the existing receipt and compare it with the approved master. Do not repeat checkout/receipt testing or infer identity from filename/rounded size. QA order excluded from sales/demand evidence; #16 and reader/device UAT remain separate. |
 | #6 — collection scope | **In Progress, 3/9**; reuse/outcome map, review standards and learning approach prepared; inventory includes the corrected companion’s final master and verified published listing/configuration; retain-and-revise decision shared with #7 | Finish actual companion delivery identity, remaining usable-asset inventory and evidence-supported collection decisions. #7 remains 0/9; no separate worksheets or other collection assets are selected/produced. #14/#15 evidence gates are unchanged. The separate #16 paid-support approval is complete and does not authorize collection production. |
 | #15 — reader research | **In Progress, 0/9 study criteria**; expanded protocol, coverage/counting rules and synthesis fields prepared below | No new recruitment or completed sessions are claimed. The original 5–10-reader study, paid-value findings and #6 recommendation remain open. |
 | #13 — measurement | **Completed, 13/13 under the approved request-only readiness scope**. November 17 at 10:42 Manila: the actual Instagram profile click and Starter Kit anchor retained `instagram / organic_social / launchpad-profile`; Facebook was already verified. Manual Monday reporting and the completed pre-launch example remain in place | Future post/Story routes are checked under #14 when used; later reports still require actual extraction/review. Visits, starts/errors, PDF clicks, conversion, drop-off and completed downloads remain not measured. Broader instrumentation is deferred, and UAT/campaign publication are separate gates. |
@@ -1241,9 +1241,11 @@ signed-in test. Receipt arrival and full-book computer/phone readability were al
 the same-order replacement download and verified copy need no redundant transfer. The later
 paid-review scope approval above completes #16 at **17/17**; Book 2 delivery remains separate.
 
-**Current issue progress:** #5 is **In Progress, 8/9** after the #6/#7 decision updates: the
-corrected companion listing/configuration is published, while actual customer receipt/download
-identity remains open. #6 remains **In Progress, 3/9** and #7 **0/9**. No collection production,
+**Current issue progress:** #5 remains **In Progress, 8/9**. Corrected listing/configuration,
+the Book 2-only zero-total checkout and actual buyer-receipt link access are verified. Chrome blocked
+the normal customer PDF transfer, so actual delivered-file identity remains open. Obtain that PDF
+through the existing receipt for comparison; no repeat order or receipt-link test is needed.
+#6 remains **In Progress, 3/9** and #7 **0/9**. No collection production,
 reader UAT pass or paid-demand validation is established.
 
 ### Asset identity and content comparison
@@ -1252,7 +1254,7 @@ reader UAT pass or paid-demand validation is established.
 |---|---|---|
 | Free Starter Kit | Released `reader-clarity-v4`, edition `20261117b`, 10 pages; PR #33 technical/public delivery checks complete | Pages 3–5 support work fit, skills evidence and role choice; 6–7/10 support searching, checking opportunities and tracking applications; 8–9 support routines/boundaries and seven-day actions. Reader acceptance remains separate. |
 | Main eBook | Approved 36-page November 2026 branded edition; listing and supplied-file match complete in #2/#3 | Skills evidence 17–18; workspace 20–24; time/priorities 25–28; communication 29–32; next-step prompts 33–34. Broader guidance for managing remote work; #4 is complete at 10/10 for the approved main-eBook test scope. #16's paid-support scope is now approved and complete; companion verification and actual campaign publication remain separate. |
-| High-Value Hybrid | Owner-approved corrected 33-page master `Book_2_High_Value_Hybrid_2026-11-17.pdf` (1,404,736 bytes; SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`); saved Payhip editor lists only that filename at 1.4 MB, with the new cover/title and USD 19.99. Public listing/configuration is verified; actual customer bytes/receipt remain untested | Retain and revise this existing optional companion. Reuse skills/truthful examples 6–12, role comparison 13–15, practice 16–18 and search/outreach 22–24 before selecting any new tool. The 47-page source and 36-page visual-only edition remain historical identities. Publication does not establish paid demand, reader acceptance or collection production readiness. |
+| High-Value Hybrid | Owner-approved corrected 33-page master `Book_2_High_Value_Hybrid_2026-11-17.pdf` (1,404,736 bytes; SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`); saved Payhip editor lists only that filename at 1.4 MB, with the new cover/title and USD 19.99. Public listing/configuration, zero-total checkout and actual buyer-receipt access are verified. Chrome blocked the customer PDF transfer; no inspectable customer bytes are available for identity comparison | Retain and revise this existing optional companion. Reuse skills/truthful examples 6–12, role comparison 13–15, practice 16–18 and search/outreach 22–24 before selecting any new tool. The 47-page source and 36-page visual-only edition remain historical identities. Publication does not establish paid demand, reader acceptance or collection production readiness. |
 | Additional planning/template assets | No further release-ready standalone template established by this bounded review | Reuse existing kit tables and eBook guidance first; confirm any other existing assets before closing #6's full inventory. |
 
 ### Earlier #5 public-listing inspection — November 17, before the corrected release
@@ -1306,7 +1308,7 @@ The next action at that preparation stage was to replace the PDF/cover, apply th
 
 Vanessa asked to proceed with the sprint's remaining buyer-path check. A private QA coupon is saved in Payhip for **Book 2 only, 100% off, one use total (0/1 used)**, with end date displayed **November 21, 2026**. The public price remains USD 19.99. Keep the code, buyer information and receipt/access links private.
 
-No test order, receipt-link access or customer file download was performed by preparing the coupon. The owner buyer step is a Book 2-only checkout with a verified zero total, followed by the actual receipt link and downloaded PDF. Compare that file with the approved 33-page customer master and record the result in #5; exclude the QA order from sales/demand evidence. #5 stays 8/9 until its delivered-version criterion has evidence. The separately approved #16 operating scope is complete at 17/17; free-kit reader/device UAT remains open.
+No test order, receipt-link access or customer file download was performed by preparing the coupon. The later buyer-test record below verifies the Book 2-only zero-total checkout and actual receipt link. Chrome blocked the normal customer PDF transfer, so #5 remains 8/9 pending comparison of the actual file from this existing receipt. No repeat checkout or receipt-link test is needed. The QA order is excluded from sales/demand evidence. The separately approved #16 operating scope is complete at 17/17; free-kit reader/device UAT remains open.
 
 ### Book 2 listing and file configuration published — November 17, 2026
 
@@ -1318,9 +1320,23 @@ The listing now says: “After successful payment, use the download link in your
 
 The public **Buy Now** action reached signed-in checkout with the correct Book 2 title and **$19.99 line item**. The cart already contained Book 1, so this is not a standalone Book 2 order-total check. Only the temporary Book 2 addition was removed with the site's confirmation; the original cart count of one was restored and the public product page reopened. No order, payment or card-details action was taken.
 
-**Remaining delivery evidence:** the approved local master is **33 pages, 1,404,736 bytes**, SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`. Saved filename/rounded-size readback does not establish a byte match for an actual customer download. The Book 2 dashboard showed **0 orders**; no order was placed, buyer credit used, receipt received/tested or customer file downloaded in these checks. The original delivered-version criterion remains open. Main-eBook #4 remains complete within its accepted scope; #16's paid-support scope and the existing UAT gates are separate.
+**Delivery evidence gap at the publication stage:** the approved local master is **33 pages, 1,404,736 bytes**, SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`. Saved filename/rounded-size readback does not establish a byte match for an actual customer download. The Book 2 dashboard showed **0 orders**; no order was placed, buyer credit used, receipt received/tested or customer file downloaded in these checks. The later buyer-test record below supplies checkout and receipt-link evidence; the original delivered-version criterion remains open because the customer PDF transfer was blocked before inspectable bytes were obtained. Main-eBook #4 remains complete within its accepted scope; #16's paid-support scope and the existing UAT gates are separate.
 
 The earlier two file-transfer timeouts remain historical failed attempts. They were followed by Vanessa's upload handoff and the saved/public verification above; they are no longer the current publication blocker. Their cause was unconfirmed, and Chrome permission was not observed to be off.
+
+### Book 2 buyer checkout and receipt verified; file comparison blocked — November 17, 2026 (Asia/Manila)
+
+At **20:48 Manila**, the authorized signed-in zero-total checkout completed for **Book 2 only**. Before submission, checkout showed **USD 19.99 subtotal, 100% coupon discount of USD 19.99, USD 0.00 tax and USD 0.00 total**. The successful order reached the purchased-file page. The public product price remains **USD 19.99**. This is a QA order and is excluded from sales, conversion, demand and price-validation evidence.
+
+The new **“Thank you for your download!”** buyer receipt, timestamped **8:48 PM**, was opened in the authorized buyer mailbox. It confirms the same Book 2 product, zero total and 100% coupon. Its actual **Download Now** link was followed to the customer page, which lists `Book_2_High_Value_Hybrid_2026-11-17.pdf` at **1 MB displayed**. This verifies receipt arrival and the receipt-to-customer-page route.
+
+The normal customer **Download** action navigated to Payhip's file host, where Chrome displayed **“This page has been blocked by Chrome”** and **`ERR_BLOCKED_BY_CLIENT`**. No inspectable customer PDF bytes were obtained. No security-block bypass was attempted. The cause beyond this observed client block is not established. The displayed filename and rounded size do not establish file identity, and no downloaded-PDF match or reading pass is claimed.
+
+A fresh Payhip marketing readback shows the Book 2-only **100% coupon at 1/1 used**, with its displayed **November 21** end date unchanged. The original cart was restored to **Book 1 only, quantity 1**; the visible cart badge is 1, with the Book 1 line and cart total both **USD 19.99**. These are completed observations, not additional open gates.
+
+**Remaining action:** obtain the PDF from this existing receipt through the normal authorized customer route and provide that actual downloaded file for comparison with the approved **33-page, 1,404,736-byte** master, SHA-256 `7c6fdaa1f922e47a56aaeeded4f606071a4567c8efde94526eea5914dc869c4d`. No repeat checkout or receipt-link test is needed. Keep #5 **open at 8/9** until the delivered-version criterion is supported by actual file evidence.
+
+The buyer's address, order identifier, coupon code, receipt/access URLs and paid PDF remain private. The accepted content, master QA, listing/cover/configuration, Book 1/Contact destinations and #6/#7 retain-and-revise decision are preserved. #4 remains 10/10, #13 13/13 and #16 17/17. Existing reader/device UAT and evidence-led collection production remain separate; this zero-total test does not establish paid demand or reader acceptance.
 
 ### #5 proposed position and editorial work
 
@@ -1340,21 +1356,24 @@ The table below preserves findings from the 47-page original. The approved corre
 | 21, 33 | Check the original layout and repair promised next sections: the extracted sequence does not supply the promised next niche matrix or interview chapter. Image-only material was not visually audited in this source-text review. |
 | 22–25, 34–37, 40–41 | Narrow the promise to career evidence and preparation; distinguish short tool practice from mastery and reduce overlap with the main eBook's boundaries/communication guidance. |
 
-**Current action:** finish the remaining actual Book 2 receipt/download identity check through an
-authorized buyer path and record the delivered version. The configuration/listing steps are already
-published and verified; repeat neither the accepted final-master QA nor main-eBook #4. A saved
-filename and rounded size do not prove the customer file hash. The source findings above refer to
-the original 47-page content and are addressed in the owner-approved corrected edition. #5 is
-**8/9** after the #6/#7 retain-and-revise decision updates. #16’s paid-support scope is now approved
-at **17/17**; actual Book 2 delivery, existing UAT and evidence-led collection production remain separate.
+**Current action:** obtain the actual customer PDF from the existing Book 2 receipt through the normal
+authorized route and compare it with the approved final master. The November 17 Book 2-only USD 0.00
+checkout and actual receipt-to-customer-page link passed; Chrome blocked the PDF transfer with
+`ERR_BLOCKED_BY_CLIENT`, leaving no inspectable bytes. No repeated order or receipt-link test is needed.
+Preserve the accepted listing/configuration, final-master QA and main-eBook #4 results. The source
+findings above refer to the original 47-page content and are addressed in the corrected edition.
+#5 stays **8/9**. #16 remains **complete at 17/17**; reader/device UAT and evidence-led collection
+production keep their separate gates.
 
 ### #5 listing content published — November 17, 2026
 
 The owner-approved corrected contents/subtitle, cover and listing are now published at
 [High-Value Hybrid](https://payhip.com/b/ryYbl), retaining **USD 19.99**. The reloaded public page
 confirms the format, five outputs and optional positioning represented in the copy below. The
-published access/help wording and its platform-documentation basis are recorded above. No Book 2
-receipt arrival or actual customer download was tested, and no response-time/refund promise was added.
+published access/help wording and its platform-documentation basis are recorded above. At that
+publication check no Book 2 receipt arrival or actual customer download was tested; the later buyer
+record above verifies checkout/receipt access and identifies the blocked customer-PDF transfer.
+No response-time/refund promise was added.
 
 > **The High-Value Hybrid: Skills Evidence for Your Next Remote Role**
 >
@@ -1389,9 +1408,10 @@ receipt arrival or actual customer download was tested, and no response-time/ref
 
 Publication and saved/public readback are complete. The body Book 1 link actually reached the
 correct main-eBook page; the Contact link destination matches the independently opened store form.
-The public access guidance is platform-documented, not a tested Book 2 receipt. Keep the actual
-customer receipt/download identity criterion open. The separate paid-support scope is now approved
-under #16; that approval does not verify the Book 2 receipt/download.
+The access guidance was initially verified against platform documentation. The later actual buyer
+receipt/link check passed, but Chrome blocked the customer PDF transfer. Keep the delivered-file
+identity criterion open at 8/9 pending comparison of the actual PDF from the existing receipt.
+The separate paid-support scope is complete under #16; reader/device UAT remains open.
 
 ### Existing-companion retain-and-revise decision — November 17, 2026
 
@@ -1399,7 +1419,7 @@ under #16; that approval does not verify the Book 2 receipt/download.
 
 The reuse boundary is now concrete. The free Starter Kit already covers initial work fit, skills evidence and role comparison on pages 3–5. The corrected companion provides deeper skills/evidence work and truthful examples on pages 6–12, role comparison on pages 13–15, and a bounded practice project on pages 16–18. Use those materials in the inventory before proposing another skills worksheet. Any additional #7 resource must serve an observed missing reader outcome beyond these materials, supported by #14/#15 and an explicit #6 scope decision.
 
-The Book 2 listing and saved file configuration are now published and verified under #5. The configured filename/rounded size are recorded there; an actual customer receipt/download identity remains unverified. This reuse decision does not establish that remaining check.
+The Book 2 listing and saved file configuration are published and verified under #5. The later zero-total checkout and actual buyer-receipt link also passed. Chrome blocked the normal customer PDF transfer; actual delivered-file identity remains unverified until the PDF from that existing receipt can be compared. The reuse decision does not establish that remaining check.
 
 Keep #6 In Progress at 3/9. The full asset inventory, reader/experiment evidence and collection decision remain open; no new collection assets, price, packaging or production authorization are adopted. #7–#10 remain conditional. Book-content approval/publication did not complete #16’s separate paid-support scope; the later operating approval above now completes #16. Existing UAT and evidence-led collection requirements remain open.
 
@@ -1414,8 +1434,10 @@ Keep #6 In Progress at 3/9. The full asset inventory, reader/experiment evidence
 
 The available relayed reader feedback supports clearer directions and additional-part-time search
 help. It does not supply the full #15 sample, #14's completed four-week findings, paid demand or a
-validated price. **Recommend deferring collection production** while completing #5’s actual
-customer receipt/download identity check and collecting that evidence; the corrected listing/configuration is already published. No collection assets or price are adopted. #7–#10 remain conditional;
+validated price. **Recommend deferring collection production** while completing #5's remaining
+customer-PDF identity comparison and collecting that evidence. The corrected listing/configuration,
+zero-total checkout and actual buyer-receipt access are already verified; Chrome blocked the PDF
+transfer. No collection assets or price are adopted. #7–#10 remain conditional;
 #6 cannot close from inventory preparation alone.
 
 Prepared review standards for any later selection: name one distinct outcome, verify truthful
