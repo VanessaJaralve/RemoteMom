@@ -30,14 +30,15 @@ requires the separate #2–#4 and Stage 2 #16 checks in the roadmap; it is not n
 The [download page](../../landing/launchpad/download/index.html) links the existing
 [Facebook profile](https://www.facebook.com/VanJaralve) and
 [Instagram profile](https://www.instagram.com/vdjaralve/). The November 16 profile-route check below
-records their observed link destinations and the saved Facebook correction. Broader posting capability,
+records the original destinations and saved Facebook correction. The November 17 update records the
+Instagram destination correction and remaining tracking gap. Broader posting capability,
 Story placement, audience, and traffic reporting are not established by that check. This pack prepares
 those two channels only. Pinterest is not in this posting plan, and email remains deferred under #24.
 
 | Placement | Prepared use | Check before publication |
 |---|---|---|
 | Facebook | A text post with the complete matching Facebook URL in the caption. Existing art is optional where its audience fits | Confirm the intended account, then open the actual post link in a normal browser and check the destination and all three UTM values |
-| Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story or profile-link change has been made |
+| Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story has been published; the November 17 bio correction and remaining tracking gap are recorded below |
 | Instagram feed or shared bio link | An optional adaptation after the actual route is decided | A rotating shared bio link does not reliably identify which older feed post caused a visit. Record the link's active dates and report it as bio-link traffic; do not claim exact feed-post attribution |
 
 **Existing visual assets:** visual inspection on November 16 found that all four committed PNGs
@@ -63,10 +64,10 @@ These are separate from the **24 holiday post links**. Use `launchpad-profile` f
 profile placement; it does not identify an individual older feed post. Record any later replacement
 and its effective date before interpreting a reporting period.
 
-| Channel | Exact link | State at this check |
+| Channel | Exact registered link | Current state — November 17 |
 |---|---|---|
 | Facebook | [Current Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Saved and actual desktop profile route verified** |
-| Instagram | [Prepared Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Direct URL verified; mobile bio replacement and actual route pending** |
+| Instagram | [Registered Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile) | **Launchpad destination verified from the actual desktop profile; registered tracking values not retained. Exact full-URL mobile replacement and route verification remain open** |
 
 For the Facebook correction, only the Starter Kit URL changed. The link description, public audience,
 and other consulting link were preserved. The previous Starter Kit URL was
@@ -77,8 +78,40 @@ No form was submitted, no download initiated, and no holiday post/Story publishe
 these checks. The old Instagram toolkit's signup and delivery were not tested. No reporting service
 was enabled; existing persisted request rows remain the source for confirmed-request counts under
 #13's QA/duplicate rules. Visits, form starts/errors, PDF clicks, conversion, and drop-off remain
-unmeasured. #13 stays open for the remaining channel routes, reporting-source decision, and weekly
-reporting; this profile maintenance does not pass the campaign readiness gate.
+unmeasured. At this November 16 check, #13 stayed open for the remaining channel routes,
+reporting-source decision, and weekly reporting; this profile maintenance does not pass the campaign
+readiness gate.
+
+### Instagram bio destination correction — 2026-11-17
+
+**Recorded November 17 at 10:16 Asia/Manila (02:16 UTC).** Vanessa reported replacing the bio link on
+her phone. An actual click from [the Instagram profile](https://www.instagram.com/vdjaralve/) in
+desktop Chrome now reaches `https://remote-mom.vercel.app/launchpad/`. The hero Starter Kit action
+reaches `#starter-kit` with the same query values. This corrects the previously observed destination,
+but the registered tracking values are not retained:
+
+| Parameter | Registered profile value | Actual desktop route value |
+|---|---|---|
+| `utm_source` | `instagram` | `ig` |
+| `utm_medium` | `organic_social` | `social` |
+| `utm_campaign` | `launchpad-profile` | Absent |
+| `utm_content` | Not part of the registered link | `link_in_bio` |
+
+The owner desktop editor's disabled Website field displayed `remote-mom.vercel.app/launchpad`
+without a query, and the page explicitly required the mobile app to edit links. This records the
+visible field and route; it does not establish hidden platform behavior or why the values differ.
+Platform-added click identifiers are omitted. The exact time the mobile change took effect was not
+supplied; November 17 is the user-reported change date and this is the first observed corrected route.
+
+**Remaining action:** on mobile, replace the Website URL with the complete
+[registered Starter Kit profile URL](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile),
+including all three query parameters, save it, then verify a fresh click from the actual profile and
+the `#starter-kit` continuation. **#13 remains 12/13 / Open / In Progress** until that tracking check
+passes. Future post/Story placement checks remain under #14 when used.
+
+No form was submitted. This desktop result does not verify the Instagram mobile in-app route, create
+a request, establish UAT acceptance, or change the existing baseline/report figures. Missing campaign
+values must stay missing; do not reinterpret this route as `launchpad-profile` attribution.
 
 ## Four-week calendar
 
