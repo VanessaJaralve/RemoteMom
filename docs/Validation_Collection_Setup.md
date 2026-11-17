@@ -293,14 +293,15 @@ November 23, 2026**, for **November 16 00:00–November 23 00:00 Asia/Manila**. 
 four campaign weeks. The first planned campaign week remains November 23–30, with its review on
 November 30 if the campaign proceeds through its existing gates.
 
-**Current #13 acceptance: 12/13; Open / In Progress.** The source/counting decision and weekly-report
+**Current #13 acceptance: Completed, 13/13 under the approved request-only scope.** The source/counting decision and weekly-report
 preparation criteria are satisfied under this approved limited scope, using the completed pre-launch
-example and the adopted manual routine. Vanessa reported changing the Instagram bio on November 17;
-the actual desktop route now reaches Launchpad, but retains `ig / social` with no campaign rather
-than the registered `instagram / organic_social / launchpad-profile` values. The actual-channel route
-criterion remains open for one exact full-URL mobile replacement and verification. Future post/Story
-placement checks remain under #14 when used. Future reports still require actual extraction and
-review; this approval does not claim they have happened.
+example and the adopted manual routine. The November 17 check at **10:42 Manila (02:42 UTC)** reloaded
+the actual Instagram profile and verified its saved link to Launchpad, then the `#starter-kit` hero
+continuation, retaining `instagram / organic_social / launchpad-profile`. Together with the verified
+Facebook profile route, this completes the initial actual-channel criterion. The earlier 10:16
+Instagram tracking gap remains dated history in the campaign record. Future post/Story placement
+checks remain under #14 when used. Future reports still require actual extraction and review; this
+readiness result does not claim they have happened or establish mobile in-app or UAT acceptance.
 No assistant automation, reminder, analytics service, paid plan, permission change or campaign launch
 is created by this operating decision.
 
@@ -403,8 +404,9 @@ established by those account links. Pinterest and email are not in the prepared 
 
 Use the post's registered link when its actual placement is approved and record that real route in
 the campaign publication log. A changing Instagram bio link cannot reliably identify the originating
-older feed post; report its observed active interval and route limitation. The full #13 channel-link
-criterion remains open for the actual platform routes.
+older feed post; report its observed active interval and route limitation. At this November 16
+direct-link check, the full #13 channel-link criterion remained open for actual platform routes;
+the later dated profile checks below complete initial readiness. Future placements remain with #14.
 
 ### Reporting capability decision — 2026-11-16
 
@@ -517,18 +519,19 @@ do not complete #13 or authorize campaign publication. No analytics service has 
 
 ### Pre-UAT measurement readiness — 2026-11-17
 
-After Vanessa's November 17 approval, #13 is **12/13; Open / In Progress** under the explicitly
-approved request-only scope above. The reporting-source decision and weekly-owner/cadence preparation
-are resolved. Full-funnel goals remain documented as deferred and unmeasured. The November 17 actual
-Instagram route reaches the correct destination but lacks the registered campaign and uses different
-source/medium values, so the actual channel-route criterion remains open. Later reports and campaign
-results require their own observed evidence.
+After Vanessa's November 17 approval and the **10:42 Manila (02:42 UTC)** Instagram route verification,
+#13 readiness is **Completed, 13/13** under the explicitly approved request-only scope above. The
+reporting-source decision, weekly-owner/cadence preparation, and current Facebook/Instagram profile
+routes are complete. The earlier 10:16 Instagram mismatch is preserved as superseded evidence in the
+campaign record. Full-funnel goals remain documented as deferred and unmeasured. Future post/Story
+placement checks and campaign results remain under #14; future manual reports still require actual
+extraction and review.
 
 | Work item | Current evidence | Remaining action / category |
 |---|---|---|
 | Campaign and profile link preparation | The existing register contains 24 holiday URLs across 12 post IDs, with a Facebook and Instagram variant for each, plus two separate profile URLs. A November 17 static check passed the destination, exact three supported UTM keys, allowed source/medium values, unique post coverage, and 100-character limits. Earlier November 16 HTTP and browser checks remain the live direct-link evidence | Preparation complete. No additional tracking code is needed merely to preserve the registered parameters |
 | Existing Facebook profile route | The November 16 actual desktop profile click and signup-anchor continuation retained the registered `facebook / organic_social / launchpad-profile` values | Desktop route complete for the recorded placement. Check other actual placements when used; do not infer mobile-app routing from this result |
-| Existing Instagram profile route | November 17, recorded at 10:16 Manila (02:16 UTC): Vanessa reports changing the bio on her phone. The actual desktop profile click reaches Launchpad and the hero action reaches `#starter-kit`, both retaining `utm_source=ig`, `utm_medium=social`, `utm_content=link_in_bio`, and no `utm_campaign`. The owner editor's disabled Website field displays `remote-mom.vercel.app/launchpad` without a query and explicitly requires mobile editing. No form was submitted | Destination correction verified; registered tracking remains incomplete. On mobile, paste the [complete registered URL](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-profile), save, then verify the actual profile click and signup-anchor continuation with all three expected values. This does not verify the mobile in-app route or establish why the displayed values differ. See the [dated profile record](../marketing/launchpad-social/holiday-2026-campaign.md#instagram-bio-destination-correction--2026-11-17); click identifiers are omitted |
+| Existing Instagram profile route | November 17 at 10:42 Manila (02:42 UTC): the reloaded actual profile's saved link reaches Launchpad with `utm_source=instagram`, `utm_medium=organic_social`, and `utm_campaign=launchpad-profile`; the hero action reaches `#starter-kit` retaining all three. Instagram also supplies `utm_content=link_in_bio`. No form or PDF operation was performed | Current desktop profile route complete. The earlier 10:16 missing-campaign/source-medium mismatch remains superseded history. Mobile in-app behavior and UAT are not inferred. See the [successful verification](../marketing/launchpad-social/holiday-2026-campaign.md#instagram-tracking-verification--2026-11-17) and [earlier result](../marketing/launchpad-social/holiday-2026-campaign.md#instagram-bio-destination-correction--2026-11-17); private click identifiers are omitted |
 | Future campaign post and Story routes | All direct URLs are prepared; no holiday posts or Stories have been published | Placement check with #14 when each real placement is used. Prepared URLs are not evidence of a published route |
 | Request attribution and counting | The current browser, endpoint, and eleven-column destination contract retain stage, challenge, source, and bounded UTMs. QA exclusions, unknown/unattributed handling, and five-minute duplicate-review rules are documented above | Ready for reporting against the authorized request source. Keep raw requests primary; do not infer visits, subscribers, or completed downloads |
 | Traffic, starts, errors, and PDF clicks | No verified reporting source is available; the last observed Vercel configuration was disabled. The present source stores none of these event totals | **Resolved scope decision:** Vanessa approved request-only reporting November 17. These metrics, completed downloads, conversion and drop-off stay **not measured**; full-funnel implementation is deferred until a separate source/scope/cost decision |
@@ -581,10 +584,11 @@ scheduled report, or email workflow was created or changed.
 
 At the time of this extraction, #13 was **Open / In Progress, 10/13**. Vanessa's later November 17
 approval above resolves the request-only scope and manual reporting owner/cadence, bringing the
-approved-scope acceptance at that point to **12/13**. It remains **12/13** after the November 17
-Instagram check: the destination is corrected, but the registered tracking values are not retained.
-This report's figures and limits are unchanged; future placement checks and campaign reporting
-remain under the planned #14 work and observation windows.
+approved-scope acceptance at that point to **12/13**. The November 17 Instagram destination check at
+10:16 retained that status because the registered tracking values were missing. The later actual
+profile and signup-anchor verification at **10:42 Manila** retained all three expected values,
+completing initial #13 readiness at **13/13**. This report's figures and limits are unchanged; future
+placement checks and campaign reporting remain under the planned #14 work and observation windows.
 
 ## Preview Behavior
 
