@@ -10,7 +10,7 @@ remains the source of truth for priorities and release gates.
 
 ## Campaign decision
 
-**Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261116b` (released through [PR #32](https://github.com/VanessaJaralve/RemoteMom/pull/32); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
+**Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261117b` (released through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
 **Primary action:** request the kit at the Launchpad page and download it after confirmation.
 **Learning goal:** learn which practical topics lead to confirmed kit requests and useful reader
 feedback across the two audience paths. No numerical request or sales forecast is assumed.
@@ -401,10 +401,13 @@ or identifiable reader interviews in this record.
 
 ## Weekly review routine
 
-Proposed cadence is a manual Monday review of the previous complete Monday-to-Monday period in
-Asia/Manila. This aligns with the [prepared #13 reporting method](../../docs/Validation_Collection_Setup.md#prepared-manual-weekly-reporting-routine--2026-11-16)
-and is not a scheduled automation. Reporting and support ownership still need the operating
-confirmation tracked under #13/#16; this document does not invent that confirmation.
+Vanessa has approved manually reviewing confirmed Starter Kit requests each Monday for the previous
+complete Monday-to-Monday period in Asia/Manila, using the [#13 reporting method](../../docs/Validation_Collection_Setup.md#prepared-manual-weekly-reporting-routine--2026-11-16).
+The first regular review is November 23 for November 16–23; the campaign-week windows below remain
+unchanged. This is the approved request-only reporting scope, not a scheduled automation or a completed
+future report. Under Stage 1 #16, Vanessa’s daily inbox review, unresolved-case ownership and one
+private email thread per case are also already approved. The separate paid-buyer review-scope
+extension remains open. See the [approved arrangements in the business roadmap](../../docs/launchpad-business/README.md).
 
 | Review | Start inclusive | End exclusive | Planned review date | Status |
 |---|---|---|---|---|
@@ -435,10 +438,11 @@ prepared links, a publication-log structure, and dated weekly review windows. So
 current Launchpad/download HTML and the reviewed ten-page kit inventory. The existing four PNGs
 were visually inspected and their regional reuse limits recorded.
 
-Before posting, finish the existing Stage 1 evidence in #11/#13/#18/#19 and Stage 1 #16, confirm the
-actual channel placements and operating arrangement, and test the real social-to-site route. This
-file does not claim those gates, physical-device/reader tests, reporting setup, publication,
-four weeks of results, or paid-offer checks are completed. #14 remains open for the experiment.
+Before posting, finish the remaining Stage 1 reader/device acceptance in #11/#18/#19, confirm the
+actual channel placements, and test the real social-to-site route. #13 is complete under the approved
+request-only measurement scope, and Stage 1 #16 operating commitments are already complete. These
+accepted checks do not complete the remaining reader/device acceptance, publication, four weeks of
+results, or paid-offer requirements. #14 remains open for the experiment.
 
 **Change record — November 16:** created this single campaign asset file because the repository
 contained the PNG assets and a historical Week 1-copy completion note but no reusable caption or
