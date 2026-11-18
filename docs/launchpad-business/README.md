@@ -36,16 +36,17 @@ Serve both Philippine and international audiences, with localized examples, plat
 
 ## Pre-UAT execution — 2026-11-17
 
-Vanessa asked to finish feasible work in the existing issues before UAT. Project 1 now uses
-**Ready for UAT** for implementation-complete work whose original reader/device acceptance remains
-open. #11, #18 and #19 have that status; none is closed. The counts below refer to current acceptance
-criteria, not historical task lists. Preparation does not activate UAT, promotion or new offers.
+Vanessa asked to finish feasible work in the existing issues before UAT. **Updated November 18:**
+her current-edition phone/saved-copy report completes #11 at **12/12** and #19 at **22/22**, alongside
+the accepted technical evidence. #18 remains **Ready for UAT, 11/12** for representative-reader
+wording. The counts below refer to current acceptance criteria, not historical task lists; linked
+issues record integration and closure. This acceptance update does not publish a campaign or new offer.
 
 | Issue | Current status and completed/prepared work | Remaining work or acceptance boundary |
 |---|---|---|
-| #11 — Starter Kit | **Ready for UAT, 10/12**; PR #33 / `reader-clarity-v4` / `20261117b` is released and technically verified | Physical-phone/saved-PDF readability and dated device/app evidence remain with #19. The missing editable master has its accepted linked follow-up; print/accessibility limits remain explicit. |
+| #11 — Starter Kit | **Completed acceptance, 12/12, November 18**; PR #33 / `reader-clarity-v4` / `20261117b` technical evidence plus Vanessa’s Android Oppo / WPS-PDF report: pages 1–10 clear, no issue opening, saved and reopened successfully | Owner-reported phone evidence is shared with #19; edition is attributed to the requested-check context. Exact model/browser/zoom were not separately reported. Static/untagged, missing-master, paper-output and screen-reader limits remain explicit. |
 | #18 — challenge choices | **Ready for UAT, 11/12**; taxonomy, compatibility, production mapping, keyboard and technical checks complete | Representative readers must assess the actual stage/challenge wording. F1 does not establish their selections or both planned sessions. |
-| #19 — free-kit journey | **Ready for UAT, 20/22**; collection/recovery, keyboard, copy/continue, links and current public-file checks complete; focused recheck 77/77 | Current-edition physical-phone/saved-PDF readability and final acceptance remain open. Prior user-reported keyboard and older-file evidence keep their original scope. |
+| #19 — free-kit journey | **Completed acceptance, 22/22, November 18**; accepted collection/recovery, keyboard, copy/continue, links and public-file checks plus Vanessa’s all-page phone/readability and saved-copy report, with no critical issue reported | #18 representative-reader wording remains a separate campaign prerequisite. Earlier keyboard and older-file evidence keep their original scope; no new agent-observed device test, PDF inspection or automated test run is claimed. |
 | #2/#3 — main eBook | **Completed**; approved 36-page edition, supplied-file match, seven-page preview and policy published | Do not repeat this completed identity/preview work. #4 is now complete for its approved scope; Stage 2 #16 is also complete following the paid-scope approval below. Product-specific acceptance and actual campaign publication retain their own requirements. |
 | #4 — main eBook delivery/recovery | **Completed, 10/10** for the approved main-eBook zero-total, signed-in test. November 17 receipt-link verification and the dated friction review below complete the original criteria | Live charging and guest checkout were outside the approved test. Resend, credit-reset, refund and automated-update operations were not exercised; these are limits, not additional criteria for this completed scope. |
 | #5 — High-Value Hybrid | **In Progress, 8/9**. Approved corrected 33-page master and Payhip listing/cover/configuration remain verified at USD 19.99. November 17, 20:48 Manila: Book 2-only USD 0.00 checkout and actual buyer-receipt link access succeeded | Chrome blocked the normal customer PDF download with `ERR_BLOCKED_BY_CLIENT`; no inspectable PDF bytes were obtained. Obtain the actual PDF from the existing receipt and compare it with the approved master. Do not repeat checkout/receipt testing or infer identity from filename/rounded size. QA order excluded from sales/demand evidence; #16 and reader/device UAT remain separate. |
@@ -58,11 +59,46 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #39 — source/build reconciliation | **Paused—originals unavailable; open at 3/7**. Signed-in Expo details identify the reported commit references and retained 0.1.2 (3) build configuration. Firebase 0.1.2 (3) upload/no testers and 0.1.1 (2) prior distribution remain verified | On November 18, Vanessa confirmed she does not have the original September 13, 2026 project folder/source archive or original 0.1.2 APK. Criteria 4–7 remain unpassed; exact uploaded source/uncommitted delta and artifact/hash/source relationships remain unproven. The earlier retrieval requests are paused. |
 | #43 — Today medicine-status correction | **Completed source implementation, November 18.** Verified at the [PR #44](https://github.com/VanessaJaralve/RemoteMom/pull/44) code head: actual-function harness 13/13; App checks 446/446 tests in 34/34 suites, TypeScript and Android JavaScript/assets export passed | The linked PR and issue record integration and acceptance status; the final PR head is subject to the required App checks merge gate. The harness is not React/provider/device evidence. Automatic clock, midnight and foreground refresh, APK/release and all reader/UAT/product gates remain separate. |
 
-The support and reporting owner choices below are now approved. Finish the remaining source/editorial
-and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion.
+The support and reporting owner choices below remain approved. #11/#19 acceptance is complete;
+#18 representative-reader wording remains the outstanding reader-acceptance prerequisite for #14.
+Actual post/Story placement and route checks still apply before publication.
 The main-eBook #4 and Stage 2 #16 gates are complete. Applicable product-specific delivery
 requirements still govern paid promotion; recording support approval does not publish a campaign. The dated November 16–20 plan and
 release evidence below remain history and planning context, not automatic launch authorization.
+
+## User-reported phone acceptance — November 18, 2026 (Asia/Manila)
+
+Vanessa directly answered the requested check of the current ten-page Starter Kit, edition
+`20261117b`, with the following result:
+
+| Evidence field | Owner-reported result |
+|---|---|
+| Phone / operating system | Android Oppo; precise Oppo model and Android version not specified |
+| PDF app | WPS-PDF; browser not reported |
+| Pages inspected | All pages 1–10 |
+| Readability | Clear; zoom level not separately specified in the reply to the normal-viewing check |
+| Opening | Opened the PDF with no issue reported |
+| Saved copy | Saved and reopened successfully |
+| Version attribution | `20261117b` from the explicit requested-check/reply context; no new file upload, byte inspection or screenshot supplied |
+
+This is **owner-reported acceptance**, not an agent-observed phone session. Reuse this one dated
+result for #11 and #19. Together with their existing technical and production evidence, it completes
+**#11 at 12/12** and **#19 at 22/22**. No critical problem was reported in the remaining check; the
+previous bounded technical review had no known unresolved implementation defect. Earlier pending
+phone/saved-copy statements below retain their historical dates and are superseded for the current
+acceptance status by this report. The linked issues record integration and closure.
+
+The existing print/accessibility assessment remains bounded: the PDF is static and untagged; paper
+output and screen-reader behavior are untested, and the editable-master limitation remains. The
+report does not establish representative signup-wording comprehension, a completed R1/R2 session,
+the broader #15 study, Book 2 delivered-file identity or physical-device app/APK behavior. #18 stays
+**11/12 Ready for UAT** and #15 fieldwork remains deferred. #14 stays **3/8 prepared, not published**;
+its remaining reader-acceptance prerequisite is #18, with actual placement/route checks still due.
+
+**Change record:** updated the current status table, existing project checklist, product brief and
+current support/artifact references from this report. No source code, PDF bytes, customer records or
+app-local data changed. Existing technical passes, historical release evidence, approved support and
+manual reporting arrangements, Book 2's 8/9 boundary and #39's paused 3/7 status are preserved.
 
 ## Approved app follow-ups — 2026-11-18 (Asia/Manila)
 
@@ -506,10 +542,10 @@ next action, and readable inspected pages on the actual phone.
 
 - Record page coverage explicitly. Opening the PDF alone does not establish readability.
   A partial review does not establish all-page readability or successful reopening of a saved copy.
-- If the full physical-phone reading check is completed, record that all ten pages of the actual
-  reviewed edition (`20261117b` for the next correction retest) were inspected, the device/app,
-  zoom use, and any limitations. Otherwise retain
-  the unchecked pages and saved-copy result as open under #11/#19.
+- For each later reader review, record the actual edition, pages inspected, device/app, zoom use
+  and saved-copy result, with unreviewed parts marked Not checked for that session. The accepted
+  November 18 owner report already completes #11/#19 phone and saved-copy criteria; a later
+  partial session does not reopen those passed criteria. Record any new concrete defect for triage.
 - The expected route is the free PDF after confirmed signup, with no automatic kit email,
   marketing subscription, or app-beta enrollment. These are facilitator interpretation notes;
   ask the neutral expectation question before explaining the route.
@@ -560,18 +596,19 @@ complete an intended step; identify that step and keep acceptance open. A step t
 remains **Not checked**, with its missing evidence explicit. These labels organize actual findings;
 they do not add new acceptance criteria or turn an incomplete session into a pass.
 
-Reuse the same dated physical-phone/saved-file evidence for #11 and #19 rather than repeating it.
-Record actual choices and the reader's understanding for #18. Partial page coverage cannot close
-the all-page phone-reading requirement; list the untested pages and saved-copy result as open.
-Preserve #11 at 10/12, #18 at 11/12, #19 at 20/22 current criteria and #15 at 0/9 until actual
-evidence changes the relevant item. The existing full-study and promotion boundaries below apply.
+Reuse the accepted November 18 physical-phone/saved-file evidence for #11 and #19. Record actual
+choices and the reader's understanding for #18. Any additional reader session keeps its own page
+coverage and untested scope; it does not replace or invalidate the accepted owner device evidence.
+The November 18 owner-reported phone acceptance now completes #11 at 12/12 and #19 at 22/22.
+Preserve #18 at 11/12 and #15 at 0/9 until their separate reader evidence changes the relevant item.
+The existing full-study and promotion boundaries below apply; the owner phone result does not fill R1/R2 slots.
 
 Link actual findings to #18 and relevant device evidence to #11/#19. This initial two-reader
 check does not close #15's **5-10-reader** study, its broader synthesis/paid-value questions, or
 the #6 build/revise/defer recommendation. It does not validate pricing or demand. **#13 is complete at 13/13** and **#16 is complete at
 17/17** (Stage 1 **10/10**, Stage 2 **7/7**); preserve those accepted checks. The #14 free-kit
-campaign still requires the remaining #11/#18/#19 reader/device acceptance and actual post/Story
-placement and route checks.
+campaign still requires #18 representative-reader wording and actual post/Story placement and route
+checks; #11/#19 acceptance is complete as recorded in the November 18 report.
 
 ### Three-page facilitator handout prepared — November 17, 2026
 
@@ -787,7 +824,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 
 | Stage | Focus | Completion gate |
 |---|---|---|
-| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1/#12 are Done, #23 ingestion acceptance is complete, #16 Stage 1 is complete at 10/10, and #13 is complete at 13/13 under the approved request-only scope, including the verified Facebook/Instagram profile routes. Finish #11/#18/#19 acceptance before #14; check future post/Story routes when used. #15 research can run alongside this work |
+| 1. Foundation & free-funnel verification | Both audiences, existing kit, signup permission, measurement, early research, help, and delivery | #1/#12 are Done, #23 ingestion acceptance is complete, #16 Stage 1 is complete at 10/10, and #13 is complete at 13/13 under the approved request-only scope, including the verified Facebook/Instagram profile routes. The November 18 report completes #11/#19; finish #18 representative-reader wording before #14 and check actual post/Story routes when used. #15 fieldwork remains deferred pending availability |
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
@@ -798,12 +835,12 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 **Before the four-week experiment**
 
 - Confirm both audience paths and the page's immediate conversion goal under #1.
-- Review the existing Starter Kit under #11 rather than assume it needs recreating.
+- Preserve the completed #11 Starter Kit acceptance and #19 journey acceptance, including the November 18 owner phone/saved-copy result.
 - Retain the verified kit-request permission decision in completed #12, the released spreadsheet
   safeguard in #23, completed request-only measurement readiness in #13, and completed Stage 1
-  help/file handling in #16. Finish the remaining reader/device acceptance in #11, #18 and #19.
-  Optional email work is #24 Later.
-- Start the 5–10 reader conversations in #15. Inventory reusable assets without committing to new production.
+  help/file handling in #16. Finish #18 representative-reader wording when feedback is available;
+  #11/#19 acceptance is complete. Optional email work is #24 Later.
+- Keep #15 fieldwork deferred pending reader availability. Preserve the prepared inventory without committing to new production.
 
 **During the four-week experiment**
 
@@ -1672,14 +1709,14 @@ and #19 has one verified production signup/collection case. Vanessa confirmed da
 on November 16 and explicitly approved unresolved-case follow-up and one private email thread per
 case on November 17. Her later “please proceed” approves extending that same daily review/private-thread
 workflow to recurring paid-buyer questions/delivery issues and verified help/listing updates, completing
-the final #16 criterion. Remaining #19 coverage and Book 2 delivery identity are separate. The approved
+the final #16 criterion. #19 acceptance is now complete under its separate November 18 record; Book 2 delivery identity remains separate. The approved
 operating arrangement is not evidence of actual customer-case handling.
 The editable master is still missing. #27 records the earlier guarded repair, rebuild/rollback,
 and user-reported phone-link success. The current `reader-clarity-v4` PDF, edition `20261117b`,
 is released through PR #33 with exact public-file, copy/continue and existing-reader access checks.
 Its three destinations are LinkedIn, JobStreet and Launchpad help; the approved beta removal applies
-to the PDF, while the separate website invitation remains. #11/#19 are Ready for UAT with
-physical-phone/saved-file readability and final acceptance still open. The main eBook listing/preview/policy
+to the PDF, while the separate website invitation remains. The November 18 owner phone/saved-copy
+report completes #11/#19 acceptance; #18 representative-reader wording remains open. The main eBook listing/preview/policy
 work is complete under #2/#3. The original buyer-receipt link now reaches the current branded file;
 #4 is complete at 10/10 after the dated friction/evidence reconciliation above.
 The release record below preserves the earlier deployed-help evidence; the later approval above
@@ -1734,18 +1771,19 @@ webhook URLs, and credentials out of GitHub; do not ask for passwords or private
 **Current released distribution — 2026-11-17:** `reader-clarity-v4`, marker `20261117b`, is released
 through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33), merge `ab91375`, with successful
 production deployment, exact public-file readback, desktop/emulated-mobile continuation and
-existing-reader access checks recorded above. Physical-phone and saved-copy review remain open.
+existing-reader access checks recorded above. Vanessa’s November 18 Android Oppo / WPS-PDF report completes all-page phone/readability and saved-copy acceptance.
 The preceding `next-step-v2` artifact, marker `20261116b`, is the immediate rollback;
 [#11 retains its verified PR #32 release evidence](https://github.com/VanessaJaralve/RemoteMom/issues/11).
 The earlier `free-links-v1` artifact and its deployed-byte verification remain historical in
 [#27](https://github.com/VanessaJaralve/RemoteMom/issues/27).
-Detailed physical-phone/saved-PDF readability and final journey acceptance remain open. Git blob
-IDs identify recorded bytes; they do not establish a matching editable master.
+The November 18 owner report completes #11/#19 acceptance; representative-reader wording stays
+separate under #18. Git blob IDs identify recorded bytes, not a matching editable master or the bytes
+on Vanessa’s phone.
 Historical local save/open evidence remains recorded separately below.
 
 | Artifact | Location | Observed identity | Handling |
 |---|---|---|---|
-| Current released distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` at merge `ab91375` | `reader-clarity-v4`, marker `20261117b`, **253,449 bytes**; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` | PR #33 merged and production deployment succeeded. Public PDF identity, three destinations, beta removal, HTML versions, desktop/emulated-mobile continuation and existing-reader access verified. Reader comprehension, physical-phone and saved-copy acceptance remain open |
+| Current released distribution artifact | `landing/launchpad/download/remote-moms-work-fit-safety-starter-kit.pdf` at merge `ab91375` | `reader-clarity-v4`, marker `20261117b`, **253,449 bytes**; SHA-256 `e0c3d9d0db6090bce193911c145b813b4a4cf70135c8a2ba23b1a07e73fe246c` | PR #33 merged and production deployment succeeded. Public PDF identity, three destinations, beta removal, HTML versions, desktop/emulated-mobile continuation and existing-reader access verified. Vanessa’s November 18 owner report supplies all-page Android Oppo / WPS-PDF readability and successful saved-copy reopening for #11/#19. Representative-reader wording stays open under #18 |
 | Previous released artifact / immediate rollback | Same PDF path at commit `297058d259ef008343fb7f67f035c98e8211fad9` | `next-step-v2`, marker `20261116b`, **220,847 bytes**; SHA-256 `5127671ed25672fc7aac4c35a458e4c9d094d3a83876fe631339ad102e1b8cf2` | Restore with its matching script/HTML; #11 retains PR #32 public-file/version and beta-interest/help destination evidence |
 | Earlier released artifact | Same PDF path at commit `2a925932dac419baa529b348ebd62abbdfe8ca7e` | `free-links-v1`, marker `20261116`, **220,834 bytes**; SHA-256 `1bd4cc491b63f2a01c7eb143368eafc29050af69c686ff1a86f47a546d204f37` | Retain with matching script/HTML; #27 supplies the historical release and phone-link evidence |
 | Preserved original rebuild input | Same PDF path at commit `8888c881417b8caac04c20fd6ca03e104e12b52d` | Marker `20261024`, 110,460 bytes; Git blob `1ddd48183d0f9602df55f42c06de0944ee9abad2` | Exact baseline for the guarded patch revisions; do not use a previously patched PDF as input |
@@ -1811,11 +1849,11 @@ remains under #5. This record does not change policy terms.
 | Published Launchpad help/contact route | **Satisfied for the released subset:** both help surfaces, anchors, disclosures/keyboard operation, and visible correct mailto checked on desktop and 390 × 844 mobile | Public links and release evidence below; this does not verify inbox monitoring or email delivery |
 | Inbox monitoring owner/cadence | **Confirmed November 16: Vanessa checks the existing help inbox daily during the campaign** | No repeat ownership/cadence confirmation is needed; this does not establish a response-time guarantee or actual handled-case history |
 | Response expectations and escalation | Manual/no-guaranteed-time wording published; sanitized maintainer escalation documented; Vanessa approved follow-up ownership November 17 | Vanessa follows each unresolved case through resolution or an explicitly recorded handoff. Actual case handling is not claimed by this commitment |
-| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed for an earlier edition; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check. PR #33 adds verified public delivery and desktop/mobile-width continuation for edition `20261117b` | Physical-phone/saved-PDF readability of `20261117b`, the focused reader retest and final #19 acceptance remain open. The current page-10 correction is released and verified through PR #33. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
-| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; guarded revisions have pinned rebuild/rollback records; `reader-clarity-v4` / edition `20261117b` is released and publicly verified through PR #33. `next-step-v2` / `20261116b` from PR #32 is the previous release and immediate PDF rollback target | #27 supplies prior release/phone-link evidence; the November 17 release record above gives the current exact public PDF identity and verification. The editable master remains missing and broader #11/#19 reader, readability and accessibility evidence remains open |
+| Signup/download recovery | Production signup/destination and PDF opening verified; local save/open user-confirmed for an earlier edition; PR #21 supplies controlled failure/recovery tests and #23's production safeguard is verified. November 16 adds live audience/note/copy and keyboard-typeahead checks plus controlled clipboard fallback; Vanessa later confirms the requested arrow-key/Enter check. PR #33 adds verified public delivery and desktop/mobile-width continuation for edition `20261117b` | The November 18 owner phone/saved-copy result completes #11/#19 acceptance; #18 representative-reader wording remains open. The page-10 correction is released and verified through PR #33. November 16 accounting is recorded in the collection guide, with no remote idempotency claim |
+| Master and version handling | Distribution/legacy artifacts distinguished; original provenance identified; guarded revisions have pinned rebuild/rollback records; `reader-clarity-v4` / edition `20261117b` is released and publicly verified through PR #33. `next-step-v2` / `20261116b` from PR #32 is the previous release and immediate PDF rollback target | #27 supplies prior release/phone-link evidence; the November 17 release record above gives the current exact public PDF identity and verification. The editable master remains missing; #11/#19 acceptance is complete from the November 18 owner report, while paper output and screen-reader behavior remain untested |
 | Privacy of support records | **Approved November 17:** one private email thread per case in the existing help inbox, using the documented intake/status/action/resolution fields | Apply the approved rules when support operates. No customer records were created or inspected by recording this decision; public evidence must contain no customer data |
 | Buyer policy, feedback, and update workflow | #4 is complete at **10/10** for the main eBook. Published policy/help, verified replacement download and matched copy, and original receipt access at 14:45 Manila November 17 satisfy the policy/platform criteria. #16 Stage 2 is **7/7**, with the paid-review scope approved November 17 | Apply the approved daily review/private-thread workflow to recurring paid-buyer questions/delivery issues and help/listing updates from verified patterns; record actual cases only when they occur. No new cadence, log, transfer or recovery drill is required. Unexercised resend/credit/refund/automated-email functions remain explicit limits. Keep the main listing as the policy source; #10 remains bundle-specific |
-| Deployment and issue closure | **Completed, 17/17; Stage 1 10/10 and Stage 2 7/7**. The November 17 paid-review scope approval completes the sole remaining operating criterion | #27 is complete. #11/#19 physical-phone/saved-PDF and final journey acceptance, #18 reader wording, and #5 Book 2 delivery identity remain separate. #12 is Done; optional email is #24 Later. No new case handling, recovery action or campaign publication is claimed. |
+| Deployment and issue closure | **Completed, 17/17; Stage 1 10/10 and Stage 2 7/7**. The November 17 paid-review scope approval completes the sole remaining operating criterion | #27 is complete. #11/#19 acceptance is complete under the separate November 18 owner report; #18 reader wording and #5 Book 2 delivery identity remain open. #12 is Done; optional email is #24 Later. No new case handling, recovery action or campaign publication is claimed. |
 
 **Historical draft change record — 2026-11-14:** added the early support process, proposed reuse of the existing
 public email, artifact divergence record, staging-only generation requirement, and release/rollback
