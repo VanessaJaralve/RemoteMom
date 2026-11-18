@@ -422,6 +422,27 @@ the Stage 1 decision above, and the proposed 20:00 Asia/Manila slots are not sch
 publication and weekly-review records when the experiment starts. Email, Pinterest, and paid-product
 promotion are not part of this prepared posting plan.
 
+### Daily campaign cadence — 2026-11-18
+
+At Vanessa's request, the [existing campaign pack](../../marketing/launchpad-social/holiday-2026-campaign.md#daily-cadence-decision--november-18-2026-asiamanila)
+now prepares **one post per day per current campaign account**: Facebook @VanJaralve text posts and
+Instagram @vdjaralve Stories. The proposed **November 23–December 20** window contains **28 daily
+topics, 14 Career and 14 Remote-Life**, with **28 Facebook captions, 28 Instagram Story drafts and
+56 prepared source-specific links**. The proposed time remains **20:00 Asia/Manila**.
+
+Original p01–p12 retain their dates, IDs, copy and 24 links; PR #46 supplied the later six provisional
+captions/Stories. Added p13–p28 fill the remaining 16 dates and supply 32 new links. The November 16
+12-post preparation section above remains historical evidence; this dated decision updates the
+current cadence. The new URLs are format-checked and are not included in the earlier 24-link HTTP
+evidence.
+
+This is content preparation. **#14 remains 3/8, unpublished and unscheduled.** #18's deferred signup
+wording acceptance remains the outstanding pre-publication acceptance gate. #11/#19 remain complete;
+their phone/keyboard checks are not repeated. Book 2, historical Android evidence, optional email and
+the broader #15 study do not block this free-kit-only campaign. Actual post/Story placement checks
+and the existing weekly review method stay with execution. If readiness moves the start, revise
+the dates and holiday wording without backdating or compressing missed posts.
+
 ### Journey checks completed — 2026-11-16
 
 The following checks use the live Launchpad in Chrome and harmless temporary exercise notes.
