@@ -416,6 +416,41 @@ submission checks at the November 15 inventory. The dated direct-link checks bel
 Facebook/Instagram campaign register. Email links remain deferred with #24; no email audience or
 permission is inferred from kit requests.
 
+### Business-account campaign mapping — 2026-11-18
+
+Vanessa added Facebook and Instagram business pages to the daily #14 campaign. The [campaign
+pack](../marketing/launchpad-social/holiday-2026-campaign.md#business-link-register-and-attribution)
+is the canonical account/post/link register. This dated extension preserves the original prepared
+examples, accepted checks and #13's completed request-only readiness scope.
+
+| Placement | Account | Prepared source / medium / campaign |
+|---|---|---|
+| Personal Facebook post | @VanJaralve | Existing `facebook / organic_social / holiday2026-{occasion}-{audience}-pNN` |
+| Personal Instagram Story | @vdjaralve | Existing `instagram / organic_social / holiday2026-{occasion}-{audience}-pNN` |
+| Business Facebook feed post | @TheRemoteMomsLaunchpad | `facebook / organic_social / holiday2026-{occasion}-{audience}-pNN-business` |
+| Business Instagram shared profile link supporting feed posts | @theremotemomslaunchpad | `instagram / organic_social / launchpad-business-profile` |
+
+The 28 business Facebook URLs and one Instagram business profile URL use only the existing
+`utm_source`, `utm_medium` and `utm_campaign` fields. All prepared values fit within 100 characters.
+Read-only source inspection confirms that the existing client/API trim these values to that limit;
+this naming extension adds no field, validator, reporting service or code change. It does not
+retest collection or create a request.
+
+The business Instagram feed captions use the profile-link invitation only with the intended route
+in place and checked under the existing actual-placement workflow. No business bio setting or live
+route was checked or changed by this preparation. Record the exact account, role, format, actual
+publication URL, pNN variant and active profile-link dates in #14's publication record. A shared bio
+route cannot identify the originating feed post or its intended Career/Remote-Life audience; reader
+path, stage and challenge remain separate dimensions. Registered links can also be copied or shared,
+so route labels alone do not prove which account the visitor actually saw.
+
+Preserve older stored campaign values and their observed attribution. Keep the existing Monday
+report windows, QA exclusions, duplicate-review convention and unavailable-metric rules. Do not sum
+overlapping account reach as unique people. The original 24-link HTTP evidence and personal-profile
+checks below retain their original scope. #13 stays complete; business placement checks remain #14
+execution work. #18 stays the deferred reader-wording acceptance gate, and this documentation
+publishes or schedules no content.
+
 ### Holiday direct-link verification — 2026-11-16
 
 The [canonical campaign pack](../marketing/launchpad-social/holiday-2026-campaign.md) now contains

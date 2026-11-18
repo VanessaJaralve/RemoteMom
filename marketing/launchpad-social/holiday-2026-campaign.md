@@ -34,7 +34,48 @@ Refine these drafts using actual first-week results and relevant reader feedback
 This is optional campaign preparation; #14 remains **3/8**, unpublished and unscheduled, and #18's
 wording acceptance remains deferred.
 
+## Business-account expansion — November 18, 2026 (Asia/Manila)
+
+**Current scope: four accounts, one planned placement per account each day.** Vanessa asked to add
+her Facebook and Instagram business pages to the daily free-kit campaign. The proposed
+**November 23–December 20** window now contains **112 placements from 28 daily topics**: 56 Facebook
+posts, 28 personal Instagram Stories and 28 business Instagram feed posts. The 14 Career / 14
+Remote-Life topic balance and proposed **20:00 Asia/Manila** time are retained.
+
+| Account | Daily placement | Prepared material | Four-week total |
+|---|---|---|---:|
+| Personal Facebook — [@VanJaralve](https://www.facebook.com/VanJaralve) | Text post | Existing p01–p28 captions and links, unchanged | 28 |
+| Personal Instagram — [@vdjaralve](https://www.instagram.com/vdjaralve/) | Story with link sticker | Existing p01–p28 Story copy and links, unchanged | 28 |
+| Business Facebook — [The Remote Mom's Launchpad / @TheRemoteMomsLaunchpad](https://www.facebook.com/TheRemoteMomsLaunchpad) | Feed post | New business p01–p28 captions, individual business-tagged links and shared business visual briefs | 28 |
+| Business Instagram — [@theremotemomslaunchpad](https://www.instagram.com/theremotemomslaunchpad/) | Feed card or carousel | New business p01–p28 feed captions, shared-profile CTA, visual briefs and draft alt text | 28 |
+
+The business identities are recorded in Vanessa's **November 8 social audit**. That saved plan
+establishes the business Instagram handle and favors feed education, longer useful captions and
+branded illustrations or object photography. This addition uses that business treatment while
+preserving the personal placements prepared in PR #47. The earlier two-account decision below is
+retained as history; this section updates account coverage and the business formats.
+
+Business variants teach one clear action from the same daily topic, using different openings,
+explanations and visual treatments from the personal versions. They do not invent Vanessa's
+experiences, customer stories or product results. The **28 business visual briefs are not produced
+image files**; they provide exact card/slide wording and draft alt text for production. Use the
+finished asset when recording an actual publication, and adapt alt text to each finished slide.
+
+These are prepared drafts. Business posting capability, the business Instagram profile destination
+and actual social-to-site routes have not been verified or changed in this revision. The accepted
+personal-profile checks below keep their original scope. Use the existing #14 placement/route check
+when these new accounts are used. Earlier social calendars, published introductions, blog plans and
+other platforms are unchanged; this file records the current #14 free-kit campaign.
+
+**#14 remains 3/8, with no campaign post published or scheduled.** #18's deferred signup-wording
+review remains the pre-publication reader-acceptance prerequisite. #11/#19 stay complete, with all
+accepted phone and keyboard evidence retained. The wider #15 study, Book 2, historical Android
+evidence and optional email do not block this free-kit-only campaign.
+
 ## Daily cadence decision — November 18, 2026 (Asia/Manila)
+
+**Earlier two-account baseline — PR #47.** Retained for history; the business-account expansion
+above governs the current four-account scope.
 
 Vanessa requested a daily post across the social accounts. This revision prepares **one Facebook
 post and one matching Instagram Story each day**, using the two accounts already in this campaign:
@@ -79,13 +120,16 @@ The [download page](../../landing/launchpad/download/index.html) links the exist
 records the original destinations and saved Facebook correction. The November 17 records preserve the
 earlier Instagram tracking gap and its successful 10:42 Manila verification. Broader posting capability,
 Story placement, audience, and traffic reporting are not established by these checks. This pack prepares
-those two channels only. Pinterest is not in this posting plan, and email remains deferred under #24.
+Facebook and Instagram across the four accounts listed above. The personal-account placements in
+the table below retain their prepared formats; the business feed placements and their link mapping
+are documented in the business sections. Pinterest is not in this posting plan, and email remains
+deferred under #24.
 
 | Placement | Prepared use | Check before publication |
 |---|---|---|
-| Facebook | A text post with the complete matching Facebook URL in the caption. Existing art is optional where its audience fits | Confirm the intended account, then open the actual post link in a normal browser and check the destination and all three UTM values |
-| Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story has been published; the corrected bio's desktop route and registered tracking were verified November 17 at 10:42 Manila |
-| Instagram feed or shared bio link | An optional adaptation after the actual route is decided | A rotating shared bio link does not reliably identify which older feed post caused a visit. Record the link's active dates and report it as bio-link traffic; do not claim exact feed-post attribution |
+| Personal Facebook | A text post with the complete matching Facebook URL in the caption. Existing art is optional where its audience fits | Confirm the intended account, then open the actual post link in a normal browser and check the destination and all three UTM values |
+| Personal Instagram | The short Story card text supplied for each holiday post, with its matching Instagram URL in a link sticker if that placement is available | Confirm the account supports that placement and test the actual published link route. No Story has been published; the corrected bio's desktop route and registered tracking were verified November 17 at 10:42 Manila |
+| Instagram feed or shared bio link | Business feed captions use the proposed shared-profile route below; a personal-feed adaptation is separate from the retained Story plan | A rotating shared bio link does not reliably identify which older feed post caused a visit. Record the link's active dates and report it as bio-link traffic; do not claim exact feed-post attribution |
 
 **Existing visual assets:** visual inspection on November 16 found that all four committed PNGs
 in this directory retain “For Filipino moms exploring remote work”; the first two use Tagalog
@@ -106,8 +150,9 @@ route check and link correction, separate from publishing any holiday post or St
 
 #### Profile-link register
 
-These are separate from the **56 prepared campaign post links** (24 original links plus 32 added
-for the November 18 daily cadence). Use `launchpad-profile` for the shared
+These personal-profile links are separate from the **56 prepared personal-account post links**
+(24 original links plus 32 added for the November 18 daily cadence). The business-link mapping is
+recorded separately below. Use `launchpad-profile` for the shared
 profile placement; it does not identify an individual older feed post. Record any later replacement
 and its effective date before interpreting a reporting period.
 
@@ -191,23 +236,26 @@ reporting remain unchanged. The 10:16 tracking gap above remains historical evid
 
 ## Four-week calendar
 
-**Daily revision — November 18:** one planned Facebook post and one Instagram Story per day.
+**Current four-account revision — November 18:** one personal Facebook post, one personal Instagram
+Story, one business Facebook feed post and one business Instagram feed post per day.
 
 Proposed time is **20:00 Asia/Manila** for every slot. This is a consistent starting time for a small
 experiment, not a claim about the best time to post. Adjust only after actual channel results or
 Vanessa's operating schedule support a change, and record that change below. Nothing is scheduled.
 
-There are **28 master posts: 14 Career and 14 Remote-Life**, with seven daily topics each week.
-Each topic has one Facebook caption and one Instagram Story: **56 proposed placements** across the
-four weeks. Weeks 1 and 3 contain four Career / three Remote-Life topics; Weeks 2 and 4 contain three
-Career / four Remote-Life topics. The original p01–p12 rows are retained, with p13–p28 filling the
-previously empty dates.
+There are **28 daily topics: 14 Career and 14 Remote-Life**, with seven topics each week.
+Each topic has the two retained personal placements and two new business feed variants:
+**112 proposed placements** across the four weeks. Weeks 1 and 3 contain four Career / three
+Remote-Life topics; Weeks 2 and 4 contain three Career / four Remote-Life topics. All 28 dates, IDs
+and topic rows below are retained. The copy-status column describes the personal drafts; all 28
+matching business IDs have Facebook and Instagram feed captions plus visual briefs in the business
+copy section. A business variant shares its pNN topic ID and records its account role separately.
 
 A missed readiness gate shifts the start; do not backdate posts or compress missed slots into a
 burst. If dates move, adjust date-specific holiday wording to match the actual publication date.
 The daily cadence is Vanessa's requested content plan, not an analytics-proven optimum.
 
-| Week / date | ID | Intended path | Topic and useful exercise | Copy status | One primary action |
+| Week / date | ID | Intended path | Topic and useful exercise | Personal copy status | One primary action |
 |---|---|---|---|---|---|
 | 1 · Mon Nov 23 | p01 | Career | Thanksgiving week: compare real availability, meetings, and timezones; kit page 3 | Full caption + Story text below | Request the free kit |
 | 1 · Tue Nov 24 | p13 | Remote-Life | Choose one part of the day to work on; page 8 | Provisional caption + Story draft below | Request the free kit |
@@ -244,6 +292,9 @@ job listings, or certification of an opportunity. Readers may choose the relevan
 others. See the [reviewed page inventory](../../docs/launchpad-business/README.md#page-by-page-content-inventory).
 
 ## Tracked-link register
+
+**Personal-account post links:** the 56 entries below remain unchanged. Business Facebook post links
+and the shared business Instagram profile route are in the separate business-link register below.
 
 This follows the [#13 naming contract](../../docs/Validation_Collection_Setup.md#prepared-holiday-campaign-links):
 `utm_source=facebook|instagram`, `utm_medium=organic_social`, and
@@ -302,7 +353,7 @@ actual social-platform routes, visitor/event counting, collection, or completed 
 
 Chrome also checked Facebook p01/p03/p05 and Instagram p02/p04/p06: the hero Starter Kit link reached `#starter-kit` while preserving the exact three UTM values in all six cases. This is direct-browser evidence, not a published social-route or submission check. See the [dated link record](../../docs/Validation_Collection_Setup.md#holiday-direct-link-verification--2026-11-16).
 
-**Daily additions — November 18:** the register now contains **56 prepared links**. The 32 new
+**Personal-account daily additions — November 18:** this register contains **56 prepared links**. The 32 new
 p13–p28 URLs have been checked for their exact destination, post ID, source/audience pairing and
 three-field naming format. They are not part of the November 16 HTTP or Chrome evidence above;
 no live route or new request is claimed by this preparation.
@@ -1197,13 +1248,1663 @@ Free PDF download after your request is confirmed.
 **Instagram link sticker:** Free Starter Kit
 https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28
 
+## Business-link register and attribution
+
+**Prepared November 18; no business account link setting or live route was changed.** This extends
+the existing [three-field naming contract](../../docs/Validation_Collection_Setup.md#business-account-campaign-mapping--2026-11-18)
+without adding a form field. The retained unsuffixed p01–p28 links belong to this pack's personal
+placements. Business Facebook variants append **`-business`** to their existing campaign value and
+keep `utm_source=facebook` and `utm_medium=organic_social`. Post IDs, occasions and audience paths
+stay unchanged. All captured values remain within 100 characters; no `utm_content` is added.
+
+| Topic ID / variant | Business Facebook campaign | Exact direct URL |
+|---|---|---|
+| p01 / business | `holiday2026-thanksgiving-career-p01-business` | [Facebook business p01](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p01-business) |
+| p02 / business | `holiday2026-thanksgiving-remote-life-p02-business` | [Facebook business p02](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p02-business) |
+| p03 / business | `holiday2026-blackfriday-career-p03-business` | [Facebook business p03](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p03-business) |
+| p04 / business | `holiday2026-blackfriday-remote-life-p04-business` | [Facebook business p04](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-remote-life-p04-business) |
+| p05 / business | `holiday2026-cybermonday-career-p05-business` | [Facebook business p05](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p05-business) |
+| p06 / business | `holiday2026-cybermonday-remote-life-p06-business` | [Facebook business p06](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p06-business) |
+| p07 / business | `holiday2026-cybermonday-career-p07-business` | [Facebook business p07](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p07-business) |
+| p08 / business | `holiday2026-cybermonday-remote-life-p08-business` | [Facebook business p08](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p08-business) |
+| p09 / business | `holiday2026-cybermonday-career-p09-business` | [Facebook business p09](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p09-business) |
+| p10 / business | `holiday2026-cybermonday-remote-life-p10-business` | [Facebook business p10](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10-business) |
+| p11 / business | `holiday2026-cybermonday-career-p11-business` | [Facebook business p11](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11-business) |
+| p12 / business | `holiday2026-cybermonday-remote-life-p12-business` | [Facebook business p12](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12-business) |
+| p13 / business | `holiday2026-thanksgiving-remote-life-p13-business` | [Facebook business p13](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13-business) |
+| p14 / business | `holiday2026-thanksgiving-career-p14-business` | [Facebook business p14](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14-business) |
+| p15 / business | `holiday2026-blackfriday-career-p15-business` | [Facebook business p15](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15-business) |
+| p16 / business | `holiday2026-cybermonday-remote-life-p16-business` | [Facebook business p16](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16-business) |
+| p17 / business | `holiday2026-cybermonday-career-p17-business` | [Facebook business p17](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17-business) |
+| p18 / business | `holiday2026-cybermonday-remote-life-p18-business` | [Facebook business p18](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18-business) |
+| p19 / business | `holiday2026-cybermonday-career-p19-business` | [Facebook business p19](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19-business) |
+| p20 / business | `holiday2026-cybermonday-remote-life-p20-business` | [Facebook business p20](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20-business) |
+| p21 / business | `holiday2026-cybermonday-remote-life-p21-business` | [Facebook business p21](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21-business) |
+| p22 / business | `holiday2026-cybermonday-career-p22-business` | [Facebook business p22](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22-business) |
+| p23 / business | `holiday2026-cybermonday-remote-life-p23-business` | [Facebook business p23](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23-business) |
+| p24 / business | `holiday2026-cybermonday-career-p24-business` | [Facebook business p24](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24-business) |
+| p25 / business | `holiday2026-cybermonday-career-p25-business` | [Facebook business p25](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25-business) |
+| p26 / business | `holiday2026-cybermonday-remote-life-p26-business` | [Facebook business p26](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26-business) |
+| p27 / business | `holiday2026-cybermonday-career-p27-business` | [Facebook business p27](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27-business) |
+| p28 / business | `holiday2026-cybermonday-remote-life-p28-business` | [Facebook business p28](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28-business) |
+
+### Business Instagram shared-profile route
+
+Business Instagram captions invite readers to the profile link. The prepared destination is:
+
+[Business Instagram Starter Kit profile link](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-business-profile)
+
+| Field | Prepared value |
+|---|---|
+| Account / placement | @theremotemomslaunchpad / shared profile link supporting feed posts |
+| `utm_source` | `instagram` |
+| `utm_medium` | `organic_social` |
+| `utm_campaign` | `launchpad-business-profile` |
+| Current state | Prepared only; actual business profile destination and route not checked or changed |
+| Attribution limit | Shared profile traffic; no originating feed-post ID or intended audience path can be inferred from this value |
+
+Use the profile-link invitation only with the intended Starter Kit route in place and verified
+under the existing actual-placement check. The URL above is setup information, not text to paste
+into the Instagram feed caption. Keep the shared route stable during the campaign and record its
+actual active dates. Rotating a shared bio URL does not prove which older feed post caused a request.
+
+The **28 new Facebook URLs and one shared Instagram URL** have been checked for exact destination,
+source, campaign spelling and the existing field-length limit. This is a format/source review, not
+HTTP, social-platform or form-submission evidence. The original 24-link HTTP checks and accepted
+personal-profile verification remain scoped to their original routes. Campaign values describe
+configured routes; a copied/shared URL alone does not establish the visitor's exact account origin.
+
+## Business feed captions and visual briefs
+
+**Provisional business drafts — November 18, 2026, Asia/Manila. Not published or scheduled.**
+Use the same pNN date and audience path in the calendar. Each ID has a business Facebook caption
+and a separately written Instagram business feed caption. The business Facebook URL is ready to
+copy from its caption; Instagram uses the shared profile invitation described above.
+
+The brand treatment follows the saved account strategy: practical education, one useful action,
+cream/forest/sage visuals, readable instructions and illustrations or object scenes. The briefs
+supply planned on-image text and draft alt text; they do not claim that graphics exist or that the
+finished Instagram post is ready to publish. Retain the existing personal artwork and copies.
+Do not reuse identical captions or graphics across personal and business accounts. No paid offer,
+discount, employment/safety guarantee, app capability or email subscription is introduced.
+
+### Business p01 · Four questions for a realistic work-fit check
+
+**Facebook business caption — provisional draft**
+
+Before choosing a remote-work direction, check how the role would fit into your week. A remote
+location still leaves important questions about working hours and availability.
+
+For one possible role, write a short answer to these four questions:
+
+- Which hours are realistically available to you?
+- When would meetings or fixed shifts happen?
+- Which timezone does the employer use?
+- What care, travel, or other commitments share that time?
+
+Mark anything you do not know as a question to ask. For example, a description saying “flexible
+schedule” needs enough detail to understand when someone expects you to be available. Your answers
+can show which arrangements need more discussion before you choose a direction.
+
+Page 3 of the free Remote Mom's Work Fit and Safety Starter Kit brings these considerations into a
+life-and-work-fit worksheet. Begin with the information you have, then return to the gaps as you
+learn about the actual role.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p01-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+A job title gives you one piece of the picture. Your week supplies another.
+
+Try this four-question check for one role:
+
+1. What hours can you realistically work?
+2. When are meetings or shifts expected?
+3. Which timezone applies?
+4. What other commitments need room?
+
+Write “still to ask” beside details the listing does not explain. That keeps an assumption from
+quietly becoming part of your plan. A remote role can have fixed working hours, so include the
+actual arrangement in your comparison.
+
+Page 3 of the free Remote Mom's Work Fit and Safety Starter Kit gives you a worksheet for these
+questions. Use one role as your starting point and update your notes as the details become clearer.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel. Cream #F6EBDD backgrounds, forest #173D32 text, sage #A9C0A8 calendar and clock
+illustrations; legible body sans-serif. Exact on-image copy:
+
+- Slide 1: “Does this role fit your week?” / “Start with four questions.”
+- Slide 2: “Available hours” / “Meetings or shifts” / “Timezone” / “Other commitments”
+- Slide 3: “Keep unknowns visible.” / “Write down what you still need to ask.”
+
+**Draft alt text:** Three cream cards introduce a work-fit check, list hours, meetings, timezone and
+other commitments beside calendar symbols, and prompt readers to record unanswered questions.
+
+### Business p02 · Turn a source of support into a workable agreement
+
+**Facebook business caption — provisional draft**
+
+Support is easier to discuss when you can describe what helps and what still needs attention.
+
+Try a short three-part reflection around one work-and-home transition:
+
+- Support: What person, arrangement, or routine currently helps?
+- Pressure point: Where does the arrangement become unclear or difficult to manage?
+- Adjustment: What small change could you try or discuss with the people involved?
+
+For example, a shared pickup arrangement might need a clearer handover time. The useful adjustment
+depends on the support actually available, including days when plans change. One reflection is
+enough to begin; it does not need to become a review of the whole household.
+
+If Thanksgiving is part of your day, this can sit alongside a moment of gratitude. The exercise is
+equally relevant on an ordinary Thursday.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit offer remote-life prompts and a
+seven-day plan for choosing a routine or boundary to try.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p02-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+What makes one part of your day more workable?
+
+Use these three headings for a brief reflection:
+
+SUPPORT — Name an arrangement or routine that helps.
+PRESSURE POINT — Describe where it needs attention.
+ADJUSTMENT — Choose one change to try or discuss.
+
+A clearer handover time is one possible example. Keep the action realistic for the people and
+resources involved, and leave room to revise it when the day changes.
+
+If you mark Thanksgiving, the reflection can accompany gratitude for support. It also works as an
+ordinary weekday exercise.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes remote-life prompts on page 8 and a
+seven-day plan on page 9 to support this kind of small experiment.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card. Cream #F6EBDD background, forest #173D32 lettering and three sage #A9C0A8 note shapes;
+legible body sans-serif. Exact on-image copy: “A small support check” / “What helps?” / “What needs
+attention?” / “What could change?” Illustrate a simple shared calendar, without photographs or
+implied reader testimonials.
+
+**Draft alt text:** A cream card with three sage notes asks what helps, what needs attention, and
+what could change beside a small shared-calendar illustration.
+
+### Business p03 · Use a role-to-tool check before a purchase
+
+**Facebook business caption — provisional draft**
+
+Black Friday offers can be easier to evaluate when you have a specific work task in mind.
+
+Start with one role you are exploring and make three short notes:
+
+1. Task: What would you actually need to do in this role?
+2. Evidence: What relevant experience or skill can you honestly demonstrate?
+3. Requirement: What equipment or tool does the employer actually require?
+
+Compare that requirement with what you already have access to. If the listing is unclear, keep
+the requirement as an open question. A product's promise cannot answer whether a particular role
+fits your time, experience, or working conditions.
+
+This exercise is useful before considering a course or subscription too. The starting point is a
+defined need that you can explain, using information about the work itself.
+
+Pages 3–5 of the free Remote Mom's Work Fit and Safety Starter Kit cover work fit, transferable
+skills, and role comparison. Use the relevant worksheet to organize that next question.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p03-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Before a tool goes on the shopping list, give it a work-related reason.
+
+For one role, write:
+
+TASK — What work needs doing?
+EVIDENCE — What relevant skill can you show?
+REQUIREMENT — What does the employer actually ask for?
+
+Then compare the requirement with the equipment or tools already available to you. Leave unclear
+requirements as questions to confirm. This is a way to think through a need during Black Friday,
+with room to make a decision when you have enough information.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes work-fit, skills, and role-comparison
+worksheets on pages 3–5. Choose the exercise that helps clarify the work you want to understand.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel. Cream #F6EBDD backgrounds, forest #173D32 type and sage #A9C0A8 task, evidence
+folder and equipment icons; legible body sans-serif. Exact on-image copy:
+
+- Slide 1: “A reason before a purchase” / “Start with the work.”
+- Slide 2: “Task” / “Evidence” / “Actual requirement”
+- Slide 3: “What do you already have?” / “What still needs confirming?”
+
+**Draft alt text:** Three cream cards introduce a work-related purchase check using task, evidence
+and equipment icons, then ask what is already available and what still needs confirming.
+
+### Business p04 · Match one planning tool to one purpose
+
+**Facebook business caption — provisional draft**
+
+A planning tool is easier to try when its job is clear.
+
+Choose a calendar, document, or notebook you already use. Give it one specific purpose for the
+coming week. A calendar might hold the work block you intend to try. A note might hold the point
+where you stopped. A simple list might show the next task you want to return to.
+
+Write the purpose in one sentence: “This is where I keep ____.” Choose a place you can reasonably
+find again during your day. If the arrangement involves someone else, make sure its purpose is
+clear to them too.
+
+After trying it, consider whether the tool and purpose fit together. You can adjust the arrangement
+without treating the first attempt as a commitment to a complete new system.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit help you choose a remote-life
+routine or boundary and reflect on it. Existing tools are optional ways to apply those exercises.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-remote-life-p04-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Choose one tool and finish this sentence:
+
+“This is where I keep ____.”
+
+Possible answers include the next work block, the task to return to, or a brief handover note. Pick
+one purpose that fits a calendar or note you already use. Keep private work and family details in
+an appropriate place.
+
+Try the arrangement during a real day, then notice whether you could find and use it when needed.
+You can change the location or purpose as you learn what fits.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit offer routine and planning
+exercises for this kind of small experiment. The tool is simply one way to put the idea into use.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card. Cream #F6EBDD background with a forest #173D32 heading, sage #A9C0A8 notebook and calendar
+illustrations, and legible body sans-serif. Exact on-image copy: “One tool. One clear purpose.” /
+“This is where I keep ____.” / “Choose a place you can find again.” Keep the handwritten blank as
+a graphic detail; all instructional text uses readable sans-serif lettering.
+
+**Draft alt text:** A cream card shows a notebook and calendar beneath the prompt to give one tool
+a clear purpose by completing “This is where I keep blank.”
+
+### Business p05 · Build a simple application record
+
+**Facebook business caption — provisional draft**
+
+A useful Cyber Monday workspace task is to put the details of one application in a place you can
+return to.
+
+Start with four parts of the record:
+
+- Source: the role link and the date you found it.
+- Material: the version of your application prepared for that role.
+- Status: what has actually happened so far.
+- Next step: an action or follow-up date supported by the information you have.
+
+Use a clearly named folder or note you already maintain. Keep sensitive documents in an appropriate
+location, and record unanswered questions beside the role. A tidy record can show what you have
+collected; it does not establish that the employer or opportunity is legitimate.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes an optional application tracker on
+page 10, a seven-day plan on page 9, and opportunity-check questions on pages 6–7. Start with one
+current application and the fields that help you decide what to do next.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p05-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+An application record can begin with four useful headings:
+
+SOURCE — Where did the role come from?
+MATERIAL — Which application version belongs with it?
+STATUS — What has happened so far?
+NEXT STEP — What action or real follow-up date applies?
+
+Use one folder or note for an opportunity you are considering. Leave unknown details as questions
+and store private documents carefully. Organizing the record does not verify the employer or make
+the listing safe.
+
+For a small Cyber Monday workspace exercise, begin with the information you already have. The free
+Remote Mom's Work Fit and Safety Starter Kit includes an optional application tracker on page 10,
+with opportunity-check questions on pages 6–7 to support a closer look.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel. Cream #F6EBDD backgrounds, forest #173D32 text, sage #A9C0A8 folder and index-card
+illustrations; legible body sans-serif. Exact on-image copy:
+
+- Slide 1: “One application, one useful record”
+- Slide 2: “Source” / “Material” / “Status” / “Next step”
+- Slide 3: “Keep open questions visible.” / “A tidy record does not verify a listing.”
+
+**Draft alt text:** Three cream cards show an application folder with source, material, status and
+next-step fields, followed by a reminder that an organized record does not verify a listing.
+
+### Business p06 · Write a three-part return note
+
+**Facebook business caption — provisional draft**
+
+When you need to leave a task, a return note can give the next session a place to begin.
+
+Try three short fields:
+
+- Task: What were you working on?
+- Last step: What did you actually finish?
+- Next action: What is the first useful thing to do when you return?
+
+For a document, the next action might be checking one section against its source. For a planned
+conversation, it might be finding the one unanswered question. Keep the description brief enough
+to understand later and specific enough to point to an action.
+
+Put the note beside the work in an appropriate place. Shared notes should not expose private
+employer or family details. When you return, adjust the next action if the task or priorities have
+changed.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit include interruption and
+transition exercises. A return note is one possible routine to try and review in your own setting.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p06-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+A short return note can hold three pieces of information:
+
+TASK — Name the work.
+LAST STEP — Record what is finished.
+NEXT ACTION — Point to where you will begin again.
+
+For example, “check the opening section against the source” describes an action you can recognize
+when you return. Adapt the words to your own responsibilities and keep the note with the work,
+without placing private details in shared spaces.
+
+Try this around one interruption, then consider whether the note was useful. The next action can
+change when the day's priorities change.
+
+The free Remote Mom's Work Fit and Safety Starter Kit offers related interruption and transition
+exercises on pages 8–9 for choosing a routine that fits your circumstances.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card. Cream #F6EBDD background, forest #173D32 lettering and a sage #A9C0A8 note beside a simple
+document illustration; legible body sans-serif. Exact on-image copy: “A note for your return” /
+“Task” / “Last finished step” / “Next useful action.” Avoid fake app controls or a screenshot-like
+frame.
+
+**Draft alt text:** A cream card shows a sage note beside a document with three fields labeled
+task, last finished step, and next useful action.
+
+### Business p07 · Connect a skill to evidence you can explain
+
+**Facebook business caption — provisional draft**
+
+A skill becomes more specific when you connect it with something you actually did.
+
+Choose a real responsibility from paid work, volunteering, or a project. Build a short example
+using these three parts:
+
+- Responsibility: What needed to happen?
+- Action: What did you personally do?
+- Evidence: What can you accurately explain or appropriately show?
+
+Someone who maintained a project's update list, for example, could describe how they collected
+information and kept it organized. That is an illustration of how to structure an example, not a
+claim about any reader's experience.
+
+Use details that are true and relevant to the role you are exploring. Keep confidential material
+private, and describe only the contribution you made. A clear example can support reflection
+without changing a job title or adding an outcome you cannot substantiate.
+
+Page 4 of the free Remote Mom's Work Fit and Safety Starter Kit connects responsibilities, skills,
+evidence, and possible roles. Begin with one example and refine it as you understand the role.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p07-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give a skill a concrete example using three headings:
+
+RESPONSIBILITY — What needed doing?
+ACTION — What did you personally do?
+EVIDENCE — What can you accurately explain or show?
+
+Choose a real example from work, volunteering, or a project. Then consider how that example relates
+to the responsibilities in a role you are exploring. The connection may be useful, or it may show
+that you need a different example.
+
+Keep private information protected and describe your own contribution accurately. There is no need
+to invent a result to complete the exercise.
+
+Page 4 of the free Remote Mom's Work Fit and Safety Starter Kit offers a transferable-skills table
+for organizing this reflection. Start with one responsibility you know well.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel. Cream #F6EBDD backgrounds, forest #173D32 type and sage #A9C0A8 task-card and
+evidence-folder illustrations; legible body sans-serif. Exact on-image copy:
+
+- Slide 1: “A skill needs a real example.”
+- Slide 2: “Responsibility” / “Your action” / “Evidence you can explain”
+- Slide 3: “Describe your contribution accurately.” / “Keep private details protected.”
+
+**Draft alt text:** Three cream cards use task and folder illustrations to connect a responsibility,
+personal action and evidence, with reminders about accuracy and privacy.
+
+### Business p08 · Plan the edges of a work block
+
+**Facebook business caption — provisional draft**
+
+The task itself is only one part of a work block. Getting ready and moving to the next
+responsibility can need time too.
+
+Draw three short sections in a note:
+
+- Before: What needs to be ready before the task begins?
+- During: What work fits the time and attention available?
+- After: What handover, travel, care task, or other commitment follows?
+
+Use those answers to decide where a little extra room may be useful. For example, gathering the
+right information or completing a care handover could affect when focused work can actually begin.
+The amount of room depends on your responsibilities; there is no required buffer length.
+
+Try one work block this way, then notice what fit and what needed adjusting. The exercise is a
+planning experiment for a real day, with space for circumstances to change.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit helps you choose a remote-life
+pressure point and a manageable routine or boundary to try.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p08-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Look at the edges of your next work block.
+
+BEFORE — What needs preparing?
+DURING — What task fits the available time?
+AFTER — Which responsibility follows?
+
+A handover or setup step may belong in the plan alongside the task. Use your own circumstances to
+decide where more room would be useful. A buffer can be adjusted; it is not a fixed number of
+minutes everyone needs.
+
+Choose one block to try, then notice what actually fit. You can revise the arrangement when the
+week changes.
+
+The remote-life worksheet on page 8 of the free Remote Mom's Work Fit and Safety Starter Kit gives
+you a place to choose a pressure point and a small routine or boundary to explore.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card. Cream #F6EBDD background, forest #173D32 text and three vertically stacked sage
+#A9C0A8 time blocks with visible space between them; legible body sans-serif. Exact on-image copy:
+“Plan the edges of the task.” / “Before: prepare” / “During: focus on one task” / “After: allow for
+what follows.” A small clock is illustrative and carries no fixed time.
+
+**Draft alt text:** A cream card shows three spaced sage blocks for preparation, one work task,
+and the responsibility that follows, with a small unnumbered clock.
+
+### Business p09 · Check the employer, the work, and the process
+
+**Facebook business caption — provisional draft**
+
+An opportunity check is more useful when you separate what you know from what still needs an
+answer.
+
+Keep the original listing and review three areas:
+
+- Employer: Can you independently locate the organization's own contact details and information?
+- Work: Do the duties, hours, and location requirements agree across the information you find?
+- Process: Are application steps, payment requests, or personal-data requests clearly explained?
+
+Write down the source of each answer. If details conflict or a request is unexpected, pause while
+you seek clarification through an independently confirmed contact. A recognizable logo or a neat
+message does not resolve those questions by itself.
+
+You may still have unknowns after a first review. Recording them accurately is more useful than
+labeling the whole opportunity “safe” because several checks were completed.
+
+Pages 6–7 of the free Remote Mom's Work Fit and Safety Starter Kit provide opportunity-check and
+privacy prompts. They support investigation; they cannot certify an employer or guarantee an
+opportunity's legitimacy.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p09-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give an opportunity three separate checks:
+
+EMPLOYER — Find the organization's own information independently.
+WORK — Compare duties, hours, and location requirements.
+PROCESS — Examine the application steps and any payment or personal-data requests.
+
+Keep the source of each answer with your notes. When something is unclear or inconsistent, leave
+it as an open question and seek clarification through a confirmed contact. A polished listing does
+not answer those questions for you.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes opportunity-check and privacy
+prompts on pages 6–7. Use them to organize what you need to investigate. Completing the checklist
+does not certify that an employer or opportunity is safe.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel. Cream #F6EBDD backgrounds, forest #173D32 lettering and sage #A9C0A8 source,
+role-document and question-note illustrations; legible body sans-serif. Exact on-image copy:
+
+- Slide 1: “Three areas to check” / “Employer · Work · Process”
+- Slide 2: “Record the source.” / “Keep unanswered questions open.”
+- Slide 3: “A checklist supports investigation.” / “It cannot certify safety.”
+
+**Draft alt text:** Three cream cards group opportunity checks into employer, work and process,
+then prompt source notes and explain that a checklist cannot certify safety.
+
+### Business p10 · Design a small closing routine
+
+**Facebook business caption — provisional draft**
+
+A closing routine can mark the end of one work block and prepare for the responsibility that
+comes next.
+
+Choose a few actions that suit the way you work:
+
+- Record: Save the work and note a useful starting point for your next session.
+- Put away: Close or store the materials that no longer need your attention.
+- Communicate: Clarify availability where a change affects someone else.
+
+Then allow for the actual transition ahead, such as collecting a child, sharing a household task,
+or taking a break. Pick what fits your circumstances. A routine can be one small action, and it can
+change on a day when responsibilities change.
+
+Try the arrangement, then consider whether it helped you recognize where one task ended and the
+next began. Keep private work notes in an appropriate place throughout.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit include remote-life reflection
+and a seven-day plan for choosing and reviewing a routine or boundary.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give the end of a work block a small, clear sequence.
+
+RECORD — Save your place and name the next useful step.
+PUT AWAY — Close or store what you have finished using.
+COMMUNICATE — Clarify availability if it affects another person.
+
+Use the parts that fit your responsibilities, then allow for the transition ahead. The routine can
+be brief and can change when your day changes. Private work information still belongs in an
+appropriate place.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit offer remote-life prompts and a
+seven-day plan. Choose one closing action to try and reflect on whether it fits the way work and
+home responsibilities meet in your day.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card. Cream #F6EBDD background, forest #173D32 type and sage #A9C0A8 document, closed notebook
+and speech-bubble illustrations; legible body sans-serif. Exact on-image copy: “A small closing
+routine” / “Record your place.” / “Put work materials away.” / “Clarify availability.” Use the
+objects as simple illustrations, without depicting an app interface.
+
+**Draft alt text:** A cream card illustrates a document, closed notebook and speech bubble beside
+three closing-routine prompts about recording progress, putting materials away and clarifying availability.
+
+### Business p11 · Turn a search goal into one clear task
+
+**Facebook business caption — provisional draft**
+
+“Work on applications” can cover several different jobs. A clearer task gives your next session a
+defined place to begin.
+
+Use this three-part planning exercise:
+
+1. Name the available time. Include any fixed commitment around the session.
+2. Choose an action with a visible finish, such as reading the duties in one listing or revising
+   one example of relevant experience.
+3. Note what comes next if the action is unfinished or raises another question.
+
+Keep the role link and relevant material beside the plan. For an additional role, include the
+working hours and responsibilities it would need to fit alongside your existing work. The exercise
+can be adjusted when your circumstances change; it carries no application quota.
+
+Pages 9–10 of the free Remote Mom's Work Fit and Safety Starter Kit provide a seven-day plan and
+optional application tracker. They offer a place to organize the next step you have chosen.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give an application session a finish you can recognize.
+
+Try this small planning prompt:
+
+• Time available: what fits today?
+• Task: what is one useful action you can complete or meaningfully advance?
+• Return point: what should you see when you pick it up again?
+
+Reading one role's requirements or improving one evidence-based skills example can each be a
+complete task. Keep any unanswered question visible, especially if it affects working hours or
+other commitments.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes a seven-day plan and optional
+application tracker on pages 9–10. Use the parts that help you plan your next action.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel using cream #F6EBDD backgrounds, forest #173D32 text, sage #A9C0A8 note shapes,
+and legible body sans-serif. Use simple illustrations of a clock, a task card, and a bookmark.
+Exact on-image copy: slide 1, “One application session” / “Name the time you have.”; slide 2,
+“Choose one clear task” / “Read. Check. Revise. Record.”; slide 3, “Leave a return point” /
+“Write the next action or open question.”
+
+**Draft alt text:** Three cards show a clock, task note, and bookmark beside prompts to name available time, choose one application task, and record where to return.
+
+### Business p12 · Review a routine using what happened
+
+**Facebook business caption — provisional draft**
+
+A useful routine review starts with an observation you can describe.
+
+Choose a boundary, work block, or transition you tried. Write one sentence about what happened:
+when you used it, what helped, and where the plan became difficult to follow. Include the conditions
+around it, such as a different meeting time or an unexpected care responsibility.
+
+Then make one decision:
+
+• Keep a part that was useful.
+• Adjust a part that did not fit.
+• Leave the routine aside if another need deserves attention now.
+
+Record the reason in ordinary language so you can revisit it next week. A single difficult day does
+not explain every pattern, and an adjustment can remain a small experiment.
+
+Page 9 of the free Remote Mom's Work Fit and Safety Starter Kit includes a seven-day plan and weekly
+review prompts. Use those prompts to connect your next choice with your own experience.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Three notes can make a routine review more specific.
+
+1. What happened when you tried it?
+2. What circumstances affected the day?
+3. What will you keep, adjust, or leave aside?
+
+Choose just one routine for this exercise. You might review a meeting boundary, a planned work
+block, or the move from work into family time. Describe the actual experience before deciding
+whether the routine needs changing.
+
+Your next week may have different conditions. A brief note gives you something concrete to revisit
+as you learn what fits.
+
+Page 9 of the free Remote Mom's Work Fit and Safety Starter Kit provides weekly review prompts
+alongside its seven-day action plan.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with cream #F6EBDD background, forest #173D32 type, and three sage #A9C0A8 note boxes;
+use legible body sans-serif and a small illustrated pencil. Exact on-image copy: “A useful routine
+review” / “What happened?” / “What affected the day?” / “What will you keep or adjust?”
+
+**Draft alt text:** A pencil and three note boxes introduce questions about what happened during a routine, what affected the day, and what to keep or adjust.
+
+### Business p13 · Describe the moment that needs support
+
+**Facebook business caption — provisional draft**
+
+A broad problem becomes easier to discuss when you can point to a specific moment.
+
+For a remote-life pressure point, try writing three short notes:
+
+• The moment: when does the difficulty tend to appear?
+• The need: what information, time, or support is missing?
+• The experiment: what small boundary or routine could you try with the resources available?
+
+For example, a handover between responsibilities might need a clear time and a short note about
+what remains to be done. That example is one way to apply the exercise; the useful choice depends
+on the people and commitments involved.
+
+Keep the description factual and manageable. You can focus on one recurring situation without
+turning it into a judgment about the whole day.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit offers a remote-life worksheet for
+exploring pressure points and choosing a practical adjustment to try.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Start a routine change with one moment you can describe.
+
+Write down when the pressure appears, what the situation needs, and one adjustment you could try.
+A work-to-care handover, for example, might need a clearer time or a short note for the person
+taking over. Another situation may need a different response.
+
+Choose something that fits the support and time you actually have. The exercise can stay small;
+you do not need a new system for every part of the day.
+
+The remote-life worksheet on page 8 of the free Remote Mom's Work Fit and Safety Starter Kit gives
+you space to explore that pressure point and a possible boundary or routine.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel with cream #F6EBDD backgrounds, forest #173D32 body sans-serif, and sage
+#A9C0A8 illustrated note tabs. Exact on-image copy: slide 1, “Name one pressure point” /
+“When does it happen?”; slide 2, “Describe what is needed” / “Time. Information. Support.”;
+slide 3, “Choose one adjustment” / “A boundary or routine you can try.”
+
+**Draft alt text:** Three illustrated note cards guide the reader from naming one recurring pressure point to identifying a need and choosing a small adjustment.
+
+### Business p14 · Put two roles through the same questions
+
+**Facebook business caption — provisional draft**
+
+A useful role comparison asks the same questions about both options.
+
+Choose two roles you want to understand and make a simple side-by-side note. For each one, record
+the actual responsibilities, relevant experience you can support, required hours, and equipment or
+knowledge mentioned in the description. Keep missing information visible as an unanswered question.
+
+Comparing the same details can reveal where you need more information. One role might connect with
+your experience while leaving its meeting schedule unclear. Another might describe suitable hours
+but ask for a skill you need to investigate further.
+
+Use what you know to choose the next research question. You can revise the comparison when you have
+better evidence about the work.
+
+Page 5 of the free Remote Mom's Work Fit and Safety Starter Kit provides a role-comparison
+worksheet. Its questions and scores support reflection; they do not predict hiring or measure
+aptitude.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Two possible roles deserve the same comparison questions.
+
+What would you do each day? Which skills can you support with real examples? What hours and
+equipment does the description name? What information is still missing?
+
+Put the answers beside each other. An appealing title can leave important conditions unclear, so
+keep the open questions in the comparison too. Your next step might be gathering one missing
+detail before choosing a direction.
+
+Page 5 of the free Remote Mom's Work Fit and Safety Starter Kit offers a role-comparison worksheet
+for this reflection. Its score is a thinking aid, not an aptitude test or a prediction of an
+employer's decision.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single comparison card with cream #F6EBDD background, forest #173D32 legible sans-serif, and sage
+#A9C0A8 column headers. Draw two blank document icons rather than invented job listings. Exact
+on-image copy: “Compare the same details” / columns “Role A” and “Role B” / row labels “Duties” /
+“Experience” / “Hours” / “Equipment” / “Questions still open”.
+
+**Draft alt text:** A two-column role-comparison card lists duties, experience, hours, equipment, and open questions beneath two generic document icons.
+
+### Business p15 · Make working conditions part of the comparison
+
+**Facebook business caption — provisional draft**
+
+The conditions around a role can affect whether its responsibilities fit your life.
+
+For one opportunity, gather the practical details alongside the job description. Start with the
+expected hours and meeting timezone. Add the equipment arrangement and any office attendance.
+Then consider the care coverage, travel, or relevant expenses the arrangement would involve in your
+own circumstances.
+
+Separate confirmed information from questions for the employer. For example, “equipment required”
+does not explain who supplies it, and “remote” does not establish a flexible schedule. A clear note
+helps you see what still needs an answer before making a decision.
+
+Use the information you have and investigate the gaps through an independently confirmed contact.
+There is no need to turn this exercise into a shopping list.
+
+Page 3 of the free Remote Mom's Work Fit and Safety Starter Kit brings work-and-life considerations
+together in its fit worksheet.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Read the working conditions as closely as the responsibilities.
+
+For one role, note the hours, meeting timezone, equipment arrangement, and any office attendance.
+Consider what those conditions would mean for care coverage, travel, or relevant expenses in your
+own situation.
+
+Mark each detail as known or still needing clarification. A description that says “remote” may
+leave several of these questions open. Keep them beside the listing and use an independently
+confirmed employer contact to seek answers.
+
+The work-and-life-fit worksheet on page 3 of the free Remote Mom's Work Fit and Safety Starter Kit
+helps you reflect on the conditions you need to understand before choosing a direction.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel with cream #F6EBDD backgrounds, forest #173D32 body sans-serif, sage #A9C0A8
+frames, and simple clock, laptop, and question-note illustrations. Exact on-image copy: slide 1,
+“Check the conditions” / “Hours and meeting timezone”; slide 2, “Look beyond the title” /
+“Equipment. Attendance. Care coverage.”; slide 3, “Keep the gaps visible” /
+“Known details / Questions to clarify”.
+
+**Draft alt text:** Three cards pair a clock, laptop, and question note with prompts to check hours, practical working conditions, and details that still need clarification.
+
+### Business p16 · Separate today's commitments from movable tasks
+
+**Facebook business caption — provisional draft**
+
+When a list exceeds the time available, a planning decision may include moving something.
+
+Review the tasks in a note or planner you already use. Identify any real deadline, care need, or
+commitment that affects what must happen today. Then look for work that could move to another time
+and note who would need an update if the change affects them.
+
+Choose a manageable focus from what remains. You might keep one work action and one home
+responsibility visible, or use another arrangement that fits the day. The point is to make the
+decision explicit and revisit it when circumstances change.
+
+Keep uncertain timings as questions, rather than filling every available space in the plan.
+Unexpected needs may still require a different choice.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit includes daily-planning prompts for
+reflecting on what needs attention and what can wait.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+A useful daily plan can show what moves as well as what stays.
+
+Look at your existing list and ask:
+
+• Which tasks have a real commitment attached?
+• Which could move without missing something that matters?
+• Who needs an update if the timing changes?
+
+Choose a focus that fits the time and care responsibilities you have today. You can revise that
+choice if the day changes; the list is information to work with, rather than a promise that every
+task will be completed.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit provides daily-planning prompts
+about what needs attention and what can wait.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card on cream #F6EBDD with forest #173D32 legible sans-serif and two sage #A9C0A8 paper shapes.
+Use a small illustrated calendar and movable note. Exact on-image copy: “What needs attention
+today?” / “Real commitments” / “Tasks that can move” / “Updates needed if timing changes”.
+
+**Draft alt text:** A calendar and movable note illustrate a planning card that distinguishes real commitments, movable tasks, and updates needed when timing changes.
+
+### Business p17 · Research one question through one source
+
+**Facebook business caption — provisional draft**
+
+A search source is more useful when you know what information you are looking for.
+
+Begin with one question about a role direction. You might want to understand common duties,
+meeting expectations, or the skills named in actual listings. Choose a source where you can look
+for that information, then record the source and what it says.
+
+Keep the original listing or page with your notes. That gives you a reference for later comparison
+and helps separate observed information from your own assumptions. If details conflict, leave the
+question open while you investigate further.
+
+Finding a listing still leaves the employer, role, and application process to check. Inclusion in
+a search plan is not an endorsement of the source or its opportunities.
+
+Page 6 of the free Remote Mom's Work Fit and Safety Starter Kit provides a search-source planning
+table alongside opportunity-checking questions.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Before searching, name the question you want to answer.
+
+Are you trying to understand a role's duties, the hours employers describe, or the skills they
+request? Choose one source, collect relevant details, and keep the original page with your notes.
+Record conflicting or missing information as an open question.
+
+This creates a research trail you can return to. It does not establish that a source or listing is
+endorsed, and an individual opportunity still needs its own checks.
+
+Page 6 of the free Remote Mom's Work Fit and Safety Starter Kit combines a search-source planning
+table with questions for examining opportunities. Begin with the part relevant to your next step.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel using cream #F6EBDD, forest #173D32 text, sage #A9C0A8 accents, and legible body
+sans-serif. Illustrate a question card, generic browser window, and saved note. Exact on-image copy:
+slide 1, “Start with one question” / “What do you need to learn?”; slide 2, “Choose a source” /
+“Record what it actually says.”; slide 3, “Keep the reference” /
+“A saved source is a starting point for checks.”
+
+**Draft alt text:** A question card, generic browser window, and saved note show a sequence for researching one role question and retaining the source for later checks.
+
+### Business p18 · Prepare a recognizable first action
+
+**Facebook business caption — provisional draft**
+
+A starting cue works as an experiment when it points to a specific action.
+
+For your next work block, identify what you need to open, read, or check first. “Open the project
+brief and find the next unanswered question” is more specific than a broad instruction to get
+organized. Use an example that fits your actual responsibilities.
+
+Put the cue where you already look when beginning work, such as an existing task note. Include the
+document or information you need to find. If circumstances change before the block begins, choose
+a different first action rather than treating the old note as a fixed commitment.
+
+After trying it, notice whether the cue was useful and what needed adjusting. Starting clearly
+does not guarantee that the rest of the day will follow the plan.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit support reflection on workday
+pressure points and small routine actions.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Make a work block's first action easy to recognize.
+
+Choose something specific: open the relevant document, read a handover note, or check the missing
+information for one decision. Keep the cue where you normally look when starting work and include
+what you need to find.
+
+If the day changes, the cue can change too. After trying it, notice whether it helped you begin or
+whether another action would fit better. This is a routine to explore within your circumstances,
+with no promise of an uninterrupted day.
+
+The free Remote Mom's Work Fit and Safety Starter Kit includes workday pressure points and routine
+prompts on pages 8–9.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with cream #F6EBDD background, forest #173D32 legible sans-serif, and a sage #A9C0A8
+illustrated desk note beside a closed laptop. Exact on-image copy: “Name the first action” /
+“Open ___” / “Read ___” / “Check ___” / “Choose the cue that fits your work.”
+
+**Draft alt text:** A desk note beside a laptop offers three starting-cue prompts—open, read, and check—with space to name a specific work action.
+
+### Business p19 · Examine an information request before responding
+
+**Facebook business caption — provisional draft**
+
+An application process may ask for personal information. The request itself deserves a closer look.
+
+Before responding, write down three things: who is asking, what information they want, and the
+reason given for needing it at this stage. Look for a way to clarify the request through employer
+contact details you found independently. Urgency in a message does not answer those questions.
+
+If the purpose or recipient remains unclear, pause while you seek more information. Consider what
+is needed for the step you understand, and avoid treating every requested detail as automatically
+necessary. Keep a relevant local advice or reporting resource available for questions you cannot
+resolve yourself.
+
+Page 7 of the free Remote Mom's Work Fit and Safety Starter Kit includes privacy guidance and space
+for local resources. These prompts support careful decisions; using them cannot certify an
+employer or guarantee an opportunity's safety.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Before sharing application information, examine the request.
+
+Who is receiving it? What do they want? Why is it needed at this stage? Keep unclear details as
+questions and seek clarification through employer contact information you found independently.
+
+A message's urgency does not establish who sent it or why the information is necessary. You can
+pause while checking and note a relevant local advice or reporting resource for a question you
+cannot resolve yourself.
+
+Page 7 of the free Remote Mom's Work Fit and Safety Starter Kit offers privacy guidance and space
+for local resources. The prompts help you think through a request; they do not certify an
+opportunity as safe.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel with cream #F6EBDD backgrounds, forest #173D32 body sans-serif, sage #A9C0A8
+panels, and a restrained terracotta question-mark accent. Use generic message and contact-card
+illustrations with no real personal information. Exact on-image copy: slide 1, “Before sharing
+information” / “Who is asking?”; slide 2, “Understand the request” /
+“What is needed, and why now?”; slide 3, “Clarify through an independent contact” /
+“Keep unanswered questions visible.”
+
+**Draft alt text:** Three cards use generic message and contact illustrations to ask who requested personal information, why it is needed, and how to clarify unanswered questions.
+
+### Business p20 · Give one home task a clear plan
+
+**Facebook business caption — provisional draft**
+
+Make one recurring home task easier to understand before adding more to the weekly plan.
+
+Choose a responsibility you manage or share, such as checking the grocery list. Describe the next
+action in plain words. Then consider when it can happen and who is actually available to do it.
+Where the responsibility is shared, agree on those details together.
+
+For example, “review what is needed before the next shop” gives the task a clearer starting point
+than a general reminder about groceries. A note in a place you already use can hold the arrangement.
+This is one possible approach; keep it small enough to fit the time and support available.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit includes meals and groceries among
+its remote-life pressure points. Use that row to choose one routine to try, then adjust the plan
+if it does not fit your week.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+A useful household plan can begin with one clear agreement.
+
+For a recurring task, try these prompts:
+
+- Action: what needs doing next?
+- Time: when could it realistically happen?
+- Responsibility: who is available, and what needs agreeing?
+
+Apply them to one part of meals or groceries that you manage or share. You could use an existing
+note or calendar; the method matters less than whether the arrangement is clear to the people
+involved. Leave room to change it as the week changes.
+
+The remote-life worksheet on page 8 of the free Starter Kit helps you select one pressure point
+and a small routine to try. Choose the row that fits your circumstances.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with an illustrated grocery note beside a calendar tab. Use a cream #F6EBDD background,
+forest #173D32 text and sage #A9C0A8 labels. Exact on-image copy: **“One home task. A clearer plan.”**
+followed by **“Next action / Realistic time / Agreed responsibility”**. Use a readable sans-serif
+for the three prompts; present this as a general teaching card, not a reproduced kit page.
+
+**Draft alt text:** An illustrated grocery note and calendar accompany three planning prompts: next action, realistic time, and agreed responsibility.
+
+### Business p21 · Plan the details of one handoff
+
+**Facebook business caption — provisional draft**
+
+A handoff is easier to describe when the next steps are visible to the people involved.
+
+Choose one change between work and care that needs attention. It might be the start of a work
+block, an agreed care handover, or the move into an evening activity. Focus on a transition that
+actually occurs in your household.
+
+Write down three details: what is changing, who is available, and what needs to be ready. If
+someone else is involved, check the arrangement with them. A prepared item, a clearer time, or one
+shared note may be the small change to try.
+
+Build the arrangement around your child's needs and the support available. Some transitions need
+more attention than a written plan can provide, and the routine can change with those needs.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit offers a place to choose a
+remote-life pressure point and one boundary or routine to explore.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give one transition a little more definition.
+
+Start with a regular change between responsibilities. Ask:
+
+- What happens next?
+- Who is available at that point?
+- What needs to be ready beforehand?
+
+An agreed handover time or one prepared item can be a starting experiment. Use the answers that
+fit your household, your child's needs, and the support you actually have. Where another adult is
+involved, make the arrangement together.
+
+This is one way to apply the remote-life worksheet in the free Starter Kit. Page 8 includes child
+transitions among the pressure points readers can choose. Work on the relevant row and leave the
+rest for another time.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel using simple object illustrations, cream #F6EBDD backgrounds, forest #173D32
+type and sage #A9C0A8 panels. Exact slide copy: **1. “Choose one transition.” 2. “What happens next?
+Who is available?” 3. “Prepare one useful detail.”** Illustrate a closed laptop, a clock and a
+small bag; show no child, school identifier or private schedule.
+
+**Draft alt text:** Three illustrated slides use a laptop, clock and bag to explain choosing a transition, checking availability and preparing one useful detail.
+
+### Business p22 · Turn a missing detail into a clear question
+
+**Facebook business caption — provisional draft**
+
+An unanswered question can be a useful output from reading a job listing.
+
+Compare the description with one working condition that matters to you. If the listing says
+“flexible,” look for the actual hours and meeting expectations. If it mentions equipment, look
+for what is required and who provides it. If the duties are broad, identify the responsibility
+you need to understand more clearly.
+
+Turn that gap into a specific question and keep it beside the listing's source. “Which timezone
+applies to the required meetings?” is easier to investigate than a general note saying “check
+schedule.” Seek clarification through an independently confirmed employer contact when appropriate.
+
+The work-fit and role-comparison exercises on pages 3 and 5 of the free Remote Mom's Work Fit and
+Safety Starter Kit help you identify what information affects your choice. One clear question can
+be the next step; a job title or appealing description does not supply the missing answer.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give an unclear part of a listing a precise question.
+
+Try this small sequence:
+
+- Identify one condition that affects fit: hours, meetings, equipment or duties.
+- Find the detail the description actually provides.
+- Write the question that remains unanswered.
+
+For example: “Which hours require live availability?” Keep it with the original listing so you
+can return to the source when seeking clarification. Avoid filling the gap with the arrangement
+you hope the employer offers.
+
+Pages 3 and 5 of the free Starter Kit support reflection on your circumstances and possible roles.
+Use the exercises to decide which missing detail you need to understand before treating an
+opportunity as a fit.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with a simple illustrated document and a large question tab. Exact on-image copy:
+**“What does this role still need to explain?”** and **“Hours / Meetings / Equipment / Duties”**.
+Use forest #173D32 text on cream #F6EBDD, with one sage #A9C0A8 tab. Do not show a real employer,
+invent a live vacancy, or imitate an actual job-board screen.
+
+**Draft alt text:** A document illustration and question tab highlight four job details to clarify: hours, meetings, equipment and duties.
+
+### Business p23 · Give a recurring interruption a response
+
+**Facebook business caption — provisional draft**
+
+Choose one recurring interruption and plan a response that fits what it actually needs.
+
+Begin by describing the situation. Is someone asking a question, does a household responsibility
+need attention, or has a work request arrived? Consider whether it needs a response now, can wait
+for an agreed time, or points to an arrangement that needs changing.
+
+For something that can wait, a visible note and a realistic return time may help make the next
+step clear. For something that needs attention, leave room for that responsibility when choosing
+the work block. Agree on the approach with anyone it affects.
+
+The useful outcome is one response to try and review. Care needs and work expectations may mean
+the plan has to change.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit include interruption and routine
+prompts. Use them to explore a workable boundary without expecting a day free from every interruption.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+One repeated interruption can reveal a useful planning question.
+
+Describe what usually happens, then consider the response:
+
+- Attention now: what responsibility needs room in the work block?
+- An agreed time: where will you keep the question until then?
+- A different arrangement: what needs discussing with the people involved?
+
+Choose the response that fits the situation. A care need, a work commitment and a casual question
+may call for different approaches. Try one small arrangement and adjust it when circumstances
+change.
+
+The free Starter Kit's remote-life worksheet and seven-day plan, on pages 8–9, offer prompts for
+choosing a boundary or routine to explore in your own week.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel built around a simple question-note illustration. Exact slide copy:
+**1. “Name one recurring interruption.” 2. “What does it need from you?” 3. “Choose a response.
+Review how it fits.”** Alternate cream #F6EBDD and sage #A9C0A8 panels with forest #173D32 text.
+Avoid imagery suggesting uninterrupted work or a guaranteed outcome.
+
+**Draft alt text:** Three illustrated note cards prompt the reader to identify a recurring interruption, understand its need and choose a response to review.
+
+### Business p24 · Make each verification note specific
+
+**Facebook business caption — provisional draft**
+
+A useful opportunity-checking note describes the step you took and what you found.
+
+Record the source, the date and the result of each check you actually perform. Keep unanswered
+questions visible. For example, a note could say, “Compared duties with the employer's own role
+page; meeting hours still unclear.” That is an illustrative note, not evidence about a real opening.
+
+When you return to the application, those details show where the review stopped. They also make
+it easier to notice information that may need checking again. A website match or a completed
+checklist cannot certify an employer or opportunity as safe.
+
+Pages 6–7 of the free Remote Mom's Work Fit and Safety Starter Kit provide opportunity-checking
+and privacy guidance. The optional tracker on page 10 includes source and verification fields.
+Use it with your own notes to retain the evidence and the next question, while keeping personal
+application details out of public posts.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Give your opportunity notes enough detail to be useful later.
+
+For one check you have actually completed, keep:
+
+- The source and review date.
+- The action you took.
+- What the result establishes.
+- The question that remains open.
+
+Be specific. Finding an employer's website does not establish every part of a listing, and
+information can change. A verification note records your work; it does not certify safety.
+
+The free Starter Kit includes checking guidance on pages 6–7 and an optional application tracker
+on page 10. Use the relevant fields alongside a private note so you can see where to continue
+when you revisit the opportunity.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single teaching card styled as four blank note labels, with exact on-image copy: **“Make the check
+specific.”** and **“Source + date / Action taken / Result / Open question”**. Use cream #F6EBDD,
+forest #173D32 and sage #A9C0A8. Keep the illustration free of company names, personal details,
+approval badges or any “safe job” stamp.
+
+**Draft alt text:** Four blank note labels show the information to record for an opportunity check: source and date, action, result and open question.
+
+### Business p25 · Pair application status with a next action
+
+**Facebook business caption — provisional draft**
+
+An application record becomes more useful when the status leads to a clear next action.
+
+Choose one current opportunity. Write where it stands using the facts you have: gathering details,
+preparing an example, submitted, awaiting a reply, or no longer pursuing. Then add the action that
+follows from that status.
+
+“Awaiting a reply” might need a note about an agreed follow-up date. “Gathering details” might lead
+to a question about working hours. Use a date only when it comes from a real deadline, agreement
+or plan you have chosen; an empty field is better left open than filled with an invented commitment.
+
+Page 10 of the free Remote Mom's Work Fit and Safety Starter Kit provides an optional application
+tracker with status and follow-up fields. Start with one row and keep it current as the situation
+changes. This is a way to organize your own information, not a promise of an employer response.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Use one tracker row to answer: where is this application now, and what happens next?
+
+Start with the current status. Add a specific next action, then record any deadline or follow-up
+date that actually applies. If you are waiting, note what you are waiting for. If the role no
+longer fits, that decision belongs in the record too.
+
+You can keep the information in the system you already use. The optional tracker on page 10 of
+the free Starter Kit offers a starting structure for source, status and follow-up details.
+
+Begin with one opportunity you are actively considering. Update the note when something changes,
+so it reflects the information available rather than a result you are hoping for.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel with a simple folder and note illustration. Exact slide copy: **1. “Where does
+the application stand?” 2. “What is the next action?” 3. “Which real date applies?”** Use forest
+#173D32 text, cream #F6EBDD backgrounds and sage #A9C0A8 accents. Keep example fields blank;
+show no fabricated application result or private employer correspondence.
+
+**Draft alt text:** A folder and three note cards illustrate recording an application's current status, next action and relevant date.
+
+### Business p26 · Review one working arrangement
+
+**Facebook business caption — provisional draft**
+
+Review one part of your current work arrangement when it no longer fits the week as expected.
+
+Choose a concrete detail: the timing of a regular meeting, the space around a care handover,
+or the hours available for a recurring responsibility. Write what currently happens and what
+has changed. Keep the observation specific enough to discuss with the people involved.
+
+Then identify one useful question or adjustment. You might need clarity about an expectation,
+an agreed change to a shared routine, or a different place for a task in the week. Work from the
+options available rather than assuming every condition can move.
+
+Pages 3 and 8 of the free Remote Mom's Work Fit and Safety Starter Kit support this reflection.
+The work-fit worksheet helps describe circumstances, while the remote-life page focuses on
+pressure points and small routine experiments. Select the exercise that helps you explain the
+situation and choose a practical next step.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Use a specific observation to begin a work-fit review.
+
+Pick one recurring part of the week and describe:
+
+- What happens now.
+- What has changed in your circumstances.
+- Which question or adjustment needs attention.
+
+A meeting time, care arrangement or regular task can be the focus. Check what is actually
+possible and involve anyone affected by a proposed change. The exercise can produce a useful
+question even when an immediate adjustment is not available.
+
+For moms already working remotely, pages 3 and 8 of the free Starter Kit offer two starting
+points: work-and-life-fit reflection and remote-life pressure points. Choose one relevant section
+and work with the situation you have now.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with three illustrated tabs around an open notebook. Exact on-image copy:
+**“Review one part of the week.”** and **“Current arrangement / What changed / Useful question”**.
+Use a sage #A9C0A8 panel on cream #F6EBDD with forest #173D32 text. No simulated app dashboard
+or claimed before-and-after result.
+
+**Draft alt text:** Three tabs around a notebook prompt a review of the current arrangement, changed circumstances and a useful question.
+
+### Business p27 · Use role comparisons to choose what to explore
+
+**Facebook business caption — provisional draft**
+
+Turn a role comparison into one focused research choice.
+
+Review the information you have about each possible direction: the work involved, experience you
+can demonstrate, available hours, equipment and unanswered questions. Notice which option has
+enough relevant information to guide a useful next step.
+
+Choose a main direction to investigate and, where useful, a backup. Give the main direction one
+concrete research action, such as reading a detailed role description or checking an unfamiliar
+responsibility. Keep the choice open to revision as you learn more about actual opportunities.
+
+Page 5 of the free Remote Mom's Work Fit and Safety Starter Kit provides a role-comparison
+exercise with primary and backup directions. Its questions and scores support reflection; they
+do not assess aptitude or predict an offer. The purpose is to organize what you know and identify
+what you still need to understand, without treating a total as a decision made for you.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+A role comparison can finish with a question worth investigating.
+
+Look across the options you are considering. Which responsibilities connect with evidence you
+can explain? What do you know about the hours and equipment? Where are the information gaps?
+
+Use those answers to choose a main direction and an optional backup. Give the first direction
+one manageable research step. Revisit the choice as you learn about the actual work and
+conditions attached to individual opportunities.
+
+The comparison on page 5 of the free Starter Kit gives you a structure for this reflection.
+Its score is an organizing aid, not an aptitude result or a hiring prediction. Keep the evidence
+and open questions beside the number.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Three-slide carousel with two illustrated role cards and a research note. Exact slide copy:
+**1. “Compare what you know.” 2. “Choose a direction to explore.” 3. “Keep the next question visible.”**
+Use cream #F6EBDD, forest #173D32 and sage #A9C0A8. Leave role names generic and avoid a winner
+badge, hiring score or suggestion that one role is suitable for everyone.
+
+**Draft alt text:** Two generic role cards and a research note illustrate comparing known information, choosing a direction and retaining the next question.
+
+### Business p28 · Start next week's plan with one relevant action
+
+**Facebook business caption — provisional draft**
+
+Build next week's starting point around a responsibility that needs attention now.
+
+If you already work remotely, choose one part of work and home life to consider: a boundary,
+a transition, an interruption response or the beginning of a work block. Describe one action
+small enough to try within the time and support available.
+
+Decide when you could try it, then leave space to notice whether the arrangement fits. A changed
+meeting, care need or household commitment may mean revising the plan. The action can remain useful
+even when it needs a different time or a smaller first step.
+
+Page 2 of the free Remote Mom's Work Fit and Safety Starter Kit helps readers choose a relevant
+path. The seven-day plan on page 9 offers actions and reflection for both paths. Use the
+Remote-Life section that suits your situation; completing every worksheet is not needed before
+choosing one practical starting point for the week.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28-business
+
+Free PDF download after your request is confirmed.
+
+**Instagram business feed caption — provisional draft**
+
+Choose the part of next week you want to understand or organize more clearly.
+
+For a mom already working remotely, that could be the start of a work block, a handover or one
+recurring interruption. Pick a small action and a realistic moment to try it. Consider what
+support it needs and allow for the week to change.
+
+The free Starter Kit lets you begin with the path that fits. Page 2 explains the choices, and
+page 9 provides a seven-day plan with relevant actions for each path.
+
+Use one Remote-Life action as your starting point, then return to it as the week unfolds. Leave
+irrelevant worksheets aside and adjust the plan to your responsibilities.
+
+Get the free Starter Kit through the link in our profile.
+
+Free PDF download after your request is confirmed.
+
+**Feed visual brief — not yet produced**
+
+Single card with an illustrated weekly note and one highlighted blank space. Exact on-image copy:
+**“Next week: one useful starting point.”** followed by **“Choose a relevant action. Find a realistic
+moment.”** Use cream #F6EBDD, forest #173D32 and sage #A9C0A8. Keep the composition open and
+avoid depicting a fully controlled or perfectly completed week.
+
+**Draft alt text:** A weekly note with one highlighted space encourages choosing a relevant action and a realistic time to begin next week.
+
 ## Publication record
 
 No publication rows exist yet. Add one row for each actual platform placement after it is posted;
 retain planned versus actual timing and the exact route used. A draft, scheduled item, or direct URL
 test must not be recorded as a published post.
 
-| Post ID / path | Channel / placement | Actual date and time / timezone | Public post URL | Exact destination and UTM values checked | Copy/asset changes and route limitations |
+| Post ID / variant / path | Platform / exact account / role / placement | Actual date and time / timezone | Public post URL | Exact destination and UTM values checked | Copy/asset changes and route limitations |
 |---|---|---|---|---|---|
 
 When an Instagram bio route is used, record its active interval and the page/link position. Keep
@@ -1244,6 +2945,13 @@ is wrong. Include anonymized #15 findings when actual conversations happen; inte
 reader validation. At the end of four real publishing weeks, record what to continue, change, or
 stop and whether the evidence supports further work under #6–#10.
 
+**Business-account reporting:** retain the same approved request-only reporting method and weekly
+windows. Record the exact account, personal/business role and pNN variant with every actual
+placement. Facebook business campaign values distinguish its registered post routes; business
+Instagram `launchpad-business-profile` identifies a shared profile route, not an originating feed
+post or an audience path. Keep reader-selected path/stage/challenge separate. Do not relabel older
+rows, combine overlapping account reach as unique people, or turn unavailable metrics into zeros.
+
 ## Preparation evidence and remaining work
 
 **Original preparation — November 16:** four-week calendar, six full holiday captions, six Story text
@@ -1258,11 +2966,18 @@ the copy. The retained briefs still guide later refinement from real first-week 
 reader feedback. This expands draft material only; it does not add an acceptance requirement or
 complete another #14 criterion.
 
-**Current preparation after the daily revision — November 18:** 28 daily topics, 28 Facebook captions,
+**Preparation after the earlier two-account daily revision — November 18 / PR #47:** 28 daily topics, 28 Facebook captions,
 28 Instagram Story drafts and 56 registered source-specific links. The original 12 posts, six later
 briefs, accepted checks, publication-log structure and weekly review windows remain in place. New
 p13–p28 add eight Career and eight Remote-Life topics. These additions complete daily draft coverage,
 not campaign publication or another #14 criterion.
+
+**Current preparation after the business-account expansion — November 18:** 28 daily topics now
+have **112 proposed account placements**: 56 Facebook captions (28 personal, 28 business), 28 retained
+personal Instagram Story drafts and 28 new business Instagram feed captions. Added 28 business
+visual briefs with draft alt text, 28 distinct Facebook business URLs and one prepared shared
+Instagram business profile route. The graphics are not produced. All original personal copy, dates,
+IDs, URLs and earlier acceptance/history remain in place.
 
 Before posting, finish the remaining #18 representative-reader wording acceptance, confirm the
 actual channel placements, and test the real social-to-site route. #11/#19 acceptance is complete
@@ -1297,3 +3012,13 @@ its verification remain dated history. Updated the existing business roadmap to 
 daily plan. #14 remains 3/8, #18 remains deferred, and all completed acceptance stays accepted.
 No post is published or scheduled, and no automation, code, signup record, app-local data or social
 account setting is changed by this preparation.
+
+**Change record — November 18, business-account expansion:** following Vanessa's explicit request
+to include her Facebook and Instagram business pages, added business feed variants for p01–p28
+and expanded the current daily plan to four accounts / 112 proposed placements. Preserved all
+personal drafts, dates, stable IDs and links; added distinct business Facebook tracking and a
+shared-profile Instagram mapping without changing stored fields. The business visuals remain
+briefs. Updated the existing business roadmap and collection guide with this dated account/format
+decision and attribution limit. #14 remains 3/8, #18 remains deferred, and accepted checks stay
+complete. No post, Story or queue entry was published or scheduled, and no account setting, app
+code, local data, signup record or automation changed.
