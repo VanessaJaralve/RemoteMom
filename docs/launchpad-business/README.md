@@ -443,6 +443,32 @@ the broader #15 study do not block this free-kit-only campaign. Actual post/Stor
 and the existing weekly review method stay with execution. If readiness moves the start, revise
 the dates and holiday wording without backdating or compressing missed posts.
 
+### Business pages added to the daily campaign — 2026-11-18
+
+Vanessa explicitly asked to include her Facebook and Instagram business pages. The [current
+campaign pack](../../marketing/launchpad-social/holiday-2026-campaign.md#business-account-expansion--november-18-2026-asiamanila)
+now covers **four accounts and 112 proposed placements** for November 23–December 20 at the retained
+proposed 20:00 Asia/Manila time: personal Facebook @VanJaralve posts, personal Instagram @vdjaralve
+Stories, business Facebook @TheRemoteMomsLaunchpad feed posts and business Instagram
+@theremotemomslaunchpad feed posts, each daily. The saved November 8 social audit identifies both
+business handles and the business feed/educational treatment; this revision preserves the personal
+formats and copy from PR #47. The earlier two-account section above remains dated history.
+
+Each of the 28 retained topics has two distinct business captions plus a visual brief and draft
+alt text, in addition to its unchanged personal caption/Story. Business graphics are **not yet
+produced**. Twenty-eight business Facebook links append `-business` to the existing campaign values.
+Business Instagram uses a proposed shared-profile route, `launchpad-business-profile`; it does
+not identify an originating feed post or audience path. The [collection guide's dated
+mapping](../Validation_Collection_Setup.md#business-account-campaign-mapping--2026-11-18) retains the
+same three stored tracking fields and reporting method.
+
+This is campaign preparation: **#14 remains 3/8, unpublished and unscheduled**. The actual business
+profile destination/posting routes have not been checked or changed; verify actual placements under
+the existing #14 execution work. #18's deferred signup-wording acceptance remains the reader gate;
+#11/#19, #13 and #16 stay accepted. Book 2, historical Android evidence, optional email and the broader
+#15 study do not block the free-kit campaign. Prior issue history, social schedules, other-platform
+plans, app data and signup records are unchanged.
+
 ### Journey checks completed — 2026-11-16
 
 The following checks use the live Launchpad in Chrome and harmless temporary exercise notes.
