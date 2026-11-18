@@ -34,6 +34,26 @@ Refine these drafts using actual first-week results and relevant reader feedback
 This is optional campaign preparation; #14 remains **3/8**, unpublished and unscheduled, and #18's
 wording acceptance remains deferred.
 
+## Daily cadence decision — November 18, 2026 (Asia/Manila)
+
+Vanessa requested a daily post across the social accounts. This revision prepares **one Facebook
+post and one matching Instagram Story each day**, using the two accounts already in this campaign:
+[Facebook @VanJaralve](https://www.facebook.com/VanJaralve) and
+[Instagram @vdjaralve](https://www.instagram.com/vdjaralve/). This is the working account and format
+scope for the daily plan.
+
+The proposed **November 23–December 20** window now has **28 master topics: 14 Career and 14
+Remote-Life**, adapted into **28 Facebook captions and 28 Instagram Stories — 56 placements**.
+The original p01–p12 dates, IDs, copy, briefs and 24 links are retained. New p13–p28 fill the 16 empty
+dates, with 32 additional source-specific links. IDs remain stable, so they are not in numerical
+order in the calendar.
+
+This dated revision supersedes the original 12-post cadence only. It adds no reader or testing
+requirement. #14 remains **3/8**, with **nothing published or scheduled**; #18's existing signup
+wording acceptance remains deferred. #11/#19 and their accepted phone/keyboard evidence stay complete.
+The broader #15 study, Book 2, historical Android evidence and optional email do not block this
+free-kit-only campaign. The proposed start still depends on the existing #18 gate.
+
 ## Campaign decision
 
 **Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261117b` (released through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
@@ -86,7 +106,8 @@ route check and link correction, separate from publishing any holiday post or St
 
 #### Profile-link register
 
-These are separate from the **24 holiday post links**. Use `launchpad-profile` for the shared
+These are separate from the **56 prepared campaign post links** (24 original links plus 32 added
+for the November 18 daily cadence). Use `launchpad-profile` for the shared
 profile placement; it does not identify an individual older feed post. Record any later replacement
 and its effective date before interpreting a reporting period.
 
@@ -170,30 +191,52 @@ reporting remain unchanged. The 10:16 tracking gap above remains historical evid
 
 ## Four-week calendar
 
+**Daily revision — November 18:** one planned Facebook post and one Instagram Story per day.
+
 Proposed time is **20:00 Asia/Manila** for every slot. This is a consistent starting time for a small
 experiment, not a claim about the best time to post. Adjust only after actual channel results or
 Vanessa's operating schedule support a change, and record that change below. Nothing is scheduled.
 
-There are **12 master posts: six Career and six Remote-Life**. Week 1 has four holiday slots,
-Week 2 has two, and Weeks 3–4 have three each: an average of three master posts per week.
-Each master can have a Facebook placement and a matching Instagram Story placement after the
-respective route is verified. A missed readiness gate shifts the start; do not backdate posts or
-compress missed slots into a burst.
+There are **28 master posts: 14 Career and 14 Remote-Life**, with seven daily topics each week.
+Each topic has one Facebook caption and one Instagram Story: **56 proposed placements** across the
+four weeks. Weeks 1 and 3 contain four Career / three Remote-Life topics; Weeks 2 and 4 contain three
+Career / four Remote-Life topics. The original p01–p12 rows are retained, with p13–p28 filling the
+previously empty dates.
+
+A missed readiness gate shifts the start; do not backdate posts or compress missed slots into a
+burst. If dates move, adjust date-specific holiday wording to match the actual publication date.
+The daily cadence is Vanessa's requested content plan, not an analytics-proven optimum.
 
 | Week / date | ID | Intended path | Topic and useful exercise | Copy status | One primary action |
 |---|---|---|---|---|---|
 | 1 · Mon Nov 23 | p01 | Career | Thanksgiving week: compare real availability, meetings, and timezones; kit page 3 | Full caption + Story text below | Request the free kit |
+| 1 · Tue Nov 24 | p13 | Remote-Life | Choose one part of the day to work on; page 8 | Provisional caption + Story draft below | Request the free kit |
+| 1 · Wed Nov 25 | p14 | Career | Compare the work behind two job titles; page 5 | Provisional caption + Story draft below | Request the free kit |
 | 1 · Thu Nov 26 | p02 | Remote-Life | Thanksgiving: recognize support and choose one workable boundary; pages 8–9 | Full caption + Story text below | Request the free kit |
 | 1 · Fri Nov 27 | p03 | Career | Black Friday: name the work need before evaluating another tool; role fit on pages 3–5 | Full caption + Story text below | Request the free kit |
 | 1 · Sat Nov 28 | p04 | Remote-Life | Black Friday weekend: give an existing calendar or note a clear purpose; pages 8–9 | Full caption + Story text below | Request the free kit |
+| 1 · Sun Nov 29 | p15 | Career | Include working conditions, care coverage, equipment, and relevant expenses in role fit; page 3 | Provisional caption + Story draft below | Request the free kit |
 | 2 · Mon Nov 30 | p05 | Career | Cyber Monday: organize one application folder and the next follow-up; pages 9–10 | Full caption + Story text below | Request the free kit |
+| 2 · Tue Dec 1 | p16 | Remote-Life | Decide what needs attention and what can wait today; page 8 | Provisional caption + Story draft below | Request the free kit |
+| 2 · Wed Dec 2 | p17 | Career | Give one search source a clear purpose; page 6 | Provisional caption + Story draft below | Request the free kit |
 | 2 · Thu Dec 3 | p06 | Remote-Life | Cyber Monday follow-up: make restarting after an interruption easier; pages 8–9 | Full caption + Story text below | Request the free kit |
+| 2 · Fri Dec 4 | p18 | Remote-Life | Choose a small starting cue for the next work block; pages 8–9 | Provisional caption + Story draft below | Request the free kit |
+| 2 · Sat Dec 5 | p19 | Career | Pause and verify a request before sharing personal information; page 7 | Provisional caption + Story draft below | Request the free kit |
+| 2 · Sun Dec 6 | p20 | Remote-Life | Plan one recurring home task around meals or groceries; page 8 | Provisional caption + Story draft below | Request the free kit |
 | 3 · Mon Dec 7 | p07 | Career | Practical-tech follow-up: turn one real responsibility into a specific skill example; page 4 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Tue Dec 8 | p21 | Remote-Life | Make one child or care transition clearer; page 8 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Wed Dec 9 | p22 | Career | Write down an unanswered question about a role's actual working conditions; pages 3 and 5 | Provisional caption + Story draft below | Request the free kit |
 | 3 · Thu Dec 10 | p08 | Remote-Life | Practical-tech follow-up: plan one work block with a realistic buffer; page 8 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Fri Dec 11 | p23 | Remote-Life | Choose a response for one recurring interruption; pages 8–9 | Provisional caption + Story draft below | Request the free kit |
 | 3 · Sat Dec 12 | p09 | Career | Practical-tech follow-up: independently check a role and save the source; pages 6–7 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Sun Dec 13 | p24 | Career | Record sources, checks actually performed, and unanswered questions; pages 6–7 and 10 | Provisional caption + Story draft below | Request the free kit |
 | 4 · Mon Dec 14 | p10 | Remote-Life | Practical-tech follow-up: a small end-of-work transition; pages 8–9 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Tue Dec 15 | p25 | Career | Record one application's status, next action, and actual follow-up date; page 10 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Wed Dec 16 | p26 | Remote-Life | Recheck how an existing work arrangement fits current responsibilities; pages 3 and 8 | Provisional caption + Story draft below | Request the free kit |
 | 4 · Thu Dec 17 | p11 | Career | Practical-tech follow-up: a focused application session sized to the time available; pages 9–10 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Fri Dec 18 | p27 | Career | Choose a main role direction and a backup using actual fit evidence; page 5 | Provisional caption + Story draft below | Request the free kit |
 | 4 · Sat Dec 19 | p12 | Remote-Life | Practical-tech follow-up: review one routine and choose what to keep or adjust; page 9 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Sun Dec 20 | p28 | Remote-Life | Choose a relevant path and one useful action for next week; pages 2 and 9 | Provisional caption + Story draft below | Request the free kit |
 
 The kit supports these exercises; the caption's calendar/folder examples are optional ways to apply
 them. The PDF does not provide software tutorials, an automated planner, a validated assessment,
@@ -206,7 +249,9 @@ This follows the [#13 naming contract](../../docs/Validation_Collection_Setup.md
 `utm_source=facebook|instagram`, `utm_medium=organic_social`, and
 `utm_campaign=holiday2026-{occasion}-{audience}-pNN`. Do not add `utm_content`; the form does not
 capture it. All values are under 100 characters. IDs p01–p06 retain the original proposed
-occasion/audience pairs; p07–p12 continue the Cyber Monday practical-tech wave.
+occasion/audience pairs; p07–p12 continue the Cyber Monday practical-tech wave. Added p13–p14 use
+the Thanksgiving wave, p15 the Black Friday wave, and p16–p28 the Cyber Monday practical-tech wave.
+These labels group the campaign; December captions do not call their dates Cyber Monday.
 
 The campaign value describes the intended post audience. It must not be used to infer a reader's
 selected path, current stage, or challenge. Those remain separate dimensions. Reuse a post's ID
@@ -218,7 +263,7 @@ profile bio, Story sticker, platform redirect, visitor counter, or submission. R
 check accurately in #13/#19 and the publication log. No click or request totals are asserted here.
 
 **Direct HTTP verification — November 16, 05:15:16–05:15:54 Asia/Manila:** all **24/24** unique
-links below returned HTTP 200 with `text/html`, the expected Launchpad title, and the existing
+original p01–p12 links returned HTTP 200 with `text/html`, the expected Launchpad title, and the existing
 `data-launchpad-form` form targeting `/api/launchpad-lead`. Every final URL was unchanged and
 preserved exactly the three expected UTM values. The bounded check used four workers and a
 20-second request timeout. It submitted no form and did not verify JavaScript interactions,
@@ -238,12 +283,33 @@ actual social-platform routes, visitor/event counting, collection, or completed 
 | p10 | `holiday2026-cybermonday-remote-life-p10` | [Facebook p10](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10) | [Instagram p10](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10) |
 | p11 | `holiday2026-cybermonday-career-p11` | [Facebook p11](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11) | [Instagram p11](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11) |
 | p12 | `holiday2026-cybermonday-remote-life-p12` | [Facebook p12](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12) | [Instagram p12](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12) |
+| p13 | `holiday2026-thanksgiving-remote-life-p13` | [Facebook p13](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13) | [Instagram p13](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13) |
+| p14 | `holiday2026-thanksgiving-career-p14` | [Facebook p14](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14) | [Instagram p14](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14) |
+| p15 | `holiday2026-blackfriday-career-p15` | [Facebook p15](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15) | [Instagram p15](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15) |
+| p16 | `holiday2026-cybermonday-remote-life-p16` | [Facebook p16](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16) | [Instagram p16](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16) |
+| p17 | `holiday2026-cybermonday-career-p17` | [Facebook p17](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17) | [Instagram p17](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17) |
+| p18 | `holiday2026-cybermonday-remote-life-p18` | [Facebook p18](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18) | [Instagram p18](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18) |
+| p19 | `holiday2026-cybermonday-career-p19` | [Facebook p19](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19) | [Instagram p19](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19) |
+| p20 | `holiday2026-cybermonday-remote-life-p20` | [Facebook p20](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20) | [Instagram p20](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20) |
+| p21 | `holiday2026-cybermonday-remote-life-p21` | [Facebook p21](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21) | [Instagram p21](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21) |
+| p22 | `holiday2026-cybermonday-career-p22` | [Facebook p22](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22) | [Instagram p22](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22) |
+| p23 | `holiday2026-cybermonday-remote-life-p23` | [Facebook p23](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23) | [Instagram p23](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23) |
+| p24 | `holiday2026-cybermonday-career-p24` | [Facebook p24](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24) | [Instagram p24](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24) |
+| p25 | `holiday2026-cybermonday-career-p25` | [Facebook p25](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25) | [Instagram p25](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25) |
+| p26 | `holiday2026-cybermonday-remote-life-p26` | [Facebook p26](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26) | [Instagram p26](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26) |
+| p27 | `holiday2026-cybermonday-career-p27` | [Facebook p27](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27) | [Instagram p27](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27) |
+| p28 | `holiday2026-cybermonday-remote-life-p28` | [Facebook p28](https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28) | [Instagram p28](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28) |
 
 Chrome also checked Facebook p01/p03/p05 and Instagram p02/p04/p06: the hero Starter Kit link reached `#starter-kit` while preserving the exact three UTM values in all six cases. This is direct-browser evidence, not a published social-route or submission check. See the [dated link record](../../docs/Validation_Collection_Setup.md#holiday-direct-link-verification--2026-11-16).
 
+**Daily additions — November 18:** the register now contains **56 prepared links**. The 32 new
+p13–p28 URLs have been checked for their exact destination, post ID, source/audience pairing and
+three-field naming format. They are not part of the November 16 HTTP or Chrome evidence above;
+no live route or new request is claimed by this preparation.
+
 ## Ready-to-use holiday captions
 
-These six captions cover the first two proposed weeks. The Facebook version includes one kit link.
+These six retained captions are the original holiday posts in the first two proposed weeks. The Facebook version includes one kit link.
 For Instagram, use the accompanying short Story text with the matching Instagram link from the
 register after that placement is verified. “Free Starter Kit” is the sole link-sticker label and
 primary CTA; do not add a competing follow/share/comment request.
@@ -612,6 +678,525 @@ Free PDF download after your request is confirmed.
 **Instagram link sticker:** Free Starter Kit
 https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12
 
+## Daily additions — provisional captions and Story text
+
+**Prepared November 18, 2026 — Asia/Manila. Not published or scheduled.** These 16 drafts fill the
+previously empty dates in the daily calendar. Together with p01–p12, every proposed day now has a
+Facebook caption and a three-line Instagram Story. All added examples apply existing kit exercises;
+they do not claim new product features or reader results.
+
+Use the exact matching channel link below. The Story link belongs in the sticker, with the sole
+label **Free Starter Kit**, rather than as extra on-screen text. Each draft has one primary action:
+request the free kit. Relevant wording feedback and actual early campaign results can inform later
+edits; preparing daily content does not create another acceptance prerequisite.
+
+### p13 · Choose one part of the day to work on
+
+**Facebook caption — provisional draft**
+
+Which part of the day needs a little more attention?
+
+It might be getting started, moving between work and care, or deciding what to do when plans
+change. You can begin with one recurring pressure point and describe what happens in a few plain
+words. There is no need to turn it into a judgment about how well you are managing.
+
+Then choose a small boundary or routine to try. For example, a brief handover note might help you
+explain what needs attention when a responsibility changes hands. Pick an action that fits the
+support and time actually available to you.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit gives you space to explore these
+pressure points. Start with the row that feels relevant and leave the others for another time.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Choose one part of the day to work on.
+> Name the pressure point. Try one small adjustment.
+> Start with the free kit's remote-life worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-remote-life-p13
+
+### p14 · Compare the work behind two job titles
+
+**Facebook caption — provisional draft**
+
+Two job titles can sound equally appealing until you look at the work behind them.
+
+Choose two roles you are considering and compare what each asks you to do. Which responsibilities
+connect with experience you can explain? What hours, equipment, or knowledge would each role
+require? Keep any unanswered question visible instead of filling the gap with an assumption.
+
+This can be a small exercise. You could begin with one role description and add the second when you
+have useful details. Your comparison can change as you learn more about the actual work.
+
+Page 5 of the free Remote Mom's Work Fit and Safety Starter Kit provides a role-comparison worksheet.
+Its questions and scores help you reflect on fit; they are not a hiring prediction or an aptitude
+test. Use the comparison to choose what you want to understand next.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Compare the work behind two job titles.
+> Look at responsibilities, hours, equipment, and your experience.
+> Explore the free kit's role-comparison worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-thanksgiving-career-p14
+
+### p15 · Put the working conditions beside the role
+
+**Facebook caption — provisional draft**
+
+A role's working conditions belong in the same conversation as its responsibilities.
+
+For one opportunity you are considering, note the expected hours, equipment arrangements, and any
+office attendance. Think about care coverage and expenses that would matter in your situation.
+Which details are clear, and which still need an answer from the employer?
+
+Keep those questions alongside the role description. An appealing title does not tell you whether
+the arrangement fits your week, and buying equipment before understanding the requirements could
+leave an important question unresolved. You can begin by gathering information with the tools you
+already have.
+
+Page 3 of the free Remote Mom's Work Fit and Safety Starter Kit brings these work-and-life
+considerations together. It offers space to describe your circumstances and the conditions you need
+to understand before choosing a direction.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Put the working conditions beside the role.
+> Hours, equipment, care coverage: what still needs an answer?
+> Use the free kit's work-fit worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-blackfriday-career-p15
+
+### p16 · Give today's priorities a little room
+
+**Facebook caption — provisional draft**
+
+Some days hold more tasks than the time available.
+
+Take a look at the list or note you already use. What needs attention today? What could wait without
+missing a commitment that matters? If another person is involved, a short update may be part of
+moving that task to a different time.
+
+You might choose one work action and one home responsibility to keep visible. The useful starting
+point is what fits your circumstances, including care needs and changes you cannot plan around.
+You can revise the list when the day changes.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit includes daily-planning prompts to
+help you think through what needs attention and what can wait. Use one prompt if that is all you
+need today; the worksheet does not have to become another full task list.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> What needs attention today? What can wait?
+> Choose a priority that fits the day you have.
+> Try a planning prompt in the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p16
+
+### p17 · Give one search source a clear purpose
+
+**Facebook caption — provisional draft**
+
+Where will you look for useful information about your next possible role?
+
+Choose one search source and decide what you want to learn from it. You might be looking for common
+responsibilities, the hours employers describe, or the skills that appear in roles you are
+considering. Save the source with your notes so you can return to the original information.
+
+Finding a listing is a starting point. You still need to check the employer, the actual work, and
+any requests made during the application process. A source appearing in a worksheet does not make
+its listings endorsed or verified.
+
+Page 6 of the free Remote Mom's Work Fit and Safety Starter Kit combines a search-source planning
+table with opportunity-checking questions. Begin with one source and one question you want to
+answer, then adjust your plan as you learn.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Give one search source a clear purpose.
+> Decide what you want to learn, then record where it came from.
+> Start with the free kit's search-planning table.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p17
+
+### p18 · Make the first work action easy to name
+
+**Facebook caption — provisional draft**
+
+What is the first useful action when your next work block begins?
+
+Try naming something specific enough to recognize: open the document for one task, read the latest
+handover note, or check the information needed for a decision. Choose an example that fits your
+actual responsibilities rather than adding a new routine just to have one.
+
+Keep that starting point somewhere you already look. If the day changes before you begin, you can
+choose a different first action. A starting cue is an experiment to try, not a promise that the
+rest of the day will follow the plan.
+
+Pages 8–9 of the free Remote Mom's Work Fit and Safety Starter Kit include workday pressure points
+and small routine actions. Use the start-of-day section to choose a manageable way into the work
+you have in front of you.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Make the first work action easy to name.
+> Choose a small starting cue that fits your responsibilities.
+> Explore the free kit's routine prompts.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p18
+
+### p19 · Pause before sharing personal information
+
+**Facebook caption — provisional draft**
+
+An application request deserves a moment of attention before you share personal information.
+
+Who is asking, what do they need, and why do they need it at this stage? Look for a way to check
+the request through an employer's independently located contact details. If something is unclear,
+you can pause while you find an answer instead of treating urgency as proof that you must act.
+
+Keep the information you share limited to what you understand is needed. You can also note a
+relevant local reporting or advice resource for questions you cannot resolve yourself.
+
+Page 7 of the free Remote Mom's Work Fit and Safety Starter Kit offers privacy guidance and space
+for local resources. It supports careful questions and choices; completing a checklist cannot
+certify an employer or opportunity as safe.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Pause before sharing personal information.
+> Check who is asking, why it is needed, and what remains unclear.
+> Explore the free kit's privacy guidance.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p19
+
+### p20 · Plan one recurring home task
+
+**Facebook caption — provisional draft**
+
+A recurring home task can be a useful place to try a small planning change.
+
+If meals or groceries are responsibilities you manage or share, choose one part that needs
+attention this week. It could be keeping a shared shopping note in one place, deciding who will
+handle one task, or making space for it in the calendar you already use.
+
+The plan should reflect the people, time, and resources available. Start with an adjustment you
+can describe clearly, then notice whether it fits. You can change it when circumstances change;
+there is no perfect household routine to achieve.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit includes meals and groceries
+alongside other remote-life pressure points. Use the relevant row to explore one action, or choose
+a different pressure point if this one does not apply to you.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Plan one recurring home task.
+> Choose a small change that fits the responsibilities you manage or share.
+> Try the free kit's remote-life worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p20
+
+### p21 · Make one transition clearer
+
+**Facebook caption — provisional draft**
+
+A change between work and family time can involve several people.
+
+Choose one transition that often needs attention: starting a work block after school drop-off,
+handing over care to another adult, or moving from work into an evening routine. What needs to be
+clear for the people involved? Consider who is available, what happens next, and any preparation
+that would help the arrangement fit your circumstances.
+
+Try one small change, such as agreeing on the handover time or putting what you need in one place.
+Adjust it around your child's needs and the support actually available to you.
+
+Page 8 of the free Remote Mom's Work Fit and Safety Starter Kit includes a remote-life worksheet
+for choosing a pressure point and a routine or boundary to try. A transition is one possible place
+to use that exercise.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Make one transition clearer.
+> Who is available? What happens next? What needs preparing?
+> Choose a routine to try with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p21
+
+### p22 · Write down the question the listing leaves open
+
+**Facebook caption — provisional draft**
+
+A role can sound interesting while leaving an important detail unclear.
+
+Look at one listing and compare it with the working conditions you need. Are the hours stated?
+Which timezone applies to meetings? What equipment is required? Are the responsibilities specific
+enough to understand the work? Choose the unanswered question that would most affect your decision.
+
+Keep that question beside the listing's source. You can seek clarification through an independently
+confirmed employer contact before treating the opportunity as a good fit. A missing detail is
+something to investigate, rather than fill in with an assumption.
+
+Pages 3 and 5 of the free Remote Mom's Work Fit and Safety Starter Kit help you reflect on work fit
+and compare possible roles. Use those exercises to identify the information you still need.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> What did the job listing leave unanswered?
+> Hours, meetings, equipment, or the work itself?
+> Clarify your work-fit questions with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p22
+
+### p23 · Choose a response for one recurring interruption
+
+**Facebook caption — provisional draft**
+
+Some interruptions need attention straight away. Others may have room to wait.
+
+Think about one interruption that often happens during work. What does it usually need from you?
+If it can wait, consider a simple place to note the question or a time to return to it. If it needs
+your attention, plan around that reality when choosing the work block.
+
+Where another person is involved, agree on an arrangement that fits their needs and your own.
+The aim is a clearer response you can try, with care responsibilities and work expectations in
+view. It does not need to produce a perfectly uninterrupted day.
+
+The remote-life worksheet and seven-day plan on pages 8–9 of the free Starter Kit give you a place
+to choose one boundary or routine and reflect on how it works in practice.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Choose a response for one recurring interruption.
+> What needs attention now? What can wait for an agreed time?
+> Try one workable boundary with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p23
+
+### p24 · Keep a record of the checks you actually made
+
+**Facebook caption — provisional draft**
+
+When you return to an opportunity later, a short record can show what you still need to check.
+
+Keep the listing's source, the date you reviewed it, and the steps you actually took. For example,
+you might have found the employer's own website independently or compared the advertised duties
+with information from a confirmed contact. Write down the result and any unanswered questions.
+
+Be specific about what the evidence establishes. A note saying “checked the website” does not
+certify an employer or guarantee that an opportunity is safe. Details can also change after your
+review.
+
+Pages 6–7 of the free Starter Kit offer opportunity-check questions. Page 10 provides an optional
+application tracker. Use them together with your own notes to keep the source, checks, and next
+question easy to find.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Keep a record of the checks you actually made.
+> Save the source, date, result, and questions still open.
+> Use the free kit's checklist and optional tracker.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p24
+
+### p25 · Give one application a clear next step
+
+**Facebook caption — provisional draft**
+
+Where did you leave that application?
+
+Choose one role you are actively considering and record its current status. You may still be
+checking the working conditions, preparing a relevant example, or waiting for a reply. Add the next
+action and any date that actually applies, such as a stated deadline or an agreed follow-up.
+
+Keep the note beside the listing or application record you already use. When you return, you can
+see what happened and decide what needs your attention. If the opportunity no longer fits, you can
+record that decision too.
+
+Page 10 of the free Remote Mom's Work Fit and Safety Starter Kit includes an optional application
+tracker. Start with one current opportunity and the information you know; leave uncertain details
+as questions to check.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Give one application a clear next step.
+> Record its status, next action, and any real follow-up date.
+> Start with the free kit's optional application tracker.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p25
+
+### p26 · Check how your work arrangement fits now
+
+**Facebook caption — provisional draft**
+
+An arrangement that suited one season may need another look as responsibilities change.
+
+If you already work remotely, choose one part of the week to review. Consider your working hours,
+meeting times, care coverage, or a pressure point that keeps returning. What still fits? Where is
+there a question to clarify or a small adjustment to discuss?
+
+You might need to understand a meeting expectation, revisit a handover, or allow more time around
+a regular commitment. Work from the options actually available to you, and involve the relevant
+people where an adjustment affects them.
+
+Page 3 of the free Starter Kit supports work-and-life-fit reflection, while page 8 focuses on
+remote-life pressure points. Use either exercise to name one useful question or practical change
+for your current situation.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Does your work arrangement fit the week you have now?
+> Revisit one question about hours, care coverage, or a recurring pressure point.
+> Reflect with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p26
+
+### p27 · Choose a direction for your next search step
+
+**Facebook caption — provisional draft**
+
+After comparing possible roles, you can choose one direction to explore more closely.
+
+Look at the evidence you have about your skills, available hours, equipment, and the work each
+role involves. Which option is worth your next research step? Keep a second possibility as a backup
+if it helps you stay open to another suitable route.
+
+That choice can change as you learn more. A role title alone does not tell you the actual duties
+or working conditions, so continue checking individual opportunities and the questions they leave
+open.
+
+Page 5 of the free Remote Mom's Work Fit and Safety Starter Kit offers a role-comparison exercise.
+Use it to organize your thinking and choose what to investigate next. Its score is a reflection
+aid, not an aptitude test or a prediction of getting hired.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Choose one role direction to explore next.
+> Use what you know about your skills, time, and working conditions.
+> Compare your options with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p27
+
+### p28 · Choose a useful starting point for next week
+
+**Facebook caption — provisional draft**
+
+Your next week can begin with one useful choice.
+
+If you already work remotely, consider the part of work and home life that needs attention now.
+It might be a boundary, a transition, or the way you plan a work block. Choose one small action
+that fits your circumstances and decide when you can try it.
+
+You can return to that choice during the week and adjust it if your responsibilities change.
+There is no need to complete every worksheet before taking a useful step.
+
+Page 2 of the free Remote Mom's Work Fit and Safety Starter Kit helps you choose a relevant path.
+The seven-day plan on page 9 gives you a place to plan an action and reflect on it. Start where the
+kit is useful to your current situation and skip the pages you do not need.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Choose one useful starting point for next week.
+> Pick the path and small action that fit your situation now.
+> Begin with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p28
+
 ## Publication record
 
 No publication rows exist yet. Add one row for each actual platform placement after it is posted;
@@ -661,7 +1246,7 @@ stop and whether the evidence supports further work under #6–#10.
 
 ## Preparation evidence and remaining work
 
-Completed preparation in this file: four-week calendar, six full holiday captions, six Story text
+**Original preparation — November 16:** four-week calendar, six full holiday captions, six Story text
 adaptations, six later briefs, balanced audience coverage, one CTA per post, 24 source-specific
 prepared links, a publication-log structure, and dated weekly review windows. Source review used the
 current Launchpad/download HTML and the reviewed ten-page kit inventory. The existing four PNGs
@@ -672,6 +1257,12 @@ and six matching Instagram Story drafts, with their existing channel-specific li
 the copy. The retained briefs still guide later refinement from real first-week results and relevant
 reader feedback. This expands draft material only; it does not add an acceptance requirement or
 complete another #14 criterion.
+
+**Current preparation after the daily revision — November 18:** 28 daily topics, 28 Facebook captions,
+28 Instagram Story drafts and 56 registered source-specific links. The original 12 posts, six later
+briefs, accepted checks, publication-log structure and weekly review windows remain in place. New
+p13–p28 add eight Career and eight Remote-Life topics. These additions complete daily draft coverage,
+not campaign publication or another #14 criterion.
 
 Before posting, finish the remaining #18 representative-reader wording acceptance, confirm the
 actual channel placements, and test the real social-to-site route. #11/#19 acceptance is complete
@@ -697,3 +1288,12 @@ briefs, link register, proposed dates, publication log, reporting windows, accep
 change records are retained. #14 remains 3/8, #18 remains deferred, and no post is published or
 scheduled. No code, signup records, app-local data, email workflow or social-account setting changes
 are included.
+
+**Change record — November 18, daily cadence:** following Vanessa's request for daily social posts,
+expanded the existing calendar to 28 daily topics for the same proposed four-week window and the
+two current campaign accounts. Added p13–p28 copy and 32 matching links while preserving all original
+p01–p12 copy, briefs, IDs, dates and registered links. The earlier 12-post/24-link preparation and
+its verification remain dated history. Updated the existing business roadmap to identify the current
+daily plan. #14 remains 3/8, #18 remains deferred, and all completed acceptance stays accepted.
+No post is published or scheduled, and no automation, code, signup record, app-local data or social
+account setting is changed by this preparation.
