@@ -8,6 +8,34 @@ Mom's Launchpad starter-kit form submits to `/api/launchpad-lead`.
 Response sheet:
 https://docs.google.com/spreadsheets/d/1-uWXiAuLlIsGZ5TZ6_SVR11Vwt7CNPbvOMbcmCNAr1s/edit
 
+## Current Starter Kit acceptance — 2026-11-18 (Asia/Manila)
+
+**Acceptance complete: [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11) 12/12 and
+[#19](https://github.com/VanessaJaralve/RemoteMom/issues/19) 22/22.** Vanessa directly answered the
+current `20261117b` Starter Kit phone-and-saved-copy check with the following results:
+
+| Evidence field | User-reported result |
+|---|---|
+| Device | Android Oppo; exact model not reported |
+| PDF app | WPS-PDF; browser not reported |
+| Pages inspected | All pages, 1–10 |
+| Opening and readability | PDF opened without issue; readability clear |
+| Saved copy | Saved and reopened successfully |
+
+The edition attribution comes from her direct reply to the explicit `20261117b` check, not an
+independent inspection of her phone file. A numeric zoom level was not separately reported; the
+readability reply addresses the requested normal-viewing check. This is dated user-reported evidence,
+not agent-operated device testing. Combined with the accepted production, collection, keyboard and
+technical checks, it completes the remaining phone/saved-PDF evidence and final journey acceptance;
+no critical defect was reported in this check. Earlier records retain their original dates and scope.
+Paper output and screen-reader behavior remain untested and retain their documented limits.
+
+[#18](https://github.com/VanessaJaralve/RemoteMom/issues/18) remains **Ready for UAT, 11/12**, with
+representative-reader wording feedback deferred; the #15 study remains deferred. Those separate
+reader findings are not supplied by this phone check. #14 remains **prepared, 3/8**, with no posts
+published or scheduled; #18 is its remaining reader-acceptance gate, followed by actual placement
+and route checks. No publication, outreach, reporting automation or new collection scope is selected.
+
 ## Required Environment Variable
 
 Set this variable on the hosting platform before sharing the landing page publicly:
@@ -210,10 +238,10 @@ Controlled tests cover all 36 stage/challenge pairs, the real form's changed-sta
 Script's old/new mapping. PR #22 separately records the production release and labeled new-category
 destination check, campaign `issue18-20261114100210z`; exclude that QA activity from #13 reporting.
 #12 is Done after its optional email scope moved to #24. Vanessa's November 16 confirmation below
-completes the manual native-arrow check; #18 remains In Progress for representative-reader wording.
-The spreadsheet safeguard in #23 is complete. #19 adopts the documented operational duplicate-accounting
-option without implementing remote idempotency; its remaining physical-PDF and journey acceptance is
-separate from the verified taxonomy release.
+completes the manual native-arrow check; #18 remains Ready for UAT, 11/12, with representative-reader
+wording feedback deferred. The spreadsheet safeguard in #23 is complete. #19 adopts the documented
+operational duplicate-accounting option without implementing remote idempotency; its acceptance is
+now complete at 22/22 with the [November 18 phone evidence](#current-starter-kit-acceptance--2026-11-18-asiamanila).
 
 ### User-reported keyboard acceptance — 2026-11-16
 
@@ -859,10 +887,10 @@ treated as design-equivalent or automatically copied over it.
 
 The support-readiness record combines the deployed desktop/mobile help checks, verified failure/retry
 instructions, file-handling evidence, Vanessa's confirmed daily monitoring and the November 17
-follow-up/private-thread approval. Those owner decisions no longer need reconfirmation. #16 retains
-its separate Stage 2 buyer-operation requirements, while #11/#18/#19 retain their remaining reader,
-physical-phone/saved-PDF and final journey acceptance. Approval of the operating arrangement does not
-supply new live-integration or customer-case evidence.
+follow-up/private-thread approval. Those owner decisions no longer need reconfirmation. #16's accepted
+support scope is preserved. The [November 18 phone evidence](#current-starter-kit-acceptance--2026-11-18-asiamanila)
+completes #11/#19 acceptance; #18 representative-reader wording remains deferred at 11/12. Approval
+of the operating arrangement does not supply new live-integration or customer-case evidence.
 No email automation, marketing enrollment, purchase, refund, or customer outreach is performed by this
 documentation change.
 
