@@ -168,6 +168,25 @@ recruiting founding-mom beta interest without collecting payments or implying a 
 Submissions are routed to a separate `Black Friday Early Access` Google Sheet tab using the existing
 Vercel endpoint and Apps Script pipeline.
 
+### Launchpad owner-reported phone acceptance — November 18, 2026
+
+Vanessa's reply to the requested current Starter Kit edition `20261117b` check reports an Android
+Oppo phone, WPS-PDF, all pages 1–10 clearly readable, no issue opening the PDF, and successful saving
+and reopening. This owner-reported evidence completes the remaining #11 device criteria and #19
+phone/saved-copy and final acceptance: **#11 12/12; #19 22/22**, with no critical issue reported in
+this check. The edition is attributed to the explicit request/reply context, not a newly inspected
+file; the precise Oppo model, browser and zoom level were not separately reported. Existing technical
+checks remain accepted. Paper output and screen-reader behavior remain untested, and the PDF stays
+static and untagged with its recorded editable-master limitation.
+
+**Acceptance change record:** the existing project checklist and Launchpad business roadmap record
+this result; linked issues record integration and closure. #18 remains **Ready for UAT, 11/12** for
+representative-reader signup wording, and #15 research remains deferred. #14 stays **3/8 prepared,
+not published**; its remaining reader-acceptance prerequisite is #18. This documentation update
+changes no app code, PDF bytes, stored data or operating cadence and does not authorize publication,
+new products or an APK release. Book 2 delivery identity and #39's unavailable-originals review keep
+their separate evidence limits.
+
 ## Documentation Inventory And Alignment
 
 Current documentation reviewed on 2026-08-02:

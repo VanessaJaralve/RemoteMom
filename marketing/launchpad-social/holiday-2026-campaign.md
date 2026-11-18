@@ -8,6 +8,25 @@ subject to the existing Stage 1 readiness decision. This file is the campaign's 
 publication record; the [business roadmap](../../docs/launchpad-business/README.md#holiday-and-practical-tech-readiness--november-1620-2026)
 remains the source of truth for priorities and release gates.
 
+## Current acceptance gate — November 18, 2026 (Asia/Manila)
+
+**Campaign preparation remains 3/8; no posts are published or scheduled.** Vanessa's direct reply to
+the current `20261117b` phone check reports Android Oppo / WPS-PDF, all pages 1–10 clear, no opening
+issue, and a saved copy successfully reopened. The exact phone model, browser and numeric zoom were
+not separately reported. The edition attribution follows the explicit current-edition request; no
+independent phone-file inspection is claimed. With the accepted prior checks, this completes
+[#11 at 12/12](https://github.com/VanessaJaralve/RemoteMom/issues/11) and
+[#19 at 22/22](https://github.com/VanessaJaralve/RemoteMom/issues/19). The detailed user-reported
+[acceptance record](../../docs/Validation_Collection_Setup.md#current-starter-kit-acceptance--2026-11-18-asiamanila)
+preserves the untested paper-output and screen-reader limits.
+
+[#18](https://github.com/VanessaJaralve/RemoteMom/issues/18) remains **Ready for UAT, 11/12**, with
+representative-reader wording feedback deferred, and is the remaining reader-acceptance gate for
+this free-kit experiment. The separate #15 study remains deferred. Actual account/placement choices,
+post/Story route checks, publication and four weeks of results remain execution work under #14.
+The calendar, copy, links and proposed dates below are unchanged; this acceptance does not publish
+or schedule the campaign.
+
 ## Campaign decision
 
 **Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261117b` (released through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
@@ -407,8 +426,9 @@ The first regular review is November 23 for November 16–23; the campaign-week 
 unchanged. This is the approved request-only reporting scope, not a scheduled automation or a completed
 future report. Under Stage 1 #16, Vanessa’s daily inbox review, unresolved-case ownership and one
 private email thread per case are already approved. Her separate November 17 approval also completes
-paid-buyer review under #16 at **17/17** (Stage 1 **10/10**, Stage 2 **7/7**). The remaining
-#11/#18/#19 reader/device acceptance and actual post/Story route checks still govern the campaign.
+paid-buyer review under #16 at **17/17** (Stage 1 **10/10**, Stage 2 **7/7**). #11/#19 acceptance is
+complete after the November 18 phone check above. The deferred #18 representative-reader wording
+and actual post/Story route checks still govern the campaign.
 See the [approved arrangements in the business roadmap](../../docs/launchpad-business/README.md).
 
 | Review | Start inclusive | End exclusive | Planned review date | Status |
@@ -440,14 +460,19 @@ prepared links, a publication-log structure, and dated weekly review windows. So
 current Launchpad/download HTML and the reviewed ten-page kit inventory. The existing four PNGs
 were visually inspected and their regional reuse limits recorded.
 
-Before posting, finish the remaining Stage 1 reader/device acceptance in #11/#18/#19, confirm the
-actual channel placements, and test the real social-to-site route. #13 is complete under the approved
+Before posting, finish the remaining #18 representative-reader wording acceptance, confirm the
+actual channel placements, and test the real social-to-site route. #11/#19 acceptance is complete
+with the November 18 user-reported phone/saved-copy evidence. #13 is complete under the approved
 request-only measurement scope, and Stage 1 #16 operating commitments are already complete. These
-accepted checks do not complete the remaining reader/device acceptance, publication, four weeks of
-results, or paid-offer requirements. #14 remains open for the experiment.
+accepted checks do not complete the deferred reader-wording review, publication, four weeks of
+results, or paid-offer requirements. #14 remains open at 3/8 for the experiment.
 
 **Change record — November 16:** created this single campaign asset file because the repository
 contained the PNG assets and a historical Week 1-copy completion note but no reusable caption or
 holiday calendar file. The existing roadmap remains authoritative; no earlier pack or history was
 overwritten. No social account, signup record, app-local data, automation, or published website was
 changed by this preparation.
+
+**Change record — November 18:** recorded Vanessa's current-edition phone/saved-copy acceptance and
+updated the remaining campaign gate to #18 wording feedback. Existing campaign copy, tracked links,
+proposed dates, reporting windows and unpublished status are preserved.
