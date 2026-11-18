@@ -1,9 +1,16 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { fireEvent, render, waitFor, within } from '@testing-library/react-native';
 
+import type { Medicine } from '../src/models/Medicine';
+import type { MedicineDoseLog } from '../src/models/MedicineDoseLog';
 import { TodayScreen } from '../src/screens/TodayScreen';
 import { TodosScreen } from '../src/screens/TodosScreen';
 import { AppStateProvider } from '../src/state/AppState';
+import {
+  APP_STATE_STORAGE_KEY,
+  CURRENT_APP_STATE_SCHEMA_VERSION
+} from '../src/state/persistence';
 
 function renderWithAppState(ui: React.ReactElement) {
   return render(<AppStateProvider>{ui}</AppStateProvider>);
@@ -110,5 +117,159 @@ describe('TodayScreen', () => {
 
     expect(getAllByText('Plan summer camp').length).toBeGreaterThan(0);
     expect(getAllByText('Urgent')).toHaveLength(urgentCountBefore);
+  });
+});
+
+describe('Today medicine timing', () => {
+  const medicine: Medicine = {
+    id: 'synthetic-medicine',
+    personName: 'Mom',
+    medicineName: 'Example entry',
+    dosage: 'User-entered instructions',
+    times: ['8:00 AM', '8:00 PM'],
+    refillReminderThreshold: 0,
+    lastTaken: null
+  };
+  const todayLog: MedicineDoseLog = {
+    id: 'synthetic-dose-log',
+    medicineId: medicine.id,
+    scheduledTime: '8:00 AM',
+    takenDate: '2026-11-18',
+    takenAt: 'Recorded completion'
+  };
+
+  beforeEach(() => {
+    jest.useFakeTimers({
+      now: new Date(2026, 10, 18, 10, 0, 30),
+      doNotFake: ['nextTick', 'queueMicrotask', 'setImmediate', 'clearImmediate']
+    });
+    jest.clearAllMocks();
+    (AsyncStorage.getItem as jest.Mock).mockResolvedValue(null);
+    (AsyncStorage.setItem as jest.Mock).mockResolvedValue(undefined);
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  async function renderMedicineTimes(times: string[], medicineDoseLogs: MedicineDoseLog[] = []) {
+    (AsyncStorage.getItem as jest.Mock).mockResolvedValueOnce(
+      JSON.stringify({
+        schemaVersion: CURRENT_APP_STATE_SCHEMA_VERSION,
+        children: [],
+        tasks: [],
+        groceryItems: [],
+        scheduleItems: [],
+        medicines: [{ ...medicine, times }],
+        medicineDoseLogs
+      })
+    );
+
+    return renderWithAppState(<TodayScreen />);
+  }
+
+  function withinParentView(element: Parameters<typeof within>[0]) {
+    let parent = element.parent;
+    while (parent && parent.type !== 'View') {
+      parent = parent.parent;
+    }
+    if (!parent) {
+      throw new Error('Expected a containing View');
+    }
+    return within(parent);
+  }
+
+  it.each([
+    { time: '8:00 PM', status: 'Planned', overdueCount: 0 },
+    { time: '8:00 AM', status: 'Overdue', overdueCount: 1 },
+    { time: '10:00 AM', status: 'Planned', overdueCount: 0 },
+    { time: 'after breakfast', status: 'Planned', overdueCount: 0 },
+    { time: '13:00 PM', status: 'Planned', overdueCount: 0 },
+    { time: '', status: 'Planned', overdueCount: 0 }
+  ])('shows $time as $status at local 10:00 AM', async ({ time, status, overdueCount }) => {
+    const { getAllByText, getByText } = await renderMedicineTimes([time]);
+    const card = withinParentView(getByText(medicine.medicineName));
+    const overdueSummary = withinParentView(getAllByText('Overdue')[0]);
+
+    expect(card.getByText(status)).toBeOnTheScreen();
+    expect(overdueSummary.getByText(String(overdueCount))).toBeOnTheScreen();
+    expect(card.getByText('Mom • User-entered instructions')).toBeOnTheScreen();
+    if (time) {
+      expect(getByText(time)).toBeOnTheScreen();
+    }
+  });
+
+  it.each([
+    { description: 'today and this dose', log: todayLog, completed: true },
+    {
+      description: 'yesterday',
+      log: { ...todayLog, takenDate: '2026-11-17' },
+      completed: false
+    },
+    {
+      description: 'another scheduled time',
+      log: { ...todayLog, scheduledTime: '8:00 PM' },
+      completed: false
+    },
+    {
+      description: 'another medicine',
+      log: { ...todayLog, medicineId: 'other-medicine' },
+      completed: false
+    }
+  ])('uses only a matching completion log: $description', async ({ log, completed }) => {
+    const { getAllByText, getByLabelText, getByText, queryByLabelText, queryByText } =
+      await renderMedicineTimes(['8:00 AM'], [log]);
+    const card = withinParentView(getByText(medicine.medicineName));
+    const actionLabel = 'Mark Example entry 8:00 AM taken from Today';
+    const overdueSummary = withinParentView(getAllByText('Overdue')[0]);
+
+    expect(card.getByText(completed ? 'Planned' : 'Overdue')).toBeOnTheScreen();
+    expect(overdueSummary.getByText(completed ? '0' : '1')).toBeOnTheScreen();
+    if (completed) {
+      expect(
+        getByText('Mom • User-entered instructions • Taken today: Recorded completion')
+      ).toBeOnTheScreen();
+      expect(queryByLabelText(actionLabel)).toBeNull();
+    } else {
+      expect(getByLabelText(actionLabel)).toBeOnTheScreen();
+      expect(queryByText(/Taken today:/)).toBeNull();
+    }
+  });
+
+  it('keeps past and future doses independent when one is marked taken', async () => {
+    const existingLog = { ...todayLog, takenDate: '2026-11-17' };
+    const { getAllByText, getByLabelText, getByText, queryByLabelText } =
+      await renderMedicineTimes(medicine.times, [existingLog]);
+    const morningRow = withinParentView(getByText('8:00 AM'));
+    const eveningRow = withinParentView(getByText('8:00 PM'));
+
+    expect(morningRow.getByText('Overdue')).toBeOnTheScreen();
+    expect(eveningRow.getByText('Planned')).toBeOnTheScreen();
+    expect(withinParentView(getAllByText('Overdue')[0]).getByText('1')).toBeOnTheScreen();
+
+    await fireEvent.press(getByLabelText('Mark Example entry 8:00 AM taken from Today'));
+
+    expect(withinParentView(getByText('8:00 AM')).getByText('Planned')).toBeOnTheScreen();
+    expect(withinParentView(getByText('8:00 AM')).getByText(/Taken today:/)).toBeOnTheScreen();
+    expect(queryByLabelText('Mark Example entry 8:00 AM taken from Today')).toBeNull();
+    expect(getByLabelText('Mark Example entry 8:00 PM taken from Today')).toBeOnTheScreen();
+    expect(withinParentView(getByText('8:00 PM')).getByText('Planned')).toBeOnTheScreen();
+    expect(withinParentView(getByText('Overdue')).getByText('0')).toBeOnTheScreen();
+
+    await waitFor(() => {
+      const [key, raw] = (AsyncStorage.setItem as jest.Mock).mock.calls.at(-1);
+      const savedState = JSON.parse(raw);
+
+      expect(key).toBe(APP_STATE_STORAGE_KEY);
+      expect(savedState.medicines).toEqual([medicine]);
+      expect(savedState.medicineDoseLogs).toEqual([
+        expect.objectContaining({
+          medicineId: medicine.id,
+          scheduledTime: '8:00 AM',
+          takenDate: '2026-11-18'
+        }),
+        existingLog
+      ]);
+    });
   });
 });

@@ -56,6 +56,7 @@ criteria, not historical task lists. Preparation does not activate UAT, promotio
 | #17 — app-readiness assessment | **Closed / Done; assessment complete, 9/9**; original source/evidence review preserved and Vanessa's approved follow-ups now tracked in #38/#39 | This completes assessment and disposition, not implementation, runtime/demand validation or app monetization. |
 | #38 — local-data protection | **Closed, 8/8**; PR #40 merged at `8cd714a9ca1a04d0471e5aed977677904b86c8e0`. Verified code head `79e3b9fa406a84b9a61c9081a0ff09c870f91d9e`: 26 adapter checks, 435 Jest tests/34 suites, TypeScript and Android JS/assets export passed | These source checks do not establish physical-device/installed-APK behavior or a released build. |
 | #39 — source/build reconciliation | **Paused—originals unavailable; open at 3/7**. Signed-in Expo details identify the reported commit references and retained 0.1.2 (3) build configuration. Firebase 0.1.2 (3) upload/no testers and 0.1.1 (2) prior distribution remain verified | On November 18, Vanessa confirmed she does not have the original September 13, 2026 project folder/source archive or original 0.1.2 APK. Criteria 4–7 remain unpassed; exact uploaded source/uncommitted delta and artifact/hash/source relationships remain unproven. The earlier retrieval requests are paused. |
+| #43 — Today medicine-status correction | **Completed source implementation, November 18.** Verified at the [PR #44](https://github.com/VanessaJaralve/RemoteMom/pull/44) code head: actual-function harness 13/13; App checks 446/446 tests in 34/34 suites, TypeScript and Android JavaScript/assets export passed | The linked PR and issue record integration and acceptance status; the final PR head is subject to the required App checks merge gate. The harness is not React/provider/device evidence. Automatic clock, midnight and foreground refresh, APK/release and all reader/UAT/product gates remain separate. |
 
 The support and reporting owner choices below are now approved. Finish the remaining source/editorial
 and platform work before the remaining UAT. The overall Stage 1 gate still controls free-kit promotion.
@@ -109,7 +110,30 @@ recover or verify the historical source/artifact relationship. The
 [existing Firebase guide](../RemoteMom_Firebase_App_Distribution_Beta_Guide.md#source-and-build-reconciliation--2026-11-18)
 records the detailed build/fingerprint identities without private account, console or artifact links.
 
-Today future-dose labels and midnight/foreground refresh remain separate, unimplemented findings.
+**#43 — Today medicine-status correction: source implementation completed, November 18, 2026.**
+Vanessa approved the limited correction in [issue #43](https://github.com/VanessaJaralve/RemoteMom/issues/43).
+The implementation is verified at the [PR #44](https://github.com/VanessaJaralve/RemoteMom/pull/44) code head.
+The correction marks an untaken medicine time overdue only when the existing parser
+can read it and it is strictly earlier than the current local minute. Future, exact-minute and
+unparseable times remain planned. Same-day dose logs, entered instructions and source-backed actions
+remain intact. The independent actual timeline-function harness passed **13/13**, compared with
+**6/13 baseline passes and 7 expected failures**; frozen synthetic inputs were unchanged. That
+harness did not mount React/provider or exercise a device. The [existing product brief](../RemoteMom_Product_Brief_Roadmap.md#approved-today-medicine-status-correction--november-18-2026)
+records the frozen source identity and detailed scope.
+
+**Executed code verification:** [App checks run 44201524733 / job 134456555947](https://github.com/VanessaJaralve/RemoteMom/actions/runs/44201524733/job/134456555947)
+passed all steps at code head `fe081d8f2b0a2ef4a3b22ac092873e2f025a1b69`. The logs show
+`TodayScreen.test.tsx` PASS, **446/446 tests in 34/34 suites**, TypeScript passed, and Android
+JavaScript/assets export of **841 modules** to `dist-ci`. Eleven rendering regression cases were
+added; the logs do not report a separate Today test count. No lint script exists. This verifies
+the code head, distinct from the final documentation-inclusive PR head subject to the required
+App checks merge gate. The linked PR and issue record integration and acceptance status; this
+source-completion record does not assert merge or issue closure. The export is not a native build
+or device test.
+
+Automatic clock, midnight and foreground refresh remain separate, unimplemented findings; #43 only
+changes classification when the existing timeline is recomputed. Models and persistence are unchanged,
+and no medical logic, notification, native build, APK or release is added.
 These approvals preserve the one-child, local-first app scope and do not select new features,
 monetization, recruitment or distribution. Reader fieldwork remains deferred pending availability;
 #11/#18/#19, #15, Book 2 customer-file evidence and campaign publication keep their existing gates.
@@ -767,7 +791,7 @@ handling belong before the free-kit experiment; mature buyer operations and emai
 | 2. Existing paid offer | Accurate Payhip listings, previews, checkout, delivery, and buyer support | Relevant #2–#5 checks and Stage 2 support are verified before paid promotion; optional email work has its own decision and tests |
 | 3. Four-week validation | Organic content for both audience paths | #14 publishes four weeks of tracked content and records learning; a verified free-kit experiment can start without Stage 2 paid offers or full email automation |
 | 4. Evidence-led collection | Reuse inventory, scope decision, selected resources, and packaging | Inventory in #6 may begin early; production waits for #15 and #14 findings; selected #7–#9 assets and bundle-specific delivery QA precede #10 promotion |
-| 5. App readiness | Completed assessment/source fix; provenance paused | #17 is closed / Done at 9/9. #38 is closed at 8/8 after PR #40 merged at 8cd714a9. #39 remains open at 3/7, Paused—originals unavailable after Vanessa's November 18 confirmation; criteria 4–7 remain unpassed. These app items do not block Launchpad validation or authorize monetization or release |
+| 5. App readiness | Completed assessment and source corrections; provenance paused | #17 is closed / Done at 9/9. #38 is closed at 8/8 after PR #40 merged at 8cd714a9. #39 remains open at 3/7, Paused—originals unavailable after Vanessa's November 18 confirmation; criteria 4–7 remain unpassed. #43's limited medicine-status source correction is completed and verified at the PR #44 code head; the linked PR and issue record integration and acceptance status. These app items do not block Launchpad validation or authorize monetization or release |
 
 ## Recommended execution order
 
