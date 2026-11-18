@@ -27,6 +27,13 @@ post/Story route checks, publication and four weeks of results remain execution 
 The calendar, copy, links and proposed dates below are unchanged; this acceptance does not publish
 or schedule the campaign.
 
+**Additional draft preparation — November 18:** Vanessa approved developing p07–p12 from the
+existing briefs. Six provisional Facebook captions and six matching Instagram Story drafts are now
+included below. The original briefs, proposed dates, audience paths and tracked links are retained.
+Refine these drafts using actual first-week results and relevant reader feedback when available.
+This is optional campaign preparation; #14 remains **3/8**, unpublished and unscheduled, and #18's
+wording acceptance remains deferred.
+
 ## Campaign decision
 
 **Offer:** the existing free Remote Mom's Work Fit and Safety Starter Kit, version `20261117b` (released through [PR #33](https://github.com/VanessaJaralve/RemoteMom/pull/33); production evidence in [#11](https://github.com/VanessaJaralve/RemoteMom/issues/11)).
@@ -181,12 +188,12 @@ compress missed slots into a burst.
 | 1 · Sat Nov 28 | p04 | Remote-Life | Black Friday weekend: give an existing calendar or note a clear purpose; pages 8–9 | Full caption + Story text below | Request the free kit |
 | 2 · Mon Nov 30 | p05 | Career | Cyber Monday: organize one application folder and the next follow-up; pages 9–10 | Full caption + Story text below | Request the free kit |
 | 2 · Thu Dec 3 | p06 | Remote-Life | Cyber Monday follow-up: make restarting after an interruption easier; pages 8–9 | Full caption + Story text below | Request the free kit |
-| 3 · Mon Dec 7 | p07 | Career | Practical-tech follow-up: turn one real responsibility into a specific skill example; page 4 | Brief below | Request the free kit |
-| 3 · Thu Dec 10 | p08 | Remote-Life | Practical-tech follow-up: plan one work block with a realistic buffer; page 8 | Brief below | Request the free kit |
-| 3 · Sat Dec 12 | p09 | Career | Practical-tech follow-up: independently check a role and save the source; pages 6–7 | Brief below | Request the free kit |
-| 4 · Mon Dec 14 | p10 | Remote-Life | Practical-tech follow-up: a small end-of-work transition; pages 8–9 | Brief below | Request the free kit |
-| 4 · Thu Dec 17 | p11 | Career | Practical-tech follow-up: a focused application session sized to the time available; pages 9–10 | Brief below | Request the free kit |
-| 4 · Sat Dec 19 | p12 | Remote-Life | Practical-tech follow-up: review one routine and choose what to keep or adjust; page 9 | Brief below | Request the free kit |
+| 3 · Mon Dec 7 | p07 | Career | Practical-tech follow-up: turn one real responsibility into a specific skill example; page 4 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Thu Dec 10 | p08 | Remote-Life | Practical-tech follow-up: plan one work block with a realistic buffer; page 8 | Provisional caption + Story draft below | Request the free kit |
+| 3 · Sat Dec 12 | p09 | Career | Practical-tech follow-up: independently check a role and save the source; pages 6–7 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Mon Dec 14 | p10 | Remote-Life | Practical-tech follow-up: a small end-of-work transition; pages 8–9 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Thu Dec 17 | p11 | Career | Practical-tech follow-up: a focused application session sized to the time available; pages 9–10 | Provisional caption + Story draft below | Request the free kit |
+| 4 · Sat Dec 19 | p12 | Remote-Life | Practical-tech follow-up: review one routine and choose what to keep or adjust; page 9 | Provisional caption + Story draft below | Request the free kit |
 
 The kit supports these exercises; the caption's calendar/folder examples are optional ways to apply
 them. The PDF does not provide software tutorials, an automated planner, a validated assessment,
@@ -405,6 +412,206 @@ CTA and a prepared channel link above. These are briefs, not final captions or p
 | p11 | “Size the next application step to the time you have.” | Choose one focused task: understand a role, improve an example, verify details, or record a follow-up | Pages 9–10. Thirty minutes is adjustable, not a required daily commitment |
 | p12 | “Keep what helped. Adjust what didn't fit.” | Review one boundary/routine experiment and choose one next adjustment | Page 9. Reader experiences inform a decision; they are not measured outcomes for all moms |
 
+## Weeks 3–4 provisional captions and Story text
+
+**Drafted November 18, 2026 — Asia/Manila. Not published or scheduled.** These drafts develop the
+six retained briefs above. They are starting copy for later refinement using actual first-week
+results and relevant reader feedback; no reader response, campaign result or validated outcome is
+claimed. The calendar dates remain proposed and may shift with campaign readiness.
+
+Each Facebook draft has one free-kit link. Each three-line Instagram Story draft uses its existing
+Instagram URL with the link-sticker label **Free Starter Kit**, after that placement is selected and
+verified. The Story URL is supplied separately for setup, not as extra on-screen copy. No paid offer,
+discount, app feature, email subscription or additional follow/share/comment action is introduced.
+
+### p07 · Give one skill a real example
+
+**Facebook caption — provisional draft**
+
+One real example can make a skill easier to explain.
+
+Think of a responsibility from paid work, volunteering, or a project. What did you actually do?
+Perhaps you gathered updates, organized information, or helped people keep track of deadlines.
+Choose one example and write down the action, the situation, and evidence you can honestly support.
+
+Keep it in a note or document you already use. When you review a role, you can return to that example
+and consider whether it relates to the work being requested. There is no need to inflate a title
+or invent a result.
+
+Page 4 of the free Remote Mom's Work Fit and Safety Starter Kit gives you a place to connect your
+skills with real examples. Start with one row, whether you're exploring your first remote role or
+looking for an additional opportunity.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p07
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Give one skill a real example.
+> What did you do? What evidence can you honestly show?
+> Start with the free kit's skills worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p07
+
+### p08 · Leave a little room in the plan
+
+**Facebook caption — provisional draft**
+
+A work block has to fit into a real day.
+
+Look at one block in the calendar or note you already use. Consider the time you have, the task you
+want to focus on, and any responsibilities around it. Could a little space for setup, a handover,
+or a likely interruption make that plan more workable?
+
+Choose one small adjustment to try. Afterwards, notice what fit and what needed more room. The aim
+is to learn what works in your situation, with a plan you can adjust as the week changes.
+
+Page 8 of the free Starter Kit helps you reflect on a remote-life pressure point and choose a
+boundary or routine to try. Use the exercise alongside a calendar or notes you already use.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p08
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Leave a little room in the plan.
+> One work block. A realistic task. Space for the day around it.
+> Try the free kit's remote-life worksheet.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p08
+
+### p09 · Keep the source, then check the opportunity
+
+**Facebook caption — provisional draft**
+
+A saved job listing is a starting point for a closer look.
+
+Keep the original link and the date you found it. Then find the employer's own channels
+independently and compare the role details: duties, hours, location requirements, and how the
+application process works. Write down anything that needs clarification before moving ahead.
+
+If the process involves unexpected payment requests or asks for sensitive information, pause and
+check through an independently confirmed contact. A familiar logo or a polished message alone
+does not establish who is behind the listing.
+
+Pages 6–7 of the free Starter Kit offer questions to help you examine an opportunity. The checklist
+cannot certify an employer or guarantee that a listing is safe; it helps you identify what to
+investigate.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p09
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Keep the source. Check the details.
+> Look up the employer independently and note what needs clarification.
+> Use the free kit's opportunity-check questions.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p09
+
+### p10 · Give the end of work a small routine
+
+**Facebook caption — provisional draft**
+
+When work and family life happen in the same place, a small closing routine may be worth trying.
+
+At the end of a work block, save what you were doing and leave a short note for the next session.
+Name the next action or an unanswered question. Keep the note where you can find it again, with
+private work details in an appropriate place.
+
+Then choose a simple transition that fits your responsibilities: close your work tabs, put away
+your notebook, or take a moment before moving into the next part of your day. If the change affects
+others, let them know when you will be available.
+
+The free Starter Kit's remote-life worksheet and seven-day plan on pages 8–9 can help you choose
+one routine to try and reflect on how it fits. Start small and adjust it to your work and home.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Give the end of work a small routine.
+> Save your place. Note the next step. Choose a simple transition.
+> Explore the free kit's remote-life exercises.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p10
+
+### p11 · Choose an application step that fits your time
+
+**Facebook caption — provisional draft**
+
+Your next application session can have one clear purpose.
+
+Start with the time you realistically have. Then choose a task that fits: read one role's
+responsibilities carefully, improve a skills example, check details with the employer, or record a
+follow-up. Keep the relevant link or document together so you know where to return.
+
+If you're already working remotely and looking for an additional role, include the hours and
+commitments you need that opportunity to fit. You can choose a small step today and adjust the
+next session to your circumstances.
+
+The free Starter Kit includes a seven-day action plan on page 9 and an optional application tracker
+on page 10. Use the parts that help you organize your next action; there is no required daily time
+commitment or application quota.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Choose one application step that fits your time.
+> Understand a role, improve an example, or record a follow-up.
+> Plan your next action with the free Starter Kit.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-career-p11
+
+### p12 · Keep what helped. Adjust what did not fit.
+
+**Facebook caption — provisional draft**
+
+A small routine is something you can review and adjust.
+
+Think about one boundary, work block, or transition you tried recently. What helped? What was
+difficult to repeat? Consider the circumstances around it, such as a changing work schedule or a
+family commitment, before deciding what to try next.
+
+Keep one part that helped, or choose one small adjustment. A short note in a tool you already use
+can give you a place to return to that decision. Your next week may need a different approach.
+
+Page 9 of the free Starter Kit includes a seven-day action plan and weekly review prompts.
+You can use it after trying a remote-life exercise and focus on the parts that are useful to you.
+Your own experience is the starting point for that adjustment.
+
+Get the free Starter Kit:
+https://remote-mom.vercel.app/launchpad/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12
+
+Free PDF download after your request is confirmed.
+
+**Instagram Story text — provisional draft**
+
+> Keep what helped. Adjust what did not fit.
+> Review one routine and choose one manageable next step.
+> Reflect with the free kit's seven-day plan.
+
+**Instagram link sticker:** Free Starter Kit
+https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holiday2026-cybermonday-remote-life-p12
+
 ## Publication record
 
 No publication rows exist yet. Add one row for each actual platform placement after it is posted;
@@ -460,6 +667,12 @@ prepared links, a publication-log structure, and dated weekly review windows. So
 current Launchpad/download HTML and the reviewed ten-page kit inventory. The existing four PNGs
 were visually inspected and their regional reuse limits recorded.
 
+**Additional preparation — November 18:** p07–p12 now also have six provisional Facebook captions
+and six matching Instagram Story drafts, with their existing channel-specific links supplied beside
+the copy. The retained briefs still guide later refinement from real first-week results and relevant
+reader feedback. This expands draft material only; it does not add an acceptance requirement or
+complete another #14 criterion.
+
 Before posting, finish the remaining #18 representative-reader wording acceptance, confirm the
 actual channel placements, and test the real social-to-site route. #11/#19 acceptance is complete
 with the November 18 user-reported phone/saved-copy evidence. #13 is complete under the approved
@@ -476,3 +689,11 @@ changed by this preparation.
 **Change record — November 18:** recorded Vanessa's current-edition phone/saved-copy acceptance and
 updated the remaining campaign gate to #18 wording feedback. Existing campaign copy, tracked links,
 proposed dates, reporting windows and unpublished status are preserved.
+
+**Change record — November 18, provisional campaign drafts:** following Vanessa's instruction to
+proceed with the recommended optional preparation, added the p07–p12 Facebook and Instagram Story
+drafts and updated those six calendar copy-status cells. The first six captions/Stories, original
+briefs, link register, proposed dates, publication log, reporting windows, accepted checks and prior
+change records are retained. #14 remains 3/8, #18 remains deferred, and no post is published or
+scheduled. No code, signup records, app-local data, email workflow or social-account setting changes
+are included.
