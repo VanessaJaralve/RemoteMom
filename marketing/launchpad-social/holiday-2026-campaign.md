@@ -2,17 +2,17 @@
 
 ## Current campaign execution — November 20, 2026 (Asia/Manila)
 
-**In Progress / P2; [#14](https://github.com/VanessaJaralve/RemoteMom/issues/14) remains open at 3/8 original acceptance criteria.** Later owner instructions authorized scheduling and the personal December content changes recorded here. The verified total is **49 scheduled placements, 3 saved Facebook drafts and 2 Instagram posts not yet scheduled**. These are queue observations, not evidence of publication or a completed four-week experiment. All times below are **Asia/Manila**.
+**In Progress / P2; [#14](https://github.com/VanessaJaralve/RemoteMom/issues/14) remains open at 3/8 original acceptance criteria.** Later owner instructions authorized scheduling and the personal December content changes recorded here. The verified scheduled subtotal remains **49 placements**. The original personal December batch still has **3 saved Facebook drafts and 2 Instagram posts not yet scheduled**; business Week 2 adds **7 saved Facebook-only text drafts**, detailed below. These are queue observations, not evidence of publication or a completed four-week experiment. All times below are **Asia/Manila**.
 
 ### Saved schedule and remaining placements
 
 | Account / format | Verified scheduled dates and time | Scheduled placements | Remaining in this prepared batch |
 |---|---|---:|---|
 | Business Facebook `@TheRemoteMomsLaunchpad` — feed cards/carousels | November 23–29, daily at 12:00 | 7 | Actual publication and post-link checks |
-| Business Instagram `@theremotemomslaunchpad` — feed cards/carousels | November 23–29, daily at 12:00 | 7 | Profile route correction, actual publication and route checks |
+| Business Instagram `@theremotemomslaunchpad` — feed cards/carousels | November 23–29, daily at 12:00 | 7 | Actual publication and post-level route checks |
 | Personal Facebook `@VanJaralve` — image posts, with the full December 9 article | December 1–17, daily at 20:00 | 17 | December 18–20: 3 saved drafts with their images and custom alt text |
 | Personal Instagram `@vdjaralve` — separate feed graphics | December 1–18, daily at 20:00 | 18 | December 19–20: 2 prepared posts not yet scheduled |
-| **Total** | | **49** | **5 pending placements** |
+| **Previously verified batches** | | **49** | **5 personal December placements pending** |
 
 The business batch was verified on November 19 as **14 separate scheduled platform rows**, with exact approved captions. Its seven topics use 15 unique approved images and their alt text. Original shared-draft identifiers are provenance; they are not new scheduled-row identifiers. The confirmed **12:00** time replaces the earlier **20:00 proposal for this batch only**. Ten previously observed, distinct business Facebook posts in the November 21–30 window at 20:00 were left unchanged and are excluded from the 49 above; that observed window is not an exhaustive inventory of older content.
 
@@ -26,11 +26,26 @@ The 20-date personal December plan contains **4 Launchpad promotions (December 3
 
 December 9 contains **“A Small Plan for a Full Week: Five Questions for Work and Home”** as a full Facebook article post. Instagram has its approved summary and a pointer to the Facebook profile; no hosted article destination or already-live article is claimed. These personal Instagram placements are **feed graphics**, not completion of the original Story/link-sticker plan.
 
-Scheduling for the original **personal November 23–30** slots and **business November 30–December 20** slots is **unverified in the reviewed records**. This describes an evidence gap, not an empty queue. Reconcile those ranges against actual saved posts before adding more. The original 112-placement proposal remains below as planning history; neither all 112 placements nor the four-week publication and learning criteria are complete.
+### Calendar coverage checked November 20; business Week 2 prepared
 
-### Business Instagram profile route — pending owner sign-in
+- **Personal Facebook, November 23–30:** the live `@VanJaralve` Content Library, with Scheduled / Lifetime / all-content filters, showed eight existing rows at 20:00. Their personal routine/app captions differ from the campaign source topics. Preserve them; they are not eight newly scheduled campaign posts and are excluded from the 49 above.
+- **Business, November 30–December 20:** the selected business asset’s fully loaded December Month Planner, with Content type: all and Shared to: all, showed no cards on December 1–20. November 30 has one unrelated preexisting Facebook post at 20:00. Other preexisting Instagram posts on November 21 and 23 at 16:00 also remain separate and unchanged.
+- **Personal Instagram, November 23–30:** the November 22–28 and November 29–December 5 scheduled-content week views showed no cards on November 23–30; the known December 1–5 posts at 20:00 were visible. The saved November plan is **Stories with link stickers**. This calendar observation does not verify Story publication or authorize a feed adaptation; **personal November Story execution remains pending**.
+- **Business Week 2, November 30–December 6:** the creative set is prepared: **13 graphics passed independent visual QA, 13 final image alt texts and 14 exact Facebook/Instagram captions**. **Seven Facebook-only text drafts are saved and independently verified.** All seven captions matched the exact source before Save; saved p05 was freshly reopened and exact, while the other six full captions matched in an independent fresh draft list, ignoring layout whitespace. There is one matching Facebook draft per topic.
 
-A November 20 live read still showed the **5-Minute Focus Toolkit** destination at `subscribepage.io/6OBwYY`. The current browser session is personal; switching to the business account requested sign-in, so no profile edit was made. **Owner sign-in and the route correction remain pending before the first business post on November 23 at 12:00.** Use the prepared [business Instagram Starter Kit route](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-business-profile), then verify the saved outbound profile link and continuation to the Starter Kit action. A shared profile route supports shared-profile attribution, not identification of an individual feed post.
+The seven Instagram captions remain prepared locally: **0 Instagram drafts saved, 0 images attached and 0 new scheduled placements**. The newly planned time is **12:00 Asia/Manila**, consistent with business Week 1 and avoiding the November 30 preexisting 20:00 slot. These drafts do not increase the 49 scheduled subtotal.
+
+The handoff package is `RemoteMom_Business_Week2_2026-11-30_to_12-06.zip`, extracting to the same-named folder. Once the package is available and extracted on the owner’s computer, attach each post’s ordered graphics and matching alt text to the existing Facebook drafts, add the Instagram captions, verify saved media and platform-specific text, and schedule November 30–December 6 at noon with duplicate checks. This record does not claim those attachment or scheduling steps are complete.
+
+The historical 20:00 business proposal, 112-placement plan and original audience balance remain below as dated planning. This audit establishes the observed queue coverage; it does not complete the four-week publication and learning criteria.
+
+### Business Instagram profile route — verified November 20
+
+**The business profile URL is corrected and verified.** After Vanessa updated `@theremotemomslaunchpad`, a later **November 20, 2026 (Asia/Manila)** live click from that profile reached the canonical [Starter Kit page](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-business-profile) with `utm_source=instagram`, `utm_medium=organic_social` and `utm_campaign=launchpad-business-profile` retained and the correct Starter Kit heading. No form was submitted. The profile URL is no longer a blocker for the November 23 business placements.
+
+The visible link label still says **“The Remote Mom’s 5-MINUTE FOCUS TOOLKIT”**. Updating that label is optional copy cleanup; the saved destination is correct. This remains shared-profile attribution, not identification of an individual feed post.
+
+**Earlier same-day observation, retained as history:** the profile pointed to `subscribepage.io/6OBwYY`; the personal browser session requested owner sign-in when switching to the business account, and no profile edit was made during that earlier check. The successful later outbound click supersedes that pending route status.
 
 ### Manual Monday reviews and acceptance boundaries
 
@@ -48,7 +63,7 @@ After posts go live, add actual publication dates, public post URLs and verified
 
 [#18](https://github.com/VanessaJaralve/RemoteMom/issues/18) remains **deferred at 11/12** for representative-reader wording; [#15](https://github.com/VanessaJaralve/RemoteMom/issues/15) remains deferred. The later owner authorization records why these placements were scheduled; it does not pass or waive the remaining reader criterion. Accepted #11/#19 phone and keyboard evidence, #13 request-only measurement scope and #16 acceptance remain intact. No repeat device checks or new reader-count requirement is introduced.
 
-Evidence: owner-held `social-scheduling-local-evidence-audit-20261120.json`, November 19 business scheduling and Facebook attachment records, and the November 20 Instagram progress record. Supporting records remain private.
+Evidence: owner-held `social-scheduling-local-evidence-audit-20261120.json`, November 19 business scheduling and Facebook attachment records, the November 20 Instagram progress record, and `business-week2-saved-drafts-evidence-20261120.json`. Supporting records remain private.
 
 **Historical record below:** all earlier text is retained verbatim. Older “nothing scheduled” statements, unproduced-visual status, business 20:00 proposals and personal Story descriptions describe the earlier planning/preparation stage. The dated reconciliation above governs the verified subset; it does not rewrite the remaining proposal or claim publication.
 
