@@ -2,19 +2,23 @@
 
 ## Current campaign execution — November 20, 2026 (Asia/Manila)
 
-**In Progress / P2; [#14](https://github.com/VanessaJaralve/RemoteMom/issues/14) remains open at 3/8 original criteria.** Later owner instructions authorized the scheduling and adapted personal mix: **49 scheduled placements and 5 pending**. Publication is not yet verified. All times are Asia/Manila.
+**In Progress / P2; [#14](https://github.com/VanessaJaralve/RemoteMom/issues/14) remains open at 3/8 original criteria.** Later owner instructions authorized the scheduling and adapted personal mix: **49 verified scheduled placements**. The original personal December batch has **5 pending placements**; separate Week 2 draft progress is recorded below. Publication is not yet verified. All times are Asia/Manila.
 
 | Account / batch | Saved schedule | Pending |
 |---|---|---|
-| Business Facebook + Instagram | 14 platform placements, November 23–29 at 12:00 | Profile route and publication checks |
+| Business Facebook + Instagram | 14 platform placements, November 23–29 at 12:00 | Actual publication and post-level route checks |
 | Personal Facebook | 17 posts, December 1–17 at 20:00 | December 18–20: 3 saved drafts with images and alt text |
 | Personal Instagram | 18 feed posts, December 1–18 at 20:00 | December 19–20: 2 prepared posts outside the validated scheduling window |
 
 Existing follow-ups are enabled for November 22: Facebook **around 08:00**, Instagram **09:00**, with duplicate checks and each post’s 20:00 time retained. Success is pending. Preexisting business Facebook posts are excluded from the counts.
 
-Personal content mixes four promotions (December 3, 8, 13, 18), motherhood, remote work and PM-mom topics. December 9 has the full Facebook article and an Instagram summary. Instagram uses feed graphics, not Stories. The 112-placement proposal and original audience balance are not completed; personal November 23–30 and business November 30–December 20 scheduling remain unverified.
+Personal content mixes four promotions (December 3, 8, 13, 18), motherhood, remote work and PM-mom topics. December 9 has the full Facebook article and an Instagram summary. Instagram uses feed graphics, not Stories. The historical 112-placement proposal and original audience balance remain planning history.
 
-**Business Instagram route pending:** the November 20 profile still shows the 5-Minute Focus Toolkit at `subscribepage.io/6OBwYY`; switching to the business account requires owner sign-in. Before November 23 at 12:00, save and verify the [prepared Starter Kit route](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-business-profile).
+**November 20 calendar audit:** personal Facebook has eight preexisting November 23–30 posts at 20:00 with different routine/app captions; preserve them and exclude them from the 49 new placements. The business December Month Planner (all content / all destinations) showed no cards on December 1–20; November 30 has an unrelated Facebook 20:00 post. Personal Instagram’s checked week views had no November 23–30 cards, but this does not establish execution of the source **Stories/link-sticker plan**, which remains pending.
+
+**Business Week 2, November 30–December 6: creatives prepared; seven Facebook text drafts saved and independently verified.** The set has 13 graphics with independent visual QA passed, 13 final alt texts and 14 exact platform captions. The seven Instagram captions remain local preparation: **0 Instagram drafts, 0 attached images and 0 new scheduled placements**. The existing 49 scheduled subtotal is unchanged. Plan **12:00 Asia/Manila**, avoiding the existing November 30 20:00 slot; historical 20:00 proposals are preserved. Next, make the `RemoteMom_Business_Week2_2026-11-30_to_12-06.zip` handoff available and extract it locally, attach ordered graphics/alt text, add Instagram captions, then verify and schedule with duplicate checks.
+
+**Business Instagram route verified November 20:** after Vanessa’s correction, a live click from `@theremotemomslaunchpad` reached the canonical [Starter Kit page](https://remote-mom.vercel.app/launchpad/?utm_source=instagram&utm_medium=organic_social&utm_campaign=launchpad-business-profile), retained all three registered tracking values and showed the correct Starter Kit heading. No form was submitted. The earlier wrong-route/sign-in observation is superseded for current status. The visible “The Remote Mom’s 5-MINUTE FOCUS TOOLKIT” label is optional copy cleanup, not a URL blocker.
 
 #18 remains deferred at **11/12** and #15 remains deferred; later authorization does not complete or waive reader acceptance. Accepted #11/#19, #13 and #16 evidence remains intact.
 
